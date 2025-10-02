@@ -1,0 +1,568 @@
+%SECTION,Levels,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+Name,Number,Description,OverrideColor,OverrideStyle,OverrideWeight,OverrideMaterial,ByLevelColor,ByLevelStyle,ByLevelWeight,ByLevelMaterial,DisplayPriority,Transparency,GlobalDisplay,GlobalFreeze,ElementAccess,Plot,OverrideStyleScale,OverrideStyleOriginWidth,OverrideStyleEndWidth,ByLevelStyleScale,ByLevelStyleOriginWidth,ByLevelStyleEndWidth
+Z-Zz2010-T-CadTextLabelBearing, ,Draft_Bearing Label,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz2010-T-CadTextLabelCurve, ,Draft_Curve Data Label,0,0,0,NULL,0,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz2010-T-CadTextLabelLine, ,Draft_Bearing Label,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz2010-T-CadDraftPlanLabels, ,0,0,0,2,NULL,0,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz2010-M-CadDraftStationCardinalPoints, ,Draft_Station Cardinal Points,0,0,0,NULL,0,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz2010-M-CadDraftPlanGrid, ,0,0,0,0,NULL,3,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz2010-T-CadTextLabelSpiral, ,Draft_Spiral Data Label,0,0,0,NULL,0,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz3520-M-CadCLLines, ,Draft_Station Cardinal Lines,0,0,0,NULL,0,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz3520-M-CadCLPoints, ,Draft_Station Cardinal Points,0,0,0,NULL,0,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz2010-T-CadCLTextLabelMajor, ,Draft_Station Labels Major,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz2010-T-CadCLTextLabelMinor, ,Draft_Station Labels Minor,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz3520-M-CadCLMajorTicks, ,Draft_Station Tics Major,0,0,0,NULL,0,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz3520-M-CadCLMinorTicks, ,Draft_Station Tics Minor,0,0,0,NULL,0,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz3540-M-CadGridProfile, ,Draft_Profile_Grid,0,0,0,NULL,0,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz2010-T-CadTextLabelHPLP, ,Draft_Profile_Text,0,0,0,NULL,5,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz3540-M-CadGridProfileMajor, ,Draft_Profile_Sheet_Major_Grid,0,0,0,NULL,0,2,0,NULL,0,60.000002,1,0,0,1,0,0,0,,,
+Z-Zz3540-M-CadGridProfileMinor, ,Draft_Profile_Sheet_Minor_Grid,0,0,0,NULL,0,2,0,NULL,0,80.000001,1,0,0,1,0,0,0,,,
+Z-Zz2010-T-CadTextProfileAnno, ,0,0,0,0,NULL,0,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz2010-M-CadProfileSpecialDitchL, ,Profile_Special_Ditch_L,19,0,4,NULL,7,2,3,NULL,500,0,1,0,0,1,0,0,0,,,
+Z-Zz2010-M-CadProfileSpecialDitchR, ,Profile_Special_Ditch_R,19,0,4,NULL,6,2,3,NULL,500,0,1,0,0,1,0,0,0,,,
+Z-Zz2010-T-CadTextXSEROWAnno, ,0,0,0,2,NULL,0,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz3520-M-CadCLXSEROWLines, ,0,70,3,3,NULL,70,3,3,NULL,0,0,1,0,0,1,,,,,,
+Z-Zz2010-T-CadTextXSFeatureAnno, ,Draft_XS_Feature_Text,128,0,1,NULL,0,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz3520-M-CadXSGoreLimits, ,Draft_XS_GoreLimits,107,0,1,NULL,75,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz3540-M-CadXSGrid, ,Section,79,0,1,NULL,0,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz2010-T-CadTextXSPROWAnno, ,0,0,0,2,NULL,0,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz3520-M-CadCLXSPROWLines, ,0,52,4,3,NULL,52,4,3,NULL,0,0,1,0,0,1,,,,,,
+Z-Zz2010-T-CadXSTextSegment, ,Draft_XS_Segment_Text,160,0,1,NULL,0,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz2010-T-CadXSTextAnno, ,0,128,0,1,NULL,0,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz1020-P-CadXSFrame, ,Draft_XS_Sheet_Border,1,0,0,NULL,0,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz3540-M-CadGridXSMajor, ,Draft_XS_Sheet_Major_Grid,1,0,0,NULL,0,2,0,NULL,0,60.000002,1,0,0,1,0,0,0,,,
+Z-Zz3540-M-CadGridXSMinor, ,0,160,0,0,NULL,0,2,0,NULL,0,80.000001,1,0,0,1,0,0,0,,,
+Z-Zz2010-T-CadXSText, ,Section Annotation,27,0,1,NULL,0,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz5090-M-XSVolumes, ,Draft_XS_Volume,5,0,1,NULL,0,0,1,NULL,0,80.000001,1,0,0,1,0,0,0,0,0,0
+CH-Zz3510-M-AlignMast, ,Prop Centerline,3,0,3,NULL,3,0,3,NULL,500,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz3510-M-AlignDriveway, ,Geom_Driveway_Centerline,3,0,3,NULL,3,0,3,NULL,500,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz3510-M-AlignRamp, ,Geom_Ramp,19,0,1,NULL,19,0,2,NULL,500,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz3510-M-AlignSec, ,Geom_Secondary,19,0,1,NULL,19,0,2,NULL,500,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz3510-M-AlignTemp, ,Geom_Scratch,16,0,1,NULL,16,0,2,NULL,500,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_BNDY_Commencing Line, ,0,0,0,0,NULL,0,1,2,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_BNDY_Drainage Easement, ,0,0,0,0,NULL,5,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_BNDY_Easement, ,0,0,0,0,NULL,9,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_BNDY_Misc Boundary Line, ,0,0,0,0,NULL,10,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_BNDY_Property Line, ,0,0,0,0,NULL,7,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_BNDY_Property Remainder, ,0,0,0,0,NULL,98,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_BNDY_Property Take, ,0,0,0,0,NULL,6,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_BNDY_Setback, ,0,0,0,0,NULL,4,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_BNDY_Utility Easement, ,0,0,0,0,NULL,1,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-EF2050-M-StructAbutGen, ,Prop Bridge Abutment,35,0,1,NULL,35,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-Ss3016-M-StructDeckSteelGen, ,PropSteel Bridge Beams,51,0,1,NULL,51,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-Pr2085-M-StructDeckBearingGen, ,Prop Bridge Bearings,37,0,1,NULL,37,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-Ss2005-M-StructPileCapGen, ,Prop Bridge Caps,62,0,1,NULL,62,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-EF2050-M-StructPierGen, ,Bridge Column,112,0,1,NULL,48,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-Ss3016-M-StructDeckConcGen, ,Proposed Misc. Concrete Bridge items,96,0,1,NULL,48,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-EF3070-M-StructDeckGen, ,Prop Bridge Deck,35,0,1,NULL,75,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-Ss2516-M-StructDeckParapetGen, ,0,0,0,0,NULL,36,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Road_Curb_Back, ,Road_Curb_Back,72,0,1,NULL,72,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Road_Curb_Edge, ,Road_Curb_Edge,72,0,1,NULL,72,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Road_Curb_Face, ,Road_Curb_Face,72,0,1,NULL,72,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Road_Curb_Flowline, ,Road_Curb_Flowline,72,0,1,NULL,72,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-En329523-M-DrainageDitchBotBack, ,Prop Ditch,66,4,1,NULL,18,4,2,NULL,0,0,1,0,0,1,,,,,,
+CD-En329523-M-DrainageDitchBotCent, ,Ditch Bottom Center,114,6,3,,114,6,3,NULL,0,0,1,0,0,1,,,,,,
+CD-En329523-M-DrainageDitchBotFront, ,Prop Ditch,66,4,1,NULL,18,4,2,NULL,0,0,1,0,0,1,,,,,,
+Default,0,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-En329523-M-DrainageDitchTopBack, ,Prop Ditch,66,4,1,NULL,18,4,2,NULL,0,0,1,0,0,1,,,,,,
+CD-En329523-M-DrainageDitchTopFront, ,Prop Ditch,66,4,1,NULL,18,4,2,NULL,0,0,1,0,0,1,,,,,,
+_Non_Uniclass_E_BNDY_City Limits, ,0,0,0,0,NULL,1,6,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Commencing Line, ,0,0,0,0,NULL,0,1,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_County Limits, ,0,0,0,0,NULL,0,6,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Drainage Easement, ,0,0,0,0,NULL,5,2,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Easement, ,0,0,0,0,NULL,9,2,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Environmental Line, ,0,0,0,0,NULL,130,3,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Fence Line, ,0,0,0,0,NULL,47,7,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Misc Boundary Line, ,0,0,0,0,NULL,10,2,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Property Line, ,0,0,0,0,NULL,7,2,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Property Remainder, ,0,0,0,0,NULL,98,2,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Property Take, ,0,0,0,0,NULL,6,2,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Range Line, ,0,0,0,0,NULL,15,5,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Section Line, ,0,0,0,0,NULL,103,4,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Setback, ,0,0,0,0,NULL,4,2,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_State Limits, ,0,0,0,0,NULL,3,6,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Stone Wall, ,0,0,0,0,NULL,64,7,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Township Line, ,0,0,0,0,NULL,2,5,1,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_E_BNDY_Utility Easement, ,0,0,0,0,NULL,1,2,1,NULL,0,0,1,0,0,1,0,0,0,,,
+VT-EF3070-M-ExStructDeckGen, ,Ex Bridge,9,0,1,NULL,48,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-En20-M-ExBuilding, ,E_Struc_Foundation,112,0,0,NULL,2,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Ss2005-M-ExBuildingFoundations, ,E_Struc_Foundation,112,0,0,NULL,2,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Zz3520-M-ExRoadCL, ,Ex Centerlines,99,7,1,NULL,35,7,3,NULL,0,0,1,0,0,1,,,,,,
+VT-EF8070-M-ExRailTrack, ,E_Rail_Track,147,0,1,NULL,67,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Ss307545-M-ExKerbBack, ,E_Road_Curb_Back,102,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Ss307545-M-ExKerb, ,E_Road_Curb,102,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Ss307545-M-ExKerbFace, ,Ex Curb,102,0,1,NULL,20,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Ss307545-M-ExKerbFlowline, ,E_Road_Curb_Flowline,103,4,0,NULL,39,4,0,NULL,0,0,1,0,0,1,,,,,,
+VT-En803574-M-ExPaveEdge, ,Ex Paved Road,161,0,1,NULL,31,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Ss401090-M-ExRdMkGen, ,E_Road_LaneEdge,54,3,0,NULL,52,3,1,NULL,0,0,1,0,0,1,,,,,,
+VT-Zz3560-M-ExPoint, ,E_Road_SamplePoint,132,7,1,NULL,68,7,1,NULL,0,0,1,0,0,1,,,,,,
+VT-En803574-M-ExPaveShoulder, ,E_Road_Shoulder,197,3,0,NULL,69,3,1,NULL,0,0,1,0,0,1,,,,,,
+VT-En8040-M-ExPathGen, ,Ex Sidewalk,101,3,0,NULL,37,3,0,NULL,0,0,1,0,0,1,,,,,,
+VT-En8040-M-ExPathBack, ,E_Road_Sidewalk_Back,101,3,0,NULL,37,3,0,NULL,0,0,1,0,0,1,,,,,,
+VT-En8040-M-ExPathFront, ,E_Road_Sidewalk_Front,101,3,0,NULL,101,3,0,NULL,0,0,1,0,0,1,,,,,,
+VT-Zz3580-M-ExObservartions, ,Observations,148,0,1,NULL,11,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Zz3580-M-ExSurveyControlPoints, ,E_Geom_SurveyControl,0,0,0,NULL,3,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Zz4020-M-ExTerrainBank, ,E_Terrain_Bank,67,0,0,NULL,67,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Zz4020-M-ExTerrainDitchBotBack, ,E_Terrain_DitchBottomWidth,49,0,1,NULL,31,4,1,NULL,0,0,1,0,0,1,0,0,0,,,
+VT-Zz4020-M-ExTerrainDitchBotFront, ,E_Terrain_DitchBottom,49,4,1,NULL,31,4,1,NULL,0,0,1,0,0,1,,,,,,
+VT-Zz4020-M-ExTerrainDitchTop, ,E_Terrain_DitchTop,49,4,1,NULL,31,4,1,NULL,0,0,1,0,0,1,,,,,,
+VT-Ss2514-M-ExFenceGen, ,Soil Borings,0,0,0,NULL,38,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Zz40-M-ExTerrainFlowline, ,E_Terrain_Flowline_Natural,49,4,1,NULL,31,4,2,NULL,0,0,1,0,0,1,,,,,,
+VT-Zz4020-M-ExTerrainPond, ,E_Terrain_Random,87,0,0,NULL,23,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Zz4020-M-ExTerrainRidgeline, ,E_Terrain_Ridgeline,64,0,0,NULL,32,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Zz4020-M-ExTerrainSlope, ,Ex Spot Elevations,87,0,0,NULL,39,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Zz40-M-ExTerrainTreeLine, ,E_Terrain_TreeLine,18,0,0,NULL,18,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+VT-Ss251694-M-ExVrsGen, ,Ex Guardrail,117,0,0,NULL,85,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss25146363-M-FencePostRail, ,0,RGB:33:33:33,0,3,NULL,RGB:33:33:33,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss25146734-M-FenceMesh, ,0,RGB:33:33:33,0,3,NULL,RGB:33:33:33,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss25146362-M-FencePanelled, ,0,RGB:33:33:33,0,3,NULL,RGB:33:33:33,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Fence_Wrought_Iron, ,0,RGB:33:33:33,0,3,NULL,RGB:33:33:33,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss25169416-M-VrsCable, ,Road_Cable Barrier,128,0,0,NULL,128,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss25169416-M-VrsCsbGen, ,Road_Jersey Barrier,14,0,3,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Road_Barrier, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss251694-M-VrsGen, ,Prop Guardrail,88,0,0,NULL,48,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Road_Guardrail, ,Prop Guardrail,88,0,0,NULL,48,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz203050-P-CadMask, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz9020-P-CadInfoConstruction, ,Phantom,45,0,0,NULL,37,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz604560-M-OpEwksOriginal, ,0,7,2,3,NULL,7,2,3,NULL,0,0,1,0,0,1,,,,,,
+CH-Zz351040-M-CivilCellControl, ,Geometry for Civil Cell Control,196,0,2,NULL,5,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz6055-P-CadMatchline, ,Matchline,0,2,3,NULL,0,2,3,NULL,500,0,1,0,0,1,,,,,,
+CH-En8040-M-DrivewayBack, ,Prop Drives,22,1,0,NULL,22,1,0,NULL,0,0,1,0,0,1,,,,,,
+CH-Zz3520-M-SawCutLine, ,Matchline,3,2,3,NULL,3,2,3,NULL,0,0,1,0,0,1,,,,,,
+_Non_Uniclass_Util_Profile_Run, ,0,0,0,0,NULL,0,0,0,NULL,-200,0,1,0,0,1,0,0,0,0,0,0
+CH-En803574-M-PaveEdge, ,Profile_EdgeOfPavement_L,81,0,1,NULL,7,0,2,NULL,499,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear, ,Prop Lanes,69,3,1,NULL,47,3,2,NULL,498,0,1,0,0,1,,,,,,
+CD-En329523-M-DitchProfileLeft, ,Profile_Special_Ditch_L,19,0,4,NULL,7,2,3,NULL,500,0,1,0,0,1,0,0,0,,,
+CD-En329523-M-DitchProfileRight, ,Profile_Special_Ditch_R,19,0,4,NULL,6,2,3,NULL,500,0,1,0,0,1,0,0,0,,,
+CH-En8040-M-ERoW, ,Ex Right of Way,162,3,1,NULL,162,3,1,NULL,0,0,1,0,0,1,,,,,,
+CH-En8040-M-ERoWCA, ,Ex Right of Way,162,3,1,NULL,162,3,1,NULL,0,0,1,0,0,1,,,,,,
+CH-En8040-M-E-RoWNA, ,Ex Right of Way,162,3,1,NULL,162,3,1,NULL,0,0,1,0,0,1,,,,,,
+CH-En8040-M-E-RoWPL, ,E_ROW_PropertyLine,0,0,0,NULL,6,7,2,NULL,0,0,1,0,0,1,0,0,0,,,
+CH-En8040-M-ERoWTA, ,Ex Right of Way,162,3,1,NULL,162,3,1,NULL,0,0,1,0,0,1,,,,,,
+CH-En8040-M-GeomRoW, ,Prop Right of Way,35,4,2,NULL,35,4,2,NULL,0,0,1,0,0,1,,,,,,
+CH-En8040-M-PRoWCA, ,Prop Right of Way,35,4,2,NULL,35,4,2,NULL,0,0,1,0,0,1,,,,,,
+CH-En8040-M-PRoWNA, ,Prop Right of Way,35,4,2,NULL,35,4,2,NULL,0,0,1,0,0,1,,,,,,
+CH-En8040-M-PRoWPL, ,Prop Right of Way,35,4,2,NULL,35,4,2,NULL,0,0,1,0,0,1,,,,,,
+CH-En8040-M-PRoWTA, ,Prop Right of Way,35,4,2,NULL,35,4,2,NULL,0,0,1,0,0,1,,,,,,
+CH-En8040-M-PRoWTE, ,Prop Right of Way,35,4,2,NULL,35,4,2,NULL,0,0,1,0,0,1,,,,,,
+CH-SL803536-M-RoadShoulder, ,Prop Shoulder,30,0,1,NULL,30,0,2,NULL,498,0,1,0,0,1,0,0,0,0,0,0
+CH-SL803536-M-RoadShoulderInside, ,Prop Shoulder,30,0,1,NULL,30,0,2,NULL,498,0,1,0,0,1,0,0,0,0,0,0
+CH-SL803536-M-RoadShoulderOutside, ,Prop Shoulder,30,0,1,NULL,30,0,2,NULL,498,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Road_Sidewalk, ,Prop Sidewalk,72,0,1,NULL,72,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Road_Sidewalk_Back, ,Prop Sidewalk,72,0,1,NULL,72,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Road_Sidewalk_Front, ,Prop Sidewalk,72,0,1,NULL,72,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz351080-M-SuperElev, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz8505-M-TerrainBreakline, ,DTM-Breaklines,128,2,0,NULL,32,2,0,NULL,0,0,1,0,0,1,,,,,,
+CH-Zz8505-M-TerrainExterior, ,DTM-Exterior Boundary,85,0,1,NULL,53,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz8505-M-TerrainInterior, ,DTM-Exterior Boundary,151,0,1,NULL,71,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+XX-TE70203088-M-TL15mRoadConsBar, ,Road_Construction Barrels,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+XX-TE70203088-M-TL30mRoadConsBar, ,Road_Construction Barrels,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+XX-Pr253086-M-ChannelizerCones12mSpacing, ,Road_Channelizer Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+XX-Pr253086-M-ChannelizerCones15mSpacing, ,Road_Channelizer Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+XX-Pr253086-M-ChannelizerCones18mSpacing, ,Road_Channelizer Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+XX-Pr253086-M-ChannelizerCones3mSpacing, ,Road_Channelizer Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+XX-Pr253086-M-ChannelizerCones6mSpacing, ,Road_Channelizer Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+XX-Pr253086-M-ChannelizerCones9mSpacing, ,Road_Channelizer Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+XX-Pr40107789-M-TmCones12mSpacing, ,Road_Traffic Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+XX-Pr40107789-M-TmCones15mSpacing, ,Road_Traffic Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+XX-Pr40107789-M-TmCones18mSpacing, ,Road_Traffic Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+XX-Pr40107789-M-TmCones3mSpacing, ,Road_Traffic Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+XX-Pr40107789-M-TmCones6mSpacing, ,Road_Traffic Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+XX-Pr40107789-M-TmCones9mSpacing, ,Road_Traffic Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107737-M-ReflectorPostOrange, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107737-M-ReflectorPostRed, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107737-M-ReflectorPostWhite, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-EF2510-M-StructWall, ,Prop Walls,0,0,0,NULL,4,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-EF2510-M-StructWallBottom, ,Prop Walls,9,0,1,NULL,9,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-EF2510-M-StructWallCoping, ,Struc_WallCoping,9,0,1,NULL,9,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-EF2510-M-StructWallFooting, ,Prop Walls,9,0,1,NULL,9,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-EF2510-M-StructWallPerch, ,Prop Walls,9,0,1,NULL,9,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-EF2510-M-StructWallTop, ,Prop Walls,9,0,1,NULL,9,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-PM303023-M-DrainAquaPlaningSurface, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Drain_Aquaplaning Acceptable Risk, ,0,0,0,0,NULL,1,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-PM303023M-DrainAquaPlaningFlowline, ,0,0,0,0,NULL,39,6,2,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_Drain_Aquaplaning High Risk, ,0,0,0,0,NULL,6,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Drain_Aquaplaning Low Risk, ,0,0,0,0,NULL,2,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Drain_Aquaplaning Unacceptable Risk, ,0,0,0,0,NULL,3,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Pr203104-M-AggregateTypA, ,Aggregate,64,0,2,,64,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Pr203104-M-AggregateTypAExt, ,Aggregate,64,0,2,,64,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Pr203104-M-AggregateTypB, ,Aggregate,64,0,2,,64,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Pr203104-M-AggregateTypC, ,Aggregate,64,0,2,,64,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Pr203104-M-AggregateTypD, ,Aggregate,64,0,2,,64,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-En328510-M-Riprap, ,Aggregate,64,0,2,,64,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ac304055-M-TCAsphaltMilling, ,Asphalt Concrete,8,0,2,,8,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-Pr35310503-M-AsphaltConcreteBase, ,Asphalt Concrete,8,0,2,,8,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-Pr35310504-M-TCAsphaltinterCse, ,Asphalt Concrete,8,0,2,,8,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-Ss301405-M-TCAsphalwearingCse, ,Asphalt Concrete,8,0,2,,8,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-Pr2593-M-ConcreteChannel, ,Paved Ditches,14,0,2,,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr203116-M-TCConcreteMisc, ,Conc Misc,14,0,2,,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss25169416-M-TCConcreteBarrier, ,Concrete Barrier,14,0,2,,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-EF3060-M-TCConcretePavement, ,Concrete Pavement,9,0,2,,9,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss307545-M-TCKerb, ,Curb and or Gutter,14,0,2,,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss307545-M-TCKerbGutter, ,Curb and or Gutter,14,0,2,,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-En804030-M-TCFootpath, ,Sidewalk,14,0,2,,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-EF3060-M-TCExistingPavement, ,Existing Pavement,80,0,1,,179,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_TC_Limestone, ,Limestone Surface,80,0,1,,RGB:255:254:227,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_TC_Rock, ,Rock Surface,80,0,1,,80,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_TC_Sandstone, ,Sandstone Surface,80,0,1,,RGB:255:219:176,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss15103025-M-TCUnsuitMaterials, ,Unsuitable Material,80,0,1,,158,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss151075-M-EwksSiteClearance, ,Grass,114,0,2,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-En324020-M-EwksCutGen, ,Grass,114,0,2,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-En324020-M-EwksCutBerm, ,Grass,114,0,2,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-SL803536-M-TCEarthShoulder, ,Earth Shoulder,14,0,2,,70,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-En329523-M-TCGrassDitch, ,Grass,114,0,2,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-En329523-M-TCGrassDitchBack, ,Grass,114,0,2,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-En329523-M-TCGrassDitchBottom, ,Grass,114,0,2,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-En329523-M-TCGrassDitchForeslope, ,Grass,114,0,2,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-En324026-M-EwksFillGen, ,Grass,114,0,2,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-SL328003-M-TCGrass, ,Grass,114,0,2,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-SL328003-M-TCGrassBerm, ,Grass,114,0,2,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-SL328003-M-TCGrassBurnt, ,Grass,114,0,2,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-SL328003-M-TCGrassTieslope, ,Grass,114,0,2,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr15312690-M-TCTopsoil, ,Topsoil,198,0,2,,198,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss251694-M-TCGuardrailPost, ,Guardrail Post,48,0,1,,48,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-En8094-M-Bridge, ,Bridge,14,0,2,,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-EF2050-M-BridgeAbutment, ,Bridge Abutment,14,0,2,,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-En8094-M-BridgeGirder, ,Bridge Girder,14,0,2,,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-Ss206030-M-RetainingWallCut, ,Retaining Wall Cut,14,0,2,,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-Ss206030-M-RetainingWallFill, ,Retaining Wall Fill,14,0,2,,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_TC_Structural Concrete, ,Conc Misc,102,0,2,,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-Ss2060-M-DRTCStructuralFill, ,Structural Fill,102,0,2,,102,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Ss50300885-M-TCWater, ,Grass,114,0,2,,71,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz401550-M-TerrainContourMajor, ,Prop Major Contours,10,0,1,NULL,10,0,10,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz401555-M-TerrainContourMinor, ,Prop Minor Contours,69,0,1,NULL,36,0,5,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz351040-M-Corridor, ,Design-Civil-Corridor Graphics,4,0,3,NULL,4,0,3,NULL,100,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz351040-M-TemplateRange, ,Design-Civil-Template Range Graphics-Design,69,3,1,NULL,37,3,2,NULL,99,0,1,0,0,1,,,,,,
+CH-Zz351040-M-PointControl, ,0,30,2,3,NULL,30,2,3,NULL,500,0,1,0,0,1,,,,,,
+CH-Zz351040-M-BottomMesh, ,Prop Subgrade,110,0,1,NULL,38,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz351040-M-TopMesh, ,Finished Grade,79,0,1,NULL,47,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz351040-M-IntersectingProfile, ,Intersecting Profile,5,0,10,NULL,5,0,10,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz351040-M-XSLabel, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss25169416-M-XSVrsCable, ,Road_Cable Barrier,128,0,0,NULL,128,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-TE203030-M-DNGuardrailL, ,Prop Guardrail,88,0,0,NULL,48,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-TE203030-M-DNGuardrailsR, ,Prop Guardrail,88,0,0,NULL,48,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-TE203030-M-DNGuardrailsDoubleSided, ,Prop Guardrail,88,0,0,NULL,48,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-EF2555-M-Barrier, ,Road_Jersey Barrier,14,0,3,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-EF2555-M-BarrierWithScreen, ,Road_Jersey Barrier,14,0,3,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss1510-M-DynamicViewLabelsErow, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz3560-M-DraftXSDynamicViewLabelsEROWCA, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz3560-M-DraftXSDynamicViewLabelsEROWNA, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz3560-M-DraftXSDynamicViewLabelsEROWTA, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz3560-M-DraftXSDynamicViewLabelsPROW, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz3560-M-DraftXSDynamicViewLabelsPROWCA, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz3560-M-DraftXSDynamicViewLabelsPROWNA, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz3560-M-DraftXSDynamicViewLabelsPROWPE, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz3560-M-DraftXSDynamicViewLabelsPROWTA, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz3560-M-DraftXSDynamicViewLabelsPROWTE, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Draft_Named_Boundary, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz9020-P-DraftSightAchieved, ,0,0,0,0,NULL,2,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz9020-P-DraftSightNotAchieved, ,0,0,0,0,NULL,3,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz9020-P-DraftSightRelaxed, ,0,0,0,0,NULL,4,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-EF2555-M-TLBarrier, ,Concrete Barrier Top,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-EF2555-M-TLBarrierSub, ,Concrete Barrier Subgrade,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-EF2555-M-TLMedianBarrier, ,Median Barrier Top Point,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-EF2555-M-TLMedianBarrierSub, ,Median Barrier Toe Point,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-En329514-M-TLChannel, ,Concrete Channel Top,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_TL_Curb, ,Curb Flowline,14,0,2,NULL,168,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_TL_Curb Flowline, ,Curb Flowline,14,0,2,NULL,168,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_TL_Curb Sub, ,Bottom Back of Curb,14,0,2,NULL,168,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_TL_Road_Wrought Iron Fence, ,Road_Rod Iron Fence,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-EN329523-M-TLDrainageDitchCTR, ,Ditch Center,114,6,3,,114,6,3,NULL,0,0,1,0,0,1,,,,,,
+CD-EN329523-M-TLDrainageDitchFL, ,Ditch Flowline,114,6,3,,114,6,3,NULL,0,0,1,0,0,1,,,,,,
+CH-Ss1510-M-TLEndCondBermIn, ,End Condition Berm Inside Edge,114,0,2,NULL,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss1510-M-TLEndCondBermOut, ,End Condition Berm Outside Edge,114,0,2,NULL,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss1510-M-TLEndCondBermClearzone, ,End Condition Clearzone Hinge,114,0,2,NULL,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss1510-M-TLEndCondBermCutTie, ,End Condition Ditch Cut Tie,114,0,2,NULL,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss1510-M-TLEndCondBermDitchIn, ,End Condition Ditch Inside Edge,114,0,2,NULL,114,4,3,NULL,0,0,1,0,0,1,0,0,0,,,
+CH-Ss1510-M-TLEndCondBermDitchOut, ,End Condition Ditch Outside Edge,114,0,2,NULL,114,4,3,NULL,0,0,1,0,0,1,0,0,0,,,
+CH-Ss1510-M-TLEndCondBermFillTie, ,End Condition Ditch Fill Tie,114,0,2,NULL,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-SL803581-M-VergeGen, ,End Condition Hinge,114,0,2,NULL,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+GI-SL328003-M-TLGreenspaceIn, ,Grading Greenspace Outside Edge,114,0,2,NULL,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+GI-SL328003-M-TLGreenspaceOut, ,Grading Greenspace Outside Edge,114,0,2,NULL,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss1510-M-TLMedFLCentre, ,Median Flowline Center,114,0,2,NULL,114,4,3,NULL,0,0,1,0,0,1,0,0,0,,,
+CH-Ss1510-M-TLMedFLLeft, ,Median Flowline Left Side,114,0,2,NULL,114,4,3,NULL,0,0,1,0,0,1,0,0,0,,,
+CH-Ss1510-M-TLMedFLRight, ,Median Flowline Right Side,114,0,2,NULL,114,4,3,NULL,0,0,1,0,0,1,0,0,0,,,
+CH-EF2555-M-TLBarrierCable, ,Road_Cable Barrier,128,0,0,NULL,128,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_TL_Road_Cable Barrier, ,Road_Cable Barrier,128,0,0,NULL,128,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-EF2555-M-TLBarrierJersey, ,Road_Jersey Barrier,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_TL_Road_Jersey Barrier, ,Road_Jersey Barrier,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-EF2555-M-TLBarrierJerseyScreen, ,Road_Jersey Barrier,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_TL_Road_Barrier, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-TE203030-M-DNTLGuardrailDoubleSideVer1, ,Prop Guardrail,0,0,0,NULL,88,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_TL_Road_Guardrail, ,Prop Guardrail,0,0,0,NULL,88,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-TE203030-M-DNTLGuardrailDoubleSideVer2, ,Prop Guardrail,0,0,0,NULL,88,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-TE203030-M-DNTLGuardrailSingleSideL, ,Prop Guardrail,0,0,0,NULL,88,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-TE203030-M-DNTLGuardrailSingleSideM, ,Prop Guardrail,0,0,0,NULL,88,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-EF2555-M-TLMedianRaised, ,Raised Median Strip Bot,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-EN329523-M-TLPavedDrainageDitch, ,Paved Ditch Inside Top,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-EN329523-M-TLBaseExtensionSub, ,Base Course Extension Bottom,9,0,2,NULL,168,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+TR-Zz3520-M-TLPavementCentreline, ,Pavt CL Top,3,0,2,NULL,3,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+TR-Zz3520-M-TLExistingPavementCentreline, ,Pavt CL Exist,3,2,1,NULL,3,2,1,NULL,0,0,1,0,0,1,,,,,,
+TR-Zz3520-M-TLPavementCentrelineSub, ,Pavt CL Bottom of Sublayer,3,0,2,NULL,3,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ac304055-M-TLMillingEdge, ,Edge of Milling,86,3,1,NULL,86,3,2,NULL,0,0,1,0,0,1,,,,,,
+CH-EF3060-M-TLPavementEdge, ,Edge of Pavt Top,9,0,2,NULL,168,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-EF3060-M-TLPavementEdgeExist, ,Edge of Pavement Exist,9,2,1,NULL,168,2,1,NULL,0,0,1,0,0,1,,,,,,
+CH-EF3060-M-TLPavementEdgeSub, ,Edge of Pavt Bottom of Sublayer,9,0,2,NULL,168,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-EF3060-M-TLPavementWidening, ,Edge of Widening Top,9,0,2,NULL,168,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-EF3060-M-TLPavementWideningSub, ,Edge of Widening Bottom of Sublayer,9,0,2,NULL,168,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-SL803545-M-TLLaneLine, ,Lane Line A Top,9,0,1,NULL,168,3,2,NULL,0,0,1,0,0,1,0,0,0,,,
+CH-SL803545-M-TLLaneLineSub, ,Lane Line A Bottom of Sublayer,9,0,1,NULL,168,3,2,NULL,0,0,1,0,0,1,0,0,0,,,
+CH-Pr35318590-M-RdMkLinearWhiteSkipDash3m-9m, ,Pavement Marking White,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear80mmYellowSkipDash3m-9m, ,Pavement Marking Yellow,20,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinearWhite80mmSkipDash, ,Pavement Marking White,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear80mmWhiteDoubleSolid, ,Pavement Marking White,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear80mmyellowdoublesolid, ,Pavement Marking Yellow,20,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear100mmWhiteSkipDash2m-4m, ,Pavement Marking White,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear100mmWhiteSkipDash3m-6m, ,Pavement Marking White,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear100mmWhiteSkipDash3m-9m, ,Pavement Marking White,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear100mmWhiteSkipDash9m-3m, ,Pavement Marking White,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear150mmWhiteSkipDash2m-4m, ,Pavement Marking White,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear150mmwWhiteskipDash3m-6m, ,Pavement Marking White,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear200mmWhiteSkipDash1m-3m, ,Pavement Marking White,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear100mmYellowSkipDash2m-4m, ,Pavement Marking Yellow,20,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear100mmYellowSkipDash3m-6m, ,Pavement Marking Yellow,20,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear100mmYellowSkipDash3m-9m, ,Pavement Marking Yellow,20,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear100mmYellowSkipDash9m-3m, ,Pavement Marking Yellow,20,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear300mmYellowSkipDash9m-3m, ,Pavement Marking Yellow,20,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear300mmYellowSkipDash2m-4m, ,Pavement Marking Yellow,20,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear300mmYellowSkipDash3m-6m, ,Pavement Marking Yellow,20,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear100mmSolidWhite, ,Pavement Marking White,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear150mmSolidWhite, ,Pavement Marking White,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear300mmSolidWhite, ,Pavement Marking White,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear80mmSolidWhite, ,Pavement Marking White,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear100mmSolidYellow, ,Pavement Marking Yellow,20,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear150mmSolidYellow, ,Pavement Marking Yellow,20,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear300mmSolidYellow, ,Pavement Marking Yellow,20,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr35318590-M-RdMkLinear80mmSolidYellow, ,Pavement Marking Yellow,20,0,0,NULL,20,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Co3265-M-TLPondBermIn, ,Pond Berm Inside,114,0,3,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Co3265-M-TLPondBermout, ,Pond Berm Outside,114,0,3,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Co3265-M-TLPondBottom, ,Pond Bottom,114,0,3,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Co3265-M-TLPondElevation, ,Pond Elevation,114,0,3,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Co3265-M-TLPondFreeboard, ,Pond Freeboard,114,0,3,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Co3265-M-TLPondTop, ,Pond Top,114,0,3,,114,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss1510-M-TLEarthshoulder, ,Earth Shoulder Top,102,0,2,NULL,102,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss1510-M-TLEarthshouldersub, ,Earth Shoulder Bottom Sublayer,102,0,2,NULL,102,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-SL803536-M-TLShoulderEdge, ,Edge of Shld Top,128,0,2,NULL,168,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-SL803536-M-TLShoulderEdgeSub, ,Edge of Shld Bottom of Sublayer,128,0,2,NULL,168,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-SL803536-M-TLShoulderEdgeExist, ,Edge of Shoulder Exist,128,2,1,NULL,168,2,1,NULL,0,0,1,0,0,1,,,,,,
+_Non_Uniclass_TL_Sidewalk, ,Sidewalk Top,14,0,2,NULL,168,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_TL_Sidewalk Sub, ,Sidewalk Bottom Sublayer,14,0,2,NULL,168,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-En8094-M-TLBridge, ,Concrete Bridge Top,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CB-En8094-M-TLBridgeSub, ,Concrete Bridge Subgrade,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss30161008-M-TLGirder, ,Concrete Bridge Girder,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-Ss206030-M-TLRetainingWall, ,Retaining Wall Finished Grade,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-Ss206030-M-TLRetainingWallSub, ,Retaining Wall Subgrade,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-TE70203088-M-TL15mRoadConsBar, ,Road_Construction Barrels,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-TE70203088-M-TL30mRoadConsBar, ,Road_Construction Barrels,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107789-M-TLConeChannel12m, ,Road_Channelizer Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107789-M-TLConeChannel15m, ,Road_Channelizer Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107789-M-TLConeChannel18m, ,Road_Channelizer Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107789-M-TLConeChannel3m, ,Road_Channelizer Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107789-M-TLConeChannel6m, ,Road_Channelizer Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107789-M-TLConeChannel9m, ,Road_Channelizer Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107789-M-TLConeTraffic12m, ,Road_Traffic Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107789-M-TLConeTraffic15m, ,Road_Traffic Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107789-M-TLConeTraffic18m, ,Road_Traffic Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107789-M-TLConeTraffic3m, ,Road_Traffic Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107789-M-TLConeTraffic6m, ,Road_Traffic Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107789-M-TLConeTraffic9m, ,Road_Traffic Cones,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss259585-M-TLReflectorPostsOrange, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss259585-M-TLReflectorPostsRed, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss259585-M-TLReflectorPostsWhite, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-En3240-M-TLTrenchAggregate, ,Trench Aggregate,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-En324090-M-TLTrenchBase, ,Trench Base,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-En324090-M-TLTrenchInvert, ,Trench Invert,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-En324090-M-TLTrenchOrigin, ,Trench Origin,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Ss371690-M-TLTrenchPipe, ,Trench Pipe,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-En324090-M-TLTrenchSoffit, ,Trench Soffit,14,0,2,NULL,14,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Ss50300885-M-DrainageLowPoint, ,0,0,0,0,NULL,3,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CU-Co326564-M-DrainPond, ,0,0,0,0,NULL,7,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CU-Co326564-M-DrainTrace, ,0,0,0,0,NULL,5,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_MON_Half Section Corner, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_MON_Iron Pin Found, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_MON_Iron Pipe Found, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_MON_Mag Nail Found, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_MON_Property Corner, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_MON_Quarter Section Corner, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_MON_Rail Spike Found, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_MON_Section Corner, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_MON_Stone Monument Found, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-En8040-M-ERoWGeomPropCorner, ,E_Geom_PropertyCorner,98,0,0,NULL,66,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-En8040-M-ERoWPin, ,E_ROW_Pin,102,0,1,NULL,70,0,1,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-En8040-M-ERoWPropCorner, ,E_ROW_PropertyCorner,102,7,1,NULL,70,7,2,NULL,0,0,1,0,0,1,,,,,,
+CH-En8040-M-ERoWSamplePoint, ,E_Road_SamplePoint,132,7,1,NULL,68,7,1,NULL,0,0,1,0,0,1,,,,,,
+CE-Pr207664-M-EStructPost, ,E_Struc_Post,54,0,0,NULL,54,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-Ss15951510-M-ETerrainBorehole, ,Soil Borings,86,0,0,NULL,38,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-Zz8505-M-ERandomTerrain, ,E_Terrain_Random,87,0,0,NULL,23,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CE-Ac157560-M-ETerrainSpotElevation, ,Ex Spot Elevations,23,0,0,NULL,7,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+EN-Pr453090-M-ETreeTerrain, ,Ex Trees,18,{ Tree Line },0,NULL,18,{ Tree Line },0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+EO-Ss70802570-M-ELightPole, ,E_Traf_LightPole,46,0,0,NULL,46,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107772-M-ETrafficSign, ,Ex Signs,35,0,0,NULL,35,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr70757289-M-ETrafficSignal, ,E_Traf_Signal,35,0,0,NULL,35,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Ss50308241-M-EInletUtilitiesMisc, ,Utility - Existing Misc,0,0,0,NULL,40,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40105750-M-EUtilPole, ,E_Util_Pole,62,0,0,NULL,62,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Road_Cable Barrier, ,Road_Cable Barrier,128,0,0,NULL,128,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_MON_Calc Point, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_MON_Control, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_MON_Control Horizontal, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_MON_Control Vertical, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_MON_Iron Pin Set, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_MON_Iron Pipe Set, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_MON_Mag Nail Set, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_MON_Property Corner, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_MON_Property Point, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_MON_Rail Spike Set, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_MON_Stone Monument Set, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_MON_Traverse Point, ,0,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-En8040-M-GeoControl, ,Survey Control,196,0,2,NULL,36,0,3,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-En8040-M-ProposedGeomRoW, ,Prop Right of Way,35,4,2,NULL,35,4,2,NULL,0,0,1,0,0,1,,,,,,
+_Non_Uniclass_Road_Sign, ,0,3,0,2,NULL,3,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr40107772-M-RoadSign, ,0,3,0,2,NULL,3,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+ZL-Zz5010-M-CdBdryExist, ,E_Terrain_Exterior,130,3,1,NULL,82,3,1,NULL,0,0,1,0,0,1,,,,,,
+Z-Zz4015-M-TerrainContoursExist, ,E_Terrain_Contours,130,3,0,NULL,130,3,0,NULL,0,0,1,0,0,1,,,,,,
+Z-Zz4015-M-ContoursTrainaglesExist, ,E_Terrain_Contours,130,3,0,NULL,130,3,0,NULL,0,0,1,0,0,1,,,,,,
+Z-Zz8515-M-SurveyExist, ,E_Terrain_Survey,48,0,0,NULL,48,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz4015-M-ThematicHeightExist, ,Ex Ground,0,0,0,NULL,130,3,0,NULL,0,0,1,0,0,1,0,0,0,,,
+Z-Zz4015-M-ThematicSlopeExist, ,Ex Ground,0,0,0,NULL,130,3,0,NULL,0,0,1,0,0,1,0,0,0,,,
+Z-Zz8515-M-ExistingTriangleExist, ,Ex Ground,0,0,0,NULL,130,3,0,NULL,0,0,1,0,0,1,0,0,0,,,
+ZL-Zz501070-M-BdryProposed, ,DTM-Exterior Boundary,85,0,1,NULL,53,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CW-TE7010-M-SitePad, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz4015-M-Contours, ,Prop Ground,87,0,1,NULL,55,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz4015-PContoursTriangles, ,Prop Ground,87,0,1,NULL,55,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz4015-M-ThematicHeight, ,Prop Ground,87,0,1,NULL,55,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+SL-EF4520-M-GrassArea, ,Grade_Veg_Grass,50,0,1,NULL,50,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz4015-M-DrainageCountours, ,Prop Ground,87,0,1,NULL,55,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz4015-M-ThematicSlope, ,Prop Ground,87,0,1,NULL,55,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz8505-M-Triangles, ,Prop Ground,87,0,1,NULL,55,0,2,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Pr-TE7010-M-TempConstruction, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_Terrain_Unsuitable_Exterior, ,E_Terrain_Exterior,130,3,1,NULL,5,3,1,NULL,0,0,1,0,0,1,,,,,,
+CE-En324020-M-VolumesCut, ,0,1,3,2,NULL,3,3,2,NULL,0,0,1,0,0,1,,,,,,
+CH-PR15312646-M-VolumesFill, ,0,3,0,4,NULL,1,0,4,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Volumes_Limestone Excavated, ,0,1,3,2,NULL,188,2,2,NULL,0,0,1,0,0,1,,,,,,
+_Non_Uniclass_Volumes_Rock Excavated, ,0,1,3,2,NULL,176,2,2,NULL,0,0,1,0,0,1,,,,,,
+_Non_Uniclass_Volumes_Sandstone Excavated, ,0,1,3,2,NULL,158,2,2,NULL,0,0,1,0,0,1,,,,,,
+_Non_Uniclass_Volumes_Unsuitable_Remove Only, ,0,0,0,0,NULL,4,2,2,NULL,0,0,1,0,0,1,0,0,0,,,
+_Non_Uniclass_Volumes_Unsuitable_Remove Replace, ,0,0,0,0,NULL,7,5,2,NULL,0,0,1,0,0,1,0,0,0,,,
+CH-Ss307545-M-KerbBack, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss307545-M-KerbEdge, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss307545-M-KerbFace, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Ss307545-M-KerbFlowline, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz4020-M-EwksSlopeIndicators, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-En3240-M-EwksLimit, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr259345-M-TLKerbFlow, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr259345-M-TLKerbFlowline, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Pr259345-M-TLKerbSub, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-SL5030-M-DesignDrainageCatchment, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-SL5030-M-DesignDrainageCatchment3D, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_z - Construction, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Communications_Nodes_3D, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Communications_Nodes, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+EC-SL751088-M-TechSiteGen, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+EC-Pr65701293-M-TechDuctGen3D, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+EC-Pr65701293-M-TechDuctGen, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+Z-Zz1040-M-CadHoldCloud, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Misc, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Electric_Nodes_3D, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Electric_Nodes, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Electric_Conduits_3D, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Electric_Conduits, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Gas_Conduits_3D, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Gas_Conduits, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Gas_Nodes_3D, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Gas_Nodes, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Storm_Areas_3D, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Storm_Areas, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Storm_Conduits_3D, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Storm_Conduits, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Storm_Nodes_3D, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Ss50300885-M-DrainageGen, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Storm_Nodes, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Sanitary_Conduits_3D, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Sanitary_Conduits, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Water_Conduits_3D, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Water_Conduits, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Water_Nodes_3D, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Water_Nodes, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Pr25936014-M-DrainageChanGen, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Pr209337-M-DrainageHeadwall, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Ss50300618-M-DrainageCatchpit, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Pr65522418-M-DrainageGully, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Ss503006-M-DrainageChamber, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Ss50700595-M-DrainageOutfallGen, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Pr209337-M-DrainageOufallHeadwall, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Ss50708572-M-DrainagePond, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Util_Sanitary_Nodes_3D, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz351040-M-TemplateTemplateDrop, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz351040-M-TemplateTransition, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz351040-M-EndCondExcp, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz351040-M-KeyStation, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz351040-M-SecondaryAlignment, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz351080-M-SuperElevLeft, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CH-Zz351080-M-SuperElevRight, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Boundary_LOD, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+WM-TE7010-M-SiteBuilding, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Curb_Back, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Curb_EOP, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Curb_Face, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Driveway_CL, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Driveway_Connection, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_EOP, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CW-Ss1510-M-SiteGrading, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Grading_Borrow, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Grading_Constraint_Area, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Grading_Constraint_Direction, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Grading_Fill, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CW-SL323546-M-SiteLawn, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Median, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CW-TE7010-M-Pad, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Pad_Other, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Parcel, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CW-SL804559-M-SiteParking, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Parking_Area, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Parking_Island, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Parking_Lot, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Parking_OnSide, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Parking_Space, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Path, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Pavement_Area, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Co3265-M-SitePond, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Co3265-M-SitePondBerm, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Co3265-M-SitePondBottom, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Co3265-M-SitePondElevation, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Co3265-M-SitePondFreeboard, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CD-Co3265-M-SitePondTop, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Setback_Building, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Setback_Parcel, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Setback_Parking, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Sidewalk, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CW-Ss1510-M-SiteGradingTemp, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+CW-SL309084-M-Siteyard, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Parking_Aisle_Point, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Parking_Bay_Point, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Parking_Island_Point, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Site_Parking_Space_Point, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Draft_Survey Field Code, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Draft_Survey Topo Label, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Draft_Survey Point Description, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Draft_Survey Point Elevation, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Draft_Survey Point Name, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Survey_Control Points, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Survey_Observations, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Survey_Setups, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_Survey_Traverse, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_Surv, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_Drng, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_Lnsc, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_Misc, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_Rail, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_Road, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_Strc, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_Brdg, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_Topo, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_Traf, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+_Non_Uniclass_E_Util, ,,0,0,0,NULL,0,0,0,NULL,0,0,1,0,0,1,0,0,0,0,0,0
+,,,,,,,,,,,,,,,,,,,,,,
+%SECTION,level-filter,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+filter-name,filter-parent,level-group,filter-compose,level-name,level-code,level-description,level-color,level-style,level-weight,level-material,level-element-color,level-element-style,level-element-weight,level-element-material,level-display,level-frozen,level-priority,level-plot,level-used,level-transparency,level-element-access,
