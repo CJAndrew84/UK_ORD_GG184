@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataGroupSystem>
+	<Version major="1" minor="0"/>
+	<ValidationReport>
+		<DateTime>Saturday, March 19, 2022 - 10:15:07 PM</DateTime>
+		<SystemChecks>
+			<ValidationCheck checkType="SYSTEM" description="Checking for required configuration variables">
+				<Detail status="SUCCESS" description="DG_PATH exists"/>
+				<Detail status="SUCCESS" description="DG_CATALOGS_PATH exists"/>
+				<Detail status="SUCCESS" description="DG_SCHEDULE_LAYOUT_PATH exists"/>
+				<Result status="SUCCESS" description="All required configuration variables exist"/>
+			</ValidationCheck>
+			<ValidationCheck checkType="SYSTEM" description="Checking that all DataGroupSystem configuration variables have uniquely defined directories">
+				<Detail status="SUCCESS" description="DG_PATH configuration variable is valid"/>
+				<Detail status="SUCCESS" description="DG_CATALOGS_PATH configuration variable is valid"/>
+				<Detail status="SUCCESS" description="DG_SCHEDULE_LAYOUT_PATH configuration variable is valid"/>
+				<Result status="SUCCESS" description="All configuration variables are valid"/>
+			</ValidationCheck>
+			<ValidationCheck checkType="SYSTEM" description="Checking that all DataGroupSystem configuration variables point to existing directories">
+				<Detail status="SUCCESS" description="DG_PATH: C:\Program Files\Bentley\OpenBuildings CONNECT Edition\OpenBuildingsDesigner\DataGroupSystem directory exists"/>
+				<Result status="SUCCESS" description="All configuration variables point to existing directories"/>
+			</ValidationCheck>
+			<ValidationCheck checkType="SYSTEM" description="Checking that all Catalog Types are unique">
+				<Result status="SUCCESS" description="All Catalog Types are unique"/>
+			</ValidationCheck>
+			<ValidationCheck checkType="SYSTEM" description="Checking that all Catalog Items are unique">
+				<Result status="SUCCESS" description="All Catalog Items are unique"/>
+			</ValidationCheck>
+			<ValidationCheck checkType="SYSTEM" description="Checking that all Catalog Types reference at least one Definition">
+				<Detail status="SUCCESS" description="Catalog Type 'Door' references 4 Definition(s): 'ArchDoor, ObjectIdentity, ObjectManufacturer, ObjectPhasing'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Window' references 4 Definition(s): 'ArchWindow, ObjectIdentity, ObjectManufacturer, ObjectPhasing'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Casework' references 5 Definition(s): 'Casework, Casework_Common, ObjectManufacturer, ObjectIdentity, ObjectPhasing'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Building' references 3 Definition(s): 'ArchBuilding, ObjectPostalAddress, ObjectIdentity'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CompoundSlab' references 9 Definition(s): 'CompoundSlab_Application, ObjectStructuralUsage, ObjectThermalTransmittance, ObjectIdentity, ObjectAcoustics, ObjectFireResistance, ObjectPhasing, ObjectSpaceBounding, SlabQuantities'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CurtainWallFrame' references 2 Definition(s): 'CurtainWallSystem_Frame, CurtainWallSystem_FrameQuantities'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CurtainWallSystem' references 12 Definition(s): 'CurtainWall_Application, CurtainWall_Common, ObjectIdentity, ObjectSpaceBounding, CurtainWall_Panel, CurtainWall_Frame_Horizontal, CurtainWall_Frame_Vertical, CurtainWall_Frame_Jamb, CurtainWall_Frame_Head, CurtainWall_Frame_Sill, CurtainWall_Frame_Corner, ObjectMaterial'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CurtainWallPanel' references 2 Definition(s): 'CurtainWallSystem_Panel, CurtainWallSystem_PanelQuantities'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Floor' references 3 Definition(s): 'ArchFloor, ObjectDiscipline, StructuralFloorCommon'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Profile' references 5 Definition(s): 'Profile_Common, ProfileQuantities, ObjectManufacturer, ObjectIdentity, ObjectMaterial'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Project' references 2 Definition(s): 'Project, ObjectIdentity'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Railing' references 4 Definition(s): 'Railing_Application, RailingQuantities, ObjectIdentity, ObjectPhasing'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Roof' references 10 Definition(s): 'Roof_Common, RoofQuantities, ObjectStructuralUsage, ObjectMaterial, ObjectThermalTransmittance, ObjectIdentity, ObjectAcoustics, ObjectFireResistance, ObjectPhasing, ObjectSpaceBounding'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Site' references 3 Definition(s): 'Site, ObjectIdentity, ObjectPostalAddress'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Slab' references 10 Definition(s): 'Slab_Common, ObjectStructuralUsage, ObjectMaterial, ObjectThermalTransmittance, ObjectIdentity, ObjectAcoustics, ObjectFireResistance, ObjectPhasing, ObjectSpaceBounding, SlabQuantities'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Space' references 3 Definition(s): 'ArchSpace, ObjectMaterial, SpaceEnergyAnalysis'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Stair' references 9 Definition(s): 'Stair_Application, Stair_Common, Stair_WalklineData, Stair_Spiral, ObjectIdentity, ObjectThermalTransmittance, ObjectAccessibility, ObjectPhasing, StairQuantities'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Wall' references 11 Definition(s): 'Wall_Application, Wall_Common, ObjectStructuralUsage, ObjectMaterial, ObjectThermalTransmittance, ObjectIdentity, ObjectAcoustics, ObjectFireResistance, ObjectPhasing, ObjectSpaceBounding, WallQuantities'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'WallLeaf' references 4 Definition(s): 'Wall_Application, Wallleaf_Common, ObjectMaterial, WallQuantities'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Aluminum Beam' references 11 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireproofing, ObjectFireproofingQuantities, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralBehaviorSteel'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Aluminum Column' references 12 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireproofing, ObjectFireproofingQuantities, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralLocation, StructuralBehaviorSteel'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Concrete Beam' references 9 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralBehaviorConcrete'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Concrete Column' references 11 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, ObjectSpaceBounding, StructuralQuantities, StructuralLocation, StructuralBehaviorConcrete'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Concrete Pier' references 10 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralLocation, StructuralBehaviorConcrete'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Concrete Pile' references 10 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralLocation, StructuralBehaviorConcrete'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Fireproofing Type' references 1 Definition(s): 'FireproofingType'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Mat Foundation' references 4 Definition(s): 'StructuralFoundationCommon, ObjectMaterial, ObjectIdentity, ObjectPhasing'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Pile Cap' references 4 Definition(s): 'StructuralFoundationCommon, ObjectMaterial, ObjectIdentity, ObjectPhasing'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Spread Footing' references 4 Definition(s): 'StructuralFoundationCommon, ObjectMaterial, ObjectIdentity, ObjectPhasing'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Steel Beam' references 12 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, SteelBeamResults, ObjectMaterial, ObjectIdentity, ObjectFireproofing, ObjectFireproofingQuantities, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralBehaviorSteel'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Steel Cladding' references 9 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralBehaviorSteel'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Steel Column' references 12 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireproofing, ObjectFireproofingQuantities, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralLocation, StructuralBehaviorSteel'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Steel Deck' references 9 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralBehaviorSteel'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Steel Horizontal Brace' references 12 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, SteelBraceResults, ObjectMaterial, ObjectIdentity, ObjectFireproofing, ObjectFireproofingQuantities, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralBehaviorSteel'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Steel Pile' references 12 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireproofing, ObjectFireproofingQuantities, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralLocation, StructuralBehaviorSteel'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Steel Purlin' references 11 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireproofing, ObjectFireproofingQuantities, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralBehaviorSteel'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Steel Vertical Brace' references 12 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, SteelBraceResults, ObjectMaterial, ObjectIdentity, ObjectFireproofing, ObjectFireproofingQuantities, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralBehaviorSteel'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Strip Footing' references 4 Definition(s): 'StructuralFoundationCommon, ObjectMaterial, ObjectIdentity, ObjectPhasing'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Timber Plate' references 9 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralBehaviorConcrete'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Timber Post' references 10 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralLocation, StructuralBehaviorConcrete'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Timber Joist' references 9 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralBehaviorConcrete'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Timber Stud' references 9 Definition(s): 'StructuralFramingCommon, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectFireResistance, ObjectThermalTransmittance, ObjectPhasing, StructuralQuantities, StructuralBehaviorConcrete'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'PlateSteel' references 6 Definition(s): 'Plate-Steel, ObjectStructuralUsage, ObjectMaterial, ObjectIdentity, ObjectPhasing, PlateQuantities'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CableCarrierSegment' references 2 Definition(s): 'BBES, BBES_Raceway'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CableSegment' references 1 Definition(s): 'BBES'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ElectricalCircuit' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ElectricAppliance' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ElectricDistributionPoint' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ElectricFlowStorageDevice' references 1 Definition(s): 'BBES'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ElectricGenerator' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ElectricMotor' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ElectricTimeControl' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'JunctionBox' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Lamp' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LightFixture' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'MotorConnection' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Outlet' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ProtectiveDevice' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SwitchingDevice' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Transformer' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ElectricHeater' references 5 Definition(s): 'BBES, BBES_Equipment_Schedule, BBES_Lighting, BBES_Panels, BBES_Transformer_Schedule'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CableCarrierFitting' references 2 Definition(s): 'BBES, BBES_Raceway'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'AngleThroatTee' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamAngleThroatTee, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BifurcatedFan' references 3 Definition(s): 'EndSpec2_22, CustomParamBifurcatedFan, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMPCoolingTower' references 3 Definition(s): 'EndSpec2_22, CustomParamCoolingTower, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_CCUnit' references 3 Definition(s): 'EndSpec2_11, CustomParamCCUnit, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_CFCU' references 3 Definition(s): 'EndSpec1_2, CustomParamCFCU, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_ChilledBeams' references 3 Definition(s): 'EndSpec1_2, CustomParamChilledBeams, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_CTHWConnection' references 3 Definition(s): 'EndSpec1_1, CustomParamCTHWConnection, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_FCU' references 3 Definition(s): 'EndSpec2_11, CustomParamFCU, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_Modular' references 3 Definition(s): 'EndSpec1_2, CustomParamModular, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_OvalAccessDoor' references 4 Definition(s): 'EndSpec3_331, CustomParamAccessDoor, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_Radiator' references 3 Definition(s): 'EndSpec1_2, CustomParamRadiator, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_RadiatorLST' references 3 Definition(s): 'EndSpec1_2, CustomParamRadiatorLST, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_RadiatorPanel' references 3 Definition(s): 'EndSpec1_2, CustomParamRadiatorPanel, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_RectangularFlatAccessDoor' references 4 Definition(s): 'EndSpec3_111, CustomParamAccessDoor, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_RectangularStdAccessDoor' references 4 Definition(s): 'EndSpec3_111, CustomParamAccessDoor, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_RectOvalAccessDoor' references 4 Definition(s): 'EndSpec3_113, CustomParamAccessDoor, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_RoundAccessDoor' references 4 Definition(s): 'EndSpec3_221, CustomParamAccessDoor, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_RoundOvalAccessDoor' references 4 Definition(s): 'EndSpec3_223, CustomParamAccessDoor, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMV_RoundRectangularAccessDoor' references 4 Definition(s): 'EndSpec3_221, CustomParamAccessDoor, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BranchTypeSplitterDamper' references 3 Definition(s): 'EndSpec2_11, CustomParamBranchTypeSplitterDamper, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CentrifugalInlineFan' references 3 Definition(s): 'EndSpec2_22, CustomParamCircularFans, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CentrifugalUpblastExhaustVentilator' references 3 Definition(s): 'EndSpec1_2, CustomParamCentrifugalUpblastExhaustVentilator, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CentrifugalUtilityFan' references 3 Definition(s): 'EndSpec2_21, CustomParamCentrifugalUtilityFan, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ConicalTee' references 4 Definition(s): 'EndSpec3_222, CustomParamConicalTee, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CrossOver' references 4 Definition(s): 'EndSpec2_22, CustomParamCrossOver, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CrossOverCloseRough' references 4 Definition(s): 'EndSpec2_22, CustomParamCrossOverCloseRough, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'DropCheekCross' references 5 Definition(s): 'EndSpec4_1111, ClearOpening, CustomParamDropCheekCross, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'DropCheekTee' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamDropCheekTee, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'DropCheekWye' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamDropCheekWye, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ExhaustFan1' references 3 Definition(s): 'EndSpec1_1, CustomParamExhaustFan1, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ExhaustFan2' references 3 Definition(s): 'EndSpec1_1, CustomParamExhaustFan2, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'FlatOvalDuct' references 4 Definition(s): 'EndSpec1_3, CustomParamOvalDuct, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'FlexDuct' references 4 Definition(s): 'EndSpec1_2, CustomParamFlexDuct, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'GrilleRoundEnd4Way' references 3 Definition(s): 'EndSpec1_2, CustomParamGrilleRound4Way, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'GrilleRoundEndBars' references 3 Definition(s): 'EndSpec1_2, CustomParamGrilleRoundBars, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'GrilleRoundEndBarSlots' references 3 Definition(s): 'EndSpec1_2, CustomParamGrilleRoundBarSlots, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'GrilleRoundEndMesh' references 3 Definition(s): 'EndSpec1_2, CustomParamGrilleRoundMesh, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'GrilleRoundEndRectSlots' references 3 Definition(s): 'EndSpec1_2, CustomParamGrilleRoundRectSlots, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'GrilleRoundEndRndSlots' references 3 Definition(s): 'EndSpec1_2, CustomParamGrilleRoundRndSlots, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'GrilleRoundEndStar' references 3 Definition(s): 'EndSpec1_2, CustomParamGrilleRoundStar, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'GrilleRoundSide4Way' references 3 Definition(s): 'EndSpec3_112, CustomParamGrilleRound4Way, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'GrilleRoundSideBars' references 3 Definition(s): 'EndSpec3_112, CustomParamGrilleRoundBars, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'GrilleRoundSideBarSlots' references 3 Definition(s): 'EndSpec3_112, CustomParamGrilleRoundBarSlots, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'GrilleRoundSideMesh' references 3 Definition(s): 'EndSpec3_112, CustomParamGrilleRoundMesh, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'GrilleRoundSideRectSlots' references 3 Definition(s): 'EndSpec3_112, CustomParamGrilleRoundRectSlots, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'GrilleRoundSideRndSlots' references 3 Definition(s): 'EndSpec3_112, CustomParamGrilleRoundRndSlots, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'GrilleRoundSideStar' references 3 Definition(s): 'EndSpec3_112, CustomParamGrilleRoundStar, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'InlineAxialFan' references 3 Definition(s): 'EndSpec2_22, CustomParamCircularFans, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'JetFan' references 3 Definition(s): 'EndSpec1_2, CustomParamJetFan, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'JetNozzleDiffuserCircular' references 3 Definition(s): 'EndSpec1_2, CustomParamJetDiffuser, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'JetNozzleDiffuserFlat' references 3 Definition(s): 'EndSpec2_11, CustomParamJetDiffuser, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LinearSlotDiffuser' references 4 Definition(s): 'EndSpec1_1, CustomParamLinearSlotDiffuser, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'MarkTenRoofFan' references 3 Definition(s): 'EndSpec1_1, CustomParamMarkTenRoofFan, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalAdapter' references 4 Definition(s): 'EndSpec2_33, CustomParamOvalAdapter, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalAirCooler' references 3 Definition(s): 'EndSpec2_33, CustomParamAirCooler, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalAirHeater' references 3 Definition(s): 'EndSpec2_33, CustomParamAirHeater, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalAirHumidifier' references 3 Definition(s): 'EndSpec2_33, CustomParamAirHumidifier, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalAirMoistureEliminator' references 3 Definition(s): 'EndSpec2_33, CustomParamAirMoistureEliminator, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalCap' references 4 Definition(s): 'EndSpec1_3, CustomParamCap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalCoupling' references 4 Definition(s): 'EndSpec2_33, CustomParamOvalCoupling, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalCross' references 4 Definition(s): 'EndSpec4_3333, CustomParamOvalCross, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalElbow' references 4 Definition(s): 'EndSpec2_33, CustomParamAngularElbow, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalFans1' references 3 Definition(s): 'EndSpec2_33, CustomParamFans, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalFans2' references 3 Definition(s): 'EndSpec2_33, CustomParamFans, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalFlatFilter' references 3 Definition(s): 'EndSpec2_33, CustomParamFlatFilter, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalFlexConnection' references 3 Definition(s): 'EndSpec2_33, CustomParamOvalFlexConnection, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalInlineDampersFlat' references 3 Definition(s): 'EndSpec2_33, CustomParamInlineDampersFlat, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalMeshEndGrille' references 3 Definition(s): 'EndSpec1_3, CustomParamOvalMeshGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalOffset' references 4 Definition(s): 'EndSpec2_33, CustomParamOvalOffset, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalReducerCross' references 4 Definition(s): 'EndSpec4_3333, CustomParamOvalReducerCross, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalSilencer' references 4 Definition(s): 'EndSpec2_33, CustomParamSilencer, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalTee' references 4 Definition(s): 'EndSpec3_333, CustomParamOvalTee, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalTransition' references 4 Definition(s): 'EndSpec2_33, CustomParamOvalTransition, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalTrouser' references 4 Definition(s): 'EndSpec3_333, CustomParamOvalTrouser, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalWye' references 4 Definition(s): 'EndSpec3_333, CustomParamOvalWye, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalZigZagFilter' references 3 Definition(s): 'EndSpec2_33, CustomParamZigZagFilter, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalOvalTap' references 4 Definition(s): 'EndSpec3_333, CustomParamAngledTap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalRectTap' references 4 Definition(s): 'EndSpec3_331, CustomParamAngledTap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvalRoundTap' references 4 Definition(s): 'EndSpec3_332, CustomParamAngledTap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectOvalTap' references 5 Definition(s): 'EndSpec3_113, ClearOpening, CustomParamAngledTap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRectTap' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamAngledTap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundTap' references 5 Definition(s): 'EndSpec3_112, ClearOpening, CustomParamAngledTap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundOvalTap' references 4 Definition(s): 'EndSpec3_223, CustomParamAngledTap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundRectTap' references 4 Definition(s): 'EndSpec3_221, CustomParamAngledTap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundRoundTap' references 4 Definition(s): 'EndSpec3_222, CustomParamAngledTap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SaddleTap' references 4 Definition(s): 'EndSpec3_222, CustomParamSaddleTap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvlRectTakeoff' references 4 Definition(s): 'EndSpec3_331, CustomParamRectTakeoff, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvlRndTakeoff' references 4 Definition(s): 'EndSpec3_332, CustomParamRectTakeoff, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvlTakeoff' references 4 Definition(s): 'EndSpec3_333, CustomParamRectTakeoff, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RndOvlTakeoff' references 4 Definition(s): 'EndSpec3_223, CustomParamRectTakeoff, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RndRectTakeoff' references 4 Definition(s): 'EndSpec3_221, CustomParamRectTakeoff, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RndTakeoff' references 4 Definition(s): 'EndSpec3_222, CustomParamRectTakeoff, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectOvlTakeoff' references 5 Definition(s): 'EndSpec3_113, ClearOpening, CustomParamRectTakeoff, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRndTakeoff' references 5 Definition(s): 'EndSpec3_112, ClearOpening, CustomParamRectTakeoff, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularTakeoff' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamRectTakeoff, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularTakeoffRadius' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamRectTakeoffRadius, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'OvlRndTransition' references 4 Definition(s): 'EndSpec2_32, CustomParamOvlRndTransition, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'PlenumBoxOvalMultiPort' references 5 Definition(s): 'AirDistribution, EndSpec7_1333333, CustomParamPlenumBoxMultiPort, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'PlenumBoxRectMultiPort' references 5 Definition(s): 'AirDistribution, EndSpec7_1111111, CustomParamPlenumBoxMultiPort, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'PlenumBoxRoundMultiPort' references 5 Definition(s): 'AirDistribution, EndSpec7_1222222, CustomParamPlenumBoxMultiPort, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RadialCentrifugalSmokeExtractFan' references 3 Definition(s): 'EndSpec1_1, CustomParamRadialCentrifugalSmokeExtractFan, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RadiusThroatCross' references 5 Definition(s): 'EndSpec4_1111, ClearOpening, CustomParamRadiusThroatCross, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RadiusThroatSquareHeelCross' references 5 Definition(s): 'EndSpec4_1111, ClearOpening, CustomParamRadiusThroatSquareHeelCross, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Rect4WayEndGrille' references 3 Definition(s): 'EndSpec1_1, CustomParamRect4WayGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Rect4WayGrille' references 3 Definition(s): 'EndSpec3_111, CustomParamRect4WayGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectAdapter' references 5 Definition(s): 'EndSpec2_11, ClearOpening, CustomParamRectAdapter, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectAirMoistureEliminator' references 3 Definition(s): 'EndSpec2_11, CustomParamAirMoistureEliminator, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularAirCooler' references 3 Definition(s): 'EndSpec2_11, CustomParamAirCooler, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularAirHeater' references 3 Definition(s): 'EndSpec2_11, CustomParamAirHeater, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularAirHumidifier' references 3 Definition(s): 'EndSpec2_11, CustomParamAirHumidifier, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularCap' references 5 Definition(s): 'EndSpec1_1, ClearOpening, CustomParamCap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularCrosstalkSilencer' references 4 Definition(s): 'EndSpec2_11, CustomParamCrosstalkSilencer, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularCustomAHU1' references 5 Definition(s): 'AirHandling, BBES_DATA, EndSpec1_1, CustomParamAirHandlingUnit, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularCustomAHU2' references 5 Definition(s): 'AirHandling, BBES_DATA, EndSpec2_11, CustomParamAirHandlingUnit, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularCustomAHU3' references 5 Definition(s): 'AirHandling, BBES_DATA, EndSpec3_111, CustomParamAirHandlingUnit, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularCustomAHU4' references 5 Definition(s): 'AirHandling, BBES_DATA, EndSpec4_1111, CustomParamAirHandlingUnit, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularCustomAHU5' references 5 Definition(s): 'AirHandling, BBES_DATA, EndSpec5_11111, CustomParamAirHandlingUnit, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularCustomAHU6' references 5 Definition(s): 'AirHandling, BBES_DATA, EndSpec6_111111, CustomParamAirHandlingUnit, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularCustomAHU7' references 5 Definition(s): 'AirHandling, BBES_DATA, EndSpec7_1111111, CustomParamAirHandlingUnit, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularCustomAHU8' references 5 Definition(s): 'AirHandling, BBES_DATA, EndSpec8_11111111, CustomParamAirHandlingUnit, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularDamper' references 4 Definition(s): 'EndSpec2_11, CustomParamRectangularDamper, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularDuct' references 5 Definition(s): 'EndSpec1_1, ClearOpening, CustomParamRectDuct, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularElbow' references 5 Definition(s): 'EndSpec2_11, ClearOpening, CustomParamRectElbow, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularFans1' references 3 Definition(s): 'EndSpec2_11, CustomParamFans, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularFans2' references 3 Definition(s): 'EndSpec2_11, CustomParamFans, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularFireDamper1' references 4 Definition(s): 'EndSpec2_11, CustomParamRectFireDamper, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularFireDamper2' references 4 Definition(s): 'EndSpec2_11, CustomParamRectFireDamper, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularFlatFilter' references 3 Definition(s): 'EndSpec2_11, CustomParamFlatFilter, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularSilencer' references 4 Definition(s): 'EndSpec2_11, CustomParamSilencer, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularTee' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamRectTee, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularTransition' references 5 Definition(s): 'EndSpec2_11, ClearOpening, CustomParamRectTransition, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularWye' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamRectangularWye, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularZigZagFilter' references 3 Definition(s): 'EndSpec2_11, CustomParamZigZagFilter, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectBarsEndGrille' references 3 Definition(s): 'EndSpec1_1, CustomParamRectBarsGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectBarsGrille' references 3 Definition(s): 'EndSpec3_111, CustomParamRectBarsGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectBarSlotsEndGrille' references 3 Definition(s): 'EndSpec1_1, CustomParamRectBarSlotsGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectBarSlotsGrille' references 3 Definition(s): 'EndSpec3_111, CustomParamRectBarSlotsGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectBreech' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamRectBreech, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectCoupling' references 5 Definition(s): 'EndSpec2_11, ClearOpening, CustomParamRectCoupling, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectDamperConnOvl' references 4 Definition(s): 'EndSpec2_33, CustomParamRectangularDamper, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectDamperConnRnd' references 4 Definition(s): 'EndSpec2_22, CustomParamRectangularDamper, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectFlexConnection' references 3 Definition(s): 'EndSpec2_11, CustomParamRectFlexConnection, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectGooseneck' references 4 Definition(s): 'EndSpec3_111, CustomParamRectGooseneck, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectInlineDampersFlat' references 3 Definition(s): 'EndSpec2_11, CustomParamInlineDampersFlat, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectMeshEndGrille' references 3 Definition(s): 'EndSpec1_1, CustomParamRectMeshGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectMeshGrille' references 3 Definition(s): 'EndSpec3_111, CustomParamRectMeshGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectNestedCross' references 5 Definition(s): 'EndSpec4_1111, ClearOpening, CustomParamRectNestedCross, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectNestedTee' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamRectNestedTee, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectOgee' references 5 Definition(s): 'EndSpec2_11, ClearOpening, CustomParamRectOgee, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectOvalTransition' references 4 Definition(s): 'EndSpec2_13, CustomParamRectOvalTransition, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRectSlotsEndGrille' references 3 Definition(s): 'EndSpec1_1, CustomParamRectRectSlotsGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRectSlotsGrille' references 3 Definition(s): 'EndSpec3_111, CustomParamRectRectSlotsGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRndSlotsEndGrille' references 3 Definition(s): 'EndSpec1_1, CustomParamRectRndSlotsGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRndSlotsGrille' references 3 Definition(s): 'EndSpec3_111, CustomParamRectRndSlotsGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRndTransition' references 4 Definition(s): 'EndSpec2_12, CustomParamRectRndTransition, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU11' references 5 Definition(s): 'AirHandling, EndSpec2_12, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU12' references 5 Definition(s): 'AirHandling, EndSpec3_122, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU13' references 5 Definition(s): 'AirHandling, EndSpec4_1222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU14' references 5 Definition(s): 'AirHandling, EndSpec5_12222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU15' references 5 Definition(s): 'AirHandling, EndSpec6_122222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU16' references 5 Definition(s): 'AirHandling, EndSpec7_1222222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU17' references 5 Definition(s): 'AirHandling, EndSpec8_12222222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU21' references 5 Definition(s): 'AirHandling, EndSpec3_112, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU22' references 5 Definition(s): 'AirHandling, EndSpec4_1122, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU23' references 5 Definition(s): 'AirHandling, EndSpec5_11222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU24' references 5 Definition(s): 'AirHandling, EndSpec6_112222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU25' references 5 Definition(s): 'AirHandling, EndSpec7_1122222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU26' references 5 Definition(s): 'AirHandling, EndSpec8_11222222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU31' references 5 Definition(s): 'AirHandling, EndSpec4_1112, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU32' references 5 Definition(s): 'AirHandling, EndSpec5_11122, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU33' references 5 Definition(s): 'AirHandling, EndSpec6_111222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU34' references 5 Definition(s): 'AirHandling, EndSpec7_1112222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU35' references 5 Definition(s): 'AirHandling, EndSpec8_11122222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU41' references 5 Definition(s): 'AirHandling, EndSpec5_11112, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU42' references 5 Definition(s): 'AirHandling, EndSpec6_111122, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU43' references 5 Definition(s): 'AirHandling, EndSpec7_1111222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU44' references 5 Definition(s): 'AirHandling, EndSpec8_11112222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU51' references 5 Definition(s): 'AirHandling, EndSpec6_111112, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU52' references 5 Definition(s): 'AirHandling, EndSpec7_1111122, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU53' references 5 Definition(s): 'AirHandling, EndSpec8_11111222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU61' references 5 Definition(s): 'AirHandling, EndSpec7_1111112, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU62' references 5 Definition(s): 'AirHandling, EndSpec8_11111122, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectRoundCustomAHU71' references 5 Definition(s): 'AirHandling, EndSpec8_11111112, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectStarEndGrille' references 3 Definition(s): 'EndSpec1_1, CustomParamRectStarGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectStarGrille' references 3 Definition(s): 'EndSpec3_111, CustomParamRectStarGrille, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectVAVSingleInlet' references 3 Definition(s): 'EndSpec2_11, CustomParamVAVSingleInlet, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RndAirMoistureEliminator' references 3 Definition(s): 'EndSpec2_22, CustomParamAirMoistureEliminator, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RndCeilingDiffuserRnd' references 5 Definition(s): 'AirDistribution, EndSpec1_2, CustomParamRoundDiffuser, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RndFloorDiffuserRnd' references 4 Definition(s): 'AirDistribution, EndSpec1_2, CustomParamRoundDiffuser, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RndWallDiffuserRnd' references 3 Definition(s): 'EndSpec1_2, CustomParamRoundDiffuser, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoofCurb' references 4 Definition(s): 'EndSpec2_11, CustomParamRoofCurb, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoofUpblastFan' references 3 Definition(s): 'EndSpec1_2, CustomParamRoofUpblastFan, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundAdapter' references 4 Definition(s): 'EndSpec2_22, CustomParamRoundAdapter, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundAirCooler' references 3 Definition(s): 'EndSpec2_22, CustomParamAirCooler, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundAirHeater' references 3 Definition(s): 'EndSpec2_22, CustomParamAirHeater, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundAirHumidifier' references 3 Definition(s): 'EndSpec2_22, CustomParamAirHumidifier, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundBreech' references 4 Definition(s): 'EndSpec3_222, CustomParamRoundBreech, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundCap' references 4 Definition(s): 'EndSpec1_2, CustomParamCap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundCoupling' references 4 Definition(s): 'EndSpec2_22, CustomParamRoundCoupling, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundCross' references 4 Definition(s): 'EndSpec4_2222, CustomParamRoundCross, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundCustomAHU1' references 5 Definition(s): 'AirHandling, EndSpec1_2, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundCustomAHU2' references 5 Definition(s): 'AirHandling, EndSpec2_22, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundCustomAHU3' references 5 Definition(s): 'AirHandling, EndSpec3_222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundCustomAHU4' references 5 Definition(s): 'AirHandling, EndSpec4_2222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundCustomAHU5' references 5 Definition(s): 'AirHandling, EndSpec5_22222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundCustomAHU6' references 5 Definition(s): 'AirHandling, EndSpec6_222222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundCustomAHU7' references 5 Definition(s): 'AirHandling, EndSpec7_2222222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundCustomAHU8' references 5 Definition(s): 'AirHandling, EndSpec8_22222222, CustomParamAirHandlingUnit, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundDamper' references 4 Definition(s): 'EndSpec2_22, CustomParamRoundDamper, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundDuct' references 4 Definition(s): 'EndSpec1_2, CustomParamRoundDuct, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundElbow' references 4 Definition(s): 'EndSpec2_22, CustomParamRoundElbow, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundElbowMitre' references 4 Definition(s): 'EndSpec2_22, CustomParamRoundElbowMitre, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundFans1' references 3 Definition(s): 'EndSpec2_22, CustomParamFans, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundFans2' references 3 Definition(s): 'EndSpec2_22, CustomParamFans, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundFireDamper1' references 4 Definition(s): 'EndSpec2_22, CustomParamRndFireDamper, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundFireDamper2' references 4 Definition(s): 'EndSpec2_22, CustomParamRndFireDamper, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundFlatFilter' references 3 Definition(s): 'EndSpec2_22, CustomParamFlatFilter, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundFlexConnection' references 3 Definition(s): 'EndSpec2_22, CustomParamRoundFlexConnection, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundFPUSingleInlet' references 3 Definition(s): 'EndSpec2_21, CustomParamFPUSingleInlet, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundInlineDampersFlat' references 3 Definition(s): 'EndSpec2_22, CustomParamInlineDampersFlat, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundOffset' references 4 Definition(s): 'EndSpec2_22, CustomParamRoundOffset, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundReducerCross' references 4 Definition(s): 'EndSpec4_2222, CustomParamRoundReducerCross, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundSilencer' references 4 Definition(s): 'EndSpec2_22, CustomParamRoundSilencer, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundTee' references 4 Definition(s): 'EndSpec3_222, CustomParamRoundTee, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundThreeWay' references 4 Definition(s): 'EndSpec3_222, CustomParamRoundThreeWay, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundTransition' references 4 Definition(s): 'EndSpec2_22, CustomParamRoundTransition, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundTrouser' references 4 Definition(s): 'EndSpec3_222, CustomParamRoundTrouser, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundVAVDualInlet' references 3 Definition(s): 'EndSpec3_221, CustomParamVAVDualInlet, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundVAVSingleInlet' references 3 Definition(s): 'EndSpec2_21, CustomParamVAVSingleInlet, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundWye' references 4 Definition(s): 'EndSpec3_222, CustomParamRoundWye, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundZigZagFilter' references 3 Definition(s): 'EndSpec2_22, CustomParamZigZagFilter, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SaddleCross' references 4 Definition(s): 'EndSpec4_2222, CustomParamSaddleCross, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SaddleTee' references 4 Definition(s): 'EndSpec3_222, CustomParamSaddleTee, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SegmentedBend' references 4 Definition(s): 'EndSpec2_22, CustomParamSegmentedBend, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SegmentedBend2' references 4 Definition(s): 'EndSpec2_22, CustomParamSegmentedBend2, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SideBranch' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamSideBranch, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SingleSpeedFans' references 3 Definition(s): 'EndSpec1_2, CustomParamSingleSpeedFans, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SplitterDamper' references 3 Definition(s): 'EndSpec2_11, CustomParamSplitterDamper, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SplitUnit' references 3 Definition(s): 'EndSpec1_1, CustomParamSplitUnit, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SqCeilingDiffuser' references 4 Definition(s): 'EndSpec1_2, CustomParamDiffuser, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SqCeilingDiffuserOval' references 4 Definition(s): 'EndSpec1_3, CustomParamDiffuser, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SqCeilingDiffuserRect' references 4 Definition(s): 'EndSpec1_1, CustomParamDiffuser, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SqFloorDiffuser' references 3 Definition(s): 'EndSpec1_2, CustomParamDiffuser, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SqFloorDiffuserOval' references 3 Definition(s): 'EndSpec1_3, CustomParamDiffuser, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SqFloorDiffuserRect' references 3 Definition(s): 'EndSpec1_1, CustomParamDiffuser, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SquareHeelWye' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamSquareHeelWye, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SquareThroatCross' references 5 Definition(s): 'EndSpec4_1111, ClearOpening, CustomParamSquareThroatCross, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SquareThroatTee' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamSquareThroatTee, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SqWallDiffuser' references 3 Definition(s): 'EndSpec1_2, CustomParamDiffuser, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SqWallDiffuserOval' references 3 Definition(s): 'EndSpec1_3, CustomParamDiffuser, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'SqWallDiffuserRect' references 3 Definition(s): 'EndSpec1_1, CustomParamDiffuser, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'TerminatorRoofFan' references 3 Definition(s): 'EndSpec1_1, CustomParamTerminatorRoofFan, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ThreeWayTee' references 5 Definition(s): 'EndSpec4_1111, ClearOpening, CustomParamThreeWayTee, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Trouser' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamRectTrouser, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RoundChimneyCap' references 4 Definition(s): 'EndSpec1_2, CustomParamRoundChimneyCap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularChimneyCap' references 4 Definition(s): 'EndSpec1_1, CustomParamRectangularChimneyCap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'TapableEndCapRectangular' references 4 Definition(s): 'EndSpec2_11, CustomParamTapableEndCap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'TapableEndCapRectToRound' references 4 Definition(s): 'EndSpec2_12, CustomParamTapableEndCap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'TapableEndCapRectToOval' references 4 Definition(s): 'EndSpec2_13, CustomParamTapableEndCap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'VariableAngleWye' references 5 Definition(s): 'EndSpec3_111, ClearOpening, CustomParamVariableAngleWye, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CurtainFireDamperRect' references 4 Definition(s): 'EndSpec2_11, CustomParamCurtainFireDamper, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CurtainFireDamperRound' references 4 Definition(s): 'EndSpec2_22, CustomParamCurtainFireDamper, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CurtainFireDamperOval' references 4 Definition(s): 'EndSpec2_33, CustomParamCurtainFireDamper, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RectangularZElbow' references 5 Definition(s): 'EndSpec2_11, ClearOpening, CustomParamRectangularZElbow, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CompoundOffsetElbow' references 5 Definition(s): 'EndSpec2_11, ClearOpening, CustomParamCompoundOffsetElbow, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveNRV' references 3 Definition(s): 'EndSpec2_22, CustomParamValveNRV, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveGate' references 3 Definition(s): 'EndSpec2_22, CustomParamValveGate, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveButterfly' references 3 Definition(s): 'EndSpec2_22, CustomParamValveButterfly, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Strainer' references 4 Definition(s): 'EndSpec2_22, CustomParamBMPStrainer, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FlangeWeldNeck' references 3 Definition(s): 'EndSpec2_22, CustomParamFlangeWeldNeck, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_RoundCleanout' references 3 Definition(s): 'EndSpec1_2, CustomParamRoundCleanout, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FloorTrough' references 3 Definition(s): 'EndSpec1_2, CustomParamFloorTrough, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Gasket' references 3 Definition(s): 'EndSpec2_22, CustomParamGasket, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FlangeBlind' references 3 Definition(s): 'EndSpec2_22, CustomParamFlangeBlind, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FlangeSlipOn' references 3 Definition(s): 'EndSpec2_22, CustomParamFlangeSlipOn, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveStraight' references 3 Definition(s): 'EndSpec2_22, CustomParamValveStraight, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveAngledRelief' references 3 Definition(s): 'EndSpec2_22, CustomParamValveAngledRelief, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveStraightRelief' references 3 Definition(s): 'EndSpec2_22, CustomParamValveStraightRelief, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValvePilotRelief' references 3 Definition(s): 'EndSpec2_22, CustomParamValvePilotRelief, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValvePressureRegulating' references 3 Definition(s): 'EndSpec2_22, CustomParamValvePressureRegulating, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveBall' references 4 Definition(s): 'EndSpec2_22, CustomParamValveBall, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveAngled' references 3 Definition(s): 'EndSpec2_22, CustomParamValveAngled, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveThreeWay' references 3 Definition(s): 'EndSpec3_222, CustomParamValveThreeWay, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveFourWay' references 3 Definition(s): 'EndSpec4_2222, CustomParamValveFourWay, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_StraightPipe' references 4 Definition(s): 'EndSpec1_2, CustomParamBMPPipe, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FlexPipe' references 4 Definition(s): 'EndSpec1_2, CustomParamFlexDuct, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FlexBellows' references 4 Definition(s): 'EndSpec2_22, CustomParamFlexBellows, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Cap' references 4 Definition(s): 'EndSpec1_2, CustomParamBMPCap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FlatCap' references 4 Definition(s): 'EndSpec1_2, CustomParamBMPCap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Transition' references 4 Definition(s): 'EndSpec2_22, CustomParamBMPTransition, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Elbow' references 4 Definition(s): 'EndSpec2_22, CustomParamBMPElbow, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ReturnBend' references 4 Definition(s): 'EndSpec2_22, CustomParamReturnBend, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Tee' references 4 Definition(s): 'EndSpec3_222, CustomParamBMPTee, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Wye' references 4 Definition(s): 'EndSpec3_222, CustomParamBMPWye, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Ptrap' references 4 Definition(s): 'EndSpec3_222, CustomParamPtrap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_PtrapGully' references 4 Definition(s): 'EndSpec2_22, CustomParamPtrapGully, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_SPtrap' references 4 Definition(s): 'EndSpec2_22, CustomParamSPtrap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Ptrap1' references 4 Definition(s): 'EndSpec2_22, CustomParamPtrap1, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_H-BranchWye' references 4 Definition(s): 'EndSpec3_222, CustomParamHBranchWye, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Cross' references 4 Definition(s): 'EndSpec4_2222, CustomParamBMPCross, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_SanitaryCross' references 4 Definition(s): 'EndSpec4_2222, CustomParamSanitaryCross, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Stub' references 4 Definition(s): 'EndSpec3_222, CustomParamStub, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Toilet' references 3 Definition(s): 'EndSpec2_22, CustomParamToilet, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Shower' references 3 Definition(s): 'EndSpec2_22, CustomParamShowers, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_BathTub' references 3 Definition(s): 'EndSpec2_22, CustomParamBathTub, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Sink' references 3 Definition(s): 'EndSpec2_22, CustomParamSink, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_TwinSink' references 3 Definition(s): 'EndSpec4_2222, CustomParamTwinSink, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Urinal' references 3 Definition(s): 'EndSpec2_22, CustomParamUrinal, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_PumpBaseMounted' references 3 Definition(s): 'EndSpec2_22, CustomParamPumpBaseMounted, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_PumpSump' references 3 Definition(s): 'EndSpec1_2, CustomParamPumpSump, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_PumpDiaphragm' references 3 Definition(s): 'EndSpec2_22, CustomParamPumpDiaphragm, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_PumpMotorMounted' references 3 Definition(s): 'EndSpec2_22, CustomParamPumpMotorMounted, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_PumpVerticalSplitCoupled' references 3 Definition(s): 'EndSpec2_22, CustomParamPumpVerticalSplitCoupled, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_PumpVerticalDualArm' references 3 Definition(s): 'EndSpec2_22, CustomParamPumpVerticalDualArm, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_PumpHorizontalSplitCase' references 3 Definition(s): 'EndSpec2_22, CustomParamPumpHorizontalSplitCase, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_BendWithHeel' references 4 Definition(s): 'EndSpec3_222, CustomParamBendWithHeel, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_SanitaryTee' references 4 Definition(s): 'EndSpec3_222, CustomParamSanitaryTee, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_LateralWye' references 4 Definition(s): 'EndSpec3_222, CustomParamLateralWye, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Vessel' references 4 Definition(s): 'EndSpec5_22222, CustomParamVessel, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_PressureGauge' references 3 Definition(s): 'EndSpec1_2, CustomParamPressureGauge, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Thermometer' references 3 Definition(s): 'EndSpec1_2, CustomParamThermometer, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ExpansionVessel' references 4 Definition(s): 'EndSpec1_2, CustomParamExpansionVessel, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveAirVent' references 3 Definition(s): 'EndSpec1_2, CustomParamAirVent, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_HoseBibTap' references 4 Definition(s): 'EndSpec2_22, CustomParamHoseBibTap, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_HoseBibTap2' references 4 Definition(s): 'EndSpec2_22, CustomParamHoseBibTap2, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_WaterHeater' references 4 Definition(s): 'EndSpec4_2222, CustomParamWaterHeater, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Condenser' references 3 Definition(s): 'EndSpec2_22, CustomParamCondenser, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ChannelGrate' references 3 Definition(s): 'EndSpec1_2, CustomParamChannelGrate, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ParapetDrain' references 3 Definition(s): 'EndSpec1_2, CustomParamParapetDrain, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_RainWaterOutlet' references 3 Definition(s): 'EndSpec1_2, CustomParamRainWaterOutlet, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_PlanterDrain' references 3 Definition(s): 'EndSpec1_2, CustomParamPlanterDrain, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_RoundCoupling' references 4 Definition(s): 'EndSpec2_22, CustomParamBMPCoupling, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ParkingDrain' references 3 Definition(s): 'EndSpec1_2, CustomParamParkingDrain, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_GreaseTrap' references 3 Definition(s): 'EndSpec2_22, CustomParamGreaseTrap, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_HexagonalBush' references 4 Definition(s): 'EndSpec2_22, CustomParamHexagonalBush, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Plug' references 4 Definition(s): 'EndSpec1_2, CustomParamPlug, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_RectangularCatchBasin' references 3 Definition(s): 'EndSpec1_2, CustomParamRectangularCatchBasin, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_RoundCatchBasin' references 3 Definition(s): 'EndSpec2_22, CustomParamRoundCatchBasin, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_GRPTankPanel' references 3 Definition(s): 'EndSpec3_222, CustomParamGRPTankPanel, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_DosingTundish' references 3 Definition(s): 'EndSpec1_2, CustomParamDosingTundish, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_DosingPot' references 3 Definition(s): 'EndSpec3_222, CustomParamDosingPot, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ElbowUnion' references 4 Definition(s): 'EndSpec2_22, CustomParamBMPElbowUnion, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_TwinElbow' references 4 Definition(s): 'EndSpec3_222, CustomParamBMPTwinElbow, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Backnut' references 4 Definition(s): 'EndSpec2_22, CustomParamBMPBacknut, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_MaleFemaleUnion' references 4 Definition(s): 'EndSpec2_22, CustomParamBMPMaleFemaleUnion, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_Socket' references 4 Definition(s): 'EndSpec2_22, CustomParamBMPSocket, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_DrainCock' references 4 Definition(s): 'EndSpec2_22, CustomParamDrainCock, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_HoseUnionDrainCock' references 4 Definition(s): 'EndSpec2_22, CustomParamDrainCock, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_UnionSA' references 4 Definition(s): 'EndSpec2_22, CustomParamBMPUnionSA, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_HoseUnionDrainCockWithPlug' references 4 Definition(s): 'EndSpec2_22, CustomParamHoseUnionDrainCockWithPlug, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_DieElectricUnion' references 4 Definition(s): 'EndSpec2_22, CustomParamBMPMaleFemaleUnion, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_DoubleRegulatingValve' references 3 Definition(s): 'EndSpec2_22, CustomParamDoubleRegulatingValve, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_BalanceValve' references 3 Definition(s): 'EndSpec2_22, CustomParamBalanceValve, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_AirSeparatorStrainer' references 3 Definition(s): 'EndSpec5_22222, CustomParamBMPAirSeparatorWithStrainer, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_AirSeparator' references 3 Definition(s): 'EndSpec4_2222, CustomParamBMPAirSeparator, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveMotorizedButterfly' references 3 Definition(s): 'EndSpec2_22, CustomParamValveButterfly, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveMotorizedControl' references 3 Definition(s): 'EndSpec2_22, CustomParamValveMotorizedControl, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveSwingCheck' references 3 Definition(s): 'EndSpec2_22, CustomParamValveSwingCheck, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveNonReturn' references 3 Definition(s): 'EndSpec2_22, CustomParamValveSwingCheck, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_AirSeparatorMB' references 3 Definition(s): 'EndSpec3_222, CustomParamBMPAirSeparatorMB, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveDiffPressureRegulating' references 3 Definition(s): 'EndSpec5_22222, CustomParamValveDiffPressureControl, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValvePressureDifferential' references 3 Definition(s): 'EndSpec2_22, CustomParamValveSwingCheck, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveMotorised_3Way' references 4 Definition(s): 'EndSpec3_222, CustomParamValveMotorized3Way, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveMotorised_3Way_withBypass' references 4 Definition(s): 'EndSpec4_2222, CustomParamValveMotorized3WaywithBypass, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FlowSwitch' references 3 Definition(s): 'EndSpec2_22, CustomParamFlowSwitch, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_VibrationPad' references 3 Definition(s): 'EndSpec1_2, CustomParamVibrationPad, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FloorDrain4Way' references 3 Definition(s): 'EndSpec4_2222, CustomParamFloorDrain4Way, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FloorDrain5Way' references 3 Definition(s): 'EndSpec5_22222, CustomParamFloorDrain5Way, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FloorDrain6Way' references 3 Definition(s): 'EndSpec6_222222, CustomParamFloorDrain6Way, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveDiffPressureTransmitter' references 3 Definition(s): 'EndSpec2_22, CustomParamDifferentialPressureTransmitter, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ValveMotorised_2Way' references 4 Definition(s): 'EndSpec2_22, CustomParamValveMotorized2Way, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ShellAndTubeHeatExchanger' references 3 Definition(s): 'EndSpec4_2222, CustomParamShellAndTubeHeatExchanger, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_EvaporativeChiller' references 3 Definition(s): 'EndSpec4_2222, CustomParamBMPEvaporativeChiller, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_StorageTank' references 3 Definition(s): 'EndSpec2_22, CustomParamStorageTank, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_AirCooledChiller' references 3 Definition(s): 'EndSpec4_2222, CustomParamBMPAirCooledChiller, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_DirectFiredGasWaterHeater' references 4 Definition(s): 'EndSpec5_22222, CustomParamDirectFiredGasWaterHeater, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_WaterCooledChiller' references 3 Definition(s): 'EndSpec6_222222, CustomParamBMPWaterCooledChiller, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_PumpDiesel' references 3 Definition(s): 'EndSpec2_22, CustomParamDieselPump, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_PumpJockey' references 3 Definition(s): 'EndSpec2_22, CustomParamJockeyPump, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'Boiler' references 3 Definition(s): 'EndSpec7_2222222, CustomParamBoiler, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ElectricBoiler' references 3 Definition(s): 'EndSpec3_222, CustomParamElectricalBoiler, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_PumpDieselHorizontal' references 3 Definition(s): 'EndSpec2_22, CustomParamPumpDieselHorizontal, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'RadiatorAngledValve' references 3 Definition(s): 'EndSpec2_22, CustomParamValveAngled, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'PlateHeatExchanger' references 3 Definition(s): 'EndSpec4_2222, CustomParamPlateHeatExchanger, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ConvectorFan' references 3 Definition(s): 'EndSpec2_22, CustomParamConvectorFan, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ConvectorNatural' references 3 Definition(s): 'EndSpec2_22, CustomParamConvectorNatural, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ConvectorSillSingle' references 3 Definition(s): 'EndSpec2_22, CustomParamConvectorSillSingle, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ConvectorSillTwin' references 3 Definition(s): 'EndSpec4_2222, CustomParamConvectorSillTwin, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ConvectorTrenchSingle' references 3 Definition(s): 'EndSpec2_22, CustomParamConvectorSillSingle, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ConvectorTrenchTwin' references 3 Definition(s): 'EndSpec4_2222, CustomParamConvectorSillTwin, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'ElectricBaseBoard' references 3 Definition(s): 'EndSpec1_2, CustomParamElectricBaseBoard, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'UnitHeater' references 3 Definition(s): 'EndSpec2_22, CustomParamUnitHeater, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_RigidCoupling' references 4 Definition(s): 'EndSpec2_22, CustomParamBMPRigidCoupling, Properties, InsulationSymbology'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_FemaleUnion' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGFemaleUnion, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'CompressionElbow' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGCompressionElbowBspm, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_CompressionReducingSets' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGCompressionReducingSets, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_Elbow' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGElbow, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_CompressionEqualCouplers' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGCompressionEqualCouplers, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_CompressionElbow' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGCompressionElbow, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_CompressionReducingCouplers' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGCompressionReducingCouplers, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_FlareNuts' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGFlareNuts, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_BallValves' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGBallValves, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_SingleUnion' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGSingleUnion, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_GasDetectorRelay' references 3 Definition(s): 'EndSpec1_2, CustomParamGasDetectorRelay, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_CapNut' references 3 Definition(s): 'EndSpec1_2, CustomParamLPGCapNut, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_CopperOlives' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGCopperOlives, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_ThreeWayTee' references 3 Definition(s): 'EndSpec3_222, CustomParamLPGThreeWayTee, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_CompressionxBspm' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGCompressionxBspm, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_CompressionxBspfm' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGCompressionxBspfm, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_Tee' references 3 Definition(s): 'EndSpec3_222, CustomParamLPGTee, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_FlareDoubleUnion' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGFlareDoubleUnion, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_Adapter' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGAdapter, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_Bush' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGBush, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_CompressionStopEnds' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGCompressionStopEnds, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_GasMeter' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGGasMeter, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_GasShutOffValve' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGGasShutOffValve, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_SpecialCompressionHobFittings' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGSpecialCompressionHobFittings, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_Solder' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGSolder, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_Nipple' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGNipple, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_Plug' references 3 Definition(s): 'EndSpec1_2, CustomParamLPGPlug, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'LPG_ElbowExtruded' references 3 Definition(s): 'EndSpec2_22, CustomParamLPGElbowExtruded, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FireHoseReelCabinet' references 3 Definition(s): 'EndSpec1_2, CustomParamFireHoseReelCabinet, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ReelAndExtinguisherCabinet' references 3 Definition(s): 'EndSpec1_2, CustomParamReelAndExtinguisherCabinet, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_YardHydrantCabinet' references 3 Definition(s): 'EndSpec1_2, CustomParamYardHydrantCabinet, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_LandingValveCabinet' references 3 Definition(s): 'EndSpec1_2, CustomParamLandingValveCabinet, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FireHoseCabinet' references 3 Definition(s): 'EndSpec1_2, CustomParamFireHoseCabinet, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_BreechingInlet' references 3 Definition(s): 'EndSpec1_2, CustomParamBreechingInlet, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_BreechingInletCabinet' references 3 Definition(s): 'EndSpec1_2, CustomParamBreechingInletCabinet, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FireExtinguisher' references 3 Definition(s): 'EndSpec1_2, CustomParamFireExtinguisher, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_FireHydrant' references 3 Definition(s): 'EndSpec1_2, CustomParamFireHydrant, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_LandingValve' references 3 Definition(s): 'EndSpec1_2, CustomParamLandingValve, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_ZoneControlValve' references 3 Definition(s): 'EndSpec3_222, CustomParamZoneControlValve, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_AlarmCheckValve' references 3 Definition(s): 'EndSpec4_2222, CustomParamAlarmCheckValve, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_SprinklerHeadUpright' references 3 Definition(s): 'EndSpec1_2, CustomParamSprinklerHeadUpright, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_SprinklerHeadSideWall' references 3 Definition(s): 'EndSpec1_2, CustomParamSprinklerHeadSideWall, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'BMP_SprinklerHead' references 3 Definition(s): 'EndSpec1_2, CustomParamSprinklerHead, Properties'"/>
+				<Detail status="SUCCESS" description="Catalog Type 'FireDepartmentConnection' references 4 Definition(s): 'EndSpec3_222, CustomParamFireDeptConnection, Properties, InsulationSymbology'"/>
+				<Result status="SUCCESS" description="All Catalog Types reference at least one Definition"/>
+			</ValidationCheck>
+			<ValidationCheck checkType="SYSTEM" description="Checking that all Definition files referenced by Catalog Types can be found">
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Door' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Window' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Casework' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Building' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CompoundSlab' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CurtainWallFrame' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CurtainWallSystem' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CurtainWallPanel' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Floor' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Profile' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Project' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Railing' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Roof' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Site' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Slab' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Space' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Stair' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Wall' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'WallLeaf' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Aluminum Beam' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Aluminum Column' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Concrete Beam' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Concrete Column' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Concrete Pier' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Concrete Pile' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Fireproofing Type' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Mat Foundation' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Pile Cap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Spread Footing' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Steel Beam' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Steel Cladding' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Steel Column' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Steel Deck' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Steel Horizontal Brace' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Steel Pile' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Steel Purlin' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Steel Vertical Brace' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Strip Footing' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Timber Plate' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Timber Post' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Timber Joist' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Timber Stud' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'PlateSteel' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CableCarrierSegment' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CableSegment' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ElectricalCircuit' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ElectricAppliance' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ElectricDistributionPoint' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ElectricFlowStorageDevice' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ElectricGenerator' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ElectricMotor' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ElectricTimeControl' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'JunctionBox' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Lamp' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LightFixture' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'MotorConnection' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Outlet' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ProtectiveDevice' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SwitchingDevice' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Transformer' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ElectricHeater' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CableCarrierFitting' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'AngleThroatTee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BifurcatedFan' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMPCoolingTower' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_CCUnit' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_CFCU' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_ChilledBeams' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_CTHWConnection' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_FCU' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_Modular' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_OvalAccessDoor' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_Radiator' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_RadiatorLST' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_RadiatorPanel' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_RectangularFlatAccessDoor' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_RectangularStdAccessDoor' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_RectOvalAccessDoor' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_RoundAccessDoor' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_RoundOvalAccessDoor' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMV_RoundRectangularAccessDoor' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BranchTypeSplitterDamper' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CentrifugalInlineFan' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CentrifugalUpblastExhaustVentilator' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CentrifugalUtilityFan' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ConicalTee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CrossOver' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CrossOverCloseRough' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'DropCheekCross' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'DropCheekTee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'DropCheekWye' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ExhaustFan1' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ExhaustFan2' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'FlatOvalDuct' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'FlexDuct' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'GrilleRoundEnd4Way' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'GrilleRoundEndBars' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'GrilleRoundEndBarSlots' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'GrilleRoundEndMesh' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'GrilleRoundEndRectSlots' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'GrilleRoundEndRndSlots' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'GrilleRoundEndStar' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'GrilleRoundSide4Way' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'GrilleRoundSideBars' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'GrilleRoundSideBarSlots' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'GrilleRoundSideMesh' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'GrilleRoundSideRectSlots' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'GrilleRoundSideRndSlots' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'GrilleRoundSideStar' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'InlineAxialFan' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'JetFan' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'JetNozzleDiffuserCircular' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'JetNozzleDiffuserFlat' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LinearSlotDiffuser' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'MarkTenRoofFan' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalAdapter' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalAirCooler' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalAirHeater' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalAirHumidifier' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalAirMoistureEliminator' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalCap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalCoupling' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalCross' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalElbow' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalFans1' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalFans2' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalFlatFilter' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalFlexConnection' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalInlineDampersFlat' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalMeshEndGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalOffset' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalReducerCross' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalSilencer' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalTee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalTransition' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalTrouser' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalWye' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalZigZagFilter' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalOvalTap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalRectTap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvalRoundTap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectOvalTap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRectTap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundTap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundOvalTap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundRectTap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundRoundTap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SaddleTap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvlRectTakeoff' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvlRndTakeoff' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvlTakeoff' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RndOvlTakeoff' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RndRectTakeoff' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RndTakeoff' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectOvlTakeoff' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRndTakeoff' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularTakeoff' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularTakeoffRadius' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'OvlRndTransition' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'PlenumBoxOvalMultiPort' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'PlenumBoxRectMultiPort' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'PlenumBoxRoundMultiPort' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RadialCentrifugalSmokeExtractFan' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RadiusThroatCross' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RadiusThroatSquareHeelCross' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Rect4WayEndGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Rect4WayGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectAdapter' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectAirMoistureEliminator' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularAirCooler' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularAirHeater' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularAirHumidifier' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularCap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularCrosstalkSilencer' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularCustomAHU1' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularCustomAHU2' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularCustomAHU3' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularCustomAHU4' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularCustomAHU5' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularCustomAHU6' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularCustomAHU7' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularCustomAHU8' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularDamper' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularDuct' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularElbow' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularFans1' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularFans2' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularFireDamper1' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularFireDamper2' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularFlatFilter' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularSilencer' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularTee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularTransition' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularWye' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularZigZagFilter' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectBarsEndGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectBarsGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectBarSlotsEndGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectBarSlotsGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectBreech' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectCoupling' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectDamperConnOvl' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectDamperConnRnd' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectFlexConnection' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectGooseneck' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectInlineDampersFlat' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectMeshEndGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectMeshGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectNestedCross' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectNestedTee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectOgee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectOvalTransition' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRectSlotsEndGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRectSlotsGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRndSlotsEndGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRndSlotsGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRndTransition' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU11' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU12' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU13' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU14' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU15' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU16' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU17' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU21' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU22' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU23' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU24' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU25' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU26' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU31' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU32' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU33' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU34' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU35' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU41' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU42' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU43' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU44' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU51' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU52' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU53' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU61' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU62' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectRoundCustomAHU71' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectStarEndGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectStarGrille' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectVAVSingleInlet' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RndAirMoistureEliminator' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RndCeilingDiffuserRnd' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RndFloorDiffuserRnd' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RndWallDiffuserRnd' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoofCurb' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoofUpblastFan' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundAdapter' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundAirCooler' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundAirHeater' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundAirHumidifier' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundBreech' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundCap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundCoupling' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundCross' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundCustomAHU1' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundCustomAHU2' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundCustomAHU3' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundCustomAHU4' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundCustomAHU5' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundCustomAHU6' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundCustomAHU7' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundCustomAHU8' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundDamper' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundDuct' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundElbow' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundElbowMitre' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundFans1' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundFans2' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundFireDamper1' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundFireDamper2' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundFlatFilter' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundFlexConnection' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundFPUSingleInlet' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundInlineDampersFlat' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundOffset' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundReducerCross' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundSilencer' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundTee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundThreeWay' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundTransition' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundTrouser' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundVAVDualInlet' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundVAVSingleInlet' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundWye' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundZigZagFilter' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SaddleCross' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SaddleTee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SegmentedBend' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SegmentedBend2' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SideBranch' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SingleSpeedFans' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SplitterDamper' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SplitUnit' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SqCeilingDiffuser' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SqCeilingDiffuserOval' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SqCeilingDiffuserRect' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SqFloorDiffuser' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SqFloorDiffuserOval' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SqFloorDiffuserRect' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SquareHeelWye' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SquareThroatCross' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SquareThroatTee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SqWallDiffuser' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SqWallDiffuserOval' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'SqWallDiffuserRect' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'TerminatorRoofFan' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ThreeWayTee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Trouser' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RoundChimneyCap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularChimneyCap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'TapableEndCapRectangular' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'TapableEndCapRectToRound' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'TapableEndCapRectToOval' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'VariableAngleWye' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CurtainFireDamperRect' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CurtainFireDamperRound' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CurtainFireDamperOval' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RectangularZElbow' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CompoundOffsetElbow' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveNRV' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveGate' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveButterfly' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Strainer' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FlangeWeldNeck' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_RoundCleanout' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FloorTrough' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Gasket' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FlangeBlind' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FlangeSlipOn' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveStraight' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveAngledRelief' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveStraightRelief' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValvePilotRelief' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValvePressureRegulating' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveBall' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveAngled' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveThreeWay' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveFourWay' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_StraightPipe' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FlexPipe' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FlexBellows' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Cap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FlatCap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Transition' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Elbow' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ReturnBend' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Tee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Wye' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Ptrap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_PtrapGully' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_SPtrap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Ptrap1' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_H-BranchWye' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Cross' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_SanitaryCross' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Stub' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Toilet' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Shower' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_BathTub' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Sink' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_TwinSink' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Urinal' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_PumpBaseMounted' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_PumpSump' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_PumpDiaphragm' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_PumpMotorMounted' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_PumpVerticalSplitCoupled' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_PumpVerticalDualArm' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_PumpHorizontalSplitCase' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_BendWithHeel' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_SanitaryTee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_LateralWye' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Vessel' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_PressureGauge' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Thermometer' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ExpansionVessel' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveAirVent' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_HoseBibTap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_HoseBibTap2' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_WaterHeater' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Condenser' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ChannelGrate' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ParapetDrain' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_RainWaterOutlet' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_PlanterDrain' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_RoundCoupling' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ParkingDrain' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_GreaseTrap' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_HexagonalBush' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Plug' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_RectangularCatchBasin' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_RoundCatchBasin' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_GRPTankPanel' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_DosingTundish' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_DosingPot' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ElbowUnion' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_TwinElbow' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Backnut' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_MaleFemaleUnion' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_Socket' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_DrainCock' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_HoseUnionDrainCock' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_UnionSA' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_HoseUnionDrainCockWithPlug' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_DieElectricUnion' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_DoubleRegulatingValve' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_BalanceValve' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_AirSeparatorStrainer' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_AirSeparator' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveMotorizedButterfly' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveMotorizedControl' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveSwingCheck' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveNonReturn' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_AirSeparatorMB' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveDiffPressureRegulating' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValvePressureDifferential' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveMotorised_3Way' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveMotorised_3Way_withBypass' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FlowSwitch' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_VibrationPad' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FloorDrain4Way' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FloorDrain5Way' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FloorDrain6Way' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveDiffPressureTransmitter' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ValveMotorised_2Way' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ShellAndTubeHeatExchanger' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_EvaporativeChiller' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_StorageTank' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_AirCooledChiller' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_DirectFiredGasWaterHeater' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_WaterCooledChiller' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_PumpDiesel' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_PumpJockey' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'Boiler' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ElectricBoiler' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_PumpDieselHorizontal' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'RadiatorAngledValve' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'PlateHeatExchanger' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ConvectorFan' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ConvectorNatural' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ConvectorSillSingle' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ConvectorSillTwin' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ConvectorTrenchSingle' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ConvectorTrenchTwin' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'ElectricBaseBoard' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'UnitHeater' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_RigidCoupling' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_FemaleUnion' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'CompressionElbow' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_CompressionReducingSets' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_Elbow' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_CompressionEqualCouplers' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_CompressionElbow' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_CompressionReducingCouplers' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_FlareNuts' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_BallValves' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_SingleUnion' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_GasDetectorRelay' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_CapNut' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_CopperOlives' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_ThreeWayTee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_CompressionxBspm' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_CompressionxBspfm' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_Tee' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_FlareDoubleUnion' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_Adapter' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_Bush' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_CompressionStopEnds' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_GasMeter' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_GasShutOffValve' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_SpecialCompressionHobFittings' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_Solder' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_Nipple' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_Plug' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'LPG_ElbowExtruded' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FireHoseReelCabinet' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ReelAndExtinguisherCabinet' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_YardHydrantCabinet' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_LandingValveCabinet' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FireHoseCabinet' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_BreechingInlet' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_BreechingInletCabinet' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FireExtinguisher' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_FireHydrant' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_LandingValve' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_ZoneControlValve' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_AlarmCheckValve' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_SprinklerHeadUpright' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_SprinklerHeadSideWall' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'BMP_SprinklerHead' found"/>
+				<Detail status="SUCCESS" description="All Definition files referenced by 'FireDepartmentConnection' found"/>
+				<Result status="SUCCESS" description="All Definition files referenced by Catalog Types found"/>
+			</ValidationCheck>
+			<ValidationCheck checkType="SYSTEM" description="Checking that all Definition Property data types are supported">
+				<Result status="SUCCESS" description="All Definition Properties are defined using supported data types"/>
+			</ValidationCheck>
+			<ValidationCheck checkType="SYSTEM" description="Checking that all Catalog Items reference valid Catalog Types">
+				<Result status="SUCCESS" description="All Catalog Items reference valid Catalog Types"/>
+			</ValidationCheck>
+			<ValidationCheck checkType="SYSTEM" description="Checking that all Catalog Item default Properties reference valid Catalog Type Definitions">
+				<Result status="SUCCESS" description="All Catalog Item default Properties reference valid Catalog Type Definitions"/>
+			</ValidationCheck>
+			<ValidationCheck checkType="SYSTEM" description="Checking that all Catalog Item default Properties reference valid Definition Properties">
+				<Result status="SUCCESS" description="All Catalog Item default Properties reference valid Definition Properties"/>
+			</ValidationCheck>
+			<ValidationCheck checkType="SYSTEM" description="Checking that all Catalog Item default Property values are valid">
+				<Result status="SUCCESS" description="All Catalog Item default Property values are valid"/>
+			</ValidationCheck>
+		</SystemChecks>
+	</ValidationReport>
+</DataGroupSystem>

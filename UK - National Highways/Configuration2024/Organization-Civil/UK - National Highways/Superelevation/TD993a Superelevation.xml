@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OpenRoadsSuperelevation logFile="" xmlns="OpenRoads">
+  <Units length="meter" crossSlopeRoundingValue="0.005" />
+  <CreationByCorridorSettings eSelection="TD9-93a SE" lSelection="TD9-93a LT" designSpeed="100" pivotMethod="Crown" />
+  <UserVariables />
+  <MaximumERateCalculations>
+    <RateEquation name="TD9-93a SE" equation="eRate">
+      <Variable name="eRate" equation="if(R &lt; MinRadius ? eMax : if(R &gt;= NCRadius ? InitialCrossSlope : if( eCalcRounded &lt; ABS(InitialCrossSlope) ? ABS(InitialCrossSlope) : if(eCalcRounded &gt; eMax ? eMax : eCalcRounded))))" description="Cross slope value used" />
+      <Variable name="eMax" equation="0.07" description="Max Allowable" />
+      <Variable name="R" equation="ABS(Radius)" description="Absolute Radius" />
+      <Variable name="eCalc" equation="Speed*Speed/(2.828*R*100)" description="Calculated Value" />
+      <Variable name="eCalcRounded" equation="((floor(eCalc/0.005))*0.005)+0.005" description="Rounded Value UP to nearest 0.5%" />
+      <Variable name="NCRadius" description="Normal Crown Radius based on design speed">
+        <Table inputVariableName="Speed" interpolationType="useLowerBound">
+          <TableEntry inputValue="50" outputValue="510" />
+          <TableEntry inputValue="60" outputValue="720" />
+          <TableEntry inputValue="70" outputValue="1020" />
+          <TableEntry inputValue="85" outputValue="1440" />
+          <TableEntry inputValue="100" outputValue="2040" />
+          <TableEntry inputValue="120" outputValue="2880" />
+        </Table>
+      </Variable>
+      <Variable name="MinRadius" description="Minimum Radius">
+        <Table inputVariableName="Speed" interpolationType="useLowerBound">
+          <TableEntry inputValue="50" outputValue="127" />
+          <TableEntry inputValue="60" outputValue="180" />
+          <TableEntry inputValue="70" outputValue="255" />
+          <TableEntry inputValue="85" outputValue="360" />
+          <TableEntry inputValue="100" outputValue="510" />
+          <TableEntry inputValue="120" outputValue="720" />
+        </Table>
+      </Variable>
+      <Speeds>
+        <Speed speed="50" />
+        <Speed speed="60" />
+        <Speed speed="70" />
+        <Speed speed="85" />
+        <Speed speed="100" />
+        <Speed speed="120" />
+      </Speeds>
+    </RateEquation>
+  </MaximumERateCalculations>
+  <TransitionCalculations>
+    <TransitionEquation name="TD9-93a LT" equation="TransitionLength">
+      <Variable name="TransitionLength" equation="Speed*Speed*Speed/(14.01*R)" description="Calculated Transition Length q=0.3" />
+      <Variable name="R" equation="ABS(Radius)" description="Absolute Radius" />
+    </TransitionEquation>
+    <TransitionEquation name="Q 0.3048" equation="TransitionLength">
+      <Variable name="TransitionLength" equation="Speed*Speed*Speed/(14.23416*R)" description="Calculated Transition Length q=0.3048" />
+      <Variable name="R" equation="ABS(Radius)" description="Absolute Radius" />
+    </TransitionEquation>
+  </TransitionCalculations>
+  <TransitionOptions interpolateTables="false" percentTransitionOnTangent="1" useSpiralLength="true" lengthsAreTotalTransition="true" transitionType="Linear" nonLinearCurveLength="0" startInsideLaneRotationWithOutside="false" />
+  <RunoutOptions isFixedLength="false" length="0" />
+  <CustomKeyStations description="Full Super on straight when there is no transition" criteria="abs( StartOfArc - StartOfSpiral ) &lt; 0.001">
+    <Variable name="Test" equation="if TransitionLength &gt; 0 ? 'Lead' : 'Trail'" />
+    <Variable name="FullSuper1" equation="If abs(TransitionLength) &gt; 0 ? StartOfArc  : StartOfArc " />
+    <Variable name="Normal1" equation="If Test = 'Lead' ?  FullSuper1 - abs(TransitionLength) :  FullSuper1 + abs(TransitionLength) " />
+    <Variable name="StandardCrossfall" equation="0.025" />
+    <Variable name="DistToZero" equation="(MaxE*abs(TransitionLength))/(MaxE+StandardCrossfall)" />
+    <Variable name="Zero1" equation="If Test = 'Lead' ?  FullSuper1 - abs(DistToZero) :  FullSuper1 + abs(DistToZero) " />
+    <Variable name="Reverse1" equation="If Test = 'Lead' ?  Normal1 +(2*(Zero1-Normal1) :  Normal1 -(2*abs(Zero1-Normal1) " />
+    <CustomKeyStation type="FullSuper" equation="FullSuper1" />
+    <CustomKeyStation type="NormalCrown" equation="Normal1" />
+    <CustomKeyStation type="ReverseCrown" equation="Reverse1" />
+    <CustomKeyStation type="ZeroCrossSlope" equation="Zero1" />
+  </CustomKeyStations>
+</OpenRoadsSuperelevation>
