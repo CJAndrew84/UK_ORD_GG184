@@ -1,385 +1,279 @@
 # UK_ORD_GG184 — OpenRoads Designer Workspace
 
-A curated OpenRoads Designer (ORD) workspace aligned to UK practice. It provides consistent standards, seeds, symbology, Feature Definitions, and production assets. This repository is intended to be used as a complete “Custom Configuration,” so teams can get up-and-running quickly and produce repeatable, standards-aligned deliverables.
+A curated OpenRoads Designer (ORD) workspace aligned to UK practice and GG 184. It provides consistent standards, seeds, symbology, Feature Definitions, Item Types, and production assets. Use this as a complete “Custom Configuration” so teams can start quickly and produce repeatable, standards‑aligned deliverables.
 
 This workspace references and organises content with respect to:
-- MCHW (including SHW)
-- MMHW
-- ADMM
-- buildingSMART Data Dictionary (bsDD) Property Sets (Psets)
+- MCHW (including the Specification for Highway Works, SHW)
+- MMHW (Maintenance Manual for Highway Works)
+- ADMM (Asset Data Management Manual)
+- buildingSMART Data Dictionary (bsDD) Property Sets and Quantity Takeoffs (Psets/Qto)
+- Uniclass 2015 classifications (Co, En, SL, EF, Ss, Pr, etc.)
+- GG 184 “Specification for the use of Computer Aided Design”
 
-Feature Definitions are structured around maintainable assets and construction elements reflected in these documents. Item Types are provided to encode specification metadata (e.g., SHW/MMHW/ADMM) and bsDD properties.
+Feature Definitions are structured around maintainable assets and construction elements reflected in these documents. Item Types encode specification and classification metadata (SHW/MMHW/ADMM), Uniclass, and bsDD properties.
 
-- Repository: [UK_ORD_GG184](https://github.com/CJAndrew84/UK_ORD_GG184)
-- Maintainer: [@CJAndrew84](https://github.com/CJAndrew84)
+Repository: [UK_ORD_GG184](https://github.com/CJAndrew84/UK_ORD_GG184) • Maintainer: [@CJAndrew84](https://github.com/CJAndrew84)
 
-> Note: Validate requirements against your client’s latest specifications and project BEP. This workspace provides guidance and defaults, not legal or contractual compliance on its own.
+> Validate against your client’s latest specifications and the project BEP. This workspace provides guidance and defaults, not compliance on its own.
+
+---
+
+## Key inputs in this repository
+
+- GG 184 (reference and guidance)
+  - GG 184 PDF (reference): [GG 184 Specification for the use of Computer Aided Design-web.pdf](input/GG%20184%20Specification%20for%20the%20use%20of%20Computer%20Aided%20Design-web.pdf)
+    - Permalink: https://github.com/CJAndrew84/UK_ORD_GG184/blob/eeb83b15de39c639571b7be434832a5ee2af8a1e/input/GG%20184%20Specification%20for%20the%20use%20of%20Computer%20Aided%20Design-web.pdf
+- SHW to Uniclass mapping dataset
+  - [SHW_England_enriched_with_Uniclass.csv](input/SHW_England_enriched_with_Uniclass.csv)
+    - Permalink: https://github.com/CJAndrew84/UK_ORD_GG184/blob/eeb83b15de39c639571b7be434832a5ee2af8a1e/input/SHW_England_enriched_with_Uniclass.csv
+- bsDD (IFC Psets/Qto) seed
+  - [bsdd_Ifc_Pset_Qto.xlsx](input/bsdd_Ifc_Pset_Qto.xlsx)
+    - Permalink: https://github.com/CJAndrew84/UK_ORD_GG184/blob/eeb83b15de39c639571b7be434832a5ee2af8a1e/input/bsdd_Ifc_Pset_Qto.xlsx
+- Feature Definitions (extract)
+  - [GG184.xml](input/GG184.xml)
+    - Permalink: https://github.com/CJAndrew84/UK_ORD_GG184/blob/eeb83b15de39c639571b7be434832a5ee2af8a1e/input/GG184.xml
+- Levels seed (CSV import)
+  - [Levels.csv](input/Levels.csv)
+    - Permalink: https://github.com/CJAndrew84/UK_ORD_GG184/blob/eeb83b15de39c639571b7be434832a5ee2af8a1e/input/Levels.csv
+- Reference only (not Bentley, not distributed standards)
+  - Autodesk C3D UKIE example: [ukie-user-guide-and-reference.pdf](input/ukie-user-guide-and-reference.pdf) • For reference only; useful to understand UK naming/unit conventions and deliverables when onboarding mixed‑tool teams. Not used directly by ORD.
 
 ---
 
 ## Highlights
 
-- UK-centric defaults (units, annotation scales, drawing seeds, level libraries)
+- UK‑centric defaults (metric units, annotation scales, design/drawing/sheet seeds)
 - Feature Definitions for:
-  - Alignments (horizontal/vertical), Profiles
-  - Corridor design (corridor, components, linear features, earthworks)
-- Symbology via Feature Symbology, Element Templates, Levels, Linestyles
-- Drawing/Sheet seeds and drawing production rules for plans, profiles, sections
-- Centralised DGNLIBs: levels, text styles, dimension styles, annotation, feature defs
-- Item Types for SHW/MMHW/ADMM metadata and bsDD Psets (with GUIDs where applicable)
-- Reporting templates (quantities, schedules) and example configuration
+  - Alignments and Profiles (horizontal/vertical) — includes the required ORD FDs so geometry, profiles, and corridors function out‑of‑the‑box
+  - Corridors and components (linear features, pavement, earthworks, drainage)
+  - Terrain (existing/proposed contours, triangles, thematic height/slope)
+  - Safety and visibility (VRS, aquaplaning, sight visibility)
+- Symbology via Feature Symbology and Element Templates
+- Centralised DGNLIBs: levels, text styles, dimension styles, annotation groups/definitions, feature defs
+- Item Types for SHW/MMHW/ADMM metadata, Uniclass (Co/En/SL/EF/Ss/Pr…), and bsDD Psets/Qto
+- Reporting templates for quantities, schedules, and data drops
 
 ---
 
 ## Quick Start
 
-1. Download or clone this repo to a local or network path.
+1. Clone or download this repo to a local or network path.
 2. Point ORD to this path as your “Custom Configuration.”
-3. Launch ORD, pick the “UK_ORD_GG184” Workspace, and use or create a WorkSet.
+3. Launch ORD, select “UK_ORD_GG184” Workspace, choose/create a WorkSet.
 4. Start modelling with the provided seeds, Feature Definitions, and Item Types.
 
-Detailed steps follow.
+Installation details and variables are below.
 
 ---
 
-## Prerequisites
+## Installation
 
-- OpenRoads Designer (2022 R3 or newer recommended; 2023+ preferred)
-- Windows 10/11 with access to the configuration path
-- Optional: Network share for team deployment
+Local (single user)
+- Path example: C:/Workspaces/UK_ORD_GG184/
+- Edit (admin) ConfigurationSetup.cfg:
+  ```
+  _USTN_CUSTOM_CONFIGURATION = C:/Workspaces/UK_ORD_GG184/
+  _USTN_WORKSPACESROOT       = $(_USTN_CUSTOM_CONFIGURATION)WorkSpaces/
+  _USTN_WORKSETSROOT         = $(_USTN_CUSTOM_CONFIGURATION)WorkSets/
+  CIVIL_ORGANIZATION_NAME    = UK_ORD_GG184
+  ```
+Network (team)
+- Path example: //YourServer/Design/UK_ORD_GG184/
+- Use the same variables as above (UNC path).
 
----
+ProjectWise (optional)
+- Mirror this structure into a Managed Workspace or point your Managed Configuration to it.
 
-## Installation Options
-
-You can use this configuration locally, from a shared network location, or managed by ProjectWise.
-
-### Option A — Local (single user)
-
-1. Place (or clone) this repository locally, e.g.:
-   - `C:\Workspaces\UK_ORD_GG184\`
-
-2. Open (as admin) your ConfigurationSetup.cfg:
-   - Typical locations:
-     - ORD CE: `C:\ProgramData\Bentley\OpenRoads Designer CE\Configuration\ConfigurationSetup.cfg`
-     - ORD 2023: `C:\ProgramData\Bentley\OpenRoads Designer 2023\Configuration\ConfigurationSetup.cfg`
-
-3. Add or update:
-   ```
-   # Custom Configuration root
-   _USTN_CUSTOM_CONFIGURATION = C:/Workspaces/UK_ORD_GG184/
-
-   # (Optional) Workspace/WorkSet roots
-   _USTN_WORKSPACESROOT = $(_USTN_CUSTOM_CONFIGURATION)WorkSpaces/
-   _USTN_WORKSETSROOT   = $(_USTN_CUSTOM_CONFIGURATION)WorkSets/
-
-   # (Optional) Name the Organization layer
-   CIVIL_ORGANIZATION_NAME = UK_ORD_GG184
-   ```
-
-4. Launch ORD. On the WorkPage, choose the “Custom Configuration” if prompted, then select Workspace “UK_ORD_GG184” and a WorkSet.
-
-### Option B — Network (team)
-
-1. Place (or clone) this repo to a read-only share, e.g.:
-   - `\\YourServer\Design\UK_ORD_GG184\`
-
-2. Update ConfigurationSetup.cfg:
-   ```
-   _USTN_CUSTOM_CONFIGURATION = //YourServer/Design/UK_ORD_GG184/
-   _USTN_WORKSPACESROOT       = $(_USTN_CUSTOM_CONFIGURATION)WorkSpaces/
-   _USTN_WORKSETSROOT         = $(_USTN_CUSTOM_CONFIGURATION)WorkSets/
-   CIVIL_ORGANIZATION_NAME    = UK_ORD_GG184
-   ```
-
-3. Restart ORD and select the “UK_ORD_GG184” Workspace. Ensure users have suitable permissions for WorkSets and project deliverables.
-
-### Option C — ProjectWise (optional)
-
-Mirror the contents into a Managed Workspace or point your PW Managed Configuration to this structure. Keep the folder layout and variables. Coordinate with your PW administrator for deployment.
-
----
-
-## Typical Folder Layout
-
-Adjust to match the actual repository structure—this reflects common ORD organisation.
-
+Common bindings inside Organization/Config .cfg
 ```
-UK_ORD_GG184/
-├─ Organization/
-│  ├─ Standards/
-│  │  ├─ DGNLIB/                    # Levels, Text, Dim, Feature Symbology, Annotation, Feature Definitions
-│  │  ├─ Cells/                     # .cel libraries (title blocks, symbols)
-│  │  ├─ Linestyles/                # .rsc or DGNLIB-based linestyles
-│  │  ├─ Materials/                 # Material definitions, color books
-│  │  ├─ Reports/                   # XML/XSLT/CSV templates for reports
-│  │  ├─ ItemTypes/                 # Item Type DGNLIBs (SHW/MMHW/ADMM/bsDD mappings)
-│  │  ├─ Templates/                 # Civil/ITL templates (if used)
-│  │  ├─ Seed/                      # Design/Drawing/Sheet seed DGNs
-│  │  ├─ GeoCoord/                  # GCS files or notes (e.g., OSGB/BNG)
-│  │  └─ Config/                    # .cfg files binding resources and variables
-│  └─ WorkSpaces/
-│     └─ UK_ORD_GG184/              # Workspace root (cfg + standards references)
-├─ WorkSets/
-│  └─ <YourProject>/
-├─ _ConfigSamples/
-└─ README.md
+MS_DGNLIBLIST           > $(_USTN_ORGANIZATION)Standards/DGNLIB/*.dgnlib
+MS_CELL                 > $(_USTN_ORGANIZATION)Standards/Cells/
+MS_SYMBRSRC             > $(_USTN_ORGANIZATION)Standards/Linestyles/*.rsc
+MS_SEEDFILES            > $(_USTN_ORGANIZATION)Standards/Seed/*.dgn
+CIVIL_REPORTS_DIRECTORY > $(_USTN_ORGANIZATION)Standards/Reports/
+MS_ITEMTYPES            > $(_USTN_ORGANIZATION)Standards/ItemTypes/*.dgnlib
 ```
 
 ---
 
-## Key Configuration Variables
+## Standards mapping in this workspace
 
-- `_USTN_CUSTOM_CONFIGURATION` — Root folder of this repo
-- `_USTN_WORKSPACESROOT` — Path to WorkSpaces/
-- `_USTN_WORKSETSROOT` — Path to WorkSets/
-- `CIVIL_ORGANIZATION_NAME` — Friendly name for the Organization layer
+- SHW/MCHW: Feature Definitions and Item Types group/nest by SHW “Doc Code” (e.g., CC/CP 201–207 Pavements, CC/CP 400 Restraint, CC/CP 500 Drainage).
+- MMHW: Item Types capture maintenance attributes (maintainable, inspection regime, condition).
+- ADMM: Item Types capture handover and lifecycle data fields.
+- bsDD: Item Types include bsDD Psets/Qto properties (with identifiers) for interoperable exchange.
+- Uniclass 2015: Levels and Item Types carry Uniclass codes/descriptions (Co/En/SL/EF/Ss/Pr), enabling classification‑driven reporting.
 
-Common resource bindings (usually set in Organization/Config .cfg):
-
-```
-# DGNLIBs (levels, text, dim, feature symbology, annotation, feature defs)
-MS_DGNLIBLIST                 > $(_USTN_ORGANIZATION)Standards/DGNLIB/*.dgnlib
-
-# Cells
-MS_CELL                       > $(_USTN_ORGANIZATION)Standards/Cells/
-
-# Linestyles (RSC or DGNLIB)
-MS_SYMBRSRC                   > $(_USTN_ORGANIZATION)Standards/Linestyles/*.rsc
-
-# Seed files
-MS_SEEDFILES                  > $(_USTN_ORGANIZATION)Standards/Seed/*.dgn
-MS_DESIGNSEED                 > $(_USTN_ORGANIZATION)Standards/Seed/DesignSeed.dgn
-MS_DRAWINGSEED                > $(_USTN_ORGANIZATION)Standards/Seed/DrawingSeed.dgn
-MS_SHEETSEED                  > $(_USTN_ORGANIZATION)Standards/Seed/SheetSeed.dgn
-
-# Reports, Materials, Item Types
-CIVIL_REPORTS_DIRECTORY       > $(_USTN_ORGANIZATION)Standards/Reports/
-MS_MATERIAL                   > $(_USTN_ORGANIZATION)Standards/Materials/
-MS_ITEMTYPES                  > $(_USTN_ORGANIZATION)Standards/ItemTypes/*.dgnlib
-```
-
-Tip: Use “>” to append and “:=” to replace search paths. Prefer portable paths.
+Source dataset (CSV): [SHW_England_enriched_with_Uniclass.csv](input/SHW_England_enriched_with_Uniclass.csv). Use this to drive pick lists, Item Types, and Feature Definition naming.
 
 ---
 
-## Standards Mapping (MCHW/SHW, MMHW, ADMM, bsDD)
+## Feature Definitions provided (from GG184.xml)
 
-This workspace aligns assets and metadata to UK documentation and bsDD:
+The included Feature Definitions extract defines a broad set ready for ORD usage:
+- Terrain (Existing/Proposed)
+  - Existing/Proposed Contours, Triangles, Thematic Height/Slope, Survey, Building Pad
+  - Unsuitable Boundary, Temporary Construction
+- Geometry and production
+  - Linear Template FDs: Design, Final, “Final w/ Contours”
+  - Surface Template FDs: Enable/Disable 3D Linear Features
+  - Trace Slope (trace, pond, low points)
+- Safety and visibility
+  - Sight Visibility: Stopping (SSD), Passing (PSD), Overtaking (OSD)
+  - Aquaplaning: surface, linear, risk categories (Low/Acceptable/High/Unacceptable)
+- Road restraint systems (VRS) and barriers
+  - Cable barrier, TL2/TL3 guardrail start/end (left/right)
+- Existing assets and survey
+  - Monuments (e.g., Half Section Corner, Iron Pin/Pipe Found)
+  - Traffic and Safety: signals, light poles, signs
+  - Utilities: inlet, poles
+  - Right of Way: pins, property corners/lines
+- Terrain points/lines
+  - Boreholes, spot elevations, random points, ditch top/bottom, flowlines
 
-- MCHW/SHW: Feature Definitions and symbology can be grouped or named by relevant Series/Clauses (e.g., pavements, earthworks, drainage).
-- MMHW: Maintenance-focused Item Types to capture inspection, service life, and maintainability attributes.
-- ADMM: Item Types to capture administrative or delivery/management metadata as required by your programme.
-- bsDD: Item Types include bsDD properties with namespace/identifier (GUID) where applicable, to support interoperable data exchange.
+File: [GG184.xml](input/GG184.xml). This content is packaged into DGNLIBs with corresponding Feature Symbology and Element Templates within the Workspace.
 
-> Versioning: Pin your project to the intended publication/version of SHW/MMHW/ADMM and record it in your WorkSet readme or metadata. Update mappings as publications evolve.
+Required geometry Feature Definitions (Alignments and Profiles)
+- Workspace includes Feature Definitions for:
+  - Alignments (horizontal) — e.g., Centreline, Control, Temporary/Scratch
+  - Profiles (vertical) — e.g., Design, Existing/Survey, Control
+- These are the minimum needed for ORD geometry, profiles, and corridor modelling to function.
 
----
-
-## Feature Definitions Provided
-
-Feature Definitions are organised in DGNLIBs with corresponding Feature Symbology and Element Templates. Naming and grouping are designed to reflect maintainable assets and construction elements as referenced in MCHW/SHW, MMHW, and ADMM.
-
-Core coverage includes:
-
-1. Alignments (Geometry)
-   - Horizontal Alignment Feature Definitions (e.g., Design, Control, Land Boundaries)
-   - Vertical Alignments / Profiles (Design, Existing, Control)
-   - Associated Feature Symbology and Element Templates for 2D/3D representation
-   - Typical examples:
-     - Alignment.Design.Centreline
-     - Alignment.Control.SettingOut
-     - Profile.Design.Primary
-     - Profile.Existing.Survey
-
-2. Corridors and Components
-   - Corridor Feature Definitions for model containers
-   - Linear Features for edges, centrelines, kerbs, channels, barriers (mapped to SHW Series where helpful)
-   - Components for pavement layers, verges, footways/cycleways, earthworks, drainage elements
-   - Earthworks Feature Definitions (cut/fill, embankment, formation)
-   - Typical examples:
-     - Corridor.Design.Standard
-     - Linear.Kerb.HB2.SHW_1100
-     - Pavement.SurfaceCourse.SHW_910
-     - Earthworks.Cut.Slope1in3
-     - Drainage.Pipe.SHW_500
-
-3. Profiles (explicit)
-   - Profile Feature Definitions for vertical design and existing ground
-   - Symbology for annotation/labels to UK scales
-
-Each Feature Definition is paired with:
-- Feature Symbology for model/drawing annotation
-- Element Templates for level/style/colour/linestyle
-- Item Type associations for specification and asset metadata (see next section)
-
-> DGNLIB structure suggestion:
-> - Geometry_FeatureDefinitions.dgnlib
-> - Corridor_FeatureDefinitions.dgnlib
-> - Earthworks_FeatureDefinitions.dgnlib
-> - Drainage_FeatureDefinitions.dgnlib
-> - Symbology_*.dgnlib
-> - Templates_*.dgnlib
+Tip: Where appropriate, Feature Definition names can include SHW references from the CSV, for example:
+- Linear.Kerb.HB2.SHW_CC_CP_207
+- Pavement.SurfaceCourse.SMA10.SHW_CC_CP_202
+- VRS.Barrier.Steel.SHW_CC_CP_400
+- Drainage.Pipe.UPVC.SHW_CC_CP_500
 
 ---
 
-## Item Types and Data Model (SHW/MMHW/ADMM + bsDD)
+## Levels and Uniclass
 
-Item Types are included to encode specification metadata and support downstream data exchange.
+Levels.csv provides a seed list of levels with Uniclass‑influenced naming where available, and pragmatic “Non_Uniclass_*” entries when required.
 
-Common Item Type groups:
+- File: [Levels.csv](input/Levels.csv)
+- Import via Level Manager (Tools > Import/Export > Import CSV) into the appropriate DGNLIB to seed project levels.
+- Examples found in the CSV:
+  - CH‑Ss251694‑M‑VrsGen (Guardrail; Uniclass Systems Ss 25-16 94…)
+  - CB‑EF2510‑M‑StructWallTop (Structural elements; Uniclass EF)
+  - VT‑En803574‑M‑ExPaveEdge (Existing pavement; Uniclass Entities En)
+  - Non_Uniclass_* where no suitable Uniclass mapping exists or for temporary/working layers
 
+Recommendation
+- Keep Uniclass alignment for publishable deliverables.
+- Reserve Non_Uniclass_* for internal working or where the spec explicitly requires.
+
+---
+
+## Item Types: SHW/MMHW/ADMM + Uniclass + bsDD
+
+This workspace ships Item Types designed to:
+- Reference SHW/MMHW/ADMM context (DocCode, Series/Clause, version/publication)
+- Carry Uniclass codes/descriptions (Co/En/SL/EF/Ss/Pr as available from the CSV)
+- Include bsDD Psets/Qto properties for IFC‑aligned data.
+
+Seed sources:
+- SHW mappings: [SHW_England_enriched_with_Uniclass.csv](input/SHW_England_enriched_with_Uniclass.csv)
+- bsDD properties: [bsdd_Ifc_Pset_Qto.xlsx](input/bsdd_Ifc_Pset_Qto.xlsx)
+
+Suggested Item Type structure:
 - Spec.Reference
   - Standard: Enum [SHW, MMHW, ADMM, Other]
-  - Series: Text/Enum (e.g., “1100”)
-  - Clause: Text (e.g., “1101”)
-  - Class/Type: Text (e.g., material class)
-  - Version: Text (publication/date)
-
-- Asset.Classification
-  - AssetType: Enum (e.g., Pavement, Kerb, Barrier, Drainage, Earthwork, Alignment)
-  - Maintainable: Bool
-  - InspectionInterval: Text/Duration
-  - ServiceLifeTarget: Number/Years
-
+  - DocCode, DocTitle, Series, Clause, Version
+- Asset.Taxonomy
+  - TopGroup, AssetElement, VariantType, AssetName (from CSV)
+  - Maintainable: Bool (MMHW)
+- Uniclass.Mapping
+  - Co/En/SL/EF/Ss/Pr Code and Description (fields only populated if present in CSV)
 - bsdd.Mapping
-  - bsdd.PropertySet: Text (Pset name)
-  - bsdd.PropertyName: Text
-  - bsdd.Identifier: Text (GUID/IRI)
-  - bsdd.Unit: Text
-  - bsdd.ValueType: Text (e.g., String, Number, Enum)
-
-- Construction.Delivery
-  - Product: Text
-  - Manufacturer: Text
-  - Model/Type: Text
-  - Certification/DoP: Text/Link
+  - Pset, PropertyName, Identifier (GUID/IRI), Unit, ValueType
 
 Binding strategy:
-
-- Default Item Types are associated to Feature Definitions via DGNLIB so placed elements automatically carry metadata.
-- For components created by templates, ensure the Component Feature Definition carries the same Item Type association.
-- Use Pick Lists/Enums to control values for Series, Clauses, and Asset Types to improve data quality.
-
-> Optional: Provide a mapping table (XSLT/CSV) to transform internal Item Type names to client-specific deliverable schemas.
+- Attach Item Types to Feature Definitions in DGNLIB so elements inherit metadata automatically.
+- For corridor templates (components and linear features), ensure the Component/Linear FDs carry the same Item Types.
 
 ---
 
-## Using the Workspace
+## Using the workspace
 
-1. Launch ORD and select:
-   - Configuration: Custom (if prompted)
-   - Workspace: “UK_ORD_GG184”
-   - WorkSet: Choose or create a project WorkSet (generates a DGNWS file)
+1. Geometry and Profiles
+   - Use Alignment/Profile FDs for horizontal and vertical design, including Existing/Survey profiles.
+   - Apply UK annotation groups/scales (1:200, 1:250, 1:500, 1:1000, etc).
 
-2. Start a new design file:
-   - Use provided seeds (Design/Drawing/Sheet) to ensure metric units, working units, GCS, annotation scales, and sheet sizes.
+2. Corridors
+   - Use the Corridor/Linear/Component FDs aligned to SHW assets (e.g., kerbs per CC/CP 207, pavement per CC/CP 201–203, VRS per CC/CP 400, drainage per CC/CP 500).
+   - Template libraries to reflect pavement build‑up, drainage, and earthworks.
 
-3. Geometry and Profiles:
-   - Create Horizontal/Vertical geometry using the provided Alignment/Profile Feature Definitions.
-   - Use the corresponding Annotation Groups and UK scales (1:200, 1:250, 1:500, 1:1000, etc.).
+3. Terrain and Safety
+   - Terrain FDs for existing/proposed surfaces.
+   - Sight Visibility and Aquaplaning FDs to evaluate SSD/PSD/OSD and run risk visualisations.
 
-4. Corridors:
-   - Apply Corridor Feature Definitions and template libraries.
-   - Use Linear Feature Definitions for kerbs, channels, edges, barriers mapped to SHW/MMHW as needed.
-   - Ensure components (pavement, earthworks, drainage) use the correct Feature Definitions so Item Types attach.
-
-5. Metadata:
-   - Verify Item Types on placed elements (Properties > Item Types).
-   - Populate Spec.Reference (SHW/MMHW/ADMM) and bsDD fields where required by the BEP.
-   - Use Reports to extract schedules or quantities with these properties.
-
-6. Drawing Production:
-   - Use Drawing and Sheet Seeds to create plans/profiles/sections.
-   - Detailing Symbols, labels and title blocks are managed via DGNLIBs.
-   - Item Types can feed title blocks and schedules where configured.
+4. Metadata and Reporting
+   - Populate Spec.Reference, Uniclass, and bsDD fields as required by BEP.
+   - Use Reports to extract quantities and asset registers grouped by DocCode, AssetElement, or Uniclass.
 
 ---
 
-## Extending or Adding Feature Definitions
+## Data workflow (recommended)
 
-- Clone an existing FD near your need (e.g., Kerb HB2) and adjust naming, symbology, and Item Types.
-- Keep naming consistent, e.g.:
-  - Domain.Subdomain.Object.[SHWSeries/Clause]
-  - Example: Linear.Kerb.HB2.SHW_1100
-- Update:
-  - Feature Symbology (model/drawing)
-  - Element Template (level/style)
-  - Item Type bindings (Spec.Reference, Asset.Classification, bsdd.Mapping)
-- Validate by:
-  - Placing a test element
-  - Checking annotation output
-  - Running a report to confirm Item Type values are present
+When standards update (SHW/MMHW/ADMM/Uniclass/bsDD):
 
----
+1. Update input datasets
+   - Replace/update [SHW_England_enriched_with_Uniclass.csv](input/SHW_England_enriched_with_Uniclass.csv).
+   - Update [bsdd_Ifc_Pset_Qto.xlsx](input/bsdd_Ifc_Pset_Qto.xlsx) if bsDD mappings change.
+   - Keep a record of the commit SHA used in your WorkSet metadata.
 
-## UK-Specific Notes
+2. Regenerate pick lists and Item Types
+   - Refresh enums/pick lists for DocCode, TopGroup, AssetElement, VariantType, AssetName.
+   - Update Uniclass mapping fields (Co/En/SL/EF/Ss/Pr) as available in the CSV.
+   - Extend Item Types with new bsDD properties if required.
 
-- Units: Metric (m, mm); seeds and styles assume UK practice.
-- Coordinate System: British National Grid (OSGB36 / EPSG:27700) recommended unless otherwise specified.
-- Scales and Symbology: Configured for typical UK deliverable scales.
-- Standards: Align Feature Definitions and Item Types with MCHW/SHW, MMHW, ADMM. Confirm the version required for your contract.
+3. Review Feature Definitions
+   - If FD names encode SHW/Uniclass, review for changes (e.g., renames, new types).
+   - Keep Feature Symbology and Element Templates in sync.
 
----
+4. Levels/DGNLIBs
+   - If needed, import updated [Levels.csv](input/Levels.csv) into a levels DGNLIB.
 
-## Reporting
+5. Tag and publish
+   - Create a release tag so projects can pin to a known dataset version.
 
-- Use the Reports templates in Standards/Reports for:
-  - Quantities by Feature Definition / SHW Series
-  - Asset registers including MMHW fields
-  - Data drops with bsDD properties
-- Export to CSV/Excel; tailor XSLT/CSV mappings as needed for client formats.
+> Governance/process rows in the CSV (e.g., “Governance requirement - spec/procedure”) are valuable for documentation but are typically excluded from modelling FDs. Filter per BEP to focus on maintainable/constructed assets.
 
 ---
 
-## Updating the Workspace
+## UK‑specific settings
 
-- Pull the latest changes:
-  ```
-  git pull origin main
-  ```
-- For network deployments, update from a tagged release or known-good commit.
-- Users should restart ORD after updates to reload DGNLIBs and configuration.
+- Units: Metric (m, mm)
+- Coordinate System: British National Grid (OSGB36 / EPSG:27700) recommended unless stated otherwise
+- Drawing scales: configured for UK deliverables
+- Standards: Align FDs and Item Types with SHW/MMHW/ADMM; confirm required versions
+
+---
+
+## Reference: UKIE C3D guide (for context only)
+
+The Autodesk UKIE Country Kit guide is included for reference to naming conventions, units, and deliverable expectations:
+- [ukie-user-guide-and-reference.pdf](input/ukie-user-guide-and-reference.pdf)
+- Not a Bentley standard. Do not copy content verbatim into ORD resources. Use it only to help mixed‑tool teams align expectations.
 
 ---
 
 ## Troubleshooting
 
-- Workspace not appearing:
-  - Check `_USTN_CUSTOM_CONFIGURATION` and trailing slash
-  - Confirm permissions and expected folder layout
-
-- Missing styles/levels/FDs:
-  - Verify MS_DGNLIBLIST and related search paths
-  - In ORD, check Configuration Variables to confirm resolved paths
-
-- Cache/prefs issues after updates:
-  - Close ORD and clear user prefs cache:
-    - `%LOCALAPPDATA%\Bentley\OpenRoadsDesigner\` (delete/rename versioned folders)
-  - Relaunch ORD
-
-- Incorrect seed scale/units:
-  - Start from provided seeds
-  - Confirm Drawing and Annotation Scales before placing text/labels
-
----
-
-## Contributing
-
-- Fork and use feature branches
-- Submit pull requests with clear descriptions and example outputs
-- Maintain backward compatibility in DGNLIBs and seeds where possible
-- Update this README when adding standards or breaking changes
+- Workspace not appearing: verify `_USTN_CUSTOM_CONFIGURATION` path and folder structure (Organization/WorkSpaces).
+- Missing styles/FDs: confirm MS_DGNLIBLIST and other search paths; check effective variables in ORD.
+- Cache/prefs after updates: clear `%LOCALAPPDATA%\Bentley\OpenRoadsDesigner\` versioned folders and restart.
+- Scales/units off: start from provided seeds; check Drawing/Annotation scales before labeling.
 
 ---
 
 ## Roadmap
 
-- Broaden FD coverage for additional SHW/MMHW/ADMM assets
-- Expand Annotation Groups for more drawing types
-- Add more report templates (BoQ, drainage schedules, pavement)
-- Provide a sample WorkSet with demo data and example sheets
-- Optional ProjectWise deployment pack
+- Extend FD coverage across more SHW sections (e.g., CC/CP 480s structures) and MMHW/ADMM fields.
+- Enrich Item Types with additional bsDD Psets/Qto and tighter value constraints (pick lists).
+- Add example WorkSet with demo data and reports grouped by Uniclass/SHW.
+- Optional ProjectWise deployment pack.
 
 ---
 
@@ -391,61 +285,9 @@ Unless otherwise stated in a LICENSE file, this content is provided “as is.”
 
 ## Support
 
-- Open a repository issue including:
-  - ORD version and OS version
-  - Steps to reproduce
-  - Screenshots/logs if helpful
-- Maintainer: [@CJAndrew84](https://github.com/CJAndrew84)
+Open a repository issue including:
+- ORD version and OS version
+- Steps to reproduce
+- Screenshots/logs if available
 
----
-
-## Appendix A: Example Feature Definition Inventory (indicative)
-
-- Alignment
-  - Alignment.Design.Centreline
-  - Alignment.Control.SettingOut
-  - Profile.Design.Primary
-  - Profile.Existing.Survey
-- Corridor and Linear Features
-  - Corridor.Design.Standard
-  - Linear.EdgeOfPavement.MainCarriageway
-  - Linear.Kerb.HB2.SHW_1100
-  - Linear.Channel.SHW_1100
-  - Barrier.Vehicle.Steel.SHW_1100
-- Pavement Components
-  - Pavement.SurfaceCourse.SMA.SHW_910
-  - Pavement.BinderCourse.DBBM.SHW_910
-  - Pavement.Base.CBGM.SHW_890
-  - Pavement.Subbase.Type1.SHW_803
-- Earthworks
-  - Earthworks.Cut.Slope1in3
-  - Earthworks.Fill.Slope1in2
-  - Earthworks.Formation.SHW_600
-- Drainage (indicative)
-  - Drainage.Pipe.UPVC.SHW_500
-  - Drainage.MH.PrecastConcrete.SHW_500
-  - Drainage.Gully.Grating.SHW_500
-
-Map or rename to match your client specification.
-
----
-
-## Appendix B: Sample Item Types (fields)
-
-- Spec.Reference
-  - Standard: SHW
-  - Series: 1100
-  - Clause: 1101
-  - Class: HB2
-  - Version: 2025-xx
-- Asset.Classification
-  - AssetType: Kerb
-  - Maintainable: true
-  - InspectionInterval: 12 months
-  - ServiceLifeTarget: 20
-- bsdd.Mapping
-  - bsdd.PropertySet: Pset_Kerb
-  - bsdd.PropertyName: Material
-  - bsdd.Identifier: {guid-or-iri}
-  - bsdd.Unit: -
-  - bsdd.ValueType: Enum
+Maintainer: [@CJAndrew84](https://github.com/CJAndrew84)
