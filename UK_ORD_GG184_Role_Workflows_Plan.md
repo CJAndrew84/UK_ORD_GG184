@@ -272,6 +272,77 @@ Reviewer,Check,Review,Measure Between Points,MEAS01,Read-only toolset
 - Confirm which DGNLibs are loaded: `Utilities → Key-In → dgnlib list`  
 - Log variables: `Utilities → Key-In → expand echo on` and review startup log.
 
+
+
+---
+
+## 16) Appendix D — Setting the Active Workflow Automatically
+
+When OpenRoads Designer starts, it remembers the last active **Workflow** tab used in the ribbon.  
+However, for consistent startup behavior across users and roles, you can explicitly control which workflow is activated using the `_USTN_WORKFLOW` variable.
+
+### 🎯 Purpose
+`_USTN_WORKFLOW` sets which workflow tab (ribbon) is active on startup — for example “UKGG184_Designer” or “UKGG184_Reviewer.”
+
+### ⚙️ Usage Example
+
+If your workspace defines workflows such as:
+- `UKGG184_Designer`
+- `UKGG184_Drainage`
+- `UKGG184_Reviewer`
+
+You can specify a startup workflow:
+
+```cfg
+_USTN_WORKFLOW = UKGG184_Designer
+```
+
+When ORD launches, it will immediately activate the **Designer** workflow.
+
+### 🧩 Context
+
+This variable can live in your:
+- **WorkSpace CFG** (e.g. `UK_ORD_GG184.cfg`)
+- **WorkSet CFG**
+- **User CFG**
+- or be assigned dynamically from **ProjectWise** environment attributes.
+
+Example (role-based activation):
+
+```cfg
+%if $(UKGG184_ROLE) == "Drainage"
+    _USTN_WORKFLOW = UKGG184_Drainage
+%elif $(UKGG184_ROLE) == "Reviewer"
+    _USTN_WORKFLOW = UKGG184_Reviewer
+%else
+    _USTN_WORKFLOW = UKGG184_Designer
+%endif
+```
+
+### 🔧 Combined Example with GUI Redirection
+
+```cfg
+# Redirect GUI content
+_USTN_WORKFLOWDGNLS >
+_USTN_WORKFLOWDGNLS > $(_USTN_CUSTOM_CONFIGURATION)Organization/GUI/Workflows/
+_USTN_TASKDGNLS > $(_USTN_CUSTOM_CONFIGURATION)Organization/GUI/Tasks/
+
+# Set startup workflow
+_USTN_WORKFLOW = UKGG184_Designer
+```
+
+### 🧠 Notes
+- `_USTN_WORKFLOW` must match the **exact internal name** of the workflow defined in your `.dgnlib`.
+- Define this variable **after** other GUI variables so it overrides cached user preferences.
+- Verify the active workflow by running:  
+  ```
+  expand echo on
+  echo $(USTN_WORKFLOW)
+  ```
+
+### 🪄 Tip
+If you want a ProjectWise WorkArea or user group to trigger specific workflows, set `UKGG184_ROLE` via ProjectWise environment mapping, then branch the logic in the configuration file as shown above.
+
 ---
 
 **End of Plan** — Ready for implementation and pilot.
