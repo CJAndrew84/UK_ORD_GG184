@@ -1,0 +1,36 @@
+/*--------------------------------------------------------------------------------------+
+|
+|   IFC EXPORT Coordination View 2.0 filter
+|
+|---------------------------------------------------------------------------------------
+|   
+|   
+|
+|   
+|
++--------------------------------------------------------------------------------------*/
+
+VERSION 2.2
+
+FILE_DESCRIPTION "ViewDefinition [CoordinationView_V2.0]";
+	
+EXCLUDE_DOMAIN
+    IfcElementQuantity
+    IfcRelSpaceBoundary
+    IfcPropertyReferenceValue
+    IfcGeometricCurveSet
+    IfcSurfaceCurveSweptAreaSolid
+
+EXCLUDE_TYPE_FOR
+    IfcRoof
+    IfcStair
+    IfcZone
+    IfcReinforcingBar
+    IfcReinforcingMesh
+
+
+SYSTEMS    
+	"Properties/@SystemId"
+	"BBES_Equipment_Schedule/@Circuit_ID"
+
+NO_CLASSIFICATION

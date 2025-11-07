@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BarJoistToolSettings>
+  <Defaults UnitSystem="Metric">
+    <BarJoist>
+      <Properties>
+        <Series>K</Series>
+        <Mark>8K1</Mark>
+        <DesignLoad>0</DesignLoad>
+        <EndPoints>Top Chord End Points</EndPoints>
+        <AddDetailedMembers>true</AddDetailedMembers>
+        <SJIJoistFile>SJIBarJoist.xml</SJIJoistFile>
+        <PlaceByMultiple>Number</PlaceByMultiple>
+        <Spacing>0</Spacing>
+        <PerpendicularTo>false</PerpendicularTo>
+        <EndMembers>false</EndMembers>
+        <TopChordSection>UB127X76X13</TopChordSection>
+        <WebMembersSection>UB127X76X13</WebMembersSection>
+        <BottomChordSection>UB127X76X13</BottomChordSection>
+        <EnvelopeCatalog>Beam | Steel</EnvelopeCatalog>
+        <EnvelopeInstance>S-Beams-Steel</EnvelopeInstance>
+        <TopChordCatalog>Beam | Steel</TopChordCatalog>
+        <TopChordInstance>S-Beams-Steel</TopChordInstance>
+        <WebMembersCatalog>Beam | Steel</WebMembersCatalog>
+        <WebMembersInstance>S-Beams-Steel</WebMembersInstance>
+        <BottomChordCatalog>Beam | Steel</BottomChordCatalog>
+        <BottomChordInstance>S-Beams-Steel</BottomChordInstance>
+      </Properties>
+      <End1Details>
+        <End1SeatHeight>127.0</End1SeatHeight>
+        <End1SeatBearing>101.6</End1SeatBearing>
+        <End1TopChord>0</End1TopChord>
+        <End1BottomChord>203.2</End1BottomChord>
+        <End1EndCondition>Wall End</End1EndCondition>
+        <LocalYOffset>0</LocalYOffset>
+        <LocalZOffset>0</LocalZOffset>
+      </End1Details>
+      <End2Details>
+        <End2SeatHeight>127.0</End2SeatHeight>
+        <End2SeatBearing>101.6</End2SeatBearing>
+        <End2TopChord>0</End2TopChord>
+        <End2BottomChord>203.2</End2BottomChord>
+        <End2EndCondition>Wall End</End2EndCondition>
+        <LocalYOffset>0</LocalYOffset>
+        <LocalZOffset>0</LocalZOffset>
+      </End2Details>
+    </BarJoist>
+  </Defaults>
+</BarJoistToolSettings>

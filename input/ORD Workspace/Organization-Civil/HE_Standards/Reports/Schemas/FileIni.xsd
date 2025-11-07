@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="CivilIni" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ini="CivilIni" elementFormDefault="qualified">
+    <include schemaLocation="CommonIni.xsd"/>
+    <element name="TextImportWizard">
+        <annotation>
+            <documentation>Contains Text Import Wizard settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="Filter" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="Column" maxOccurs="15">
+                                <complexType>
+                                    <attribute name="Heading" type="ini:STString63" use="required"/>
+                                    <attribute name="Break" type="integer" use="optional"/>
+                                </complexType>
+                            </element>
+                        </sequence>
+                        <attribute name="ApplyTo" use="required">
+                            <annotation>
+                                <documentation>
+                                    0 = All Lines
+                                    1 = Lines that Start With
+                                    2 = Lines that Include
+                                    3 = Segments of Text
+                                </documentation>
+                            </annotation>
+                            <simpleType>
+                                <restriction base="integer">
+                                    <minInclusive value="0"/>
+                                    <maxInclusive value="3"/>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+                        <attribute name="ExcludeFilteredLinesFromImport" type="boolean" use="required"/>
+                        <attribute name="OriginalDataType" use="required">
+                            <annotation>
+                                <documentation>
+                                    0 = Fixed
+                                    1 = Delimited
+                                </documentation>
+                            </annotation>
+                            <simpleType>
+                                <restriction base="integer">
+                                    <enumeration value="0"/>
+                                    <enumeration value="1"/>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+                        <attribute name="StartWith" type="ini:STString255" use="required"/>
+                        <attribute name="Include" type="ini:STString255" use="required"/>
+                        <attribute name="StartSegment" type="ini:STString255" use="required"/>
+                        <attribute name="EndSegment" type="ini:STString255" use="required"/>
+                        <attribute name="IncludeStartSegmentInImport" type="boolean" use="required"/>
+                        <attribute name="IncludeEndSegmentInImport" type="boolean" use="required"/>
+                        <attribute name="DelimiterOptions" use="required">
+                            <annotation>
+                                <documentation>
+                                    0 = None
+                                    1 = Tab
+                                    2 = Space
+                                    4 = Other
+                                    8 = Semicolon
+                                    16 = Comma
+                                    32 = Read
+                                    Values are cumulative
+                                </documentation>
+                            </annotation>
+                            <simpleType>
+                                <restriction base="integer">
+                                    <minInclusive value="0"/>
+                                    <maxInclusive value="63"/>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+                        <attribute name="OtherDelimiter" type="ini:STString1" use="required"/>
+                        <attribute name="IgnoreConsecutiveDelimiters" type="boolean" use="required"/>
+                        <attribute name="Qualifier" type="ini:STString1" use="required"/>
+                        <attribute name="StartOfLineColumn" use="required">
+                            <simpleType>
+                                <restriction base="integer">
+                                    <minInclusive value="1"/>
+                                    <maxInclusive value="511"/>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+                        <attribute name="StartOfFieldColumn" use="required">
+                            <simpleType>
+                                <restriction base="integer">
+                                    <minInclusive value="1"/>
+                                    <maxInclusive value="511"/>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+                        <attribute name="AddToCogoBuffer" type="boolean" use="required"/>
+                        <attribute name="SurfaceOptionsFeatureStyleSpecifyAtImport" type="boolean" use="required"/>
+                        <attribute name="SurfaceOptionsFeatureStyle" type="ini:STString31" use="optional"/>
+                        <attribute name="SurfaceOptionsPointTypeSpecifyAtImport" type="boolean" use="required"/>
+                        <attribute name="SurfaceOptionsPointType" type="ini:STSurfaceFeatureBaseTypeList" use="optional"/>
+                        <attribute name="SurfaceOptionsPenOrderSpecifyAtImport" type="boolean" use="required"/>
+                        <attribute name="SurfaceOptionsPenOrder" type="ini:STPenOrder" use="optional"/>
+                        <attribute name="SurfaceOptionsExcludeFromTriangulationSpecifyAtImport" type="boolean" use="required"/>
+                        <attribute name="SurfaceOptionsExcludeFromTriangulation" type="boolean" use="optional"/>
+                        <attribute name="GeometryOptionsStyleSpecifyAtImport" type="boolean" use="required"/>
+                        <attribute name="GeometryOptionsStyle" type="ini:STString31" use="optional"/>
+                        <attribute name="HRegressionOptionsMinDistance" type="double" use="optional"/>
+                        <attribute name="HRegressionOptionsMinDistanceSpecifyAtImport" type="boolean" use="optional"/>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="FileData" type="ini:STString31" use="required"/>
+            <attribute name="ImportRange" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Lines within Range
+                        1 = Lines within Relative Range
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <enumeration value="0"/>
+                        <enumeration value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="StartImportAtLine" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Prompt
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="32767"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="EndImportAtLine" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Prompt
+                        32767 = End of File
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="32767"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="StartImportAtBeginningPlus" type="nonNegativeInteger" use="required"/>
+            <attribute name="EndImportAtEndMinus" type="nonNegativeInteger" use="required"/>
+            <attribute name="Description" type="ini:STString1023" use="optional"/>
+        </complexType>
+    </element>
+    <element name="TextImportWizardCollection">
+        <annotation>
+            <documentation>Collection of Text Import Wizard preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:TextImportWizard" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ImportGraphicElement">
+        <annotation>
+            <documentation>Contains Import Graphic Element settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="Feature" type="ini:CTNewFeature"/>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="LoadFrom" use="required">
+                <annotation>
+                    <documentation>
+                        4 = Single Element
+                        8 = Layer/Level
+                        16 = Fence/Region
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <enumeration value="4"/>
+                        <enumeration value="8"/>
+                        <enumeration value="16"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="Elevations" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Use Element Elevations
+                        32 = Use Text
+                        512 = Drape Surface
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <enumeration value="0"/>
+                        <enumeration value="32"/>
+                        <enumeration value="512"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ThinSurface" type="boolean" use="required"/>
+            <attribute name="AngleTolerance" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="UseTagNames" type="boolean" use="required"/>
+            <attribute name="UseMaximumSegmentLength" type="boolean" use="required"/>
+            <attribute name="MaximumSegmentLength" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="UsePointDensityInterval" type="boolean" use="required"/>
+            <attribute name="ExcludeFromTriangulation" type="boolean" use="required"/>
+            <attribute name="DrapeVerticesOnly" type="boolean" use="optional"/>
+        </complexType>
+    </element>
+    <element name="ImportGraphicElementCollection">
+        <annotation>
+            <documentation>Collection of Import ASCII Data preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:ImportGraphicElement" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ExportSurface">
+        <annotation>
+            <documentation>Contains Surface Export settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="PointOrder" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Northing Easting Elevation
+                        1 = Easting Northing Elevation
+                        2 = ID Northing Easting Elevation
+                        3 = ID Easting Northing Elevation
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <enumeration value="0"/>
+                        <enumeration value="1"/>
+                        <enumeration value="2"/>
+                        <enumeration value="3"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="PointType" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Random
+                        1 = Breakline
+                        2 = Contour
+                        3 = Inferred
+                        4 = Interior
+                        5 = Exterior
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <enumeration value="0"/>
+                        <enumeration value="1"/>
+                        <enumeration value="2"/>
+                        <enumeration value="3"/>
+                        <enumeration value="4"/>
+                        <enumeration value="5"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="PenOrder" type="ini:STPenOrder" use="required"/>
+        </complexType>
+    </element>
+    <element name="ExportSurfaceCollection">
+        <annotation>
+            <documentation>Collection of Surface Export Data preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:ExportSurface" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ImportSRV">
+        <annotation>
+            <documentation>Contains ImportSRV settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="Feature" type="ini:CTNewFeature"/>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="EmptySurface" type="boolean" use="required"/>
+            <attribute name="CoordinateOrPointType" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Lines begin with coordinates
+                        1 = Lines begin with point type
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <enumeration value="0"/>
+                        <enumeration value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="DerivefromFile" type="boolean" use="required"/>
+            <attribute name="ParentName" type="ini:STString31" use="required"/>
+            <attribute name="SkipDuplicates" type="boolean" use="required"/>
+            <attribute name="CombinePoints" type="boolean" use="required"/>
+            <attribute name="ModifyDescriptionElevationZero" type="boolean" use="required"/>
+            <attribute name="ModifyDescriptionElevationNull" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="ImportSRVCollection">
+        <annotation>
+            <documentation>Collection of Import SRV preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:ImportSRV" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="BallastReport">
+        <annotation>
+            <documentation>Contains Ballast Report</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="SingleDoubleTrack" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Single track
+                        1 = Double track
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <enumeration value="0"/>
+                        <enumeration value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="IncludeHorizontalOnAlignment" type="boolean" use="required"/>
+            <attribute name="IncludeHorizontalEvent" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="IncludeVerticalOnAlignment" type="boolean" use="required"/>
+            <attribute name="IncludeVerticalEvent" type="boolean" use="required"/>
+            <attribute name="Interval" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="Track1LeftRailTopOfRail" type="ini:STString63" use="optional"/>
+            <attribute name="Track1LeftRailBottomOfSleeper" type="ini:STString63" use="optional"/>
+            <attribute name="Track1RightRailTopOfRail" type="ini:STString63" use="optional"/>
+            <attribute name="Track1RightRailBottomOfSleeper" type="ini:STString63" use="optional"/>
+            <attribute name="Track2LeftRailTopOfRail" type="ini:STString63" use="optional"/>
+            <attribute name="Track2LeftRailBottomOfSleeper" type="ini:STString63" use="optional"/>
+            <attribute name="Track2RightRailTopOfRail" type="ini:STString63" use="optional"/>
+            <attribute name="Track2RightRailBottomOfSleeper" type="ini:STString63" use="optional"/>
+        </complexType>
+    </element>
+    <element name="BallastReportCollection">
+        <annotation>
+            <documentation>Collection of Ballast Report preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:BallastReport" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

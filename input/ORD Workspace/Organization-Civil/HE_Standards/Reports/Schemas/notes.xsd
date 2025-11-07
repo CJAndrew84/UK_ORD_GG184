@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="Notes" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:notes="Notes" elementFormDefault="qualified">
+    <element name="NoteFile">
+        <complexType>
+            <sequence>
+                <element ref="notes:Category"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Category">
+        <complexType>
+            <sequence>
+                <element ref="notes:Note" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="notes:Category" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+        </complexType>
+    </element>
+    <element name="Note">
+        <complexType>
+            <simpleContent>
+                <extension base="string">
+                    <attribute name="name" type="string" use="required"/>
+                    <attribute name="noteID" type="string" use="required"/>
+                    <attribute name="bubble" type="integer" use="required"/>
+                    <attribute name="autoSize" type="integer" use="required"/>
+                    <attribute name="sides" type="integer" use="optional" default="5"/>
+                    <attribute name="primaryRadius" type="double" use="optional" default="0.0"/>
+                    <attribute name="secondaryRadius" type="double" use="optional" default="0.0"/>
+                    <attribute name="leader" type="integer" use="required"/>
+                    <attribute name="leaderPos" type="integer" use="required"/>
+                    <attribute name="terminator" type="integer" use="optional" default="4"/>
+                    <attribute name="cellName" type="string" use="optional"/>
+                    <attribute name="namedSymbology" type="string" use="required"/>
+                    <attribute name="frameNamedSymbology" type="string" use="required"/>
+                    <attribute name="leaderNamedSymbology" type="string" use="required"/>
+                    <attribute name="delimiterNamedSymbology" type="string" use="required"/>
+                    <attribute name="rotateBy" type="double" use="optional" default="0.1745329251994"/>
+                    <attribute name="scaleBy" type="double" use="optional" default="0.1"/>
+                    <attribute name="placement" type="integer" use="required"/>
+                    <attribute name="format" type="integer" use="required"/>
+                    <attribute name="locked" type="boolean" use="required"/>
+               </extension>
+            </simpleContent>
+        </complexType>
+    </element>
+</schema>

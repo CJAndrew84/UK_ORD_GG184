@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OpenRoadsSightVisibility xmlns="OpenRoads">
+  <SpeedTables>
+    <SpeedTable name ="Stopping on Level Roadways">
+      <EyePosition interval="15.0" offset="0.0" height="1.08"/>
+      <ObjectPosition moveTargetToAchieveVisibility="true" interval="3.0" offset="0.0" height="0.6"/>
+      <SpeedTableEntry speed ="20" sightDistance="20" relaxedDistance="20"/>
+      <SpeedTableEntry speed ="30" sightDistance="35" relaxedDistance="35"/>
+      <SpeedTableEntry speed ="40" sightDistance="50" relaxedDistance="50"/>
+      <SpeedTableEntry speed ="50" sightDistance="65" relaxedDistance="65"/>
+      <SpeedTableEntry speed ="60" sightDistance="85" relaxedDistance="85"/>
+      <SpeedTableEntry speed ="70" sightDistance="105" relaxedDistance="105"/>
+      <SpeedTableEntry speed ="80" sightDistance="130" relaxedDistance="130"/>
+      <SpeedTableEntry speed ="90" sightDistance="160" relaxedDistance="160"/>
+      <SpeedTableEntry speed ="100" sightDistance="185" relaxedDistance="185"/>
+      <SpeedTableEntry speed ="110" sightDistance="220" relaxedDistance="220"/>
+      <SpeedTableEntry speed ="120" sightDistance="250" relaxedDistance="250"/>
+      <SpeedTableEntry speed ="130" sightDistance="285" relaxedDistance="285"/>
+    </SpeedTable>
+    <SpeedTable name ="Passing">
+      <EyePosition interval="15.0" offset="0.0" height="1.08"/>
+      <ObjectPosition moveTargetToAchieveVisibility="true" interval="3.0" offset="0.0" height="1.08"/>
+      <SpeedTableEntry speed ="30" sightDistance="120" relaxedDistance="120"/>
+      <SpeedTableEntry speed ="40" sightDistance="140" relaxedDistance="140"/>
+      <SpeedTableEntry speed ="50" sightDistance="160" relaxedDistance="160"/>
+      <SpeedTableEntry speed ="60" sightDistance="180" relaxedDistance="180"/>
+      <SpeedTableEntry speed ="70" sightDistance="210" relaxedDistance="210"/>
+      <SpeedTableEntry speed ="80" sightDistance="245" relaxedDistance="245"/>
+      <SpeedTableEntry speed ="90" sightDistance="280" relaxedDistance="280"/>
+      <SpeedTableEntry speed ="100" sightDistance="320" relaxedDistance="320"/>
+      <SpeedTableEntry speed ="110" sightDistance="355" relaxedDistance="355"/>
+      <SpeedTableEntry speed ="120" sightDistance="395" relaxedDistance="395"/>
+      <SpeedTableEntry speed ="130" sightDistance="440" relaxedDistance="440"/>
+    </SpeedTable>
+  </SpeedTables>
+</OpenRoadsSightVisibility>

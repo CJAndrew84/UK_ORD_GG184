@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:inr="InRoads" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="InRoads" elementFormDefault="qualified">
+    <include schemaLocation="CommonRpt.xsd"/>
+    <!-- element declarations -->
+    <element name="PointList3D">
+        <annotation>
+            <documentation>
+                A sequential space delimited list of 3D coordinates with a minimum of 1 point (3 values).
+                 Primarily used to store feature point data.  Example: "0.000 86.52 50.0 6.267 86.89 50.0
+                 12.413 87.01 50.0 26.020 87.83 50.0"
+            </documentation>
+        </annotation>
+        <simpleType>
+            <restriction base="inr:STPoint">
+                <minLength value="3"/>
+            </restriction>
+        </simpleType>
+    </element>
+    <element name="DiscontinuousPointList">
+        <annotation>
+            <documentation>
+                A sequential space delimited list of indices of discontinuous points in a breakline feature
+            </documentation>
+        </annotation>
+        <simpleType>
+            <restriction base="inr:STFeatureDiscontinuousIndex">
+                <minLength value="1"/>
+            </restriction>
+        </simpleType>
+    </element>
+    <element name="Feature">
+        <annotation>
+            <documentation>Feature data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:PointList3D" minOccurs="0"/>
+                <element ref="inr:DiscontinuousPointList" minOccurs="0"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="description" type="string" use="optional"/>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="styleDescription" type="string" use="optional"/>
+            <attribute name="type" type="inr:STFeatureType" use="required"/>
+            <attribute name="includeInTriangulation" type="boolean" use="required"/>
+            <attribute name="length" type="double" use="optional"/>
+            <attribute name="payItem" type="string" use="optional"/>
+            <attribute name="numberPoints" type="integer" use="required"/>
+            <attribute name="area" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="Features">
+        <annotation>
+            <documentation>Feature collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Feature" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Surface">
+        <annotation>
+            <documentation>Surface data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Features" minOccurs="0"/>
+                <element ref="inr:DTMCheckPoints" minOccurs="0"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="description" type="string" use="optional"/>
+            <attribute name="file" type="string" use="optional"/>
+            <attribute name="style" type="string" use="required"/>
+            <attribute name="type" type="inr:STSurfaceType" use="optional"/>
+            <attribute name="lastRevisedDate" type="string" use="required"/>
+            <attribute name="lastRevisedBy" type="string" use="required"/>
+            <attribute name="minimumEasting" type="double" use="optional"/>
+            <attribute name="minimumNorthing" type="double" use="optional"/>
+            <attribute name="minimumElevation" type="double" use="optional"/>
+            <attribute name="maximumEasting" type="double" use="optional"/>
+            <attribute name="maximumNorthing" type="double" use="optional"/>
+            <attribute name="maximumElevation" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="Surfaces">
+        <annotation>
+            <documentation>Surface collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Surface" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DTMCheckPoints">
+        <annotation>
+            <documentation>Surface check points collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:DTMCheckPoint" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:DTMCheckPointSummary"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DTMCheckPoint">
+        <annotation>
+            <documentation>Single surface check point data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="style" type="string" use="required"/>
+            <attribute name="northing" type="double" use="required"/>
+            <attribute name="easting" type="double" use="required"/>
+            <attribute name="surfaceZ" type="double" use="optional"/>
+            <attribute name="isOnSurface" type="boolean" use="required"/>
+            <attribute name="pointZ" type="double" use="required"/>
+            <attribute name="zDifference" type="double" use="optional"/>
+            <attribute name="zDifferenceAbsolute" type="double" use="optional"/>
+            <attribute name="zDifferenceSquared" type="double" use="optional"/>
+            <attribute name="isAbove" type="boolean" use="optional"/>
+            <attribute name="zTolerance" type="double" use="required"/>
+            <attribute name="isTolerance1" type="boolean" use="required"/>
+            <attribute name="inTolerance" type="boolean" use="optional"/>
+        </complexType>
+    </element>
+    <element name="DTMCheckPointSummary">
+        <annotation>
+            <documentation>Surface check point summary data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:DTMCheckPointsNotOnSurface" minOccurs="0"/>
+            </sequence>
+            <attribute name="tolerance1" type="double" use="required"/>
+            <attribute name="nPointsOfTolerance1" type="integer" use="required"/>
+            <attribute name="nPointsOfTolerance1InTolerance" type="integer" use="required"/>
+            <attribute name="tolerance1MaxAbove" type="double" use="required"/>
+            <attribute name="tolerance1MaxBelow" type="double" use="required"/>
+            <attribute name="tolerance2" type="double" use="required"/>
+            <attribute name="nPointsOfTolerance2" type="integer" use="required"/>
+            <attribute name="nPointsOfTolerance2InTolerance" type="integer" use="required"/>
+            <attribute name="tolerance2MaxAbove" type="double" use="required"/>
+            <attribute name="tolerance2MaxBelow" type="double" use="required"/>
+            <attribute name="nPointsOutsideDTM" type="integer" use="required"/>
+        </complexType>
+    </element>
+    <element name="DTMCheckPointsNotOnSurface">
+        <annotation>
+            <documentation>A list of space delimited check points that do not fall on the surface</documentation>
+        </annotation>
+    </element>
+</schema>

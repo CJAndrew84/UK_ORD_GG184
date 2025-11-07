@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<staadExportSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DesignParameters>
+    <SlendernessLength_Ly>
+      <Unit>in</Unit>
+      <Value>0</Value>
+      <Valid>true</Valid>
+      <ReadOnly>false</ReadOnly>
+    </SlendernessLength_Ly>
+    <SlendernessLength_Lz>
+      <Unit>in</Unit>
+      <Value>0</Value>
+      <Valid>true</Valid>
+      <ReadOnly>false</ReadOnly>
+    </SlendernessLength_Lz>
+    <EffLengthFactor_Ky>
+      <Unit />
+      <Value>1.0</Value>
+      <Valid>true</Valid>
+      <ReadOnly>false</ReadOnly>
+    </EffLengthFactor_Ky>
+    <EffLengthFactor_Kz>
+      <Unit />
+      <Value>1.0</Value>
+      <Valid>true</Valid>
+      <ReadOnly>false</ReadOnly>
+    </EffLengthFactor_Kz>
+    <YieldStrengthOfSteel>
+      <Unit>Kip/in2</Unit>
+      <Value>36</Value>
+      <Valid>true</Valid>
+      <ReadOnly>false</ReadOnly>
+    </YieldStrengthOfSteel>
+    <UnsupportedLength>
+      <Unit>in</Unit>
+      <Value>0</Value>
+      <Valid>true</Valid>
+      <ReadOnly>false</ReadOnly>
+    </UnsupportedLength>
+    <BeamValue>
+      <Unit />
+      <Value>1</Value>
+      <Valid>true</Valid>
+      <ReadOnly>false</ReadOnly>
+    </BeamValue>
+    <MemberProfile>
+      <Unit />
+      <Value />
+      <Valid>true</Valid>
+      <ReadOnly>false</ReadOnly>
+    </MemberProfile>
+    <InteractionRatio>
+      <Unit />
+      <Value>1.0</Value>
+      <Valid>true</Valid>
+      <ReadOnly>false</ReadOnly>
+    </InteractionRatio>
+    <MinimumDepth>
+      <Unit>in</Unit>
+      <Value>0</Value>
+      <Valid>true</Valid>
+      <ReadOnly>false</ReadOnly>
+    </MinimumDepth>
+    <JointDJ1>
+      <Unit />
+      <Value>0</Value>
+      <Valid>true</Valid>
+      <ReadOnly>false</ReadOnly>
+    </JointDJ1>
+    <JointDJ2>
+      <Unit />
+      <Value>0</Value>
+      <Valid>true</Valid>
+      <ReadOnly>false</ReadOnly>
+    </JointDJ2>
+    <PermissibleDeflection>
+      <Unit />
+      <Value>0</Value>
+      <Valid>true</Valid>
+      <ReadOnly>false</ReadOnly>
+    </PermissibleDeflection>
+  </DesignParameters>
+  <MappingFileName />
+  <MappingFilePath> </MappingFilePath>
+  <staadFileName> </staadFileName>
+  <DesignCode>AISC(ASD)</DesignCode>
+  <staadFilePath> </staadFilePath>
+  <ModelType>Analytical</ModelType>
+  <DGNFileName> </DGNFileName>
+  <UseDesignCode>false</UseDesignCode>
+  <MemberOffsets>false</MemberOffsets>
+  <UseDesignHistory>false</UseDesignHistory>
+  <ExportObjectsInReference>false</ExportObjectsInReference>
+  <SectionMapping>false</SectionMapping>
+  <UseDGNFileName>true</UseDGNFileName>
+</staadExportSettings>

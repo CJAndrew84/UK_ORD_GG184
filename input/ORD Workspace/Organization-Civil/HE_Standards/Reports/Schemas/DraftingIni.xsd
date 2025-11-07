@@ -1,0 +1,1414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:ini="CivilIni" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="CivilIni" elementFormDefault="qualified">
+	<include schemaLocation="CommonIni.xsd"/>
+	<element name="PlanProfileGenerator">
+		<annotation>
+			<documentation>Contains Plan Profile Generator settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ClippingBoundarySymbologyName" type="ini:CTNamedSymbologyName"/>
+				<element name="BorderTitleAlignmentText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="BorderTitleStartStationText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="BorderTitleStopStationText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SheetNumberText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="TotalSheetsText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="ScaleText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="ViewNameText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="RotationText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DateText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="TimeText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="UserText1Text">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="UserText2Text">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="UserText3Text">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="UserText4Text">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="UserText5Text">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="MatchLineStationText" type="ini:CTAnnotationPlacement"/>
+				<element name="PlanMatchLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="PlanStartStationText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="PlanStopStationText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="PlanPreviousSheetText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="PlanNextSheetText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ProfileMatchLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="ProfileStartStationText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ProfileStopStationText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ProfilePreviousSheetText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ProfileNextSheetText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="PlanProfileMethod" use="required">
+				<annotation>
+					<documentation>
+                        0 = Plan Only
+                        1 = Plan and Profile
+                        2 = Profile Only
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+						<enumeration value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="PlanProfileViewLimits" use="required">
+				<annotation>
+					<documentation>
+                        0 = Use Plan Views
+                        1 = Use Station Limits
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ProfileViewLimits" use="required">
+				<annotation>
+					<documentation>
+                        0 = Use Profile Views
+                        1 = Use Station Limits
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="GenerateSheets" type="boolean" use="required"/>
+			<attribute name="VDFInformation" use="required">
+				<annotation>
+					<documentation>
+                        0 = VDF Information Only
+                        1 = VDF Information and Host Files
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Length" type="double" use="required"/>
+			<attribute name="PlanSeedViewName" type="ini:STString255" use="required"/>
+			<attribute name="PlanLeftWidth" type="double" use="required"/>
+			<attribute name="PlanRightWidth" type="double" use="required"/>
+			<attribute name="PlanOverlap" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="PlanBoundaryChords" use="required">
+				<simpleType>
+					<restriction base="long">
+						<minInclusive value="1"/>
+						<maxInclusive value="1000"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="PlanForceRectangleBoundary" type="boolean" use="required"/>
+			<attribute name="NestedAttachments" type="boolean" use="required"/>
+			<attribute name="ProfileSeedViewName" type="ini:STString255" use="required"/>
+			<attribute name="ProfilePreferenceName" type="ini:STString31" use="required"/>
+			<attribute name="ProfileElevationShiftMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Shift at Major Stations
+                        1 = Shift at Minor Stations
+                        2 = Shift Where Needed
+                        3 = Do Not Shift
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+						<enumeration value="2"/>
+						<enumeration value="3"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ProfileHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="ProfilesPerColumn" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="1"/>
+						<maxInclusive value="1000"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ProfileMarginsTop" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="ProfileMarginsBottom" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="ProfileMarginsLeft" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="ProfileMarginsRight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="ProfileHorizontalSpacingMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Left to Left
+                        1 = Right to Left
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ProfileHorizontalSpacingDistance" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="ProfileVerticalSpacingMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Bottom to Bottom
+                        1 = Top to Bottom
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ProfileVerticalSpacingDistance" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="SheetNumber" type="ini:STString255" use="required"/>
+			<attribute name="SheetName" type="ini:STString255" use="required"/>
+			<attribute name="HostFile" type="ini:STString255" use="required"/>
+			<attribute name="PWiseHostFile" type="ini:STString255" use="optional"/>
+			<attribute name="SeedHostFile" type="ini:STString255" use="required"/>
+			<attribute name="PWiseSeedHostFile" type="ini:STString255" use="optional"/>
+			<attribute name="HostFileContent" use="required">
+				<annotation>
+					<documentation>
+                        0 = Single Sheet Each
+                        1 = All Sheets in One
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SheetLayout" use="required">
+				<annotation>
+					<documentation>
+                        0 = Layout along Alignment
+                        1 = Layout in Grid
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="RoundRotationAngle" type="boolean" use="required"/>
+			<attribute name="ToNearest" use="required">
+				<annotation>
+					<documentation>
+                        Degree Values:
+                        0 = Degree
+                        1 = Minute
+                        2 = Second
+                        Grads Values:
+                        0 = .5 Grad
+                        Radians Values
+                        0 = .02 Radians
+                        1 = .01 Radians
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+						<enumeration value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="AlternatePlanProfile" type="boolean" use="required"/>
+			<attribute name="ProfileSheetFirst" type="boolean" use="required"/>
+			<attribute name="FirstSheetX" type="double" use="required"/>
+			<attribute name="FirstSheetY" type="double" use="required"/>
+			<attribute name="SheetsPerColumn" type="long" use="required"/>
+			<attribute name="ClippingBoundaryLevel" type="ini:STString1023" use="required"/>
+			<attribute name="ClippingBoundaryUniqueLevel" type="boolean" use="required"/>
+			<attribute name="ClippingBoundaryLevelStep" type="long" use="required"/>
+			<attribute name="HorizontalSpacingMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Left to Left
+                        1 = Right to Left
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="HorizontalSpacingDistance" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="VerticalSpacingMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Bottom to Bottom
+                        1 = Top to Bottom
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="VerticalSpacingDistance" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="ViewsPerSheet" type="integer" use="required"/>
+			<attribute name="DistanceBetweenPlans" type="double" use="required"/>
+			<attribute name="DistanceBetweenProfiles" type="double" use="required"/>
+			<attribute name="ViewPlanX" type="double" use="required"/>
+			<attribute name="ViewPlanY" type="double" use="required"/>
+			<attribute name="ViewProfileX" type="double" use="required"/>
+			<attribute name="ViewProfileY" type="double" use="required"/>
+			<attribute name="ViewScalePaperUnits" type="double" use="required"/>
+			<attribute name="ViewScaleModelUnits" type="double" use="required"/>
+			<attribute name="BorderSource" use="required">
+				<annotation>
+					<documentation>
+                        0 = Cell/Block
+                        1 = Reference File
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="BorderTitleCellBlockName" type="ini:STString1023" use="required"/>
+			<attribute name="BorderTitleCellBlockLevel" type="ini:STString1023" use="required"/>
+			<attribute name="BorderTitleUniqueLevel" use="required">
+				<annotation>
+					<documentation>
+                        0 = Retain Cell Levels For Each Sheet
+                        1 = Same Level For Each Sheet
+                        2 = Unique Level For Each Sheet
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="BorderTitleLevelStep" type="long" use="required"/>
+			<attribute name="BorderTitleScale" type="double" use="required"/>
+			<attribute name="ReferenceFileName" type="ini:STString255" use="required"/>
+			<attribute name="PWiseReferenceFileName" type="ini:STString255" use="optional"/>
+			<attribute name="BorderTitleSheetSize" use="required">
+				<annotation>
+					<documentation>
+                        0 = A (8.5 x 11)
+                        1 = B (11 x 17)
+                        2 = C (17 x 22)
+                        3 = D (22 x 34)
+                        4 = E (34 x 44)
+                        5 = A4 (210 x 297)
+                        6 = A3 (297 x 420)
+                        7 = A2 (420 x 594)
+                        8 = A1 (594 x 841)
+                        9 = A0 (841 x 1189)
+                        10 = Custom
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="10"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="BorderTitleCustomWidth" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="BorderTitleCustomHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="TitleBlockFileName" type="ini:STString255" use="required"/>
+			<attribute name="PWiseTitleBlockFileName" type="ini:STString255" use="optional"/>
+			<attribute name="DisplayBorderTitleAlignment" type="boolean" use="required"/>
+			<attribute name="BorderTitleAlignmentX" type="double" use="required"/>
+			<attribute name="BorderTitleAlignmentY" type="double" use="required"/>
+			<attribute name="DisplayBorderTitleStartStation" type="boolean" use="required"/>
+			<attribute name="BorderTitleStartStationX" type="double" use="required"/>
+			<attribute name="BorderTitleStartStationY" type="double" use="required"/>
+			<attribute name="DisplayBorderTitleStopStation" type="boolean" use="required"/>
+			<attribute name="BorderTitleStopStationX" type="double" use="required"/>
+			<attribute name="BorderTitleStopStationY" type="double" use="required"/>
+			<attribute name="DisplaySheetNumber" type="boolean" use="required"/>
+			<attribute name="SheetNumberX" type="double" use="required"/>
+			<attribute name="SheetNumberY" type="double" use="required"/>
+			<attribute name="DisplayTotalSheets" type="boolean" use="required"/>
+			<attribute name="TotalSheetsX" type="double" use="required"/>
+			<attribute name="TotalSheetsY" type="double" use="required"/>
+			<attribute name="DisplayScale" type="boolean" use="required"/>
+			<attribute name="ScaleX" type="double" use="required"/>
+			<attribute name="ScaleY" type="double" use="required"/>
+			<attribute name="DisplayViewName" type="boolean" use="required"/>
+			<attribute name="ViewNameX" type="double" use="required"/>
+			<attribute name="ViewNameY" type="double" use="required"/>
+			<attribute name="DisplayRotation" type="boolean" use="required"/>
+			<attribute name="RotationX" type="double" use="required"/>
+			<attribute name="RotationY" type="double" use="required"/>
+			<attribute name="DisplayDate" type="boolean" use="required"/>
+			<attribute name="DateX" type="double" use="required"/>
+			<attribute name="DateY" type="double" use="required"/>
+			<attribute name="DisplayUserText1" type="boolean" use="required"/>
+			<attribute name="UserText1X" type="double" use="required"/>
+			<attribute name="UserText1Y" type="double" use="required"/>
+			<attribute name="UserText1" type="ini:STString255" use="required"/>
+			<attribute name="DisplayUserText2" type="boolean" use="required"/>
+			<attribute name="UserText2X" type="double" use="required"/>
+			<attribute name="UserText2Y" type="double" use="required"/>
+			<attribute name="UserText2" type="ini:STString255" use="required"/>
+			<attribute name="DisplayUserText3" type="boolean" use="required"/>
+			<attribute name="UserText3X" type="double" use="required"/>
+			<attribute name="UserText3Y" type="double" use="required"/>
+			<attribute name="UserText3" type="ini:STString255" use="required"/>
+			<attribute name="DisplayUserText4" type="boolean" use="required"/>
+			<attribute name="UserText4X" type="double" use="required"/>
+			<attribute name="UserText4Y" type="double" use="required"/>
+			<attribute name="UserText4" type="ini:STString255" use="required"/>
+			<attribute name="DisplayUserText5" type="boolean" use="required"/>
+			<attribute name="UserText5X" type="double" use="required"/>
+			<attribute name="UserText5Y" type="double" use="required"/>
+			<attribute name="UserText5" type="ini:STString255" use="required"/>
+			<attribute name="UseSheetLevel" type="boolean" use="required"/>
+			<attribute name="DetailsAttachNorthArrow" type="boolean" use="required"/>
+			<attribute name="DetailsLevelMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Retain Cell Levels for Each Sheet
+                        1 = Use Sheet Level
+                        2 = Same Level for Each Sheet
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DetailsLevelName" type="ini:STString1023" use="required"/>
+			<attribute name="DetailsNorthArrowCellBlockName" type="ini:STString1023" use="required"/>
+			<attribute name="DetailsNorthArrowScale" type="double" use="required"/>
+			<attribute name="DetailsNorthArrowLocationX" type="double" use="required"/>
+			<attribute name="DetailsNorthArrowLocationY" type="double" use="required"/>
+			<attribute name="MatchLineUniqueLevel" type="integer" use="required"/>
+			<attribute name="DisplayPlanMatchLine" type="boolean" use="required"/>
+			<attribute name="ExtendPlanMatchLine" use="required">
+				<annotation>
+					<documentation>
+                        0 = To Clipping Boundary
+                        1 = Distance from Origin
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DistanceLeftPlan" type="double" use="required"/>
+			<attribute name="DistanceRightPlan" type="double" use="required"/>
+			<attribute name="DisplayPlanStartStation" type="boolean" use="required"/>
+			<attribute name="DisplayPlanStopStation" type="boolean" use="required"/>
+			<attribute name="DisplayPlanPreviousSheet" type="boolean" use="required"/>
+			<attribute name="DisplayPlanNextSheet" type="boolean" use="required"/>
+			<attribute name="DisplayProfileMatchLine" type="boolean" use="required"/>
+			<attribute name="ExtendProfileMatchLine" use="required">
+				<annotation>
+					<documentation>
+                        0 = To Clipping Boundary
+                        1 = Distance from Origin
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DistanceLeftProfile" type="double" use="required"/>
+			<attribute name="DistanceRightProfile" type="double" use="required"/>
+			<attribute name="DisplayProfileStartStation" type="boolean" use="required"/>
+			<attribute name="DisplayProfileStopStation" type="boolean" use="required"/>
+			<attribute name="DisplayProfilePreviousSheet" type="boolean" use="required"/>
+			<attribute name="DisplayProfileNextSheet" type="boolean" use="required"/>
+			<attribute name="ClippingBoundaryMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Calculate
+                        1 = Use Existing
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ViewLayout" type="integer" use="required"/>
+			<attribute name="PlansPerSheet" type="integer" use="required"/>
+			<attribute name="FirstPlan" type="integer" use="required"/>
+			<attribute name="ProfilesPerSheet" type="integer" use="required"/>
+			<attribute name="FirstProfile" type="integer" use="required"/>
+			<attribute name="BorderTitleReferenceFileLayer" type="integer" use="required"/>
+			<attribute name="DetailsAttachTitleBlockCell" type="boolean" use="required"/>
+			<attribute name="DetailsTitleBlockCellName" type="ini:STString1023" use="required"/>
+			<attribute name="DetailsAttachScale" type="boolean" use="optional"/>
+			<attribute name="DetailsScaleLevelMode" use="optional">
+				<annotation>
+					<documentation>
+		                        0 = Retain Cell Levels For Each Sheet
+		                        1 = Same Level For Each Sheet
+		                        2 = Unique Level For Each Sheet
+		                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DetailsScaleLevelName" type="ini:STString1023" use="optional"/>
+			<attribute name="DetailsScaleCellBlockName" type="ini:STString1023" use="optional"/>
+			<attribute name="DetailsScaleScale" type="double" use="optional"/>
+			<attribute name="DetailsScaleLocationX" type="double" use="optional"/>
+			<attribute name="DetailsScaleLocationY" type="double" use="optional"/>
+			<attribute name="DisplayTime" type="boolean" use="optional"/>
+			<attribute name="TimeX" type="double" use="optional"/>
+			<attribute name="TimeY" type="double" use="optional"/>
+			<attribute name="CreateModel" type="boolean" use="optional"/>
+			<attribute name="ModelName" type="ini:STString1023" use="optional"/>
+			<attribute name="ModelType" use="optional">
+				<annotation>
+					<documentation>
+		                        0 = Design
+		                        1 = Sheet
+		                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ModelLocation" use="optional">
+				<annotation>
+					<documentation>
+		                        0 = Single Sheet Each
+		                        1 = All Sheets In One
+		                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="PlanProfileGeneratorCollection">
+		<annotation>
+			<documentation>Collection of Plan Profile Generator preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:PlanProfileGenerator" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="PlaceCoordinateGrid">
+		<annotation>
+			<documentation>Contains Place Coordinate Grid settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="GridLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Point">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="NorthingText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="EastingText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="BoundedBy" use="required">
+				<annotation>
+					<documentation>
+                        0 = Shape
+                        1 = Fence
+                        2 = Reference File
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="InteriorPoint" type="boolean" use="required"/>
+			<attribute name="BoundaryAndGridIntersection" type="boolean" use="required"/>
+			<attribute name="NorthingInterval" type="double" use="required"/>
+			<attribute name="EastingInterval" type="double" use="required"/>
+			<attribute name="DisplayGridLines" type="boolean" use="required"/>
+			<attribute name="DisplayPoints" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="PlaceCoordinateGridCollection">
+		<annotation>
+			<documentation>Collection of Place Coordinate Grid preference</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:PlaceCoordinateGrid" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="PlacePlanNote">
+		<annotation>
+			<documentation>Contains Place Plan Note settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="LastActiveNote" type="ini:STString1023" use="required"/>
+		</complexType>
+	</element>
+	<element name="PlacePlanNoteCollection">
+		<annotation>
+			<documentation>Collection of Place Plan Note preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:PlacePlanNote" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="PlaceProfileNote">
+		<annotation>
+			<documentation>Contains Place Profile Note settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="LastActiveNote" type="ini:STString1023" use="required"/>
+		</complexType>
+	</element>
+	<element name="PlaceProfileNoteCollection">
+		<annotation>
+			<documentation>Collection of Place Profile Note preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:PlaceProfileNote" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="PlaceCrossSectionNote">
+		<annotation>
+			<documentation>Contains Place Cross Section Note settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="LastActiveNote" type="ini:STString1023" use="required"/>
+		</complexType>
+	</element>
+	<element name="PlaceCrossSectionNoteCollection">
+		<annotation>
+			<documentation>Collection of Place Cross Section Note preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:PlaceCrossSectionNote" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="PlaceAlignmentIntersectionNote">
+		<annotation>
+			<documentation>Contains Place Alignment Intersection Note settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="LastActiveNote" type="ini:STString1023" use="required"/>
+		</complexType>
+	</element>
+	<element name="PlaceAlignmentIntersectionNoteCollection">
+		<annotation>
+			<documentation>Collection of Place Alignment Intersection Note preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:PlaceAlignmentIntersectionNote" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="UpdatePlanNote">
+		<annotation>
+			<documentation>Contains Update Plan Note settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="UpdateMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = All
+                        1 = Fence
+                        2 = Single From Graphic
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+						<enumeration value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="UpdatePlanNoteCollection">
+		<annotation>
+			<documentation>Collection of Update Plan Note preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:UpdatePlanNote" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="UpdateProfileNote">
+		<annotation>
+			<documentation>Contains Update Profile Note settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="UpdateMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = All
+                        1 = Select
+                        2 = Single From Graphic
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+						<enumeration value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="UpdateProfileNoteCollection">
+		<annotation>
+			<documentation>Collection of Update Profile Note preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:UpdateProfileNote" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="UpdateCrossSectionNote">
+		<annotation>
+			<documentation>Contains Update Cross Section Note settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="UpdateMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = All
+                        1 = Station Range
+                        2 = Single From Graphic
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+						<enumeration value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="UpdateCrossSectionNoteCollection">
+		<annotation>
+			<documentation>Collection of Update Cross Section Note preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:UpdateCrossSectionNote" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="UpdateAlignmentNote">
+		<annotation>
+			<documentation>Contains Update Alignment Intersection Note settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="UpdateMode" use="optional">
+				<annotation>
+					<documentation>
+                        0 = All
+                        1 = Fence
+                        2 = Single From Graphic
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+						<enumeration value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="UpdateAlignmentNoteCollection">
+		<annotation>
+			<documentation>Collection of Update Alignment Intersection Note preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:UpdateAlignmentNote" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="NetworkRailDisplayTurnouts">
+		<annotation>
+			<documentation>Contains NetworkRail Display Turnouts settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Name" type="ini:CTAnnotationPlacement"/>
+				<element name="NameSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SwitchType" type="ini:CTAnnotationPlacement"/>
+				<element name="SwitchTypeSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SwitchToeSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SwitchSet" type="ini:CTAnnotationPlacement"/>
+				<element name="SwitchSetSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SwitchMachineSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CrossingType" type="ini:CTAnnotationPlacement"/>
+				<element name="CrossingTypeSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="MainlineRadius" type="ini:CTAnnotationPlacement"/>
+				<element name="MainlineRadiusSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SwitchRadius" type="ini:CTAnnotationPlacement"/>
+				<element name="SwitchRadiusSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="TurnoutRadius" type="ini:CTAnnotationPlacement"/>
+				<element name="TurnoutRadiusSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CurvatureSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="RailsSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CrossingIPSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CrossingNoseSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CrossingFillsSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CheckRailsSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="TangentPointsSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="ExtendedPointsSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="ShuntPointSymbology">
+				  <complexType>
+				    <sequence>
+				      <choice>
+				        <group ref="ini:GPointNamedSymbology"/>
+				        <group ref="ini:GPointSymbology"/>
+				      </choice>
+				    </sequence>
+				  </complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplaySwitchSet" type="boolean" use="required"/>
+			<attribute name="DisplaySwitchMachine" type="boolean" use="required"/>
+			<attribute name="DisplayCurvature" type="boolean" use="required"/>
+			<attribute name="DisplayRails" type="boolean" use="required"/>
+			<attribute name="DisplayCrossingIP" type="boolean" use="required"/>
+			<attribute name="DisplayCrossingNose" type="boolean" use="required"/>
+			<attribute name="DisplayCrossingFills" type="boolean" use="required"/>
+			<attribute name="DisplayCheckRails" type="boolean" use="required"/>
+			<attribute name="DisplayTangentPoints" type="boolean" use="required"/>
+			<attribute name="DisplayExtendedPoints" type="boolean" use="required"/>
+			<attribute name="DisplayShuntPoint" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="NetworkRailDisplayTurnoutsCollection">
+		<annotation>
+			<documentation>Collection of NetworkRail Display Turnouts preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:NetworkRailDisplayTurnouts" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="NetworkRailDisplayTurnoutToTurnout">
+		<annotation>
+			<documentation>Contains NetworkRail Display Turnout To Turnout settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Note" type="ini:CTAnnotationPlacement"/>
+				<element name="NoteSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Length" type="ini:CTAnnotationPlacement"/>
+				<element name="LengthSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="LeaderSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="WitnessSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayNote" type="boolean" use="required"/>
+			<attribute name="DisplayLength" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="NetworkRailDisplayTurnoutToTurnoutCollection">
+		<annotation>
+			<documentation>Collection of NetworkRail Display Turnout To Turnout preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:NetworkRailDisplayTurnoutToTurnout" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+		<element name="NetworkRailDisplayAnnotation">
+	  <annotation>
+	    <documentation>Contains NetworkRail Display Annotation settings</documentation>
+	  </annotation>
+  	<complexType>
+  	  <sequence>
+  	    <element name="LinearLength" type="ini:CTAnnotationPlacement"/>
+  	    <element name="CircularRadius" type="ini:CTAnnotationPlacement"/>
+  	    <element name="CircularLength" type="ini:CTAnnotationPlacement"/>
+  	    <element name="SpiralLength" type="ini:CTAnnotationPlacement"/>
+  	    <element name="AppliedCant" type="ini:CTAnnotationPlacement"/>
+  	    <element name="CantDeficiency" type="ini:CTAnnotationPlacement"/>
+  	    <element name="RateAppliedCant" type="ini:CTAnnotationPlacement"/>
+  	    <element name="RateCantDeficiency" type="ini:CTAnnotationPlacement"/>   
+  	    <element name="DirectionIndicator">
+  	      <complexType>
+  	        <sequence>
+  	          <choice>
+  	            <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+  	            <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+  	          </choice>
+  	        </sequence>
+  	      </complexType>
+  	    </element> 
+  	    <element name="Text">
+  	      <complexType>
+  	        <sequence>
+  	          <choice>
+  	            <group ref="ini:GTextNamedSymbology"/>
+  	            <group ref="ini:GTextSymbology"/>
+  	          </choice>
+  	        </sequence>
+  	      </complexType>
+  	    </element>
+  	  </sequence>
+  	  <attribute name="DisplayDirectionIndicator" type="boolean" use="required"/>
+  	</complexType>
+	</element>
+	<element name="NetworkRailDisplayAnnotationCollection">
+		<annotation>
+			<documentation>Collection of NetworkRail Display Annotation preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:NetworkRailDisplayAnnotation" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

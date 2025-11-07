@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ini="CivilIni" targetNamespace="CivilIni" elementFormDefault="qualified">
+    <include schemaLocation="CommonIni.xsd"/>
+    <element name="ComputeQuantities">
+        <annotation>
+            <documentation>Contains Compute Quantities settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="HighlightSymbology">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ShapeSymbology">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="Mode" use="required">
+                <simpleType>
+                    <restriction base="int">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="IncludePayItems" type="boolean" use="required"/>
+            <attribute name="IncludeFeatures" type="boolean" use="required"/>
+            <attribute name="IncludeGraphicElements" type="boolean" use="required"/>
+            <attribute name="Database" type="ini:STString255" use="required"/>
+            <attribute name="DatabaseMode" type="boolean" use="required"/>
+            <attribute name="Phase" type="ini:STString255" use="required"/>
+            <attribute name="Run" type="ini:STString255" use="required"/>
+            <attribute name="DeductionFlag" type="boolean" use="required"/>
+            <attribute name="DeductionTolerance" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.000000"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="SheetNumberFlag" type="boolean" use="required"/>
+            <attribute name="SheetNumber" type="ini:STString31" use="required"/>
+            <attribute name="PurgeFlag" type="boolean" use="required"/>
+            <attribute name="DisplayHighlight" type="boolean" use="required"/>
+            <attribute name="StationLimitsFlag" type="boolean" use="required"/>
+            <attribute name="StartStation" type="double" use="required"/>
+            <attribute name="StopStation" type="double" use="required"/>
+            <attribute name="OffsetLimitsFlag" type="boolean" use="required"/>
+            <attribute name="LeftOffset" type="double" use="required"/>
+            <attribute name="RightOffset" type="double" use="required"/>
+            <attribute name="DisplayShapes" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="ComputeQuantitiesCollection">
+        <annotation>
+            <documentation>Collection of ComputeQuantities preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:ComputeQuantities" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

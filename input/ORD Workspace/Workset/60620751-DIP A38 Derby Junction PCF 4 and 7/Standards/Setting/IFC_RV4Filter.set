@@ -1,0 +1,44 @@
+/*--------------------------------------------------------------------------------------+
+|
+|   IFC EXPORT IFC4 Reference View filter
+|
+|---------------------------------------------------------------------------------------
+|   
+|   
+|
+|   
+|
++--------------------------------------------------------------------------------------*/
+
+VERSION 2.5
+
+FILE_DESCRIPTION "ViewDefinition [ReferenceView_V1.2]", "ExchangeRequirement [Architecture, Structural, BuildingService]";
+	
+EXCLUDE_DOMAIN
+    IfcBSplineSurface
+    IfcBSplineCurve
+    IfcBooleanClippingResult
+    IfcSurfaceCurveSweptAreaSolid
+    IfcConnectedFaceSet
+    IfcPolyline
+    IfcEllipse
+    IfcParameterizedProfileDef
+    IfcCompositeProfileDef
+    IfcRelSpaceBoundary2ndLevel
+    IfcRelSpaceBoundary1stLevel
+    IfcRelSpaceBoundary
+	IfcRelConnectsPathElements
+    IfcMaterialLayer
+    IfcMaterialProfile
+	IfcAxis2Placement2D
+    IfcPropertyReferenceValue
+	IfcLayeredItem
+
+SYSTEMS    
+	"Properties/@SystemId"
+	"BBES_Equipment_Schedule/@Circuit_ID" : IfcDistributionCircuit
+
+
+EXCLUDE_REPRESENTATION
+	SurveyPoints
+

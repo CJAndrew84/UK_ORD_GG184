@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OpenRoadsSightVisibility xmlns="OpenRoads">
+  <SpeedTables>
+    <SpeedTable name ="Full Overtaking Sight Distance">
+      <EyePosition interval="10.0" offset="-1.825" height="1.05"/>
+      <ObjectPosition moveTargetToAchieveVisibility="true" interval="2.5" offset="-1.825" height="0.26"/>
+      <SpeedTableEntry speed ="50" sightDistance="290" relaxedDistance="290"/>
+      <SpeedTableEntry speed ="60" sightDistance="345" relaxedDistance="345"/>
+      <SpeedTableEntry speed ="70" sightDistance="410" relaxedDistance="410"/>
+      <SpeedTableEntry speed ="85" sightDistance="490" relaxedDistance="490"/>
+      <SpeedTableEntry speed ="100" sightDistance="580" relaxedDistance="580"/>
+      <!-- <SpeedTableEntry speed ="120" sightDistance="" relaxedDistance=""/> Not recommended for single cway-->
+    </SpeedTable>
+	<SpeedTable name ="Stopping Sight Distance">
+      <EyePosition interval="10.0" offset="-1.825" height="1.05"/>
+      <ObjectPosition moveTargetToAchieveVisibility="true" interval="2.5" offset="-1.825" height="0.26"/>
+      <SpeedTableEntry speed ="50" sightDistance="70" relaxedDistance="50"/>
+      <SpeedTableEntry speed ="60" sightDistance="90" relaxedDistance="70"/>
+      <SpeedTableEntry speed ="70" sightDistance="120" relaxedDistance="90"/>
+      <SpeedTableEntry speed ="85" sightDistance="160" relaxedDistance="120"/>
+      <SpeedTableEntry speed ="100" sightDistance="215" relaxedDistance="160"/>
+      <SpeedTableEntry speed ="120" sightDistance="295" relaxedDistance="215"/>
+    </SpeedTable>
+  </SpeedTables>
+</OpenRoadsSightVisibility>

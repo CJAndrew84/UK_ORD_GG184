@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="CivilIni" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ini="CivilIni" elementFormDefault="qualified">
+    <include schemaLocation="CommonIni.xsd"/>
+    <!-- element declarations -->
+    <element name="PlasserAndTheurer">
+        <annotation>
+            <documentation>Contains Plasser and Theurer settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="FileFormat" use="required">
+                <annotation>
+                    <documentation>
+                    0 = ALC
+                    1 = WinALC
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="Versine" type="ini:STString39" use="required"/>
+            <attribute name="Level" type="ini:STString39" use="required"/>
+            <attribute name="Cant" type="ini:STString39" use="required"/>
+            <attribute name="Line" type="ini:STString39" use="required"/>
+            <attribute name="Circle" type="ini:STString39" use="required"/>
+            <attribute name="Clothoid" type="ini:STString39" use="required"/>
+            <attribute name="BiquadraticParabola" type="ini:STString39" use="required"/>
+            <attribute name="Bloss" type="ini:STString39" use="required"/>
+            <attribute name="Sinusoid" type="ini:STString39" use="required"/>
+            <attribute name="Cosine" type="ini:STString39" use="required"/>
+            <attribute name="Constant" type="ini:STString39" use="required"/>
+            <attribute name="StartSlope" type="ini:STString39" use="required"/>
+            <attribute name="SlopeChangeN" type="ini:STString39" use="required"/>
+            <attribute name="SlopeChangeR" type="ini:STString39" use="required"/>
+        </complexType>
+    </element>
+    <element name="PlasserAndTheurerCollection">
+        <annotation>
+            <documentation>Collection of Plasser and Theurer preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:PlasserAndTheurer" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

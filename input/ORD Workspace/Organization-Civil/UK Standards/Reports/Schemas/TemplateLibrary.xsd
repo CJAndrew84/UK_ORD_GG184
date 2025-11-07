@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 rel. 4 (x64) (http://www.altova.com) by Geoff Bartlett (private) -->
+<schema xmlns:inr="InRoads" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="InRoads" elementFormDefault="qualified">
+	<include schemaLocation="CommonRpt.xsd"/>
+	<!-- element declarations -->
+	<element name="DisplayRule">
+		<annotation>
+			<documentation>Defines a single display rule</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="description" type="string" use="optional"/>
+			<attribute name="type" use="required">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Horizontal Difference"/>
+						<enumeration value="Vertical Difference"/>
+						<enumeration value="Slope"/>
+						<enumeration value="Absolute Horizontal Difference"/>
+						<enumeration value="Absolute Vertical Difference"/>
+						<enumeration value="Absolute Slope"/>
+						<enumeration value="Component Is Displayed"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="point1" type="string" use="optional"/>
+			<attribute name="point2" type="string" use="optional"/>
+			<attribute name="test" use="optional">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="LessThan"/>
+						<enumeration value="LessThanOrEqual"/>
+						<enumeration value="Equal"/>
+						<enumeration value="GreaterThanOrEqual"/>
+						<enumeration value="GreaterThan"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="value" type="double" use="optional"/>
+		</complexType>
+	</element>
+	<element name="SuperLimit">
+		<annotation>
+			<documentation>Super elevation start and stop station limits</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="start" type="double" use="required"/>
+			<attribute name="stop" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="EndConditionTarget">
+		<annotation>
+			<documentation>Contains end condition information</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="targetName" type="string" use="optional"/>
+			<attribute name="targetParentName" type="string" use="optional"/>
+			<attribute name="horzOffset" type="double" use="optional"/>
+			<attribute name="vertOffset" type="double" use="optional"/>
+			<attribute name="maximumBenchSteps" type="integer" use="optional"/>
+			<attribute name="benchDatum" type="double" use="optional"/>
+			<attribute name="benchStep" type="double" use="optional"/>
+			<attribute name="slopeRoundingLength" type="double" use="optional"/>
+			<attribute name="priority" type="integer" use="required"/>
+			<attribute name="targetType" use="required">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Surface"/>
+						<enumeration value="Elevation"/>
+						<enumeration value="FeatureXY"/>
+						<enumeration value="FeatureXYZ"/>
+						<enumeration value="FeatureZ"/>
+						<enumeration value="AlignmentXY"/>
+						<enumeration value="AlignmentXYZ"/>
+						<enumeration value="AlignmentZ"/>
+						<enumeration value="StyleXY"/>
+						<enumeration value="StyleXYZ"/>
+						<enumeration value="StyleZ"/>
+						<enumeration value="NoTarget"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="useBenching" type="boolean" use="required"/>
+			<attribute name="useDatum" type="boolean" use="optional"/>
+			<attribute name="datumType" use="optional">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="None"/>
+						<enumeration value="Point"/>
+						<enumeration value="Elevation"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="datumPointName" type="string" use="optional"/>
+		</complexType>
+	</element>
+	<element name="Vertex">
+		<annotation>
+			<documentation>Contains the name of a point</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="name" type="string" use="required"/>
+		</complexType>
+	</element>
+	<element name="Constraint">
+		<annotation>
+			<documentation>Defines a constraint</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="type" use="required">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="None"/>
+						<enumeration value="Horizontal"/>
+						<enumeration value="Vertical"/>
+						<enumeration value="Slope"/>
+						<enumeration value="Vector"/>
+						<enumeration value="ProjectToSurface"/>
+						<enumeration value="ProjectToDesign"/>
+						<enumeration value="HorizontalMaximum"/>
+						<enumeration value="HorizontalMinimum"/>
+						<enumeration value="VerticalMaximum"/>
+						<enumeration value="VerticalMinimum"/>
+						<enumeration value="VerticalMirror"/>
+						<enumeration value="PerpendicularDistance"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="parent" type="string" use="optional"/>
+			<attribute name="parent2" type="string" use="optional"/>
+			<attribute name="value" type="double" use="required"/>
+			<attribute name="surface" type="string" use="optional"/>
+			<attribute name="parametricLabel" type="string" use="optional"/>
+			<attribute name="highSideRollover" type="double" use="optional"/>
+			<attribute name="lowSideRollover" type="double" use="optional"/>
+			<attribute name="surfaceProjectionDirection" type="string" use="optional"/>
+			<attribute name="projectToDesignClosestComponent" type="boolean" use="optional"/>
+			<attribute name="equation" type="string" use="optional"/>
+		</complexType>
+	</element>
+	<element name="Component">
+		<annotation>
+			<documentation>Defines an open or closed shape</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:Vertex" maxOccurs="unbounded"/>
+				<element ref="inr:EndConditionTarget" minOccurs="0"/>
+				<element ref="inr:SuperLimit" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:CurveSetControl" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="TopStrippingPoints" minOccurs="0"/>
+				<element name="BottomStrippingPoints" minOccurs="0"/>
+			</sequence>
+			<attribute name="materialPath" type="string" use="optional"/>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="nameOverride" type="string" use="optional"/>
+			<attribute name="description" type="string" use="optional"/>
+			<attribute name="material" type="string" use="required"/>
+			<attribute name="isClosed" type="boolean" use="required"/>
+			<attribute name="excludeFromTriangulation" type="boolean" use="optional"/>
+			<attribute name="type" use="required">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="EndCondition"/>
+						<enumeration value="Normal"/>
+						<enumeration value="Stripping"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="parentComponent" type="string" use="optional"/>
+			<attribute name="superPoint" type="string" use="optional"/>
+			<attribute name="superPivot" type="string" use="optional"/>
+			<attribute name="superInitialSlope" type="double" use="optional"/>
+			<attribute name="superPointOffset" type="double" use="optional"/>
+			<attribute name="superPivotOffset" type="double" use="optional"/>
+			<attribute name="superTurnType" type="long" use="optional"/>
+			<attribute name="superNonLinearLength" type="double" use="optional"/>
+			<attribute name="useSuperNonLinearLength" type="boolean" use="optional"/>
+			<attribute name="superIsAuxiliary" type="boolean" use="optional"/>
+			<attribute name="superTransitionType" type="integer" use="optional">
+				<annotation>
+					<documentation>
+                        0 = Linear
+                        1 = Parabolic
+                        2 = ReverseParabolic
+                        3 = ReverseBiquadratic
+                        4 = ReverseCubic
+                        5 = ReverseSymmetrical
+                    </documentation>
+				</annotation>
+			</attribute>
+			<attribute name="displayExpression" type="string" use="optional"/>
+			<attribute name="strippingComponentDepth" type="double" use="optional"/>
+			<attribute name="strippingSurfaceDepth" type="double" use="optional"/>
+			<attribute name="strippingComponentDepthLabel" type="string" use="optional"/>
+			<attribute name="strippingSurfaceDepthLabel" type="string" use="optional"/>
+			<attribute name="strippingTopOption" use="optional">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value=""/>
+						<enumeration value="followSurface"/>
+						<enumeration value="followSegments"/>
+						<enumeration value="followHighest"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="strippingBottomOption" use="optional">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="followSurface"/>
+						<enumeration value="followSegments"/>
+						<enumeration value="followLowest"/>
+						<enumeration value="followHighest"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="strippingTypeRemoval" type="boolean" use="optional"/>
+			<attribute name="strippingSurface" type="string" use="optional"/>
+			<attribute name="alternateSurface" type="string" use="optional"/>
+			<attribute name="superPointOID" type="string" use="optional"/>
+			<attribute name="superPivotOID" type="string" use="optional"/>
+			<attribute name="oid" type="string" use="optional"/>
+			<attribute name="excludeFromTopBottomMesh" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="Point">
+		<complexType>
+			<sequence>
+				<element ref="inr:Constraint" minOccurs="0" maxOccurs="2"/>
+			</sequence>
+			<attribute name="isTopPoint" type="boolean" use="optional"/>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="featureName" type="string" use="optional"/>
+			<attribute name="stylePath" type="string" use="optional"/>
+			<attribute name="style" type="string" use="optional"/>
+			<attribute name="includeInSubgrade" type="boolean" use="required"/>
+			<attribute name="subgradeName" type="string" use="optional"/>
+			<attribute name="x" type="double" use="required"/>
+			<attribute name="y" type="double" use="required"/>
+			<attribute name="isPartOfEndCondition" type="boolean" use="optional" default="false"/>
+			<attribute name="infinteWidth" type="boolean" use="optional" default="false"/>
+			<attribute name="placePointAtIntersection" type="boolean" use="optional" default="true"/>
+			<attribute name="seekIntersection" type="boolean" use="optional" default="true"/>
+			<attribute name="doNotConstruct" type="boolean" use="optional" default="false"/>
+			<attribute name="superType" type="integer" use="optional">
+				<annotation>
+					<documentation>
+                        0 = Undefined
+                        1 = Normal Crown
+                        2 = Zero Cross Slope
+                        3 = Reverse Crown
+                        4 = Full Super
+                    </documentation>
+				</annotation>
+			</attribute>
+			<attribute name="superTransitionType" type="integer" use="optional">
+				<annotation>
+					<documentation>
+                        0 = Linear
+                        1 = Parabolic
+                        2 = ReverseParabolic
+                        3 = ReverseBiquadratic
+                        4 = ReverseCubic
+                        5 = ReverseSymmetrical
+                    </documentation>
+				</annotation>
+			</attribute>
+			<attribute name="transitionX" type="double" use="optional"/>
+			<attribute name="transitionY" type="double" use="optional"/>
+			<attribute name="styleConstraintName" type="string" use="optional"/>
+			<attribute name="styleConstraintMode" use="optional">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Horizontal"/>
+						<enumeration value="Vertical"/>
+						<enumeration value="Both"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="styleConstraintRange" type="double" use="optional"/>
+			<attribute name="superNonLinearLength" type="double" use="optional"/>
+			<attribute name="superelevationFlag" type="integer" use="optional"/>
+			<attribute name="isPartOfBackbone" type="boolean" use="optional"/>
+			<attribute name="XByExternalControl" type="boolean" use="optional"/>
+			<attribute name="YByExternalControl" type="boolean" use="optional"/>
+			<attribute name="ControlledByParametric" type="integer" use="optional"/>
+		</complexType>
+	</element>
+	<element name="DisplayRules">
+		<annotation>
+			<documentation>Collection of Display Rules</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:DisplayRule" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Components">
+		<annotation>
+			<documentation>Collection of shapes in a template</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:Component" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Points">
+		<complexType>
+			<sequence>
+				<element ref="inr:Point" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Template">
+		<annotation>
+			<documentation>Template element</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:Points"/>
+				<element ref="inr:Components" minOccurs="0"/>
+				<element ref="inr:DisplayRules" minOccurs="0"/>
+			</sequence>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="description" type="string" use="optional"/>
+			<attribute name="dragPoint" type="string" use="required"/>
+			<attribute name="oid" type="string" use="required"/>
+			<attribute name="translationDX" type="double" use="required"/>
+			<attribute name="translationDY" type="double" use="required"/>
+			<attribute name="lastRevisedDate" type="string" use="required"/>
+			<attribute name="lastRevisedBy" type="string" use="required"/>
+			<attribute name="revisedInIRD" type="boolean" use="optional"/>
+			<attribute name="propertiesLink" type="string" use="optional"/>
+			<attribute name="isTunnelTemplate" type="boolean" use="optional" default="false"/>
+		</complexType>
+	</element>
+	<element name="Category">
+		<annotation>
+			<documentation>Folder that contains templates or other folders</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:Template" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:Category" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+			<attribute name="name" type="string" use="required"/>
+		</complexType>
+	</element>
+	<element name="TemplateLibrary">
+		<annotation>
+			<documentation>Cross-section template library</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:Category"/>
+				<element ref="inr:PointList" minOccurs="0"/>
+				<element ref="inr:Preferences" minOccurs="0"/>
+			</sequence>
+			<attribute name="lastRevisedDate" type="string" use="required"/>
+			<attribute name="lastRevisedBy" type="string" use="required"/>
+			<attribute name="fileName" type="string" use="required"/>
+			<attribute name="linearUnits" use="optional">
+				<annotation>
+					<documentation>
+                        0 = Undefined
+                        1 = Imperial
+                        2 = Metric
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="propertiesLink" type="string" use="optional"/>
+			<attribute name="lastTemplateOID" type="string" use="optional"/>
+		</complexType>
+	</element>
+	<element name="Properties">
+		<annotation>
+			<documentation>User defined properties of a template</documentation>
+		</annotation>
+	</element>
+	<element name="CurveSetControl">
+		<annotation>
+			<documentation>Indicates for super which curves this is the controlling line</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="id" type="integer" use="required"/>
+		</complexType>
+	</element>
+	<element name="PointList">
+		<annotation>
+			<documentation>A list of predefined points and styles </documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:PointListEntry" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="PointListEntry">
+		<annotation>
+			<documentation>A single point list entry - contains a name and a style</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="style" type="string" use="optional"/>
+		</complexType>
+	</element>
+	<element name="Preferences">
+		<complexType>
+			<sequence>
+				<element name="Preference" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<attribute name="name" type="string" use="required"/>
+						<attribute name="featureDefinitionFlag" type="boolean"/>
+						<attribute name="componentSeedName" type="string"/>
+						<attribute name="pointSeedName" type="string"/>
+						<attribute name="applyAffixesFlag" type="boolean"/>
+						<attribute name="leftPrefix" type="string"/>
+						<attribute name="leftSuffix" type="string"/>
+						<attribute name="rightPrefix" type="string"/>
+						<attribute name="rightSuffix" type="string"/>
+						<attribute name="xStep" type="double"/>
+						<attribute name="yStep" type="double"/>
+						<attribute name="slope" type="double"/>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

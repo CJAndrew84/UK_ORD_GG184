@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<TriForma>
+	<Girder>
+		<Spans span="6000">
+			<PP points="2">
+				<Depth name="400" Seat="101"/>
+				<Depth name="500" Seat="101"/>
+				<Depth name="600" Seat="101"/>
+			</PP>
+			<PP points="3">
+				<Depth name="400" Seat="80"/>
+				<Depth name="500" Seat="100"/>
+				<Depth name="600" Seat="101"/>
+			</PP>
+			<PP points="4">
+				<Depth name="400" Seat="60"/>
+				<Depth name="500" Seat="80"/>
+				<Depth name="600" Seat="100"/>
+			</PP>
+			<PP points="5">
+				<Depth name="400" Seat="50"/>
+				<Depth name="500" Seat="60"/>
+				<Depth name="600" Seat="70"/>
+			</PP>
+			<PP points="10">
+				<Depth name="400" Seat="25"/>
+				<Depth name="500" Seat="30"/>
+				<Depth name="600" Seat="35"/>
+			</PP>
+		</Spans>
+		<Spans span="6600">
+			<PP points="2">
+				<Depth name="400" Seat="100"/>
+				<Depth name="500" Seat="101"/>
+				<Depth name="600" Seat="101"/>
+			</PP>
+			<PP points="3">
+				<Depth name="400" Seat="80"/>
+				<Depth name="500" Seat="100"/>
+				<Depth name="600" Seat="101"/>
+			</PP>
+			<PP points="4">
+				<Depth name="400" Seat="50"/>
+				<Depth name="500" Seat="70"/>
+				<Depth name="600" Seat="100"/>
+			</PP>
+			<PP points="6">
+				<Depth name="400" Seat="35"/>
+				<Depth name="500" Seat="50"/>
+				<Depth name="600" Seat="60"/>
+			</PP>
+			<PP points="11">
+				<Depth name="400" Seat="18"/>
+				<Depth name="500" Seat="25"/>
+				<Depth name="600" Seat="30"/>
+			</PP>
+		</Spans>
+		<Spans span="8000">
+			<PP points="2">
+				<Depth name="500" Seat="101"/>
+				<Depth name="600" Seat="101"/>
+				<Depth name="700" Seat="101"/>
+			</PP>
+			<PP points="3">
+				<Depth name="500" Seat="80"/>
+				<Depth name="600" Seat="100"/>
+				<Depth name="700" Seat="101"/>
+			</PP>
+			<PP points="4">
+				<Depth name="500" Seat="60"/>
+				<Depth name="600" Seat="80"/>
+				<Depth name="700" Seat="100"/>
+			</PP>
+			<PP points="5">
+				<Depth name="500" Seat="50"/>
+				<Depth name="600" Seat="60"/>
+				<Depth name="700" Seat="70"/>
+			</PP>
+			<PP points="6">
+				<Depth name="500" Seat="40"/>
+				<Depth name="600" Seat="50"/>
+				<Depth name="700" Seat="60"/>
+			</PP>
+			<PP points="12">
+				<Depth name="500" Seat="500"/>
+				<Depth name="600" Seat="25"/>
+				<Depth name="700" Seat="30"/>
+			</PP>
+		</Spans>
+		<Spans span="8600">
+			<PP points="2">
+				<Depth name="500" Seat="101"/>
+				<Depth name="600" Seat="101"/>
+				<Depth name="700" Seat="101"/>
+			</PP>
+			<PP points="3">
+				<Depth name="500" Seat="80"/>
+				<Depth name="600" Seat="100"/>
+				<Depth name="700" Seat="101"/>
+			</PP>
+			<PP points="4">
+				<Depth name="500" Seat="60"/>
+				<Depth name="600" Seat="70"/>
+				<Depth name="700" Seat="100"/>
+			</PP>
+			<PP points="5">
+				<Depth name="500" Seat="50"/>
+				<Depth name="600" Seat="60"/>
+				<Depth name="700" Seat="70"/>
+			</PP>
+			<PP points="7">
+				<Depth name="500" Seat="35"/>
+				<Depth name="600" Seat="40"/>
+				<Depth name="700" Seat="50"/>
+			</PP>
+			<PP points="13">
+				<Depth name="500" Seat="16"/>
+				<Depth name="600" Seat="18"/>
+				<Depth name="700" Seat="25"/>
+			</PP>
+		</Spans>
+		<Spans span="8900">
+			<PP points="2">
+				<Depth name="600" Seat="101"/>
+				<Depth name="700" Seat="101"/>
+				<Depth name="800" Seat="101"/>
+			</PP>
+			<PP points="3">
+				<Depth name="600" Seat="100"/>
+				<Depth name="700" Seat="100"/>
+				<Depth name="800" Seat="101"/>
+			</PP>
+			<PP points="4">
+				<Depth name="600" Seat="70"/>
+				<Depth name="700" Seat="70"/>
+				<Depth name="800" Seat="100"/>
+			</PP>
+			<PP points="5">
+				<Depth name="600" Seat="50"/>
+				<Depth name="700" Seat="60"/>
+				<Depth name="800" Seat="70"/>
+			</PP>
+			<PP points="6">
+				<Depth name="600" Seat="50"/>
+				<Depth name="700" Seat="60"/>
+				<Depth name="800" Seat="60"/>
+			</PP>
+			<PP points="7">
+				<Depth name="600" Seat="35"/>
+				<Depth name="700" Seat="50"/>
+				<Depth name="800" Seat="50"/>
+			</PP>
+			<PP points="14">
+				<Depth name="600" Seat="18"/>
+				<Depth name="700" Seat="25"/>
+				<Depth name="800" Seat="25"/>
+			</PP>
+		</Spans>
+		<Spans span="9000">
+			<PP points="2">
+				<Depth name="600" Seat="101"/>
+				<Depth name="700" Seat="101"/>
+				<Depth name="800" Seat="101"/>
+				<Depth name="900" Seat="101"/>
+			</PP>
+			<PP points="3">
+				<Depth name="600" Seat="100"/>
+				<Depth name="700" Seat="100"/>
+				<Depth name="800" Seat="101"/>
+				<Depth name="900" Seat="101"/>
+			</PP>
+			<PP points="4">
+				<Depth name="600" Seat="60"/>
+				<Depth name="700" Seat="70"/>
+				<Depth name="800" Seat="100"/>
+				<Depth name="900" Seat="100"/>
+			</PP>
+			<PP points="5">
+				<Depth name="600" Seat="50"/>
+				<Depth name="700" Seat="60"/>
+				<Depth name="800" Seat="70"/>
+				<Depth name="900" Seat="70"/>
+			</PP>
+			<PP points="6">
+				<Depth name="600" Seat="1000"/>
+				<Depth name="700" Seat="50"/>
+				<Depth name="800" Seat="60"/>
+				<Depth name="900" Seat="60"/>
+			</PP>
+			<PP points="8">
+				<Depth name="600" Seat="30"/>
+				<Depth name="700" Seat="1000"/>
+				<Depth name="800" Seat="1000"/>
+				<Depth name="900" Seat="1000"/>
+			</PP>
+			<PP points="15">
+				<Depth name="600" Seat="16"/>
+				<Depth name="700" Seat="18"/>
+				<Depth name="800" Seat="20"/>
+				<Depth name="900" Seat="25"/>
+			</PP>
+		</Spans>
+		<Spans span="9600">
+			<PP points="3">
+				<Depth name="600" Seat="80"/>
+				<Depth name="700" Seat="100"/>
+				<Depth name="800" Seat="100"/>
+				<Depth name="900" Seat="101"/>
+			</PP>
+			<PP points="4">
+				<Depth name="600" Seat="60"/>
+				<Depth name="700" Seat="70"/>
+				<Depth name="800" Seat="70"/>
+				<Depth name="900" Seat="100"/>
+			</PP>
+			<PP points="5">
+				<Depth name="600" Seat="50"/>
+				<Depth name="700" Seat="60"/>
+				<Depth name="800" Seat="60"/>
+				<Depth name="900" Seat="70"/>
+			</PP>
+			<PP points="6">
+				<Depth name="600" Seat="1000"/>
+				<Depth name="700" Seat="50"/>
+				<Depth name="800" Seat="60"/>
+				<Depth name="900" Seat="60"/>
+			</PP>
+			<PP points="8">
+				<Depth name="600" Seat="30"/>
+				<Depth name="700" Seat="35"/>
+				<Depth name="800" Seat="1000"/>
+				<Depth name="900" Seat="1000"/>
+			</PP>
+		</Spans>
+		<Spans span="10000">
+			<PP points="3">
+				<Depth name="700" Seat="80"/>
+				<Depth name="800" Seat="100"/>
+				<Depth name="900" Seat="101"/>
+				<Depth name="1000" Seat="101"/>
+			</PP>
+			<PP points="4">
+				<Depth name="700" Seat="60"/>
+				<Depth name="800" Seat="70"/>
+				<Depth name="900" Seat="100"/>
+				<Depth name="1000" Seat="100"/>
+			</PP>
+			<PP points="5">
+				<Depth name="700" Seat="50"/>
+				<Depth name="800" Seat="60"/>
+				<Depth name="900" Seat="70"/>
+				<Depth name="1000" Seat="70"/>
+			</PP>
+			<PP points="6">
+				<Depth name="700" Seat="50"/>
+				<Depth name="800" Seat="50"/>
+				<Depth name="900" Seat="60"/>
+				<Depth name="1000" Seat="60"/>
+			</PP>
+			<PP points="7">
+				<Depth name="700" Seat="35"/>
+				<Depth name="800" Seat="1000"/>
+				<Depth name="900" Seat="50"/>
+				<Depth name="1000" Seat="50"/>
+			</PP>
+			<PP points="9">
+				<Depth name="700" Seat="30"/>
+				<Depth name="800" Seat="35"/>
+				<Depth name="900" Seat="35"/>
+				<Depth name="1000" Seat="1000"/>
+			</PP>
+		</Spans>
+		<Spans span="10800">
+			<PP points="3">
+				<Depth name="700" Seat="80"/>
+				<Depth name="800" Seat="100"/>
+				<Depth name="900" Seat="100"/>
+				<Depth name="1000" Seat="101"/>
+			</PP>
+			<PP points="4">
+				<Depth name="700" Seat="60"/>
+				<Depth name="800" Seat="70"/>
+				<Depth name="900" Seat="70"/>
+				<Depth name="1000" Seat="100"/>
+			</PP>
+			<PP points="5">
+				<Depth name="700" Seat="50"/>
+				<Depth name="800" Seat="60"/>
+				<Depth name="900" Seat="60"/>
+				<Depth name="1000" Seat="70"/>
+			</PP>
+			<PP points="6">
+				<Depth name="700" Seat="1000"/>
+				<Depth name="800" Seat="50"/>
+				<Depth name="900" Seat="60"/>
+				<Depth name="1000" Seat="60"/>
+			</PP>
+			<PP points="7">
+				<Depth name="700" Seat="35"/>
+				<Depth name="800" Seat="1000"/>
+				<Depth name="900" Seat="50"/>
+				<Depth name="1000" Seat="50"/>
+			</PP>
+			<PP points="9">
+				<Depth name="700" Seat="30"/>
+				<Depth name="800" Seat="30"/>
+				<Depth name="900" Seat="35"/>
+				<Depth name="1000" Seat="35"/>
+			</PP>
+		</Spans>
+		<Spans span="11400">
+			<PP points="3">
+				<Depth name="800" Seat="100"/>
+				<Depth name="800" Seat="100"/>
+				<Depth name="1000" Seat="101"/>
+				<Depth name="1100" Seat="101"/>
+			</PP>
+			<PP points="4">
+				<Depth name="800" Seat="60"/>
+				<Depth name="800" Seat="70"/>
+				<Depth name="1000" Seat="100"/>
+				<Depth name="1100" Seat="100"/>
+			</PP>
+			<PP points="5">
+				<Depth name="800" Seat="50"/>
+				<Depth name="800" Seat="60"/>
+				<Depth name="1000" Seat="70"/>
+				<Depth name="1100" Seat="70"/>
+			</PP>
+			<PP points="6">
+				<Depth name="800" Seat="50"/>
+				<Depth name="800" Seat="50"/>
+				<Depth name="1000" Seat="60"/>
+				<Depth name="1100" Seat="60"/>
+			</PP>
+			<PP points="8">
+				<Depth name="800" Seat="35"/>
+				<Depth name="800" Seat="1000"/>
+				<Depth name="1000" Seat="1000"/>
+				<Depth name="1100" Seat="1000"/>
+			</PP>
+			<PP points="10">
+				<Depth name="800" Seat="30"/>
+				<Depth name="800" Seat="30"/>
+				<Depth name="1000" Seat="35"/>
+				<Depth name="1100" Seat="35"/>
+			</PP>
+		</Spans>
+		<Spans span="12000">
+			<PP points="3">
+				<Depth name="800" Seat="80"/>
+				<Depth name="900" Seat="100"/>
+				<Depth name="1000" Seat="100"/>
+				<Depth name="1100" Seat="101"/>
+				<Depth name="1200" Seat="101"/>
+			</PP>
+			<PP points="4">
+				<Depth name="800" Seat="1500"/>
+				<Depth name="900" Seat="70"/>
+				<Depth name="1000" Seat="70"/>
+				<Depth name="1100" Seat="80"/>
+				<Depth name="1200" Seat="100"/>
+			</PP>
+			<PP points="5">
+				<Depth name="800" Seat="50"/>
+				<Depth name="900" Seat="1500"/>
+				<Depth name="1000" Seat="1500"/>
+				<Depth name="1100" Seat="70"/>
+				<Depth name="1200" Seat="70"/>
+			</PP>
+			<PP points="6">
+				<Depth name="800" Seat="1000"/>
+				<Depth name="900" Seat="50"/>
+				<Depth name="1000" Seat="1500"/>
+				<Depth name="1100" Seat="1500"/>
+				<Depth name="1200" Seat="1500"/>
+			</PP>
+			<PP points="7">
+				<Depth name="800" Seat="35"/>
+				<Depth name="900" Seat="1000"/>
+				<Depth name="1000" Seat="50"/>
+				<Depth name="1100" Seat="50"/>
+				<Depth name="1200" Seat="50"/>
+			</PP>
+			<PP points="8">
+				<Depth name="800" Seat="30"/>
+				<Depth name="900" Seat="35"/>
+				<Depth name="1000" Seat="1000"/>
+				<Depth name="1100" Seat="1000"/>
+				<Depth name="1200" Seat="50"/>
+			</PP>
+			<PP points="10">
+				<Depth name="800" Seat="25"/>
+				<Depth name="900" Seat="30"/>
+				<Depth name="1000" Seat="30"/>
+				<Depth name="1100" Seat="30"/>
+				<Depth name="1200" Seat="35"/>
+			</PP>
+		</Spans>
+		<Spans span="12600">
+			<PP points="3">
+				<Depth name="800" Seat="80"/>
+				<Depth name="900" Seat="100"/>
+				<Depth name="1000" Seat="100"/>
+				<Depth name="1100" Seat="101"/>
+				<Depth name="1200" Seat="101"/>
+			</PP>
+			<PP points="4">
+				<Depth name="800" Seat="1500"/>
+				<Depth name="900" Seat="70"/>
+				<Depth name="1000" Seat="70"/>
+				<Depth name="1100" Seat="80"/>
+				<Depth name="1200" Seat="80"/>
+			</PP>
+			<PP points="5">
+				<Depth name="800" Seat="50"/>
+				<Depth name="900" Seat="50"/>
+				<Depth name="1000" Seat="1500"/>
+				<Depth name="1100" Seat="70"/>
+				<Depth name="1200" Seat="70"/>
+			</PP>
+			<PP points="6">
+				<Depth name="800" Seat="1000"/>
+				<Depth name="900" Seat="50"/>
+				<Depth name="1000" Seat="50"/>
+				<Depth name="1100" Seat="1500"/>
+				<Depth name="1200" Seat="1500"/>
+			</PP>
+			<PP points="7">
+				<Depth name="800" Seat="35"/>
+				<Depth name="900" Seat="1000"/>
+				<Depth name="1000" Seat="50"/>
+				<Depth name="1100" Seat="50"/>
+				<Depth name="1200" Seat="50"/>
+			</PP>
+			<PP points="8">
+				<Depth name="800" Seat="30"/>
+				<Depth name="900" Seat="35"/>
+				<Depth name="1000" Seat="35"/>
+				<Depth name="1100" Seat="1000"/>
+				<Depth name="1200" Seat="1000"/>
+			</PP>
+			<PP points="11">
+				<Depth name="800" Seat="20"/>
+				<Depth name="900" Seat="25"/>
+				<Depth name="1000" Seat="30"/>
+				<Depth name="1100" Seat="30"/>
+				<Depth name="1200" Seat="30"/>
+			</PP>
+		</Spans>
+		<Spans span="13500">
+			<PP points="3">
+				<Depth name="900" Seat="80"/>
+				<Depth name="1000" Seat="100"/>
+				<Depth name="1100" Seat="100"/>
+				<Depth name="1200" Seat="101"/>
+				<Depth name="1350" Seat="101"/>
+			</PP>
+			<PP points="4">
+				<Depth name="900" Seat="1500"/>
+				<Depth name="1000" Seat="70"/>
+				<Depth name="1100" Seat="70"/>
+				<Depth name="1200" Seat="80"/>
+				<Depth name="1350" Seat="100"/>
+			</PP>
+			<PP points="5">
+				<Depth name="900" Seat="50"/>
+				<Depth name="1000" Seat="50"/>
+				<Depth name="1100" Seat="1500"/>
+				<Depth name="1200" Seat="70"/>
+				<Depth name="1350" Seat="70"/>
+			</PP>
+			<PP points="6">
+				<Depth name="900" Seat="1000"/>
+				<Depth name="1000" Seat="50"/>
+				<Depth name="1100" Seat="50"/>
+				<Depth name="1200" Seat="1500"/>
+				<Depth name="1350" Seat="1500"/>
+			</PP>
+			<PP points="7">
+				<Depth name="900" Seat="35"/>
+				<Depth name="1000" Seat="1000"/>
+				<Depth name="1100" Seat="50"/>
+				<Depth name="1200" Seat="50"/>
+				<Depth name="1350" Seat="50"/>
+			</PP>
+			<PP points="9">
+				<Depth name="900" Seat="30"/>
+				<Depth name="1000" Seat="30"/>
+				<Depth name="1100" Seat="35"/>
+				<Depth name="1200" Seat="35"/>
+				<Depth name="1350" Seat="1000"/>
+			</PP>
+			<PP points="12">
+				<Depth name="900" Seat="20"/>
+				<Depth name="1000" Seat="25"/>
+				<Depth name="1100" Seat="25"/>
+				<Depth name="1200" Seat="25"/>
+				<Depth name="1350" Seat="30"/>
+			</PP>
+		</Spans>
+		<Spans span="14400">
+			<PP points="4">
+				<Depth name="900" Seat="1500"/>
+				<Depth name="1000" Seat="1500"/>
+				<Depth name="1100" Seat="70"/>
+				<Depth name="1200" Seat="70"/>
+				<Depth name="1350" Seat="100"/>
+			</PP>
+			<PP points="5">
+				<Depth name="900" Seat="50"/>
+				<Depth name="1000" Seat="50"/>
+				<Depth name="1100" Seat="1500"/>
+				<Depth name="1200" Seat="1500"/>
+				<Depth name="1350" Seat="70"/>
+			</PP>
+			<PP points="6">
+				<Depth name="900" Seat="1000"/>
+				<Depth name="1000" Seat="50"/>
+				<Depth name="1100" Seat="50"/>
+				<Depth name="1200" Seat="1500"/>
+				<Depth name="1350" Seat="1500"/>
+			</PP>
+			<PP points="8">
+				<Depth name="900" Seat="30"/>
+				<Depth name="1000" Seat="35"/>
+				<Depth name="1100" Seat="35"/>
+				<Depth name="1200" Seat="35"/>
+				<Depth name="1350" Seat="1000"/>
+			</PP>
+			<PP points="9">
+				<Depth name="900" Seat="25"/>
+				<Depth name="1000" Seat="30"/>
+				<Depth name="1100" Seat="35"/>
+				<Depth name="1200" Seat="35"/>
+				<Depth name="1350" Seat="35"/>
+			</PP>
+			<PP points="12">
+				<Depth name="900" Seat="20"/>
+				<Depth name="1000" Seat="25"/>
+				<Depth name="1100" Seat="25"/>
+				<Depth name="1200" Seat="25"/>
+				<Depth name="1350" Seat="30"/>
+			</PP>
+		</Spans>
+		<Spans span="15000">
+			<PP points="4">
+				<Depth name="1000" Seat="1500"/>
+				<Depth name="1100" Seat="1500"/>
+				<Depth name="1200" Seat="70"/>
+				<Depth name="1350" Seat="80"/>
+				<Depth name="1500" Seat="100"/>
+			</PP>
+			<PP points="5">
+				<Depth name="1000" Seat="50"/>
+				<Depth name="1100" Seat="50"/>
+				<Depth name="1200" Seat="1500"/>
+				<Depth name="1350" Seat="70"/>
+				<Depth name="1500" Seat="70"/>
+			</PP>
+			<PP points="6">
+				<Depth name="1000" Seat="1000"/>
+				<Depth name="1100" Seat="50"/>
+				<Depth name="1200" Seat="50"/>
+				<Depth name="1350" Seat="1500"/>
+				<Depth name="1500" Seat="1500"/>
+			</PP>
+			<PP points="8">
+				<Depth name="1000" Seat="30"/>
+				<Depth name="1100" Seat="35"/>
+				<Depth name="1200" Seat="1000"/>
+				<Depth name="1350" Seat="1000"/>
+				<Depth name="1500" Seat="50"/>
+			</PP>
+			<PP points="10">
+				<Depth name="1000" Seat="25"/>
+				<Depth name="1100" Seat="25"/>
+				<Depth name="1200" Seat="30"/>
+				<Depth name="1350" Seat="30"/>
+				<Depth name="1500" Seat="35"/>
+			</PP>
+			<PP points="13">
+				<Depth name="1000" Seat="20"/>
+				<Depth name="1100" Seat="25"/>
+				<Depth name="1200" Seat="25"/>
+				<Depth name="1350" Seat="25"/>
+				<Depth name="1500" Seat="30"/>
+			</PP>
+		</Spans>
+		<Spans span="16500">
+			<PP points="5">
+				<Depth name="1100" Seat="50"/>
+				<Depth name="1200" Seat="50"/>
+				<Depth name="1350" Seat="1500"/>
+				<Depth name="1500" Seat="70"/>
+				<Depth name="1650" Seat="70"/>
+			</PP>
+			<PP points="6">
+				<Depth name="1100" Seat="1000"/>
+				<Depth name="1200" Seat="50"/>
+				<Depth name="1350" Seat="50"/>
+				<Depth name="1500" Seat="1500"/>
+				<Depth name="1650" Seat="1500"/>
+			</PP>
+			<PP points="7">
+				<Depth name="1100" Seat="35"/>
+				<Depth name="1200" Seat="1000"/>
+				<Depth name="1350" Seat="50"/>
+				<Depth name="1500" Seat="50"/>
+				<Depth name="1650" Seat="50"/>
+			</PP>
+			<PP points="9">
+				<Depth name="1100" Seat="30"/>
+				<Depth name="1200" Seat="30"/>
+				<Depth name="1350" Seat="35"/>
+				<Depth name="1500" Seat="35"/>
+				<Depth name="1650" Seat="1000"/>
+			</PP>
+			<PP points="11">
+				<Depth name="1100" Seat="25"/>
+				<Depth name="1200" Seat="25"/>
+				<Depth name="1350" Seat="25"/>
+				<Depth name="1500" Seat="30"/>
+				<Depth name="1650" Seat="35"/>
+			</PP>
+			<PP points="14">
+				<Depth name="1100" Seat="18"/>
+				<Depth name="1200" Seat="20"/>
+				<Depth name="1350" Seat="20"/>
+				<Depth name="1500" Seat="25"/>
+				<Depth name="1650" Seat="25"/>
+			</PP>
+		</Spans>
+		<Spans span="18000">
+			<PP points="5">
+				<Depth name="1200" Seat="50"/>
+				<Depth name="1350" Seat="1500"/>
+				<Depth name="1500" Seat="1500"/>
+				<Depth name="1650" Seat="70"/>
+				<Depth name="1800" Seat="70"/>
+			</PP>
+			<PP points="6">
+				<Depth name="1200" Seat="1000"/>
+				<Depth name="1350" Seat="50"/>
+				<Depth name="1500" Seat="50"/>
+				<Depth name="1650" Seat="1500"/>
+				<Depth name="1800" Seat="1500"/>
+			</PP>
+			<PP points="8">
+				<Depth name="1200" Seat="30"/>
+				<Depth name="1350" Seat="35"/>
+				<Depth name="1500" Seat="1000"/>
+				<Depth name="1650" Seat="1000"/>
+				<Depth name="1800" Seat="50"/>
+			</PP>
+			<PP points="10">
+				<Depth name="1200" Seat="25"/>
+				<Depth name="1350" Seat="30"/>
+				<Depth name="1500" Seat="30"/>
+				<Depth name="1650" Seat="35"/>
+				<Depth name="1800" Seat="35"/>
+			</PP>
+			<PP points="12">
+				<Depth name="1200" Seat="20"/>
+				<Depth name="1350" Seat="25"/>
+				<Depth name="1500" Seat="25"/>
+				<Depth name="1650" Seat="30"/>
+				<Depth name="1800" Seat="30"/>
+			</PP>
+			<PP points="15">
+				<Depth name="1200" Seat="16"/>
+				<Depth name="1350" Seat="18"/>
+				<Depth name="1500" Seat="20"/>
+				<Depth name="1650" Seat="20"/>
+				<Depth name="1800" Seat="25"/>
+			</PP>
+		</Spans>
+		<Spans span="19500">
+			<PP points="6">
+				<Depth name="1350" Seat="1000"/>
+				<Depth name="1500" Seat="50"/>
+				<Depth name="1650" Seat="50"/>
+				<Depth name="1800" Seat="1500"/>
+			</PP>
+			<PP points="8">
+				<Depth name="1350" Seat="35"/>
+				<Depth name="1500" Seat="35"/>
+				<Depth name="1650" Seat="35"/>
+				<Depth name="1800" Seat="1000"/>
+			</PP>
+			<PP points="10">
+				<Depth name="1350" Seat="25"/>
+				<Depth name="1500" Seat="30"/>
+				<Depth name="1650" Seat="30"/>
+				<Depth name="1800" Seat="35"/>
+			</PP>
+			<PP points="11">
+				<Depth name="1350" Seat="25"/>
+				<Depth name="1500" Seat="25"/>
+				<Depth name="1650" Seat="30"/>
+				<Depth name="1800" Seat="30"/>
+			</PP>
+			<PP points="13">
+				<Depth name="1350" Seat="20"/>
+				<Depth name="1500" Seat="25"/>
+				<Depth name="1650" Seat="25"/>
+				<Depth name="1800" Seat="25"/>
+			</PP>
+		</Spans>
+		<Spans span="21000">
+			<PP points="7">
+				<Depth name="1350" Seat="35"/>
+				<Depth name="1500" Seat="35"/>
+				<Depth name="1650" Seat="1000"/>
+				<Depth name="1800" Seat="50"/>
+				<Depth name="2100" Seat="50"/>
+			</PP>
+			<PP points="9">
+				<Depth name="1350" Seat="25"/>
+				<Depth name="1500" Seat="30"/>
+				<Depth name="1650" Seat="35"/>
+				<Depth name="1800" Seat="35"/>
+				<Depth name="2100" Seat="1000"/>
+			</PP>
+			<PP points="11">
+				<Depth name="1350" Seat="20"/>
+				<Depth name="1500" Seat="25"/>
+				<Depth name="1650" Seat="25"/>
+				<Depth name="1800" Seat="30"/>
+				<Depth name="2100" Seat="35"/>
+			</PP>
+			<PP points="12">
+				<Depth name="1350" Seat="20"/>
+				<Depth name="1500" Seat="25"/>
+				<Depth name="1650" Seat="25"/>
+				<Depth name="1800" Seat="25"/>
+				<Depth name="2100" Seat="30"/>
+			</PP>
+			<PP points="14">
+				<Depth name="1350" Seat="16"/>
+				<Depth name="1500" Seat="18"/>
+				<Depth name="1650" Seat="20"/>
+				<Depth name="1800" Seat="25"/>
+				<Depth name="2100" Seat="25"/>
+			</PP>
+		</Spans>
+		<Spans span="24000">
+			<PP points="8">
+				<Depth name="1500" Seat="30"/>
+				<Depth name="1650" Seat="30"/>
+				<Depth name="1800" Seat="35"/>
+				<Depth name="2100" Seat="35"/>
+				<Depth name="2400" Seat="1000"/>
+			</PP>
+			<PP points="10">
+				<Depth name="1500" Seat="25"/>
+				<Depth name="1650" Seat="25"/>
+				<Depth name="1800" Seat="25"/>
+				<Depth name="2100" Seat="30"/>
+				<Depth name="2400" Seat="35"/>
+			</PP>
+			<PP points="13">
+				<Depth name="1500" Seat="18"/>
+				<Depth name="1650" Seat="20"/>
+				<Depth name="1800" Seat="20"/>
+				<Depth name="2100" Seat="25"/>
+				<Depth name="2400" Seat="25"/>
+			</PP>
+			<PP points="16">
+				<Depth name="1500" Seat="14"/>
+				<Depth name="1650" Seat="16"/>
+				<Depth name="1800" Seat="18"/>
+				<Depth name="2100" Seat="18"/>
+				<Depth name="2400" Seat="20"/>
+			</PP>
+		</Spans>
+		<Spans span="27000">
+			<PP points="9">
+				<Depth name="1800" Seat="30"/>
+				<Depth name="2100" Seat="30"/>
+				<Depth name="2400" Seat="35"/>
+				<Depth name="2700" Seat="35"/>
+			</PP>
+			<PP points="11">
+				<Depth name="1800" Seat="25"/>
+				<Depth name="2100" Seat="25"/>
+				<Depth name="2400" Seat="30"/>
+				<Depth name="2700" Seat="30"/>
+			</PP>
+			<PP points="15">
+				<Depth name="1800" Seat="16"/>
+				<Depth name="2100" Seat="18"/>
+				<Depth name="2400" Seat="20"/>
+				<Depth name="2700" Seat="20"/>
+			</PP>
+			<PP points="18">
+				<Depth name="1800" Seat="14"/>
+				<Depth name="2100" Seat="16"/>
+				<Depth name="2400" Seat="16"/>
+				<Depth name="2700" Seat="18"/>
+			</PP>
+		</Spans>
+		<Spans span="30000">
+			<PP points="10">
+				<Depth name="2100" Seat="25"/>
+				<Depth name="2400" Seat="25"/>
+				<Depth name="2700" Seat="30"/>
+				<Depth name="3000" Seat="30"/>
+			</PP>
+			<PP points="12">
+				<Depth name="2100" Seat="20"/>
+				<Depth name="2400" Seat="25"/>
+				<Depth name="2700" Seat="25"/>
+				<Depth name="3000" Seat="25"/>
+			</PP>
+			<PP points="16">
+				<Depth name="2100" Seat="16"/>
+				<Depth name="2400" Seat="18"/>
+				<Depth name="2700" Seat="18"/>
+				<Depth name="3000" Seat="20"/>
+			</PP>
+			<PP points="17">
+				<Depth name="2100" Seat="14"/>
+				<Depth name="2400" Seat="16"/>
+				<Depth name="2700" Seat="16"/>
+				<Depth name="3000" Seat="18"/>
+			</PP>
+			<PP points="20">
+				<Depth name="2100" Seat="12"/>
+				<Depth name="2400" Seat="12"/>
+				<Depth name="2700" Seat="14"/>
+				<Depth name="3000" Seat="16"/>
+			</PP>
+		</Spans>
+	</Girder>
+</TriForma>

@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema targetNamespace="CivilIni" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ini="CivilIni" elementFormDefault="qualified">
+    <include schemaLocation="CommonIni.xsd"/>
+    <element name="OverheadLineOptions">
+		    <annotation>
+			      <documentation>Contains OverheadLineOptions settings</documentation>
+		    </annotation>
+		    <complexType>
+                  <attribute name="ItemName" type="ini:STString31" use="required"/>
+                  <attribute name="DesignRuleSet" type="string" use="optional"/>
+                  <attribute name="CatenarySystem" type="string" use="optional"/>
+                  <attribute name="PantographWidth" type="nonNegativeInteger" use="optional"/>
+                  <attribute name="Temperature" type="Integer" use="optional"/>
+                  <attribute name="TrainSpeed" type="nonNegativeInteger" use="optional"/>
+                  <attribute name="WindSpeedZone" type="nonNegativeInteger" use="optional"/>
+                  <attribute name="ReferenceLinesTurnoutsLookup" type="boolean" use="optional"/>
+                  <attribute name="ReferenceLinesTurnoutsPosition" type="integer" use="optional"/>
+                  <attribute name="ReferenceLinesTurnoutsDistance" type="double" use="optional"/>
+                  <attribute name="ReferenceLinesLeftExtension" type="double" use="optional"/>
+                  <attribute name="ReferenceLinesRightExtension" type="double" use="optional"/>
+                  <attribute name="ReferenceLinesLongitudinalMargin" type="double" use="optional"/>
+                  <attribute name="ReferenceLinesTransverseMargin" type="double" use="optional"/>
+            </complexType>
+	</element>
+    <element name="OverheadLineOptionsCollection">
+		    <annotation>
+			      <documentation>Collection of Options preferences</documentation>
+		    </annotation>
+		    <complexType>
+			      <sequence>
+				        <element ref="ini:OverheadLineOptions" maxOccurs="unbounded"/>
+			      </sequence>
+            </complexType>
+	</element>
+    <element name="ViewOverheadLine">
+        <annotation>
+            <documentation>Contains view overhead line settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="ZonesSymbology">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="OverlapsSymbology">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="SurfacesSymbology">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ReferenceLinesSymbology">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ReferenceLinesAlternateSymbology">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ReferenceLinesMarginsSymbology">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ReferenceLinesControlPointSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+                <element name="ReferenceLinesCellSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+                </element>
+				<element name="ReferenceLinesNameSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ReferenceLinesNotesSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ReferenceLinesStationSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ReferenceLinesNorthingSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+                <element name="ReferenceLinesEastingSymbology" type="ini:CTAnnotationPlacement"/>
+                <element name="ReferenceLinesElevationSymbology" type="ini:CTAnnotationPlacement"/>
+				<element name="ReferenceLinesSpanLengthSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="WireRunsContactSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="WireRunsCatenarySymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="WireRunsDropperSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="WireRunsCellSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="WireRunsNameSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="WireRunsNotesSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="WireRunsCatenarySystemSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="WireRunsVersineSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="OtherWiresSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="OtherWiresNameSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="OtherWiresTypeSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="OtherWiresNotesSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="SpanBondingSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SpanBondingNameSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="SpanBondingDistanceSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="SpanBondingNotesSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="SpanEquipmentSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SpanEquipmentNameSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="SpanEquipmentDistanceSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="SpanEquipmentNotesSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="StructureSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="StructureCellSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="StructureNameSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="StructureNotesSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+   				<element name="StructureStyleSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="StructureStationSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="StructureOffsetSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="StructureStaggerSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="StructureHeightSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="StructureEncumbranceSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="StructureNorthingSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="StructureEastingSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="StructureElevationSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="StructureCantSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="ViewOverheadLinePlanarize" type="boolean" use="required"/>
+            <attribute name="ViewOverheadLineElevation" type="double" use="optional"/>
+            <attribute name="ViewZones" type="boolean" use="optional"/>
+            <attribute name="ViewOverlaps" type="boolean" use="optional"/>
+            <attribute name="ViewSurfaces" type="boolean" use="optional"/>
+            <attribute name="ViewReferenceLinesCell" type="boolean" use="optional"/>
+            <attribute name="ViewReferenceLines" type="boolean" use="optional"/>
+            <attribute name="ViewControlPoint" type="boolean" use="optional"/>
+            <attribute name="ViewMargins" type="boolean" use="optional"/>
+            <attribute name="ViewReferenceLinesName" type="boolean" use="optional"/>
+            <attribute name="ViewReferenceLinesNotes" type="boolean" use="optional"/>
+            <attribute name="ViewReferenceLinesStation" type="boolean" use="optional"/>
+            <attribute name="ViewReferenceLinesNorthing" type="boolean" use="optional"/>
+            <attribute name="ViewReferenceLinesEasting" type="boolean" use="optional"/>
+            <attribute name="ViewReferenceLinesElevation" type="boolean" use="optional"/>
+            <attribute name="ViewReferenceLinesSpanLength" type="boolean" use="optional"/>
+            <attribute name="ViewWireRunsCell" type="boolean" use="optional"/>
+            <attribute name="ViewWireRunsContact" type="boolean" use="optional"/>
+            <attribute name="ViewWireRunsCatenary" type="boolean" use="optional"/>
+            <attribute name="ViewWireRunsDropper" type="boolean" use="optional"/>
+            <attribute name="ViewWireRunsName" type="boolean" use="optional"/>
+            <attribute name="ViewWireRunsNotes" type="boolean" use="optional"/>
+            <attribute name="ViewWireRunsCatenarySystem" type="boolean" use="optional"/>
+            <attribute name="ViewWireRunsVersine" type="boolean" use="optional"/>
+            <attribute name="ViewOtherWires" type="boolean" use="optional"/>
+            <attribute name="ViewOtherWiresName" type="boolean" use="optional"/>
+            <attribute name="ViewOtherWiresType" type="boolean" use="optional"/>
+            <attribute name="ViewOtherWiresNotes" type="boolean" use="optional"/>
+            <attribute name="ViewSpanBondingWires" type="boolean" use="optional"/>
+            <attribute name="ViewSpanBondingName" type="boolean" use="optional"/>
+            <attribute name="ViewSpanBondingDistance" type="boolean" use="optional"/>
+            <attribute name="ViewSpanBondingNotes" type="boolean" use="optional"/>
+            <attribute name="ViewSpanEquipment" type="boolean" use="optional"/>
+            <attribute name="ViewSpanEquipmentName" type="boolean" use="optional"/>
+            <attribute name="ViewSpanEquipmentDistance" type="boolean" use="optional"/>
+            <attribute name="ViewSpanEquipmentNotes" type="boolean" use="optional"/>
+            <attribute name="ViewStructure" type="boolean" use="optional"/>
+            <attribute name="ViewStructureCell" type="boolean" use="optional"/>
+            <attribute name="ViewStructureName" type="boolean" use="optional"/>
+            <attribute name="ViewStructureNotes" type="boolean" use="optional"/>
+            <attribute name="ViewStructureStyle" type="boolean" use="optional"/>
+            <attribute name="ViewStructureStation" type="boolean" use="optional"/>
+            <attribute name="ViewStructureOffset" type="boolean" use="optional"/>
+            <attribute name="ViewStructureStagger" type="boolean" use="optional"/>
+            <attribute name="ViewStructureHeight" type="boolean" use="optional"/>
+            <attribute name="ViewStructureEncumbrance" type="boolean" use="optional"/>
+            <attribute name="ViewStructureEasting" type="boolean" use="optional"/>
+            <attribute name="ViewStructureNorthing" type="boolean" use="optional"/>
+            <attribute name="ViewStructureElevation" type="boolean" use="optional"/>
+            <attribute name="ViewStructureCant" type="boolean" use="optional"/>
+            <attribute name="ReferenceLinesCellOffset" type="double" use="optional"/>
+            <attribute name="WireRunsCellOffset" type="double" use="optional"/>
+            <attribute name="ViewStructureCellOffset" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="ViewOverheadLineCollection">
+        <annotation>
+	          <documentation>Collection of view overhead line preferences</documentation>
+        </annotation>
+        <complexType>
+	          <sequence>
+			        <element ref="ini:ViewOverheadLine" maxOccurs="unbounded"/>
+	          </sequence>
+        </complexType>
+    </element>
+    <element name="ViewOverheadLineProfile">
+        <annotation>
+            <documentation>Contains view overhead line profile settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="ProfileLeaderLinesSymbology">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ProfileDimensionsSymbology">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ProfileWiresSymbology">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ProfileGradeLineSymbology">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ProfileContactPointSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+                </element>
+                <element name="ProfileCatenaryPointSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+                </element>
+                <element name="ProfileContactElevationSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+                <element name="ProfileCatenaryElevationSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+                </element>
+				<element name="ProfileSpanLengthSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ProfileFirstDistanceSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ProfileLastDistanceSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ProfileDropperSpacingSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ProfileFrameSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="ProfileRuleNameSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ProfileTextSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ProfileDesiredSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ProfileRelaxedSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ProfileOutOfRangeSymbology">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+                <element name="ProfileDesignRule1Symbology" type="ini:CTAnnotationPlacement"/>
+                <element name="ProfileDesignRule2Symbology" type="ini:CTAnnotationPlacement"/>
+                <element name="ProfileDesignRule3Symbology" type="ini:CTAnnotationPlacement"/>
+                <element name="ProfileDesignRule4Symbology" type="ini:CTAnnotationPlacement"/>
+                <element name="ProfileDesignRule5Symbology" type="ini:CTAnnotationPlacement"/>
+                <element name="ProfileDesignRule6Symbology" type="ini:CTAnnotationPlacement"/>
+                <element name="ProfileDesignRule7Symbology" type="ini:CTAnnotationPlacement"/>
+                <element name="ProfileDesignRule8Symbology" type="ini:CTAnnotationPlacement"/>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="ViewProfileWires" type="boolean" use="optional"/>
+            <attribute name="ViewProfileGradeLine" type="boolean" use="optional"/>
+            <attribute name="ViewProfileContactPoint" type="boolean" use="optional"/>
+            <attribute name="ViewProfileCatenaryPoint" type="boolean" use="optional"/>
+            <attribute name="ViewProfileContactElevation" type="boolean" use="optional"/>
+            <attribute name="ViewProfileCatenaryElevation" type="boolean" use="optional"/>
+            <attribute name="ViewProfileSpanLength" type="boolean" use="optional"/>
+            <attribute name="ViewProfileFirstDistance" type="boolean" use="optional"/>
+            <attribute name="ViewProfileLastDistance" type="boolean" use="optional"/>
+            <attribute name="ViewProfileDropperSpacing" type="boolean" use="optional"/>
+            <attribute name="ProfileHorizontalSpacing" type="double" use="optional"/>
+            <attribute name="ProfileVerticalSpacing" type="double" use="optional"/>
+            <attribute name="ProfileHorizontalSpacingMethod" type="nonNegativeInteger" use="optional"/>
+            <attribute name="ProfileVerticalSpacingMethod" type="nonNegativeInteger" use="optional"/>
+            <attribute name="ProfileProfilesPerColumn" type="nonNegativeInteger" use="optional"/>
+            <attribute name="ViewProfileFrameLines" type="boolean" use="optional"/>
+            <attribute name="ViewProfileDesignRule1" type="boolean" use="optional"/>
+            <attribute name="ViewProfileDesignRule2" type="boolean" use="optional"/>
+            <attribute name="ViewProfileDesignRule3" type="boolean" use="optional"/>
+            <attribute name="ViewProfileDesignRule4" type="boolean" use="optional"/>
+            <attribute name="ViewProfileDesignRule5" type="boolean" use="optional"/>
+            <attribute name="ViewProfileDesignRule6" type="boolean" use="optional"/>
+            <attribute name="ViewProfileDesignRule7" type="boolean" use="optional"/>
+            <attribute name="ViewProfileDesignRule8" type="boolean" use="optional"/>
+            <attribute name="ViewProfileStartingOffset" type="double" use="optional"/>
+            <attribute name="ViewProfileSpacing" type="double" use="optional"/>
+            <attribute name="ViewProfileTopClearance" type="double" use="optional"/>
+            <attribute name="ViewProfileBottomClearance" type="double" use="optional"/>
+            <attribute name="ViewProfileDimensionOffset" type="double" use="optional"/>
+            <attribute name="ViewProfileLeaderOffset" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="ViewOverheadLineProfileCollection">
+        <annotation>
+	          <documentation>Collection of view overhead line profile preferences</documentation>
+        </annotation>
+        <complexType>
+	          <sequence>
+			        <element ref="ini:ViewOverheadLineProfile" maxOccurs="unbounded"/>
+	          </sequence>
+        </complexType>
+    </element>
+    <element name="ViewOverheadLineCrossSection">
+        <annotation>
+            <documentation>Contains view overhead line cross section settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="CrossSectionSheetScale" type="double" use="optional"/>
+            <attribute name="CrossSectionLeftOffset" type="double" use="optional"/>
+            <attribute name="CrossSectionRightOffset" type="double" use="optional"/>
+            <attribute name="CrossSectionTopClearance" type="double" use="optional"/>
+            <attribute name="CrossSectionBottomClearance" type="double" use="optional"/>
+            <attribute name="CrossSectionLeftBorder" type="double" use="optional"/>
+            <attribute name="CrossSectionRightBorder" type="double" use="optional"/>
+            <attribute name="CrossSectionTopBorder" type="double" use="optional"/>
+            <attribute name="CrossSectionBottomBorder" type="double" use="optional"/>
+            <attribute name="CrossSectionHorizontalOffset" type="double" use="optional"/>
+            <attribute name="CrossSectionVerticalOffset" type="double" use="optional"/>
+            <attribute name="CrossSectionCellName" type="string" use="optional"/>
+        </complexType>
+    </element>
+    <element name="ViewOverheadLineCrossSectionCollection">
+        <annotation>
+	          <documentation>Collection of view overhead line cross section preferences</documentation>
+        </annotation>
+        <complexType>
+	          <sequence>
+			        <element ref="ini:ViewOverheadLineCrossSection" maxOccurs="unbounded"/>
+	          </sequence>
+        </complexType>
+    </element>
+  	<element name="AssignIDs">
+	    	<annotation>
+			      <documentation>Contains AssignIDs settings</documentation>
+		    </annotation>
+		    <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="AssignReferenceLinePrefix" type="string" use="optional"/>
+            <attribute name="AssignReferenceLineNumber" type="nonNegativeInteger" use="optional"/>
+            <attribute name="AssignReferenceLineSuffix" type="string" use="optional"/>
+            <attribute name="AssignWireRunsPrefix" type="string" use="optional"/>
+            <attribute name="AssignWireRunsNumber" type="nonNegativeInteger" use="optional"/>
+            <attribute name="AssignWireRunsSuffix" type="string" use="optional"/>
+            <attribute name="AssignSpanBondingPrefix" type="string" use="optional"/>
+            <attribute name="AssignSpanBondingNumber" type="nonNegativeInteger" use="optional"/>
+            <attribute name="AssignSpanBondingSuffix" type="string" use="optional"/>
+            <attribute name="AssignOtherWiresPrefix" type="string" use="optional"/>
+            <attribute name="AssignOtherWiresNumber" type="nonNegativeInteger" use="optional"/>
+            <attribute name="AssignOtherWiresSuffix" type="string" use="optional"/>
+            <attribute name="AssignStructuresPrefix" type="string" use="optional"/>
+            <attribute name="AssignStructuresPoleNumber" type="nonNegativeInteger" use="optional"/>
+            <attribute name="AssignStructuresSeparator" type="string" use="optional"/>
+            <attribute name="AssignStructuresSuffix" type="string" use="optional"/>
+            <attribute name="AssignStructuresRightPrefix" type="string" use="optional"/>
+            <attribute name="AssignStructuresRightSuffix" type="string" use="optional"/>
+            <attribute name="AssignStructuresIncludeKilometer" type="boolean" use="required"/>
+            <attribute name="AssignStructuresRestartPoleNumber" type="boolean" use="required"/>
+        </complexType>
+	  </element>
+	  <element name="AssignIDsCollection">
+		    <annotation>
+			      <documentation>Collection of AssignIDs preferences</documentation>
+		    </annotation>
+		    <complexType>
+			      <sequence>
+				        <element ref="ini:AssignIDs" maxOccurs="unbounded"/>
+			      </sequence>
+		    </complexType>
+	  </element>
+
+</schema>

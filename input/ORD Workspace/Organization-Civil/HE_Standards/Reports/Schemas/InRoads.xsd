@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 rel. 4 (x64) (http://www.altova.com) by Geoff Bartlett (private) -->
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Mathews (Bentley Systems, Inc.) -->
+<schema xmlns:inr="InRoads" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="InRoads" elementFormDefault="qualified">
+	<include schemaLocation="CommonRpt.xsd"/>
+	<include schemaLocation="AdjustmentsRpt.xsd"/>
+	<include schemaLocation="BridgeRpt.xsd"/>
+	<include schemaLocation="EvaluationRpt.xsd"/>
+	<include schemaLocation="GeometryRpt.xsd"/>
+	<include schemaLocation="RoadwayDesign.xsd"/>
+	<include schemaLocation="RoadwayDesignProjectRpt.xsd"/>
+	<include schemaLocation="SurfaceRpt.xsd"/>
+	<include schemaLocation="SurveyRpt.xsd"/>
+	<include schemaLocation="TemplateLibrary.xsd"/>
+	<include schemaLocation="VisibilityRpt.xsd"/>
+	<!-- root element declaration -->
+	<element name="InRoads">
+		<annotation>
+			<documentation>The namespace</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:HorizontalAnnotationTable" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:GeometryProject" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:BridgeProject" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:Surfaces" minOccurs="0"/>
+				<element ref="inr:CrossSectionSet" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:TriangleVolumeSurfaceSets" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:RoadwayVisibility" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:RoadwayDesigner" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:TemplateLibrary" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:RoadwayDesignProject" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:SurveyFieldbook" minOccurs="0"/>
+				<element ref="inr:AdjustmentNet" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+			<attribute name="productName" type="string" use="optional"/>
+			<attribute name="productVersion" type="string" use="optional"/>
+			<attribute name="outputGridScaleFactor" type="double" use="optional"/>
+			<attribute name="inputGridScaleFactor" type="double" use="optional"/>
+			<attribute name="linearUnits" use="optional">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Imperial"/>
+						<enumeration value="Metric"/>
+						<enumeration value="International Feet"/>
+						<enumeration value="US Feet"/>
+						<enumeration value="Meters"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="angularUnits" use="optional">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Degrees"/>
+						<enumeration value="Grads"/>
+						<enumeration value="Radians"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="directionFormat" use="optional">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Degrees Minutes Seconds"/>
+						<enumeration value="Decimal Degrees"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="directionMode" use="optional">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Bearing"/>
+						<enumeration value="North Bearing"/>
+						<enumeration value="North Azimuth"/>
+						<enumeration value="South Azimuth"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="linearPrecision" type="integer" use="optional"/>
+			<attribute name="directionPrecision" type="integer" use="optional"/>
+			<attribute name="gauge" type="double" use="optional"/>
+			<attribute name="equilibriumConstant" type="double" use="optional"/>
+			<attribute name="commandName" use="optional">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Bridge Reports"/>
+						<enumeration value="Clearance Report"/>
+						<enumeration value="Create New Template Library"/>
+						<enumeration value="Cross Section Report"/>
+						<enumeration value="DTM Check Report"/>
+						<enumeration value="End Area Volumes"/>
+						<enumeration value="Geometry Report"/>
+						<enumeration value="Horizontal Annotation"/>
+						<enumeration value="Intersecting Alignment Stations Report"/>
+						<enumeration value="Legal Description Report"/>
+						<enumeration value="Light Rail Manufacturing Reports"/>
+						<enumeration value="Map Check Report"/>
+						<enumeration value="Network Report"/>
+						<enumeration value="Roadway Design Report"/>
+						<enumeration value="Roadway Design SuperElevation Report"/>
+						<enumeration value="Roadway Visibility Report"/>
+						<enumeration value="Saved Template Library"/>
+						<enumeration value="Stakeout Report"/>
+						<enumeration value="Station Base Report"/>
+						<enumeration value="Station Offset Report"/>
+						<enumeration value="Superelevation Report"/>
+						<enumeration value="Surfaces Report"/>
+						<enumeration value="Survey XML Report"/>
+						<enumeration value="Triangle Volume"/>
+						<enumeration value="Triangle Volume By Station"/>
+						<enumeration value="Roadway Design Cross Slope Optimization Report"/>
+						<enumeration value="Roadway Design Milling Report"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="isInternationalFoot" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+</schema>

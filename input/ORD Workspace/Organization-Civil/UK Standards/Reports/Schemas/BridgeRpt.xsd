@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:inr="InRoads" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="InRoads" elementFormDefault="qualified">
+    <include schemaLocation="CommonRpt.xsd"/>
+    <!-- simpleType declarations -->
+    <simpleType name="STSplicePoint">
+        <annotation>
+            <documentation>Splice point is at start or end of section</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Neither"/>
+            <enumeration value="AtStartOfSection"/>
+            <enumeration value="AtEndOfSection"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STHaunchType">
+        <annotation>
+            <documentation>List of plate girder web transition types</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="None"/>
+            <enumeration value="Linear"/>
+            <enumeration value="Convex"/>
+            <enumeration value="Concave"/>
+            <enumeration value="Reverse"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STTransverseType">
+        <annotation>
+            <documentation>List of transverse geometry types</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Abutment"/>
+            <enumeration value="Pier"/>
+            <enumeration value="Bearing Line"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STGirderType">
+        <annotation>
+            <documentation>A list of girder types</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Standard Girder"/>
+            <enumeration value="Plate Girder"/>
+            <enumeration value="Covered Steel Girder"/>
+            <enumeration value="Covered Standard Section"/>
+            <enumeration value="U-Beam"/>
+            <enumeration value="Box Beam"/>
+            <enumeration value="Unspecified"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STElevationType">
+        <annotation>
+            <documentation>Girder elevation type</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="BearingPoint"/>
+            <enumeration value="SecondaryBearingPoint"/>
+            <enumeration value="Unspecified"/>
+        </restriction>
+    </simpleType>
+    <!-- element declarations -->
+    <element name="OverhangPoint">
+        <annotation>
+            <documentation>Overhang point is the distance from an exterior girder's centerline to the nearest slab fascia line</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="leftOverhang" type="double" use="required"/>
+            <attribute name="rightOverhang" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="Footing">
+        <annotation>
+            <documentation>Footing points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="station" type="inr:CTStation" minOccurs="0"/>
+                <element name="referenceStation" type="inr:CTLegalReference" minOccurs="0"/>
+            </sequence>
+            <attribute name="northing" type="double" use="required"/>
+            <attribute name="easting" type="double" use="required"/>
+            <attribute name="elevation" type="double" use="required"/>
+            <attribute name="groundElevation" type="double" use="required"/>
+            <attribute name="offset" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="Footings">
+        <annotation>
+            <documentation>Footing data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Footing" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="description" type="string" use="required"/>
+            <attribute name="style" type="string" use="required"/>
+        </complexType>
+    </element>
+    <element name="BearingPoint">
+        <annotation>
+            <documentation>Bearing point</documentation>
+        </annotation>
+        <complexType mixed="true">
+            <complexContent mixed="true">
+                <extension base="inr:CTPoint"/>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="PedestalPoint">
+        <annotation>
+            <documentation>Pedestal point</documentation>
+        </annotation>
+        <complexType mixed="true">
+            <complexContent mixed="true">
+                <extension base="inr:CTPoint"/>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="TopOfSubstructurePoint">
+        <annotation>
+            <documentation>Top of substructure point</documentation>
+        </annotation>
+        <complexType mixed="true">
+            <complexContent mixed="true">
+                <extension base="inr:CTPoint"/>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="Clearance">
+        <annotation>
+            <documentation>Clearance elevations includeing bottom of girder, ground elevation and clearance</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="station" type="inr:CTStation" minOccurs="0"/>
+                <element name="referenceStation" type="inr:CTLegalReference" minOccurs="0"/>
+            </sequence>
+            <attribute name="distanceAlong" type="double" use="required"/>
+            <attribute name="northing" type="double" use="required"/>
+            <attribute name="easting" type="double" use="required"/>
+            <attribute name="bottomOfGirderElevation" type="double" use="required"/>
+            <attribute name="groundElevation" type="double" use="required"/>
+            <attribute name="verticalClearance" type="double" use="required"/>
+            <attribute name="offset" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="ScreedElevation">
+        <annotation>
+            <documentation>Screed and screed elevation</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="station" type="inr:CTStation" minOccurs="0"/>
+            </sequence>
+            <attribute name="distanceAlong" type="double" use="required"/>
+            <attribute name="northing" type="double" use="required"/>
+            <attribute name="easting" type="double" use="required"/>
+            <attribute name="topOfSlabElevation" type="double" use="required"/>
+            <attribute name="screedElevation" type="double" use="required"/>
+            <attribute name="screed" type="double" use="required"/>
+            <attribute name="offset" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="GirderElevation">
+        <annotation>
+            <documentation>Girder elevations including top of slab, top of girder, bottom of girder, girder seat elevation and other vertical depths</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="station" type="inr:CTStation" minOccurs="0"/>
+            </sequence>
+            <attribute name="pointType" type="inr:STElevationType" use="required"/>
+            <attribute name="distanceAlong" type="double" use="required"/>
+            <attribute name="offsetFrom" type="double" use="required"/>
+            <attribute name="northing" type="double" use="required"/>
+            <attribute name="easting" type="double" use="required"/>
+            <attribute name="topOfSlabElevation" type="double" use="required"/>
+            <attribute name="topOfGirderElevation" type="double" use="optional"/>
+            <attribute name="topOfWebElevation" type="double" use="optional"/>
+            <attribute name="bottomOfGirderElevation" type="double" use="optional"/>
+            <attribute name="girderSeatElevation" type="double" use="optional"/>
+            <attribute name="existingGround" type="double" use="optional"/>
+            <attribute name="slabThickness" type="double" use="optional"/>
+            <attribute name="haunchThickness" type="double" use="optional"/>
+            <attribute name="leftHaunchThickness" type="double" use="optional"/>
+            <attribute name="rightHaunchThickness" type="double" use="optional"/>
+            <attribute name="girderDepth" type="double" use="optional"/>
+            <attribute name="sumOfVerticalDepths" type="double" use="optional"/>
+            <attribute name="topCoverThickness" type="double" use="optional"/>
+            <attribute name="topFlangeThickness" type="double" use="optional"/>
+            <attribute name="webDepth" type="double" use="optional"/>
+            <attribute name="bottomFlangeThickness" type="double" use="optional"/>
+            <attribute name="bottomCoverThickness" type="double" use="optional"/>
+            <attribute name="bearingDepth" type="double" use="optional"/>
+            <attribute name="offset" type="double" use="optional"/>
+            <attribute name="crossSlope" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="AsBuiltElevation">
+        <annotation>
+            <documentation>As built girder elevations</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="leftStation" type="inr:CTStation" minOccurs="0"/>
+                <element name="rightStation" type="inr:CTStation" minOccurs="0"/>
+            </sequence>
+            <attribute name="pointType" type="inr:STElevationType" use="required"/>
+            <attribute name="distanceAlong" type="double" use="required"/>
+            <attribute name="widthOfGirder" type="double" use="required"/>
+            <attribute name="crossSlope" type="double" use="required"/>
+            <attribute name="leftEdgeNorthing" type="double" use="required"/>
+            <attribute name="leftEdgeEasting" type="double" use="required"/>
+            <attribute name="leftEdgeTopOfSlabElevation" type="double" use="required"/>
+            <attribute name="leftEdgeBottomOfSlabElevation" type="double" use="required"/>
+            <attribute name="leftEdgeHaunchDepth" type="double" use="required"/>
+            <attribute name="leftEdgeDeflection" type="double" use="required"/>
+            <attribute name="leftEdgeBottomOfSlabWDeflectionElevation" type="double" use="required"/>
+            <attribute name="leftEdgeBottomOfGirderElevation" type="double" use="required"/>
+            <attribute name="leftEdgeAsBuiltTopOfGirderElevation" type="double" use="required"/>
+            <attribute name="leftEdgeMarkUp" type="double" use="required"/>
+            <attribute name="leftEdgeOffset" type="double" use="required"/>
+            <attribute name="rightEdgeNorthing" type="double" use="required"/>
+            <attribute name="rightEdgeEasting" type="double" use="required"/>
+            <attribute name="rightEdgeTopOfSlabElevation" type="double" use="required"/>
+            <attribute name="rightEdgeBottomOfSlabElevation" type="double" use="required"/>
+            <attribute name="rightEdgeHaunchDepth" type="double" use="required"/>
+            <attribute name="rightEdgeDeflection" type="double" use="required"/>
+            <attribute name="rightEdgeBottomOfSlabWDeflectionElevation" type="double" use="required"/>
+            <attribute name="rightEdgeBottomOfGirderElevation" type="double" use="required"/>
+            <attribute name="rightEdgeAsBuiltTopOfGirderElevation" type="double" use="required"/>
+            <attribute name="rightEdgeMarkUp" type="double" use="required"/>
+            <attribute name="rightEdgeOffset" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="Section">
+        <annotation>
+            <documentation>Section length, width and depth for top flanges, web and bottom flanges</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="distanceStartPierToStartSection" type="double" use="required"/>
+            <attribute name="distanceStartGirderToStartSection" type="double" use="required"/>
+            <attribute name="distanceStopSectionToStopGirder" type="double" use="required"/>
+            <attribute name="distanceStopSectionToStopPier" type="double" use="required"/>
+            <attribute name="sectionLength" type="double" use="required"/>
+            <attribute name="bearingPoint" type="inr:STSplicePoint" use="optional"/>
+            <attribute name="splicePoint" type="inr:STSplicePoint" use="optional"/>
+            <attribute name="topCoverDescription" type="string" use="optional"/>
+            <attribute name="topFlangeDescription" type="string" use="optional"/>
+            <attribute name="webDescription" type="string" use="optional"/>
+            <attribute name="standardSectionDescription" type="string" use="optional"/>
+            <attribute name="bottomFlangeDescription" type="string" use="optional"/>
+            <attribute name="bottomCoverDescription" type="string" use="optional"/>
+            <attribute name="haunchType" type="inr:STHaunchType" use="optional"/>
+        </complexType>
+    </element>
+    <complexType name="CTOverhangPoint" mixed="true">
+        <annotation>
+            <documentation>Base bridge overhang point definition</documentation>
+        </annotation>
+        <attribute name="leftOverhang" type="double" use="required"/>
+        <attribute name="rightOverhang" type="double" use="required"/>
+    </complexType>
+    <element name="Sections">
+        <annotation>
+            <documentation>A collection of section types and depths</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Section" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="UBeamHaunch">
+        <annotation>
+            <documentation>U beam haunch data including beam type, camber, dead load, vertical ordinates, minimum and maximum haunch, deduct and beam seat elevations</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="slabThickness" type="double" use="required"/>
+            <attribute name="topFlangeWidth" type="double" use="required"/>
+            <attribute name="beamDepth" type="double" use="required"/>
+            <attribute name="bearingPadThickness" type="double" use="required"/>
+            <attribute name="widthOfPedestal" type="double" use="required"/>
+            <attribute name="camber" type="double" use="required"/>
+            <attribute name="deadLoadDeflection" type="double" use="required"/>
+            <attribute name="centerLineMinimumHaunch" type="double" use="required"/>
+            <attribute name="verticalOrdinateBackBearingLeft" type="double" use="required"/>
+            <attribute name="verticalOrdinateBackBearingRight" type="double" use="required"/>
+            <attribute name="verticalOrdinateMaximumLeft" type="double" use="required"/>
+            <attribute name="verticalOrdinateMaximumRight" type="double" use="required"/>
+            <attribute name="verticalOrdinateAheadBearingLeft" type="double" use="required"/>
+            <attribute name="verticalOrdinateAheadBearingRight" type="double" use="required"/>
+            <attribute name="minimumRequiredHaunchLeft" type="double" use="required"/>
+            <attribute name="minimumRequiredHaunchRight" type="double" use="required"/>
+            <attribute name="minimumUsedHaunch" type="double" use="required"/>
+            <attribute name="maximumCalculatedHaunch" type="double" use="required"/>
+            <attribute name="XAtPointA" type="double" use="required"/>
+            <attribute name="XAtPointB" type="double" use="required"/>
+            <attribute name="leftZ" type="double" use="required"/>
+            <attribute name="rightZ" type="double" use="required"/>
+            <attribute name="bearingDeduct" type="double" use="required"/>
+            <attribute name="backBeamSeatLeft" type="double" use="required"/>
+            <attribute name="backBeamSeatRight" type="double" use="required"/>
+            <attribute name="aheadBeamSeatLeft" type="double" use="required"/>
+            <attribute name="aheadBeamSeatRight" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="Diaphragm">
+        <annotation>
+            <documentation>Diaphragm and stiffener geometry</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="p1Station" type="inr:CTStation" minOccurs="0"/>
+                <element name="p2Station" type="inr:CTStation" minOccurs="0"/>
+            </sequence>
+            <attribute name="type" type="string" use="required"/>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="length" type="double" use="required"/>
+            <attribute name="p1AlongGirder" type="double" use="required"/>
+            <attribute name="p1Northing" type="double" use="required"/>
+            <attribute name="p1Easting" type="double" use="optional"/>
+            <attribute name="p1Offset" type="double" use="required"/>
+            <attribute name="p2AlongGirder" type="double" use="required"/>
+            <attribute name="p2Northing" type="double" use="required"/>
+            <attribute name="p2Easting" type="double" use="required"/>
+            <attribute name="p2Offset" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="Diaphragms">
+        <annotation>
+            <documentation>A collection of diaphragm and stiffener geometry</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Diaphragm" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Layout">
+        <annotation>
+            <documentation>Layout geometry</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="transverseName" type="string" use="required"/>
+            <attribute name="northing" type="double" use="required"/>
+            <attribute name="easting" type="double" use="required"/>
+            <attribute name="distanceAlong" type="double" use="required"/>
+            <attribute name="distanceToLeftSlabFascia" type="double" use="optional"/>
+            <attribute name="distanceToLeftGirder" type="double" use="optional"/>
+            <attribute name="distanceToBaseLine" type="double" use="required"/>
+            <attribute name="distanceToRightGirder" type="double" use="optional"/>
+            <attribute name="distanceToRightSlabFascia" type="double" use="optional"/>
+            <attribute name="radialSkewAngle" type="inr:STAngle" use="required"/>
+            <attribute name="tangentialSkewAngle" type="inr:STAngle" use="required"/>
+            <attribute name="tangentialDirection" type="inr:STDirection" use="required"/>
+            <attribute name="pierToBearingPointNormalDistance" type="double" use="optional"/>
+            <attribute name="pierToBearingPointAlongDistance" type="double" use="optional"/>
+            <attribute name="pierToBearingPointBetweenDistance" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="Layouts">
+        <annotation>
+            <documentation>A collection of layout geometry</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Layout" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="GirderElevations">
+        <annotation>
+            <documentation>A collection of girder elevations</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:GirderElevation" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="AsBuiltElevations">
+        <annotation>
+            <documentation>A collection of as-built girder elevations</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:AsBuiltElevation" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Clearances">
+        <annotation>
+            <documentation>A collection of clearance points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Clearance" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Pedestal">
+        <annotation>
+            <documentation>Pedestal data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:PedestalPoint" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:TopOfSubstructurePoint" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="description" type="string" use="required"/>
+            <attribute name="style" type="string" use="required"/>
+        </complexType>
+    </element>
+    <element name="ScreedElevations">
+        <annotation>
+            <documentation>A collection of screen elevations</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:ScreedElevation" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Overhang">
+        <annotation>
+            <documentation>Overhang points for a single span</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="overhangPoint" type="inr:CTOverhangPoint" maxOccurs="unbounded">
+                    <annotation>
+                        <documentation>The overhang distances are from girder centerline to slab fascia</documentation>
+                    </annotation>
+                </element>
+                <element name="minimumOverhang" type="inr:CTOverhangPoint"/>
+                <element name="maximumOverhang" type="inr:CTOverhangPoint"/>
+            </sequence>
+            <attribute name="startSpan" type="integer" use="required"/>
+            <attribute name="stopSpan" type="integer" use="required"/>
+            <attribute name="leftGirderName" type="string" use="required"/>
+            <attribute name="leftGirderDescription" type="string" use="optional"/>
+            <attribute name="leftGirderStyle" type="string" use="optional"/>
+            <attribute name="rightGirderName" type="string" use="required"/>
+            <attribute name="rightGirderDescription" type="string" use="optional"/>
+            <attribute name="rightGirderStyle" type="string" use="optional"/>
+        </complexType>
+    </element>
+    <element name="Overhangs">
+        <annotation>
+            <documentation>A collection of overhangs requires tranverse lines and girders</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Overhang" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="TransverseLine">
+        <annotation>
+            <documentation>
+                Transverse geometry data including piers, abutments, bearing lines
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="centerLinePoint" type="inr:CTPoint"/>
+                <element ref="inr:Footings" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:Pedestal" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="type" type="inr:STTransverseType" use="required"/>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="description" type="string" use="required"/>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="startSpan" type="integer" use="required"/>
+            <attribute name="stopSpan" type="integer" use="required"/>
+            <attribute name="radialSkewAngle" type="inr:STAngle" use="required"/>
+            <attribute name="tangentialSkewAngle" type="inr:STAngle" use="required"/>
+            <attribute name="direction" type="inr:STDirection" use="required"/>
+            <attribute name="spanLength" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="TransverseLines">
+        <annotation>
+            <documentation>A collection of transverse (abutment lines, pier lines and bearing lines) geometry lines</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:TransverseLine" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Girder">
+        <annotation>
+            <documentation>A girder and associated layout geom3try, girder elevations, clearances and screed elevations</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:StandardGirder" minOccurs="0"/>
+                <element ref="inr:PlateGirder" minOccurs="0"/>
+                <element ref="inr:CoveredSteelGirder" minOccurs="0"/>
+                <element ref="inr:UBeam" minOccurs="0"/>
+                <element ref="inr:BoxBeam" minOccurs="0"/>
+                <element ref="inr:Unspecified" minOccurs="0"/>
+            </sequence>
+            <attribute name="type" type="inr:STGirderType" use="required"/>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="description" type="string" use="required"/>
+            <attribute name="style" type="string" use="required"/>
+            <attribute name="startSpan" type="integer" use="required"/>
+            <attribute name="stopSpan" type="integer" use="required"/>
+            <attribute name="number" type="integer" use="required"/>
+            <attribute name="isLinear" type="boolean" use="required"/>
+            <attribute name="isSimple" type="boolean" use="required"/>
+            <attribute name="pierToPierLength" type="double" use="required"/>
+            <attribute name="bearingToBearingLength" type="double" use="required"/>
+            <attribute name="pierToStartOfGirder" type="double" use="required"/>
+            <attribute name="isStartSkewed" type="boolean" use="required"/>
+            <attribute name="girderLength" type="double" use="required"/>
+            <attribute name="pierToEndOfGirder" type="double" use="required"/>
+            <attribute name="isEndSkewed" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="StandardGirder">
+        <annotation>
+            <documentation>Standard Prestressed or Steel girder geometry</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Layouts" minOccurs="0"/>
+                <element ref="inr:Diaphragms" minOccurs="0"/>
+                <element ref="inr:GirderElevations" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:AsBuiltElevations" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:Clearances" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:ScreedElevations" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="PlateGirder">
+        <annotation>
+            <documentation>Plate girder geometry</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Layouts" minOccurs="0"/>
+                <element ref="inr:Diaphragms" minOccurs="0"/>
+                <element ref="inr:GirderElevations" minOccurs="0"/>
+                <element ref="inr:Clearances" minOccurs="0"/>
+                <element ref="inr:ScreedElevations" minOccurs="0"/>
+                <element ref="inr:Sections" minOccurs="0"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CoveredSteelGirder">
+        <annotation>
+            <documentation>Standard covered section girder geometry</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Layouts" minOccurs="0"/>
+                <element ref="inr:Diaphragms" minOccurs="0"/>
+                <element ref="inr:GirderElevations" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:Clearances" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:ScreedElevations" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:Sections" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="UBeam">
+        <annotation>
+            <documentation>U-Beam geometry</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Layouts" minOccurs="0"/>
+                <element ref="inr:UBeamHaunch" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:Clearances" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="BoxBeam">
+        <annotation>
+            <documentation>Box beam geometry</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Layouts" minOccurs="0"/>
+                <element ref="inr:GirderElevations" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:Clearances" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:ScreedElevations" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Unspecified">
+        <annotation>
+            <documentation>Unspecified girder geometry</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Layouts" minOccurs="0"/>
+                <element ref="inr:Diaphragms" minOccurs="0"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Girders">
+        <annotation>
+            <documentation>A collection of girders</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Girder" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SlabElevation">
+        <annotation>
+            <documentation>Top of slab elevation</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="station" type="inr:CTStation" minOccurs="0"/>
+            </sequence>
+            <attribute name="longitudinalName" type="string" use="required"/>
+            <attribute name="transverseName" type="string" use="required"/>
+            <attribute name="stationGrouping" type="integer" use="required"/>
+            <attribute name="northing" type="double" use="required"/>
+            <attribute name="easting" type="double" use="required"/>
+            <attribute name="elevation" type="double" use="required"/>
+            <attribute name="offsetFromLongitudinal" type="double" use="required"/>
+            <attribute name="offset" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="SlabElevations">
+        <annotation>
+            <documentation>A collection of top of slab elevations</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:SlabElevation" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="BridgeCenterLine">
+        <annotation>
+            <documentation>Active horizontal alignment (i.e. parent of all associated bridge geometry), bridge surface and ground surface</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Overhangs" minOccurs="0"/>
+                <element ref="inr:TransverseLines" minOccurs="0"/>
+                <element ref="inr:Girders" minOccurs="0"/>
+                <element ref="inr:SlabElevations" minOccurs="0"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="style" type="string" use="required"/>
+            <attribute name="description" type="string" use="required"/>
+            <attribute name="lastRevisedDate" type="string" use="required"/>
+            <attribute name="lastRevisedBy" type="string" use="required"/>
+            <attribute name="bridgeSurface" type="string" use="optional"/>
+            <attribute name="groundSurface" type="string" use="optional"/>
+            <attribute name="additionalElevationVerticals" type="string" use="optional"/>
+            <attribute name="additionalScreedVerticals" type="string" use="optional"/>
+            <attribute name="numberOfSpans" type="integer" use="required"/>
+            <attribute name="minimumNumberOfGirders" type="integer" use="required"/>
+            <attribute name="maximumNumberOfGirders" type="integer" use="required"/>
+        </complexType>
+    </element>
+    <element name="BridgeProject">
+        <annotation>
+            <documentation>Contains bridge specifc data such as overhangs, transverse lines, girder lines and slab elevations.</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:BridgeCenterLine" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="description" type="string" use="required"/>
+            <attribute name="file" type="string" use="required"/>
+            <attribute name="lastRevisedDate" type="string" use="required"/>
+            <attribute name="lastRevisedBy" type="string" use="required"/>
+        </complexType>
+    </element>
+</schema>

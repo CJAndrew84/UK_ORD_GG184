@@ -1,0 +1,34 @@
+/*--------------------------------------------------------------------------------------+
+|
+|   IFC EXPORT IFC4 Design Transfer View filter
+|
+|---------------------------------------------------------------------------------------
+|   
+|   
+|
+|   
+|
++--------------------------------------------------------------------------------------*/
+
+VERSION 2.5
+
+FILE_DESCRIPTION "ViewDefinition [DesignTransferView]";
+	
+EXCLUDE_DOMAIN
+    IfcBSplineSurface 
+    IfcBSplineCurve
+    IfcCompositeProfileDef
+    IfcRelSpaceBoundary2ndLevel
+    IfcRelSpaceBoundary1stLevel
+    IfcRelSpaceBoundary
+
+    IfcEllipseProfileDef
+    IfcEllipse
+
+
+SYSTEMS    
+	"Properties/@SystemId"
+	"BBES_Equipment_Schedule/@Circuit_ID" : IfcDistributionCircuit
+
+
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!-- This is the storage file for the settings used in automatic model coping. -->
+<!-- Localization Note: There are no localizable settings in this file. -->
+<ModelCopeSettings>
+	<Version Major="1" Minor="0"/>
+	<SettingsGroups>
+		<SettingsGroup GroupName="Default" UnitSystem="millimeter">
+		        <CopePairs>
+			    <CopePair Enabled ="true" Material="steel" Member="beam" Support="column">
+				    <CopeSettings FlangeClearance="10.00" WebClearance="10.00" InsideCorner="rounded" CornerRadius="0.00"/>
+			    </CopePair>
+			    <CopePair Enabled ="true" Material="steel" Member="beam" Support="beam">
+				    <CopeSettings FlangeClearance="10.00" WebClearance="10.00" InsideCorner="rounded" CornerRadius="0.00"/>
+			    </CopePair>
+			    <CopePair Enabled ="true" Material="steel" Member="cantilever" Support="beam">
+				    <CopeSettings FlangeClearance="10.00" WebClearance="10.00" InsideCorner="rounded" CornerRadius="0.00"/>
+			    </CopePair>
+			    <CopePair Enabled ="true" Material="steel" Member="verticalbrace" Support="beam">
+				    <CopeSettings FlangeClearance="10.00" WebClearance="10.00" InsideCorner="rounded" CornerRadius="0.00"/>
+			    </CopePair>
+			    <CopePair Enabled ="true" Material="steel" Member="verticalbrace" Support="column">
+				    <CopeSettings FlangeClearance="10.00" WebClearance="10.00" InsideCorner="rounded" CornerRadius="0.00"/>
+			    </CopePair>
+			    <CopePair Enabled ="true" Material="steel" Member="horizontalbrace" Support="column">
+				    <CopeSettings FlangeClearance="10.00" WebClearance="10.00" InsideCorner="rounded" CornerRadius="0.00"/>
+			    </CopePair>
+			    <CopePair Enabled ="true" Material="steel" Member="horizontalbrace" Support="beam">
+				    <CopeSettings FlangeClearance="10.00" WebClearance="10.00" InsideCorner="rounded" CornerRadius="0.00"/>
+			    </CopePair>
+			    <CopePair Enabled ="true" Material="concrete" Member="beam" Support="column">
+				    <CopeSettings FlangeClearance="0.00" WebClearance="0.00" InsideCorner="none" CornerRadius="0.00"/>
+			    </CopePair>
+			    <CopePair Enabled ="true" Material="concrete" Member="beam" Support="beam">
+				    <CopeSettings FlangeClearance="0.00" WebClearance="0.00" InsideCorner="none" CornerRadius="0.00"/>
+			    </CopePair>
+			</CopePairs>
+		</SettingsGroup>
+	</SettingsGroups>
+</ModelCopeSettings>

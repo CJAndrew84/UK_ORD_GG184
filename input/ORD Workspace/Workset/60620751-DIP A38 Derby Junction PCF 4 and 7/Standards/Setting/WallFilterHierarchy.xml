@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Triforma>
+	<FilterHierarchy>
+		<Node name="Architectural">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectDiscipline/@Discipline</Property>
+				<Value>Architectural</Value>
+			</Test>
+			<Node name="External">
+				<AllowsChildren>true</AllowsChildren>
+				<Test>
+					<Property>ObjectThermalTransmittance/@IsExternal</Property>
+					<Value>true</Value>
+				</Test>
+				<Node name="Undefined">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Undefined</Value>
+					</Test>
+				</Node>
+				<Node name="Aluminium">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Aluminium</Value>
+					</Test>
+				</Node>
+				<Node name="Blockwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Blockwork</Value>
+					</Test>
+				</Node>
+				<Node name="Brickwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Brickwork</Value>
+					</Test>
+				</Node>
+				<Node name="Composite">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Composite</Value>
+					</Test>
+				</Node>
+				<Node name="Concrete">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Concrete</Value>
+					</Test>
+				</Node>
+				<Node name="Glass">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Glass</Value>
+					</Test>
+				</Node>
+				<Node name="Metal">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Metal</Value>
+					</Test>
+				</Node>
+				<Node name="Plasterboard">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plasterboard</Value>
+					</Test>
+				</Node>
+				<Node name="Plaster">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plaster</Value>
+					</Test>
+				</Node>
+				<Node name="Steel">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Steel</Value>
+					</Test>
+				</Node>
+				<Node name="Timber">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Timber</Value>
+					</Test>
+				</Node>
+			</Node>
+			<Node name="Internal">
+				<AllowsChildren>true</AllowsChildren>
+				<Test>
+					<Property>ObjectThermalTransmittance/@IsExternal</Property>
+					<Value>false</Value>
+				</Test>
+				<Node name="Undefined">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Undefined</Value>
+					</Test>
+				</Node>
+				<Node name="Aluminium">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Aluminium</Value>
+					</Test>
+				</Node>
+				<Node name="Blockwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Blockwork</Value>
+					</Test>
+				</Node>
+				<Node name="Brickwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Brickwork</Value>
+					</Test>
+				</Node>
+				<Node name="Composite">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Composite</Value>
+					</Test>
+				</Node>
+				<Node name="Concrete">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Concrete</Value>
+					</Test>
+				</Node>
+				<Node name="Glass">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Glass</Value>
+					</Test>
+				</Node>
+				<Node name="Metal">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Metal</Value>
+					</Test>
+				</Node>
+				<Node name="Plasterboard">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plasterboard</Value>
+					</Test>
+				</Node>
+				<Node name="Plaster">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plaster</Value>
+					</Test>
+				</Node>
+				<Node name="Steel">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Steel</Value>
+					</Test>
+				</Node>
+				<Node name="Timber">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Timber</Value>
+					</Test>
+				</Node>
+			</Node>
+		</Node>
+		<Node name="Structural">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectDiscipline/@Discipline</Property>
+				<Value>Structural</Value>
+			</Test>
+			<Node name="External">
+				<AllowsChildren>true</AllowsChildren>
+				<Test>
+					<Property>ObjectThermalTransmittance/@IsExternal</Property>
+					<Value>true</Value>
+				</Test>
+				<Node name="Undefined">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Undefined</Value>
+					</Test>
+				</Node>
+				<Node name="Aluminium">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Aluminium</Value>
+					</Test>
+				</Node>
+				<Node name="Blockwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Blockwork</Value>
+					</Test>
+				</Node>
+				<Node name="Brickwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Brickwork</Value>
+					</Test>
+				</Node>
+				<Node name="Composite">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Composite</Value>
+					</Test>
+				</Node>
+				<Node name="Concrete">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Concrete</Value>
+					</Test>
+				</Node>
+				<Node name="Glass">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Glass</Value>
+					</Test>
+				</Node>
+				<Node name="Metal">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Metal</Value>
+					</Test>
+				</Node>
+				<Node name="Plasterboard">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plasterboard</Value>
+					</Test>
+				</Node>
+				<Node name="Plaster">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plaster</Value>
+					</Test>
+				</Node>
+				<Node name="Steel">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Steel</Value>
+					</Test>
+				</Node>
+				<Node name="Timber">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Timber</Value>
+					</Test>
+				</Node>
+			</Node>
+			<Node name="Internal">
+				<AllowsChildren>true</AllowsChildren>
+				<Test>
+					<Property>ObjectThermalTransmittance/@IsExternal</Property>
+					<Value>false</Value>
+				</Test>
+				<Node name="Undefined">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Undefined</Value>
+					</Test>
+				</Node>
+				<Node name="Aluminium">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Aluminium</Value>
+					</Test>
+				</Node>
+				<Node name="Blockwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Blockwork</Value>
+					</Test>
+				</Node>
+				<Node name="Brickwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Brickwork</Value>
+					</Test>
+				</Node>
+				<Node name="Composite">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Composite</Value>
+					</Test>
+				</Node>
+				<Node name="Concrete">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Concrete</Value>
+					</Test>
+				</Node>
+				<Node name="Glass">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Glass</Value>
+					</Test>
+				</Node>
+				<Node name="Metal">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Metal</Value>
+					</Test>
+				</Node>
+				<Node name="Plasterboard">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plasterboard</Value>
+					</Test>
+				</Node>
+				<Node name="Plaster">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plaster</Value>
+					</Test>
+				</Node>
+				<Node name="Steel">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Steel</Value>
+					</Test>
+				</Node>
+				<Node name="Timber">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Timber</Value>
+					</Test>
+				</Node>
+			</Node>
+		</Node>
+		<Node name="Mechanical">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectDiscipline/@Discipline</Property>
+				<Value>Mechanical</Value>
+			</Test>
+			<Node name="External">
+				<AllowsChildren>true</AllowsChildren>
+				<Test>
+					<Property>ObjectThermalTransmittance/@IsExternal</Property>
+					<Value>true</Value>
+				</Test>
+				<Node name="Undefined">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Undefined</Value>
+					</Test>
+				</Node>
+				<Node name="Aluminium">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Aluminium</Value>
+					</Test>
+				</Node>
+				<Node name="Blockwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Blockwork</Value>
+					</Test>
+				</Node>
+				<Node name="Brickwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Brickwork</Value>
+					</Test>
+				</Node>
+				<Node name="Composite">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Composite</Value>
+					</Test>
+				</Node>
+				<Node name="Concrete">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Concrete</Value>
+					</Test>
+				</Node>
+				<Node name="Glass">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Glass</Value>
+					</Test>
+				</Node>
+				<Node name="Metal">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Metal</Value>
+					</Test>
+				</Node>
+				<Node name="Plasterboard">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plasterboard</Value>
+					</Test>
+				</Node>
+				<Node name="Plaster">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plaster</Value>
+					</Test>
+				</Node>
+				<Node name="Steel">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Steel</Value>
+					</Test>
+				</Node>
+				<Node name="Timber">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Timber</Value>
+					</Test>
+				</Node>
+			</Node>
+			<Node name="Internal">
+				<AllowsChildren>true</AllowsChildren>
+				<Test>
+					<Property>ObjectThermalTransmittance/@IsExternal</Property>
+					<Value>false</Value>
+				</Test>
+				<Node name="Undefined">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Undefined</Value>
+					</Test>
+				</Node>
+				<Node name="Aluminium">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Aluminium</Value>
+					</Test>
+				</Node>
+				<Node name="Blockwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Blockwork</Value>
+					</Test>
+				</Node>
+				<Node name="Brickwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Brickwork</Value>
+					</Test>
+				</Node>
+				<Node name="Composite">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Composite</Value>
+					</Test>
+				</Node>
+				<Node name="Concrete">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Concrete</Value>
+					</Test>
+				</Node>
+				<Node name="Glass">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Glass</Value>
+					</Test>
+				</Node>
+				<Node name="Metal">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Metal</Value>
+					</Test>
+				</Node>
+				<Node name="Plasterboard">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plasterboard</Value>
+					</Test>
+				</Node>
+				<Node name="Plaster">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plaster</Value>
+					</Test>
+				</Node>
+				<Node name="Steel">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Steel</Value>
+					</Test>
+				</Node>
+				<Node name="Timber">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Timber</Value>
+					</Test>
+				</Node>
+			</Node>
+		</Node>
+		<Node name="Electrical">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectDiscipline/@Discipline</Property>
+				<Value>Electrical</Value>
+			</Test>
+			<Node name="External">
+				<AllowsChildren>true</AllowsChildren>
+				<Test>
+					<Property>ObjectThermalTransmittance/@IsExternal</Property>
+					<Value>true</Value>
+				</Test>
+				<Node name="Undefined">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Undefined</Value>
+					</Test>
+				</Node>
+				<Node name="Aluminium">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Aluminium</Value>
+					</Test>
+				</Node>
+				<Node name="Blockwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Blockwork</Value>
+					</Test>
+				</Node>
+				<Node name="Brickwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Brickwork</Value>
+					</Test>
+				</Node>
+				<Node name="Composite">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Composite</Value>
+					</Test>
+				</Node>
+				<Node name="Concrete">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Concrete</Value>
+					</Test>
+				</Node>
+				<Node name="Glass">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Glass</Value>
+					</Test>
+				</Node>
+				<Node name="Metal">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Metal</Value>
+					</Test>
+				</Node>
+				<Node name="Plasterboard">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plasterboard</Value>
+					</Test>
+				</Node>
+				<Node name="Plaster">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plaster</Value>
+					</Test>
+				</Node>
+				<Node name="Steel">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Steel</Value>
+					</Test>
+				</Node>
+				<Node name="Timber">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Timber</Value>
+					</Test>
+				</Node>
+			</Node>
+			<Node name="Internal">
+				<AllowsChildren>true</AllowsChildren>
+				<Test>
+					<Property>ObjectThermalTransmittance/@IsExternal</Property>
+					<Value>false</Value>
+				</Test>
+				<Node name="Undefined">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Undefined</Value>
+					</Test>
+				</Node>
+				<Node name="Aluminium">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Aluminium</Value>
+					</Test>
+				</Node>
+				<Node name="Blockwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Blockwork</Value>
+					</Test>
+				</Node>
+				<Node name="Brickwork">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Brickwork</Value>
+					</Test>
+				</Node>
+				<Node name="Composite">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Composite</Value>
+					</Test>
+				</Node>
+				<Node name="Concrete">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Concrete</Value>
+					</Test>
+				</Node>
+				<Node name="Glass">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Glass</Value>
+					</Test>
+				</Node>
+				<Node name="Metal">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Metal</Value>
+					</Test>
+				</Node>
+				<Node name="Plasterboard">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plasterboard</Value>
+					</Test>
+				</Node>
+				<Node name="Plaster">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Plaster</Value>
+					</Test>
+				</Node>
+				<Node name="Steel">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Steel</Value>
+					</Test>
+				</Node>
+				<Node name="Timber">
+					<AllowsChildren>true</AllowsChildren>
+					<Test>
+						<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+						<Value>Timber</Value>
+					</Test>
+				</Node>
+			</Node>
+		</Node>
+	</FilterHierarchy>
+</Triforma>

@@ -1,0 +1,100 @@
+REPORT LAYOUT	A4	-1				                                                                                 
+
+[Quantified Types]
+Linear Element	1
+Shape	1
+Surface	1
+MS Cell	1
+Linear Form Element	1
+Line String Form	1
+Arc Form	1
+Free Form	1
+Slab Form	1
+Triforma Solid	1
+Structural Form	1
+Cell	1
+Compound Cell	1
+Stair	1
+
+[Option Buttons]
+Quantity File Type	2
+Decimal Separator	0
+Spec Text File Type	0
+First Key	3
+Second Key	1
+Post Key	0
+Full Information	1
+Include Totals	0
+
+[Detailed Column Title]
+Component Family	0	Fam.
+Component Nr	0	Component
+Component Description	0	Description
+Quantity	3	SF
+Unit	0	Unit
+Unit Price	0	Unit Price
+Total	0	Total
+Weight	0	Weight
+Weight Unit	0	
+File Name	1	Floor
+Part Family	0	Fam.
+Part Name	2	Program Area
+Part Description	0	Part Description
+Room	0	Room
+Level Name	0	LevelName
+Label	0	Label
+TF Element Id	0	Id
+Length	0	Length
+Thickness	0	Thickness
+Height	0	Height
+X	0	X
+Y	0	Y
+Z	0	Z
+
+[Summary Column Title]
+Component Family	0	Fam.
+Component Nr	1	Component
+Component Description	0	Description
+Quantity	2	Quantity
+Unit	0	Unit
+Unit Price	0	Unit Price
+Total	3	Total
+Weight	0	Weight
+Weight Unit	0	
+File Name	0	File
+Part Family	0	Fam.
+Part Name	0	Part
+Part Description	0	Part Description
+Room	0	Room
+
+[Accuracy]
+Component Family	0
+Component Nr	0
+Component Description	40
+Quantity	3
+Unit	0
+Unit Price	0
+Total	3
+Weight	1
+Weight Unit	0
+File Name	0
+Part Family	0
+Part Name	0
+Part Description	40
+Room	0
+Level Name	0
+Label	3
+TF Element Id	0
+Length	3
+Thickness	3
+Height	3
+X	3
+Y	3
+Z	3
+
+[Other Text]
+Opening In	(Opening)
+Deductions Smaller Than	Deductions smaller than
+Not Included	not included
+Grand Total	Grand Total
+

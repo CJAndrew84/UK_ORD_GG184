@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GSAImportSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SectionMapping>false</SectionMapping>
+  <MappingFileName />
+  <MappingFilePath />
+  <GSAFileName />
+  <GSAFilePath />
+  <Layer>Design</Layer>
+  <Steel>
+    <ColumnsFamily>Steel Column</ColumnsFamily>
+    <ColumnsPart>Column</ColumnsPart>
+    <BeamsFamily>Steel Beam</BeamsFamily>
+    <BeamsPart>Beam</BeamsPart>
+    <BracesFamily>Steel Vertical Brace</BracesFamily>
+    <BracesPart>Vertical Brace</BracesPart>
+    <DefaultSectionName>100x100x10 EA</DefaultSectionName>
+  </Steel>
+  <SteelColumnsFamily>Steel Column</SteelColumnsFamily>
+  <SteelColumnsPart>Column</SteelColumnsPart>
+  <SteelBeamsFamily>Steel Beam</SteelBeamsFamily>
+  <SteelBeamsPart>Beam</SteelBeamsPart>
+  <SteelBracesFamily>Steel Vertical Brace</SteelBracesFamily>
+  <SteelBracesPart>Vertical Brace</SteelBracesPart>
+  <SteelDefaultSectionName>100x100x10 EA</SteelDefaultSectionName>
+  <Concrete>
+    <ColumnsFamily>Concrete Column</ColumnsFamily>
+    <ColumnsPart>Circular Column</ColumnsPart>
+    <BeamsFamily>Concrete Beam</BeamsFamily>
+    <BeamsPart>Rectangular Beam</BeamsPart>
+    <WallFamily>Wall</WallFamily>
+    <WallPart>Block Wall</WallPart>
+    <FoundationFamily>Concrete Foundation</FoundationFamily>
+    <FoundationPart>x-Template | ConcretePier</FoundationPart>
+    <SlabsFamily>Slab</SlabsFamily>
+    <SlabsPart>Concrete Slab</SlabsPart>
+    <DefaultSectionName>RC200X700</DefaultSectionName>
+  </Concrete>
+  <ConcreteColumnsFamily>Concrete Column</ConcreteColumnsFamily>
+  <ConcreteColumnsPart>Circular Column</ConcreteColumnsPart>
+  <ConcreteBeamsFamily>Concrete Beam</ConcreteBeamsFamily>
+  <ConcreteBeamsPart>Rectangular Beam</ConcreteBeamsPart>
+  <ConcreteWallFamily>Wall</ConcreteWallFamily>
+  <ConcreteWallPart>Block Wall</ConcreteWallPart>
+  <ConcreteFoundationFamily>Concrete Foundation</ConcreteFoundationFamily>
+  <ConcreteFoundationPart>x-Template | ConcretePier</ConcreteFoundationPart>
+  <ConcreteSlabsFamily>Slab</ConcreteSlabsFamily>
+  <ConcreteSlabsPart>Concrete Slab</ConcreteSlabsPart>
+  <ConcreteDefaultSectionName>RC200X700</ConcreteDefaultSectionName>
+  <UseDesignHistory>false</UseDesignHistory>
+  <IgnoreEndPointChanges>false</IgnoreEndPointChanges>
+  <MergeTolerance>0.08</MergeTolerance>
+</GSAImportSettings>

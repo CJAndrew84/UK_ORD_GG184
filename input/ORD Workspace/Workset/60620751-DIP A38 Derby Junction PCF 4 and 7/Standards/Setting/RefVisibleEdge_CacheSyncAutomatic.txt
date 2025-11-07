@@ -1,0 +1,14 @@
+#----------------------------------------------------------------------
+#
+#  Command file for batchprocess utility
+#
+#  This command file was originally copied from $(MS_DATA)cmdfiletemplate.txt.
+#  Command file information:
+#       - Lines that start with the '#' character are treated as comments and ignored.
+#
+#----------------------------------------------------------------------
+
+# Using this key-in, in combination of the "Batch Process" Utility, should allow you
+# to set the reference's visible edge state to "Cached" with sync set to "Automatic".
+
+REFERENCE VISIBLEEDGES ALLATTACHMENTS CACHED;REFERENCE VISIBLEEDGES CVESYNCH AUTOMATIC

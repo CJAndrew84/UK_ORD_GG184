@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ini="CivilIni" targetNamespace="CivilIni" elementFormDefault="qualified">
+    <include schemaLocation="BridgeIni.xsd"/>
+    <include schemaLocation="CommonIni.xsd"/>
+    <include schemaLocation="DraftingIni.xsd"/>
+    <include schemaLocation="DrainageIni.xsd"/>
+    <include schemaLocation="EvaluationIni.xsd"/>
+    <include schemaLocation="FileIni.xsd"/>
+    <include schemaLocation="GeometryIni.xsd"/>
+    <include schemaLocation="LightRailManufacturingIni.xsd"/>
+    <include schemaLocation="ModelerIni.xsd"/>
+    <include schemaLocation="PlasserTheurerIni.xsd"/>
+    <include schemaLocation="ProfileIni.xsd"/>
+    <include schemaLocation="QuantityIni.xsd"/>
+    <include schemaLocation="SurfaceIni.xsd"/>
+    <include schemaLocation="SurveyIni.xsd"/>
+    <include schemaLocation="SwitchHeightPlanIni.xsd"/>
+    <include schemaLocation="ToolsIni.xsd"/>
+    <include schemaLocation="TunnelIni.xsd"/>
+    <include schemaLocation="SiteModelerIni.xsd"/>
+    <include schemaLocation="OverheadLineIni.xsd"/>
+    <!-- root element declaration -->
+    <element name="CivilIni">
+        <annotation>
+            <documentation>The namespace</documentation>
+        </annotation>
+        <complexType>
+            <all>
+                <element ref="ini:NamedSymbologyCollection" minOccurs="0"/>
+                <element ref="ini:ComputeQuantitiesCollection" minOccurs="0"/>
+                <element ref="ini:FeatureStyleCollection" minOccurs="0"/>
+                <element ref="ini:FeatureCategoryCollection" minOccurs="0"/>
+                <element ref="ini:TextImportWizardCollection" minOccurs="0"/>
+                <element ref="ini:ImportGraphicElementCollection" minOccurs="0"/>
+                <element ref="ini:ExportSurfaceCollection" minOccurs="0"/>
+                <element ref="ini:ImportSRVCollection" minOccurs="0"/>
+                <element ref="ini:ViewSurfaceOptionsCollection" minOccurs="0"/>
+                <element ref="ini:ViewPerimeterCollection" minOccurs="0"/>
+                <element ref="ini:ViewTrianglesCollection" minOccurs="0"/>
+                <element ref="ini:ViewContoursCollection" minOccurs="0"/>
+                <element ref="ini:LabelContoursCollection" minOccurs="0"/>
+                <element ref="ini:AnnotateFeatureCollection" minOccurs="0"/>
+                <element ref="ini:ViewSlopeVectorsCollection" minOccurs="0"/>
+                <element ref="ini:ViewSurfaceElevationsCollection" minOccurs="0"/>
+                <element ref="ini:ViewSinglePointSurfaceElevationCollection" minOccurs="0"/>
+                <element ref="ini:ViewSinglePointSlopeVectorsCollection" minOccurs="0"/>
+                <element ref="ini:ViewTwoPointSlopeCollection" minOccurs="0"/>
+                <element ref="ini:ViewCrossingSegmentsCollection" minOccurs="0"/>
+                <element ref="ini:ViewInferredBreaklinesCollection" minOccurs="0"/>
+                <element ref="ini:ViewProfiledModelCollection" minOccurs="0"/>
+                <element ref="ini:ViewGriddedModelCollection" minOccurs="0"/>
+                <element ref="ini:ViewColorCodedAspectsCollection" minOccurs="0"/>
+                <element ref="ini:ViewColorCodedElevationsCollection" minOccurs="0"/>
+                <element ref="ini:ViewColorCodedSlopesCollection" minOccurs="0"/>
+                <element ref="ini:GenerateTransverseFeatureCollection" minOccurs="0"/>
+                <element ref="ini:GenerateLongitudinalFeatureCollection" minOccurs="0"/>
+                <element ref="ini:DrapeSurfaceCollection" minOccurs="0"/>
+                <element ref="ini:FilletFeatureCollection" minOccurs="0"/>
+                <element ref="ini:GenerateSlopedSurfaceCollection" minOccurs="0"/>
+                <element ref="ini:ApplyTemplateCollection" minOccurs="0"/>
+                <element ref="ini:SetElevationCollection" minOccurs="0"/>
+                <element ref="ini:GenerateIsopachSurfaceCollection" minOccurs="0"/>
+                <element ref="ini:MergeSurfacesCollection" minOccurs="0"/>
+                <element ref="ini:TransformSurfaceCollection" minOccurs="0"/>
+                <element ref="ini:FeatureFilterCollection" minOccurs="0"/>
+                <element ref="ini:ThinSurfaceCollection" minOccurs="0"/>
+                <element ref="ini:ThinRandomPointsCollection" minOccurs="0"/>
+                <element ref="ini:ResolveCrossingSegmentsCollection" minOccurs="0"/>
+                <element ref="ini:FormGriddedModelCollection" minOccurs="0"/>
+                <element ref="ini:GenerateSurfaceCollection" minOccurs="0"/>
+                <element ref="ini:FindNearSurfacePointsCollection" minOccurs="0"/>
+                <element ref="ini:ImportRuleSetCollection" minOccurs="0"/>
+                <element ref="ini:ViewHorizontalAnnotationCollection" minOccurs="0"/>
+                <element ref="ini:SelectionFilterCollection" minOccurs="0"/>
+                <element ref="ini:ViewVerticalAnnotationCollection" minOccurs="0"/>
+                <element ref="ini:ViewClosedAreaCollection" minOccurs="0"/>
+                <element ref="ini:ViewStationingCollection" minOccurs="0"/>
+                <element ref="ini:View3DAlignmentCollection" minOccurs="0"/>
+                <element ref="ini:GeometryViewOptionsCollection" minOccurs="0"/>
+                <element ref="ini:AnnotateGraphicsCollection" minOccurs="0"/>
+                <element ref="ini:StationOffsetAnnotationCollection" minOccurs="0"/>
+                <element ref="ini:CurveSetAnnotationCollection" minOccurs="0"/>
+                <element ref="ini:VerticalChangeInPlanCollection" minOccurs="0"/>
+                <element ref="ini:HorizontalDesignCriteriaCollection" minOccurs="0"/>
+                <element ref="ini:VerticalDesignCriteriaCollection" minOccurs="0"/>
+                <element ref="ini:HorizontalDesignChecksCollection" minOccurs="0"/>
+                <element ref="ini:VerticalDesignChecksCollection" minOccurs="0"/>
+                <element ref="ini:SuperelevationRateParametersCollection" minOccurs="0"/>
+                <element ref="ini:CantCollectionDesignChecksCollection" minOccurs="0"/>
+                <element ref="ini:ValidateRegressionDataCollection" minOccurs="0"/>
+                <element ref="ini:AddHorizontalRegressionPointsCollection" minOccurs="0"/>
+                <element ref="ini:ViewHorizontalRegressionPointsCollection" minOccurs="0"/>
+                <element ref="ini:ViewVerticalRegressionPointsCollection" minOccurs="0"/>
+                <element ref="ini:NewTurnoutCollection" minOccurs="0"/>
+                <element ref="ini:TurnoutShuntLimitsCollection" minOccurs="0"/>
+                <element ref="ini:DisplayTurnoutsCollection" minOccurs="0"/>
+                <element ref="ini:DisplayTurnoutsInProfileCollection" minOccurs="0"/>
+                <element ref="ini:TurnoutCopyPointsCollection" minOccurs="0"/>
+                <element ref="ini:PlasserAndTheurerCollection" minOccurs="0"/>
+                <element ref="ini:ViewRailsCollection" minOccurs="0"/>
+                <element ref="ini:SwitchHeightPlanCollection" minOccurs="0"/>
+                <element ref="ini:CreateRailsCollection" minOccurs="0"/>
+                <element ref="ini:BendingAxisCollection" minOccurs="0"/>
+                <element ref="ini:RailLengthCollection" minOccurs="0"/>
+                <element ref="ini:RailProfileCollection" minOccurs="0"/>
+                <element ref="ini:TrackWideningCollection" minOccurs="0"/>
+                <element ref="ini:VerifyRailsCollection" minOccurs="0"/>
+                <element ref="ini:CreateKeyPointsCollection" minOccurs="0"/>
+                <element ref="ini:CreateJointsCollection" minOccurs="0"/>
+                <element ref="ini:CreateDistanceKeepersCollection" minOccurs="0"/>
+                <element ref="ini:NamePointsAndRailsCollection" minOccurs="0"/>
+                <element ref="ini:LRMReportsCollection" minOccurs="0"/>
+                <element ref="ini:LRMAnnotationCollection" minOccurs="0"/>
+                <element ref="ini:AnnotateRailOffsetsCollection" minOccurs="0"/>
+                <element ref="ini:MulticenterCurveCollection" minOccurs="0"/>
+                <element ref="ini:CuldesacCollection" minOccurs="0"/>
+                <element ref="ini:InverseDirectionCollection" minOccurs="0"/>
+                <element ref="ini:TransformGeometryCollection" minOccurs="0"/>
+                <element ref="ini:DesignChecksCollection" minOccurs="0"/>
+                <element ref="ini:AnnotateMaximumsAndMinimumsCollection" minOccurs="0"/>
+                <element ref="ini:ScreedAnnotationCollection" minOccurs="0"/>
+                <element ref="ini:ViewDrainageCollection" minOccurs="0"/>
+                <element ref="ini:DrainageAnnotationCollection" minOccurs="0"/>
+                <element ref="ini:DrainageFlowDirectionArrowsCollection" minOccurs="0"/>
+                <element ref="ini:DrainageMoveStructureCollection" minOccurs="0"/>
+                <element ref="ini:DrainageInjectFlowCollection" minOccurs="0"/>
+                <element ref="ini:DrainageUtilityParametersCollection" minOccurs="0"/>
+                <element ref="ini:DrainageUtilitySymbologyCollection" minOccurs="0"/>
+                <element ref="ini:CircularOrificeCollection" minOccurs="0"/>
+                <element ref="ini:RectangularOrificeCollection" minOccurs="0"/>
+                <element ref="ini:CircularStandpipeCollection" minOccurs="0"/>
+                <element ref="ini:RectangularStandpipeCollection" minOccurs="0"/>
+                <element ref="ini:BroadCrestedWeirCollection" minOccurs="0"/>
+                <element ref="ini:SharpCrestedWeirCollection" minOccurs="0"/>
+                <element ref="ini:VNotchedWeirCollection" minOccurs="0"/>
+                <element ref="ini:RectangularWeirCollection" minOccurs="0"/>
+                <element ref="ini:TrapezoidalWeirCollection" minOccurs="0"/>
+                <element ref="ini:DisplayInflowHydrographCollection" minOccurs="0"/>
+                <element ref="ini:DisplayStorageCurveCollection" minOccurs="0"/>
+                <element ref="ini:DisplayDischargeCurveCollection" minOccurs="0"/>
+                <element ref="ini:DisplayRoutedHydrographCollection" minOccurs="0"/>
+                <element ref="ini:AnnotateDrainageProfileCollection" minOccurs="0"/>
+                <element ref="ini:DrainageMenusCollection" minOccurs="0"/>
+                <element ref="ini:DrainageOptionsCollection" minOccurs="0"/>
+                <element ref="ini:DrainageQueriesCollection" minOccurs="0"/>
+                <element ref="ini:DrainageReportsCollection" minOccurs="0"/>
+                <element ref="ini:SurveyOptionsCollection" minOccurs="0"/>
+                <element ref="ini:SurveyAdjustmentOptionsCollection" minOccurs="0"/>
+                <element ref="ini:SurveyStyleFilterCollection" minOccurs="0"/>
+                <element ref="ini:SurveyIMPEXPCollection" minOccurs="0"/>
+                <element ref="ini:SurveyCreateLegendCollection" minOccurs="0"/>
+                <element ref="ini:SurveyControlCodesCollection" minOccurs="0"/>
+                <element ref="ini:SurveyDataToGeometryCollection" minOccurs="0"/>
+                <element ref="ini:SurveyDataToSurfaceCollection" minOccurs="0"/>
+                <element ref="ini:SurveyDataToDrainageCollection" minOccurs="0"/>
+                <element ref="ini:SurveyCorrectionsCollection" minOccurs="0"/>
+                <element ref="ini:CreateProfileCollection" minOccurs="0"/>
+                <element ref="ini:SurveyPointsToProfileCollection" minOccurs="0"/>
+                <element ref="ini:HorizontalCurvatureDiagramCollection" minOccurs="0"/>
+                <element ref="ini:HorizontalSlewDiagramCollection" minOccurs="0"/>
+                <element ref="ini:DisplayIDFCurveCollection" minOccurs="0"/>
+                <element ref="ini:VerticalCurvatureDiagramCollection" minOccurs="0"/>
+                <element ref="ini:VerticalSlewDiagramCollection" minOccurs="0"/>
+                <element ref="ini:AnnotateProfileCollection" minOccurs="0"/>
+                <element ref="ini:AnnotateFeatureInProfileCollection" minOccurs="0"/>
+                <element ref="ini:ProjectPointToProfileCollection" minOccurs="0"/>
+                <element ref="ini:ProjectAlignmentToProfileCollection" minOccurs="0"/>
+                <element ref="ini:CreateCrossSectionCollection" minOccurs="0"/>
+                <element ref="ini:AnnotateCrossSectionCollection" minOccurs="0"/>
+                <element ref="ini:CrossSectionViewerCollection" minOccurs="0"/>
+                <element ref="ini:PlaceCellCollection" minOccurs="0"/>
+                <element ref="ini:CrossSectionReportCollection" minOccurs="0"/>
+                <element ref="ini:EditFeatureInCrossSectionCollection" minOccurs="0"/>
+                <element ref="ini:TriangleVolumeByStationCollection" minOccurs="0"/>
+                <element ref="ini:EndAreaVolumeCollection" minOccurs="0"/>
+                <element ref="ini:RoadwayVisibilityCollection" minOccurs="0"/>
+                <element ref="ini:SurfaceVisibilityCollection" minOccurs="0"/>
+                <element ref="ini:TemplateOptionsCollection" minOccurs="0"/>
+                <element ref="ini:RoadwayDesignerOptionsCollection" minOccurs="0"/>
+                <element ref="ini:DisplayTemplateCollection" minOccurs="0"/>
+                <element ref="ini:SuperelevationWizardCollection" minOccurs="0"/>
+                <element ref="ini:ModelerCreateSurfaceCollection" minOccurs="0"/>
+                <element ref="ini:RoadwayDesignerReportCollection" minOccurs="0"/>
+                <element ref="ini:VerticalGoreToolCollection" minOccurs="0"/>
+                <element ref="ini:DriveRoadwayCollection" minOccurs="0"/>
+                <element ref="ini:PlacePlanNoteCollection" minOccurs="0"/>
+                <element ref="ini:PlaceProfileNoteCollection" minOccurs="0"/>
+                <element ref="ini:PlaceCrossSectionNoteCollection" minOccurs="0"/>
+                <element ref="ini:PlaceAlignmentIntersectionNoteCollection" minOccurs="0"/>
+                <element ref="ini:PlaceCoordinateGridCollection" minOccurs="0"/>
+                <element ref="ini:UpdatePlanNoteCollection" minOccurs="0"/>
+                <element ref="ini:UpdateProfileNoteCollection" minOccurs="0"/>
+                <element ref="ini:UpdateCrossSectionNoteCollection" minOccurs="0"/>
+                <element ref="ini:UpdateAlignmentNoteCollection" minOccurs="0"/>
+                <element ref="ini:PlanProfileGeneratorCollection" minOccurs="0"/>
+                <element ref="ini:NetworkRailDisplayTurnoutsCollection" minOccurs="0"/>
+                <element ref="ini:NetworkRailDisplayTurnoutToTurnoutCollection" minOccurs="0"/>
+                <element ref="ini:DisplaySuperInPlanCollection" minOccurs="0"/>
+                <element ref="ini:ProRailDisplayPlanCollection" minOccurs="0"/>
+                <element ref="ini:ProRailDisplayTrackCentersCollection" minOccurs="0"/>
+                <element ref="ini:ItalianViewPlanCollection" minOccurs="0"/>
+                <element ref="ini:ItalianViewProfileCollection" minOccurs="0"/>
+                <element ref="ini:SlopeBetweenFeaturesCollection" minOccurs="0"/>
+                <element ref="ini:XMLGeometryReportCollection" minOccurs="0"/>
+                <element ref="ini:XMLStationBaseReportCollection" minOccurs="0"/>
+                <element ref="ini:XMLStationOffsetReportCollection" minOccurs="0"/>
+                <element ref="ini:XMLClearanceReportCollection" minOccurs="0"/>
+                <element ref="ini:XMLStakeoutReportCollection" minOccurs="0"/>
+                <element ref="ini:XMLLegalDescriptionReportCollection" minOccurs="0"/>
+                <element ref="ini:XMLMapCheckReportCollection" minOccurs="0"/>
+                <element ref="ini:XMLSurfacesReportCollection" minOccurs="0"/>
+                <element ref="ini:XMLSurfaceCheckReportCollection" minOccurs="0"/>
+                <element ref="ini:GeneralTrackingCollection" minOccurs="0"/>
+                <element ref="ini:PreferredPreferenceCollection" minOccurs="0"/>
+                <element ref="ini:SystemPreferencesCollection" minOccurs="0"/>
+                <element ref="ini:LocksCollection" minOccurs="0"/>
+                <element ref="ini:EditElementCollection" minOccurs="0"/>
+                <element ref="ini:DefinePointCollection" minOccurs="0"/>
+                <element ref="ini:SideSlopeCollection" minOccurs="0"/>
+                <element ref="ini:VolumeCollection" minOccurs="0"/>
+                <element ref="ini:SiteTrackingCollection" minOccurs="0"/>
+                <element ref="ini:HighlightElementsCollection" minOccurs="0"/>
+                <element ref="ini:ExportVisualizationCollection" minOccurs="0"/>
+                <element ref="ini:ModifySettingsCollection" minOccurs="0"/>
+                <element ref="ini:SweptPathAnalysisCollection" minOccurs="0"/>
+                <element ref="ini:CrossSlopeOptimizationCollection" minOccurs="0"/>
+                <element ref="ini:VerticalOverlayAdjustmentCollection" minOccurs="0"/>
+                <element ref="ini:UpdateDesignSettingsCollection" minOccurs="0"/>
+                <element ref="ini:TrickleCollection" minOccurs="0"/>
+                <element ref="ini:BallastReportCollection" minOccurs="0"/>
+                <element ref="ini:OverheadLineOptionsCollection" minOccurs="0"/>
+                <element ref="ini:ViewOverheadLineCollection" minOccurs="0"/>
+                <element ref="ini:ViewOverheadLineProfileCollection" minOccurs="0"/>
+                <element ref="ini:ViewOverheadLineCrossSectionCollection" minOccurs="0"/>
+                <element ref="ini:AssignIDsCollection" minOccurs="0"/>
+            </all>
+        </complexType>
+    </element>
+</schema>

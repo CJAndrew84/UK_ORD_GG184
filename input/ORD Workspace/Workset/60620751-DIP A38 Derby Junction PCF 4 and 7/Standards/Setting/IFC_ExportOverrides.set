@@ -1,0 +1,42 @@
+############################################################
+#  Lines beginning with # are comments
+#
+#  This is a csv file which contains the data that
+#  needs to be overridden when exporting DG information
+#  using IFC PropertySets
+#
+#  The First  entry is PropertySetName
+#  The Second entry is PropertyName
+#  The Third  entry is OverrrideWith Value
+#  eg.  Pset_WallCommon,reference,$PartName
+#
+#  it means that that the value for the property "Reference" 
+#  in PropertySet "PSet_WallCommon" has to be replaced with 
+#  the PartName of the active element
+#
+#  *IfcSpace,Description,$PartName
+#  it means that description attribute of IfcSpace will be set to part name of active element
+#  Attribute override are supported only since IFC2x3, these lines are ignored for 2x and 2x2
+#
+#  Valid Entries for Third Entry are
+#   $PartName        = use Part Name
+#   $FamilyName      = use Family Name
+#   $PartFamilyName  = use Part and Family Name
+#   $FamilyPartName  = use Family and Part Name
+#   $DGCatItem       = use DG Catalog Item Name
+#   $DGCatType       = use DG Catalog Type Name
+#   $DGCatItemType   = use DG Catalog Item and Type Name
+#   $DGCatTypeItem   = use DG Catalog Type and Item Name
+#   .propertyname    = use the value of .property for this property
+#   *attributeName   = use the value of the entity attribute (since 2x3)
+#   anythingelse     = use anythingelse
+#
+############################################################
+Pset_WallCommon,Reference,$PartName
+Pset_WallCommon,description,$PartFamilyName
+Pset_DoorCommon,reference,$DGCatItem
+Pset_ColumnCommon,reference,$PartName
+Pset_BeamCommon,reference,$PartName
+pset_Roofcommon,reference,$dgcattype
+Pset_WallCommon,ExternalWall,.IsExternal
+Pset_DoorCommon,description,.ArchDoor.Parametric File

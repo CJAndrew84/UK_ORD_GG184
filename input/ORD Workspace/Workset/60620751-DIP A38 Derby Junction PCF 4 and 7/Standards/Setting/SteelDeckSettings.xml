@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SteelDeck_Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <BotWidth>44.449999999999996</BotWidth>
+  <CompositeInstance>Composite Slab</CompositeInstance>
+  <CompositeType>Slab</CompositeType>
+  <ConcreteFill>false</ConcreteFill>
+  <ConcreteInstance>Concrete Slab</ConcreteInstance>
+  <ConcreteThickness>38.859</ConcreteThickness>
+  <ConcreteType>Slab</ConcreteType>
+  <DeckKind>Table</DeckKind>
+  <DeckInstance>Floor Deck</DeckInstance>
+  <DeckThickness>0.759</DeckThickness>
+  <DeckType>Steel Deck</DeckType>
+  <Depth>38.1</Depth>
+  <DiagWidth>9.52500000000001</DiagWidth>
+  <DisplaySheet>false</DisplaySheet>
+  <PlaceType>Structural Members</PlaceType>
+  <ProfileName>PLB-36</ProfileName>
+  <Organization>VERCO</Organization>
+  <Overhang>0</Overhang>
+  <Revision>2003</Revision>
+  <SheetWidth>914.40000000000009</SheetWidth>
+  <TopWidth>88.899999999999991</TopWidth>
+</SteelDeck_Settings>

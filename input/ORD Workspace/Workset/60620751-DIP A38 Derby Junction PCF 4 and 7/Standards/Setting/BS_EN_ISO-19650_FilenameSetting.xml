@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<SFNSettings Titles="BS EN ISO 19650 Container Naming">
+	<Filename ShowDesc="true" >
+		<Control Label="Project" Order="1" Format="AlphaNumeric" MinChars="2" MaxChars="6" Required="" CacheValue="true">
+			<Desc>A single common project identifier. The code for the project and any sub-projects should be from 2-6 characters. (Required)</Desc>
+		</Control>
+<!-- 		<Control Label="Project" Order="1" MinChars="2" MaxChars="6">
+			<Condition Type="Form" ControlVariable="BB_NAMING_STANDARDS_PROJECT_ID" />
+			<Desc>A single common project identifier. The code for the project and any sub-projects should be from 2-6 characters. (Required)</Desc>
+		</Control> -->
+		<Control Label="Originator" Order="2" Format="AlphaNumeric" Prefix="-" MinChars="3" MaxChars="6" Required="" CacheValue="true">
+			<Desc>A unique identifier for each organization. The code for each originating organization should be from 3-6 characters. (Required)</Desc>
+		</Control>
+		<Control Label="Volume or System" Order="3" Format="Alpha" Prefix="-" MinChars="2" MaxChars="2" Required="" CacheValue="true">
+			<Desc>Volume or System should be defined so as to identify a logical portion of work intended to be delivered by a single team. (Required, 2 characters)</Desc>
+			<Attr>ZZ</Attr>  <!-- All volumes/systems -->
+			<Attr>XX</Attr>  <!-- No volume/system applicable -->
+		</Control>
+		<Control Label="Levels and Locations" Order="4" Format="AlphaNumeric" Prefix="-" MinChars="2" MaxChars="2" Required="" CacheValue="true">
+			<Desc>A single building level (floor) or location. The code for each Level and Location should be 2 characters. (Require, 2 characters)</Desc>
+			<Attr>ZZ</Attr>  <!-- Multiple levels -->
+			<Attr>XX</Attr>  <!-- No level -->
+			<Attr>00</Attr>  <!-- Base level -->
+			<Attr>01</Attr>  <!-- Level one -->
+			<Attr>02</Attr>  <!-- Level two -->
+			<Attr>03</Attr>  <!-- Level three -->
+			<Attr>04</Attr>  <!-- Level four -->
+			<Attr>05</Attr>  <!-- Level five -->
+			<Attr>06</Attr>  <!-- Level six -->
+			<Attr>07</Attr>  <!-- Level seven -->
+			<Attr>08</Attr>  <!-- Level eight -->
+			<Attr>09</Attr>  <!-- Level nine -->
+			<Attr>10</Attr>  <!-- Level ten -->
+			<Attr>M1</Attr>  <!-- Mezzanine one -->
+			<Attr>M2</Attr>  <!-- Mezzanine two -->
+			<Attr>B1</Attr>  <!-- Basement one -->
+			<Attr>B2</Attr>  <!-- Basement two -->
+		</Control>
+		<Control Label="Type" Order="5" Format="AlphaNumeric" Prefix="-" MinChars="2" MaxChars="2" Required="" CacheValue="true">
+			<Desc>To aid recognition, every container should contain a single type of information. Standard codes for file containers holding models and drawings. (Required, 2 characters)</Desc>
+			<Attr>M2</Attr>  <!-- 2D model  -->
+			<Attr>M3</Attr>  <!-- 3D model  -->
+			<Attr>CM</Attr>  <!-- Combined model (combined multidisciplinary model) -->
+			<Attr>DR</Attr>  <!-- drawing rendition -->
+			<Attr>AF</Attr>  <!-- Animation File (of a model)  -->
+			<Attr>CR</Attr>  <!-- Clash rendition -->
+			<Attr>HS</Attr>  <!-- health and safety -->
+			<Attr>IE</Attr>   <!-- information exchange file -->
+			<Attr>MR</Attr>  <!-- model rendition for other renditions, e.g. thermal analysis, etc. -->
+			<Attr>PP</Attr>  <!-- presentation -->
+			<Attr>RD</Attr>  <!-- room data sheet -->
+			<Attr>SH</Attr>  <!-- schedule -->
+			<Attr>SU</Attr>  <!-- survey -->
+			<Attr>VS</Attr>  <!-- Visualization of a model -->
+		</Control>
+		<Control Label="Role" Order="6"  Prefix="-" MaxChars="2" Required="" CacheValue="true">
+			<Desc>Each organization should be allocated to one or more roles within the Project. The standard codes for file role. (Required, 1 character)</Desc>
+			<Attr Value="A" >A - Architect</Attr>
+			<!-- <Attr Value="B" >B - Building Surveyor</Attr> -->
+			<Attr Value="C" >C - Civil Engineer</Attr>
+			<!-- <Attr Value="D" >D - Drainage, Highways Engineer</Attr> -->
+			<Attr Value="E" >E - Electrical Engineer</Attr>
+			<!-- <Attr Value="F" >F - Facilities Manager</Attr> -->
+			<!-- <Attr Value="G" >G - D Geographical and Land Surveyor</Attr> -->
+			<!-- <Attr Value="H" >H - Heating and Ventilation Designer (deprecated)</Attr> -->
+			<!-- <Attr Value="I" >I - Interior Designer</Attr> -->
+			<!-- <Attr Value="K" >K - Client</Attr> -->
+			<Attr Value="L" >L - Landscape Architect</Attr>
+			<Attr Value="M" >M - Mechanical Engineer</Attr>
+			<!-- <Attr Value="P" >P - Public Health Engineer</Attr> -->
+			<!-- <Attr Value="Q" >Q - Quantity Surveyor</Attr> -->
+			<Attr Value="S" >S - Structural Engineer</Attr>
+			<!-- <Attr Value="T" >T - Town and Country PlanneR</Attr> -->
+			<Attr Value="W" >W - Contractor</Attr>
+			<Attr Value="X" >X - SubContractor</Attr>
+			<!-- <Attr Value="Y" >Y - Specialist DesigneR</Attr> -->
+			<Attr Value="Z" >Z - General (non-disciplinary)</Attr>
+		</Control>
+		<Control Label="Number" Order="8" Format="Numeric" Prefix="-" MinChars="4" MaxChars="6" Required="">
+			<Desc>A sequential number should be used when a container is one of a series not distinguished by any other of the fields defined in Clauses 6 to 12. (Required, 4- 6 characters)</Desc>
+		</Control>
+<!-- ISO 19650-2:2018 (5.1.7.c) states: 'The project's common data environment shall enable each information container to have the following 
+attributes [metadata] assigned: status (suitability); revision; classification (in accordance with the framework defined in ISO 12006-2)'.
+Therefore the Suitability and Revision sections of this file have been omitted-->
+	</Filename>
+	<Model>
+		<Control Label="">
+		</Control>
+	</Model>
+	<ModelDesign>
+		<Control Label="">
+		</Control>
+	</ModelDesign>
+	<ModelDrawing>
+		<Control Label="">
+		</Control>
+	</ModelDrawing>
+	<ModelSheet>
+		<Control Label="">
+		</Control>
+	</ModelSheet>
+	<ModelNamedView>
+		<Control Label="">
+		</Control>
+	</ModelNamedView>
+</SFNSettings>

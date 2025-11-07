@@ -1,0 +1,108 @@
+# ================================================================================			
+#			
+# OpenBuildings Designer DataGroup Item Mappings to IfcEntityClass and IfcPredefinedType	
+# for IFC4 Export			
+#			
+#			
+# $RCSfile: IFC_QtoMapping.ifc4.set,v $"			
+# $Revision: 1.6 $			
+#			
+# $Copyright: (c) 2019 Bentley Systems, Incorporated. All rights reserved. $"			
+# ================================================================
+#
+
+TYPE *
+    PROPERTY_SET Qto_WallBaseQuantities : IfcElementQuantity IF IsKindOf ($ifcClass, IfcWall)
+        Length              :Q_LENGTH   = EVALUATE DGPositive ("?WallQuantities/@LengthCenter", "?ProfileQuantities/@PathLength")
+        Width               :Q_LENGTH   = ?Wall_Application/@Width
+        Height              :Q_LENGTH   = ?Wall_Application/@Height
+#       GrossFootprintArea  :Q_AREA = 
+#       NetFootprintArea    :Q_AREA = 
+        GrossSideArea       :Q_AREA     = EVALUATE DGPositive ("?WallQuantities/@AreaCenterGross", "?ProfileQuantities/@AreaSideSurfaceGross")
+        NetSideArea         :Q_AREA     = EVALUATE DGPositive ("?WallQuantities/@AreaCenterNet", "?ProfileQuantities/@AreaSideSurfaceNet")
+        GrossVolume         :Q_VOLUME   = EVALUATE DGPositive ("?WallQuantities/@GrossVolume", "?ProfileQuantities/@GrossVolume")
+        NetVolume           :Q_VOLUME   = EVALUATE DGPositive ("?WallQuantities/@NetVolume", "?ProfileQuantities/@NetVolume")
+#       GrossWeight         :Q_WEIGHT   =
+#       NetWeight           :Q_WEIGHT   =
+    END_PROPERTY_SET
+
+
+TYPE *
+    PROPERTY_SET Qto_SlabBaseQuantities : IfcElementQuantity IF IsKindOf ($ifcClass, IfcSlab)
+#        Width	    :Q_LENGTH 
+        Length	    :Q_LENGTH   = ?StructuralQuantities/@Length
+        Depth	    :Q_LENGTH   = EVALUATE DG("?SlabQuantities/@Top") - DG("?SlabQuantities/@Bottom") 
+        Perimeter	:Q_LENGTH   = ?SlabQuantities/@Perimeter 
+        GrossArea	:Q_AREA     = ?SlabQuantities/@AreaBottomGross
+        NetArea	    :Q_AREA     = ?SlabQuantities/@AreaBottomNet
+        GrossVolume	:Q_VOLUME   = EVALUATE DGPositive ("?SlabQuantities/@GrossVolume", "?StructuralQuantities/@VolumeGross", "?StructuralQuantities/@VolumeGrossModeled")
+        NetVolume	:Q_VOLUME   = EVALUATE DGPositive ("?SlabQuantities/@NetVolume", "?StructuralQuantities/@VolumeNet", "?StructuralQuantities/@VolumeNetModeled")
+#        GrossWeight	:Q_WEIGHT 
+#        NetWeight	:Q_WEIGHT 
+    END_PROPERTY_SET
+
+TYPE *
+    PROPERTY_SET Qto_ColumnBaseQuantities : IfcElementQuantity IF IsKindOf ($ifcClass, IfcColumn)
+        Length	            :Q_LENGTH   = EVALUATE DGPositive ("?StructuralQuantities/@Length", "?ProfileQuantities/@PathLength")
+        CrossSectionArea	:Q_AREA     = EVALUATE DGPositive ("?StructuralQuantities/@AreaCrossSection", "?StructuralQuantities/@AreaCrossSectionModeled", "?ProfileQuantities/@CrossSectionArea")
+        OuterSurfaceArea	:Q_AREA		= EVALUATE DGPositive ("?StructuralQuantities/@AreaSideSurfaceGrossModeled", "?ProfileQuantities/@AreaSideSurfaceGross")
+        GrossSurfaceArea	:Q_AREA     = ?ProfileQuantities/@AreaSurfaceGross
+        NetSurfaceArea	    :Q_AREA     = EVALUATE DGPositive ("?StructuralQuantities/@AreaSurfaceNetModeled", "?ProfileQuantities/@AreaSurfaceNet")
+        NetVolume	        :Q_VOLUME   = EVALUATE DGPositive ("?StructuralQuantities/@VolumeNet", "?StructuralQuantities/@VolumeNetModeled", "?ProfileQuantities/@NetVolume")
+#        GrossWeight	    :Q_WEIGHT   
+#        NetWeight	        :Q_WEIGHT   
+    END_PROPERTY_SET
+
+
+TYPE *
+    PROPERTY_SET Qto_BeamBaseQuantities : IfcElementQuantity IF IsKindOf ($ifcClass, IfcBeam)
+        Length	            :Q_LENGTH   = EVALUATE DGPositive ("?StructuralQuantities/@Length", "?ProfileQuantities/@PathLength")
+        CrossSectionArea	:Q_AREA     = EVALUATE DGPositive ("?StructuralQuantities/@AreaCrossSection", "?StructuralQuantities/@AreaCrossSectionModeled", "?ProfileQuantities/@CrossSectionArea")
+        OuterSurfaceArea	:Q_AREA		= EVALUATE DGPositive ("?StructuralQuantities/@AreaSideSurfaceGrossModeled", "?ProfileQuantities/@AreaSideSurfaceGross")
+        GrossSurfaceArea	:Q_AREA     = ?ProfileQuantities/@AreaSurfaceGross
+        NetSurfaceArea	    :Q_AREA     = EVALUATE DGPositive ("?StructuralQuantities/@AreaSurfaceNetModeled", "?ProfileQuantities/@AreaSurfaceNet")
+        GrossVolume	        :Q_VOLUME   = EVALUATE DGPositive ("?StructuralQuantities/@VolumeGross", "?StructuralQuantities/@VolumeGrossModeled", "?ProfileQuantities/@GrossVolume")
+        NetVolume	        :Q_VOLUME   = EVALUATE DGPositive ("?StructuralQuantities/@VolumeNet", "?StructuralQuantities/@VolumeNetModeled", "?ProfileQuantities/@NetVolume")
+#        GrossWeight	    :Q_WEIGHT   
+#        NetWeight	        :Q_WEIGHT   
+    END_PROPERTY_SET
+
+
+TYPE *
+    PROPERTY_SET Qto_RoofBaseQuantities : IfcElementQuantity IF IsKindOf ($ifcClass, IfcRoof)
+        GrossArea	:Q_AREA     = ?RoofQuantities/@SurfaceAreaGross
+        NetArea	    :Q_AREA     = ?RoofQuantities/@SurfaceAreaNet
+#        ProjectedArea	    :Q_AREA     = 
+    END_PROPERTY_SET
+
+
+TYPE *
+    PROPERTY_SET Qto_PileBaseQuantities : IfcElementQuantity IF IsKindOf ($ifcClass, IfcPile)
+        Length	            :Q_LENGTH   = EVALUATE DGPositive ("?StructuralQuantities/@Length", "?ProfileQuantities/@PathLength")
+        CrossSectionArea	:Q_AREA     = EVALUATE DGPositive ("?StructuralQuantities/@AreaCrossSection", "?StructuralQuantities/@AreaCrossSectionModeled", "?ProfileQuantities/@CrossSectionArea")
+        OuterSurfaceArea	:Q_AREA		= EVALUATE DGPositive ("?StructuralQuantities/@AreaSideSurfaceGrossModeled", "?ProfileQuantities/@AreaSideSurfaceGross")
+        GrossSurfaceArea	:Q_AREA     = ?ProfileQuantities/@AreaSurfaceGross
+        NetSurfaceArea	    :Q_AREA     = EVALUATE DGPositive ("?StructuralQuantities/@AreaSurfaceNetModeled", "?ProfileQuantities/@AreaSurfaceNet")
+        GrossVolume	        :Q_VOLUME   = EVALUATE DGPositive ("?StructuralQuantities/@VolumeGross", "?StructuralQuantities/@VolumeGrossModeled", "?ProfileQuantities/@GrossVolume")
+        NetVolume	        :Q_VOLUME   = EVALUATE DGPositive ("?StructuralQuantities/@VolumeNet", "?StructuralQuantities/@VolumeNetModeled", "?ProfileQuantities/@NetVolume")
+#        GrossWeight	    :Q_WEIGHT   
+#        NetWeight	        :Q_WEIGHT   
+    END_PROPERTY_SET
+
+
+TYPE *
+    PROPERTY_SET Qto_MemberBaseQuantities : IfcElementQuantity IF IsKindOf ($ifcClass, IfcMember)
+        Length	            :Q_LENGTH   = EVALUATE DGPositive ("?StructuralQuantities/@Length", "?ProfileQuantities/@PathLength")
+        CrossSectionArea	:Q_AREA     = EVALUATE DGPositive ("?StructuralQuantities/@AreaCrossSection", "?StructuralQuantities/@AreaCrossSectionModeled", "?ProfileQuantities/@CrossSectionArea")
+        OuterSurfaceArea	:Q_AREA		= EVALUATE DGPositive ("?StructuralQuantities/@AreaSideSurfaceGrossModeled", "?ProfileQuantities/@AreaSideSurfaceGross")
+        GrossSurfaceArea	:Q_AREA     = ?ProfileQuantities/@AreaSurfaceGross
+        NetSurfaceArea	    :Q_AREA     = EVALUATE DGPositive ("?StructuralQuantities/@AreaSurfaceNetModeled", "?ProfileQuantities/@AreaSurfaceNet")
+        GrossVolume	        :Q_VOLUME   = EVALUATE DGPositive ("?StructuralQuantities/@VolumeGross", "?StructuralQuantities/@VolumeGrossModeled", "?ProfileQuantities/@GrossVolume")
+        NetVolume	        :Q_VOLUME   = EVALUATE DGPositive ("?StructuralQuantities/@VolumeNet", "?StructuralQuantities/@VolumeNetModeled", "?ProfileQuantities/@NetVolume")
+#        GrossWeight	    :Q_WEIGHT   
+#        NetWeight	        :Q_WEIGHT   
+    END_PROPERTY_SET
+
+
+
+

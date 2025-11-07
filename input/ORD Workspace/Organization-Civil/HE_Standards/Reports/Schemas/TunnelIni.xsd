@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="CivilIni" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ini="CivilIni" elementFormDefault="qualified">
+    <include schemaLocation="CommonIni.xsd"/>
+    <!-- element declarations -->
+    <element name="AnnotateMaximumsAndMinimums">
+        <annotation>
+            <documentation>Contains Annotate Maximums and Minimums settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="Text">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Point">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="DisplayMinimum" type="boolean" use="required"/>
+            <attribute name="DisplayMaximum" type="boolean" use="required"/>
+            <attribute name="IncludeText" type="boolean" use="required"/>
+            <attribute name="IncludePoints" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="AnnotateMaximumsAndMinimumsCollection">
+        <annotation>
+            <documentation>Collection of Annotate Maximums and Minimums preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:AnnotateMaximumsAndMinimums" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="CivilIni" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ini="CivilIni" elementFormDefault="qualified">
+    <include schemaLocation="CommonIni.xsd"/>
+    <element name="SurveyOptions">
+        <annotation>
+            <documentation>Contains Survey Options settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="CodeText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ElevationText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ErrorText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="NoteText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PointText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PointSymbolText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="ChordHeight" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                        <maxInclusive value="2147483647.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="PointSeed" type="nonNegativeInteger" use="required"/>
+            <attribute name="FigureSeed" type="nonNegativeInteger" use="required"/>
+            <attribute name="CellScale" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                        <maxInclusive value="2147483647.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="TextScale" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                        <maxInclusive value="2147483647.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="LineScale" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                        <maxInclusive value="2147483647.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="AuditTrailFileName" type="ini:STString255" use="optional"/>
+            <attribute name="ResolveCodeErrors" type="boolean" use="required"/>
+            <attribute name="LogErrors" type="boolean" use="required"/>
+            <attribute name="SwapNumericAlphaCodes" type="boolean" use="required"/>
+            <attribute name="SaveComputedCoordinates" type="boolean" use="required"/>
+            <attribute name="AddEditAuditTrail" type="boolean" use="required"/>
+            <attribute name="AutomaticRefresh" type="boolean" use="required"/>
+            <attribute name="SegregateText" type="boolean" use="required"/>
+            <attribute name="UseCustomOperations" type="boolean" use="required"/>
+            <attribute name="UseSymbols" type="boolean" use="required"/>
+            <attribute name="UseCells" type="boolean" use="required"/>
+            <attribute name="IncludeCustomOperationsInCell" type="boolean" use="required"/>
+            <attribute name="AttachDefaultTags" type="boolean" use="required"/>
+            <attribute name="AttachAttributeTags" type="boolean" use="required"/>
+            <attribute name="LinearUnits" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Meters
+                    1 = Feet
+                    2 = US Feet
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="LinearPrecision" type="ini:STPrecision" use="required"/>
+            <attribute name="AngularUnits" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Degrees
+                    1 = Gradians
+                    2 = Mils
+                    3 = DDD.MMSS
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="3"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="AngularPrecision" type="ini:STPrecision" use="required"/>
+            <attribute name="AzimuthFrom" use="required">
+                <annotation>
+                    <documentation>
+                    0 = North
+                    1 = South
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="Face" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Right
+                    1 = Left
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="VerticalObservation" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Zenith
+                    1 = Horizon
+                    2 = Horizon + / -
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="SaveFWDHeightPrecision" type="ini:STPrecision" use="required"/>
+            <attribute name="SaveFWDAnglePrecision" type="ini:STPrecision" use="required"/>
+            <attribute name="SaveFWDDistancePrecision" type="ini:STPrecision" use="required"/>
+            <attribute name="SaveFWDCoordinatePrecision" type="ini:STPrecision" use="required"/>
+            <attribute name="ElevationPrecision" type="ini:STPrecision" use="required"/>
+            <attribute name="SymbolText" type="ini:STString1" use="required"/>
+            <attribute name="PrismConstant" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="-0.1"/>
+                        <maxInclusive value="0.1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="AverageRefractionIndex" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="-10.0"/>
+                        <maxInclusive value="10.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="CarrierWavelengthConstant" type="double" use="required"/>
+            <attribute name="AtmosphericPressure" type="double" use="required"/>
+            <attribute name="DryAirTemperature" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="-50.0"/>
+                        <maxInclusive value="75.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="RadiusOfEarth" type="integer" use="required"/>
+            <attribute name="CoefficientOfRefraction" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="-1.0"/>
+                        <maxInclusive value="1.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="HorizontalAngles" type="double" use="required"/>
+            <attribute name="VerticalAngles" type="double" use="required"/>
+            <attribute name="ZenithAngles" type="double" use="required"/>
+            <attribute name="Directions" type="double" use="required"/>
+            <attribute name="Azimuths" type="double" use="required"/>
+            <attribute name="HorizontalDistances" type="double" use="required"/>
+            <attribute name="HorizontalDistancePlus" type="double" use="required"/>
+            <attribute name="SlopeDistances" type="double" use="required"/>
+            <attribute name="SlopeDistancePlus" type="double" use="required"/>
+            <attribute name="HeightDifferences" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="SurveyOptionsCollection">
+        <annotation>
+            <documentation>Collection of Survey Options preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:SurveyOptions" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SurveyAdjustmentOptions">
+        <annotation>
+            <documentation>Contains Survey Adjustment Options settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="TraverseLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="NetworkLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="SideshotLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="FixedPointText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="FixedPointPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="FreePointText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="FreePointPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="DirectionObservationLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="DirectionObservationPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="AzimuthObservationLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="AzimuthObservationPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="HorizontalAngleObservationLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="HorizontalAngleObservationPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="VerticalAngleObservationLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="VerticalAngleObservationPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ZenithObservationLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ZenithObservationPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="HorizontalDistanceObservationLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="HorizontalDistanceObservationPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="SlopeDistanceObservationLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="SlopeDistanceObservationPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="HeightDifferenceObservationLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="HeightDifferenceObservationPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="AbsoluteEllipseText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="AbsoluteEllipseLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="RelativeEllipseText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="RelativeEllipseLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="DisplayOriginalFixedPoints" type="boolean" use="required"/>
+            <attribute name="DisplayFixedPointName" type="boolean" use="required"/>
+            <attribute name="DisplayFixedPointType" type="boolean" use="required"/>
+            <attribute name="DisplayFixedPointLocation" type="boolean" use="required"/>
+            <attribute name="DisplayFixedPointText" type="boolean" use="required"/>
+            <attribute name="DisplayFixedPointPoint" type="boolean" use="required"/>
+            <attribute name="DisplayOriginalFreePoints" type="boolean" use="required"/>
+            <attribute name="DisplayAdjustedFreePoints" type="boolean" use="required"/>
+            <attribute name="DisplayFreePointName" type="boolean" use="required"/>
+            <attribute name="DisplayFreePointType" type="boolean" use="required"/>
+            <attribute name="DisplayFreePointLocation" type="boolean" use="required"/>
+            <attribute name="DisplayFreePointText" type="boolean" use="required"/>
+            <attribute name="DisplayFreePointPoint" type="boolean" use="required"/>
+            <attribute name="DisplayTraverseArrow" type="boolean" use="required"/>
+            <attribute name="TraverseArrowLength" type="double" use="required"/>
+            <attribute name="TraverseArrowAngle" type="ini:STAngle" use="required"/>
+            <attribute name="DisplayTraverseLine" type="boolean" use="required"/>
+            <attribute name="DisplayNetworkLine" type="boolean" use="required"/>
+            <attribute name="DisplaySideshotLine" type="boolean" use="required"/>
+            <attribute name="DisplayOriginalDirectionObservation" type="boolean" use="required"/>
+            <attribute name="DisplayAdjustedDirectionObservation" type="boolean" use="required"/>
+            <attribute name="DisplayDirectionObservationLine" type="boolean" use="required"/>
+            <attribute name="DisplayDirectionObservationPoint" type="boolean" use="required"/>
+            <attribute name="DisplayOriginalAzimuthObservation" type="boolean" use="required"/>
+            <attribute name="DisplayAdjustedAzimuthObservation" type="boolean" use="required"/>
+            <attribute name="DisplayAzimuthObservationLine" type="boolean" use="required"/>
+            <attribute name="DisplayAzimuthObservationPoint" type="boolean" use="required"/>
+            <attribute name="DisplayOriginalHorizontalAngleObservation" type="boolean" use="required"/>
+            <attribute name="DisplayAdjustedHorizontalAngleObservation" type="boolean" use="required"/>
+            <attribute name="DisplayHorizontalAngleObservationLine" type="boolean" use="required"/>
+            <attribute name="DisplayHorizontalAngleObservationPoint" type="boolean" use="required"/>
+            <attribute name="DisplayOriginalVerticalAngleObservation" type="boolean" use="required"/>
+            <attribute name="DisplayAdjustedVerticalAngleObservation" type="boolean" use="required"/>
+            <attribute name="DisplayVerticalAngleObservationLine" type="boolean" use="required"/>
+            <attribute name="DisplayVerticalAngleObservationPoint" type="boolean" use="required"/>
+            <attribute name="DisplayOriginalZenithObservation" type="boolean" use="required"/>
+            <attribute name="DisplayAdjustedZenithObservation" type="boolean" use="required"/>
+            <attribute name="DisplayZenithObservationLine" type="boolean" use="required"/>
+            <attribute name="DisplayZenithObservationPoint" type="boolean" use="required"/>
+            <attribute name="DisplayOriginalHorizontalDistanceObservation" type="boolean" use="required"/>
+            <attribute name="DisplayAdjustedHorizontalDistanceObservation" type="boolean" use="required"/>
+            <attribute name="DisplayHorizontalDistanceObservationLine" type="boolean" use="required"/>
+            <attribute name="DisplayHorizontalDistanceObservationPoint" type="boolean" use="required"/>
+            <attribute name="DisplayOriginalSlopeDistanceObservation" type="boolean" use="required"/>
+            <attribute name="DisplayAdjustedSlopeDistanceObservation" type="boolean" use="required"/>
+            <attribute name="DisplaySlopeDistanceObservationLine" type="boolean" use="required"/>
+            <attribute name="DisplaySlopeDistanceObservationPoint" type="boolean" use="required"/>
+            <attribute name="DisplayOriginalHeightDifferenceObservation" type="boolean" use="required"/>
+            <attribute name="DisplayAdjustedHeightDifferenceObservation" type="boolean" use="required"/>
+            <attribute name="DisplayHeightDifferenceObservationLine" type="boolean" use="required"/>
+            <attribute name="DisplayHeightDifferenceObservationPoint" type="boolean" use="required"/>
+            <attribute name="EllipseConfidenceLevel" type="integer" use="required"/>
+            <attribute name="EllipseExaggeration" type="integer" use="required"/>
+            <attribute name="DisplayAbsoluteEllipseText" type="boolean" use="required"/>
+            <attribute name="DisplayAbsoluteEllipseLine" type="boolean" use="required"/>
+            <attribute name="DisplayRelativeEllipseText" type="boolean" use="required"/>
+            <attribute name="DisplayRelativeEllipseLine" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="SurveyAdjustmentOptionsCollection">
+        <annotation>
+            <documentation>Collection of Survey Adjustment Options preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:SurveyAdjustmentOptions" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SurveyCreateLegend">
+        <annotation>
+            <documentation>Contains Survey Legend Options settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="Text">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="TitleText" type="ini:STString255" use="required"/>
+            <attribute name="LineLength" type="double" use="required"/>
+            <attribute name="ColumnSpacing" type="double" use="required"/>
+            <attribute name="DisplayText" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="SurveyCreateLegendCollection">
+        <annotation>
+            <documentation>Collection of Survey Legend Options preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:SurveyCreateLegend" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SurveyControlCodes">
+        <annotation>
+            <documentation>Contains Survey Control Codes settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="Start" type="ini:STString31" use="required"/>
+            <attribute name="Close" type="ini:STString31" use="required"/>
+            <attribute name="PointOfCurvature" type="ini:STString31" use="required"/>
+            <attribute name="PointOfTangency" type="ini:STString31" use="required"/>
+            <attribute name="ExcludeFromTriangulation" type="ini:STString31" use="required"/>
+            <attribute name="Random" type="ini:STString31" use="required"/>
+            <attribute name="Rectangle" type="ini:STString31" use="required"/>
+            <attribute name="CloseRectangle" type="ini:STString31" use="required"/>
+            <attribute name="NontangentCurve" type="ini:STString31" use="required"/>
+            <attribute name="JoinPoint" type="ini:STString31" use="required"/>
+            <attribute name="JoinNearestCode" type="ini:STString31" use="required"/>
+            <attribute name="Distance" type="ini:STString31" use="required"/>
+            <attribute name="Template" type="ini:STString31" use="required"/>
+            <attribute name="CrossSection" type="ini:STString31" use="required"/>
+            <attribute name="AddToAdjustmentSet" type="ini:STString31" use="required"/>
+            <attribute name="ExtendArc" type="ini:STString31" use="required"/>
+        </complexType>
+    </element>
+    <element name="SurveyControlCodesCollection">
+        <annotation>
+            <documentation>Collection of Survey Control Codes preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:SurveyControlCodes" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SurveyCorrections">
+        <annotation>
+            <documentation>Contains Survey Corrections settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="PrismConstant" type="boolean" use="required"/>
+            <attribute name="AtmosphericCorrection" type="boolean" use="required"/>
+            <attribute name="CurvatureandRefraction" type="boolean" use="required"/>
+            <attribute name="SlopeScaleFactor" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value=".000001"/>
+                        <maxInclusive value="100000000"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="SurveyCorrectionsCollection">
+        <annotation>
+            <documentation>Collection of Survey Corrections preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:SurveyCorrections" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SurveyStyleFilter">
+        <annotation>
+            <documentation>Contains Style Filter rules</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="Rule" type="ini:CTFeatureFilterRule" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+        </complexType>
+    </element>
+    <element name="SurveyStyleFilterCollection">
+        <annotation>
+            <documentation>Collection of Style Filters</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:SurveyStyleFilter" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SurveyIMPEXP">
+        <annotation>
+            <documentation>Contains Survey IMPEXP.ini settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="FileType" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Import File
+                        1 = Export File
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="Program" type="ini:STString255" use="required"/>
+            <attribute name="Title" type="ini:STString63" use="required"/>
+            <attribute name="Filter" type="ini:STString31" use="required"/>
+            <attribute name="Arg1" type="ini:STString255" use="optional"/>
+            <attribute name="Arg2" type="ini:STString255" use="optional"/>
+            <attribute name="PortFile" type="ini:STString255" use="optional"/>
+            <attribute name="IntermediateFile" type="ini:STString255" use="optional"/>
+        </complexType>
+    </element>
+    <element name="SurveyIMPEXPCollection">
+        <annotation>
+            <documentation>Collection of Survey IMPEXP.ini preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:SurveyIMPEXP" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="CTManholeSurveyData" mixed="true">
+        <annotation>
+            <documentation>Contains settings for Manhole Survey Data</documentation>
+        </annotation>
+        <sequence>
+            <element name="FeatureStyle" type="ini:CTFeatureStyleName" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="KeyManhole" type="ini:STString31" use="required"/>
+        <attribute name="KeyID" type="ini:STString31" use="required"/>
+        <attribute name="KeyDescription" type="ini:STString31" use="required"/>
+        <attribute name="KeyMaterial" type="ini:STString31" use="required"/>
+        <attribute name="KeyShape" type="ini:STString31" use="required"/>
+        <attribute name="KeyLength" type="ini:STString31" use="required"/>
+        <attribute name="KeyWidth" type="ini:STString31" use="required"/>
+        <attribute name="KeyHeight" type="ini:STString31" use="required"/>
+        <attribute name="KeyThickness" type="ini:STString31" use="required"/>
+        <attribute name="KeyRimElevation" type="ini:STString31" use="required"/>
+    </complexType>
+    <complexType name="CTInletSurveyData" mixed="true">
+        <annotation>
+            <documentation>Contains settings for Inlet Survey Data</documentation>
+        </annotation>
+        <sequence>
+            <element name="FeatureStyle" type="ini:CTFeatureStyleName" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="KeyInlet" type="ini:STString31" use="required"/>
+        <attribute name="KeyID" type="ini:STString31" use="required"/>
+        <attribute name="KeyDescription" type="ini:STString31" use="required"/>
+        <attribute name="KeyClass" type="ini:STString31" use="required"/>
+        <attribute name="KeyType" type="ini:STString31" use="required"/>
+        <attribute name="KeyLength" type="ini:STString31" use="required"/>
+        <attribute name="KeyWidth" type="ini:STString31" use="required"/>
+        <attribute name="KeyInletElevation" type="ini:STString31" use="required"/>
+    </complexType>
+    <complexType name="CTPipeSurveyData" mixed="true">
+        <annotation>
+            <documentation>Contains settings for Pipe Survey Data</documentation>
+        </annotation>
+        <sequence>
+            <element name="FeatureStyle" type="ini:CTFeatureStyleName" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="KeyPipe" type="ini:STString31" use="required"/>
+        <attribute name="KeyID" type="ini:STString31" use="required"/>
+        <attribute name="KeyDescription" type="ini:STString31" use="required"/>
+        <attribute name="KeyMaterial" type="ini:STString31" use="required"/>
+        <attribute name="KeyShape" type="ini:STString31" use="required"/>
+        <attribute name="KeySpan" type="ini:STString31" use="required"/>
+        <attribute name="KeyRise" type="ini:STString31" use="required"/>
+        <attribute name="KeyLength" type="ini:STString31" use="required"/>
+        <attribute name="KeyWidth" type="ini:STString31" use="required"/>
+        <attribute name="KeyHeight" type="ini:STString31" use="required"/>
+        <attribute name="KeyThickness" type="ini:STString31" use="required"/>
+        <attribute name="KeyFlowLineDepth" type="ini:STString31" use="required"/>
+        <attribute name="KeyInvert" type="ini:STString31" use="required"/>
+    </complexType>
+    <complexType name="CTCulvertSurveyData" mixed="true">
+        <annotation>
+            <documentation>Contains settings for Culvert Survey Data</documentation>
+        </annotation>
+        <sequence>
+            <element name="FeatureStyle" type="ini:CTFeatureStyleName" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="KeyCulvert" type="ini:STString31" use="required"/>
+        <attribute name="KeyID" type="ini:STString31" use="required"/>
+        <attribute name="KeyDescription" type="ini:STString31" use="required"/>
+        <attribute name="KeyMaterial" type="ini:STString31" use="required"/>
+        <attribute name="KeyShape" type="ini:STString31" use="required"/>
+        <attribute name="KeySpan" type="ini:STString31" use="required"/>
+        <attribute name="KeyRise" type="ini:STString31" use="required"/>
+        <attribute name="KeyLength" type="ini:STString31" use="required"/>
+        <attribute name="KeyWidth" type="ini:STString31" use="required"/>
+        <attribute name="KeyHeight" type="ini:STString31" use="required"/>
+        <attribute name="KeyThickness" type="ini:STString31" use="required"/>
+        <attribute name="KeyBarrels" type="ini:STString31" use="required"/>
+        <attribute name="KeyCrown" type="ini:STString31" use="required"/>
+        <attribute name="KeyFlowLineDepth" type="ini:STString31" use="required"/>
+        <attribute name="KeyInvert" type="ini:STString31" use="required"/>
+    </complexType>
+    <complexType name="CTUtilitiesSurveyData" mixed="true">
+        <annotation>
+            <documentation>Contains settings for Utilities Survey Data</documentation>
+        </annotation>
+        <sequence>
+            <element name="FeatureStyle" type="ini:CTFeatureStyleName" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="KeyUtility" type="ini:STString31" use="required"/>
+        <attribute name="KeyID" type="ini:STString31" use="required"/>
+        <attribute name="KeyName" type="ini:STString31" use="required"/>
+        <attribute name="KeyShape" type="ini:STString31" use="required"/>
+        <attribute name="KeyWidth" type="ini:STString31" use="required"/>
+        <attribute name="KeyHeight" type="ini:STString31" use="required"/>
+    </complexType>
+    <element name="SurveyDataToDrainage">
+        <annotation>
+            <documentation/>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="Manhole" type="ini:CTManholeSurveyData"/>
+                <element name="Inlet" type="ini:CTInletSurveyData"/>
+                <element name="Pipe" type="ini:CTPipeSurveyData"/>
+                <element name="Culvert" type="ini:CTCulvertSurveyData"/>
+                <element name="Utilities" type="ini:CTUtilitiesSurveyData"/>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+        </complexType>
+    </element>
+    <element name="SurveyDataToDrainageCollection">
+        <annotation>
+            <documentation>Collection of Survey Data to Drainage preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:SurveyDataToDrainage" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SurveyDataToSurface">
+        <annotation>
+            <documentation>Contains Survey Data to Surface settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="Feature" type="ini:CTNewFeature"/>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="ParentName" type="ini:STString31" use="required"/>
+            <attribute name="Description" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Use Style Description
+                        1 = Use Attributes
+                        2 = Use Codes
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="Tolerance" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                        <maxExclusive value="2147483647.000"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="MaximumSegmentLength" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                        <maxExclusive value="2147483647.000"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="CurveStrokingMode" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Horizontal and Vertical
+                        1 = Horizontal Only
+                        2 = Do Not Stroke
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="AlwaysUseOption" type="boolean" use="required"/>
+            <attribute name="AlwaysUseType" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Style
+                        1 = Alpha Code
+                        2 = Numeric Code
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="TriangulateSurface" type="boolean" use="required"/>
+            <attribute name="EmptySurface" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="SurveyDataToSurfaceCollection">
+        <annotation>
+            <documentation>Collection of Survey Data To Surface preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:SurveyDataToSurface" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SurveyDataToGeometry">
+        <annotation>
+            <documentation>Contains Survey Data to Geometry Settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="Description" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Use Style Description
+                        1 = Use Attributes
+                        2 = Use Codes                     
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ExtendedDescription" type="string" use="required"/>
+            <attribute name="CurveStroking" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Horizontal and Vertical
+                        1 = Horizontal Only
+                        2 = Do Not Stroke
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="DuplicateNames" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Replace
+                        1 = Rename                     
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="EmptyProject" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="SurveyDataToGeometryCollection">
+        <annotation>
+            <documentation>Collection of Survey Data To Geometry preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:SurveyDataToGeometry" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

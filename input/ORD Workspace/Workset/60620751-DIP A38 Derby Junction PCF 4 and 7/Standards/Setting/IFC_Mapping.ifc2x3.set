@@ -1,0 +1,29 @@
+# ================================================================================			
+#			
+# OpenBuildings Designer DataGroup Mapping Overrides for Types, Items and Properties
+# for IFC2x3 Export (dataset level) 			
+#			
+#			
+# $RCSfile: IFC_Mapping.ifc2x3.set,v $			
+# $Revision: 1.7 $			
+#			
+# $Copyright: (c) 2019 Bentley Systems, Incorporated. All rights reserved. $			
+# ================================================================================
+#
+# include dataset mapping files
+#
+# ================================================================================
+INCLUDE "IFC_TypeMapping.ifc2x3.set"
+
+INCLUDE "IFC_ItemMapping.ifc2x3.set"
+
+# for IFC Export to IFC2x3 Coordination View 2.0, comment out line PROPERTY_TABLE "IFC_PropertyMapping_COBie.set" below and uncomment the following line (default):
+PROPERTY_TABLE "IFC_PropertyMapping.ifc2x3.set"
+
+# for IFC Export to FM Handover/COBie spreadsheet, comment out line PROPERTY_TABLE "IFC_PropertyMapping.set" above and uncomment the following line:  
+# PROPERTY_TABLE "IFC_PropertyMapping_COBie.set"
+
+PROPERTY_TABLE "IFC_PropertyMapping_local.ifc2x3.set"
+
+INCLUDE "IFC_ElectricalMapping.ifc2x3.set"
+# ================================================================================

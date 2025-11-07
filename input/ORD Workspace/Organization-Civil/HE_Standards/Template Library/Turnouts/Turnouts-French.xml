@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TurnoutsFile>
+	<Turnouts>
+		<Units linear="meters" angular="radians"/>
+		<Turnout name="--- U50 -----------------------" description="" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="centerline">
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="0.000000" length0To2="0.000000" length0To3="0.000000" ratioAt0="0.000000" ratioAt1="0.000000">
+					<Elements/>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="U50 tg0.085 (1/11)" description="U50 tg0.085 Vn 60km/h" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer" mininumBendingRadius="3000.000000">
+				<Branch theoreticalToActual="-1.487000" lengthAlongMainline="40.310000" length0To2="20.718000" length0To3="20.718000" ratioAt0="11.764706" ratioAt1="143.970826">
+					<Elements>
+						<Element length="4.410764" entranceRadius="604.000000" exitRadius="604.000000"/>
+						<Element length="34.215705" entranceRadius="485.000000" exitRadius="485.000000"/>
+						<Element length="0.172000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="U50 tg0.11 L (1/9)" description="U50 tg0.11 Long Vn 40km/h" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer" mininumBendingRadius="2000.000000">
+				<Branch theoreticalToActual="-0.958806" lengthAlongMainline="30.170000" length0To2="15.824000" length0To3="15.824000" ratioAt0="9.090909" ratioAt1="251.968649">
+					<Elements>
+						<Element length="9.148536" entranceRadius="250.000000" exitRadius="250.000000"/>
+						<Element length="19.319061" entranceRadius="280.000000" exitRadius="280.000000"/>
+						<Element length="0.714000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="U50 tg0.11 C (1/9)" description="U50 tg0.11 Court" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="-1.588335" lengthAlongMainline="28.150000" length0To2="15.824000" length0To3="15.824000" ratioAt0="9.090909" ratioAt1="147.870377">
+					<Elements>
+						<Element length="4.356364" entranceRadius="250.000000" exitRadius="250.000000"/>
+						<Element length="17.928013" entranceRadius="210.000000" exitRadius="210.000000"/>
+						<Element length="4.254000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="U50 tg0.13 C (1/7)" description="U50 tg0.13 Court" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="-1.049612" lengthAlongMainline="23.600000" length0To2="13.384000" length0To3="13.384000" ratioAt0="7.692308" ratioAt1="56.530565">
+					<Elements>
+						<Element length="21.201587" entranceRadius="190.000000" exitRadius="190.000000"/>
+						<Element length="1.316285" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="U50 tg0.13 EC (1/7)" description="U50 tg0.13 Extra Court" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer" mininumBendingRadius="400.000000">
+				<Branch theoreticalToActual="-1.003410" lengthAlongMainline="22.535000" length0To2="13.384000" length0To3="13.384000" ratioAt0="7.692308" ratioAt1="64.282894">
+					<Elements>
+						<Element length="3.731569" entranceRadius="190.000000" exitRadius="190.000000"/>
+						<Element length="14.112026" entranceRadius="150.000000" exitRadius="150.000000"/>
+						<Element length="3.661000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="U50 Mod2002 tg0.05 (1/20)" description="U50 tg0.05 Mod2002 (Vn 100km/h)" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer" mininumBendingRadius="6000.000000">
+				<Branch theoreticalToActual="-1.575600" lengthAlongMainline="63.315000" length0To2="34.349000" length0To3="34.349000" ratioAt0="20.000002" ratioAt1="156.377555">
+					<Elements>
+						<Element length="7.868000" entranceRadius="2200.000000" exitRadius="2200.000000"/>
+						<Element length="51.984000" entranceRadius="1300.000000" exitRadius="1300.000000"/>
+						<Element length="1.874000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="U50 Mod2002 tg0.085 (1/11)" description="U50 tg0.085 Mod2002 (Vn 60km/h)" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer" mininumBendingRadius="3000.000000">
+				<Branch theoreticalToActual="-1.464700" lengthAlongMainline="40.310000" length0To2="20.718000" length0To3="20.718000" ratioAt0="11.764706" ratioAt1="139.554326">
+					<Elements>
+						<Element length="5.324000" entranceRadius="600.000000" exitRadius="600.000000"/>
+						<Element length="33.347000" entranceRadius="485.000000" exitRadius="485.000000"/>
+						<Element length="0.150000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="U50 Mod2002 tg0.11 L (1/9)" description="U50 tg0.11 Long Mod2002 (Vn 40km/h)" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer" mininumBendingRadius="2000.000000">
+				<Branch theoreticalToActual="-1.640500" lengthAlongMainline="30.170000" length0To2="15.824000" length0To3="15.824000" ratioAt0="9.090909" ratioAt1="145.664960">
+					<Elements>
+						<Element length="11.013000" entranceRadius="255.000000" exitRadius="255.000000"/>
+						<Element length="16.714000" entranceRadius="280.882000" exitRadius="280.882000"/>
+						<Element length="0.773000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="--- UIC60-A61 -----------------" description="" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="centerline">
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="0.000000" length0To2="0.000000" length0To3="0.000000" ratioAt0="0.000000" ratioAt1="0.000000">
+					<Elements/>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 A61 tg0.0154 (1/65)" description="UIC60 A61 tg:0.0154 (1/65)" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="2.004000" lengthAlongMainline="193.439351" length0To2="129.524351" length0To3="129.524351" ratioAt0="61.671860" ratioAt1="0.000000">
+					<Elements>
+						<Element length="22.445292" entranceRadius="6719.282500" exitRadius="6719.282500"/>
+						<Element length="172.994646" entranceRadius="6719.282500" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 A61 tg0.0218 (1/46)" description="UIC60 A61 tg:0.0218 (1/46)" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.642051" lengthAlongMainline="136.913931" length0To2="91.703304" length0To3="91.703304" ratioAt0="43.602057" ratioAt1="0.000000">
+					<Elements>
+						<Element length="137.551160" entranceRadius="2999.282500" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 A61 tg0.0476 (1/21)" description="UIC60 A61 tg0.0476" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="73.292000" length0To2="36.646001" length0To3="36.646001" ratioAt0="21.008403" ratioAt1="0.000000">
+					<Elements>
+						<Element length="73.278180" entranceRadius="1540.619538" exitRadius="1540.619538"/>
+						<Element length="0.000002" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 A61 tg0.0654 (1/15)" description="UIC60 A61 tg0.0654" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.545000" lengthAlongMainline="53.811000" length0To2="26.769000" length0To3="26.769000" ratioAt0="15.290520" ratioAt1="0.000000">
+					<Elements>
+						<Element length="0.818000" entranceRadius="0.000000" exitRadius="0.000000"/>
+						<Element length="53.518970" entranceRadius="819.498266" exitRadius="819.498266"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 A61 tg0.111 L (1/9)" description="UIC60 A61 tg0.111 Long" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="1.145000" lengthAlongMainline="33.269000" length0To2="16.062000" length0To3="16.062000" ratioAt0="9.009009" ratioAt1="0.000000">
+					<Elements>
+						<Element length="2.290000" entranceRadius="0.000000" exitRadius="0.000000"/>
+						<Element length="32.091278" entranceRadius="290.294117" exitRadius="290.294117"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="--- UIC60-A74 -----------------" description="" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="centerline">
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="0.000000" length0To2="0.000000" length0To3="0.000000" ratioAt0="0.000000" ratioAt1="0.000000">
+					<Elements/>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 A74 tg0.0336 (1/29)" description="UIC60 A74 tg0.0336 (1/29) (Vn:160km/h)" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="100.846000" length0To2="50.423000" length0To3="50.423000" ratioAt0="29.739843" ratioAt1="0.000000">
+					<Elements>
+						<Element length="100.836505" entranceRadius="2999.991702" exitRadius="2999.991702"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 A74 tg0.0372 (1/26)" description="UIC60 A74 tg0.0372 (1/26) (Vn:130km/h)" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="93.078000" length0To2="46.539000" length0To3="46.539000" ratioAt0="26.849886" ratioAt1="0.000000">
+					<Elements>
+						<Element length="93.067250" entranceRadius="2500.000041" exitRadius="2500.000041"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 A74 tg0.0476 (1/21)" description="UIC60 A74 tg0.0476 (1/21) (Vn:100km/h)" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="73.292000" length0To2="36.646000" length0To3="36.646000" ratioAt0="20.999829" ratioAt1="0.000000">
+					<Elements>
+						<Element length="73.278171" entranceRadius="1539.991538" exitRadius="1539.991538"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 A74 tg0.0654 (1/15)" description="UIC60 A74 tg0.0654 (1/15) (Vn:70km/h)" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="53.538000" length0To2="26.769000" length0To3="26.769000" ratioAt0="15.299811" ratioAt1="0.000000">
+					<Elements>
+						<Element length="53.518993" entranceRadius="819.995148" exitRadius="819.995148"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 A74 tg0.05 Mod2002" description="UIC60 A74 tg0.05 (Vn:100km/h) Mod2002" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="-1.575000" lengthAlongMainline="63.315000" length0To2="34.349000" length0To3="34.349000" ratioAt0="20.000002" ratioAt1="143.237265">
+					<Elements>
+						<Element length="7.952000" entranceRadius="1899.282000" exitRadius="1899.282000"/>
+						<Element length="53.774000" entranceRadius="1386.282000" exitRadius="1386.282000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 A74 tg0.05" description="UIC60 A74 tg0.05 (Vn:100km/h)" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="-1.672514" lengthAlongMainline="63.315000" length0To2="34.349000" length0To3="34.349000" ratioAt0="20.000002" ratioAt1="141.828962">
+					<Elements>
+						<Element length="7.834789" entranceRadius="1900.000000" exitRadius="1900.000000"/>
+						<Element length="53.793670" entranceRadius="1387.000000" exitRadius="1387.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 A74 tg0.085" description="UIC60 A74 tg0.085 (Vn:60km/h)" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="-1.652877" lengthAlongMainline="40.310000" length0To2="20.718001" length0To3="20.718001" ratioAt0="11.764706" ratioAt1="126.448050">
+					<Elements>
+						<Element length="5.590227" entranceRadius="600.000000" exitRadius="600.000000"/>
+						<Element length="33.042175" entranceRadius="489.000000" exitRadius="489.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 A74 tg0.11 L Mod2002" description="UIC60 A74 tg0.11 Long (Vn:40km/h) Mod2002" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="-1.770000" lengthAlongMainline="30.170000" length0To2="15.824000" length0To3="15.824000" ratioAt0="9.090909" ratioAt1="137.507436">
+					<Elements>
+						<Element length="10.760000" entranceRadius="249.282000" exitRadius="249.282000"/>
+						<Element length="17.178000" entranceRadius="290.561000" exitRadius="290.561000"/>
+						<Element length="0.432000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 A74 tg0.11 L" description="UIC60 A74 tg0.11 Long (Vn:40km/h)" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="-2.007533" lengthAlongMainline="30.170000" length0To2="15.824000" length0To3="15.824000" ratioAt0="9.090909" ratioAt1="118.696458">
+					<Elements>
+						<Element length="10.501617" entranceRadius="250.000000" exitRadius="250.000000"/>
+						<Element length="17.206365" entranceRadius="291.000000" exitRadius="291.000000"/>
+						<Element length="0.425000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 D tg:0.0154 (1/65)" description="UIC60 D tg:0.0154 (1/65)" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="3.112000" lengthAlongMainline="194.508000" length0To2="129.510000" length0To3="129.510000" ratioAt0="61.671860" ratioAt1="0.000000">
+					<Elements>
+						<Element length="136.217016" entranceRadius="8401.492930" exitRadius="8401.492930"/>
+						<Element length="61.400000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 mod2002 tg0.11 (1/9)" description="TO 0.11 UIC60 mod2002" bendingMethod="Swiss" type="diamond">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="31.570000" length0To2="15.785000" length0To3="15.785000" ratioAt0="9.090909" ratioAt1="0.000000">
+					<Elements/>
+				</Branch>
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="31.570000" length0To2="15.785000" length0To3="15.785000" ratioAt0="9.090909" ratioAt1="0.000000">
+					<Elements/>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60 mod2002 tg0.13 (1/7)" description="TO 0.13 UIC60 mod2002" bendingMethod="Swiss" type="diamond">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="26.704000" length0To2="13.352000" length0To3="13.352000" ratioAt0="7.692308" ratioAt1="0.000000">
+					<Elements/>
+				</Branch>
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="26.704000" length0To2="13.352000" length0To3="13.352000" ratioAt0="7.692308" ratioAt1="0.000000">
+					<Elements/>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="U50 tg0.167 (1/6)" description="U50 tg0.167 Symmétrique" bendingMethod="Swiss" type="double">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="18.387000" length0To2="10.258000" length0To3="10.258000" ratioAt0="12.033860" ratioAt1="0.000000">
+					<Elements>
+						<Element length="0.169000" entranceRadius="380.000000" exitRadius="380.000000"/>
+						<Element length="15.998000" entranceRadius="194.000000" exitRadius="194.000000"/>
+						<Element length="2.211000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="18.387000" length0To2="10.258000" length0To3="10.258000" ratioAt0="-12.033860" ratioAt1="0.000000">
+					<Elements>
+						<Element length="0.169000" entranceRadius="380.000000" exitRadius="380.000000"/>
+						<Element length="15.998000" entranceRadius="194.000000" exitRadius="194.000000"/>
+						<Element length="2.211000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="--- UIC60-60D -----------------" description="" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="centerline">
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="0.000000" length0To2="0.000000" length0To3="0.000000" ratioAt0="0.000000" ratioAt1="0.000000">
+					<Elements/>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60-60D tg0.0654 Mod2002" description="UIC60-60D tg0.0654 Mod2002" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="-0.758000" lengthAlongMainline="57.433000" length0To2="29.906000" length0To3="29.906000" ratioAt0="15.300003" ratioAt1="0.000000">
+					<Elements>
+						<Element length="53.518994" entranceRadius="820.005432" exitRadius="820.005432"/>
+						<Element length="3.137000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60-60D tg0.0654 PM Mod2002" description="UIC60-60D tg0.0654 PM Mod2002" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="-0.758000" lengthAlongMainline="54.296000" length0To2="26.769000" length0To3="26.769000" ratioAt0="15.300003" ratioAt1="0.000000">
+					<Elements>
+						<Element length="53.518994" entranceRadius="820.005432" exitRadius="820.005432"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60-60D tg0.0654 PF Mod2002" description="UIC60-60D tg0.0654 PF Mod2002" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="-0.758000" lengthAlongMainline="54.326000" length0To2="26.769000" length0To3="26.769000" ratioAt0="15.299999" ratioAt1="0.000000">
+					<Elements>
+						<Element length="0.030000" entranceRadius="0.000000" exitRadius="0.000000"/>
+						<Element length="53.518994" entranceRadius="820.005218" exitRadius="820.005218"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60-60D tg0.0372 PF Mod2002" description="UIC60-60D tg0.0372 PF Mod2002" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.337000" lengthAlongMainline="92.741000" length0To2="46.539000" length0To3="46.539000" ratioAt0="26.849886" ratioAt1="0.000000">
+					<Elements>
+						<Element length="93.067250" entranceRadius="2500.000076" exitRadius="2500.000076"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60-60D tg0.0336 PF Mod2002" description="UIC60-60D tg0.0336 PF Mod2002" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.337000" lengthAlongMainline="100.509000" length0To2="50.423000" length0To3="50.423000" ratioAt0="29.739843" ratioAt1="0.000000">
+					<Elements>
+						<Element length="100.836505" entranceRadius="2999.991702" exitRadius="2999.991702"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60-60D tg0.0336 Mod2002" description="UIC60-60D tg0.0336 Mod2002" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.337000" lengthAlongMainline="100.509000" length0To2="50.423000" length0To3="50.423000" ratioAt0="29.739843" ratioAt1="0.000000">
+					<Elements>
+						<Element length="100.836505" entranceRadius="2999.991702" exitRadius="2999.991702"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60-60D tg0.0218 Mod2002" description="UIC60-60D tg0.0218 Mod2002" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="1.565000" lengthAlongMainline="137.535000" length0To2="91.635000" length0To3="91.635000" ratioAt0="43.636364" ratioAt1="0.000000">
+					<Elements>
+						<Element length="23.763000" entranceRadius="3550.000000" exitRadius="3550.000000"/>
+						<Element length="115.154000" entranceRadius="3550.000000" exitRadius="0.000000"/>
+						<Element length="0.178000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="UIC60-60D tg0.0154 Mod2002" description="UIC60-60D tg0.0154 Mod2002" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="3.112000" lengthAlongMainline="194.525000" length0To2="129.527000" length0To3="129.527000" ratioAt0="61.671860" ratioAt1="0.000000">
+					<Elements>
+						<Element length="41.100000" entranceRadius="7350.000000" exitRadius="7350.000000"/>
+						<Element length="156.138000" entranceRadius="7350.000000" exitRadius="0.000000"/>
+						<Element length="0.396000" entranceRadius="0.000000" exitRadius="0.000000"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="--- TRAM ----------------------" description="" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="centerline">
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="0.000000" length0To2="0.000000" length0To3="0.000000" ratioAt0="0.000000" ratioAt1="0.000000">
+					<Elements/>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="Tram Br. Tg 1/3.26 R50" description="Tram Br. Tg 1/3.26 R50" bendingMethod="Swiss" type="single">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.450000" lengthAlongMainline="15.450000" length0To2="7.500000" length0To3="7.500000" ratioAt0="3.258340" ratioAt1="0.000000">
+					<Elements>
+						<Element length="0.900000" entranceRadius="0.000000" exitRadius="0.000000"/>
+						<Element length="14.888995" entranceRadius="50.000093" exitRadius="50.000093"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+		<Turnout name="Br Symétrique Tg 1/2.17 R50" description="Br Symétrique Tg 1/2.17 R50" bendingMethod="Swiss" type="double">
+			<Miscellaneous/>
+			<Branches lengthAlong="outer">
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="11.696700" length0To2="5.411000" length0To3="5.411000" ratioAt0="4.565846" ratioAt1="0.000000">
+					<Elements>
+						<Element length="0.875000" entranceRadius="0.000000" exitRadius="0.000000"/>
+						<Element length="10.780042" entranceRadius="49.997197" exitRadius="49.997197"/>
+					</Elements>
+				</Branch>
+				<Branch theoreticalToActual="0.000000" lengthAlongMainline="11.696700" length0To2="5.411000" length0To3="5.411000" ratioAt0="-4.565846" ratioAt1="0.000000">
+					<Elements>
+						<Element length="0.875000" entranceRadius="0.000000" exitRadius="0.000000"/>
+						<Element length="10.780042" entranceRadius="49.997197" exitRadius="49.997197"/>
+					</Elements>
+				</Branch>
+			</Branches>
+		</Turnout>
+	</Turnouts>
+</TurnoutsFile>

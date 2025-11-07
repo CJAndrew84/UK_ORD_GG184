@@ -1,0 +1,2358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="CivilIni" xmlns:ini="CivilIni" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <include schemaLocation="CommonIni.xsd"/>
+    <element name="ViewDrainage">
+        <annotation>
+            <documentation>Contains View Drainage settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="PipeAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="ChannelAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="CulvertAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="ManholeAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="PumpAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="InletAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="AreaAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="ZoneAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="UtilityAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="PipeCenterLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PipeInsideLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PipeOutsideLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ChannelCenterLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ChannelBottomLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="CulvertCenterLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="CulvertInsideLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="CulvertOutsideLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ManholeCircularPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ManholeBoxPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ManholeConePoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ManholeInsideLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ManholeOutsideLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="InletCurbPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="InletGratePoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="InletCombinationPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="InletMedianPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="InletCatchpitPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="InletVaultInsideLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="InletVaultOutsideLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PumpPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PumpInsideLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PumpOutsideLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="AreaLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ZoneLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="DisplayOptions" use="required">
+                <annotation>
+                    <documentation>
+                    0 = None
+                    1 = Pipe Center Line
+                    2 = Pipe Inside Line
+                    4 = Pipe Outside Line
+                    8 = Channel Center Line
+                    16 = Channel Bottom Line
+                    32 = Culvert Center Line
+                    64 = Culvert Inside Line
+                    128 = Culvert Outside Line
+                    256 = Manhole Circular Point
+                    512 = Manhole Box Point
+                    1024 = Manhole Cone Point
+                    2048 = Manhole Inside Line
+                    4096 = Manhole Outside Line
+                    8192 = Inlet Curb Point
+                    16384 = Inlet Grate Point
+                    32768 = Inlet Combination Point
+                    65536 = Inlet Median Point
+                    131072 = Inlet Catchpit Point
+                    262144 = Inlet Vault Inside Line
+                    524288 = Inlet Vault Outside Line
+                    1048576 = Pump Point
+                    2097152 = Pump Inside Line
+                    4194304 = Pump Outside Line
+                    8388608 = Area Line
+                    16777216 = Zone Line
+                    Values are cummulative
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="unsignedLong">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="33554431"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="ViewDrainageCollection">
+        <annotation>
+            <documentation>Collection of View Drainage preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:ViewDrainage" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DrainageAnnotation">
+        <annotation>
+            <documentation>Contains Drainage Annotation settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="PipeAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="ChannelAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="CulvertAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="ManholeAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="PumpAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="InletAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="AreaAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="ZoneAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="UtilityAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="PipeText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ChannelText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="CulvertText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ManholeText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="InletText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PumpText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="UtilityText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="AreaText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ZoneText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="DisplayOptions" use="required">
+                <annotation>
+                    <documentation>
+                    0 = None
+                    1 = Pipe Text
+                    2 = Channel Text
+                    4 = Culvert Text
+                    8 = Manhole Text
+                    16 = Inlet Text
+                    32 = Pump Text
+                    64 = Utility Text
+                    128 = Area Text
+                    256 = Zone Text
+                    Values are cummulative
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="unsignedLong">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="511"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="PositionInsideStructure" type="boolean" use="required"/>
+            <attribute name="DisplayAllInvertsAtStructures" type="boolean" use="optional"/>
+            <attribute name="DisplayInvertLabels" type="boolean" use="optional"/>
+            <attribute name="InvertLabelLocation" use="optional">
+                <annotation>
+                    <documentation>
+                    0 = Before Prefix
+                    1 = After Suffix
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="InvertLabelType" use="optional">
+                <annotation>
+                    <documentation>
+                    0 = Direction Only
+                    1 = ID Only
+                    2 = ID - Direction
+                    3 = Direction - ID
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="3"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="DrainageAnnotationCollection">
+        <annotation>
+            <documentation>Collection of Drainage Annotation preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:DrainageAnnotation" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DrainageFlowDirectionArrows">
+        <annotation>
+            <documentation>Contains Drainage Flow Direction Arrows settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="Point">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+        </complexType>
+    </element>
+    <element name="DrainageFlowDirectionArrowsCollection">
+        <annotation>
+            <documentation>Collection of Drainage Flow Direction Arrows preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:DrainageFlowDirectionArrows" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DrainageMoveStructure">
+        <annotation>
+            <documentation>Contains Drainage Move Structure settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="TrackElevation" type="boolean" use="required"/>
+            <attribute name="TrackAngle" type="boolean" use="required"/>
+            <attribute name="TrackOffset" type="boolean" use="required"/>
+            <attribute name="MoveAlongStructure" type="boolean" use="required"/>
+            <attribute name="ConnectToExisting" type="boolean" use="required"/>
+            <attribute name="Hold" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Slope
+                    1 = Invert Elevations
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="DrainageMoveStructureCollection">
+        <annotation>
+            <documentation>Collection of Drainage Move Structure preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:DrainageMoveStructure" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DrainageInjectFlow">
+        <annotation>
+            <documentation>Contains Drainage Inject Flow settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="Text">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="DisplayText" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="DrainageInjectFlowCollection">
+        <annotation>
+            <documentation>Collection of Drainage Inject Flow preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:DrainageInjectFlow" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DrainageUtilityParameters">
+        <annotation>
+            <documentation>Contains Drainage Utility Parameters settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="SourceLevel" type="integer" use="required"/>
+            <attribute name="DestinationLevel" type="integer" use="optional"/>
+            <attribute name="DeltaZ" type="double" use="required"/>
+            <attribute name="DeleteOriginal" type="boolean" use="required"/>
+            <attribute name="DrapeElement" type="boolean" use="required"/>
+            <attribute name="DrapeOption" use="required">
+                <annotation>
+                    <documentation>
+                    0 = All
+                    1 = Vertices
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="OutputFile" type="boolean" use="required"/>
+            <attribute name="UtilityName" use="required">
+                <annotation>
+                    <documentation>
+                    Index of Drainage Utility Symbologies initialized under Drainage>Utilities>View
+                    -1 = uninitialized
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="-1"/>
+                        <maxInclusive value="19"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="UtilityFeature" type="ini:STString31" use="required"/>
+            <attribute name="Shape" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Circle
+                    1 = Rectangle
+                    2 = Triangle
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="Width" type="double" use="required"/>
+            <attribute name="Height" type="double" use="required"/>
+            <attribute name="XScale" type="double" use="required"/>
+            <attribute name="YScale" type="double" use="required"/>
+            <attribute name="StoredElevation" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Top
+                    1 = Center
+                    2 = Bottom
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="DrainageUtilityParametersCollection">
+        <annotation>
+            <documentation>Collection of Drainage Utility Parameters preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:DrainageUtilityParameters" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DrainageUtilitySymbology">
+        <annotation>
+            <documentation>Contains Drainage Utility Symbology settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="Utility1Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility2Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility3Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility4Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility5Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility6Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility7Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility8Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility9Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility10Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility11Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility12Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility13Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility14Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility15Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility16Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility17Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility18Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility19Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Utility20Line">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="Utility1Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility2Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility3Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility4Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility5Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility6Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility7Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility8Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility9Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility10Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility11Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility12Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility13Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility14Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility15Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility16Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility17Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility18Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility19Name" type="ini:STString29" use="required"/>
+            <attribute name="Utility20Name" type="ini:STString29" use="required"/>
+            <attribute name="DisplayOptions" use="required">
+                <annotation>
+                    <documentation>
+                    0 = None
+                    1 = Utility 1 Line
+                    2 = Utility 2 Line
+                    4 = Utility 3 Line
+                    8 = Utility 4 Line
+                    16 = Utility 5 Line
+                    32 = Utility 6 Line
+                    64 = Utility 7 Line
+                    128 = Utility 8 Line
+                    256 = Utility 9 Line
+                    512 = Utility 10 Line
+                    1024 = Utility 11 Line
+                    2048 = Utility 12 Line
+                    4096 = Utility 13 Line
+                    8192 = Utility 14 Line
+                    16384 = Utility 15 Line
+                    32768 = Utility 16 Line
+                    65536 = Utility 17 Line
+                    131072 = Utility 18 Line
+                    262144 = Utility 19 Line
+                    524288 = Utility 20 Line
+                    Values are cummulative
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="unsignedLong">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1048575"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="UtilityPlanarize" type="boolean" use="optional"/>
+            <attribute name="UtilityFixedElevation" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="DrainageUtilitySymbologyCollection">
+        <annotation>
+            <documentation>Collection of Drainage Utility Symbology preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:DrainageUtilitySymbology" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="AnnotateDrainageProfile">
+        <annotation>
+            <documentation>Contains Annotate Drainage Profile settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="PipeAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="ChannelAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="CulvertAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="ManholeAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="PumpAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="InletAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="AreaAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="ZoneAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="UtilityAnnotation" type="ini:CTAnnotationPlacement" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="PipeText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ChannelText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="CulvertText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ManholeText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="InletText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PumpText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="UtilityText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="DisplayOptions" use="required">
+                <annotation>
+                    <documentation>
+                    This is going to have options eventually
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="unsignedLong">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="PositionInsideStructure" type="boolean" use="required"/>
+            <attribute name="DisplayAllInvertsAtStructures" type="boolean" use="optional"/>
+            <attribute name="DisplayInvertLabels" type="boolean" use="optional"/>
+            <attribute name="InvertLabelLocation" use="optional">
+                <annotation>
+                    <documentation>
+                    0 = Before Prefix
+                    1 = After Suffix
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="InvertLabelType" use="optional">
+                <annotation>
+                    <documentation>
+                    0 = Direction Only
+                    1 = ID Only
+                    2 = ID - Direction
+                    3 = Direction - ID
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="3"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="AnnotateAllProfiles" type="integer" use="required"/>
+            <attribute name="OffsetAnnotation" type="boolean" use="required"/>
+            <attribute name="OffsetHeight" type="double" use="required"/>
+            <attribute name="OffsetOffset" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="AnnotateDrainageProfileCollection">
+        <annotation>
+            <documentation>Collection of Annotate Drainage Profile preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:AnnotateDrainageProfile" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DrainageMenus">
+        <annotation>
+            <documentation>Contains Drainage Menus settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="MenuOption" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Storm
+                    1 = Sanitary
+                    2 = Combined
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="MicroDrainage" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="DrainageMenusCollection">
+        <annotation>
+            <documentation>Collection of Drainage Menus preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:DrainageMenus" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DrainageOptions">
+        <annotation>
+            <documentation>Contains Drainage Options settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="PipeText" type="ini:CTAnnotationPlacement"/>
+                <element name="ChannelText" type="ini:CTAnnotationPlacement"/>
+                <element name="CulvertText" type="ini:CTAnnotationPlacement"/>
+                <element name="ManholeText" type="ini:CTAnnotationPlacement"/>
+                <element name="InletText" type="ini:CTAnnotationPlacement"/>
+                <element name="PumpText" type="ini:CTAnnotationPlacement"/>
+                <element name="AreaText" type="ini:CTAnnotationPlacement"/>
+                <element name="ZoneText" type="ini:CTAnnotationPlacement"/>
+                <element name="UtilityText" type="ini:CTAnnotationPlacement"/>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="StructuresFile" type="ini:STString255" use="required"/>
+            <attribute name="AreaUnits" use="required">
+                <annotation>
+                    <documentation>
+                    English Values:
+                    0 = ac
+                    1 = ft2
+                    Metric Values:
+                    0 = ha
+                    1 = m2
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="DischargeUnits" use="required">
+                <annotation>
+                    <documentation>
+                    English Values:
+                    0 = cfs
+                    1 = gal/min
+                    2 = mgd
+                    Metric Values:
+                    0 = m3/s
+                    1 = L/s
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="Status" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Fixed
+                    1 = Resize
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+			<attribute name="Planarize" type="boolean" use="optional"/>
+			<attribute name="PlanarizeElevation" type="double" use="optional"/>
+            <attribute name="PondRoutingTimeUnits" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Hours
+                    1 = Minutes
+                    2 = Seconds
+                    3 = Days
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="3"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="PipeCounter" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="999999"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ChannelCounter" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="999999"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="CulvertCounter" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="999999"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ManholeCounter" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="999999"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="InletCounter" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="999999"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="PumpCounter" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="999999"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="AreaCounter" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="999999"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ZoneCounter" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="999999"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="UtilityCounter" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="999999"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="NumberOnly" type="integer" use="required"/>
+            <attribute name="StartingNumber" type="integer" use="required"/>
+            <attribute name="Increment" type="integer" use="required"/>
+            <attribute name="ResetNumber" type="integer" use="required"/>
+            <attribute name="ResetToPreferences" type="boolean" use="required"/>
+            <attribute name="PipeCenterStyle" type="ini:STString31" use="optional"/>
+            <attribute name="PipeInsideStyle" type="ini:STString31" use="optional"/>
+            <attribute name="PipeOutsideStyle" type="ini:STString31" use="optional"/>
+            <attribute name="ChannelCenterStyle" type="ini:STString31" use="optional"/>
+            <attribute name="ChannelBottomStyle" type="ini:STString31" use="optional"/>
+            <attribute name="CulvertCenterStyle" type="ini:STString31" use="optional"/>
+            <attribute name="CulvertInsideStyle" type="ini:STString31" use="optional"/>
+            <attribute name="CulvertOutsideStyle" type="ini:STString31" use="optional"/>
+            <attribute name="ManholePointStyle" type="ini:STString31" use="optional"/>
+            <attribute name="ManholeInsideStyle" type="ini:STString31" use="optional"/>
+            <attribute name="ManholeOutsideStyle" type="ini:STString31" use="optional"/>
+            <attribute name="PumpPointStyle" type="ini:STString31" use="optional"/>
+            <attribute name="PumpInsideStyle" type="ini:STString31" use="optional"/>
+            <attribute name="PumpOutsideStyle" type="ini:STString31" use="optional"/>
+            <attribute name="InletPointStyle" type="ini:STString31" use="optional"/>
+            <attribute name="InletVaultInsideStyle" type="ini:STString31" use="optional"/>
+            <attribute name="InletVaultOutsideStyle" type="ini:STString31" use="optional"/>
+            <attribute name="AreaBoundaryStyle" type="ini:STString31" use="optional"/>
+            <attribute name="ZoneBoundaryStyle" type="ini:STString31" use="optional"/>
+            <attribute name="PipeShape" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Circluar
+                    1 = Box
+                    2 = Elliptical
+                    3 = Pipe-Arch
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="3"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="PipeMaterial" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="PipeWidth" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="PipeHeight" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="PipeThickness" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="PipeMinimumSlope" type="double" use="required"/>
+            <attribute name="PipeMaximumSlope" type="double" use="required"/>
+            <attribute name="PipeMinimumCover" type="double" use="required"/>
+            <attribute name="PipeMaximumCover" type="double" use="required"/>
+            <attribute name="ChannelShape" use="required">
+                <annotation>
+                    <documentation>
+                    0 = V-Shaped
+                    1 = Trapezoidal
+                    2 = Rectangular
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ChannelMaterial" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ChannelBottomWidth" type="double" use="required"/>
+            <attribute name="ChannelMinimumSlope" type="double" use="required"/>
+            <attribute name="ChannelMaximumSlope" type="double" use="required"/>
+            <attribute name="ChannelLeftSlope" type="double" use="required"/>
+            <attribute name="ChannelRightSlope" type="double" use="required"/>
+            <attribute name="CulvertShape" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Circular
+                    1 = Box
+                    2 = Elliptical
+                    3 = Pipe-Arch
+                    </documentation>
+                </annotation>
+            </attribute>
+            <attribute name="CulvertMaterial" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="CulvertWidth" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="CulvertHeight" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="CulvertThickness" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="CulvertEntranceEdge" type="ini:STString29" use="required"/>
+            <attribute name="CulvertExitEdge" type="ini:STString29" use="required"/>
+            <attribute name="CulvertTailwater" type="double" use="required"/>
+            <attribute name="CulvertMinimumSlope" type="double" use="required"/>
+            <attribute name="CulvertMaximumSlope" type="double" use="required"/>
+            <attribute name="ManholeShape" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Circular
+                    1 = Box
+                    2 = Cone
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ManholeMaterial" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ManholeLength" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="ManholeWidth" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="ManholeThickness" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="ManholeConnectionPoint" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Center
+                    1 = Inside
+                    2 = Outside
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ManholeDropAcross" type="double" use="required"/>
+            <attribute name="ManholeStandHeight" type="double" use="required"/>
+            <attribute name="ManholeMaximumDepth" type="double" use="required"/>
+            <attribute name="ManholeDepthBelowInvert" type="double" use="required"/>
+            <attribute name="ManholeTopHeight" type="double" use="required"/>
+            <attribute name="ManholeOrientation" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Perpendicular to Alignment
+                    1 = Parallel to Alignment
+                    2 = Angle
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ManholeAngle" type="ini:STAngle" use="required"/>
+            <attribute name="PumpType" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="PumpHead" type="double" use="required"/>
+            <attribute name="PumpCapacity" type="double" use="required"/>
+            <attribute name="PumpEfficiency" type="double" use="required"/>
+            <attribute name="PumpDischarge" type="double" use="required"/>
+            <attribute name="PumpDischargeDiameter" type="double" use="required"/>
+            <attribute name="PumpSpeed" type="double" use="required"/>
+            <attribute name="PumpHorsepower" type="double" use="required"/>
+            <attribute name="PumpImpellerDiameter" type="double" use="required"/>
+            <attribute name="PumpManufacturer" type="ini:STString29" use="required"/>
+            <attribute name="InletType" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Curb Opening
+                    1 = Grate
+                    2 = Combination
+                    3 = Median Drop
+                    4 = Catchpit
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="4"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="InletClass" use="required">
+                <simpleType>
+                    <restriction base="string">
+                        <maxLength value="19"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="InletLength" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="InletWidth" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="InletEffectiveLength" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="InletEffectiveWidth" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="VaultShape" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Circular
+                    1 = Box
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="PlacementOffset" type="double" use="required"/>
+            <attribute name="InletLocation" use="required">
+                <annotation>
+                    <documentation>
+                    0 = On-Grade
+                    1 = Sump
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="InletConnectionPoint" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Center
+                    1 = Inside
+                    2 = Outside
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="InletDepression" type="double" use="required"/>
+            <attribute name="InletDropAcross" type="double" use="required"/>
+            <attribute name="InletMaximumDepth" type="double" use="required"/>
+            <attribute name="InletStandHeight" type="double" use="required"/>
+            <attribute name="InletDepthBelowInvert" type="double" use="required"/>
+            <attribute name="InletGrateCover" type="double" use="required"/>
+            <attribute name="InletPerimeterFactor" type="ini:STNonnegativeDouble" use="required"/>
+            <attribute name="InletClogging" type="double" use="required"/>
+            <attribute name="InletIntercept" type="double" use="required"/>
+            <attribute name="InletTopHeight" type="double" use="required"/>
+            <attribute name="InletOrientation" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Perpendicular to Alignment
+                    1 = Parallel to Alignment
+                    2 = Angle
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="InletAngle" type="ini:STAngle" use="required"/>
+            <attribute name="GutterType" use="required">
+                <annotation>
+                    <documentation>
+                    3 = Uniform
+                    4 = Shallow Swale
+                    5 = Composite
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="3"/>
+                        <maxInclusive value="5"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="GutterWidth" type="double" use="required"/>
+            <attribute name="GutterSideSlope" type="double" use="required"/>
+            <attribute name="GutterLongitudinalSlopeFromDTM" type="boolean" use="required"/>
+            <attribute name="GutterLongitudinalSlope" type="double" use="required"/>
+            <attribute name="GutterTransverseSlopeFromDTM" type="boolean" use="required"/>
+            <attribute name="GutterTransverseSlope" type="double" use="required"/>
+            <attribute name="GutterRoughness" type="double" use="required"/>
+            <attribute name="GutterMaximumSpread" type="double" use="required"/>
+            <attribute name="AreaRainfallMethod" use="required">
+                <annotation>
+                    <documentation>
+                    0 = IDF File
+                    1 = Equation i=a/(t+b)^c
+                    2 = RTC File
+                    Number 2 is for Metric only
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="AreaRainfallFrequency" type="integer" use="required"/>
+            <attribute name="AreaRainfallEquationParameterA" type="double" use="required"/>
+            <attribute name="AreaRainfallEquationParameterB" type="double" use="required"/>
+            <attribute name="AreaRainfallEquationParameterC" type="double" use="required"/>
+            <attribute name="AreaTimeOfConcentrationMethod" use="required">
+                <annotation>
+                    <documentation>
+                    0 = FAA
+                    1 = Kirpich
+                    2 = Overland Flow
+                    3 = LADOT
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="3"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="AreaFAACoefficient" type="double" use="required"/>
+            <attribute name="AreaKirpichCoefficent" type="double" use="required"/>
+            <attribute name="AreaKinematicPartial" type="double" use="required"/>
+            <attribute name="AreaShallowPartial" type="double" use="required"/>
+            <attribute name="AreaKinematicRoughness" type="double" use="required"/>
+            <attribute name="AreaKinematicTolerance" type="double" use="required"/>
+            <attribute name="AreaSheetFlowRoughness" type="double" use="required"/>
+            <attribute name="AreaSheetFlowP2" type="double" use="required"/>
+            <attribute name="AreaShallowFlowK" type="double" use="required"/>
+            <attribute name="AreaOpenFlowVelocity" type="double" use="required"/>
+            <attribute name="AreaRunoffCoefficient" type="double" use="required"/>
+            <attribute name="ZonePeakingFactorMethod" use="required">
+                <annotation>
+                    <documentation>
+                    0 = User Value
+                    1 = 1 + (14 / ( 4 + (pop) ^ 0.5))
+                    2 = a (pop) ^ b
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ZonePeakingFactorUserValue" type="double" use="required"/>
+            <attribute name="ZonePeakingFactorCoefficientA" type="double" use="required"/>
+            <attribute name="ZonePeakingFactorCoefficientB" type="double" use="required"/>
+            <attribute name="ZoneInfiltrationMethod" use="required">
+                <annotation>
+                    <documentation>
+                    English Values:
+                    0 = gal / ( day * in-mi )
+                    1 = gal / ( ac * day )
+                    2 = Percent of Flow
+                    Metric Values:
+                    0 = L/(ha * day)
+                    1 = L/(day * mm-km)
+                    2 = Percent of Flow
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ZoneInfiltrationLinear" type="double" use="required"/>
+            <attribute name="ZoneInfiltrationArea" type="double" use="required"/>
+            <attribute name="ZoneInfiltrationPercent" type="double" use="required"/>
+            <attribute name="DesignEquation" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Manning
+                    1 = Darcy/Colebrook
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="BenchType" use="optional">
+                <annotation>
+                    <documentation>
+                    0 = Flat or Depressed Floor
+                    1 = Half Bench
+                    2 = Full Bench
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="Viscosity" type="double" use="required"/>
+            <attribute name="PipeMinimumHeight" type="double" use="required"/>
+            <attribute name="PipeMaximumHeight" type="double" use="required"/>
+            <attribute name="PipeMinimumVelocity" type="double" use="required"/>
+            <attribute name="PipeMaximumVelocity" type="double" use="required"/>
+            <attribute name="PipeHeight1" type="double" use="required"/>
+            <attribute name="PipeRatio1" type="double" use="required"/>
+            <attribute name="PipeHeight2" type="double" use="required"/>
+            <attribute name="PipeRatio2" type="double" use="required"/>
+            <attribute name="PipeHeight3" type="double" use="required"/>
+            <attribute name="PipeRatio3" type="double" use="required"/>
+            <attribute name="ChannelMinimumVelocity" type="double" use="required"/>
+            <attribute name="ChannelMaximumVelocity" type="double" use="required"/>
+            <attribute name="CulvertMaximumBarrels" type="integer" use="required"/>
+            <attribute name="CulvertMaximumHeadwater" type="double" use="required"/>
+            <attribute name="CulvertMaximumOutputVelocity" type="double" use="required"/>
+            <attribute name="CulvertInletControlMethod" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Entrance Loss Equations
+                    1 = Regression Equation
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="InletCurbHeight" type="double" use="required"/>
+            <attribute name="InletCurbOpeningHeight" type="double" use="required"/>
+            <attribute name="InletCurbLength" type="double" use="required"/>
+            <attribute name="InletGrateOrificeDepth" type="double" use="required"/>
+            <attribute name="CulvertMinimumVelocity" type="double" use="required"/>
+            <attribute name="CulvertMaximumVelocity" type="double" use="required"/>
+            <attribute name="ManholeChamberDepth" type="double" use="required"/>
+            <attribute name="InletVaultWidth" type="double" use="required"/>
+            <attribute name="InletVaultLength" type="double" use="required"/>
+            <attribute name="InletThickness" type="double" use="required"/>
+            <attribute name="InletSumpHeight" type="double" use="required"/>
+            <attribute name="InletMaxOpening" type="double" use="required"/>
+            <attribute name="AreaUseTimeLagEntry" type="integer" use="required"/>
+            <attribute name="AreaTimeLagEntry" type="double" use="required"/>
+            <attribute name="AreaUseDurationEntry" type="integer" use="required"/>
+            <attribute name="AreaDurationEntry" type="double" use="required"/>
+            <attribute name="AreaUseEmpiricalConstant" type="integer" use="required"/>
+            <attribute name="AreaEmpiricalConstant" type="double" use="required"/>
+            <attribute name="AreaCurveNumber" type="double" use="required"/>
+            <attribute name="AreaRainfall" type="double" use="required"/>
+            <attribute name="RainfallRainfallIntensity" type="double" use="required"/>
+            <attribute name="RainfallReturnPeriod" type="integer" use="required"/>
+            <attribute name="RainfallRainfallDuration" type="double" use="required"/>
+            <attribute name="RainfallRainfallMethod" type="integer" use="required"/>
+        </complexType>
+    </element>
+    <element name="DrainageOptionsCollection">
+        <annotation>
+            <documentation>Collection of Drainage Options preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:DrainageOptions" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DrainageQueries">
+        <annotation>
+            <documentation>Contains Drainage Queries settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="LibraryFileName" type="ini:STString255" use="required"/>
+            <attribute name="StructureType" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="QueryFormat" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="DrainageQueriesCollection">
+        <annotation>
+            <documentation>Collection of Drainage Queries preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:DrainageQueries" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DrainageReports">
+        <annotation>
+            <documentation>Contains Drainage Reports settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="LibraryFileName" type="ini:STString255" use="required"/>
+            <attribute name="StructuresForReport" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Outfall
+                    1 = Between
+                    2 = Structure Type
+                    </documentation>
+                </annotation>
+            </attribute>
+            <attribute name="StructureType" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="PipeFormat" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ChannelFormat" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="CulvertFormat" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ManholeFormat" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="PumpFormat" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="InletFormat" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="AreaFormat" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ZoneFormat" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="UtilityFormat" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="DisplayAllInvertsAtStructures" type="boolean" use="optional"/>
+            <attribute name="DisplayInvertLabels" type="boolean" use="optional"/>
+            <attribute name="InvertLabelLocation" use="optional">
+                <annotation>
+                    <documentation>
+                    0 = Before Prefix
+                    1 = After Suffix
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+			<attribute name="InvertLabelType" use="optional">
+				<annotation>
+					<documentation>
+						0 = Direction Only
+						1 = ID Only
+						2 = ID - Direction
+						3 = Direction - ID
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="3"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+        </complexType>
+    </element>
+    <element name="DrainageReportsCollection">
+        <annotation>
+            <documentation>Collection of Drainage Reports preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:DrainageReports" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CircularOrifice">
+        <annotation>
+            <documentation>Contains Pond Routing settings for Circular Orifice</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="Diameter" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="WeirCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="OrificeCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="CircularOrificeCollection">
+        <annotation>
+            <documentation>Collection of Pond Routing Circular Orifice preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:CircularOrifice" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="RectangularOrifice">
+        <annotation>
+            <documentation>Contains Pond Routing settings for Rectangular Orifice</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="Width" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="Height" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="WeirCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="OrificeCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="RectangularOrificeCollection">
+        <annotation>
+            <documentation>Collection of Pond Routing Rectangular Orifice preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:RectangularOrifice" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CircularStandpipe">
+        <annotation>
+            <documentation>Contains Pond Routing settings for Circular Standpipe</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="Diameter" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="WeirCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="OrificeCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="CircularStandpipeCollection">
+        <annotation>
+            <documentation>Collection of Pond Routing Circular Standpipe preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:CircularStandpipe" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="RectangularStandpipe">
+        <annotation>
+            <documentation>Contains Pond Routing settings for Rectangular Standpipe</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="Length" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="Width" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="WeirCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="OrificeCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="RectangularStandpipeCollection">
+        <annotation>
+            <documentation>Collection of Pond Routing Rectangular Standpipe preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:RectangularStandpipe" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="BroadCrestedWeir">
+        <annotation>
+            <documentation>Contains Pond Routing settings for Broad CrestedWeir</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="Length" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="UseWeirCoefficient" use="required">
+                <annotation>
+                    <documentation>
+                    4 = Single Value
+                    5 = From Table
+                </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="4"/>
+                        <maxInclusive value="5"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="SingleValue" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="FromTable" type="ini:STString255" use="required"/>
+        </complexType>
+    </element>
+    <element name="BroadCrestedWeirCollection">
+        <annotation>
+            <documentation>Collection of Pond Routing Broad Crested Weir preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:BroadCrestedWeir" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SharpCrestedWeir">
+        <annotation>
+            <documentation>Contains Pond Routing settings for Sharp Crested Weir</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="Length" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="WeirCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="SharpCrestedWeirCollection">
+        <annotation>
+            <documentation>Collection of Pond Routing Sharp Crested Weir preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:SharpCrestedWeir" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="VNotchedWeir">
+        <annotation>
+            <documentation>Contains Pond Routing settings for V-Notched Weir</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="NotchHeight" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="Coefficient" use="required">
+                <annotation>
+                    <documentation>
+                        1 = Weir
+                        2 = Discharge
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="WeirCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="DischargeCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="VNotchedWeirCollection">
+        <annotation>
+            <documentation>Collection of Pond Routing V-Notched Weir preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:VNotchedWeir" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="RectangularWeir">
+        <annotation>
+            <documentation>Contains Pond Routing settings for Rectangular Weir</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="Length" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="NotchHeight" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="WeirCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="RectangularWeirCollection">
+        <annotation>
+            <documentation>Collection of Pond Routing Rectangular Weir preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:RectangularWeir" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="TrapezoidalWeir">
+        <annotation>
+            <documentation>Contains Pond Routing settings for Trapezoidal Weir</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="BottomLength" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="NotchHeight" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="RectangularCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="Coefficient" use="required">
+                <annotation>
+                    <documentation>
+                        2 = Discharge
+                        3 = Triangular
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="2"/>
+                        <maxInclusive value="3"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="DischargeCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="TriangularCoefficient" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.00001"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="Angle" type="ini:STAngle" use="required"/>
+        </complexType>
+    </element>
+    <element name="TrapezoidalWeirCollection">
+        <annotation>
+            <documentation>Collection of Pond Routing Trapezoidal Weir preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:TrapezoidalWeir" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

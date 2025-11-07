@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StructuralToolSettings>
+  <CorbelsTool>
+    <!-- For UnitSystem="Metric" values are in meters-->
+    <Defaults UnitSystem="Metric" Thickness="0.45" Width="0.3" D1="0.2" D2="0.9" />
+    <!-- For UnitSystem="English" values are in feet -->
+    <Defaults UnitSystem="English" Thickness="1:6" Width="1:0" D1="0:9" D2="3:0" />
+  </CorbelsTool>
+</StructuralToolSettings>

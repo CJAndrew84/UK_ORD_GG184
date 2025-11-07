@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<SFNSettings Titles="BS 1192 Naming Convention">
+	<Filename ShowDesc="true">
+		<Control Label="Project" Order="1" MinChars="2" MaxChars="6" Required="" CacheValue="true">
+			<Desc>A single common project identifier. The code for the project and any sub-projects should be from 2-6 characters. (Required)</Desc>
+		</Control>
+<!-- <Control Label="Project" Order="1" MinChars="2" MaxChars="6">
+			<Condition Type="Form" ControlVariable="BB_NAMING_STANDARDS_PROJECT_ID" />
+			<Desc>A single common project identifier. The code for the project and any sub-projects should be from 2-6 characters. (Required)</Desc>
+		</Control> -->
+		<Control Label="Originator" Order="2" Prefix="-" MinChars="3" MaxChars="6" Required="" CacheValue="true">
+			<Desc>A unique identifier for each organization. The code for each originating organization should be from 3-6 characters. (Required)</Desc>
+		</Control>
+		<Control Label="Volume or System" Order="3" Prefix="-" MinChars="1" MaxChars="2" Required="">
+			<Desc>Volume or System should be defined so as to identify a logical portion of work intended to be delivered by a single team. (Required, 1-2 characters)</Desc>
+		</Control>
+		<Control Label="Levels and Locations" Order="4" Prefix="-" MaxChars="2" Required="">
+			<Desc>A single building level (floor) or location. The code for each Level and Location should be 2 characters. (Require, 2 characters)</Desc>
+			<Attr>ZZ</Attr>  <!-- Multiple levels -->
+			<Attr>XX</Attr>  <!-- No level -->
+			<Attr>GF</Attr>  <!-- Ground floor -->
+			<Attr>00</Attr>  <!-- Base level -->
+			<Attr>01</Attr>  <!-- Level one -->
+			<Attr>02</Attr>  <!-- Level two -->
+			<Attr>03</Attr>  <!-- Level three -->
+			<Attr>04</Attr>  <!-- Level four -->
+			<Attr>05</Attr>  <!-- Level five -->
+			<Attr>06</Attr>  <!-- Level six -->
+			<Attr>07</Attr>  <!-- Level seven -->
+			<Attr>08</Attr>  <!-- Level eight -->
+			<Attr>09</Attr>  <!-- Level nine -->
+			<Attr>10</Attr>  <!-- Level ten -->
+			<Attr>M1</Attr>  <!-- Mezzanine one -->
+			<Attr>M2</Attr>  <!-- Mezzanine two -->
+			<Attr>B1</Attr>  <!-- Basement one -->
+			<Attr>B2</Attr>  <!-- Basement two -->
+		</Control>
+		<Control Label="Type" Order="5" Prefix="-" MaxChars="2" Required="" CacheValue="true">
+			<Desc>To aid recognition, every container should contain a single type of information. Standard codes for file containers holding models and drawings. (Required, 2 characters)</Desc>
+			<Attr>AF</Attr>  <!-- Animation File (of a model)  -->
+			<Attr>CM</Attr>  <!-- Combined model (federated mutlidiscipline model) -->
+			<Attr>CR</Attr>  <!-- Specific for the clash process -->
+			<Attr>DR</Attr>  <!-- 2D drawing -->
+			<Attr>M2</Attr>  <!-- 2D model file -->
+			<Attr>M3</Attr>  <!-- 3D model file -->
+			<Attr>MR</Attr>  <!-- Model rendition file (for example thermal analysis) -->
+			<Attr>VS</Attr>  <!-- Visualization of a model -->
+		</Control>
+		<Control Label="Role" Order="6" Prefix="-" MaxChars="1" Required="" CacheValue="true">
+			<Desc>Each organization should be allocated to one or more roles within the Project. The standard codes for file role. (Required, 1 character)</Desc>
+			<Attr Value="A" >A - Architecture</Attr>			
+			<!-- <Attr Value="B" >B - Building Surveyor</Attr> -->
+			<Attr Value="C" >C - Civil Engineer</Attr>
+			<!-- <Attr Value="D" >D - Drainage, Highways Engineer</Attr> -->
+			<Attr Value="E" >E - Electrical Engineer</Attr>
+			<!-- <Attr Value="F" >F - Facilities Manager</Attr> -->
+			<!-- <Attr Value="G" >G - D Geographical and Land Surveyor</Attr> -->
+			<Attr Value="H" >H - Heating and Ventilation Designer</Attr>
+			<!-- <Attr Value="I" >I - Interior Designer</Attr> -->
+			<!-- <Attr Value="K" >K - Client</Attr> -->
+			<!-- <Attr Value="L" >L - Landscape Architect</Attr> -->
+			<Attr Value="M" >M - Mechanical Engineer</Attr>
+			<!-- <Attr Value="P" >P - Public Health Engineer</Attr> -->
+			<!-- <Attr Value="Q" >Q - Quantity Surveyor</Attr> -->
+			<Attr Value="S" >S - Structural Engineer</Attr>
+			<!-- <Attr Value="T" >T - Town and Country PlanneR</Attr> -->
+			<Attr Value="W" >W - Contractor</Attr>
+			<!-- <Attr Value="Y" >Y - Specialist DesigneR</Attr> -->
+			<Attr Value="Z" >Z - General (non-disciplinary)</Attr>
+		</Control>
+		<Control Label="Classification" Order="7" Prefix="-">
+			<Desc>Every container should be classified by a code taken from the chosen reference dictionary, to accurately describe the construction asset represented. (Optional, 1-2 characters)</Desc>
+		</Control>
+		<Control Label="Number" Order="8" Prefix="-" MaxChars="4" Required="">
+			<Desc>A sequential number should be used when a container is one of a series not distinguished by any other of the fields defined in Clauses 6 to 12. (Required, Max 4 characters)</Desc>
+		</Control>
+		<Control Label="Suitability" Order="9" Prefix="-" MinChars="1" MaxChars="2">
+			<Desc>Every container should have a field indicating the approved &quot;suitability&quot; for use of the contained information. (Optional, 2 characters)</Desc>
+			<Attr>S0</Attr>  <!-- Inital Status or WIP  -->
+			<Attr>S1</Attr>  <!-- Suitable for Co-ordination  -->
+			<Attr>S2</Attr>  <!-- Suitable for Information  -->
+			<Attr>S3</Attr>  <!-- Suitable for Review and Comment  -->
+			<Attr>S4</Attr>  <!-- Suitable for Stage Approval  -->
+			<Attr>S6</Attr>  <!-- Suitable for PIM Authorization  -->
+			<Attr>S7</Attr>  <!-- Suitable for AIM Authorization -->
+			<Attr Value="" >++</Attr>   <!-- +++++++++++++++ -->
+			<Attr>D1</Attr>  <!-- Suitable for Costing -->
+			<Attr>D2</Attr>  <!-- Suitable for Tender  -->
+			<Attr>D3</Attr>  <!-- Suitable for Contractor Design  -->
+			<Attr>D3</Attr>  <!-- Suitable for Manufacture / Procurement  -->
+			<Attr Value="" >++</Attr>   <!-- +++++++++++++++ -->
+			<Attr>A1</Attr>  <!-- Approved and Accepted as Stage Complete  -->
+			<Attr Value="" >++</Attr>   <!-- +++++++++++++++ -->
+			<Attr>B1</Attr>  <!-- Partially Signed OFF in Abeyance until Resubmitted  -->
+		</Control>
+		<Control Label="Revision" Order="10" Prefix="-" MaxChars="4">
+			<Desc>Every container should carry a &quot;revision&quot; field, indicating the issue sequence of the contained information. (Optional, Max 4 characters)</Desc>
+		</Control>
+	</Filename>
+	<Model>
+		<Control Label="">
+		</Control>
+	</Model>
+	<ModelDesign>
+		<Control Label="">
+		</Control>
+	</ModelDesign>
+	<ModelDrawing>
+		<Control Label="">
+		</Control>
+	</ModelDrawing>
+	<ModelSheet>
+		<Control Label="">
+		</Control>
+	</ModelSheet>
+	<ModelNamedView>
+		<Control Label="">
+		</Control>
+	</ModelNamedView>
+</SFNSettings>

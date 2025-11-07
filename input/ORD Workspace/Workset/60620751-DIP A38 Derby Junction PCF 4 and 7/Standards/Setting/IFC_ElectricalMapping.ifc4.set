@@ -1,0 +1,99 @@
+# ================================================================================					
+# OpenBuildings Designer DataGroup Mapping of Electrical Types, Items and Properties
+# for IFC4 Export (dataset level)		
+#			
+# $RCSfile: IFC_ElectricalMapping.ifc4.set,v $			
+# $Revision: 1.5 $			
+#			
+# $Copyright: (c) 2019 Bentley Systems, Incorporated. All rights reserved. $			
+# ================================================================================
+
+TYPE CableCarrierFitting EXPORT_AS IfcCableCarrierFitting.NOTDEFINED
+
+TYPE_CLASS_MEMBERS
+	PredefinedType = EVALUATE ToUpperCase (DG ("BBES_Raceway/@FittingType"))
+END_CLASS_MEMBERS
+
+TYPE CableCarrierSegment EXPORT_AS IfcCableCarrierFitting.NOTDEFINED
+  PROPERTY_SET Pset_CableCarrierSegmentTypeCableTraySegment
+    "NominalHeight" : "IfcPositiveLengthMeasure" = BBES_Raceway/@NominalHeight
+    "NominalLength" : "IfcPositiveLengthMeasure" = BBES_Raceway/@NominalLength
+    "NominalWidth" : "IfcPositiveLengthMeasure" = BBES_Raceway/@NominalWidth
+  END_PROPERTY_SET
+
+TYPE CableSegment EXPORT_AS IfcCableSegment.CABLESEGMENT
+
+TYPE ElectricAppliance EXPORT_AS IfcElectricAppliance.NOTDEFINED
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE ElectricDistributionPoint EXPORT_AS IfcJunctionBox.NOTDEFINED
+
+TYPE ElectricFlowStorageDevice EXPORT_AS IfcElectricFlowStorageDevice.NOTDEFINED
+
+TYPE ElectricGenerator EXPORT_AS IfcElectricGenerator.NOTDEFINED
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE ElectricHeater EXPORT_AS IfcSpaceHeater
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+
+TYPE ElectricMotor EXPORT_AS IfcElectricMotor.NOTDEFINED
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+    "PhaseAngle" : "IfcPositivePlaneAngleMeasure" = BBES_Panels/@Cos_Phi
+  END_PROPERTY_SET
+
+TYPE ElectricTimeControl EXPORT_AS IfcElectricTimeControl.NOTDEFINED
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE ElectricalCircuit EXPORT_AS IfcCableSegment.NOTDEFINED
+
+TYPE JunctionBox EXPORT_AS IfcJunctionBox.NOTDEFINED
+
+TYPE Lamp EXPORT_AS IfcLamp.NOTDEFINED
+
+TYPE LightFixture EXPORT_AS IfcLightFixture.NOTDEFINED
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE MotorConnection EXPORT_AS IfcPipeFitting.CONNECTOR
+
+TYPE Outlet EXPORT_AS IfcOutlet.NOTDEFINED
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE ProtectiveDevice EXPORT_AS IfcProtectiveDevice.NOTDEFINED
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE SwitchingDevice EXPORT_AS IfcSwitchingDevice.NOTDEFINED
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE Transformer EXPORT_AS IfcTransformer.NOTDEFINED
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE *
+  PROPERTY_SET Pset_ElectricalDeviceCommon IF HasDG ("Pset_ElectricalDeviceCommon/@NominalCurrent")
+    RatedCurrent = Pset_ElectricalDeviceCommon/@NominalCurrent
+    RatedVoltage = EVALUATE DG("?BBES_Equipment_Schedule/@Voltage", "Pset_ElectricalDeviceCommon/@NominalVoltage")
+  END_PROPERTY_SET
+  PROPERTY_SET Pset_ElectricDistributionBoardOccurrence IF HasDG ("Pset_ElectricalDistributionPointCommon/@IsMain")
+    IsMail = Pset_ElectricalDistributionPointCommon/@IsMain
+  END_PROPERTY_SET
+
+  

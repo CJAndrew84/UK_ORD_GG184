@@ -1,0 +1,49 @@
+############################################################
+#  Lines beginning with # are comments
+#
+#  This is a csv file which contains the data that
+#  needs to be overridden when importing DG information
+#  using IFC PropertySets
+#
+#  The First  entry is PropertySetName
+#  The Second entry is PropertyName
+#  The Third  entry is OverrrideWith IfcObject.Value
+#  eg.  ArchDoor,Width,IfcDoor.OverallWidth
+#
+#  it means that that the value for the property "Width" 
+#  in DataGroup "ArchDoor" has to be replaced with 
+#  the OverallWidth of the IfcDoor from the ifc file
+#
+#  Valid Entries for Third Entry are
+#       IfcElement.Description
+#       IfcElement.Name
+#       IfcElement.Tag
+#       IfcElement.ObjectType
+#       IfcSpatialStructureElement.CompositionType
+#       IfcSpatialStructureElement.LongName
+#       IfcBuildingStorey.Elevation
+#       IfcBuilding.ElevationOfRefHeight           
+#       IfcBuilding.ElevationOfTerrain
+#       IfcSpace.ElevationWithFlooring
+#       IfcSpace.InteriorOrExteriorSpace
+#       IfcProject.LongName    
+#       IfcProject.Phase
+#       IfcStairFlight.NumberOfRiser
+#       IfcStairFlight.NumberOfTreads
+#       IfcDoor.OverallHeight
+#       IfcDoor.OverallWidth
+#       IfcWindow.OverallHeight
+#       IfcWindow.OverallWidth
+#       IfcRamp.ShapeType
+#       IfcRoof.ShapeType
+#       IfcStair.ShapeType
+#
+#       Support is planned for more items in near future
+#############################################################
+ArchDoor,Parametric File,IfcDoor.Description
+Door,notes,IfcDoor.Description
+ArchFLoor,Description,IfcSlab.Description
+ArchDoor,Width,IfcDoor.OverallWidth
+FLoor,Owner,IfcSlab.Description
+ArchSpace,Label,IfcSpace.LongName
+ArchSpace,Ceiling Height,IFCSpace.Height

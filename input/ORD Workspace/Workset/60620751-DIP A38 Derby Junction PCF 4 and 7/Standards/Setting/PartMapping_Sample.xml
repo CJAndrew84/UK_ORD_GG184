@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!-- This is a sample Part Mapping file. This file was introduced with the addition
+     of the Forward and Reflective View hatching capability. Since there is no field in 
+     the Part schema today to allow a user to identify a hatch pattern for Forward and 
+     Reflected views. This capability is accomplished with the part mapping file. This 
+     contains a series of records. Each record has a Section Part Element the contains
+     a ForwardPart Element and a ReflectedPart Element. Each of the elements has an 
+     attribute family="..." and part="...". These attributes are Family and Part names that
+     exist in the current dataset. Entities that are extracted into the Forward view and 
+     have a part assigned to them that matches the SectionPart are created using the 
+     properties of the FowardPart entry. This includes symbology and hatching attributes. 
+     The same is true for elements in the Reflected view. Fill attributes do not apply 
+     to the foward or reflected view. -->
+<TriForma>
+	<SectionParts>
+		<Version major="1" minor="1"/>
+		<SectionPart family="G2" part="G25 Walls (Block)">
+			<ForwardPart family="MappingParts" part="BlockworkM"/>
+			<ReflectedPart family="MappingParts" part="BlockworkM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Block) 75mm">
+			<ForwardPart family="MappingParts" part="BlockworkM"/>
+			<ReflectedPart family="MappingParts" part="BlockworkM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Block) 90mm">
+			<ForwardPart family="MappingParts" part="BlockworkM"/>
+			<ReflectedPart family="MappingParts" part="BlockworkM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Block) 100mm">
+			<ForwardPart family="MappingParts" part="BlockworkM"/>
+			<ReflectedPart family="MappingParts" part="BlockworkM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Block) 140mm">
+			<ForwardPart family="MappingParts" part="BlockworkM"/>
+			<ReflectedPart family="MappingParts" part="BlockworkM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Block) 190mm">
+			<ForwardPart family="MappingParts" part="BlockworkM"/>
+			<ReflectedPart family="MappingParts" part="BlockworkM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Block) 215mm">
+			<ForwardPart family="MappingParts" part="BlockworkM"/>
+			<ReflectedPart family="MappingParts" part="BlockworkM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Brick)">
+			<ForwardPart family="MappingParts" part="BrickworkM"/>
+			<ReflectedPart family="MappingParts" part="BrickworkM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Brick) 90mm">
+			<ForwardPart family="MappingParts" part="BrickworkM"/>
+			<ReflectedPart family="MappingParts" part="BrickworkM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Brick) 102.5mm">
+			<ForwardPart family="MappingParts" part="BrickworkM"/>
+			<ReflectedPart family="MappingParts" part="BrickworkM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Brick) 215mm">
+			<ForwardPart family="MappingParts" part="BrickworkM"/>
+			<ReflectedPart family="MappingParts" part="BrickworkM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Concrete)">
+			<ForwardPart family="MappingParts" part="ConcreteM"/>
+			<ReflectedPart family="MappingParts" part="ConcreteM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Concrete) 100mm">
+			<ForwardPart family="MappingParts" part="ConcreteM"/>
+			<ReflectedPart family="MappingParts" part="ConcreteM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Concrete) 200mm">
+			<ForwardPart family="MappingParts" part="ConcreteM"/>
+			<ReflectedPart family="MappingParts" part="ConcreteM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Concrete) 300mm">
+			<ForwardPart family="MappingParts" part="ConcreteM"/>
+			<ReflectedPart family="MappingParts" part="ConcreteM"/>
+		</SectionPart>
+		<SectionPart family="G2" part="G25 Walls (Concrete) 400mm">
+			<ForwardPart family="MappingParts" part="ConcreteM"/>
+			<ReflectedPart family="MappingParts" part="ConcreteM"/>
+		</SectionPart>
+	</SectionParts>
+</TriForma>

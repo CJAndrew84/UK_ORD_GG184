@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.1" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:cif="cif">
+    <xsl:param name="xslShowHelp" select="cif:xslShowHelp"/>
+    <xsl:param name="xslRootDirectory" select="cif:xslRootDirectory"/>
+    <!-- Template Component Report -->
+    <xsl:template match="/">
+        <xsl:variable name="gridOut" select="cif:SetGridOut(number(InRoads/@outputGridScaleFactor))"/>
+        <html>
+            <head>
+                <link rel="stylesheet" type="text/css" href="{$xslRootDirectory}/_Themes/engineer/theme.css"/>
+                <!-- Title displayed in browser Title Bar -->
+                <title lang="en">Template Component Report</title>
+            </head>
+            <body>
+                <xsl:choose>
+                    <xsl:when test="$xslShowHelp = 'true'">
+                        <xsl:call-template name="StyleSheetHelp"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:for-each select="InRoads">
+                            <center>
+                                <!-- Report Title -->
+                                <h2 lang="en">Template Component Report</h2>
+                                <p lang="en">
+                                    Report Created:&#xa0; <xsl:value-of select="cif:date()"/><br/>
+                                    Time:&#xa0; <xsl:value-of select="cif:time()"/>
+                                </p>
+                            </center>
+                            <!-- Template Library Data -->
+                            <xsl:for-each select="TemplateLibrary">
+                                <table class="margin" cellpadding="2">
+                                    <tbody>
+                                        <tr>
+                                            <th align="right" lang="en">File Name:&#xa0; </th>
+                                            <td align="left"><xsl:value-of select="@fileName"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <hr/>
+                                <!-- Template Information -->
+                                <table class="margin" width="95%">
+                                    <xsl:for-each select="//Category[Template]">
+                                        <tr>
+                                            <td lang="en"><strong>Category:&#xa0; </strong><xsl:value-of select="@name"/></td>
+                                        </tr>
+                                        <tr style="line-height:75%"><td><hr size="1"/></td></tr>
+                                        <tr>
+                                            <td>
+                                                <table class="margin" width="95%">
+                                                    <xsl:for-each select="Template">
+                                                        <tr>
+                                                            <td lang="en">
+                                                                <strong>Template:&#xa0; </strong><xsl:value-of select="@name"/>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td lang="en">
+                                                                <strong>Description:&#xa0; </strong><xsl:value-of select="@description"/>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="line-height:75%"><td><hr size="1"/></td></tr>
+                                                        <tr>
+                                                            <td>
+                                                                <table class="margin" width="95%">
+                                                                    <xsl:for-each select="Components/Component">
+                                                                        <tr>
+                                                                            <td colspan="6" lang="en">
+                                                                                <strong>Component:&#xa0; </strong>
+                                                                                <xsl:value-of select="@name"/>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td colspan="6" lang="en">
+                                                                                <strong>Description:&#xa0; </strong>
+                                                                                <xsl:value-of select="@description"/>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th class="underline" align="left" lang="en" valign="bottom">
+                                                                                Point Name
+                                                                            </th>
+                                                                            <th class="underline" lang="en" valign="bottom">X</th>
+                                                                            <th class="underline" lang="en" valign="bottom">Y</th>
+                                                                            <th class="underline" lang="en" valign="bottom">Slope</th>
+                                                                            <th class="underline" lang="en" valign="bottom">Width</th>
+                                                                            <th class="underline" lang="en" valign="bottom">Delta Y</th>
+                                                                        </tr>
+                                                                        <xsl:for-each select="Vertex">
+                                                                            <xsl:variable name="nextPoint" select="following-sibling::*[1]/@name"/>
+                                                                            <xsl:variable name="width" select="../../../Points/Point[@name = $nextPoint]/@x - ../../../Points/Point[@name = current()/@name]/@x"/>
+                                                                            <xsl:variable name="depth" select="../../../Points/Point[@name = $nextPoint]/@y - ../../../Points/Point[@name = current()/@name]/@y"/>
+                                                                            <tr>
+                                                                                <td><xsl:value-of select="@name"/></td>
+                                                                                <td class="sidepad" align="right">
+                                                                                    <xsl:value-of select="cif:distanceFormat(number(../../../Points/Point[@name = current()/@name]/@x))"/>
+                                                                                </td>
+                                                                                <td class="sidepad" align="right">
+                                                                                    <xsl:value-of select="cif:distanceFormat(number(../../../Points/Point[@name = current()/@name]/@y))"/>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <xsl:choose>
+                                                                                <xsl:when test="position() != last()">
+                                                                                    <tr>
+                                                                                        <td colspan="3">&#xa0;</td>
+                                                                                        <td class="sidepad" align="right">
+                                                                                            <xsl:value-of select="cif:gradeFormat(number($depth div $width))"/>
+                                                                                        </td>
+                                                                                        <td class="sidepad" align="right">
+                                                                                            <xsl:value-of select="cif:distanceFormat(number($width))"/>
+                                                                                        </td>
+                                                                                        <td class="sidepad" align="right">
+                                                                                            <xsl:value-of select="cif:distanceFormat(number($depth))"/>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </xsl:when>
+                                                                                <xsl:otherwise>
+                                                                                    <xsl:variable name="firstPoint" select="preceding-sibling::*[last()]/@name"/>
+                                                                                    <xsl:variable name="finalWidth" select="../../../Points/Point[@name = $firstPoint]/@x - ../../../Points/Point[@name = current()/@name]/@x"/>
+                                                                                    <xsl:variable name="finalDepth" select="../../../Points/Point[@name = $firstPoint]/@y - ../../../Points/Point[@name = current()/@name]/@y"/>
+                                                                                    <xsl:if test="../@isClosed = 'true'">
+                                                                                        <tr>
+                                                                                            <td colspan="3">&#xa0;</td>
+                                                                                            <td class="sidepad" align="right">
+                                                                                                <xsl:value-of select="cif:gradeFormat(number($finalDepth div $finalWidth))"/>
+                                                                                            </td>
+                                                                                            <td class="sidepad" align="right">
+                                                                                                <xsl:value-of select="cif:distanceFormat(number($finalWidth))"/>
+                                                                                            </td>
+                                                                                            <td class="sidepad" align="right">
+                                                                                                <xsl:value-of select="cif:distanceFormat(number($finalDepth))"/>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </xsl:if>
+                                                                                </xsl:otherwise>
+                                                                            </xsl:choose>
+                                                                        </xsl:for-each>
+                                                                        <tr style="line-height:75%"><td colspan="6">&#xa0;</td></tr>
+                                                                    </xsl:for-each>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </xsl:for-each>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr><td>&#xa0;</td></tr>
+                                    </xsl:for-each>
+                                </table>
+                            </xsl:for-each>
+                        </xsl:for-each>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </body>
+        </html>
+    </xsl:template>
+    <xsl:template name="StyleSheetHelp">
+        <div class="section1">
+            <h4 lang="en">Notes</h4>
+            <p class="normal1" lang="en">
+                You must open a Template Library file by selecting <em>File &gt; Open</em> on the 
+                <em>Report Browser</em> menu and setting the <em>Files of type</em> field to <em>Template 
+                Library (*.itl)</em>.
+            </p>
+            <p class="normal1" lang="en">
+                You must also have at least one template defined in the <em>Modeler &gt; Create Template
+                </em> command to get results from this report.
+            </p>
+            <p class="small" lang="en">
+                <em>&#xa9; 2018 Bentley Systems, Inc</em>
+            </p>
+        </div>
+    </xsl:template>
+</xsl:stylesheet>

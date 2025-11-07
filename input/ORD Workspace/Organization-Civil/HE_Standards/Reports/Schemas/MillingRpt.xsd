@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Denis J. Schaffer (Bentley Systems, Inc.) -->
+<schema targetNamespace="InRoads" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:inr="InRoads" elementFormDefault="qualified">
+    <include schemaLocation="CommonRpt.xsd"/>
+    <element name="MillingStations">
+        <annotation>
+            <documentation>Milling Station collection.</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:MillingStation" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="MillingStation">
+        <complexType>
+            <complexContent mixed="true">
+                <extension base="inr:CTStation">
+                    <sequence>
+                        <element ref="inr:MillingComponents"/>
+                    </sequence>
+                </extension>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="MillingComponents">
+        <complexType>
+            <sequence>
+                <element ref="inr:MillingComponent" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="MillingComponent">
+        <complexType>
+            <sequence>
+                <element ref="inr:OffsetValues" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="material" type="string" use="required"/>
+            <attribute name="maximumThickness" type="double" use="required"/>
+            <attribute name="crossSectionArea" type="double" use="required"/>
+            <attribute name="crossSectionVolume" type="double" use="required"/>
+            <attribute name="planarLength" type="double" use="required"/>
+            <attribute name="planarArea" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="OffsetValues">
+        <complexType>
+            <attribute name="leftOffset" type="double" use="required"/>
+            <attribute name="leftElevation" type="double" use="required"/>
+            <attribute name="rightOffset" type="double" use="required"/>
+            <attribute name="rightElevation" type="double" use="required"/>
+        </complexType>
+    </element>
+</schema>

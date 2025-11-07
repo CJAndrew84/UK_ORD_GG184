@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataGroupSystem>
+    <Version major="1" minor="0"/>
+    <Mappings>
+        <Mapping>
+            <SourceType name="ArchBaseCasework" instanceName="">
+                <DestinationType name="Casework" instanceName="">
+                    <MappingTable>
+                        <Properties>
+                            <Property>
+                                <Source definition="ArchBaseCasework" name="ArchBaseCasework/ParaDef/@type"/>
+                                <Destination definition="Casework" name="Casework/ParaDef/@type" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchBaseCasework" name="ArchBaseCasework/ParaDef/@filename"/>
+                                <Destination definition="Casework" name="Casework/ParaDef/@filename" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchBaseCasework" name="ArchBaseCasework/Dimensions/@width"/>
+                                <Destination definition="Casework" name="Casework/Dimensions/@width" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchBaseCasework" name="ArchBaseCasework/Dimensions/@height"/>
+                                <Destination definition="Casework" name="Casework/Dimensions/@height"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchBaseCasework" name="ArchBaseCasework/Dimensions/@depth"/>
+                                <Destination definition="Casework" name="Casework/Dimensions/@depth"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchBaseCasework" name="BaseCasework/Manufacturer/@name"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Manufacturer" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchBaseCasework" name="BaseCasework/Manufacturer/@modelNumber"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Model" />
+                                <Action name=""/>
+                            </Property> 
+                            <Property>
+                                <Source definition="ArchBaseCasework" name="BaseCasework/Extra/@notes"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Notes" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchBaseCasework" name="BaseCasework/Extra/@Description"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Description" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="BaseCasework" name="BaseCasework/Manufacturer/@name"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Manufacturer" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="BaseCasework" name="BaseCasework/Manufacturer/@modelNumber"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Model" />
+                                <Action name=""/>
+                            </Property> 
+                            <Property>
+                                <Source definition="BaseCasework" name="BaseCasework/Extra/@notes"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Notes" />
+                                <Action name=""/>
+                            </Property>
+                        </Properties>
+                    </MappingTable>
+                </DestinationType>
+            </SourceType>
+        </Mapping>
+        <Mapping>
+            <SourceType name="ArchTallCasework" instanceName="">
+                <DestinationType name="Casework" instanceName="">
+                    <MappingTable>
+                        <Properties>
+                            <Property>
+                                <Source definition="ArchTallCasework" name="ArchTallCasework/ParaDef/@type"/>
+                                <Destination definition="Casework" name="Casework/ParaDef/@type" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchTallCasework" name="ArchTallCasework/ParaDef/@filename"/>
+                                <Destination definition="Casework" name="Casework/ParaDef/@filename" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchTallCasework" name="ArchTallCasework/Dimensions/@width"/>
+                                <Destination definition="Casework" name="Casework/Dimensions/@width" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchTallCasework" name="ArchTallCasework/Dimensions/@height"/>
+                                <Destination definition="Casework" name="Casework/Dimensions/@height"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchTallCasework" name="ArchTallCasework/Dimensions/@depth"/>
+                                <Destination definition="Casework" name="Casework/Dimensions/@depth"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchTallCasework" name="TallCasework/Manufacturer/@name"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Manufacturer" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchTallCasework" name="TallCasework/Manufacturer/@modelNumber"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Model" />
+                                <Action name=""/>
+                            </Property> 
+                            <Property>
+                                <Source definition="ArchTallCasework" name="TallCasework/Extra/@notes"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Notes" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchTallCasework" name="TallCasework/Extra/@Description"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Description" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="TallCasework" name="TallCasework/Manufacturer/@name"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Manufacturer" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="TallCasework" name="TallCasework/Manufacturer/@modelNumber"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Model" />
+                                <Action name=""/>
+                            </Property> 
+                            <Property>
+                                <Source definition="TallCasework" name="TallCasework/Extra/@notes"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Notes" />
+                                <Action name=""/>
+                            </Property>
+                        </Properties>
+                    </MappingTable>
+                </DestinationType>
+            </SourceType>
+        </Mapping>
+        <Mapping>
+            <SourceType name="ArchWallCasework" instanceName="">
+                <DestinationType name="Casework" instanceName="">
+                    <MappingTable>
+                        <Properties>
+                            <Property>
+                                <Source definition="ArchWallCasework" name="ArchWallCasework/ParaDef/@type"/>
+                                <Destination definition="Casework" name="Casework/ParaDef/@type" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchWallCasework" name="ArchWallCasework/ParaDef/@filename"/>
+                                <Destination definition="Casework" name="Casework/ParaDef/@filename" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchWallCasework" name="ArchWallCasework/Dimensions/@width"/>
+                                <Destination definition="Casework" name="Casework/Dimensions/@width" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchWallCasework" name="ArchWallCasework/Dimensions/@height"/>
+                                <Destination definition="Casework" name="Casework/Dimensions/@height"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchWallCasework" name="ArchWallCasework/Dimensions/@depth"/>
+                                <Destination definition="Casework" name="Casework/Dimensions/@depth"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchWallCasework" name="WallCasework/Manufacturer/@name"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Manufacturer" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchWallCasework" name="WallCasework/Manufacturer/@modelNumber"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Model" />
+                                <Action name=""/>
+                            </Property> 
+                            <Property>
+                                <Source definition="ArchWallCasework" name="WallCasework/Extra/@notes"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Notes" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ArchWallCasework" name="WallCasework/Extra/@Description"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Description" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="WallCasework" name="WallCasework/Manufacturer/@name"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Manufacturer" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="WallCasework" name="WallCasework/Manufacturer/@modelNumber"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Model" />
+                                <Action name=""/>
+                            </Property> 
+                            <Property>
+                                <Source definition="WallCasework" name="WallCasework/Extra/@notes"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Notes" />
+                                <Action name=""/>
+                            </Property>
+                        </Properties>
+                    </MappingTable>
+                </DestinationType>
+            </SourceType>
+        </Mapping>
+        <Mapping>
+            <SourceType name="Space" instanceName="">
+                <DestinationType name="Space" instanceName="">
+                    <MappingTable>
+                        <Properties>
+                            <Property>
+                                <Source definition="Space" name="Space/NorthFinish/@base"/>
+                                <Destination definition="Space" name="Space/BaseFinish/@NorthWallBaseMaterial" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Space" name="Space/NorthFinish/@wall"/>
+                                <Destination definition="Space" name="Space/WallFinish/@NorthWallMaterial" />
+                                <Action name=""/>
+                            </Property> 
+                            <Property>
+                                <Source definition="Space" name="Space/EastFinish/@base"/>
+                                <Destination definition="Space" name="Space/BaseFinish/@EastWallBaseMaterial" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Space" name="Space/EastFinish/@wall"/>
+                                <Destination definition="Space" name="Space/WallFinish/@EastWallMaterial" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Space" name="Space/SouthFinish/@base"/>
+                                <Destination definition="Space" name="Space/BaseFinish/@SouthWallBaseMaterial" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Space" name="Space/SouthFinish/@wall"/>
+                                <Destination definition="Space" name="Space/WallFinish/@SouthWallMaterial" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Space" name="Space/WestFinish/@base"/>
+                                <Destination definition="Space" name="Space/BaseFinish/@WestWallBaseMaterial" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Space" name="Space/WestFinish/@wall"/>
+                                <Destination definition="Space" name="Space/WallFinish/@WestWallMaterial" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Space" name="Space/OtherFinish/@ceiling"/>
+                                <Destination definition="Space" name="Space/Ceiling/@CeilingFinish" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Space" name="Space/OtherFinish/@floor"/>
+                                <Destination definition="Space" name="Space/FloorFinish/@FloorFinishCode" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Space" name="Space/Location/@department"/>
+                                <Destination definition="Space" name="Space/Location/@Department" />
+                                <Action name=""/>
+                            </Property>                                    
+                        </Properties>
+                    </MappingTable>
+                </DestinationType>
+            </SourceType>
+        </Mapping>
+        <Mapping>
+            <SourceType name="ToiletAccessories" instanceName="">
+                <DestinationType name="ToiletAccessory" instanceName="">
+                    <MappingTable>
+                        <Properties>
+                            <Property>
+                                <Source definition="ToiletAccessories" name="ToiletAccessories/Dimensions/@Depth"/>
+                                <Destination definition="ObjectDimension" name="ObjectDimension/UnitLength" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ToiletAccessories" name="ToiletAccessories/Dimensions/@Width"/>
+                                <Destination definition="ObjectDimension" name="ObjectDimension/@UnitWidth"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ToiletAccessories" name="ToiletAccessories/Dimensions/@Height"/>
+                                <Destination definition="ObjectDimension" name="ObjectDimension/@UnitHeight"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ToiletAccessories" name="ToiletAccessories/Manufacture/@Finish"/>
+                                <Destination definition="ToiletAccessory" name="ToiletAccessory/Finish/@Finish"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ToiletAccessories" name="ToiletAccessories/Manufacture/@Color"/>
+                                <Destination definition="ToiletAccessory" name="ToiletAccessory/Finish/@Material"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ToiletAccessories" name="ToiletAccessories/Manufacture/@ModelName"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@NameAlt"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ToiletAccessories" name="ToiletAccessories/Manufacture/@ModelNumber"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Model"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ToiletAccessories" name="ToiletAccessories/Manufacture/@Special"/>
+                                <Destination definition="ToiletAccessory" name="ToiletAccessory/Extra/@SpecialReqs"/>
+                                <Action name=""/>
+                            </Property>
+                             <Property>
+                                <Source definition="ToiletAccessories" name="ToiletAccessories/Manufacture/@ID"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@InstanceMark"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ToiletAccessories" name="ToiletAccessories/Extra/@Notes"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Notes"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ToiletAccessories" name="ToiletAccessories/Manufacture/@ManufacturerName"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Manufacturer"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ToiletAccessories" name="ToiletAccessories/Extra/@Description"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Description"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ToiletAccessories" name="ToiletAccessories/Extra/@MountBy"/>
+                                <Destination definition="ObjectMounting" name="ObjectMounting/@MountBy"/>
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="ToiletAccessories" name="ToiletAccessories/Type/@MountType"/>
+                                <Destination definition="ObjectMounting" name="ObjectMounting/@MountType"/>
+                                <Action name=""/>
+                            </Property>
+                            </Properties>
+                    </MappingTable>
+                </DestinationType>
+            </SourceType>
+        </Mapping>
+        <Mapping>
+            <SourceType name="ToiletPartitionDoors" instanceName="">
+                <DestinationType name="ToiletCompartment" instanceName="">
+                    <MappingTable>
+                        <Properties>
+                            <Property>
+                                <Source definition="ToiletPartitions" name="ToiletPartitions/@Width"/>
+                                <Destination definition="ToiletCompartment" name="ToiletCompartment/Dimensions/@Width"/>
+                                <Action name=""/>
+                            </Property>
+                        </Properties>
+                    </MappingTable>
+                </DestinationType>
+            </SourceType>
+        </Mapping>
+        <Mapping>
+            <SourceType name="Slab" instanceName="">
+                <DestinationType name="Slab" instanceName="">
+                    <MappingTable>
+                        <Properties>
+                            <Property>
+                                <Source definition="Slab_Application" name="SlabApplication/@Thickness"/>
+                                <Destination definition="Slab_Common" name="Slab_Common/@Thickness" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Slab_Application" name="SlabApplication/@TopofSlab"/>
+                                <Destination definition="Slab_Common" name="Slab_Common/@Top" />
+                                <Action name=""/>
+                            </Property>                            
+                        </Properties>
+                    </MappingTable>
+                </DestinationType>
+            </SourceType>
+        </Mapping>
+        <Mapping>
+            <SourceType name="Shelving" instanceName="">
+                <DestinationType name="Shelving" instanceName="">
+                    <MappingTable>
+                        <Properties>
+                            <Property>
+                                <Source definition="Shelving" name="Shelving/Manufacturer/@name"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Manufacturer" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Shelving" name="Shelving/Manufacturer/@modelNumber"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Model" />
+                                <Action name=""/>
+                            </Property> 
+                            <Property>
+                                <Source definition="Shelving" name="Shelving/Extra/@notes"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Notes" />
+                                <Action name=""/>
+                            </Property>                           
+                        </Properties>
+                    </MappingTable>
+                </DestinationType>
+            </SourceType>
+        </Mapping>
+        <Mapping>
+            <SourceType name="Furniture" instanceName="">
+                <DestinationType name="Furniture" instanceName="">
+                    <MappingTable>
+                        <Properties>
+                            <Property>
+                                <Source definition="Furniture" name="Furniture/Manufacturer/@CompanyName"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Manufacturer" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Furniture" name="Furniture/Manufacturer/@WebAddress"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@URL" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Furniture" name="Furniture/Manufacturer/@modelNumber"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Model" />
+                                <Action name=""/>
+                            </Property> 
+                            <Property>
+                                <Source definition="Furniture" name="Furniture/Manufacturer/@Description1"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Description" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Furniture" name="Furniture/Manufacturer/@Remarks"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Notes" />
+                                <Action name=""/>
+                            </Property>                           
+                        </Properties>
+                    </MappingTable>
+                </DestinationType>
+            </SourceType>
+        </Mapping>
+        <Mapping>
+            <SourceType name="PlumbingFixtures" instanceName="">
+                <DestinationType name="PlumbingFixtures" instanceName="">
+                    <MappingTable>
+                        <Properties>
+                            <Property>
+                                <Source definition="PlumbingFixtures" name="PlumbingFixtures/Connections/@WasteWater"/>
+                                <Destination definition="PlumbingFixtures" name="PlumbingFixtures/Connections/@Waste" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="PlumbingFixtures" name="PlumbingFixtures/Manufacturer/@name"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Manufacturer" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="PlumbingFixtures" name="PlumbingFixtures/Manufacturer/@modelNumber"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Model" />
+                                <Action name=""/>
+                            </Property> 
+                            <Property>
+                                <Source definition="PlumbingFixtures" name="PlumbingFixtures/Extra/@notes"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Notes" />
+                                <Action name=""/>
+                            </Property>
+                             <Property>
+                                <Source definition="PlumbingFixtures" name="PlumbingFixtures/Extra/@Description"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Description" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="PlumbingFixtures" name="PlumbingFixtures/Dimension/@MountHeight"/>
+                                <Destination definition="PlumbingFixtures" name="PlumbingFixtures/Mounting/@MountingHeight" />
+                                <Action name=""/>
+                            </Property>                           
+                        </Properties>
+                    </MappingTable>
+                </DestinationType>
+            </SourceType>
+        </Mapping>
+        <Mapping>
+            <SourceType name="Window" instanceName="">
+                <DestinationType name="Window" instanceName="">
+                    <MappingTable>
+                        <Properties>
+                            <Property>
+                                <Source definition="Window" name="Window/@id"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@InstanceMark" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Window" name="Window/Material/@frame"/>
+                                <Destination definition="Window" name="Window/Frame/@FrameMaterial" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Window" name="Window/Manufacturer/@name"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Manufacturer" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Window" name="Window/Manufacturer/@modelNumber"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Model" />
+                                <Action name=""/>
+                            </Property> 
+                            <Property>
+                                <Source definition="Window" name="Window/Extra/@notes"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Notes" />
+                                <Action name=""/>
+                            </Property>                                                       
+                        </Properties>
+                    </MappingTable>
+                </DestinationType>
+            </SourceType>
+        </Mapping>
+        <Mapping>
+            <SourceType name="Door" instanceName="">
+                <DestinationType name="Door" instanceName="">
+                    <MappingTable>
+                        <Properties>
+                            <Property>
+                                <Source definition="Door" name="Door/@id"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@InstanceMark" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Door" name="Door/@finishType"/>
+                                <Destination definition="Door" name="Door/Door/@DoorFinish" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Door" name="Door/@underCut"/>
+                                <Destination definition="Door" name="Door/Door/@DoorUnderCut" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Door" name="Door/@rating"/>
+                                <Destination definition="Door" name="Door/Door/@DoorRating" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Door" name="Door/HardwareSet/@type"/>
+                                <Destination definition="Door" name="Door/Hardware/@HardwareType" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Door" name="Door/Material/@door"/>
+                                <Destination definition="Door" name="Door/Door/@DoorMaterial" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Door" name="Door/Material/@frame"/>
+                                <Destination definition="Door" name="Door/Frame/@FrameMaterial" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Door" name="Door/Manufacturer/@name"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Manufacturer" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="Door" name="Door/Manufacturer/@modelNumber"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Model" />
+                                <Action name=""/>
+                            </Property> 
+                            <Property>
+                                <Source definition="Door" name="Door/Extra/@notes"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Notes" />
+                                <Action name=""/>
+                            </Property>                                                       
+                        </Properties>
+                    </MappingTable>
+                </DestinationType>
+            </SourceType>
+        </Mapping>
+        <Mapping>
+            <SourceType name="CurtainWalls" instanceName="">
+                <DestinationType name="CurtainWall" instanceName="">
+                    <MappingTable>
+                        <Properties>
+                             <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Dimensions/@CWWidth"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Dimensions/@CWWidth" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Dimensions/@CWHeight"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Dimensions/@CWHeight" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Dimensions/@FrameDepth"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Dimensions/@FrameDepth" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Dimensions/@FrameThickness"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Dimensions/@FrameThickness" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Dimensions/@BaseOffset"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Dimensions/@BaseOffset" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Dimensions/@VertMullSpacing"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Dimensions/@VertMullSpacing" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Dimensions/@HorzMullSpacing"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Dimensions/@HorzMullSpacing" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Dimensions/@MullionDepth"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Dimensions/@MullionDepth" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Dimensions/@MullionThickness"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Dimensions/@MullionThickness" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Dimensions/@RoughOpeningOffset"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Dimensions/@RoughOpeningOffset" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Extras/@Description"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Description" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Extra/@Description"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Description" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Extras/@Notes"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@Notes" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Extras/@ID"/>
+                                <Destination definition="ObjectIdentity" name="ObjectIdentity/@InstanceMark" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Manufacturer/@FrameFinish"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Frame/@FrameFinish" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Manufacturer/@FrameColor"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Frame/@FrameColor" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Manufacturer/@ManufacturerName"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Manufacturer" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Manufacturer/@Model"/>
+                                <Destination definition="ObjectManufacturer" name="ObjectManufacturer/@Model" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Manufacturer/@GlassType"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Glazing/@GlassType" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Manufacturer/@GlassColor"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Glazing/@GlassColor" />
+                                <Action name=""/>
+                            </Property>
+                            <Property>
+                                <Source definition="CurtainWalls" name="CurtainWalls/Manufacturer/@Extras"/>
+                                <Destination definition="CurtainWall" name="CurtainWall/Manufacturer/@Extras" />
+                                <Action name=""/>
+                            </Property>                                                              
+                        </Properties>
+                    </MappingTable>
+                </DestinationType>
+            </SourceType>
+        </Mapping>
+    </Mappings>
+</DataGroupSystem>

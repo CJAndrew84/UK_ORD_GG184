@@ -1,0 +1,1389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:inr="InRoads" targetNamespace="InRoads" elementFormDefault="qualified">
+    <include schemaLocation="CommonRpt.xsd"/>
+    <!-- element declarations -->
+    <element name="GeometryPoint" type="inr:CTPoint">
+        <annotation>
+            <documentation>A single geometry point </documentation>
+        </annotation>
+    </element>
+    <element name="VerticalStart" type="inr:CTVerticalPoint">
+        <annotation>
+            <documentation>A point used for the start of vertical geometry elements</documentation>
+        </annotation>
+    </element>
+    <element name="VerticalEnd" type="inr:CTVerticalPoint">
+        <annotation>
+            <documentation>A point used for the end of vertical geometry elements</documentation>
+        </annotation>
+    </element>
+    <element name="VerticalCenter" type="inr:CTVerticalPoint">
+        <annotation>
+            <documentation>A point used for the center of vertical arcs</documentation>
+        </annotation>
+    </element>
+    <element name="Start">
+        <annotation>
+            <documentation>A point used for the start of geometry elements</documentation>
+        </annotation>
+        <complexType mixed="true">
+            <complexContent mixed="true">
+                <extension base="inr:CTPoint"/>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="End" type="inr:CTPoint">
+        <annotation>
+            <documentation>A point used for the end of geometry elements</documentation>
+        </annotation>
+    </element>
+    <element name="Center" type="inr:CTPoint">
+        <annotation>
+            <documentation>A point used for the center of arcs</documentation>
+        </annotation>
+    </element>
+    <element name="PI" type="inr:CTPoint">
+        <annotation>
+            <documentation>A point used for the point of intersection</documentation>
+        </annotation>
+    </element>
+    <element name="TraversePoint" type="inr:CTPoint">
+        <annotation>
+            <documentation>A point used for the traverse point</documentation>
+        </annotation>
+    </element>
+    <element name="PVI" type="inr:CTVerticalPoint">
+        <annotation>
+            <documentation>A point used for the vertical point of intersection</documentation>
+        </annotation>
+    </element>
+    <element name="PVCC" type="inr:CTVerticalPoint">
+        <annotation>
+            <documentation>
+                A point used for the vertical point of compound curvature on an unsymmetrical vertical
+                parabola
+            </documentation>
+        </annotation>
+    </element>
+    <element name="TurningPoint" type="inr:CTVerticalPoint">
+        <annotation>
+            <documentation>A point used in vertical circles, parabolas, and clothoids</documentation>
+        </annotation>
+    </element>
+    <element name="CogoPoints">
+        <annotation>
+            <documentation>A collection of cogo points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:GeometryPoint" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:StakeoutPoints" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="cogoOnly" type="boolean" use="optional"/>
+        </complexType>
+    </element>
+    <element name="TurnoutPoint">
+        <annotation>
+            <documentation>A point used for turnouts</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:GeometryPoint"/>
+            </sequence>
+            <attribute name="mainlineAlignment" type="string" use="required"/>
+            <attribute name="branchAlignment" type="string" use="optional"/>
+            <attribute name="azimuth" type="inr:STDirection" use="required"/>
+            <attribute name="startRadius" type="double" use="required"/>
+            <attribute name="endRadius" type="double" use="required"/>
+            <attribute name="mlElevation" type="double" use="optional"/>
+            <attribute name="mlCant" type="double" use="optional"/>
+            <attribute name="mlSpeed" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="StationEquation">
+        <annotation>
+            <documentation>A point where a station equation is applied</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:GeometryPoint"/>
+            </sequence>
+            <attribute name="backEquation" type="string" use="required"/>
+            <attribute name="aheadEquation" type="string" use="required"/>
+            <attribute name="backStation" type="double" use="required"/>
+            <attribute name="aheadStation" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="SightDistance" type="inr:CTSightDistanceEntry">
+        <annotation>
+            <documentation>Sight Distance data</documentation>
+        </annotation>
+    </element>
+    <element name="RailSuperelevationPoint">
+        <annotation>
+            <documentation>A point used to hold intermediate rail superelevation data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:GeometryPoint"/>
+            </sequence>
+            <attribute name="crossSlope" type="double" use="required"/>
+            <attribute name="designSpeed" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="CantPoint">
+        <annotation>
+            <documentation>A point used to hold incremental cant data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:GeometryPoint"/>
+            </sequence>
+            <attribute name="radius" type="double" use="required"/>
+            <attribute name="designSpeed" type="double" use="required"/>
+            <attribute name="leftCant" type="double" use="required"/>
+            <attribute name="rightCant" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="StakeoutPoint">
+        <annotation>
+            <documentation>A point used to hold stakeout information</documentation>
+        </annotation>
+        <complexType>
+            <all>
+                <element name="backsightPoint" type="inr:CTPoint"/>
+                <element name="occupiedPoint" type="inr:CTPoint"/>
+                <element name="foresightPoint" type="inr:CTComputedPoint"/>
+            </all>
+            <attribute name="origin" type="inr:STPointOrigin" use="required"/>
+            <attribute name="alignment" type="string" use="required"/>
+            <attribute name="name" type="string" use="optional"/>
+            <attribute name="direction" type="inr:STDirection" use="required"/>
+            <attribute name="leftAngle" type="inr:STAngle" use="required"/>
+            <attribute name="rightAngle" type="inr:STAngle" use="required"/>
+            <attribute name="deflection" type="inr:STAngle" use="required"/>
+            <attribute name="distance" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="StakeoutPoints">
+        <annotation>
+            <documentation>A collection of stakeout points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:StakeoutPoint" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ClearancePoint">
+        <annotation>
+            <documentation>A point used to hold clearance data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="offsetPoint" type="inr:CTPoint"/>
+                <element name="centerLinePoint" type="inr:CTComputedPoint" minOccurs="0"/>
+                <element name="offsetLinePoint" type="inr:CTComputedPoint" minOccurs="0"/>
+            </sequence>
+            <attribute name="origin" type="inr:STPointOrigin" use="required"/>
+            <attribute name="object" type="inr:STPointOrigin" use="optional"/>
+            <attribute name="objectParentName" type="string" use="optional"/>
+            <attribute name="objectParentDescription" type="string" use="optional"/>
+            <attribute name="objectParentStyle" type="string" use="optional"/>
+            <attribute name="objectName" type="string" use="optional"/>
+            <attribute name="objectDescription" type="string" use="optional"/>
+            <attribute name="objectStyle" type="string" use="optional"/>
+            <attribute name="verticalAlignmentName" type="string" use="optional"/>
+            <attribute name="pointName" type="string" use="optional"/>
+            <attribute name="firstOffset" type="double" use="optional"/>
+            <attribute name="clearanceAlignmentName" type="string" use="optional"/>
+            <attribute name="projectsToAlignment" type="boolean" use="optional"/>
+        </complexType>
+    </element>
+    <element name="ClearancePoints">
+        <annotation>
+            <documentation>A collection of clearance points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:ClearancePoint" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="StationOffsetPoint">
+        <annotation>
+            <documentation>A point used to hold station/offset data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="offsetPoint" type="inr:CTPoint"/>
+                <element name="centerLinePoint" type="inr:CTComputedPoint" minOccurs="0"/>
+                <element name="offsetLinePoint" type="inr:CTComputedPoint" minOccurs="0"/>
+            </sequence>
+            <attribute name="origin" type="inr:STPointOrigin" use="required"/>
+            <attribute name="surfaceName" type="string" use="optional"/>
+            <attribute name="verticalAlignmentName" type="string" use="optional"/>
+            <attribute name="offsetAlignmentName" type="string" use="optional"/>
+            <attribute name="offsetVerticalAlignmentName" type="string" use="optional"/>
+            <attribute name="pointName" type="string" use="optional"/>
+            <attribute name="firstOffset" type="double" use="optional"/>
+            <attribute name="secondOffset" type="double" use="optional"/>
+            <attribute name="existingGroundElevation" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="StationOffsetPoints">
+        <annotation>
+            <documentation>A collection of station/offset points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:StationOffsetPoint" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="IntersectingAlignmentPoint">
+        <annotation>
+            <documentation>
+                A point used to hold information about intersections between a primary alignment and one 
+                or more secondary alignments
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="primaryAlignmentPoint" type="inr:CTPoint"/>
+                <element name="secondaryAlignmentPoint" type="inr:CTPoint"/>
+            </sequence>
+            <attribute name="primaryVerticalAlignmentName" type="string" use="optional"/>
+            <attribute name="primaryVerticalAlignmentDescription" type="string" use="optional"/>
+            <attribute name="primaryVerticalAlignmentStyle" type="string" use="optional"/>
+            <attribute name="secondaryHorizontalAlignmentName" type="string" use="required"/>
+            <attribute name="secondaryHorizontalAlignmentDescription" type="string" use="optional"/>
+            <attribute name="secondaryHorizontalAlignmentStyle" type="string" use="optional"/>
+            <attribute name="secondaryVerticalAlignmentName" type="string" use="optional"/>
+            <attribute name="secondaryVerticalAlignmentDescription" type="string" use="optional"/>
+            <attribute name="secondaryVerticalAlignmentStyle" type="string" use="optional"/>
+            <attribute name="elevationDifference" type="double" use="required"/>
+            <attribute name="primaryTangential" type="double" use="optional"/>
+            <attribute name="secondaryTangential" type="double" use="optional"/>
+            <attribute name="primaryGradient" type="double" use="optional"/>
+            <attribute name="secondaryGradient" type="double" use="optional"/>
+            <attribute name="tangentialDifference" type="double" use="optional"/>
+         </complexType>
+    </element>
+    <element name="IntersectingAlignmentPoints">
+        <annotation>
+            <documentation>A collection of intersection alignment points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:IntersectingAlignmentPoint" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DistanceKeeper">
+        <annotation>
+            <documentation>Individual distance keeper</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="station" type="inr:CTStation" minOccurs="0"/>
+            </sequence>
+            <attribute name="leftParentRail" type="string" use="required"/>
+            <attribute name="leftRailName" type="string" use="optional"/>
+            <attribute name="leftNorthing" type="double" use="required"/>
+            <attribute name="leftEasting" type="double" use="required"/>
+            <attribute name="leftElevation" type="double" use="required"/>
+            <attribute name="leftOffset" type="double" use="required"/>
+            <attribute name="leftBackJoint" type="string" use="optional"/>
+            <attribute name="leftBackJointLength" type="double" use="required"/>
+            <attribute name="leftBackJointToKeeper" type="double" use="required"/>
+            <attribute name="leftAheadJoint" type="string" use="optional"/>
+            <attribute name="leftAheadJointLength" type="double" use="required"/>
+            <attribute name="leftAheadJointToKeeper" type="double" use="required"/>
+            <attribute name="leftBackKeeperToKeeper" type="double" use="required"/>
+            <attribute name="leftAheadKeeperToKeeper" type="double" use="required"/>
+            <attribute name="leftRailProfile" type="string" use="optional"/>
+            <attribute name="rightParentRail" type="string" use="required"/>
+            <attribute name="rightRailName" type="string" use="optional"/>
+            <attribute name="rightNorthing" type="double" use="required"/>
+            <attribute name="rightEasting" type="double" use="required"/>
+            <attribute name="rightElevation" type="double" use="required"/>
+            <attribute name="rightOffset" type="double" use="required"/>
+            <attribute name="rightBackJoint" type="string" use="optional"/>
+            <attribute name="rightBackJointLength" type="double" use="required"/>
+            <attribute name="rightBackJointToKeeper" type="double" use="required"/>
+            <attribute name="rightAheadJoint" type="string" use="optional"/>
+            <attribute name="rightAheadJointLength" type="double" use="required"/>
+            <attribute name="rightAheadJointToKeeper" type="double" use="required"/>
+            <attribute name="rightBackKeeperToKeeper" type="double" use="required"/>
+            <attribute name="rightAheadKeeperToKeeper" type="double" use="required"/>
+            <attribute name="rightRailProfile" type="string" use="optional"/>
+            <attribute name="instantaneousRadius" type="double" use="required"/>
+            <attribute name="rotationDirection" type="inr:STRotationDirection" use="required"/>
+            <attribute name="tangentAzimuth" type="inr:STDirection" use="required"/>
+            <attribute name="horizontalLength" type="double" use="required"/>
+            <attribute name="trueLength" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="DistanceKeepers">
+        <annotation>
+            <documentation>A collection of distance keepers for Light Rail Manufacturing</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:DistanceKeeper" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="IncrementalPoints">
+        <annotation>
+            <documentation>A collection of rail points transverse to the center line</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="IncrementalPoint" type="inr:CTIncrementalRailPoint" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CenterPoint">
+        <annotation>
+            <documentation>
+                A point used to contain one or more rail points transverse to the center line at a given 
+                station
+            </documentation>
+        </annotation>
+        <complexType mixed="true">
+            <complexContent mixed="true">
+                <extension base="inr:CTPoint">
+                    <sequence>
+                        <element ref="inr:IncrementalPoints"/>
+                    </sequence>
+                </extension>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="IncrementalRailPoint">
+        <annotation>
+            <documentation>
+                An element containing a center point which contains one or more rail points transverse to 
+                the center line at a given station
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CenterPoint"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="RailName">
+        <annotation>
+            <documentation>Stores the parent, name and description of a rail</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="parentIndex" type="integer" use="required"/>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="description" type="string" use="optional"/>
+        </complexType>
+    </element>
+    <element name="RailNames">
+        <annotation>
+            <documentation>A collection of rail names</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:RailName" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="IncrementalRailPoints">
+        <annotation>
+            <documentation>A collection of rail points transverse to the centerline</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:RailNames"/>
+                <element ref="inr:IncrementalRailPoint" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="numberOfRailNames" type="int" use="required"/>
+        </complexType>
+    </element>
+    <element name="RailPoint">
+        <annotation>
+            <documentation>
+                A normal rail point (not a keypoint) for Light Rail Manufacturing
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="station" type="inr:CTStation" minOccurs="0"/>
+            </sequence>
+            <attribute name="northing" type="double" use="required"/>
+            <attribute name="easting" type="double" use="required"/>
+            <attribute name="elevation" type="double" use="required"/>
+            <attribute name="offset" type="double" use="required"/>
+            <attribute name="cant" type="double" use="optional"/>
+            <attribute name="horizontalOffset" type="double" use="required"/>
+            <attribute name="totalHorizontalOffset" type="double" use="required"/>
+            <attribute name="bendingCorrection" type="double" use="required"/>
+            <attribute name="wideningCorrection" type="double" use="required"/>
+            <attribute name="axisToEdge" type="double" use="required"/>
+            <attribute name="verticalOffset" type="double" use="required"/>
+            <attribute name="totalVerticalOffset" type="double" use="required"/>
+            <attribute name="cantCorrection" type="double" use="optional"/>
+            <attribute name="instantaneousRadius" type="double" use="required"/>
+            <attribute name="rotationDirection" type="inr:STRotationDirection" use="required"/>
+            <attribute name="tangentAzimuth" type="inr:STDirection" use="required"/>
+        </complexType>
+    </element>
+    <element name="RailPoints">
+        <annotation>
+            <documentation>A collection of rail points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:RailPoint" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="KeyPoint">
+        <annotation>
+            <documentation>
+                A rail keypoint (switch, crossing or joint) for Light Rail Manufacturing
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="station" type="inr:CTStation" minOccurs="0"/>
+            </sequence>
+            <attribute name="name" type="string" use="optional"/>
+            <attribute name="type" type="inr:STPointType" use="required"/>
+            <attribute name="northing" type="double" use="required"/>
+            <attribute name="easting" type="double" use="required"/>
+            <attribute name="elevation" type="double" use="required"/>
+            <attribute name="offset" type="double" use="required"/>
+            <attribute name="cant" type="double" use="optional"/>
+            <attribute name="instantaneousRadius" type="double" use="required"/>
+            <attribute name="rotationDirection" type="inr:STRotationDirection" use="required"/>
+            <attribute name="tangentAzimuth" type="inr:STDirection" use="required"/>
+            <attribute name="jointLength" type="double" use="required"/>
+            <attribute name="railProfile" type="string" use="optional"/>
+            <attribute name="railName" type="string" use="optional"/>
+            <attribute name="jointToJointLength" type="double" use="required"/>
+            <attribute name="railLength" type="double" use="required"/>
+            <attribute name="railCurvature" type="inr:STRailCurvature" use="optional"/>
+        </complexType>
+    </element>
+    <element name="KeyPoints">
+        <annotation>
+            <documentation>A collection of key points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:KeyPoint" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Offset">
+        <annotation>
+            <documentation>Contains offset data at the chord points</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="offset" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="ChordPoint">
+        <annotation>
+            <documentation>Contains chord point data for Light Rail Manufacturing</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Offset" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="lengthAlong" type="double" use="required"/>
+            <attribute name="elementType" type="string" use="optional"/>
+            <attribute name="radius" type="double" use="optional"/>
+            <attribute name="constant" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="ChordPoints">
+        <annotation>
+            <documentation>Collection of chord points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:ChordPoint" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Interval">
+        <annotation>
+            <documentation>
+                Contains chord length interval for chord data for Light Rail Manufacturing
+            </documentation>
+        </annotation>
+        <complexType>
+            <attribute name="chordInterval" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="Intervals">
+        <annotation>
+            <documentation>Collection of intervals</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Interval" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Chord">
+        <annotation>
+            <documentation>
+                Contains chord data at a specified chord length for Light Rail Manufacturing
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Intervals"/>
+                <element ref="inr:ChordPoints"/>
+            </sequence>
+            <attribute name="startJointName" type="string" use="required"/>
+            <attribute name="stopJointName" type="string" use="required"/>
+            <attribute name="railLength" type="double" use="required"/>
+            <attribute name="radiusAtStart" type="double" use="required"/>
+            <attribute name="radiusAtStop" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="Chords">
+        <annotation>
+            <documentation>A collection of chords</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Chord" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Rail">
+        <annotation>
+            <documentation>
+                A collection of rail points, rail keypoints and joint-to-joint rails
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:RailPoints" maxOccurs="unbounded"/>
+                <element ref="inr:KeyPoints" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:Chords" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="description" type="string" use="optional"/>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="lastRevisedDate" type="string" use="optional"/>
+            <attribute name="lastRevisedBy" type="string" use="optional"/>
+        </complexType>
+    </element>
+    <element name="Rails">
+        <annotation>
+            <documentation>A collection of rails for Light Rail Manufacturing</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Rail" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="RailSuperelevation">
+        <annotation>
+            <documentation>Superelevation for Maglev rail</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:RailSuperelevationPoint"/>
+            </sequence>
+            <attribute name="crossSlope" type="double" use="required"/>
+            <attribute name="designSpeed" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="Cant">
+        <annotation>
+            <documentation>Superelevation for rail</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Start" minOccurs="0"/>
+                <element ref="inr:End" minOccurs="0"/>
+                <element ref="inr:CantPoint" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:StationEquation" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="transitionType" type="inr:STCantTransitionType" use="required"/>
+            <attribute name="radius" type="double" use="required"/>
+            <attribute name="designSpeed" type="double" use="required"/>
+            <attribute name="equilibriumCant" type="double" use="required"/>
+            <attribute name="appliedCant" type="double" use="required"/>
+            <attribute name="cantDeficiency" type="double" use="required"/>
+            <attribute name="nonLateralAcceleration" type="double" use="required"/>
+            <attribute name="appliedCantRateOfChange" type="double" use="required"/>
+            <attribute name="cantDeficiencyRateOfChange" type="double" use="required"/>
+            <attribute name="appliedGradient" type="double" use="required"/>
+            <attribute name="length" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="CantAlignment">
+        <annotation>
+            <documentation>A collection of rail cants</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Cant" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="description" type="string" use="optional"/>
+            <attribute name="lastRevisedDate" type="string" use="optional"/>
+            <attribute name="lastRevisedBy" type="string" use="optional"/>
+        </complexType>
+    </element>
+    <element name="Superelevation">
+        <annotation>
+            <documentation>A collection of cant alignments and rail superelevations</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CantAlignment" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:RailSuperelevation" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="VerticalEventPoint">
+        <annotation>
+            <documentation>A point used for vertical event points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:GeometryPoint"/>
+            </sequence>
+            <attribute name="eventType" type="string" use="required"/>
+            <attribute name="verticalOffset" type="double" use="required"/>
+            <attribute name="grade" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="VerticalNormalEventPoints">
+        <annotation>
+            <documentation>
+                A collection of user-specified or software-generated vertical event points
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:VerticalEventPoint" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="VerticalComputedEventPoints">
+        <annotation>
+            <documentation>
+                A collection of software-generated vertical event points (at intervals)
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:VerticalEventPoint" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="VerticalRegressionPoint">
+        <annotation>
+            <documentation>A point used for vertical regression analysis</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:VerticalEventPoint"/>
+            </sequence>
+            <attribute name="fixedOffset" type="double" use="optional"/>
+            <attribute name="weight" type="double" use="optional"/>
+            <attribute name="statusFixFree" use="optional">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="Fixed"/>
+                        <enumeration value="Normal"/>
+                        <enumeration value="Ignored"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="statusIncludeExclude" use="optional">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="Yes"/>
+                        <enumeration value="No"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="VerticalRegressionPoints">
+        <annotation>
+            <documentation>A collection of vertical regression points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:VerticalRegressionPoint" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="VerticalEventPoints">
+        <annotation>
+            <documentation>
+                A collection of vertical normal and computed event points and regression points
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:VerticalNormalEventPoints" minOccurs="0"/>
+                <element ref="inr:VerticalComputedEventPoints" minOccurs="0"/>
+                <element ref="inr:VerticalRegressionPoints" minOccurs="0"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="HorizontalEventPoint">
+        <annotation>
+            <documentation>A point used for horizontal event points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:GeometryPoint"/>
+            </sequence>
+            <attribute name="eventType" type="string" use="required"/>
+            <attribute name="radius" type="double" use="optional"/>
+            <attribute name="grade" type="double" use="optional"/>
+            <attribute name="tangentialDirection" type="inr:STDirection" use="optional"/>
+            <attribute name="radialDirection" type="inr:STDirection" use="optional"/>
+        </complexType>
+    </element>
+    <element name="HorizontalNormalEventPoints">
+        <annotation>
+            <documentation>
+                A collection of user-specified or software-generated horizontal event points
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:HorizontalEventPoint" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="HorizontalComputedEventPoints">
+        <annotation>
+            <documentation>
+                A collection of software-generated horizontal event points (at intervals)
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:HorizontalEventPoint" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="InterpolatedSlew" type="inr:CTInterpolatedSlew">
+        <annotation>
+            <documentation>Contains interpolated horizontal or vertical slews</documentation>
+        </annotation>
+    </element>
+    <element name="InterpolatedSlews">
+        <annotation>
+            <documentation>A collection of interpolated horizontal or vertical slews</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:InterpolatedSlew" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="HorizontalRegressionPoint">
+        <annotation>
+            <documentation>A point used for horizontal regression analysis</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:HorizontalEventPoint"/>
+            </sequence>
+            <attribute name="fixedOffset" type="double" use="optional"/>
+            <attribute name="weight" type="double" use="optional"/>
+            <attribute name="statusFixFree" use="optional">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="Fixed"/>
+                        <enumeration value="Normal"/>
+                        <enumeration value="Ignored"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="statusIncludeExclude" use="optional">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="Yes"/>
+                        <enumeration value="No"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+          <attribute name="radius" type="double" use="optional"/>
+          <attribute name="tangential" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="HorizontalRegressionPoints">
+        <annotation>
+            <documentation>A collection of horizontal regression points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:HorizontalRegressionPoint" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="HorizontalEventPoints">
+        <annotation>
+            <documentation>
+                A collection of horizontal normal and computed event points and regression points
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:HorizontalNormalEventPoints" minOccurs="0"/>
+                <element ref="inr:HorizontalComputedEventPoints" minOccurs="0"/>
+                <element ref="inr:IntersectingAlignmentPoints" minOccurs="0"/>
+                <element ref="inr:HorizontalRegressionPoints" minOccurs="0"/>
+                <element ref="inr:InterpolatedSlews" minOccurs="0"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="VerticalLine">
+        <annotation>
+            <documentation>Vertical linear element</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:VerticalStart"/>
+                <element ref="inr:VerticalEnd"/>
+                <element ref="inr:StationEquation" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="length" type="double" use="required"/>
+            <attribute name="grade" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="VerticalSymmetricalParabola">
+        <annotation>
+            <documentation>Vertical symmetrical parabolic element</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:VerticalStart"/>
+                <element ref="inr:PVI"/>
+                <element ref="inr:VerticalEnd"/>
+                <element ref="inr:TurningPoint" minOccurs="0"/>
+                <element ref="inr:StationEquation" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:SightDistance" minOccurs="0"/>
+            </sequence>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="verticalCurveLength" type="double" use="required"/>
+            <attribute name="midOrdinate" type="double" use="optional"/>
+            <attribute name="startGrade" type="double" use="optional"/>
+            <attribute name="endGrade" type="double" use="optional"/>
+            <attribute name="rateOfChange" type="double" use="optional"/>
+            <attribute name="kValue" type="double" use="optional"/>
+            <attribute name="externalDistance" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="VerticalUnsymmetricalParabola">
+        <annotation>
+            <documentation>Vertical unsymmetrical parabolic element</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:VerticalStart"/>
+                <element ref="inr:PVI"/>
+                <element ref="inr:PVCC"/>
+                <element ref="inr:VerticalEnd"/>
+                <element ref="inr:TurningPoint" minOccurs="0"/>
+                <element ref="inr:StationEquation" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:SightDistance" minOccurs="0"/>
+            </sequence>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="startVerticalCurveLength" type="double" use="required"/>
+            <attribute name="endVerticalCurveLength" type="double" use="required"/>
+            <attribute name="midOrdinate" type="double" use="optional"/>
+            <attribute name="startGrade" type="double" use="optional"/>
+            <attribute name="endGrade" type="double" use="optional"/>
+            <attribute name="startRateOfChange" type="double" use="optional"/>
+            <attribute name="endRateOfChange" type="double" use="optional"/>
+            <attribute name="startKValue" type="double" use="optional"/>
+            <attribute name="endKValue" type="double" use="optional"/>
+            <attribute name="externalDistance" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="VerticalClothoid">
+        <annotation>
+            <documentation>Vertical spiral transition element</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:VerticalStart"/>
+                <element ref="inr:PVI"/>
+                <element ref="inr:VerticalEnd"/>
+                <element ref="inr:TurningPoint" minOccurs="0"/>
+                <element ref="inr:StationEquation" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="startRadius" type="double" use="required"/>
+            <attribute name="endRadius" type="double" use="required"/>
+            <attribute name="length" type="double" use="required"/>
+            <attribute name="thetaAngle" type="inr:STAngle" use="optional"/>
+            <attribute name="aConstant" type="double" use="optional"/>
+            <attribute name="longTangent" type="double" use="optional"/>
+            <attribute name="shortTangent" type="double" use="optional"/>
+            <attribute name="longChord" type="double" use="optional"/>
+            <attribute name="xs" type="double" use="optional"/>
+            <attribute name="ks" type="double" use="optional"/>
+            <attribute name="ys" type="double" use="optional"/>
+            <attribute name="p" type="double" use="optional"/>
+            <attribute name="startGrade" type="double" use="optional"/>
+            <attribute name="endGrade" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="VerticalCircle">
+        <annotation>
+            <documentation>Vertical circular element</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:VerticalStart"/>
+                <element ref="inr:PVI"/>
+                <element ref="inr:VerticalCenter"/>
+                <element ref="inr:VerticalEnd"/>
+                <element ref="inr:TurningPoint" minOccurs="0"/>
+                <element ref="inr:StationEquation" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:SightDistance" minOccurs="0"/>
+            </sequence>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="radius" type="double" use="required"/>
+            <attribute name="startGrade" type="double" use="optional"/>
+            <attribute name="endGrade" type="double" use="optional"/>
+            <attribute name="length" type="double" use="optional"/>
+            <attribute name="midOrdinate" type="double" use="optional"/>
+            <attribute name="externalDistance" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="VerticalElements">
+        <annotation>
+            <documentation>
+                A collection of vertical linear, parabolic, circular and spiral transition elements
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <choice maxOccurs="unbounded">
+                    <element ref="inr:VerticalLine" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="inr:VerticalSymmetricalParabola" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="inr:VerticalUnsymmetricalParabola" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="inr:VerticalClothoid" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="inr:VerticalCircle" minOccurs="0" maxOccurs="unbounded"/>
+                </choice>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="VerticalAlignment">
+        <annotation>
+            <documentation>Vertical alignment data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:VerticalElements" minOccurs="0"/>
+                <element ref="inr:VerticalEventPoints" minOccurs="0"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="description" type="string" use="optional"/>
+            <attribute name="curvatureDefinition" use="required">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="parabolic"/>
+                        <enumeration value="circular"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="lastRevisedDate" type="string" use="required"/>
+            <attribute name="lastRevisedBy" type="string" use="required"/>
+        </complexType>
+    </element>
+    <element name="HorizontalLine">
+        <annotation>
+            <documentation>Horizontal linear element</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Start" minOccurs="0"/>
+                <element ref="inr:End" minOccurs="0"/>
+                <element ref="inr:StationEquation" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="length" type="double" use="required"/>
+            <attribute name="direction" type="inr:STDirection" use="optional"/>
+            <attribute name="elementNumber" type="integer" use="optional"/>
+            <attribute name="name" type="string" use="optional"/>
+        </complexType>
+    </element>
+    <element name="HorizontalSpiral">
+        <annotation>
+            <documentation>Horizontal spiral transition element</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Start" minOccurs="0"/>
+                <element ref="inr:PI" minOccurs="0"/>
+                <element ref="inr:End" minOccurs="0"/>
+                <element ref="inr:StationEquation" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="type" type="inr:STSpiralType" use="required"/>
+            <attribute name="compound" type="boolean" use="required"/>
+            <attribute name="startRadius" type="double" use="required"/>
+            <attribute name="endRadius" type="double" use="required"/>
+            <attribute name="length" type="double" use="required"/>
+            <attribute name="thetaAngle" type="inr:STAngle" use="optional"/>
+            <attribute name="rotationDirection" type="inr:STRotationDirection" use="required"/>
+            <attribute name="aConstant" type="double" use="optional"/>
+            <attribute name="longTangent" type="double" use="optional"/>
+            <attribute name="shortTangent" type="double" use="optional"/>
+            <attribute name="longChord" type="double" use="optional"/>
+            <attribute name="xs" type="double" use="optional"/>
+            <attribute name="ys" type="double" use="optional"/>
+            <attribute name="p" type="double" use="optional"/>
+            <attribute name="ks" type="double" use="optional"/>
+            <attribute name="tangentialDirectionStart" type="inr:STDirection" use="optional"/>
+            <attribute name="radialDirectionStart" type="inr:STDirection" use="optional"/>
+            <attribute name="chordDirection" type="inr:STDirection" use="optional"/>
+            <attribute name="radialDirectionEnd" type="inr:STDirection" use="optional"/>
+            <attribute name="tangentialDirectionEnd" type="inr:STDirection" use="optional"/>
+            <attribute name="clothoidStartX" type="double" use="optional"/>
+            <attribute name="clothoidStartY" type="double" use="optional"/>
+            <attribute name="clothoidLength" type="double" use="optional"/>
+            <attribute name="clothoidStartDirection" type="inr:STDirection" use="optional"/>
+            <attribute name="elementNumber" type="integer" use="optional"/>
+            <attribute name="name" type="string" use="optional"/>
+        </complexType>
+    </element>
+    <element name="HorizontalCircle">
+        <annotation>
+            <documentation>Horizontal circular element</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Start" minOccurs="0"/>
+                <element ref="inr:PI" minOccurs="0"/>
+                <element ref="inr:Center" minOccurs="0"/>
+                <element ref="inr:End" minOccurs="0"/>
+                <element ref="inr:StationEquation" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="radius" type="double" use="required"/>
+            <attribute name="delta" type="inr:STAngle" use="required"/>
+            <attribute name="rotationDirection" type="inr:STRotationDirection" use="required"/>
+            <attribute name="degreeOfCurve" type="inr:STAngle" use="optional"/>
+            <attribute name="length" type="double" use="required"/>
+            <attribute name="tangentLength" type="double" use="optional"/>
+            <attribute name="chord" type="double" use="optional"/>
+            <attribute name="middleOrdinate" type="double" use="optional"/>
+            <attribute name="externalDistance" type="double" use="optional"/>
+            <attribute name="tangentialDirectionStart" type="inr:STDirection" use="optional"/>
+            <attribute name="radialDirectionStart" type="inr:STDirection" use="optional"/>
+            <attribute name="chordDirection" type="inr:STDirection" use="optional"/>
+            <attribute name="radialDirectionEnd" type="inr:STDirection" use="optional"/>
+            <attribute name="tangentialDirectionEnd" type="inr:STDirection" use="optional"/>
+            <attribute name="deflectionAngle" type="inr:STAngle" use="optional"/>
+            <attribute name="elementNumber" type="integer" use="optional"/>
+            <attribute name="name" type="string" use="optional"/>
+            <attribute name="superelevation" type="double" use="optional"/>
+            <attribute name="superelevationType" use="optional">
+                <annotation>
+                    <documentation>
+                         0 = Roadway
+                         1 = Cant
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="designSpeed" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minExclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="superelevationCrown" use="optional">
+                <annotation>
+                    <documentation>Normal Crown or Reverse Crown.  Exists only if the superelevation is one of these types.</documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="NC"/>
+                        <enumeration value="RC"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="appliedCant" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minExclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="CurvesetPoint">
+        <annotation>
+            <documentation>
+                A point used for the point of intersection of the overall curveset
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:GeometryPoint" minOccurs="0"/>
+            </sequence>
+            <attribute name="delta" type="inr:STAngle" use="optional"/>
+            <attribute name="tangentLengthStart" type="double" use="optional"/>
+            <attribute name="tangentDirectionStart" type="inr:STDirection" use="optional"/>
+            <attribute name="tangentLengthEnd" type="double" use="optional"/>
+            <attribute name="tangentDirectionEnd" type="inr:STDirection" use="optional"/>
+            <attribute name="external" type="double" use="optional"/>
+            <attribute name="type" type="string" use="optional"/>
+            <attribute name="pointType" type="inr:STPointType" use="optional"/>
+            <attribute name="abbreviation" type="string" use="optional"/>
+            <attribute name="curveSetID" type="integer" use="required"/>
+            <attribute name="curveSetStartElement" type="integer" use="optional"/>
+            <attribute name="curveSetStopElement" type="integer" use="optional"/>
+        </complexType>
+    </element>
+    <element name="HorizontalTraversePoint">
+        <annotation>
+            <documentation>A traverse point or cardinal point in a curvilinear alignment</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:TraversePoint" minOccurs="0"/>
+            </sequence>
+            <attribute name="distanceBack" type="double" use="optional"/>
+            <attribute name="directionBack" type="inr:STDirection" use="optional"/>
+            <attribute name="distanceAhead" type="double" use="optional"/>
+            <attribute name="directionAhead" type="inr:STDirection" use="optional"/>
+            <attribute name="tangentDirectionStart" type="inr:STDirection" use="optional"/>
+            <attribute name="tangentLengthEnd" type="double" use="optional"/>
+            <attribute name="deflection" type="inr:STAngle" use="optional"/>
+            <attribute name="angleLeft" type="inr:STAngle" use="optional"/>
+            <attribute name="angleRight" type="inr:STAngle" use="optional"/>
+        </complexType>
+    </element>
+    <element name="HorizontalElements">
+        <annotation>
+            <documentation>
+                A collection of horizontal linear, circular and spiral transition elements
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <choice maxOccurs="unbounded">
+                    <element ref="inr:HorizontalLine" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="inr:HorizontalSpiral" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="inr:HorizontalCircle" minOccurs="0" maxOccurs="unbounded"/>
+                </choice>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="HorizontalCurveSets">
+        <annotation>
+            <documentation>
+                A collection of curve-set data to support curve-sets of type Curve, SCS, and SCSCS data
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <choice maxOccurs="unbounded">
+                    <element ref="inr:CurvesetPoint" minOccurs="0" maxOccurs="unbounded"/>
+                </choice>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="HorizontalTraversePoints">
+        <annotation>
+            <documentation>
+                A collection of traverse points, which are typically PI to PI alignments
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <choice maxOccurs="unbounded">
+                    <element ref="inr:HorizontalTraversePoint" minOccurs="0" maxOccurs="unbounded"/>
+                </choice>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="HorizontalAlignment">
+        <annotation>
+            <documentation>Horizontal alignment data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:HorizontalElements" minOccurs="0"/>
+                <element ref="inr:HorizontalCurveSets" minOccurs="0"/>
+                <element ref="inr:HorizontalTraversePoints" minOccurs="0"/>
+                <element ref="inr:VerticalAlignment" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:HorizontalEventPoints" minOccurs="0"/>
+                <element ref="inr:Superelevation" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:Rails" minOccurs="0"/>
+                <element ref="inr:DistanceKeepers" minOccurs="0"/>
+                <element ref="inr:IncrementalRailPoints" minOccurs="0"/>
+                <element ref="inr:StakeoutPoints" minOccurs="0"/>
+                <element ref="inr:ClearancePoints" minOccurs="0"/>
+                <element ref="inr:StationOffsetPoints" minOccurs="0"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="description" type="string" use="optional"/>
+            <attribute name="curvatureDefinition" use="required">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="arc"/>
+                        <enumeration value="chord"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="lastRevisedDate" type="string" use="required"/>
+            <attribute name="lastRevisedBy" type="string" use="required"/>
+            <attribute name="area" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="perimeter" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="closingDistance" type="double" use="optional"/>
+            <attribute name="closingDirection" type="inr:STDirection" use="optional"/>
+            <attribute name="closingPrecision" type="double" use="optional"/>
+            <attribute name="northingClosingError" type="double" use="optional"/>
+            <attribute name="eastingClosingError" type="double" use="optional"/>
+            <attribute name="fromFeature" type="boolean" use="optional"/>
+            <attribute name="surfaceName" type="string" use="optional">
+                <annotation>
+                    <documentation>Used only if fromFeature is TRUE</documentation>
+                </annotation>
+            </attribute>
+            <attribute name="isLegalParent" type="boolean" use="optional"/>
+        </complexType>
+    </element>
+    <element name="Turnout">
+        <annotation>
+            <documentation>Turnout data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <choice maxOccurs="unbounded">
+                    <element ref="inr:HorizontalLine" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="inr:HorizontalCircle" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="inr:HorizontalSpiral" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="inr:TurnoutPoint" minOccurs="0" maxOccurs="unbounded"/>
+                </choice>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="style" type="string" use="required"/>
+            <attribute name="description" type="string" use="optional"/>
+            <attribute name="lastRevisedDate" type="string" use="required"/>
+            <attribute name="lastRevisedBy" type="string" use="required"/>
+        </complexType>
+    </element>
+    <element name="GeometryProject">
+        <annotation>
+            <documentation>Geometry project data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:HorizontalAlignment" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:Turnout" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:CogoPoints" minOccurs="0"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="description" type="string" use="optional"/>
+            <attribute name="file" type="string" use="optional"/>
+            <attribute name="lastRevisedDate" type="string" use="required"/>
+            <attribute name="lastRevisedBy" type="string" use="required"/>
+        </complexType>
+    </element>
+    <element name="TableLine">
+        <annotation>
+            <documentation>Collection of horizontal lines for a table</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:HorizontalLine"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+        </complexType>
+    </element>
+    <element name="TableCircle">
+        <annotation>
+            <documentation>Collection of horizontal circles for a table</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:HorizontalCircle"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+        </complexType>
+    </element>
+    <element name="TableSpiral">
+        <annotation>
+            <documentation>Collection of horizontal spirals for a table</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:HorizontalSpiral"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+        </complexType>
+    </element>
+    <element name="TablePoint">
+        <annotation>
+            <documentation>Collection of geometry points for a table</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:GeometryPoint"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+        </complexType>
+    </element>
+    <element name="HorizontalAnnotationTable">
+        <annotation>
+            <documentation>Collection of elements for a table</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <choice maxOccurs="unbounded">
+                    <element ref="inr:TableLine" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="inr:TableCircle" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="inr:TableSpiral" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="inr:TablePoint" minOccurs="0" maxOccurs="unbounded"/>
+                </choice>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

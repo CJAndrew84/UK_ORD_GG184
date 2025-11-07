@@ -1,0 +1,4462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:ini="CivilIni" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="CivilIni" elementFormDefault="qualified">
+	<include schemaLocation="CommonIni.xsd"/>
+	<element name="ProfileCommon">
+		<annotation>
+			<documentation>Contains settings common to all profile creation commands</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="LeftAxis" type="ini:CTAxis"/>
+				<element name="BottomAxis" type="ini:CTAxis"/>
+				<element name="RightAxis" type="ini:CTAxis"/>
+				<element name="TopAxis" type="ini:CTAxis"/>
+				<element name="MiddleAxis" type="ini:CTAxis"/>
+				<element name="CenterAxis" type="ini:CTAxis"/>
+				<element name="MajorHorizontalGridLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="MinorHorizontalGridLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="MajorVerticalGridLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="MinorVerticalGridLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="TitleText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="TitleBoxLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="LegendText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="LegendBoxLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="PlotDirection" use="required">
+				<annotation>
+					<documentation>
+                    0 = Left to Right
+                    1 = Right to Left
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="VerticalExaggeration" type="double" use="required"/>
+			<attribute name="HorizontalExaggeration" type="double" use="required"/>
+			<attribute name="ClipMajorHorizontalGrid" type="boolean" use="required"/>
+			<attribute name="ClipMinorHorizontalGrid" type="boolean" use="required"/>
+			<attribute name="ClipMajorVerticalGrid" type="boolean" use="required"/>
+			<attribute name="ClipMinorVerticalGrid" type="boolean" use="required"/>
+			<attribute name="DisplayMajorHorizontalGrid" type="boolean" use="required"/>
+			<attribute name="DisplayMinorHorizontalGrid" type="boolean" use="required"/>
+			<attribute name="DisplayMajorVerticalGrid" type="boolean" use="required"/>
+			<attribute name="DisplayMinorVerticalGrid" type="boolean" use="required"/>
+			<attribute name="TitleText" type="ini:STString31" use="required"/>
+			<attribute name="DisplayTitleText" type="boolean" use="required"/>
+			<attribute name="DisplayTitleBox" type="boolean" use="required"/>
+			<attribute name="LegendLineLabel" type="ini:STString31" use="required"/>
+			<attribute name="LegendSurfaceLabel" type="ini:STString63" use="required"/>
+			<attribute name="LegendOffsetLabel" type="ini:STString31" use="required"/>
+			<attribute name="LegendScaleLabel" type="ini:STString31" use="required"/>
+			<attribute name="DisplayLegendText" type="boolean" use="required"/>
+			<attribute name="DisplayLegendBox" type="boolean" use="required"/>
+			<attribute name="TitleRelativeToBottom" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="CreateProfileAndSurveyPointsCommon">
+		<annotation>
+			<documentation>Contains settings common to both Create Profile and Survey Points to Profile commands</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="UseElevationLimits" type="boolean" use="required"/>
+			<attribute name="HighElevation" type="double" use="required"/>
+			<attribute name="LowElevation" type="double" use="required"/>
+			<attribute name="UseStationLimits" type="boolean" use="required"/>
+			<attribute name="StartStation" type="double" use="required"/>
+			<attribute name="StopStation" type="double" use="required"/>
+			<attribute name="ApplyWindowClearance" type="boolean" use="required"/>
+			<attribute name="TopClearance" type="double" use="required"/>
+			<attribute name="BottomClearance" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="CurvatureDiagramCommon">
+		<annotation>
+			<documentation>Contains settings common to all curvature diagram commands</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="CurveDiagramLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CurveDiagramPoint">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CurveDiagramText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CurveDiagramSlew" minOccurs="0">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CurveDiagramCant" minOccurs="0">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CurveDiagramCurvature" minOccurs="0">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="CurveDiagramExaggeration" use="required">
+				<annotation>
+					<documentation>
+                    0 = Vertical
+                    1 = Plot Height
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="CurveDiagramPlotHeight" type="double" use="required"/>
+			<attribute name="CurveDiagramDisplayLine" type="boolean" use="required"/>
+			<attribute name="CurveDiagramDisplayPoints" type="boolean" use="required"/>
+			<attribute name="CurveDiagramDisplayText" type="boolean" use="required"/>
+			<attribute name="CurveDiagramDisplaySlew" type="boolean" use="optional"/>
+			<attribute name="CurveDiagramDisplayCant" type="boolean" use="optional"/>
+			<attribute name="CurveDiagramDisplayCurvature" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="SlewDiagramCommon">
+		<annotation>
+			<documentation>Contains settings common to all slew diagram commands</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="SlewDiagramLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SlewDiagramPoint">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SlewDiagramText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SlewDiagramElementLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SlewDiagramElementText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="SlewDiagramExaggeration" use="optional">
+				<annotation>
+					<documentation>
+                    0 = Vertical
+                    1 = Plot Height
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SlewDiagramPlotHeight" type="double" use="optional"/>
+			<attribute name="SlewDiagramIncludeAtInterval" type="boolean" use="optional"/>
+			<attribute name="SlewDiagramInterval" type="double" use="optional"/>
+			<attribute name="SlewDiagramDisplayLine" type="boolean" use="optional"/>
+			<attribute name="SlewDiagramDisplayPoints" type="boolean" use="optional"/>
+			<attribute name="SlewDiagramDisplayText" type="boolean" use="optional"/>
+			<attribute name="SlewDiagramDisplayElements" type="boolean" use="optional"/>
+			<attribute name="SlewDiagramDisplayElementText" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="CreateProfile">
+		<annotation>
+			<documentation>Contains Create Profile settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ProfileCommon"/>
+				<element ref="ini:CreateProfileAndSurveyPointsCommon"/>
+				<element name="DrainagePipeInsideLine" minOccurs="0">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DrainagePipeOutsideLine" minOccurs="0">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DrainageChannelLine" minOccurs="0">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DrainageCulvertInsideLine" minOccurs="0">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DrainageCulvertOutsideLine" minOccurs="0">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DrainageInletLine" minOccurs="0">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DrainageManholeLine" minOccurs="0">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DrainagePumpLine" minOccurs="0">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DrainageHGLLine" minOccurs="0">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DrainageEGLLine" minOccurs="0">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DrainageBranchLine" minOccurs="0">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="Create" use="required">
+				<annotation>
+					<documentation>
+                        0 = Window And Data
+                        1 = Window Only
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SurfaceDisplayToggles" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="33554431"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SourceType" use="required">
+				<annotation>
+					<documentation>
+                    0 = Alignment
+                    1 = Graphics
+                    2 = Multipoint
+                    3 = Ascii
+                    4 = Network
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="4"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="IncludeCrossingFeatures" type="boolean" use="required"/>
+			<attribute name="IncludeProjectedFeatures" type="boolean" use="required"/>
+			<attribute name="LeftBandwidthOn" type="boolean" use="required"/>
+			<attribute name="LeftBandwidthOffset" type="double" use="required"/>
+			<attribute name="RightBandwidthOn" type="boolean" use="required"/>
+			<attribute name="RightBandwidthOffset" type="double" use="required"/>
+			<attribute name="IncludeFeatures" use="required">
+				<annotation>
+					<documentation>
+                    0 = Inside Band
+                    1 = Outside Band
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ClipFeatures" type="boolean" use="required"/>
+			<attribute name="DisplayPlanimetrics" type="boolean" use="required"/>
+			<attribute name="ShowDataOutsideElevation" type="boolean" use="required"/>
+			<attribute name="DrainageDisplayPipeOutside" type="boolean" use="optional"/>
+			<attribute name="DrainageDisplayCulvertOutside" type="boolean" use="optional"/>
+			<attribute name="DrainageDisplayHGL" type="boolean" use="optional"/>
+			<attribute name="DrainageDisplayEGL" type="boolean" use="optional"/>
+			<attribute name="DrainageDisplayBranch" use="optional"/>
+			<attribute name="OffsetDisplayToggles1" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles2" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles3" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles4" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles5" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles6" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles7" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles8" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles9" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles10" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles11" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles12" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles13" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles14" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles15" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles16" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles17" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles18" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles19" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles20" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles21" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles22" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles23" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles24" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OffsetDisplayToggles25" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="65535"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DrainageReference" use="optional">
+				<annotation>
+					<documentation>
+                    0 = Alignment
+                    1 = Network
+                    2 = Reference Data Only
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DrainageStartStation" type="double" use="optional"/>
+			<attribute name="DrainageExtendAxis" type="double" use="optional"/>
+			<attribute name="DrainageDisplayCone" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="CreateProfileCollection">
+		<annotation>
+			<documentation>Collection of Create Profile preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:CreateProfile" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SurveyPointsToProfile">
+		<annotation>
+			<documentation>Contains Survey Points to Profile settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ProfileCommon"/>
+				<element ref="ini:CreateProfileAndSurveyPointsCommon"/>
+				<element name="SurveyPointsLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SurveyPointsTopText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SurveyPointsBottomText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SurveyPointsPointText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SurveyPointsPoint">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="SurveyPointsMode" use="optional">
+				<annotation>
+					<documentation>
+                    0 = Extract Profile
+                    1 = Project Topocodes
+                    2 = Both
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SurveyPointsWidthLeftDataPoints" type="double" use="required"/>
+			<attribute name="SurveyPointsWidthRightDataPoints" type="double" use="required"/>
+			<attribute name="SurveyPointsWidthLeftTopocodes" type="double" use="required"/>
+			<attribute name="SurveyPointsWidthRightTopocodes" type="double" use="required"/>
+			<attribute name="SurveyPointsDisplayDataLine" type="boolean" use="required"/>
+			<attribute name="SurveyPointsDisplayTopText" type="boolean" use="required"/>
+			<attribute name="SurveyPointsDisplayBottomText" type="boolean" use="required"/>
+			<attribute name="SurveyPointsDisplayPointText" type="boolean" use="required"/>
+			<attribute name="SurveyPointsDisplayPoint" type="boolean" use="required"/>
+			<attribute name="SurveyPointsDisplayDataDescription" type="boolean" use="required"/>
+			<attribute name="SurveyPointsDataDescriptionLocation" use="required">
+				<annotation>
+					<documentation>
+                    0 = Top Axis
+                    1 = Bottom Axis
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SurveyPointsDisplayDataStation" type="boolean" use="required"/>
+			<attribute name="SurveyPointsDataStationLocation" use="required">
+				<annotation>
+					<documentation>
+                    0 = Top Axis
+                    1 = Bottom Axis
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SurveyPointsDisplayDataElevation" type="boolean" use="required"/>
+			<attribute name="SurveyPointsDataElevationLocation" use="required">
+				<annotation>
+					<documentation>
+                    0 = Top Axis
+                    1 = Bottom Axis
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SurveyPointsDisplayDataOffset" type="boolean" use="required"/>
+			<attribute name="SurveyPointsDataOffsetLocation" use="required">
+				<annotation>
+					<documentation>
+                    0 = Top Axis
+                    1 = Bottom Axis
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SurveyPointsDisplayDataDeflection" type="boolean" use="required"/>
+			<attribute name="SurveyPointsDataDeflectionLocation" use="required">
+				<annotation>
+					<documentation>
+                    0 = Top Axis
+                    1 = Bottom Axis
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SurveyPointsDisplayTopocodeDescription" type="boolean" use="required"/>
+			<attribute name="SurveyPointsTopocodeDescriptionLocation" use="required">
+				<annotation>
+					<documentation>
+                    0 = Top Axis
+                    1 = Bottom Axis
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SurveyPointsDisplayTopocodeStation" type="boolean" use="required"/>
+			<attribute name="SurveyPointsTopocodeStationLocation" use="required">
+				<annotation>
+					<documentation>
+                    0 = Top Axis
+                    1 = Bottom Axis
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SurveyPointsDisplayTopocodeElevation" type="boolean" use="required"/>
+			<attribute name="SurveyPointsTopocodeElevationLocation" use="required">
+				<annotation>
+					<documentation>
+                    0 = Top Axis
+                    1 = Bottom Axis
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SurveyPointsDisplayTopocodeOffset" type="boolean" use="required"/>
+			<attribute name="SurveyPointsTopocodeOffsetLocation" use="required">
+				<annotation>
+					<documentation>
+                    0 = Top Axis
+                    1 = Bottom Axis
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SurveyPointsDisplayTopocodeDeflection" type="boolean" use="required"/>
+			<attribute name="SurveyPointsTopocodeDeflectionLocation" use="required">
+				<annotation>
+					<documentation>
+                    0 = Top Axis
+                    1 = Bottom Axis
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="SurveyPointsToProfileCollection">
+		<annotation>
+			<documentation>Collection of Survey Points To Profile preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:SurveyPointsToProfile" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="HorizontalCurvatureDiagram">
+		<annotation>
+			<documentation>Contains Horizontal Curvature Diagram settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ProfileCommon"/>
+				<element ref="ini:CurvatureDiagramCommon"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+		</complexType>
+	</element>
+	<element name="HorizontalCurvatureDiagramCollection">
+		<annotation>
+			<documentation>Collection of Horizontal Curvature Diagram preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:HorizontalCurvatureDiagram" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="HorizontalSlewDiagram">
+		<annotation>
+			<documentation>Contains Horizontal Slew Diagram settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ProfileCommon"/>
+				<element ref="ini:SlewDiagramCommon"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+		</complexType>
+	</element>
+	<element name="HorizontalSlewDiagramCollection">
+		<annotation>
+			<documentation>Collection of Horizontal Slew Diagram preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:HorizontalSlewDiagram" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="VerticalCurvatureDiagram">
+		<annotation>
+			<documentation>Contains Vertical Curvature Diagram settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ProfileCommon"/>
+				<element ref="ini:CurvatureDiagramCommon"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+		</complexType>
+	</element>
+	<element name="VerticalCurvatureDiagramCollection">
+		<annotation>
+			<documentation>Collection of Vertical Curvature Diagram preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:VerticalCurvatureDiagram" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="VerticalSlewDiagram">
+		<annotation>
+			<documentation>Contains Vertical Slew Diagram settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ProfileCommon"/>
+				<element ref="ini:SlewDiagramCommon"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+		</complexType>
+	</element>
+	<element name="VerticalSlewDiagramCollection">
+		<annotation>
+			<documentation>Collection of Vertical Slew Diagram preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:VerticalSlewDiagram" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="AnnotateProfile">
+		<annotation>
+			<documentation>Contains Annotate Profile settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="FrameLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="TickLine">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTDisplayTicks">
+								<choice>
+									<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+									<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="StationTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="StationText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="CumulativeStationTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CumulativeStationText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="StationIntervalTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="StationIntervalText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="StationNumberTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="StationNumberText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="SuperelevationTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine1">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine2">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine3">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine4">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine5">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine6">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine7">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine8">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine9">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine10">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine11">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine12">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine13">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine14">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine15">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine16">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine17">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine18">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine19">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine20">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine21">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine22">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine23">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine24">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine25">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine26">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine27">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine28">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine29">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationDataLine30">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationReferenceLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="ConstantSuperelevationText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationSuperRadiusText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SuperelevationStationText" type="ini:CTAnnotationPlacement"/>
+				<element name="SuperelevationSuperText" type="ini:CTAnnotationPlacement"/>
+				<element name="SuperelevationRadiusLeft" type="ini:CTAnnotationPlacement"/>
+				<element name="SuperelevationRadiusRight" type="ini:CTAnnotationPlacement"/>
+				<element name="CurvatureTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CurvatureDataLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CurvatureCenterAxis">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CurvatureText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CurvatureLengthLine" type="ini:CTAnnotationPlacement"/>
+				<element name="CurvatureRadius" type="ini:CTAnnotationPlacement"/>
+				<element name="CurvatureLengthCircle" type="ini:CTAnnotationPlacement"/>
+				<element name="CurvatureSpiral" type="ini:CTAnnotationPlacement"/>
+				<element name="CurvatureLengthSpiral" type="ini:CTAnnotationPlacement"/>
+				<element name="CurvatureRL" type="ini:CTAnnotationPlacement"/>
+				<element name="ExistingTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="ExistingText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ProposedTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="ProposedText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="CutDepthTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CutDepthText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="FillHeightTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="FillHeightText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="TemplateTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="TemplateText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="TemplateStation" type="ini:CTAnnotationPlacement"/>
+				<element name="DeflectionTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DeflectionDataLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DeflectionText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="GradeAndDistanceTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="GradeAndDistanceDataLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="GradeAndDistanceText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="GradeAndDistanceElevation" type="ini:CTAnnotationPlacement"/>
+				<element name="GradeAndDistanceLength" type="ini:CTAnnotationPlacement"/>
+				<element name="GradeAndDistanceSlope" type="ini:CTAnnotationPlacement"/>
+				<element name="VerticalOrdinateTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="VerticalOrdinateText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="HorizontalSlewTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="HorizontalSlewText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="VerticalSlewTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="VerticalSlewText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="SightDistanceTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SightDistanceText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="HorizontalCardinalTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="HorizontalCardinalText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="VerticalCardinalTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="VerticalCardinalText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="VerticalAlignmentTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="VerticalAlignmentDataLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="VerticalAlignmentText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="VerticalAlignmentLength" type="ini:CTAnnotationPlacement"/>
+				<element name="VerticalAlignmentSlope" type="ini:CTAnnotationPlacement"/>
+				<element name="VerticalAlignmentCurveLength" type="ini:CTAnnotationPlacement"/>
+				<element name="VerticalAlignmentLeftLength" type="ini:CTAnnotationPlacement"/>
+				<element name="VerticalAlignmentRightLength" type="ini:CTAnnotationPlacement"/>
+				<element name="VerticalAlignmentRadius" type="ini:CTAnnotationPlacement"/>
+				<element name="VerticalAlignmentEquivalentRadius" type="ini:CTAnnotationPlacement"/>
+				<element name="CantTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CantLeftRail">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CantRightRail">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CantCenterAxis">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CantText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="CantStation" type="ini:CTAnnotationPlacement"/>
+				<element name="CantApplied" type="ini:CTAnnotationPlacement"/>
+				<element name="CantDeficiency" type="ini:CTAnnotationPlacement"/>
+				<element name="CantRateOfApplied" type="ini:CTAnnotationPlacement"/>
+				<element name="CantRateOfDeficiency" type="ini:CTAnnotationPlacement"/>
+				<element name="CantGradient" type="ini:CTAnnotationPlacement"/>
+				<element name="CantSpeed" type="ini:CTAnnotationPlacement"/>
+				<element name="SpeedTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SpeedDataLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SpeedText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="RailElevationsLeftTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="RailElevationsRightTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="RailElevationsLeftText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="RailElevationsRightText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="HorizontalEventPointsTitle">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="HorizontalEventPointsLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="HorizontalEventPointsText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="HorizontalEventPointsNameText" type="ini:CTAnnotationPlacement"/>
+				<element name="HorizontalEventPointsDescText" type="ini:CTAnnotationPlacement"/>
+				<element name="LeaderLine">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTLeaderLine">
+								<choice>
+									<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+									<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="SuperelevationPoint">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="IncludeCriticalPoints" use="required">
+				<annotation>
+					<documentation>
+                        0 = None
+                        1 = Horizontal Events and Station Intervals
+                        2 = Vertical Events and Station Intervals
+                        3 = Horizontal Events Only
+                        4 = Vertical Events Only
+                        5 = Horizontal and Vertical Events Only
+                        6 = All Events and Station Intervals
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="6"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="StationInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.00001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="StationRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="StationRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DisplayStation" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        4096 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="4096"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="StationDropEquationName" type="boolean" use="required"/>
+			<attribute name="StationItemOrder" type="integer" use="required"/>
+			<attribute name="CumulativeStationRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="CumulativeStationRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DisplayCumulativeStation" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        8192 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="8192"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="CumulativeStationInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.00001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="CumulativeStationItemOrder" type="integer" use="required"/>
+			<attribute name="StationIntervalRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="StationIntervalRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DisplayStationInterval" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        16384 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="16384"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="StationIntervalInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.00001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="StationIntervalItemOrder" type="integer" use="required"/>
+			<attribute name="StationNumberRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="StationNumberRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DisplayStationNumber" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        32768 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="32768"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="StationNumberInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.00001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="StationNumberInitialID" type="integer" use="required"/>
+			<attribute name="StationNumberItemOrder" type="integer" use="required"/>
+			<attribute name="SuperelevationRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="SuperelevationRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="SuperelevationDisplayReferenceLine" type="boolean" use="required"/>
+			<attribute name="SuperelevationDisplayConstantSuperelevationRates" type="boolean" use="optional"/>
+			<attribute name="SuperelevationDisplayHorizontalRadius" type="boolean" use="optional"/>
+			<attribute name="DisplaySuperelevation" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        65536 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="65536"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SuperelevationDiagramPercent" use="optional">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.1"/>
+						<maxInclusive value="1.0"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SuperelevationItemOrder" type="integer" use="required"/>
+			<attribute name="DisplaySuperelevationOnDataLine" type="boolean" use="optional"/>
+			<attribute name="CurvatureRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="CurvatureRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="CurvatureDisplayDataLine" type="boolean" use="required"/>
+			<attribute name="CurvatureDisplayCenterAxis" type="boolean" use="optional"/>
+			<attribute name="DisplayCurvature" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        131072 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="131072"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="MakeCurveHeightsEqual" type="boolean" use="required"/>
+			<attribute name="InvertRadius" type="boolean" use="required"/>
+			<attribute name="InsideOfCurve" type="boolean" use="optional"/>
+			<attribute name="CurvatureDiagramPercent" use="optional">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.1"/>
+						<maxInclusive value="1.0"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="CurvatureItemOrder" type="integer" use="required"/>
+			<attribute name="ExistingRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="ExistingRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DisplayExisting" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        262144 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="262144"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ExistingItemOrder" type="integer" use="required"/>
+			<attribute name="ExistingInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.00001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ExistingRegressionPoints" type="boolean" use="optional"/>
+			<attribute name="ExistingRegressionPointsInterval" type="boolean" use="optional"/>
+			<attribute name="ProposedRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="ProposedRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DisplayProposed" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        524288 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="524288"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ProposedInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.00001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ProposedItemOrder" type="integer" use="required"/>
+			<attribute name="CutDepthRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="CutDepthRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DisplayCutDepth" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        1048576 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="1048576"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="CutDepthInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.00001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="CutDepthItemOrder" type="integer" use="required"/>
+			<attribute name="FillHeightRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="FillHeightRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DisplayFillHeight" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        2097152 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="2097152"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="FillHeightInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.00001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="FillHeightItemOrder" type="integer" use="required"/>
+			<attribute name="TemplateRowTitle" type="ini:STString31" use="optional"/>
+			<attribute name="TemplateRowHeight" type="ini:STNonnegativeDouble" use="optional"/>
+			<attribute name="DisplayTemplateTemplate" type="boolean" use="required"/>
+			<attribute name="TemplateItemOrder" type="integer" use="optional"/>
+			<attribute name="DisplayTemplate" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        2097152 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="2097152"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DeflectionRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="DeflectionRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DeflectionDisplayDataLine" type="boolean" use="required"/>
+			<attribute name="DisplayDeflection" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        4194304 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="4194304"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DeflectionItemOrder" type="integer" use="required"/>
+			<attribute name="GradeAndDistanceRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="GradeAndDistanceRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="GradeAndDistanceDisplayDataLine" type="boolean" use="required"/>
+			<attribute name="DisplayGradeAndDistance" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        8388608 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="8388608"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="GradeAndDistanceDiagramPercent" use="optional">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.1"/>
+						<maxInclusive value="1.0"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="GradeAndDistanceItemOrder" type="integer" use="required"/>
+			<attribute name="VerticalOrdinateRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="VerticalOrdinateRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DisplayVerticalOrdinate" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        16777216= Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="16777216"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="VerticalOrdinateInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.00001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="VerticalOrdinateItemOrder" type="integer" use="required"/>
+			<attribute name="HorizontalSlewRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="HorizontalSlewRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DisplayHorizontalSlew" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        33554432= Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="33554432"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="HorizontalSlewItemOrder" type="integer" use="required"/>
+			<attribute name="HorizontalSlewIntervalOnly" type="boolean" use="optional"/>
+			<attribute name="HorizontalSlewInMillimeters" type="boolean" use="optional"/>
+			<attribute name="HorizontalSlewInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.00001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="VerticalSlewRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="VerticalSlewRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DisplayVerticalSlew" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        67108864= Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="67108864"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="VerticalSlewItemOrder" type="integer" use="required"/>
+			<attribute name="VerticalSlewInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.00001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="VerticalSlewIntervalOnly" type="boolean" use="optional"/>
+			<attribute name="VerticalSlewInMillimeters" type="boolean" use="optional"/>
+			<attribute name="SightDistanceRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="SightDistanceRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DisplaySightDistance" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        134217728= Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="134217728"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SightDistanceItemOrder" type="integer" use="required"/>
+			<attribute name="HorizontalCardinalRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="HorizontalCardinalRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="HorizontalCardinalDropEquationName" type="boolean" use="required"/>
+			<attribute name="DisplayHorizontalCardinal" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        268435456= Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="268435456"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="HorizontalCardinalItemOrder" type="integer" use="required"/>
+			<attribute name="VerticalCardinalRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="VerticalCardinalRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="VerticalCardinalDropEquationName" type="boolean" use="required"/>
+			<attribute name="VerticalCardinalIncludeElevation" type="boolean" use="required"/>
+			<attribute name="DisplayVerticalCardinal" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        536870912 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="536870912"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="VerticalCardinalItemOrder" type="integer" use="required"/>
+			<attribute name="VerticalAlignmentRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="VerticalAlignmentRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="VerticalAlignmentDisplayDataLine" type="boolean" use="required"/>
+			<attribute name="DisplayVerticalAlignment" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        1073741824= Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="1073741824"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="VerticalAlignmentItemOrder" type="integer" use="required"/>
+			<attribute name="CantRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="CantRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="CantDisplayLeftRail" type="boolean" use="required"/>
+			<attribute name="CantDisplayRightRail" type="boolean" use="required"/>
+			<attribute name="CantDisplaySimilarCurve" type="boolean" use="required"/>
+			<attribute name="CantDisplayCenterAxis" type="boolean" use="optional"/>
+			<attribute name="DisplayCant" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        8= Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="8"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="CantDiagramPercent" use="optional">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.1"/>
+						<maxInclusive value="1.0"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="CantItemOrder" type="integer" use="required"/>
+			<attribute name="SpeedRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="SpeedRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="SpeedDisplayDataLine" type="boolean" use="required"/>
+			<attribute name="SpeedDisplayProportionally" type="boolean" use="required"/>
+			<attribute name="DisplaySpeed" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        16 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="16"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SpeedItemOrder" type="integer" use="required"/>
+			<attribute name="RailElevationsLeftRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="RailElevationsLeftRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="RailElevationsRightRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="RailElevationsRightRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DisplayRailElevations" use="required">
+				<annotation>
+					<documentation>
+                        0 = No
+                        128 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="128"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="RailElevationsInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.00001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="RailElevationsItemOrder" type="integer" use="required"/>
+			<attribute name="FrameDirection" use="required">
+				<annotation>
+					<documentation>
+                        512 = Up
+                        1024 = Down
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="512"/>
+						<enumeration value="1024"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="StartingOffset" type="double" use="required"/>
+			<attribute name="TitleOffset" type="double" use="required"/>
+			<attribute name="FrameLeftOffset" type="double" use="required"/>
+			<attribute name="FrameRightOffset" type="double" use="required"/>
+			<attribute name="SeparateFrames" type="boolean" use="required"/>
+			<attribute name="SeparateFramesSpacing" type="double" use="required"/>
+			<attribute name="DisplayEmptyFrames" type="boolean" use="required"/>
+			<attribute name="FixedTitle" type="boolean" use="required"/>
+			<attribute name="FixedTitleSpacing" type="double" use="required"/>
+			<attribute name="DisplayFrame" type="boolean" use="required"/>
+			<attribute name="DisplayTicks" use="required">
+				<annotation>
+					<documentation>
+                        -842150451 = uninitialized
+                        0 = No
+                        1 = Yes
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="-842150451"/>
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DisplayLeaderLines" type="boolean" use="required"/>
+			<attribute name="StartLeaderLinesAt" use="required">
+				<annotation>
+					<documentation>
+						0 = Highest
+						1 = Lowest
+						2 = Existing
+						3 = Proposed
+						4 = Origin
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="4"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Tolerance" type="double" use="required"/>
+			<attribute name="BalanceMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Positive
+                        1 = Negative
+                        2 = Neutral
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Spacing" type="double" use="required"/>
+			<attribute name="CollisionFreeStationing" type="boolean" use="required"/>
+			<attribute name="CollisionFreeVerticalCardinalAndSightDistance" type="boolean" use="required"/>
+			<attribute name="CollisionFreeHorizontalCardinal" type="boolean" use="required"/>
+			<attribute name="DisplayNegativeSuper" type="boolean" use="optional"/>
+			<attribute name="SuperelevationDisplayPoint" type="boolean" use="optional"/>
+			<attribute name="HorizontalEventPointsRowTitle" type="ini:STString31" use="required"/>
+			<attribute name="HorizontalEventPointsRowHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="HorizontalEventPointsItemOrder" type="integer" use="required"/>
+			<attribute name="DisplayHorizontalEventPoints" use="required">
+				<annotation>
+					<documentation>
+                                0 = No
+                                2048 = Yes
+                            </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="0"/>
+						<enumeration value="2048"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="AnnotateProfileCollection">
+		<annotation>
+			<documentation>Collection of Annotate Profile preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:AnnotateProfile" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="AnnotateFeatureInProfile">
+		<annotation>
+			<documentation>Contains Annotate Feature In Profile settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PointNorthing" type="ini:CTAnnotationPlacement"/>
+				<element name="PointEasting" type="ini:CTAnnotationPlacement"/>
+				<element name="PointCenterlineStation" type="ini:CTAnnotationPlacement"/>
+				<element name="PointFeatureStation" type="ini:CTAnnotationPlacement"/>
+				<element name="PointLeftHorizontalOffset" type="ini:CTAnnotationPlacement"/>
+				<element name="PointRightHorizontalOffset" type="ini:CTAnnotationPlacement"/>
+				<element name="PointElevation" type="ini:CTAnnotationPlacement"/>
+				<element name="PointFeatureName" type="ini:CTAnnotationPlacement"/>
+				<element name="PointDescription" type="ini:CTAnnotationPlacement"/>
+				<element name="PointStyle" type="ini:CTAnnotationPlacement"/>
+				<element name="SegmentHorizontalLength" type="ini:CTAnnotationPlacement"/>
+				<element name="SegmentSlopeLength" type="ini:CTAnnotationPlacement"/>
+				<element name="SegmentSlope" type="ini:CTAnnotationPlacement"/>
+				<element name="SegmentAlternateSlope" type="ini:CTAnnotationPlacement"/>
+				<element name="SegmentFeatureName" type="ini:CTAnnotationPlacement"/>
+				<element name="SegmentDescription" type="ini:CTAnnotationPlacement"/>
+				<element name="SegmentStyle" type="ini:CTAnnotationPlacement"/>
+				<element name="TickLine">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTDisplayTicks">
+								<choice>
+									<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+									<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="LeaderLine">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTLeaderLine">
+								<choice>
+									<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+									<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="FrameLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SurfaceTitleText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="FrameTitleText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ProjectedLineSegments" type="boolean" use="required"/>
+			<attribute name="ProjectedPointsFlag" type="boolean" use="required"/>
+			<attribute name="AtEveryVertex" type="boolean" use="required"/>
+			<attribute name="AtInterval" type="boolean" use="required"/>
+			<attribute name="Interval" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="CrossingPoints" type="boolean" use="required"/>
+			<attribute name="Location" use="required">
+				<annotation>
+					<documentation>
+                        0 = Object
+                        1 = Axis
+                        2 = Frame
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="PointJustification" type="ini:STJustification" use="required"/>
+			<attribute name="PointDropStationEquation" type="boolean" use="required"/>
+			<attribute name="DisplayNorthing" type="boolean" use="optional"/>
+			<attribute name="DisplayEasting" type="boolean" use="optional"/>
+			<attribute name="DisplayCenterlineStation" type="boolean" use="required"/>
+			<attribute name="DisplayFeatureStation" type="boolean" use="required"/>
+			<attribute name="DisplayHorizontalOffset" type="boolean" use="required"/>
+			<attribute name="DisplayElevation" type="boolean" use="required"/>
+			<attribute name="DisplayPointFeatureName" type="boolean" use="required"/>
+			<attribute name="DisplayPointDescription" type="boolean" use="required"/>
+			<attribute name="DisplayPointStyle" type="boolean" use="required"/>
+			<attribute name="LineSegmentLocation" use="required">
+				<annotation>
+					<documentation>
+                        -842150451 = uninitialized
+                        0 = Midpoint
+                        1 = Start
+                        2 = End
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="-842150451"/>
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+						<enumeration value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DisplayAbsoluteSlope" type="boolean" use="required"/>
+			<attribute name="UseAlternateSlope" type="boolean" use="required"/>
+			<attribute name="MaximumSlopeForAlternate" type="double" use="required"/>
+			<attribute name="AnnotateIfSlopeChanged" type="integer" use="required"/>
+			<attribute name="DisplayHorizontalLength" type="boolean" use="required"/>
+			<attribute name="DisplaySlopeLength" type="boolean" use="required"/>
+			<attribute name="DisplaySlope" type="boolean" use="required"/>
+			<attribute name="DisplayLineSegmentFeatureName" type="boolean" use="required"/>
+			<attribute name="DisplayLineSegmentDescription" type="boolean" use="required"/>
+			<attribute name="DisplayLineSegmentStyle" type="boolean" use="required"/>
+			<attribute name="FrameOffsetLeft" type="double" use="required"/>
+			<attribute name="FrameOffsetRight" type="double" use="required"/>
+			<attribute name="StartingOffset" type="double" use="required"/>
+			<attribute name="BoxWidthSurface" type="double" use="required"/>
+			<attribute name="BoxWidthTitle" type="double" use="required"/>
+			<attribute name="CollisionFreeTolerance" type="double" use="required"/>
+			<attribute name="CollisionFreeSpacing" type="double" use="required"/>
+			<attribute name="CollisionFreeBalance" use="required">
+				<annotation>
+					<documentation>
+                        0 = Equal
+                        1 = Negative
+                        2 = Positive
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="CollisionFreePoints" type="boolean" use="required"/>
+			<attribute name="CollisionFreeSegments" type="boolean" use="required"/>
+			<attribute name="DisplayFrame" type="boolean" use="required"/>
+			<attribute name="DisplayFrameTickMarks" type="boolean" use="required"/>
+			<attribute name="DisplaySurfaceTitle" type="boolean" use="required"/>
+			<attribute name="DisplayFrameTitle" type="boolean" use="required"/>
+			<attribute name="PointNorthingTitle" type="ini:STString31" use="optional"/>
+			<attribute name="PointNorthingHeight" type="double" use="optional"/>
+			<attribute name="PointEastingTitle" type="ini:STString31" use="optional"/>
+			<attribute name="PointEastingHeight" type="double" use="optional"/>
+			<attribute name="PointCenterlineStationTitle" type="ini:STString31" use="required"/>
+			<attribute name="PointCenterlineStationHeight" type="double" use="required"/>
+			<attribute name="PointFeatureStationTitle" type="ini:STString31" use="required"/>
+			<attribute name="PointFeatureStationHeight" type="double" use="required"/>
+			<attribute name="PointHorizontalOffsetTitle" type="ini:STString31" use="required"/>
+			<attribute name="PointHorizontalOffsetHeight" type="double" use="required"/>
+			<attribute name="PointElevationTitle" type="ini:STString31" use="required"/>
+			<attribute name="PointElevationHeight" type="double" use="required"/>
+			<attribute name="PointFeatureNameTitle" type="ini:STString31" use="required"/>
+			<attribute name="PointFeatureNameHeight" type="double" use="required"/>
+			<attribute name="PointDescriptionTitle" type="ini:STString31" use="required"/>
+			<attribute name="PointDescriptionHeight" type="double" use="required"/>
+			<attribute name="PointStyleTitle" type="ini:STString31" use="required"/>
+			<attribute name="PointStyleHeight" type="double" use="required"/>
+			<attribute name="SegmentHorizontalLengthTitle" type="ini:STString31" use="required"/>
+			<attribute name="SegmentHorizontalLengthHeight" type="double" use="required"/>
+			<attribute name="SegmentSlopeLengthTitle" type="ini:STString31" use="required"/>
+			<attribute name="SegmentSlopeLengthHeight" type="double" use="required"/>
+			<attribute name="SegmentSlopeTitle" type="ini:STString31" use="required"/>
+			<attribute name="SegmentSlopeHeight" type="double" use="required"/>
+			<attribute name="SegmentAlternateSlopeTitle" type="ini:STString31" use="required"/>
+			<attribute name="SegmentAlternateSlopeHeight" type="double" use="required"/>
+			<attribute name="SegmentFeatureNameTitle" type="ini:STString31" use="required"/>
+			<attribute name="SegmentFeatureNameHeight" type="double" use="required"/>
+			<attribute name="SegmentDescriptionTitle" type="ini:STString31" use="required"/>
+			<attribute name="SegmentDescriptionHeight" type="double" use="required"/>
+			<attribute name="SegmentStyleTitle" type="ini:STString31" use="required"/>
+			<attribute name="SegmentStyleHeight" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="AnnotateFeatureInProfileCollection">
+		<annotation>
+			<documentation>Collection of Annotate Feature In Profile preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:AnnotateFeatureInProfile" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ProjectPointToProfile">
+		<annotation>
+			<documentation>Contains Project Point To Profile settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ApplyStyle" use="required">
+				<annotation>
+					<documentation>
+                        0 = Assigned
+                        1 = Active
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ActiveStyle" type="ini:STString31" use="required"/>
+		</complexType>
+	</element>
+	<element name="ProjectPointToProfileCollection">
+		<annotation>
+			<documentation>Collection of Project Point To Profile preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ProjectPointToProfile" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ProjectAlignmentToProfile">
+		<annotation>
+			<documentation>Contains Project Alignment To Profile settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="UseStationLimits" type="boolean" use="required"/>
+			<attribute name="Interval" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="ProjectAlignmentToProfileCollection">
+		<annotation>
+			<documentation>Collection of Project Alignment To Profile preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ProjectAlignmentToProfile" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="DisplayInflowHydrograph">
+		<annotation>
+			<documentation>Contains Display Inflow Hydrograph settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ProfileCommon"/>
+				<element name="Data1Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data2Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data3Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data4Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data5Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data6Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data7Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data8Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data9Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data10Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data11Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data12Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data13Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data14Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data15Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data16Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data17Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data18Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data19Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data20Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data21Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data22Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data23Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data24Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data25Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="UseVerticalAxisLimits" type="boolean" use="required"/>
+			<attribute name="HighLimit" type="double" use="required"/>
+			<attribute name="LowLimit" type="double" use="required"/>
+			<attribute name="UseHorizontalAxisLimits" type="boolean" use="required"/>
+			<attribute name="StartLimit" type="double" use="required"/>
+			<attribute name="StopLimit" type="double" use="required"/>
+			<attribute name="ApplyWindowClearance" type="boolean" use="required"/>
+			<attribute name="TopClearance" type="double" use="required"/>
+			<attribute name="BottomClearance" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="DisplayInflowHydrographCollection">
+		<annotation>
+			<documentation>Collection of Display Inflow Hydrograph preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:DisplayInflowHydrograph" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="DisplayStorageCurve">
+		<annotation>
+			<documentation>Contains Display Stage - StorageCurve settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ProfileCommon"/>
+				<element name="Data1Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data2Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data3Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data4Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data5Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data6Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data7Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data8Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data9Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data10Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data11Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data12Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data13Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data14Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data15Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data16Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data17Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data18Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data19Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data20Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data21Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data22Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data23Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data24Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data25Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="UseVerticalAxisLimits" type="boolean" use="required"/>
+			<attribute name="HighLimit" type="double" use="required"/>
+			<attribute name="LowLimit" type="double" use="required"/>
+			<attribute name="UseHorizontalAxisLimits" type="boolean" use="required"/>
+			<attribute name="StartLimit" type="double" use="required"/>
+			<attribute name="StopLimit" type="double" use="required"/>
+			<attribute name="ApplyWindowClearance" type="boolean" use="required"/>
+			<attribute name="TopClearance" type="double" use="required"/>
+			<attribute name="BottomClearance" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="DisplayStorageCurveCollection">
+		<annotation>
+			<documentation>Collection of Display Stage - Storage Curve preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:DisplayStorageCurve" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="DisplayDischargeCurve">
+		<annotation>
+			<documentation>Contains Display Stage - Discharge Curve settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ProfileCommon"/>
+				<element name="Data1Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data2Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data3Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data4Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data5Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data6Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data7Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data8Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data9Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data10Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data11Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data12Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data13Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data14Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data15Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data16Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data17Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data18Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data19Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data20Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data21Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data22Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data23Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data24Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data25Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="UseVerticalAxisLimits" type="boolean" use="required"/>
+			<attribute name="HighLimit" type="double" use="required"/>
+			<attribute name="LowLimit" type="double" use="required"/>
+			<attribute name="UseHorizontalAxisLimits" type="boolean" use="required"/>
+			<attribute name="StartLimit" type="double" use="required"/>
+			<attribute name="StopLimit" type="double" use="required"/>
+			<attribute name="ApplyWindowClearance" type="boolean" use="required"/>
+			<attribute name="TopClearance" type="double" use="required"/>
+			<attribute name="BottomClearance" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="DisplayDischargeCurveCollection">
+		<annotation>
+			<documentation>Collection of Display Stage - Discharge Curve preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:DisplayDischargeCurve" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="DisplayRoutedHydrograph">
+		<annotation>
+			<documentation>Contains Display Routed Hydrograph settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ProfileCommon"/>
+				<element name="Data1Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data2Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data3Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data4Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data5Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data6Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data7Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data8Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data9Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data10Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data11Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data12Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data13Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data14Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data15Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data16Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data17Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data18Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data19Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data20Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data21Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data22Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data23Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data24Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data25Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="UseVerticalAxisLimits" type="boolean" use="required"/>
+			<attribute name="HighLimit" type="double" use="required"/>
+			<attribute name="LowLimit" type="double" use="required"/>
+			<attribute name="UseHorizontalAxisLimits" type="boolean" use="required"/>
+			<attribute name="StartLimit" type="double" use="required"/>
+			<attribute name="StopLimit" type="double" use="required"/>
+			<attribute name="ApplyWindowClearance" type="boolean" use="required"/>
+			<attribute name="TopClearance" type="double" use="required"/>
+			<attribute name="BottomClearance" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="DisplayRoutedHydrographCollection">
+		<annotation>
+			<documentation>Collection of Display Routed Hydrograph preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:DisplayRoutedHydrograph" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="DisplayIDFCurve">
+		<annotation>
+			<documentation>Contains Display Inflow Hydrograph settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ProfileCommon"/>
+				<element name="Data1Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data2Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data3Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data4Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data5Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data6Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data7Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data8Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data9Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data10Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data11Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data12Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data13Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data14Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data15Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data16Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data17Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data18Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data19Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data20Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data21Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data22Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data23Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data24Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Data25Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="UseVerticalAxisLimits" type="boolean" use="required"/>
+			<attribute name="HighLimit" type="double" use="required"/>
+			<attribute name="LowLimit" type="double" use="required"/>
+			<attribute name="UseHorizontalAxisLimits" type="boolean" use="required"/>
+			<attribute name="StartLimit" type="double" use="required"/>
+			<attribute name="StopLimit" type="double" use="required"/>
+			<attribute name="ApplyWindowClearance" type="boolean" use="required"/>
+			<attribute name="TopClearance" type="double" use="required"/>
+			<attribute name="BottomClearance" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="DisplayIDFCurveCollection">
+		<annotation>
+			<documentation>Collection of Display Inflow Hydrograph preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:DisplayIDFCurve" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

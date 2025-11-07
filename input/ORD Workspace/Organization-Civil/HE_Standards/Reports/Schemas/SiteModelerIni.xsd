@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="CivilIni" xmlns:ini="CivilIni" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<include schemaLocation="CommonIni.xsd"/>
+	<element name="EditElement">
+		<annotation>
+			<documentation>Contains Edit Element settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="FeatureType" use="required">
+				<annotation>
+					<documentation>
+            	        0 = Boundary
+            	        1 = Breakline
+            	        2 = Contour
+            	        3 = Void
+            	        4 = Hold
+            	     </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="4"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Method" use="required">
+				<annotation>
+					<documentation>
+            	        0 = Slope/Offset from Element
+            	        1 = Radial from Point
+            	        2 = Along Element from Point
+            	        3 = Drape on Model/Object
+            	        4 = Constant Elevation
+            	     </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="4"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DrapeOption" use="required">
+				<annotation>
+					<documentation>
+            	        0 = Vertices
+            	        1 = Entire Element
+            	        2 = Centroid
+            	        3 = Minimum Elevation
+            	        4 = Maximum Elevation
+            	        5 = End Point
+            	     </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="5"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="UseSlope" type="boolean" use="required"/>
+			<attribute name="Slope" type="double" use="required"/>
+			<attribute name="UseOffset" type="boolean" use="required"/>
+			<attribute name="Offset" type="double" use="required"/>
+			<attribute name="Drape" use="required">
+				<annotation>
+					<documentation>
+                        0 = Model
+                        1 = Object
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="UseReferenceAssociation" type="boolean" use="required"/>
+			<attribute name="RedefineSiteElement" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="EditElementCollection">
+		<annotation>
+			<documentation>Collection of Edit Element preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:EditElement" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="DefinePoint">
+		<annotation>
+			<documentation>Contains Define Point settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="PointType" use="required">
+				<annotation>
+					<documentation>
+                        0 = Character
+                        1 = Cell
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Character" type="ini:STString1" use="required"/>
+			<attribute name="CellName" type="ini:STString1023" use="required"/>
+			<attribute name="Method" use="required">
+				<annotation>
+					<documentation>
+            	        0 = Constant Elevation
+            	        1 = Drape on Model/Object
+            	        2 = Slope from Element
+            	        3 = Slope from Point
+            	     </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="3"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="UseOffset" type="boolean" use="required"/>
+			<attribute name="Offset" type="double" use="required"/>
+			<attribute name="Drape" use="required">
+				<annotation>
+					<documentation>
+                        0 = Model
+                        1 = Object
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Slope" type="double" use="required"/>
+			<attribute name="Elevation" type="double" use="required"/>
+			<attribute name="UseElevationOption" type="boolean" use="required"/>
+			<attribute name="ElevationOption" use="required">
+				<annotation>
+					<documentation>
+                        0 = Minimum
+                        1 = Maximum
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="DefinePointCollection">
+		<annotation>
+			<documentation>Collection of Define Point preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:DefinePoint" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SideSlope">
+		<annotation>
+			<documentation>Contains Side Slope settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="Method" use="required">
+				<annotation>
+					<documentation>
+            	        0 = Mode
+            	        1 = Object
+            	        2 = Elevation
+            	        3 = Horizontal Delta
+            	        4 = Vertical Delta
+            	     </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="4"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Slope" type="double" use="required"/>
+			<attribute name="SlopeOption" use="required">
+				<annotation>
+					<documentation>
+                        0 = Radial
+                        1 = Planar
+                        2 = Rad-CS
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="EnforceDirection" type="boolean" use="required"/>
+			<attribute name="UseLimit" type="boolean" use="required"/>
+			<attribute name="LimitOption" use="required">
+				<annotation>
+					<documentation>
+                        0 = Horizontal
+                        1 = Vertical
+                        2 = Elevation
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Horizontal" type="double" use="required"/>
+			<attribute name="Vertical" type="double" use="required"/>
+			<attribute name="Elevation" type="double" use="required"/>
+			<attribute name="UseBench" type="boolean" use="required"/>
+			<attribute name="BenchWidth" type="double" use="required"/>
+			<attribute name="BenchSlope" type="double" use="required"/>
+			<attribute name="OnlyCutFill" type="boolean" use="required"/>
+			<attribute name="CutFillOption" use="required">
+				<annotation>
+					<documentation>
+                        0 = Cut
+                        1 = Fill
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="RelativeToOption" use="required">
+				<annotation>
+					<documentation>
+                        0 = Model
+                        1 = Object
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="FeatureType" use="required">
+				<annotation>
+					<documentation>
+            	        0 = Boundary
+            	        1 = Breakline
+            	        2 = Contour
+            	        3 = Void
+            	        4 = Hold
+            	     </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="4"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="CloseElements" type="boolean" use="required"/>
+			<attribute name="UseReferenceAssociation" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="SideSlopeCollection">
+		<annotation>
+			<documentation>Collection of Side Slope preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:SideSlope" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Volume">
+		<annotation>
+			<documentation>Contains Volume settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Polygon">
+					<complexType>
+						<choice>
+							<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+							<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+						</choice>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayOnly" type="boolean" use="required"/>
+			<attribute name="UseBoundary" type="boolean" use="required"/>
+			<attribute name="ByRegion" type="boolean" use="required"/>
+			<attribute name="RangeType" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="NumberOfRanges" type="positiveInteger" use="optional"/>
+			<attribute name="Increment" type="double" use="optional"/>
+			<attribute name="FromPlane" type="double" use="optional"/>
+			<attribute name="OperationType" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="4"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="UseRange" type="boolean" use="required"/>
+			<attribute name="ByFIFO" type="boolean" use="optional"/>
+			<attribute name="UseQuantityDepth" type="boolean" use="required"/>
+			<attribute name="CalculationType" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="GridPoints" type="positiveInteger" use="optional"/>
+			<attribute name="UseFactor" type="boolean" use="required"/>
+			<attribute name="CutFactor" type="double" use="optional"/>
+			<attribute name="FillFactor" type="double" use="optional"/>
+			<attribute name="Output" type="boolean" use="required"/>
+			<attribute name="OutputFileName" type="ini:STString255" use="optional"/>
+			<attribute name="NumberOfRegions" type="integer" use="optional"/>
+			<attribute name="Description0" type="ini:STString31" use="optional"/>
+			<attribute name="Description1" type="ini:STString31" use="optional"/>
+			<attribute name="Description2" type="ini:STString31" use="optional"/>
+			<attribute name="Description3" type="ini:STString31" use="optional"/>
+			<attribute name="Description4" type="ini:STString31" use="optional"/>
+			<attribute name="Description5" type="ini:STString31" use="optional"/>
+			<attribute name="Description6" type="ini:STString31" use="optional"/>
+			<attribute name="Description7" type="ini:STString31" use="optional"/>
+			<attribute name="Description8" type="ini:STString31" use="optional"/>
+			<attribute name="Description9" type="ini:STString31" use="optional"/>
+			<attribute name="Symbology0" type="ini:STString255" use="optional"/>
+			<attribute name="Symbology1" type="ini:STString255" use="optional"/>
+			<attribute name="Symbology2" type="ini:STString255" use="optional"/>
+			<attribute name="Symbology3" type="ini:STString255" use="optional"/>
+			<attribute name="Symbology4" type="ini:STString255" use="optional"/>
+			<attribute name="Symbology5" type="ini:STString255" use="optional"/>
+			<attribute name="Symbology6" type="ini:STString255" use="optional"/>
+			<attribute name="Symbology7" type="ini:STString255" use="optional"/>
+			<attribute name="Symbology8" type="ini:STString255" use="optional"/>
+			<attribute name="Symbology9" type="ini:STString255" use="optional"/>
+		</complexType>
+	</element>
+	<element name="VolumeCollection">
+		<annotation>
+			<documentation>Collection of Volume preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:Volume" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SiteTracking">
+		<annotation>
+			<documentation>Contains Site Tracking settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Point">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Contour">
+					<complexType>
+						<choice>
+							<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+							<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+						</choice>
+					</complexType>
+				</element>
+				<element name="Triangle">
+					<complexType>
+						<choice>
+							<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+							<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+						</choice>
+					</complexType>
+				</element>
+				<element name="FlowArrow">
+					<complexType>
+						<choice>
+							<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+							<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+						</choice>
+					</complexType>
+				</element>
+				<element name="Line">
+					<complexType>
+						<choice>
+							<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+							<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+						</choice>
+					</complexType>
+				</element>
+				<element name="Label">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Elevation" type="ini:CTAnnotationPlacement"/>
+				<element name="Slope" type="ini:CTAnnotationPlacement"/>
+				<element name="Distance" type="ini:CTAnnotationPlacement"/>
+				<element name="DeltaElevation" type="ini:CTAnnotationPlacement"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ShowPoint" type="boolean" use="required"/>
+			<attribute name="ShowContour" type="boolean" use="optional"/>
+			<attribute name="ShowTriangle" type="boolean" use="optional"/>
+			<attribute name="ShowArrow" type="boolean" use="optional"/>
+			<attribute name="ShowSlope" type="boolean" use="required"/>
+			<attribute name="ShowDistance" type="boolean" use="required"/>
+			<attribute name="ShowDeltaElev" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="SiteTrackingCollection">
+		<annotation>
+			<documentation>Collection of Site Tracking preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:SiteTracking" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="HighlightElements">
+		<annotation>
+			<documentation>Contains Highlight Elements settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="AllElements">
+					<complexType>
+						<choice>
+							<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+							<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+						</choice>
+					</complexType>
+				</element>
+				<element name="Construction">
+					<complexType>
+						<choice>
+							<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+							<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+						</choice>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+		</complexType>
+	</element>
+	<element name="HighlightElementsCollection">
+		<annotation>
+			<documentation>Collection of Highlight Elements preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:HighlightElements" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ExportVisualization">
+		<annotation>
+			<documentation>Contains Export Visualization settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="SurfaceSlopes">
+					<complexType>
+						<choice>
+							<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+							<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+						</choice>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ExportType"  use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="GraphicGroup" type="boolean" use="required"/>
+			<attribute name="IncludeSurfaceSlopes" type="boolean" use="required"/>
+			<attribute name="IncludeSiteElements" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="ExportVisualizationCollection">
+		<annotation>
+			<documentation>Collection of Export Visualization preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ExportVisualization" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ModifySettings">
+		<annotation>
+			<documentation>Contains Modify Settings settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="UseExtendDistance" type="boolean" use="required"/>
+			<attribute name="ExtendDistance" type="double" use="required"/>
+			<attribute name="FilletRadius" type="double" use="required"/>
+			<attribute name="ChamferEntryDistance" type="double" use="required"/>
+			<attribute name="ChamferExitDistance" type="double" use="required"/>
+			<attribute name="TrimElevationRule" use="required">
+				<annotation>
+					<documentation>
+		            	        0 = First
+		            	        1 = Second
+		            	        2 = Average
+		            	     </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Truncate" use="required">
+				<annotation>
+					<documentation>
+		            	        0 = None
+		            	        1 = First
+		            	        2 = Both
+		            	     </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="ModifySettingsCollection">
+		<annotation>
+			<documentation>Collection of Modify Settings preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ModifySettings" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:inr="InRoads" targetNamespace="InRoads" elementFormDefault="qualified">
+    <!--simpleType declarations-->
+    <simpleType name="STPointType">
+        <annotation>
+            <documentation>Enumerated list of valid point types</documentation>
+        </annotation>
+        <restriction base="string"/>
+    </simpleType>
+    <simpleType name="STPointOrigin">
+        <annotation>
+            <documentation>
+                Stores the origin from which the point was created, ie, alignment, feature, another point
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="alignment"/>
+            <enumeration value="feature"/>
+            <enumeration value="point"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STAngle">
+        <annotation>
+            <documentation>Sets valid range for angles</documentation>
+        </annotation>
+        <restriction base="double">
+            <maxExclusive value="6.28318530717958647692"/>
+            <minInclusive value="-6.28318530717958647692"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STDirection">
+        <annotation>
+            <documentation>
+                Sets valid range for direction from 0.0 to 2*PI in radians (North Azimuth)
+            </documentation>
+        </annotation>
+        <restriction base="double">
+            <maxExclusive value="6.28318530717958647692"/>
+            <minInclusive value="-6.28318530717958647692"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STRotationDirection">
+        <annotation>
+            <documentation>Direction of curve, ie, clockwise or counterclockwise</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="cw"/>
+            <enumeration value="ccw"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STRailCurvature">
+        <annotation>
+            <documentation>
+                Enumerated list of rail curvature types, ie, linear, left, right, complex left, complex
+                right
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="linear"/>
+            <enumeration value="left"/>
+            <enumeration value="right"/>
+            <enumeration value="complex left"/>
+            <enumeration value="complex right"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STSpiralType">
+        <annotation>
+            <documentation>Enumerated list of valid spiral types</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Clothoid"/>
+            <enumeration value="Cubic"/>
+            <enumeration value="Biquadratic"/>
+            <enumeration value="Bloss"/>
+            <enumeration value="Sinusoid"/>
+            <enumeration value="Cosine"/>
+            <enumeration value="Half Biquadratic"/>
+            <enumeration value="Half Bloss"/>
+            <enumeration value="Half Sinusoid"/>
+            <enumeration value="Half Cosine"/>
+            <enumeration value="Viennese"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STCantTransitionType">
+        <annotation>
+            <documentation>Enumerated list of valid cant transition types</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Clothoid"/>
+            <enumeration value="Biquadratic"/>
+            <enumeration value="Bloss"/>
+            <enumeration value="Sinusoid"/>
+            <enumeration value="Cosine"/>
+            <enumeration value="Cubic"/>
+            <enumeration value="Linear"/>
+            <enumeration value="Circular"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STSuperTransitionMode">
+        <annotation>
+            <documentation>
+                Stores the left or right transition modes for Road superelevations
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Linear"/>
+            <enumeration value="Nonlinear"/>
+            <enumeration value="Constant"/>
+            <enumeration value="N/A"/>
+            <enumeration value="Planar"/>
+            <enumeration value="null"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STSuperTransitionCurve">
+        <annotation>
+            <documentation>
+                Stores the left or right transition curve modes for Road superelevations
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Left"/>
+            <enumeration value="Right"/>
+            <enumeration value="Left To Right"/>
+            <enumeration value="Right To Left"/>
+            <enumeration value="null"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STSuperTransitionPivot">
+        <annotation>
+            <documentation>
+                Stores the left or right transition pivot modes for Road superelevations
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="From Template"/>
+            <enumeration value="Inside Range Point"/>
+            <enumeration value="Outside Range Point"/>
+            <enumeration value="Left Range Point"/>
+            <enumeration value="Right Range Point"/>
+            <enumeration value="null"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STSurfaceType">
+        <annotation>
+            <documentation>
+                Enumerated list of valid surface types
+                    0 = Existing
+                    1 = Design
+                    2 = Substratum
+                    3 = Ignore
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="3"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STFeatureType">
+        <annotation>
+            <documentation>Enumerated list of valid feature types</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="random"/>
+            <enumeration value="breakline"/>
+            <enumeration value="contour"/>
+            <enumeration value="interiorBoundary"/>
+            <enumeration value="exteriorBoundary"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STPoint">
+        <annotation>
+            <documentation>
+                A text value that is a space delimited list of doubles. It is used as the base type to
+                define point coordinates in the form of "northing easting" or "northing easting elevation"
+                as well as point lists of 2D or 3D points with items such as surface boundaries or "station
+                elevation", "station offset" lists for items such as profiles and cross sections.  Example,
+                "1632.546 2391.045 240.30"
+            </documentation>
+        </annotation>
+        <list itemType="double"/>
+    </simpleType>
+    <simpleType name="STFeatureDiscontinuousIndex">
+        <annotation>
+            <documentation>
+                A text value that is a space delimited list of indices where a feature is discontinuous
+            </documentation>
+        </annotation>
+        <list itemType="integer"/>
+    </simpleType>
+    <!--complexType declarations-->
+    <complexType name="CTStation" mixed="true">
+        <annotation>
+            <documentation>
+                Contains internal and external stations plus station equation name, if any
+            </documentation>
+        </annotation>
+        <attribute name="internalStation" type="double" use="required"/>
+        <attribute name="externalStationName" type="string" use="optional"/>
+        <attribute name="externalStation" type="double" use="optional"/>
+    </complexType>
+    <complexType name="CTStationCoordinates" mixed="true">
+        <annotation>
+            <documentation>Based on CTStation extended to include X and Y coordinates</documentation>
+        </annotation>
+        <complexContent mixed="true">
+            <extension base="inr:CTStation">
+                <attribute name="xLocation" type="double" use="required"/>
+                <attribute name="yLocation" type="double" use="required"/>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="CTVerticalPoint" mixed="true">
+        <annotation>
+            <documentation>Base vertical point definition</documentation>
+        </annotation>
+        <sequence>
+            <element name="station" type="inr:CTStation"/>
+        </sequence>
+        <attribute name="name" type="string" use="optional"/>
+        <attribute name="pointType" type="inr:STPointType" use="required"/>
+        <attribute name="type" type="string" use="required"/>
+        <attribute name="abbreviation" type="string" use="optional"/>
+        <attribute name="style" type="string" use="optional"/>
+        <attribute name="northing" type="double" use="optional"/>
+        <attribute name="easting" type="double" use="optional"/>
+        <attribute name="elevation" type="double" use="required"/>
+        <attribute name="offset" type="double" use="optional"/>
+        <attribute name="PVItoPVIVerticalBack" type="double" use="optional"/>
+        <attribute name="PVItoPVIHorizontalBack" type="double" use="optional"/>
+        <attribute name="PVItoPVISlopeBack" type="double" use="optional"/>
+        <attribute name="PVItoPVIVerticalAhead" type="double" use="optional"/>
+        <attribute name="PVItoPVIHorizontalAhead" type="double" use="optional"/>
+        <attribute name="PVItoPVISlopeAhead" type="double" use="optional"/>
+        <attribute name="PVCtoPVISlope" type="double" use="optional"/>
+        <attribute name="PVItoPVTSlope" type="double" use="optional"/>
+    </complexType>
+    <complexType name="CTLegalReference">
+        <annotation>
+            <documentation>A reference to another alignment</documentation>
+        </annotation>
+        <sequence>
+            <element name="station" type="inr:CTStation"/>
+        </sequence>
+        <attribute name="referenceAlignment" type="string" use="required"/>
+        <attribute name="referenceAlignmentDescription" type="string" use="optional"/>
+        <attribute name="offset" type="double" use="required"/>
+        <attribute name="tangentialAzimuth" type="inr:STDirection" use="required"/>
+        <attribute name="azimuthFromReferenceToPoint" type="inr:STDirection" use="required"/>
+    </complexType>
+    <complexType name="CTPoint" mixed="true">
+        <annotation>
+            <documentation>Base point definition</documentation>
+        </annotation>
+        <sequence>
+            <element name="station" type="inr:CTStation" minOccurs="0"/>
+            <element name="legalReference" type="inr:CTLegalReference" minOccurs="0"/>
+        </sequence>
+        <attribute name="name" type="string" use="optional"/>
+        <attribute name="description" type="string" use="optional"/>
+        <attribute name="pointType" type="inr:STPointType" use="required"/>
+        <attribute name="type" type="string" use="optional"/>
+        <attribute name="surfaceName" type="string" use="optional"/>
+        <attribute name="style" type="string" use="optional"/>
+        <attribute name="northing" type="double" use="required"/>
+        <attribute name="easting" type="double" use="required"/>
+        <attribute name="latitude" type="string" use="optional"/>
+        <attribute name="longitude" type="string" use="optional"/>
+        <attribute name="elevation" type="double" use="optional"/>
+        <attribute name="offset" type="double" use="optional"/>
+        <attribute name="extendedDescription" type="string" use="optional"/>
+        <attribute name="link" type="string" use="optional"/>
+    </complexType>
+    <complexType name="CTComputedPoint" mixed="true">
+        <annotation>
+            <documentation>A point used to hold computed information</documentation>
+        </annotation>
+        <sequence>
+            <element name="point" type="inr:CTPoint"/>
+        </sequence>
+        <attribute name="instantaneousRadius" type="double" use="optional"/>
+        <attribute name="instantaneousGrade" type="double" use="optional"/>
+        <attribute name="tangentDirection" type="inr:STDirection" use="optional"/>
+        <attribute name="radialDirection" type="inr:STDirection" use="optional"/>
+        <attribute name="cant" type="double" use="optional"/>
+        <attribute name="versine" type="double" use="optional"/>
+        <attribute name="widthAlong" type="double" use="optional"/>
+        <attribute name="heightAbove" type="double" use="optional"/>
+    </complexType>
+    <complexType name="CTInterpolatedSlew" mixed="true">
+        <annotation>
+            <documentation>Contains interpolated horizontal or vertical slews</documentation>
+        </annotation>
+        <sequence>
+            <element name="station" type="inr:CTStation"/>
+        </sequence>
+        <attribute name="offset" type="double" use="optional"/>
+        <attribute name="horizontalSlew" type="double" use="optional"/>
+        <attribute name="horizontalVersine" type="double" use="optional"/>
+        <attribute name="verticalSlew" type="double" use="optional"/>
+        <attribute name="verticalVersine" type="double" use="optional"/>
+    </complexType>
+    <complexType name="CTIncrementalRailPoint" mixed="true">
+        <annotation>
+            <documentation>A point used to hold information about a rail point</documentation>
+        </annotation>
+        <attribute name="parentIndex" type="integer" use="required"/>
+        <attribute name="northing" type="double" use="required"/>
+        <attribute name="easting" type="double" use="required"/>
+        <attribute name="elevation" type="double" use="required"/>
+        <attribute name="offset" type="double" use="required"/>
+        <attribute name="cant" type="double" use="required"/>
+    </complexType>
+    <complexType name="CTSightDistanceEntry" mixed="true">
+        <annotation>
+            <documentation>Used to hold information about sight distance</documentation>
+        </annotation>
+        <attribute name="eyeHeight" type="double" use="required"/>
+        <attribute name="stoppingObjectHeight" type="double" use="required"/>
+        <attribute name="passingObjectHeight" type="double" use="optional"/>
+        <attribute name="stoppingSightDistance" type="double" use="optional"/>
+        <attribute name="passingSightDistance" type="double" use="optional"/>
+        <attribute name="headLightSightDistance" type="double" use="optional"/>
+        <attribute name="sightDistance" type="double" use="optional"/>
+        <attribute name="designSpeed" type="double" use="optional"/>
+    </complexType>
+    <complexType name="CTClassificationEntry" mixed="true">
+        <annotation>
+            <documentation>
+                Classification entries for surfaces, components and material features in end area volumes
+            </documentation>
+        </annotation>
+        <attribute name="name" type="string" use="required"/>
+        <attribute name="type" use="required">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="Existing"/>
+                    <enumeration value="Substrata"/>
+                    <enumeration value="Component"/>
+                    <enumeration value="Material Feature"/>
+                    <enumeration value="Unsuitable"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="parent" type="string" use="optional"/>
+        <attribute name="classification" use="required">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="Unclassified"/>
+                    <enumeration value="Unsuitable"/>
+                    <enumeration value="Rock"/>
+                    <enumeration value="Designed"/>
+                    <enumeration value="Ignore"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="cutFactor" type="double" use="required"/>
+        <attribute name="fillFactor" type="double" use="required"/>
+        <attribute name="includeInMassOrdinate" type="boolean" use="optional"/>
+        <attribute name="applyAs" use="optional">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="Cut"/>
+                    <enumeration value="Fill"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+    <complexType name="CTCompactionExpansionEntry" mixed="true">
+        <annotation>
+            <documentation>Compaction and expansion entries for end area volumes</documentation>
+        </annotation>
+        <sequence>
+            <element name="StartStation" type="inr:CTStation"/>
+            <element name="StopStation" type="inr:CTStation"/>
+        </sequence>
+        <attribute name="cutFactor" type="double" use="required"/>
+        <attribute name="fillFactor" type="double" use="required"/>
+        <attribute name="description" type="string" use="required"/>
+    </complexType>
+    <complexType name="CTVolumeExceptionEntry" mixed="true">
+        <annotation>
+            <documentation>Volume exception entries for end area volumes</documentation>
+        </annotation>
+        <sequence>
+            <element name="StartStation" type="inr:CTStation"/>
+            <element name="StopStation" type="inr:CTStation"/>
+        </sequence>
+    </complexType>
+    <complexType name="CTAddedQuantityEntry" mixed="true">
+        <annotation>
+            <documentation>Added quantity entries for end area volumes</documentation>
+        </annotation>
+        <sequence>
+            <element name="StartStation" type="inr:CTStation"/>
+            <element name="StopStation" type="inr:CTStation"/>
+        </sequence>
+        <attribute name="type" use="required">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="Cut"/>
+                    <enumeration value="Fill"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="value" type="double" use="required"/>
+        <attribute name="factor" type="double" use="required"/>
+    </complexType>
+    <complexType name="CTForcedBalanceEntry" mixed="true">
+        <annotation>
+            <documentation>Forced balance entries for end area volumes</documentation>
+        </annotation>
+        <sequence>
+            <element name="Station" type="inr:CTStation"/>
+        </sequence>
+        <attribute name="applyTo" use="required">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="Cut"/>
+                    <enumeration value="Fill"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+    <complexType name="CTMaterialFeatureEntry" mixed="true">
+        <annotation>
+            <documentation>Material feature entries for end area volumes</documentation>
+        </annotation>
+        <attribute name="surfaceOID" type="string" use="required"/>
+        <attribute name="featureOID" type="string" use="required"/>
+        <attribute name="depth" type="double" use="required"/>
+    </complexType>
+    <complexType name="CTCutFillMaterial">
+        <annotation>
+            <documentation>An entry used to hold cut or fill material data at a cross section station</documentation>
+        </annotation>
+        <attribute name="type" use="required">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="Existing"/>
+                    <enumeration value="Substrata"/>
+                    <enumeration value="Component"/>
+                    <enumeration value="Material Feature"/>
+                    <enumeration value="Unsuitable"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="name" type="string" use="optional"/>
+        <attribute name="parent" type="string" use="optional"/>
+        <attribute name="area" type="double" use="optional"/>
+        <attribute name="factor" type="double" use="required"/>
+        <attribute name="centroidOffset" type="double" use="optional"/>
+        <attribute name="volume" type="double" use="required"/>
+        <attribute name="cumulativeVolume" type="double" use="required"/>
+        <attribute name="adjustedVolume" type="double" use="required"/>
+        <attribute name="cumulativeAdjustedVolume" type="double" use="required"/>
+        <attribute name="includeInMassOrdinate" type="boolean" use="optional"/>
+        <attribute name="applyAs" use="optional">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="Cut"/>
+                    <enumeration value="Fill"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+</schema>

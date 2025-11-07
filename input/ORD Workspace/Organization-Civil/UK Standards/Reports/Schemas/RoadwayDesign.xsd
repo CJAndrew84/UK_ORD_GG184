@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 rel. 4 (x64) (http://www.altova.com) by Geoff Bartlett (private) -->
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Mathews (Bentley Systems, Inc.) -->
+<schema xmlns:inr="InRoads" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="InRoads" elementFormDefault="qualified">
+	<include schemaLocation="CommonRpt.xsd"/>
+	<include schemaLocation="TemplateLibrary.xsd"/>
+	<include schemaLocation="SuperelevationRpt.xsd"/>
+	<!-- element declarations -->
+	<element name="Alias">
+		<annotation>
+			<documentation>Contains a particular alias value</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="parentName" type="string" use="optional"/>
+			<attribute name="isCorridor" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="TransitionMapping">
+		<annotation>
+			<documentation>Mapping of points transitioning between two template drops</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="point1" type="string" use="required"/>
+			<attribute name="point2" type="string" use="required"/>
+			<attribute name="usePoint1Style" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="TransitionLine">
+		<annotation>
+			<documentation>Contains information about a transition line</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="point1" type="string" use="required"/>
+			<attribute name="point2" type="string" use="required"/>
+			<attribute name="usePoint1Style" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="LabeledConstraint">
+		<annotation>
+			<documentation>Parametric constraint overrides</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="StartStation" type="inr:CTStationCoordinates"/>
+				<element name="StopStation" type="inr:CTStationCoordinates"/>
+			</sequence>
+			<attribute name="label" type="string" use="required"/>
+			<attribute name="startValue" type="double" use="required"/>
+			<attribute name="stopValue" type="double" use="required"/>
+			<attribute name="type" type="int" use="required"/>
+			<attribute name="enabled" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="TargetAlias">
+		<annotation>
+			<documentation>End condition and HV control target aliases</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:Alias" maxOccurs="unbounded"/>
+			</sequence>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="type" use="required">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Surface"/>
+						<enumeration value="Feature"/>
+						<enumeration value="Horizontal Alignment"/>
+						<enumeration value="Vertical Alignment"/>
+						<enumeration value=""/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="useClosest" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="SuperStationEvent" type="inr:CTStationCoordinates">
+		<annotation>
+			<documentation>List of superelevation station event points</documentation>
+		</annotation>
+	</element>
+	<element name="KeyStation" type="inr:CTStationCoordinates">
+		<annotation>
+			<documentation>Defines a special processing station</documentation>
+		</annotation>
+	</element>
+	<element name="SuperSection">
+		<annotation>
+			<documentation>Superelevation section information for a corridor</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="StartStation" type="inr:CTStationCoordinates"/>
+				<element name="StopStation" type="inr:CTStationCoordinates"/>
+				<element ref="inr:Points"/>
+				<element ref="inr:Components" minOccurs="0"/>
+			</sequence>
+			<attribute name="crown" type="string" use="required"/>
+			<attribute name="leftRange" type="string" use="required"/>
+			<attribute name="rightRange" type="string" use="required"/>
+			<attribute name="pivotFrom" type="integer" use="required">
+				<annotation>
+					<documentation>
+                        0 = From Crown
+                        1 = From Left
+                        2 = From Right
+                        3 = From Inside
+                        4 = From Outside
+                    </documentation>
+				</annotation>
+			</attribute>
+			<attribute name="pivotBy" type="integer" use="required">
+				<annotation>
+					<documentation>
+                        0 = By Single Point
+                        1 = By Adjacent Point
+                    </documentation>
+				</annotation>
+			</attribute>
+			<attribute name="nonLinearCurveLength" type="double" use="required"/>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="style" type="string" use="optional"/>
+			<attribute name="description" type="string" use="optional"/>
+			<attribute name="dragPoint" type="string" use="optional"/>
+			<attribute name="oid" type="string" use="required"/>
+			<attribute name="alignmentOID" type="string" use="required"/>
+			<attribute name="translationDX" type="double" use="required"/>
+			<attribute name="translationDY" type="double" use="required"/>
+			<attribute name="lastRevisedDate" type="string" use="optional"/>
+			<attribute name="lastRevisedBy" type="string" use="optional"/>
+			<attribute name="revisedInIRD" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="EndConditionException">
+		<annotation>
+			<documentation>Contains information for an end condition exception</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="StartStation" type="inr:CTStationCoordinates"/>
+				<element name="StopStation" type="inr:CTStationCoordinates"/>
+				<element ref="inr:Template" minOccurs="0" maxOccurs="3"/>
+				<element ref="inr:TransitionMapping" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+			<attribute name="type" use="required">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="OverrideLeft"/>
+						<enumeration value="OverrideRight"/>
+						<enumeration value="TransitionLeft"/>
+						<enumeration value="TransitionRight"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="backboneOnly" type="boolean" use="optional"/>
+			<attribute name="description" type="string" use="optional"/>
+			<attribute name="enabled" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="HVControl">
+		<annotation>
+			<documentation>Contains information for horizontal and vertical controls</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="StartStation" type="inr:CTStationCoordinates" minOccurs="0"/>
+				<element name="StopStation" type="inr:CTStationCoordinates" minOccurs="0"/>
+			</sequence>
+			<attribute name="enabled" type="boolean" use="required"/>
+			<attribute name="priority" type="integer" use="required"/>
+			<attribute name="pointName" type="string" use="required"/>
+			<attribute name="controlName" type="string" use="required"/>
+			<attribute name="controlParentName" type="string" use="optional"/>
+			<attribute name="controlType" use="required">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Alignment"/>
+						<enumeration value="Feature"/>
+						<enumeration value="Super"/>
+						<enumeration value="VerticalDifference"/>
+						<enumeration value="ElevationGrade"/>
+						<enumeration value="Cant"/>
+						<enumeration value="CorridorPoint"/>
+						<enumeration value="Style"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="mode" use="required">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Horizontal"/>
+						<enumeration value="Vertical"/>
+						<enumeration value="Both"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="offsetStart" type="double" use="optional"/>
+			<attribute name="offsetStop" type="double" use="optional"/>
+			<attribute name="verticalOffsetStart" type="double" use="optional"/>
+			<attribute name="verticalOffsetStop" type="double" use="optional"/>
+			<attribute name="superReferencePointName" type="string" use="optional"/>
+			<attribute name="elevation" type="double" use="optional"/>
+			<attribute name="grade" type="double" use="optional"/>
+			<attribute name="cantCenterPointName" type="string" use="optional"/>
+			<attribute name="cantLeftPointName" type="string" use="optional"/>
+			<attribute name="cantRightPointName" type="string" use="optional"/>
+			<attribute name="styleRange" type="double" use="optional"/>
+			<attribute name="useAsSecondary" type="boolean" use="optional"/>
+			<attribute name="controlDescription" type="string" use="optional"/>
+			<attribute name="oidControl" type="string" use="optional"/>
+			<attribute name="oidControlParent" type="string" use="optional"/>
+		</complexType>
+	</element>
+	<element name="SecondaryAlignment">
+		<annotation>
+			<documentation>Contains information for secondary alignments</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="StartStation" type="inr:CTStationCoordinates"/>
+				<element name="StopStation" type="inr:CTStationCoordinates"/>
+			</sequence>
+			<attribute name="alignmentOID" type="string" use="required"/>
+			<attribute name="offset" type="double" use="optional"/>
+			<attribute name="startOffset" type="double" use="optional"/>
+			<attribute name="stopOffset" type="double" use="optional"/>
+		</complexType>
+	</element>
+	<element name="DisplayReference">
+		<annotation>
+			<documentation>Contains information for Display References</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="StartStation" type="inr:CTStationCoordinates" minOccurs="0"/>
+				<element name="StopStation" type="inr:CTStationCoordinates" minOccurs="0"/>
+			</sequence>
+			<attribute name="type" type="long" use="required"/>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="displayAsROW" type="boolean" use="required"/>
+			<attribute name="useStationLimits" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="Transition">
+		<annotation>
+			<documentation>Contains information for a transition</documentation>
+		</annotation>
+		<complexType>
+			<sequence minOccurs="0">
+				<element ref="inr:TransitionLine" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:Template" minOccurs="0"/>
+			</sequence>
+			<attribute name="templateDropOID1" type="string" use="required"/>
+			<attribute name="templateDropOID2" type="string" use="required"/>
+			<attribute name="templateOID1" type="string" use="required"/>
+			<attribute name="templateOID2" type="string" use="required"/>
+			<attribute name="reviewed" type="boolean" use="optional"/>
+			<attribute name="enabled" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="TemplateDrop">
+		<annotation>
+			<documentation>Contains information for a template drop</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="StartStation" type="inr:CTStationCoordinates"/>
+				<element name="StopStation" type="inr:CTStationCoordinates"/>
+				<element ref="inr:Template"/>
+			</sequence>
+			<attribute name="interval" type="double" use="required">
+				<annotation>
+					<documentation>
+                        An interval less than or equal to 0 indicates a user-defined-instance cross section
+                    </documentation>
+				</annotation>
+			</attribute>
+			<attribute name="oid" type="string" use="required"/>
+			<attribute name="templateLibrary" type="string" use="optional"/>
+		</complexType>
+	</element>
+	<element name="Corridor">
+		<annotation>
+			<documentation>Contains information about a roadway corridor</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:TemplateDrop" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="StartStation" type="inr:CTStationCoordinates" minOccurs="0"/>
+				<element name="StopStation" type="inr:CTStationCoordinates" minOccurs="0"/>
+				<element ref="inr:Transition" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:DisplayReference" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:SecondaryAlignment" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:SuperSection" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:KeyStation" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:CriticalStation" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:SuperStationEvent" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:ClippingOption" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:HVControls" minOccurs="0"/>
+				<element ref="inr:EndConditionExceptions" minOccurs="0"/>
+				<element ref="inr:TargetAliases" minOccurs="0"/>
+				<element ref="inr:ParametricConstraints" minOccurs="0"/>
+			</sequence>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="surfaceStyle" type="string" use="optional"/>
+			<attribute name="sourceType" type="string" use="optional"/>
+			<attribute name="parent1Name" type="string" use="optional"/>
+			<attribute name="oid1" type="string" use="optional"/>
+			<attribute name="parent2Name" type="string" use="optional"/>
+			<attribute name="oid2" type="string" use="optional"/>
+			<attribute name="useStationLimits" type="boolean" use="required"/>
+			<attribute name="maxRoundingTangent" type="double" use="optional"/>
+			<attribute name="lastRevisedDate" type="string" use="required"/>
+			<attribute name="lastRevisedBy" type="string" use="required"/>
+			<attribute name="exteriorArc" type="double" use="optional"/>
+			<attribute name="mirror" type="boolean" use="optional"/>
+			<attribute name="reflect" type="boolean" use="optional"/>
+			<attribute name="applyTemplate" type="boolean" use="optional"/>
+			<attribute name="key" type="string" use="optional"/>
+			<attribute name="results" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="RoadwayDesigner">
+		<annotation>
+			<documentation>The Roadway Design Library</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:Corridor" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:SuperelevationSections" minOccurs="0"/>
+			</sequence>
+			<attribute name="lastRevisedDate" type="string" use="optional"/>
+			<attribute name="lastRevisedBy" type="string" use="optional"/>
+			<attribute name="fileName" type="string" use="optional"/>
+			<attribute name="lastActiveCorridor" type="string" use="optional"/>
+			<attribute name="linearUnits" use="optional">
+				<annotation>
+					<documentation>
+                        0 = Undefined
+                        1 = Imperial
+                        2 = Metric
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="ClippingOption">
+		<annotation>
+			<documentation>Contains clipping option information</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="clippingCorridor" type="string" use="required"/>
+			<attribute name="clipOption" use="required">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="All"/>
+						<enumeration value="End Conditions Only"/>
+						<enumeration value="None"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="CriticalStation" type="inr:CTStationCoordinates"/>
+	<element name="TargetAliases">
+		<annotation>
+			<documentation>Collection of TargetAlias elements</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:TargetAlias" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ParametricConstraints">
+		<annotation>
+			<documentation>Collection of LabeledConstraint elements</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:LabeledConstraint" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="HVControls">
+		<annotation>
+			<documentation>Collection or HVControl elements</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:HVControl" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="EndConditionExceptions">
+		<annotation>
+			<documentation>Collection of EndConditionException elements</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:EndConditionException" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

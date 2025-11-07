@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ini="CivilIni" targetNamespace="CivilIni" elementFormDefault="qualified">
+    <include schemaLocation="CommonIni.xsd"/>
+    <!-- element declarations -->
+    <element name="SwitchHeightPlan">
+        <annotation>
+            <documentation>Contains Switch Height Plan settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="LinearText">
+                    <complexType mixed="true">
+                        <complexContent mixed="true">
+                            <extension base="ini:CTAnnotationPlacement">
+                                <choice>
+                                    <group ref="ini:GTextNamedSymbology"/>
+                                    <group ref="ini:GTextSymbology"/>
+                                </choice>
+                            </extension>
+                        </complexContent>
+                    </complexType>
+                </element>
+                <element name="CircularRadiusText" type="ini:CTAnnotationPlacement"/>
+                <element name="CircularLengthText" type="ini:CTAnnotationPlacement"/>
+                <element name="CircularCantText" type="ini:CTAnnotationPlacement"/>
+                <element name="SpiralCantGradientText" type="ini:CTAnnotationPlacement"/>
+                <element name="SpiralLengthText" type="ini:CTAnnotationPlacement"/>
+                <element name="GapEquationText" type="ini:CTAnnotationPlacement"/>
+                <element name="OverlapEquationText" type="ini:CTAnnotationPlacement"/>
+                <element name="ElementLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ElementCircular">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ElementSpiral">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="EquationText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                    <group ref="ini:GTextNamedSymbology"/>
+                                    <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ChordOffsetLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ChordOffsetText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="RadiiText">
+                    <complexType mixed="true">
+                        <complexContent mixed="true">
+                            <extension base="ini:CTAnnotationPlacement">
+                                <choice>
+                                    <group ref="ini:GTextNamedSymbology"/>
+                                    <group ref="ini:GTextSymbology"/>
+                                </choice>
+                            </extension>
+                        </complexContent>
+                    </complexType>
+                </element>
+                <element name="Point0Point">
+                    <complexType mixed="true">
+                        <complexContent mixed="true">
+                            <extension base="ini:CTAnnotationPlacement">
+                                <choice>
+                                    <group ref="ini:GPointNamedSymbology"/>
+                                    <group ref="ini:GPointSymbology"/>
+                                </choice>
+                            </extension>
+                        </complexContent>
+                    </complexType>
+                </element>
+                <element name="Point1Point">
+                    <complexType mixed="true">
+                        <complexContent mixed="true">
+                            <extension base="ini:CTAnnotationPlacement">
+                                <choice>
+                                    <group ref="ini:GPointNamedSymbology"/>
+                                    <group ref="ini:GPointSymbology"/>
+                                </choice>
+                            </extension>
+                        </complexContent>
+                    </complexType>
+                </element>
+                <element name="Point2Point">
+                    <complexType mixed="true">
+                        <complexContent mixed="true">
+                            <extension base="ini:CTAnnotationPlacement">
+                                <choice>
+                                    <group ref="ini:GPointNamedSymbology"/>
+                                    <group ref="ini:GPointSymbology"/>
+                                </choice>
+                            </extension>
+                        </complexContent>
+                    </complexType>
+                </element>
+                <element name="Point3Point">
+                    <complexType mixed="true">
+                        <complexContent mixed="true">
+                            <extension base="ini:CTAnnotationPlacement">
+                                <choice>
+                                    <group ref="ini:GPointNamedSymbology"/>
+                                    <group ref="ini:GPointSymbology"/>
+                                </choice>
+                            </extension>
+                        </complexContent>
+                    </complexType>
+                </element>
+                <element name="ShuntLimitPoint" type="ini:CTAnnotationPlacement"/>
+                <element name="LastLongSleeperLine">
+                    <complexType mixed="true">
+                        <complexContent mixed="true">
+                            <extension base="ini:CTAnnotationPlacement">
+                                <choice>
+                                    <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                    <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                                </choice>
+                            </extension>
+                        </complexContent>
+                    </complexType>
+                </element>
+                <element name="TurnoutLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="NameText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="DescriptionText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="TurnoutPointText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ShuntPoint">
+                    <complexType mixed="true">
+                        <complexContent mixed="true">
+                            <extension base="ini:CTAnnotationPlacement">
+                                <choice>
+                                    <group ref="ini:GPointNamedSymbology"/>
+                                    <group ref="ini:GPointSymbology"/>
+                                </choice>
+                            </extension>
+                        </complexContent>
+                    </complexType>
+                </element>
+                <element name="StationText" type="ini:CTAnnotationPlacement"/>
+                <element name="IncrementalStationText" type="ini:CTAnnotationPlacement"/>
+                <element name="DiagramLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="DiagramPointText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PointStationText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="IncrementalText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="VerticalGradeText" type="ini:CTAnnotationPlacement"/>
+                <element name="VerticalLengthText" type="ini:CTAnnotationPlacement"/>
+                <element name="VerticalElevationText" type="ini:CTAnnotationPlacement"/>
+                <element name="CantText" type="ini:CTAnnotationPlacement"/>
+                <element name="CantGradientText" type="ini:CTAnnotationPlacement"/>
+                <element name="CantLengthText" type="ini:CTAnnotationPlacement"/>
+                <element name="HorizontalGridText" type="ini:CTAnnotationPlacement"/>
+                <element name="VerticalGridText" type="ini:CTAnnotationPlacement"/>
+                <element name="PGLLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="SubtangentsLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="VerticalText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="LeftRailCantLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="RightRailCantLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ProfileCantText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ProfileCantLengthText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="HorizontalAxisText">
+                    <complexType mixed="true">
+                        <complexContent mixed="true">
+                            <extension base="ini:CTAnnotationPlacement">
+                                <choice>
+                                    <group ref="ini:GTextNamedSymbology"/>
+                                    <group ref="ini:GTextSymbology"/>
+                                </choice>
+                            </extension>
+                        </complexContent>
+                    </complexType>
+                </element>
+                <element name="VerticalAxisText">
+                    <complexType mixed="true">
+                        <complexContent mixed="true">
+                            <extension base="ini:CTAnnotationPlacement">
+                                <choice>
+                                    <group ref="ini:GTextNamedSymbology"/>
+                                    <group ref="ini:GTextSymbology"/>
+                                </choice>
+                            </extension>
+                        </complexContent>
+                    </complexType>
+                </element>
+                <element name="PointText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PISymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PCSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PTSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PCCSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PRCSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="TSSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="SCSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="CSSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="STSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="SSSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PVISymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PVCSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PVTSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PVCCSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PVRCSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="BeginCantSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="EndCantSymbolPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PI" type="ini:CTAnnotationPlacement"/>
+                <element name="PC" type="ini:CTAnnotationPlacement"/>
+                <element name="PT" type="ini:CTAnnotationPlacement"/>
+                <element name="PCC" type="ini:CTAnnotationPlacement"/>
+                <element name="PRC" type="ini:CTAnnotationPlacement"/>
+                <element name="TS" type="ini:CTAnnotationPlacement"/>
+                <element name="SC" type="ini:CTAnnotationPlacement"/>
+                <element name="CS" type="ini:CTAnnotationPlacement"/>
+                <element name="ST" type="ini:CTAnnotationPlacement"/>
+                <element name="SS" type="ini:CTAnnotationPlacement"/>
+                <element name="PVI" type="ini:CTAnnotationPlacement"/>
+                <element name="PVC" type="ini:CTAnnotationPlacement"/>
+                <element name="PVT" type="ini:CTAnnotationPlacement"/>
+                <element name="PVCC" type="ini:CTAnnotationPlacement"/>
+                <element name="PVRC" type="ini:CTAnnotationPlacement"/>
+                <element name="BeginCant" type="ini:CTAnnotationPlacement"/>
+                <element name="EndCant" type="ini:CTAnnotationPlacement"/>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="Display" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Plan
+                    1 = Plan and Diagrams
+                    2 = Chord Offset Diagram
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="DisplayHorizontals" type="boolean" use="required"/>
+            <attribute name="AnnotateHorizontals" type="boolean" use="required"/>
+            <attribute name="DisplayTurnouts" type="boolean" use="required"/>
+            <attribute name="AnnotateTurnouts" type="boolean" use="required"/>
+            <attribute name="DisplayStationingDiagram" type="boolean" use="required"/>
+            <attribute name="DisplayProfileDiagram" type="boolean" use="required"/>
+            <attribute name="AnnotateProfileDiagram" type="boolean" use="required"/>
+            <attribute name="Planarize" type="boolean" use="required"/>
+            <attribute name="UseStationLimits" type="boolean" use="required"/>
+            <attribute name="UseElevationLimits" type="boolean" use="required"/>
+            <attribute name="DisplayLinear" type="boolean" use="required"/>
+            <attribute name="DisplayCircularRadius" type="boolean" use="required"/>
+            <attribute name="DisplayCircularLength" type="boolean" use="required"/>
+            <attribute name="DisplayCircularCant" type="boolean" use="required"/>
+            <attribute name="DisplaySpiralCantGradient" type="boolean" use="required"/>
+            <attribute name="DisplaySpiralLength" type="boolean" use="required"/>
+            <attribute name="IncludeSpiralSubtypeSubscript" type="boolean" use="optional"/>
+            <attribute name="AnnotateInsideCurve" type="boolean" use="required"/>
+            <attribute name="AnnotateUpstation" type="boolean" use="required"/>
+            <attribute name="AnnotatePartialLengths" type="boolean" use="required"/>
+            <attribute name="DisplayGapEquation" type="boolean" use="required"/>
+            <attribute name="DisplayOverlapEquation" type="boolean" use="required"/>
+            <attribute name="ChordInterval" type="double" use="required"/>
+            <attribute name="Exaggeration" type="double" use="required"/>
+            <attribute name="AnnotateName" type="boolean" use="required"/>
+            <attribute name="AnnotateDescription" type="boolean" use="required"/>
+            <attribute name="AnnotateRadii" type="boolean" use="required"/>
+            <attribute name="IncludeSubscripts" type="boolean" use="required"/>
+            <attribute name="DisplayPoint0" type="boolean" use="required"/>
+            <attribute name="DisplayPoint1" type="boolean" use="required"/>
+            <attribute name="DisplayPoint2" type="boolean" use="required"/>
+            <attribute name="DisplayPoint3" type="boolean" use="required"/>
+            <attribute name="DisplayShuntLimit" type="boolean" use="required"/>
+            <attribute name="DisplayLastLongSleeper" type="boolean" use="required"/>
+            <attribute name="AssociatedTurnoutsOnly" type="boolean" use="required"/>
+            <attribute name="SymbolizeUnbentTurnouts" type="boolean" use="required"/>
+            <attribute name="SymbolizeBentTurnouts" type="boolean" use="required"/>
+            <attribute name="DisplayPointAbbreviation" type="boolean" use="required"/>
+            <attribute name="DisplayPointStation" type="boolean" use="required"/>
+            <attribute name="DisplayIncrementalStation" type="boolean" use="required"/>
+            <attribute name="Interval" type="double" use="required"/>
+            <attribute name="DistanceBetweenAlignments" type="double" use="required"/>
+            <attribute name="PlanToStationingDiagramOffset" type="double" use="required"/>
+            <attribute name="DisplayVerticalGrade" type="boolean" use="required"/>
+            <attribute name="DisplayVerticalLength" type="boolean" use="required"/>
+            <attribute name="DisplayVerticalElevation" type="boolean" use="required"/>
+            <attribute name="DisplayCant" type="boolean" use="required"/>
+            <attribute name="DisplayCantLength" type="boolean" use="required"/>
+            <attribute name="DisplayCantGradient" type="boolean" use="required"/>
+            <attribute name="DisplayHorizontalAxis" type="boolean" use="required"/>
+            <attribute name="HorizontalInterval" type="double" use="required"/>
+            <attribute name="DisplayVerticalAxis" type="boolean" use="required"/>
+            <attribute name="VerticalInterval" type="double" use="required"/>
+            <attribute name="VerticalExaggeration" type="double" use="required"/>
+            <attribute name="PlanToProfileDiagramOffset" type="double" use="required"/>
+            <attribute name="StrokingInterval" type="double" use="required"/>
+            <attribute name="Clothoid" type="ini:STString31" use="required"/>
+            <attribute name="CubicParabola" type="ini:STString31" use="required"/>
+            <attribute name="BiquadraticParabola" type="ini:STString31" use="required"/>
+            <attribute name="Bloss" type="ini:STString31" use="required"/>
+            <attribute name="Sinusoid" type="ini:STString31" use="required"/>
+            <attribute name="Cosine" type="ini:STString31" use="required"/>
+            <attribute name="Viennese" type="ini:STString31" use="required"/>
+            <attribute name="StartRadius" type="ini:STString31" use="required"/>
+            <attribute name="MiddleRadius" type="ini:STString31" use="required"/>
+            <attribute name="StopRadius" type="ini:STString31" use="required"/>
+            <attribute name="Scissors" type="ini:STString31" use="required"/>
+            <attribute name="MirrorSymbols" type="boolean" use="required"/>
+            <attribute name="OverrideCurvatures" type="boolean" use="required"/>
+            <attribute name="DisplayText" type="boolean" use="required"/>
+            <attribute name="DisplayPISymbol" type="boolean" use="required"/>
+            <attribute name="DisplayPCSymbol" type="boolean" use="required"/>
+            <attribute name="DisplayPTSymbol" type="boolean" use="required"/>
+            <attribute name="DisplayPCCSymbol" type="boolean" use="required"/>
+            <attribute name="DisplayPRCSymbol" type="boolean" use="required"/>
+            <attribute name="DisplayTSSymbol" type="boolean" use="required"/>
+            <attribute name="DisplaySCSymbol" type="boolean" use="required"/>
+            <attribute name="DisplayCSSymbol" type="boolean" use="required"/>
+            <attribute name="DisplaySTSymbol" type="boolean" use="required"/>
+            <attribute name="DisplaySSSymbol" type="boolean" use="required"/>
+            <attribute name="DisplayPVISymbol" type="boolean" use="required"/>
+            <attribute name="DisplayPVCSymbol" type="boolean" use="required"/>
+            <attribute name="DisplayPVTSymbol" type="boolean" use="required"/>
+            <attribute name="DisplayPVCCSymbol" type="boolean" use="required"/>
+            <attribute name="DisplayPVRCSymbol" type="boolean" use="required"/>
+            <attribute name="DisplayBeginCantSymbol" type="boolean" use="required"/>
+            <attribute name="DisplayEndCantSymbol" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="SwitchHeightPlanCollection">
+        <annotation>
+            <documentation>Collection of Switch Height Plan preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:SwitchHeightPlan" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SweptPathAnalysis">
+        <annotation>
+            <documentation>Contains Swept Path Analysis settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="FrontVehicle" type="integer" use="optional"/>
+            <attribute name="IncludeMiddleVehicle" type="boolean" use="optional"/>
+            <attribute name="MiddleVehicle" type="integer" use="optional"/>
+            <attribute name="IncludeRearVehicle" type="boolean" use="optional"/>
+            <attribute name="RearVehicle" type="integer" use="optional"/>
+            <attribute name="Interval" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="SweptPathAnalysisCollection">
+        <annotation>
+            <documentation>Collection of Swept Path Analysis preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:SweptPathAnalysis" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

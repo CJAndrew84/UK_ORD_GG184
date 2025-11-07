@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:inr="InRoads" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="InRoads" elementFormDefault="qualified">
+    <include schemaLocation="CommonRpt.xsd"/>
+    <!-- element declarations -->
+    <element name="VisibilitySurface">
+        <annotation>
+            <documentation>Visibility surface data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="description" type="string" use="optional"/>
+            <attribute name="style" type="string" use="required"/>
+            <attribute name="lastRevisedDate" type="string" use="optional"/>
+            <attribute name="lastRevisedBy" type="string" use="optional"/>
+        </complexType>
+    </element>
+    <element name="Visibility">
+        <annotation>
+            <documentation>Visibility data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="EyeStation" type="inr:CTStation"/>
+                <element name="ObjectStation" type="inr:CTStation"/>
+                <element name="ObstructionStation" type="inr:CTStation" minOccurs="0"/>
+            </sequence>
+            <attribute name="eyeOffset" type="double" use="required"/>
+            <attribute name="eyeElevation" type="double" use="required"/>
+            <attribute name="objectOffset" type="double" use="required"/>
+            <attribute name="objectElevation" type="double" use="required"/>
+            <attribute name="isNoObstruction" type="boolean" use="required"/>
+            <attribute name="obstructionOffset" type="double" use="optional"/>
+            <attribute name="obstructionElevation" type="double" use="optional"/>
+            <attribute name="isUnlimited" type="boolean" use="required"/>
+            <attribute name="sightDistance" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="VisibilitySurfaces">
+        <annotation>
+            <documentation>Collection of surfaces</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:VisibilitySurface" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="VisibilityParameters">
+        <annotation>
+            <documentation>Contains parameters for visibility data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="StartStation" type="inr:CTStation"/>
+                <element name="StopStation" type="inr:CTStation"/>
+            </sequence>
+            <attribute name="alignmentName" type="string" use="required"/>
+            <attribute name="interval" type="double" use="required"/>
+            <attribute name="sightDistance" type="double" use="required"/>
+            <attribute name="relaxedDistance" type="double" use="required"/>
+            <attribute name="eyePosition" use="required">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="From Alignment"/>
+                        <enumeration value="From Feature"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="eyeHeight" type="double" use="required"/>
+            <attribute name="eyeOffset" type="double" use="required"/>
+            <attribute name="objectPosition" use="required">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="From Alignment"/>
+                        <enumeration value="From Feature"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="objectHeight" type="double" use="required"/>
+            <attribute name="objectOffset" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="Visibilities">
+        <annotation>
+            <documentation>Collection of visibility data entries</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Visibility" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="RoadwayVisibility">
+        <annotation>
+            <documentation>Contains roadway visibility data for a specified alignment</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:VisibilitySurfaces"/>
+                <element ref="inr:VisibilityParameters"/>
+                <element ref="inr:Visibilities"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

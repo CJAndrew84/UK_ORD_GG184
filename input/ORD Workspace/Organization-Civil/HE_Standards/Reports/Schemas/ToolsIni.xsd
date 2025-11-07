@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:ini="CivilIni" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="CivilIni" elementFormDefault="qualified">
+	<include schemaLocation="CommonIni.xsd"/>
+	<element name="XMLGeometryReport">
+		<annotation>
+			<documentation>Contains XML Geometry Report settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="GeometryOptions" use="required">
+				<annotation>
+					<documentation>
+                        0 = None
+                        1 = Include Horizontal Event Points
+                        2 = Include Superelevation Alignments
+                        4 = Include Vertical Alignments
+                        8 = Interval
+                        16 = Include Vertical Event Points
+                        32 = Include Active Superelevation Only
+                        64 = Include Active Vertical Alignment Only
+                        Values are cummulative
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<minInclusive value="0"/>
+						<maxInclusive value="127"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="GeometryInterval" type="ini:STNonnegativeDouble" use="required"/>
+		</complexType>
+	</element>
+	<element name="XMLGeometryReportCollection">
+		<annotation>
+			<documentation>Collection of XML Geometry Report preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:XMLGeometryReport" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="XMLStationBaseReport">
+		<annotation>
+			<documentation>Contains XML Station Base Report settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="StationBaseOptions" use="required">
+				<annotation>
+					<documentation>
+                        0 = None
+                        1 = Include Horizontal Event Points
+                        2 = Include Interval
+                        4 = Include Offset
+                        8 = Include Horizontal On-Alignment Points
+                        16 = Include Vertical Event Points
+                        32 = Include Vertical On-Alignment Points
+                        64 = Include Station Limits
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<minInclusive value="0"/>
+						<maxInclusive value="127"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="StationBaseInterval" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="StationBaseOffset" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="XMLStationBaseReportCollection">
+		<annotation>
+			<documentation>Collection of XML Station Base Report preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:XMLStationBaseReport" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="XMLStationOffsetReport">
+		<annotation>
+			<documentation>Contains XML Station Offset Report settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="StationOffsetOptions" use="required">
+				<annotation>
+					<documentation>
+                        0 = None
+                        1 = Include Horizontal Event Points
+                        2 = Include Interval
+                        4 = Include Offset
+                        8 = Include Horizontal On-Alignment Points
+                        16 = Include Vertical Event Points
+                        32 = Include Vertical On-Alignment Points
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<minInclusive value="0"/>
+						<maxInclusive value="63"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="StationOffsetInterval" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="StationOffsetOffset" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="XMLStationOffsetReportCollection">
+		<annotation>
+			<documentation>Collection of XML Station Offset Report preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:XMLStationOffsetReport" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="XMLClearanceReport">
+		<annotation>
+			<documentation>Contains XML Clearance Report settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ClearanceOptions" use="required">
+				<annotation>
+					<documentation>
+                        0 = None
+                        1 = Include Horizontal Event Points
+                        2 = Include Horizontal On-Alignment Points
+                        4 = Include Horizontal Off-Alignment Points
+                        8 = Include Station Limits
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<minInclusive value="0"/>
+						<maxInclusive value="15"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="XMLClearanceReportCollection">
+		<annotation>
+			<documentation>Collection of XML Clearance Report preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:XMLClearanceReport" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="XMLStakeoutReport">
+		<annotation>
+			<documentation>Contains XML Stakeout Report settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="StakeoutOptions" use="required">
+				<annotation>
+					<documentation>
+                        0 = None
+                        1 = Include Horizontal Event Points
+                        2 = Include On-Alignment Points
+                        4 = Include Off-Alignment Points
+                        8 = Include Interval
+                        16 = Include Offset
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<minInclusive value="0"/>
+						<maxInclusive value="31"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="StakeoutInterval" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="StakeoutOffset" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="XMLStakeoutReportCollection">
+		<annotation>
+			<documentation>Collection of XML Stakeout Report preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:XMLStakeoutReport" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="XMLLegalDescriptionReport">
+		<annotation>
+			<documentation>Contains XML Legal Description Report settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ClosedAlignmentsOnly" type="boolean" use="required"/>
+			<attribute name="IncludeParentAlignment" type="boolean" use="optional"/>
+			<attribute name="IncludePrimaryReference" type="boolean" use="optional"/>
+			<attribute name="Bandwidth" type="double" use="optional"/>
+		</complexType>
+	</element>
+	<element name="XMLLegalDescriptionReportCollection">
+		<annotation>
+			<documentation>Collection of XML Legal Description Report preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:XMLLegalDescriptionReport" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="XMLMapCheckReport">
+		<annotation>
+			<documentation>Contains XML Map Check Report settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ClosedAlignmentsOnly" type="boolean" use="required"/>
+			<attribute name="OutputLinearPrecision" type="ini:STPrecision" use="required"/>
+			<attribute name="OutputDirectionPrecision" type="ini:STPrecision" use="required"/>
+		</complexType>
+	</element>
+	<element name="XMLMapCheckReportCollection">
+		<annotation>
+			<documentation>Collection of XML Map Check Report preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:XMLMapCheckReport" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="XMLSurfacesReport">
+		<annotation>
+			<documentation>Contains XML Surfaces Report settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="IncludeFeaturePoints" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="XMLSurfacesReportCollection">
+		<annotation>
+			<documentation>Collection of XML Surfaces Report preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:XMLSurfacesReport" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="XMLSurfaceCheckReport">
+		<annotation>
+			<documentation>Contains XML Surface Check Report settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DTMCheckTolerance1" type="double" use="required"/>
+			<attribute name="DTMCheckTolerance2" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="XMLSurfaceCheckReportCollection">
+		<annotation>
+			<documentation>Collection of XML Surface Check Report settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:XMLSurfaceCheckReport" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="GeneralTracking">
+		<annotation>
+			<documentation>Contains General Tracking settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Northing" type="ini:CTAnnotationPlacement"/>
+				<element name="Easting" type="ini:CTAnnotationPlacement"/>
+				<element name="Elevation" type="ini:CTAnnotationPlacement"/>
+				<element name="Slope" type="ini:CTAnnotationPlacement"/>
+				<element name="Aspect" type="ini:CTAnnotationPlacement"/>
+				<element name="Station" type="ini:CTAnnotationPlacement"/>
+				<element name="Offset" type="ini:CTAnnotationPlacement"/>
+				<element name="RightOffset" type="ini:CTAnnotationPlacement"/>
+				<element name="DualDimension" type="ini:CTAnnotationPlacement"/>
+				<element name="Point">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Text">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Latitude" type="ini:CTAnnotationPlacement"/>
+				<element name="Longitude" type="ini:CTAnnotationPlacement"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayPoint" type="boolean" use="required"/>
+			<attribute name="DisplayText" type="boolean" use="optional"/>
+			<attribute name="DisplayNorthing" type="boolean" use="required"/>
+			<attribute name="DisplayEasting" type="boolean" use="required"/>
+			<attribute name="DisplayElevation" type="boolean" use="required"/>
+			<attribute name="DisplaySlope" type="boolean" use="required"/>
+			<attribute name="DisplayAspect" type="boolean" use="required"/>
+			<attribute name="DisplayStation" type="boolean" use="required"/>
+			<attribute name="DisplayOffset" type="boolean" use="required"/>
+			<attribute name="DisplayDualDimension" type="boolean" use="required"/>
+			<attribute name="DisplayLatitude" type="boolean" use="optional"/>
+			<attribute name="DisplayLongitude" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="GeneralTrackingCollection">
+		<annotation>
+			<documentation>Collection of General Tracking preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:GeneralTracking" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="PreferredPreference">
+		<annotation>
+			<documentation>Contains the Preferred Preference name</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="Name" type="ini:STString31" use="required"/>
+		</complexType>
+	</element>
+	<element name="PreferredPreferenceCollection">
+		<annotation>
+			<documentation>Collection of Preferred Preference preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:PreferredPreference"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SystemPreferences">
+		<annotation>
+			<documentation>Contains System Preferences settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="NorthingEasting" type="ini:CTAnnotationPlacement"/>
+				<element name="Elevation" type="ini:CTAnnotationPlacement"/>
+				<element name="Angular" type="ini:CTAnnotationPlacement"/>
+				<element name="Aspect" type="ini:CTAnnotationPlacement"/>
+				<element name="Slope" type="ini:CTAnnotationPlacement"/>
+				<element name="Linear" type="ini:CTAnnotationPlacement"/>
+				<element name="Station" type="ini:CTAnnotationPlacement"/>
+				<element name="AcresHectares" type="ini:CTAnnotationPlacement"/>
+				<element name="AreaUnits" type="ini:CTAnnotationPlacement"/>
+				<element name="CubicUnits" type="ini:CTAnnotationPlacement"/>
+				<element name="Scale" type="ini:CTAnnotationPlacement"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="TabStyle" use="required">
+				<annotation>
+					<documentation>
+                        0 = Not Stacked
+                        1 = Stacked
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="AlwaysActivateFirstPage" type="boolean" use="required"/>
+			<attribute name="CollapseDialogBoxesAutomatically" type="boolean" use="required"/>
+			<attribute name="Editor" use="required">
+				<annotation>
+					<documentation>
+                        0 = Custom
+                        1 = Notepad
+                        2 = Write
+                        3 = Wordpad
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="3"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="EditorName" type="ini:STString255" use="required"/>
+			<attribute name="DefaultCell" use="required">
+				<simpleType>
+					<restriction base="string">
+						<maxLength value="15"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="GUICoordinateSequence" use="required">
+				<annotation>
+					<documentation>
+                        0 = Easting/Northing
+                        1 = Northing/Easting
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OmitAutomaticGraphicsRefresh" type="boolean" use="required"/>
+			<attribute name="LocatePoint" type="boolean" use="required"/>
+			<attribute name="ReTriangulateWithoutPrompting" type="boolean" use="required"/>
+			<attribute name="TextScaleLock" type="boolean" use="required"/>
+			<attribute name="LinearUnits" use="required">
+				<annotation>
+					<documentation>
+                        0 = Imperial
+                        1 = Metric
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="AngularUnits" use="required">
+				<annotation>
+					<documentation>
+                        0 = Degrees
+                        1 = Gradients
+                        2 = Radians
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="PlottingHeight" type="double" use="required"/>
+			<attribute name="SeedAlignmentName" type="ini:STString63" use="required"/>
+			<attribute name="SeedPointName" type="ini:STString23" use="required"/>
+			<attribute name="HorizontalCurveDefinition" use="required">
+				<annotation>
+					<documentation>
+                        0 = Chord
+                        1 = Arc
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ConfirmHorizontalCurve" type="boolean" use="required"/>
+			<attribute name="VerticalCurveDefinition" use="required">
+				<annotation>
+					<documentation>
+                        0 = Parabolic
+                        1 = Circular
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ConfirmVerticalCurve" type="boolean" use="required"/>
+			<attribute name="MeasureCurve" use="required">
+				<annotation>
+					<documentation>
+                        0 = Along Arc
+                        1 = Along Chord
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DegreeOfCurveLength" type="double" use="required"/>
+			<attribute name="UnitStationLength" type="double" use="required"/>
+			<attribute name="DefineTransitionsBy" use="required">
+				<annotation>
+					<documentation>
+                        0 = Length
+                        1 = Constant
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SpiralDefinition" use="required">
+				<annotation>
+					<documentation>
+                        0 = Clothoid
+                        1 = Cubic
+                        2 = Bi-quadratic
+                        3 = Bloss
+                        4 = Sinusoid
+                        5 = Cosine
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="7"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="CubicParabolaIs" use="optional">
+				<annotation>
+					<documentation>
+                        0 = Australian
+                        1 = Czech
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ICSCoordinateSequence" use="required">
+				<annotation>
+					<documentation>
+                        0 = Easting/Northing
+                        1 = NorthingEasting
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="VerticalAngleReferencePosition" use="required">
+				<annotation>
+					<documentation>
+                        0 = Horizontal
+                        1 = Zenith
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="AngularMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Bearings
+                        1 = Bearings North Only
+                        2 = Azimuths From North
+                        3 = Azimuths From South
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="3"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="CogoPointProtectionFlag" type="integer" use="required"/>
+			<attribute name="PointNamesDuringEdits" use="required">
+				<annotation>
+					<documentation>
+                        0 = Do Not Assign
+                        1 = Assign
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DefaultAlignmentAccessMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = read-only
+                        1 = read-write
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DefaultCogoBufferAccessMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = read-only
+                        1 = read-write
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="PositionalTolerance" type="double" use="required"/>
+			<attribute name="HorizontalChordHeightTolerance" type="double" use="required"/>
+			<attribute name="VerticalChordHeightTolerance" type="double" use="required"/>
+			<attribute name="AngularTolerance" type="double" use="required"/>
+			<attribute name="TextScaleFactor" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="CellScaleFactor" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="LineStyleScaleFactor" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="LineWidthFactor" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="ScaleFactor" type="boolean" use="required"/>
+			<attribute name="BlockScaleX" type="double" use="required"/>
+			<attribute name="BlockScaleY" type="double" use="required"/>
+			<attribute name="BlockScaleZ" type="double" use="required"/>
+			<attribute name="EqualScales" type="integer" use="required"/>
+			<attribute name="PerMille" type="ini:STString31" use="required"/>
+			<attribute name="PC" type="ini:STString31" use="required"/>
+			<attribute name="PI" type="ini:STString31" use="required"/>
+			<attribute name="CC" type="ini:STString31" use="required"/>
+			<attribute name="PT" type="ini:STString31" use="required"/>
+			<attribute name="TS" type="ini:STString31" use="required"/>
+			<attribute name="SC" type="ini:STString31" use="required"/>
+			<attribute name="CS" type="ini:STString31" use="required"/>
+			<attribute name="ST" type="ini:STString31" use="required"/>
+			<attribute name="SPI" type="ini:STString31" use="required"/>
+			<attribute name="PCC" type="ini:STString31" use="required"/>
+			<attribute name="PRC" type="ini:STString31" use="required"/>
+			<attribute name="SS" type="ini:STString31" use="required"/>
+			<attribute name="Equation" type="ini:STString31" use="required"/>
+			<attribute name="EquationBack" type="ini:STString31" use="required"/>
+			<attribute name="EquationAhead" type="ini:STString31" use="required"/>
+			<attribute name="POB" type="ini:STString31" use="required"/>
+			<attribute name="POE" type="ini:STString31" use="required"/>
+			<attribute name="Event" type="ini:STString31" use="required"/>
+			<attribute name="POT" type="ini:STString31" use="required"/>
+			<attribute name="POC" type="ini:STString31" use="required"/>
+			<attribute name="POS" type="ini:STString31" use="required"/>
+			<attribute name="Cogo" type="ini:STString31" use="required"/>
+			<attribute name="PVC" type="ini:STString31" use="required"/>
+			<attribute name="PVI" type="ini:STString31" use="required"/>
+			<attribute name="PVT" type="ini:STString31" use="required"/>
+			<attribute name="PVCC" type="ini:STString31" use="required"/>
+			<attribute name="PVRC" type="ini:STString31" use="required"/>
+			<attribute name="POVT" type="ini:STString31" use="required"/>
+			<attribute name="POVC" type="ini:STString31" use="required"/>
+			<attribute name="VerticalEvent" type="ini:STString31" use="required"/>
+			<attribute name="VerticalLow" type="ini:STString31" use="required"/>
+			<attribute name="VerticalHigh" type="ini:STString31" use="required"/>
+			<attribute name="StationPrefix" type="ini:STString31" use="required"/>
+			<attribute name="StationSuffix" type="ini:STString31" use="required"/>
+			<attribute name="LeftOffsetPrefix" type="ini:STString31" use="required"/>
+			<attribute name="LeftOffsetSuffix" type="ini:STString31" use="required"/>
+			<attribute name="RightOffsetPrefix" type="ini:STString31" use="required"/>
+			<attribute name="RightOffsetSuffix" type="ini:STString31" use="required"/>
+			<attribute name="DualDimensionPrefix" type="ini:STString31" use="required"/>
+			<attribute name="DualDimensionSuffix" type="ini:STString31" use="required"/>
+			<attribute name="DiscontinuityPrefix" type="ini:STString31" use="optional"/>
+			<attribute name="DiscontinuitySuffix" type="ini:STString31" use="optional"/>
+			<attribute name="DesignSpeed" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="EquilibriumConstant" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="AppliedConstant" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="CantRoundingConstant" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="RailToRailDistance" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="InsideToInsideDistance" type="ini:STNonnegativeDouble" use="optional"/>
+			<attribute name="CenterOfGravity" type="ini:STNonnegativeDouble" use="optional"/>
+			<attribute name="VirtualTransitionLength" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="PercentOnLinear" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.0"/>
+						<maxInclusive value="100.0"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="RotateCantAbout" use="required">
+				<annotation>
+					<documentation>
+                        0 = Inside Rail
+                        1 = Center
+                        2 = Outside Rail
+                        3 = Left Rail
+                        4 = Right Rail
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="4"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="AddCantAtSpiralToSpiralStation" type="boolean" use="required"/>
+			<attribute name="ComputeTurnoutsBasedOnMainlineCant" type="boolean" use="required"/>
+			<attribute name="ForceColinearity" type="boolean" use="optional"/>
+			<attribute name="IndependentNonLinears" type="boolean" use="optional"/>
+			<attribute name="SlewSignage" type="boolean" use="optional"/>
+			<attribute name="InterpolateSpeed" type="boolean" use="optional"/>
+			<attribute name="StationDelimiter" type="ini:STString31" use="optional"/>
+			<attribute name="EyeHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="StoppingObjectHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="PassingObjectHeight" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DefaultVerticalHealing" type="boolean" use="optional"/>
+			<attribute name="Autosave" type="integer" use="optional"/>
+		</complexType>
+	</element>
+	<element name="SystemPreferencesCollection">
+		<annotation>
+			<documentation>Collection of System Preferences preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:SystemPreferences" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Locks">
+		<annotation>
+			<documentation>Contains the Locks settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="FeatureLock" type="boolean" use="required"/>
+			<attribute name="StyleLock" type="boolean" use="required"/>
+			<attribute name="InkLock" type="boolean" use="required"/>
+			<attribute name="DeleteInkLock" type="boolean" use="required"/>
+			<attribute name="SnapState" use="required">
+				<annotation>
+					<documentation>
+                        0 = None
+                        1 = Point
+                        2 = Element
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="LocateState" use="required">
+				<annotation>
+					<documentation>
+                        0 = Locate Graphics
+                        1 = Locate Features
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="StationLock" type="boolean" use="required"/>
+			<attribute name="ReportLock" type="boolean" use="required"/>
+			<attribute name="CogoAuditTrailLock" type="boolean" use="required"/>
+			<attribute name="FeatureHighlightLock" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="LocksCollection">
+		<annotation>
+			<documentation>Collection of Locks preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:Locks"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:ini="CivilIni" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="CivilIni" elementFormDefault="qualified">
+    <include schemaLocation="CommonIni.xsd"/>
+    <!-- complex type declarations -->
+    <complexType name="CTRailWidth">
+        <annotation>
+            <documentation>Rail base and head widths</documentation>
+        </annotation>
+        <attribute name="LeftRailBaseWidth" type="double" use="required"/>
+        <attribute name="LeftRailHeadWidth" type="double" use="required"/>
+        <attribute name="RightRailBaseWidth" type="double" use="required"/>
+        <attribute name="RightRailHeadWidth" type="double" use="required"/>
+    </complexType>
+    <!-- element declaraionts -->
+    <element name="ViewRails">
+        <annotation>
+            <documentation>Contains View Rails settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="Dimension" type="boolean" use="optional"/>
+            <attribute name="Mode" use="required">
+                <annotation>
+                    <documentation>
+                0 = display in 2d view
+                1 = display in 3d view
+                2 = display in profile
+                3 = append to surface
+                </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="3"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="ApplyStyle" type="boolean" use="required"/>
+            <attribute name="ActiveStyle" type="ini:STString31" use="required"/>
+            <attribute name="Interval" type="double" use="required"/>
+            <attribute name="Gauge" type="double" use="required"/>
+            <attribute name="Complex" type="boolean" use="required"/>
+            <attribute name="IncludeCardinals" type="boolean" use="optional"/>
+        </complexType>
+    </element>
+    <element name="ViewRailsCollection">
+        <annotation>
+            <documentation>Collection of View Rails preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:ViewRails" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CreateRails">
+        <annotation>
+            <documentation>Contains Create Rails settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="CreateRail1" type="boolean" use="required"/>
+            <attribute name="Name1" type="ini:STString63" use="required"/>
+            <attribute name="Description1" type="ini:STString79" use="required"/>
+            <attribute name="Style1" type="ini:STString31" use="required"/>
+            <attribute name="HorizontalOffset1" type="double" use="required"/>
+            <attribute name="AxisToEdge1" type="double" use="required"/>
+            <attribute name="VerticalOffset1" type="double" use="required"/>
+            <attribute name="RailProfile1" type="ini:STString31" use="required"/>
+            <attribute name="CreateRail2" type="boolean" use="required"/>
+            <attribute name="Name2" type="ini:STString63" use="required"/>
+            <attribute name="Description2" type="ini:STString79" use="required"/>
+            <attribute name="Style2" type="ini:STString31" use="required"/>
+            <attribute name="HorizontalOffset2" type="double" use="required"/>
+            <attribute name="AxisToEdge2" type="double" use="required"/>
+            <attribute name="VerticalOffset2" type="double" use="required"/>
+            <attribute name="RailProfile2" type="ini:STString31" use="required"/>
+            <attribute name="UseTrackWideningTable" type="boolean" use="required"/>
+            <attribute name="TrackWideningTable" type="ini:STString255" use="required"/>
+            <attribute name="UseBendingAxisTable" type="boolean" use="required"/>
+            <attribute name="BendingAxisTable" type="ini:STString255" use="required"/>
+            <attribute name="RailProfilesTable" type="ini:STString255" use="optional"/>
+            <attribute name="UtilizeVirtualTransitions" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="CreateRailsCollection">
+        <annotation>
+            <documentation>Collection of Create Rails preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:CreateRails" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="BendingAxis">
+        <annotation>
+            <documentation>Rail bending axis data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="Radius" type="double" use="required"/>
+            <attribute name="Correction" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="BendingAxisCollection">
+        <annotation>
+            <documentation>Collection of rail bending axis data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:BendingAxis" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="RailLength">
+        <annotation>
+            <documentation>Rail length data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="Radius" type="double" use="required"/>
+            <attribute name="Length" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="RailLengthCollection">
+        <annotation>
+            <documentation>Collection of rail length data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:RailLength" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="RailProfile">
+        <annotation>
+            <documentation>Rail profile data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="RailWidths" type="ini:CTRailWidth" minOccurs="0"/>
+            </sequence>
+            <attribute name="ProfileName" type="ini:STString31" use="required"/>
+        </complexType>
+    </element>
+    <element name="RailProfileCollection">
+        <annotation>
+            <documentation>Collection of rail profile data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:RailProfile" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="TrackWidening">
+        <annotation>
+            <documentation>Track widening data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="Radius" type="double" use="required"/>
+            <attribute name="InnerWideningWidth" type="double" use="required"/>
+            <attribute name="OuterWideningWidth" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="TrackWideningCollection">
+        <annotation>
+            <documentation>Collection of track widening data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:TrackWidening" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="VerifyRails">
+        <annotation>
+            <documentation>Contains Verify Rails settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="CheckRails" type="boolean" use="required"/>
+            <attribute name="RailTolerance" type="double" use="required"/>
+            <attribute name="CheckSwitches" type="boolean" use="required"/>
+            <attribute name="SwitchTolerance" type="double" use="required"/>
+            <attribute name="CheckCrossings" type="boolean" use="required"/>
+            <attribute name="CrossingTolerance" type="double" use="required"/>
+            <attribute name="CheckJoints" type="boolean" use="required"/>
+            <attribute name="JointTolerance" type="double" use="required"/>
+            <attribute name="CheckDistanceKeepers" type="boolean" use="required"/>
+            <attribute name="DistanceKeeperTolerance" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="VerifyRailsCollection">
+        <annotation>
+            <documentation>Collection of Verify Rails preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:VerifyRails" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CreateKeyPoints">
+        <annotation>
+            <documentation>Contains Create Key Points settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="LengthBeforeSwitch" type="double" use="required"/>
+            <attribute name="LengthAfterSwitch" type="double" use="required"/>
+            <attribute name="FirstJointLength" type="double" use="required"/>
+            <attribute name="LengthBetweenJoints" type="double" use="required"/>
+            <attribute name="SecondJointLength" type="double" use="required"/>
+            <attribute name="HorizontalTolerance" type="double" use="required"/>
+            <attribute name="Offset" type="double" use="required"/>
+            <attribute name="CrossingJointLength" type="double" use="required"/>
+            <attribute name="VerticalTolerance" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="CreateKeyPointsCollection">
+        <annotation>
+            <documentation>Collection of Create Key Points preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:CreateKeyPoints" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CreateJoints">
+        <annotation>
+            <documentation>Contains Create Joints settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="ControlFrom" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Outside Rail
+                    1 = Single Rail
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="MinimumRailLength" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0001"/>
+                        <maxInclusive value="1000.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="MaximumRailLengthFrom" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Keyin
+                    1 = Rail Length Table
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="MaximumRailLength" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0001"/>
+                        <maxInclusive value="1000.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="RailLengthTable" type="ini:STString255" use="required"/>
+            <attribute name="JointLength" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="CreateJointsCollection">
+        <annotation>
+            <documentation>Collection of Create Joints preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:CreateJoints" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CreateDistanceKeepers">
+        <annotation>
+            <documentation>Contains Create Distance Keepers settings</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="ControlFrom" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Outside Rail
+                    1 = Single Rail
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="AtStart" type="double" use="required"/>
+            <attribute name="AtEnd" type="double" use="required"/>
+            <attribute name="Minimum" type="double" use="required"/>
+            <attribute name="Maximum" type="double" use="required"/>
+            <attribute name="OddLength" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Start and Stop
+                    1 = Start Only
+                    2 = Stop Only
+                    3 = All Odd Lengths
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="3"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="CreateDistanceKeepersCollection">
+        <annotation>
+            <documentation>Collection of Create Distance Keepers preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:CreateDistanceKeepers" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="NamePointsAndRails">
+        <annotation>
+            <documentation>Contains Name Points and Rail settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="SwitchesText" type="ini:CTAnnotationPlacement"/>
+                <element name="CrossingsText" type="ini:CTAnnotationPlacement"/>
+                <element name="JointsText" type="ini:CTAnnotationPlacement"/>
+                <element name="EndpointsText" type="ini:CTAnnotationPlacement"/>
+                <element name="RailText" type="ini:CTAnnotationPlacement"/>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="IncludeSwitches" type="boolean" use="required"/>
+            <attribute name="SwitchesSeedNumber" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10000"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="SwitchesMinimumDigits" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="SwitchesIncrementBy" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="IncludeCrossings" type="boolean" use="required"/>
+            <attribute name="CrossingsSeedNumber" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10000"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="CrossingsMinimumDigits" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="CrossingsIncrementBy" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="IncludeJoints" type="boolean" use="required"/>
+            <attribute name="JointsSeedNumber" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10000"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="JointsMinimumDigits" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="JointsIncrementBy" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="IncludeEndpoints" type="boolean" use="required"/>
+            <attribute name="EndpointsSeedNumber" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10000"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="EndpointsMinimumDigits" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="EndpointsIncrementBy" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="NamingSequence" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Left to Right
+                    1 = Right to Left
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="RailSeedNumber" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="RailMinimumDigits" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="RailIncrementBy" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="1"/>
+                        <maxInclusive value="10"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="PointNamingOption" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Assign Names
+                    1 = Assign Unnamed Only
+                    2 = Remove Names
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="RailNamingOption" use="required">
+                <annotation>
+                    <documentation>
+                    0 = Assign Names
+                    2 = Remove Names
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="2"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="UniqueRailNames" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="NamePointsAndRailsCollection">
+        <annotation>
+            <documentation>Collection of Name Rail Points preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:NamePointsAndRails" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="LRMReports">
+        <annotation>
+            <documentation>Contains LRM Reports settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="DimensionsText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="LeaderLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="IncludeRails" type="boolean" use="required"/>
+            <attribute name="IncludeKeepers" type="boolean" use="required"/>
+            <attribute name="IncludeIncremental" type="boolean" use="required"/>
+            <attribute name="Incremental" type="double" use="required"/>
+            <attribute name="IncludeBendingData" type="boolean" use="required"/>
+            <attribute name="StationInterval" type="double" use="required"/>
+            <attribute name="IncludeMALData" type="boolean" use="required"/>
+            <attribute name="ChordLength" type="double" use="required"/>
+            <attribute name="ChordInterval" type="double" use="required"/>
+            <attribute name="Offset" type="double" use="required"/>
+            <attribute name="PointInterval" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="2"/>
+                        <maxInclusive value="15"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="IncludeRailLengths" type="boolean" use="required"/>
+            <attribute name="IncludeJointCoordinates" type="boolean" use="required"/>
+            <attribute name="TransformCoordinates" type="boolean" use="required"/>
+            <attribute name="OriginalNorthing" type="double" use="required"/>
+            <attribute name="OriginalEasting" type="double" use="required"/>
+            <attribute name="OriginalDirection" type="ini:STDirection" use="required"/>
+            <attribute name="DestinationNorthing" type="double" use="required"/>
+            <attribute name="DestinationEasting" type="double" use="required"/>
+            <attribute name="DestinationDirection" type="ini:STDirection" use="required"/>
+            <attribute name="IncludeComplexDimensions" type="boolean" use="required"/>
+            <attribute name="IncludeDimensions" type="boolean" use="required"/>
+            <attribute name="IncludeLeaders" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="LRMReportsCollection">
+        <annotation>
+            <documentation>Collection of LRM Reports preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:LRMReports" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="LRMAnnotation">
+        <annotation>
+            <documentation>Contains LRM Annotation settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="RailLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="DistanceKeeperLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="SwitchText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="SwitchPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="CrossingText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="CrossingPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="JointText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="JointPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="JointToJointText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="ChordToRailText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="KeeperToKeeperText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="JointToKeeperText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="CardinalToJointText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="JointLengthText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="RailNameText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="LinearIndicatorPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="CircularIndicatorPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="LinearCircularIndicatorPoint">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="RailHeadLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="RailFootLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="IncludeRails" type="integer" use="required"/>
+            <attribute name="IncludeDistanceKeepers" type="integer" use="required"/>
+            <attribute name="IncludeSwitchText" type="integer" use="required"/>
+            <attribute name="IncludeSwitchSymbol" type="integer" use="required"/>
+            <attribute name="IncludeCrossingsText" type="integer" use="required"/>
+            <attribute name="IncludeCrossingsSymbol" type="integer" use="required"/>
+            <attribute name="IncludeJointsText" type="integer" use="required"/>
+            <attribute name="IncludeJointsSymbol" type="integer" use="required"/>
+            <attribute name="IncludeJointToJointText" type="integer" use="required"/>
+            <attribute name="IncludeChordToRail" type="integer" use="required"/>
+            <attribute name="IncludeKeeperToKeeperText" type="integer" use="required"/>
+            <attribute name="IncludeJointToKeeperText" type="integer" use="required"/>
+            <attribute name="IncludeCardinalToJointText" type="integer" use="required"/>
+            <attribute name="IncludeJointLengthText" type="integer" use="required"/>
+            <attribute name="IncludeRailNameText" type="integer" use="required"/>
+            <attribute name="IncludeLinearIndicatorSymbol" type="integer" use="required"/>
+            <attribute name="IncludeCircularIndicatorSymbol" type="integer" use="required"/>
+            <attribute name="IncludeLinearCircularIndicatorSymbol" type="integer" use="required"/>
+            <attribute name="IncludeRailHeadLines" type="integer" use="required"/>
+            <attribute name="IncludeRailFootLines" type="integer" use="required"/>
+            <attribute name="MirrorAnnotation" type="boolean" use="required"/>
+            <attribute name="IncludeRailNames" type="boolean" use="required"/>
+            <attribute name="IncludeJointToJointCurvature" type="boolean" use="required"/>
+            <attribute name="IncludeJointToCardinalCurvature" type="boolean" use="required"/>
+            <attribute name="Orientation" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Left
+                        1 = Right
+                        2 = Above
+                        3 = Below
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="3"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="OrientationOffset" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="LRMAnnotationCollection">
+        <annotation>
+            <documentation>Collection of LRM Annotation preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:LRMAnnotation" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="AnnotateRailOffsets">
+        <annotation>
+            <documentation>Contains LRM Annotate Rail Offsets settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="OffsetText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="DifferenceText">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="OffsetLine">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="PointSymbol">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="DisplayOffsetText" type="boolean" use="required"/>
+            <attribute name="DisplayDifferenceText" type="boolean" use="required"/>
+            <attribute name="DisplayLine" type="boolean" use="required"/>
+            <attribute name="DisplayPoint" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="AnnotateRailOffsetsCollection">
+        <annotation>
+            <documentation>Collection of LRM Annotate Rail Offsets preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:AnnotateRailOffsets" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

@@ -1,0 +1,28 @@
+# ================================================================================			
+#			
+# OpenBuildings Designer DataGroup Mapping Overrides for Types, Items and Properties
+# for IFC4 Export (dataset level) 			
+#			
+#			
+# $RCSfile: IFC_Mapping.ifc4.set,v $			
+# $Revision: 1.8 $			
+#			
+# $Copyright: (c) 2019 Bentley Systems, Incorporated. All rights reserved. $			
+# ================================================================================
+#
+# include dataset mapping files
+#
+# ================================================================================
+INCLUDE "IFC_TypeMapping.ifc4.set"
+
+INCLUDE "IFC_ItemMapping.ifc4.set"
+
+PROPERTY_TABLE "IFC_PropertyMapping.ifc4.set"
+
+PROPERTY_TABLE "IFC_PropertyMapping_local.ifc4.set"
+
+INCLUDE "IFC_ElectricalMapping.ifc4.set"
+
+INCLUDE "IFC_QtoMapping.ifc4.set"
+
+# ================================================================================

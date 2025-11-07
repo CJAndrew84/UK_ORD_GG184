@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Denis J. Schaffer (Bentley Systems, Inc.) -->
+<schema targetNamespace="InRoads" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:inr="InRoads" elementFormDefault="qualified">
+	<include schemaLocation="CommonRpt.xsd"/>
+	<include schemaLocation="SuperelevationRpt.xsd"/>
+	<include schemaLocation="CrossSlopeOptimizationRpt.xsd"/>
+	<include schemaLocation="MillingRpt.xsd"/>
+	<element name="RoadwayDesignProject">
+		<annotation>
+			<documentation>Roadway Design Project report schema - contains a list of stations</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:CrossSlopeOptimizationExistingInput" minOccurs="0"/>
+				<element ref="inr:CrossSlopeOptimizationDesignInput" minOccurs="0"/>
+				<element ref="inr:CrossSlopeOptimizationParameters" minOccurs="0"/>
+				<element ref="inr:CrossSlopeOptimizationStations" minOccurs="0"/>
+				<element ref="inr:MillingStations" minOccurs="0"/>
+			</sequence>
+			<attribute name="designFileName" type="string" use="optional"/>
+			<attribute name="corridorName" type="string" use="required"/>
+		</complexType>
+	</element>
+</schema>

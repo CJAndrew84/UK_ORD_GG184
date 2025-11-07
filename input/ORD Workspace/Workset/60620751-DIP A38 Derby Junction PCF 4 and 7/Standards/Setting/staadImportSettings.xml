@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<staadImportSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SectionMapping>false</SectionMapping>
+  <MappingFileName />
+  <MappingFilePath> </MappingFilePath>
+  <MappingType>No Section Mapping</MappingType>
+  <staadFileName> </staadFileName>
+  <staadFilePath> </staadFilePath>
+  <Steel>
+    <ColumnsFamily>Steel Column</ColumnsFamily>
+    <ColumnsPart>Column</ColumnsPart>
+    <BeamsFamily>Steel Beam</BeamsFamily>
+    <BeamsPart>Beam</BeamsPart>
+    <BracesFamily>Steel Vertical Brace</BracesFamily>
+    <BracesPart>Vertical Brace</BracesPart>
+    <PlatesFamily>Slab</PlatesFamily>
+    <PlatesPart>Concrete Slab</PlatesPart>
+    <DefaultSectionName />
+  </Steel>
+  <SteelColumnsFamily>Steel Column</SteelColumnsFamily>
+  <SteelColumnsPart>Column</SteelColumnsPart>
+  <SteelBeamsFamily>Steel Beam</SteelBeamsFamily>
+  <SteelBeamsPart>Beam</SteelBeamsPart>
+  <SteelBracesFamily>Steel Vertical Brace</SteelBracesFamily>
+  <SteelPlatesPart>Concrete Slab</SteelPlatesPart>
+  <SteelPlatesFamily>Slab</SteelPlatesFamily>
+  <SteelBracesPart>Vertical Brace</SteelBracesPart>
+  <SteelDefaultSectionName />
+  <UseDesignHistory>false</UseDesignHistory>
+  <ImportPhysicalModelOnly>false</ImportPhysicalModelOnly>
+  <IgnoreEndPointChanges>false</IgnoreEndPointChanges>
+  <MergeTolerance>0.08</MergeTolerance>
+</staadImportSettings>

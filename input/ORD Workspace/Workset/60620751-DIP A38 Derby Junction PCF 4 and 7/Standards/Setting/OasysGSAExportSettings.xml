@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GSAExportSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <JobName>Job Name</JobName>
+  <SubTitle>Subtitle</SubTitle>
+  <JobNo>Job Number</JobNo>
+  <CheckedBy>Checked By</CheckedBy>
+  <MappingFileName />
+  <MappingFilePath />
+  <GSAFileName />
+  <GSAFilePath> </GSAFilePath>
+  <DGNFileName> </DGNFileName>
+  <UseDesignHistory>true</UseDesignHistory>
+  <NumberOfCurvedMemberFacets>5</NumberOfCurvedMemberFacets>
+  <SectionMapping>false</SectionMapping>
+  <UseDGNFileName>true</UseDGNFileName>
+</GSAExportSettings>

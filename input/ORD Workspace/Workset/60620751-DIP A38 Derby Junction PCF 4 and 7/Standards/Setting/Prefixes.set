@@ -1,0 +1,15 @@
+# =====================================================================================
+# This file is used by the Dataset Upgrade Utility to remove prefixes from:
+# a) file names, e.g. files 'uniclass_Space.xsd' or Uniclass-Space.xsd will be changed to 'Space.xsd'
+# b) strings within files, e.g. string '<xs:element name="uniclass_Space"> will be changed to <xs:element name="Space">
+# 
+# Additional prefixes can be added to this list.
+# ===================================================================================== 
+Uniclass_
+Uniclass-
+uniclass_
+uniclass-
+Cisfb_
+Cisfb-
+
+

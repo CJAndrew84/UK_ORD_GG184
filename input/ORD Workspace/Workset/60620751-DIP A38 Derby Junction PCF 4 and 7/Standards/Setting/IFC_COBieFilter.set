@@ -1,0 +1,152 @@
+/*--------------------------------------------------------------------------------------+
+|
+|   IFC EXPORT FM Handover / COBie filter
+|
+|---------------------------------------------------------------------------------------
+|   $RCSfile: IFC_COBieFilter.set,v $
+|   $Revision: 1.3 $
+|
+|   $Copyright: (c) 2015 Bentley Systems, Incorporated. All rights reserved. $
+|
++--------------------------------------------------------------------------------------*/
+
+VERSION 2.2
+FILE_DESCRIPTION "ViewDefinition [FMHandOverView]";
+
+EXCLUDE_DOMAIN
+//OBJECT IDM IGNORED ENTITY LISTS
+//Source: COBie TOOLKIT USER GUIDE
+//Release: Beta 1.3
+//Release date: April 18, 2013
+//
+IfcAnnotation
+IfcBeam
+//IfcBeamStandardCase
+IfcBeamType
+IfcBuildingElementPart
+IfcBuildingElementProxy
+IfcBuildingElementProxyType
+//IfcCableCarrierSegment
+IfcCableCarrierSegmentType
+//IfcCableSegment
+IfcCableSegmentType
+IfcColumn
+//IfcColumnStandardCase
+IfcColumnType
+IfcCovering
+IfcCoveringType
+IfcCurtainWall
+IfcCurtainWallType
+IfcDistributionPort
+IfcDuctFittingType
+//IfcDuctSegment
+IfcDuctSegmentType
+IfcElementAssembly
+IfcFastener
+IfcFastenerType
+IfcFeatureElement
+IfcFeatureElementAddition
+IfcFeatureElementSubtraction
+IfcFlowFitting
+IfcFlowFittingType
+IfcFlowSegment
+IfcFlowSegmentType
+IfcFooting
+IfcJunctionBoxType
+IfcMechanicalFastener
+IfcMember
+//IfcMemberStandardCase
+IfcMemberType
+IfcOpeningElement
+//IfcOpeningStandardCase
+IfcPile
+IfcPipeFittingType
+//IfcPipeSegment
+IfcPipeSegmentType
+IfcPlate
+//IfcPlateStandardCase
+IfcPlateType
+IfcProjectionElement
+IfcRailing
+IfcRailingType
+IfcRamp
+IfcRampFlight
+IfcRampFlightType
+//IfcRampType
+IfcReinforcingBar
+IfcReinforcingMesh
+IfcRoof
+IfcSlab
+//IfcSlabElementedCase
+//IfcSlabStandardCase
+IfcSlabType
+IfcSpaceType
+IfcStair
+IfcStairFlight
+IfcStairFlightType
+//IfcStairType
+IfcStructuralAction
+IfcStructuralActivity
+IfcStructuralConnection
+//IfcStructuralCurveAction
+IfcStructuralCurveConnection
+IfcStructuralCurveMember
+IfcStructuralCurveMemberVarying
+//IfcStructuralCurveReaction
+IfcStructuralItem
+IfcStructuralLinearAction
+IfcStructuralMember
+IfcStructuralPlanarAction
+IfcStructuralPointAction
+IfcStructuralPointConnection
+IfcStructuralPointReaction
+IfcStructuralReaction
+//IfcStructuralSurfaceAction
+IfcStructuralSurfaceConnection
+IfcStructuralSurfaceMember
+IfcStructuralSurfaceMemberVarying
+//IfcStructuralSurfaceReaction
+//IfcSurfaceFeature
+IfcVirtualElement
+//IfcVoidingFeature
+IfcWall
+//IfcWallElementedCase
+IfcWallStandardCase
+IfcWallType
+
+ALLOW_PROPERTY_SET
+	Pset_*
+	ePset_*
+	COBie_*
+	@AirHandling
+	@AirDistribution
+	@Door
+	@Furniture
+	@ObjectManufacturer
+	@ObjectPostalAddress
+	@Plumbing
+	@Properties
+	@Pumps
+	@Space
+	@Spaces
+	@Specialty_Safety
+	@VAV
+	@Window
+	BaseQuantities
+
+// Add further or remove property set names as required (without .xsd extension).
+// Use wildcards (*) as necessary, e.g.
+// Pset_* - export all property sets starting with 'Pset_' for all objects
+// Door - only export the 'Door' property set, but not ArchDoor, Door_PAZ, etc.
+// ObjectManufacturer FOR Casework - export the ObjectManufacturer property set only for Casework
+// *COBie* - export every property set that includes the string 'COBie'
+// @<property set> - export using the internal property set name, not the display name 
+
+SYSTEMS    
+	"Properties/@SystemId"
+
+PREFERRED_CLASSIFICATION Uniclass
+// Enter the preferred classification system name
+
+ONLY_ONE_CLASSIFICATION
+

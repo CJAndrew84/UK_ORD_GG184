@@ -1,0 +1,13 @@
+
+//IFC class and property mapping from DataGroup
+
+TYPE IfcElementAssembly
+
+  ITEM Default EXPORT_AS IfcCivilElement
+
+
+TYPE IfcGeographicElement
+
+  ITEM Terrain EXPORT_AS IfcGeographicElement.TERRAIN
+
+

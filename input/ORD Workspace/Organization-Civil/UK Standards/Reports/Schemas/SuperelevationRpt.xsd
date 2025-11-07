@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 rel. 4 (x64) (http://www.altova.com) by Geoff Bartlett (private) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:inr="InRoads" targetNamespace="InRoads" elementFormDefault="qualified">
+	<include schemaLocation="CommonRpt.xsd"/>
+	<element name="Variable">
+		<complexType>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="equation" type="string" use="optional"/>
+			<attribute name="value" type="string" use="required"/>
+			<attribute name="description" type="string" use="optional"/>
+		</complexType>
+	</element>
+	<element name="StartStation">
+		<annotation>
+			<documentation>Start Station</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent>
+				<extension base="inr:CTStation"/>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="Station">
+		<annotation>
+			<documentation>Station</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent>
+				<extension base="inr:CTStation"/>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="StopStation">
+		<annotation>
+			<documentation>Start Station</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent>
+				<extension base="inr:CTStation"/>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="StartOfSpiralStation">
+		<annotation>
+			<documentation>Start Station</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent>
+				<extension base="inr:CTStation"/>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="StartOfArcStation">
+		<annotation>
+			<documentation>Start Station</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent>
+				<extension base="inr:CTStation"/>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="FullSuperStation">
+		<annotation>
+			<documentation>Start Station</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent>
+				<extension base="inr:CTStation">
+					<attribute name="equation" type="string" use="optional"/>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="ReverseCrownStation">
+		<annotation>
+			<documentation>Start Station</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent>
+				<extension base="inr:CTStation">
+					<attribute name="equation" type="string" use="optional"/>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="RunoffStation">
+		<annotation>
+			<documentation>Start Station</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent>
+				<extension base="inr:CTStation">
+					<attribute name="equation" type="string" use="optional"/>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="RunoutStation">
+		<annotation>
+			<documentation>Start Station</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent>
+				<extension base="inr:CTStation">
+					<attribute name="equation" type="string" use="optional"/>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="Error">
+		<annotation>
+			<documentation>Error</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="task"/>
+			<attribute name="message"/>
+		</complexType>
+	</element>
+	<element name="SuperelevationCalculation">
+		<annotation>
+			<documentation>Comment describing your root element</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:StartStation"/>
+				<element ref="inr:StopStation"/>
+				<element name="LaneSets">
+					<annotation>
+						<documentation>Sets of contiguous lanes</documentation>
+					</annotation>
+					<complexType>
+						<sequence>
+							<element name="LaneSet" minOccurs="0" maxOccurs="unbounded">
+								<annotation>
+									<documentation>A single group of contiguous lanes (like the left side of a divided highway</documentation>
+								</annotation>
+								<complexType>
+									<sequence>
+										<element name="CurveSets">
+											<complexType>
+												<sequence>
+													<element name="CurveSet" maxOccurs="unbounded">
+														<complexType>
+															<sequence>
+																<element ref="inr:StartStation"/>
+																<element ref="inr:StopStation"/>
+																<element name="GlobalVariables">
+																	<complexType>
+																		<sequence>
+																			<element ref="inr:Variable" minOccurs="0" maxOccurs="unbounded"/>
+																		</sequence>
+																	</complexType>
+																</element>
+																<element name="MaxECalculations">
+																	<complexType>
+																		<sequence>
+																			<element name="Variables" minOccurs="0">
+																				<complexType>
+																					<sequence>
+																						<element ref="inr:Variable" minOccurs="0" maxOccurs="unbounded"/>
+																					</sequence>
+																				</complexType>
+																			</element>
+																		</sequence>
+																		<attribute name="value" type="double" use="required"/>
+																		<attribute name="resultFrom" type="string" use="required"/>
+																		<attribute name="equation" type="string" use="optional"/>
+																	</complexType>
+																</element>
+																<element name="TransitionLengthCalculations">
+																	<complexType>
+																		<sequence>
+																			<element name="Variables" minOccurs="0">
+																				<complexType>
+																					<sequence>
+																						<element ref="inr:Variable" minOccurs="0" maxOccurs="unbounded"/>
+																					</sequence>
+																				</complexType>
+																			</element>
+																		</sequence>
+																		<attribute name="value" type="double" use="required"/>
+																		<attribute name="resultFrom" type="string" use="required"/>
+																		<attribute name="equation" type="string" use="optional"/>
+																	</complexType>
+																</element>
+																<element name="StartOfCurveCalculations">
+																	<complexType>
+																		<sequence>
+																			<element ref="inr:StartOfSpiralStation" minOccurs="0"/>
+																			<element ref="inr:StartOfArcStation"/>
+																			<element ref="inr:RunoutStation" minOccurs="0"/>
+																			<element ref="inr:RunoffStation" minOccurs="0"/>
+																			<element ref="inr:ReverseCrownStation" minOccurs="0"/>
+																			<element ref="inr:FullSuperStation" minOccurs="0"/>
+																		</sequence>
+																		<attribute name="spiralExists" type="boolean" use="required"/>
+																		<attribute name="spiralLength" type="double" use="optional"/>
+																	</complexType>
+																</element>
+																<element name="EndOfCurveCalculations">
+																	<complexType>
+																		<sequence>
+																			<element ref="inr:StartOfSpiralStation" minOccurs="0"/>
+																			<element ref="inr:StartOfArcStation"/>
+																			<element ref="inr:RunoutStation" minOccurs="0"/>
+																			<element ref="inr:RunoffStation" minOccurs="0"/>
+																			<element ref="inr:ReverseCrownStation" minOccurs="0"/>
+																			<element ref="inr:FullSuperStation" minOccurs="0"/>
+																		</sequence>
+																		<attribute name="spiralExists" type="boolean" use="required"/>
+																		<attribute name="spiralLength" type="double" use="optional"/>
+																	</complexType>
+																</element>
+																<element name="StandardStationCustomization" minOccurs="0">
+																	<complexType>
+																		<sequence>
+																			<element name="StartOfCurve">
+																				<complexType>
+																					<sequence>
+																						<element ref="inr:Variable" minOccurs="0" maxOccurs="unbounded"/>
+																						<element ref="inr:RunoutStation" minOccurs="0">
+																							<annotation>
+																								<documentation>Modified Normal Crown Station</documentation>
+																							</annotation>
+																						</element>
+																						<element ref="inr:RunoffStation" minOccurs="0">
+																							<annotation>
+																								<documentation>Modified Zero Cross Slope Station</documentation>
+																							</annotation>
+																						</element>
+																						<element ref="inr:ReverseCrownStation" minOccurs="0">
+																							<annotation>
+																								<documentation>Modified Reverse Crown Station</documentation>
+																							</annotation>
+																						</element>
+																						<element ref="inr:FullSuperStation" minOccurs="0">
+																							<annotation>
+																								<documentation>Modified Full Super Station</documentation>
+																							</annotation>
+																						</element>
+																					</sequence>
+																					<attribute name="criteriaEquation" type="string" use="optional"/>
+																					<attribute name="criteriaValue" type="string" use="optional"/>
+																				</complexType>
+																			</element>
+																			<element name="EndOfCurve">
+																				<complexType>
+																					<sequence>
+																						<element ref="inr:Variable" minOccurs="0" maxOccurs="unbounded"/>
+																						<element ref="inr:RunoutStation" minOccurs="0">
+																							<annotation>
+																								<documentation>Modified Normal Crown Station</documentation>
+																							</annotation>
+																						</element>
+																						<element ref="inr:RunoffStation" minOccurs="0">
+																							<annotation>
+																								<documentation>Modified Zero Cross Slope Station</documentation>
+																							</annotation>
+																						</element>
+																						<element ref="inr:ReverseCrownStation" minOccurs="0">
+																							<annotation>
+																								<documentation>Modified Reverse Crown Station</documentation>
+																							</annotation>
+																						</element>
+																						<element ref="inr:FullSuperStation" minOccurs="0">
+																							<annotation>
+																								<documentation>Modified Full Super Station</documentation>
+																							</annotation>
+																						</element>
+																					</sequence>
+																					<attribute name="criteriaEquation" type="string" use="optional"/>
+																					<attribute name="criteriaValue" type="string" use="optional"/>
+																				</complexType>
+																			</element>
+																		</sequence>
+																	</complexType>
+																</element>
+																<element ref="inr:Error" minOccurs="0" maxOccurs="unbounded"/>
+															</sequence>
+															<attribute name="id" type="int" use="required"/>
+															<attribute name="outsideLane" type="string" use="required"/>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+										<element name="OverlapAdjustments" minOccurs="0">
+											<complexType>
+												<sequence>
+													<element name="OverlapAdjustment" minOccurs="0" maxOccurs="unbounded">
+														<complexType>
+															<sequence>
+																<element name="FirstCurveAdjustments">
+																	<complexType>
+																		<sequence>
+																			<element name="EndNormalCrownStation" minOccurs="0">
+																				<complexType>
+																					<complexContent>
+																						<extension base="inr:CTStation">
+																							<attribute name="equation" type="string" use="optional"/>
+																						</extension>
+																					</complexContent>
+																				</complexType>
+																			</element>
+																			<element name="EndZeroCrossSlopeStation" minOccurs="0">
+																				<complexType>
+																					<complexContent>
+																						<extension base="inr:CTStation">
+																							<attribute name="equation" type="string" use="optional"/>
+																						</extension>
+																					</complexContent>
+																				</complexType>
+																			</element>
+																			<element name="EndReverseCrownStation" minOccurs="0">
+																				<complexType>
+																					<complexContent>
+																						<extension base="inr:CTStation">
+																							<attribute name="equation" type="string" use="optional"/>
+																						</extension>
+																					</complexContent>
+																				</complexType>
+																			</element>
+																			<element name="EndFullSuperStation" minOccurs="0">
+																				<complexType>
+																					<complexContent>
+																						<extension base="inr:CTStation">
+																							<attribute name="equation" type="string" use="optional"/>
+																						</extension>
+																					</complexContent>
+																				</complexType>
+																			</element>
+																		</sequence>
+																		<attribute name="endNormalCrownDeleted" type="boolean" use="optional"/>
+																		<attribute name="endZeroCrossSlopeDeleted" type="boolean" use="optional"/>
+																		<attribute name="endReverseCrownDeleted" type="boolean" use="optional"/>
+																		<attribute name="endFullSuperDeleted" type="boolean" use="optional"/>
+																		<attribute name="adjustmentAmount" type="double" use="optional"/>
+																	</complexType>
+																</element>
+																<element name="SecondCurveAdjustments">
+																	<complexType>
+																		<sequence>
+																			<element name="NormalCrownStation" minOccurs="0">
+																				<complexType>
+																					<complexContent>
+																						<extension base="inr:CTStation">
+																							<attribute name="equation" type="string" use="optional"/>
+																						</extension>
+																					</complexContent>
+																				</complexType>
+																			</element>
+																			<element name="ZeroCrossSlopeStation" minOccurs="0">
+																				<complexType>
+																					<complexContent>
+																						<extension base="inr:CTStation">
+																							<attribute name="equation" type="string" use="optional"/>
+																						</extension>
+																					</complexContent>
+																				</complexType>
+																			</element>
+																			<element name="ReverseCrownStation" minOccurs="0">
+																				<complexType>
+																					<complexContent>
+																						<extension base="inr:CTStation">
+																							<attribute name="equation" type="string" use="optional"/>
+																						</extension>
+																					</complexContent>
+																				</complexType>
+																			</element>
+																			<element name="FullSuperStation" minOccurs="0">
+																				<complexType>
+																					<complexContent>
+																						<extension base="inr:CTStation">
+																							<attribute name="equation" type="string" use="optional"/>
+																						</extension>
+																					</complexContent>
+																				</complexType>
+																			</element>
+																		</sequence>
+																		<attribute name="normalCrownDeleted" type="boolean" use="optional"/>
+																		<attribute name="zeroCrossSlopeDeleted" type="boolean" use="optional"/>
+																		<attribute name="reverseCrownDeleted" type="boolean" use="optional"/>
+																		<attribute name="fullSuperDeleted" type="boolean" use="optional"/>
+																		<attribute name="adjustmentAmount" type="double" use="optional"/>
+																	</complexType>
+																</element>
+																<element ref="inr:Error" minOccurs="0" maxOccurs="unbounded"/>
+																<element ref="inr:Variable" minOccurs="0" maxOccurs="unbounded"/>
+															</sequence>
+															<attribute name="firstCurveID" type="string" use="required"/>
+															<attribute name="secondCurveID" type="string" use="required"/>
+															<attribute name="adjustmentType" use="optional">
+																<simpleType>
+																	<restriction base="string">
+																		<enumeration value="Custom"/>
+																		<enumeration value="Planar Transition"/>
+																		<enumeration value="Shorten Transitions"/>
+																		<enumeration value="Slide Transitions"/>
+																		<enumeration value="ReverseCrown Transition"/>
+																	</restriction>
+																</simpleType>
+															</attribute>
+															<attribute name="normalCrownGap" type="double" use="required"/>
+															<attribute name="arcGap" type="double" use="required"/>
+															<attribute name="customDescription" type="string" use="optional"/>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+										<element name="CustomKeyStations" minOccurs="0">
+											<complexType>
+												<sequence>
+													<element name="CurveSets">
+														<complexType>
+															<sequence>
+																<element name="CurveSet" maxOccurs="unbounded">
+																	<complexType>
+																		<sequence>
+																			<element name="StartOfCurve">
+																				<complexType>
+																					<sequence>
+																						<element ref="inr:Variable" minOccurs="0" maxOccurs="unbounded"/>
+																						<element name="CustomStation" minOccurs="0" maxOccurs="unbounded">
+																							<complexType>
+																								<complexContent>
+																									<extension base="inr:CTStation">
+																										<attribute name="equation" type="string" use="optional"/>
+																										<attribute name="crossSlopeEquation" type="string" use="optional"/>
+																										<attribute name="crossSlopeValue" type="double" use="optional"/>
+																									</extension>
+																								</complexContent>
+																							</complexType>
+																						</element>
+																					</sequence>
+																					<attribute name="criteriaValue" type="string" use="required"/>
+																				</complexType>
+																			</element>
+																			<element name="EndOfCurve">
+																				<complexType>
+																					<sequence>
+																						<element ref="inr:Variable" minOccurs="0" maxOccurs="unbounded"/>
+																						<element name="CustomStation" minOccurs="0" maxOccurs="unbounded">
+																							<complexType>
+																								<complexContent>
+																									<extension base="inr:CTStation">
+																										<attribute name="equation" type="string" use="optional"/>
+																										<attribute name="crossSlopeEquation" type="string" use="optional"/>
+																										<attribute name="crossSlopeValue" type="double" use="optional"/>
+																									</extension>
+																								</complexContent>
+																							</complexType>
+																						</element>
+																					</sequence>
+																					<attribute name="criteriaValue" type="string" use="required"/>
+																				</complexType>
+																			</element>
+																			<element ref="inr:Error" minOccurs="0" maxOccurs="unbounded"/>
+																		</sequence>
+																		<attribute name="id" type="int" use="required"/>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+												</sequence>
+												<attribute name="criteriaEquation" type="string" use="optional"/>
+												<attribute name="criteriaValue" type="boolean" use="optional"/>
+											</complexType>
+										</element>
+									</sequence>
+									<attribute name="id" type="int" use="required">
+										<annotation>
+											<documentation>left to right id.</documentation>
+										</annotation>
+									</attribute>
+									<attribute name="leftOffset" type="double" use="required"/>
+									<attribute name="rightOffset" type="double" use="required"/>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="sectionName" type="string" use="required"/>
+			<attribute name="calculationUnits" use="required">
+				<annotation>
+					<documentation>Units used to calculate super - from the XML standards file</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="meter"/>
+						<enumeration value="foot"/>
+						<enumeration value="US survey foot"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="standardsFile" type="string" use="required"/>
+		</complexType>
+	</element>
+	<simpleType name="SuperelevationTransitionType">
+		<annotation>
+			<documentation>A list of superelevation transition types</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="Linear"/>
+			<enumeration value="Parabolic"/>
+			<enumeration value="ReverseParabolic"/>
+			<enumeration value="ReverseBiquadratic"/>
+			<enumeration value="ReverseCubic"/>
+			<enumeration value="ReverseSymmetrical"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="SuperelevationPointType">
+		<annotation>
+			<documentation>A list of superelevation point types</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="UndefinedType"/>
+			<enumeration value="NormalCrown"/>
+			<enumeration value="SuperRunoff"/>
+			<enumeration value="ReverseCrown"/>
+			<enumeration value="FullSuper"/>
+			<enumeration value="NormalCrownIn"/>
+			<enumeration value="NormalCrownOut"/>
+			<enumeration value="SuperRunoffIn"/>
+			<enumeration value="SuperRunoffOut"/>
+			<enumeration value="ReverseCrownIn"/>
+			<enumeration value="ReverseCrownOut"/>
+			<enumeration value="FullSuperIn"/>
+			<enumeration value="FullSuperOut"/>
+		</restriction>
+	</simpleType>
+	<element name="CTStopStation">
+		<annotation>
+			<documentation>Start Station</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent>
+				<extension base="inr:CTStation"/>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="CTStartStation">
+		<annotation>
+			<documentation>Start Station</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent>
+				<extension base="inr:CTStation"/>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="Standards">
+		<annotation>
+			<documentation>Superelevation standards data</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="filename" type="string" use="required"/>
+			<attribute name="designSpeed" type="double" use="required"/>
+			<attribute name="pivotMethod" type="string" use="required"/>
+			<attribute name="normalCrossSlope" type="double" use="optional"/>
+			<attribute name="eSelection" type="string" use="optional"/>
+			<attribute name="lSelection" type="string" use="optional"/>
+		</complexType>
+	</element>
+	<element name="SuperelevationTransitionStandards">
+		<annotation>
+			<documentation>Superelevation transition data from standards</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent>
+				<extension base="inr:CTStation">
+					<attribute name="crossSlope" type="double" use="required"/>
+					<attribute name="type" type="inr:SuperelevationPointType" use="required"/>
+					<attribute name="transitionType" type="inr:SuperelevationTransitionType" use="required"/>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="SuperelevationTransition">
+		<annotation>
+			<documentation>Superelevation transition data</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent>
+				<extension base="inr:CTStation">
+					<sequence>
+						<element ref="inr:SuperelevationTransitionStandards" minOccurs="0" maxOccurs="1"/>
+					</sequence>
+					<attribute name="name" type="string" use="required"/>
+					<attribute name="crossSlope" type="double" use="required"/>
+					<attribute name="type" type="inr:SuperelevationPointType" use="required"/>
+					<attribute name="transitionType" type="inr:SuperelevationTransitionType" use="required"/>
+					<attribute name="pivotEdge" type="string" use="required"/>
+					<attribute name="width" type="double" use="optional"/>
+					<attribute name="curveSet" type="integer" use="optional"/>
+					<attribute name="radius" type="double" use="optional"/>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="SuperelevationTransitions">
+		<annotation>
+			<documentation>Collection of superelevation transitions</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:SuperelevationTransition" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SuperelevationObject">
+		<annotation>
+			<documentation>Superelevation object data</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="StartStation" type="inr:CTStation"/>
+				<element name="StopStation" type="inr:CTStation"/>
+				<element ref="inr:SuperelevationTransitions" minOccurs="0"/>
+			</sequence>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="leftEdgeName" type="string" use="optional"/>
+			<attribute name="rightEdgeName" type="string" use="optional"/>
+			<attribute name="normalCrossSlope" type="double" use="required"/>
+			<attribute name="width" type="double" use="required"/>
+			<attribute name="insideEdgeOffset" type="double" use="optional"/>
+		</complexType>
+	</element>
+	<element name="SuperelevationObjects">
+		<annotation>
+			<documentation>Collection of superelevation objects</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:SuperelevationObject" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SuperelevationSection">
+		<annotation>
+			<documentation>Superelevation section data</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="StartStation" type="inr:CTStation"/>
+				<element name="StopStation" type="inr:CTStation"/>
+				<element ref="inr:Standards" minOccurs="0"/>
+				<element ref="inr:SuperelevationObjects" minOccurs="0"/>
+				<element ref="inr:SuperelevationCalculation" minOccurs="0">
+					<annotation>
+						<documentation>Output results from superelevation calculation</documentation>
+					</annotation>
+				</element>
+			</sequence>
+			<attribute name="baseHorizontal" type="string" use="required"/>
+			<attribute name="name" type="string" use="required"/>
+		</complexType>
+	</element>
+	<element name="SuperelevationSections">
+		<annotation>
+			<documentation>Collection of superelevation sections</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:SuperelevationSection" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

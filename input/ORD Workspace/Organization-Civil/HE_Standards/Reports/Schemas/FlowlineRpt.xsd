@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 sp1 (x64) (http://www.altova.com) by Bentley Systems, Inc (Bentley Systems, Inc) -->
+<schema xmlns:inr="InRoads" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="InRoads" elementFormDefault="qualified">
+	<include schemaLocation="CommonRpt.xsd"/>
+	<element name="FlowLines">
+		<complexType>
+			<sequence>
+				<element name="FlowLine" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="FlowLinePoint" maxOccurs="unbounded">
+								<complexType>
+									<attribute name="GallawayWaterDepth" type="double" use="required"/>
+									<attribute name="RRLWaterDepth" type="double" use="required"/>
+									<attribute name="Xcoord" type="double" use="required"/>
+									<attribute name="YCoord" type="double" use="required"/>
+									<attribute name="DistanceAlongFlowPath" type="double" use="required"/>
+									<attribute name="FilmDepthDifference" type="double" use="required"/>
+									<attribute name="Slope" type="double" use="required"/>
+									<attribute name="OriginalElevation" type="double" use="optional"/>
+								</complexType>
+							</element>
+						</sequence>
+						<attribute name="RainfallIntensity" type="double" use="required"/>
+						<attribute name="TextureDepth" type="double" use="required"/>
+						<attribute name="CurrentFormula" type="string" use="required"/>
+						<attribute name="UsingEqualAreaSlope" type="boolean" use="required"/>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="SurfaceName"/>
+		</complexType>
+	</element>
+</schema>

@@ -1,0 +1,2285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ini="CivilIni" targetNamespace="CivilIni" elementFormDefault="qualified">
+	<include schemaLocation="CommonIni.xsd"/>
+	<element name="ViewSurfaceOptions">
+		<annotation>
+			<documentation>Contains View Surface Options settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ScalingOption" type="ini:CTScalingOption"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+		</complexType>
+	</element>
+	<element name="ViewSurfaceOptionsCollection">
+		<annotation>
+			<documentation>Collection of View Surface Options preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewSurfaceOptions" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewPerimeter">
+		<annotation>
+			<documentation>Contains View Perimeter settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PerimeterLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+		</complexType>
+	</element>
+	<element name="ViewPerimeterCollection">
+		<annotation>
+			<documentation>Collection of View Perimeter preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewPerimeter" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewTriangles">
+		<annotation>
+			<documentation>Contains View Triangles settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="TriangleLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ColoredModel" type="boolean" use="required"/>
+			<attribute name="Mesh" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="ViewTrianglesCollection">
+		<annotation>
+			<documentation>Collection of View Triangles preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewTriangles" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewContours">
+		<annotation>
+			<documentation>Contains View Contours settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="MajorContourLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="MinorContourLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="LabelText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="LabelMinorText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="MajorDepressionContourLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="MinorDepressionContourLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ContourInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.000001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="MinorsPerMajor" use="required">
+				<simpleType>
+					<restriction base="nonNegativeInteger">
+						<maxInclusive value="50"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DisplayMajors" type="boolean" use="required"/>
+			<attribute name="DisplayMinors" type="boolean" use="required"/>
+			<attribute name="DisplayLabels" type="boolean" use="required"/>
+			<attribute name="DisplayDepressionMajors" type="boolean" use="required"/>
+			<attribute name="DisplayDepressionMinors" type="boolean" use="required"/>
+			<attribute name="DisplayAs" use="required">
+				<annotation>
+					<documentation>
+                        268435456 = Lines
+                        64 = Linestrings/Polyline
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="unsignedLong">
+						<enumeration value="268435456"/>
+						<enumeration value="64"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="UseElevation" type="boolean" use="optional"/>
+			<attribute name="HighElevation" type="double" use="optional"/>
+			<attribute name="LowElevation" type="double" use="optional"/>
+			<attribute name="UseThinTolerance" type="boolean" use="required"/>
+			<attribute name="ThinTolerance" type="ini:STAngle" use="required"/>
+			<attribute name="UseMinimumArea" type="boolean" use="required"/>
+			<attribute name="MinimumArea" type="double" use="required"/>
+			<attribute name="ClipMinorContoursOnSteepSlopes" type="boolean" use="required"/>
+			<attribute name="MaximumSlope" type="double" use="required"/>
+			<attribute name="DrawDepressionsCounterclockwise" type="boolean" use="required"/>
+			<attribute name="Smooth" type="boolean" use="required"/>
+			<attribute name="AttachTag" type="boolean" use="required"/>
+			<attribute name="LabelSpacing" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Clipping" type="boolean" use="required"/>
+			<attribute name="DisplayMinorLabels" type="boolean" use="required"/>
+			<attribute name="LabelMinorSpacing" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="ViewContoursCollection">
+		<annotation>
+			<documentation>Collection of View Contours preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewContours" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="LabelContours">
+		<annotation>
+			<documentation>Contains Label Contours settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="LabelText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="Mode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Point
+                        1 = Multipoint
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Interval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.000001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OmitClipping" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="LabelContoursCollection">
+		<annotation>
+			<documentation>Collection of Label Contours preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:LabelContours" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="AnnotateFeature">
+		<annotation>
+			<documentation>Contains Annotate Feature settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PointNorthing" type="ini:CTAnnotationPlacement"/>
+				<element name="PointEasting" type="ini:CTAnnotationPlacement"/>
+				<element name="PointElevation" type="ini:CTAnnotationPlacement"/>
+				<element name="PointCenterlineStation" type="ini:CTAnnotationPlacement"/>
+				<element name="PointFeatureStation" type="ini:CTAnnotationPlacement"/>
+				<element name="PointOffset" type="ini:CTAnnotationPlacement"/>
+				<element name="PointFeatureName" type="ini:CTAnnotationPlacement"/>
+				<element name="PointFeatureDescription" type="ini:CTAnnotationPlacement"/>
+				<element name="PointFeatureStyle" type="ini:CTAnnotationPlacement"/>
+				<element name="SegmentLength" type="ini:CTAnnotationPlacement"/>
+				<element name="SegmentBearing" type="ini:CTAnnotationPlacement"/>
+				<element name="SegmentSlopeLength" type="ini:CTAnnotationPlacement"/>
+				<element name="SegmentSlope" type="ini:CTAnnotationPlacement"/>
+				<element name="SegmentFeatureName" type="ini:CTAnnotationPlacement"/>
+				<element name="SegmentFeatureDescription" type="ini:CTAnnotationPlacement"/>
+				<element name="SegmentFeatureStyle" type="ini:CTAnnotationPlacement"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="AnnotatePoints" type="boolean" use="required"/>
+			<attribute name="AnnotateSegments" type="boolean" use="required"/>
+			<attribute name="AnnotateSlope" type="boolean" use="optional"/>
+			<attribute name="AnnotateCrests" type="boolean" use="optional"/>
+			<attribute name="AnnotateSags" type="boolean" use="optional"/>
+			<attribute name="PointLocation" type="ini:STJustification" use="required"/>
+			<attribute name="AnnotatePointAt" use="required">
+				<annotation>
+					<documentation>
+                        1 = Every Vertex
+                        2 = At Interval
+                        3 = Both
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="1"/>
+						<maxInclusive value="3"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="PointInterval" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="IntervalFromFeature" use="optional">
+				<annotation>
+					<documentation>
+						0 = Along Feature
+						1 = Along Horizontal Alignment
+					</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="AlongFeature" type="boolean" use="optional"/>
+			<attribute name="AnnotatePointIndex" type="boolean" use="optional"/>
+			<attribute name="AnnotatePointNorthing" type="boolean" use="required"/>
+			<attribute name="AnnotatePointEasting" type="boolean" use="required"/>
+			<attribute name="AnnotatePointElevation" type="boolean" use="required"/>
+			<attribute name="AnnotatePointCenterlineStation" type="boolean" use="required"/>
+			<attribute name="AnnotatePointFeatureStation" type="boolean" use="required"/>
+			<attribute name="AnnotatePointOffset" type="boolean" use="required"/>
+			<attribute name="AnnotatePointFeatureName" type="boolean" use="required"/>
+			<attribute name="AnnotatePointFeatureDescription" type="boolean" use="required"/>
+			<attribute name="AnnotatePointFeatureStyle" type="boolean" use="required"/>
+			<attribute name="DropStationEquationName" type="boolean" use="required"/>
+			<attribute name="SegmentLocation" type="ini:STLocationAlong" use="required"/>
+			<attribute name="AnnotateSegmentIndex" type="boolean" use="optional"/>
+			<attribute name="AnnotateSegmentLength" type="boolean" use="required"/>
+			<attribute name="AnnotateSegmentBearing" type="boolean" use="required"/>
+			<attribute name="AnnotateSegmentSlopeLength" type="boolean" use="required"/>
+			<attribute name="AnnotateSegmentSlope" type="boolean" use="required"/>
+			<attribute name="AnnotateSegmentFeatureName" type="boolean" use="required"/>
+			<attribute name="AnnotateSegmentFeatureDescription" type="boolean" use="required"/>
+			<attribute name="AnnotateSegmentFeatureStyle" type="boolean" use="required"/>
+			<attribute name="SlopeCellName" type="string" use="optional"/>
+			<attribute name="SlopeOffset" type="double" use="optional"/>
+			<attribute name="AnnotateSlopeAt" use="optional">
+				<annotation>
+					<documentation>
+                        0 = Every Segment
+                        1 = At Interval
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SlopeInterval" type="ini:STNonnegativeDouble" use="optional"/>
+			<attribute name="CrestsCellName" type="string" use="optional"/>
+			<attribute name="CrestsOffset" type="double" use="optional"/>
+			<attribute name="SagsCellName" type="string" use="optional"/>
+			<attribute name="SagsOffset" type="double" use="optional"/>
+		</complexType>
+	</element>
+	<element name="AnnotateFeatureCollection">
+		<annotation>
+			<documentation>Collection of Annotate Feature preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:AnnotateFeature" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewSurfaceElevations">
+		<annotation>
+			<documentation>Contains View Surface Elevations settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ElevationText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ElevationPoint">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayMode" use="required">
+				<annotation>
+					<documentation>
+                        16 = Triangle Center
+                        32 = Grid Point
+                        64 = All Points
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="16"/>
+						<enumeration value="32"/>
+						<enumeration value="64"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="NorthingGridInterval" type="double" use="required"/>
+			<attribute name="EastingGridInterval" type="double" use="required"/>
+			<attribute name="GridAngle" type="double" use="optional"/>
+			<attribute name="AlignWith" use="required">
+				<annotation>
+					<documentation>
+                        0 = Left Side
+                        128 = Decimal
+                        512 = Text Justification
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="128"/>
+						<enumeration value="512"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Direction" type="ini:STDirection" use="required"/>
+			<attribute name="DisplayElevation" type="boolean" use="required"/>
+			<attribute name="DisplayPoint" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="ViewSurfaceElevationsCollection">
+		<annotation>
+			<documentation>Collection of View Surface Elevations preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewSurfaceElevations" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewSlopeVectors">
+		<annotation>
+			<documentation>Contains View Slope Vectors settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="DirectionText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="SlopeText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="VectorLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayMode" use="required">
+				<annotation>
+					<documentation>
+                        64 = Triangle Center
+                        128 = Grid Point
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="64"/>
+						<enumeration value="128"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="NorthingGridInterval" type="double" use="required"/>
+			<attribute name="EastingGridInterval" type="double" use="required"/>
+			<attribute name="DisplayDirection" type="boolean" use="required"/>
+			<attribute name="DisplaySlope" type="boolean" use="required"/>
+      <attribute name="DisplayVector" type="boolean" use="required"/>
+      <attribute name="VectorLengthScale" type="integer" use="required"/>
+      <attribute name="VectorLength" type="double" use="required"/>
+      <attribute name="VectorScale" type="double" use="required"/>
+			<attribute name="DirectionModeAndUnits" use="required">
+				<annotation>
+					<documentation>
+                        Angular Units:
+                        0 = ddd^mmm'ss.sss
+                        1 = ddd.ddd
+                        2 = Grads
+                        Angular Mode:
+                        0 = North Azimuth
+                        16 = South Azimuth
+                        32 = Bearing
+                        Value is one from Units + one from Mode
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+						<enumeration value="2"/>
+						<enumeration value="16"/>
+						<enumeration value="17"/>
+						<enumeration value="18"/>
+						<enumeration value="32"/>
+						<enumeration value="33"/>
+						<enumeration value="34"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="ViewSlopeVectorsCollection">
+		<annotation>
+			<documentation>Collection of View Slope Vectors preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewSlopeVectors" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewSinglePointSurfaceElevation">
+		<annotation>
+			<documentation>Contains View Single Point Surface Elevation settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ElevationText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayMode" use="required">
+				<annotation>
+					<documentation>
+                        16 = Triangle Center
+                        32 = Grid Point
+                        64 = All Points
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="16"/>
+						<enumeration value="32"/>
+						<enumeration value="64"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="NorthingGridInterval" type="double" use="required"/>
+			<attribute name="EastingGridInterval" type="double" use="required"/>
+			<attribute name="AlignWith" use="required">
+				<annotation>
+					<documentation>
+                        0 = Left Side
+                        128 = Decimal
+                        512 = Text Justification
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="128"/>
+						<enumeration value="512"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Direction" type="ini:STDirection" use="required"/>
+		</complexType>
+	</element>
+	<element name="ViewSinglePointSurfaceElevationCollection">
+		<annotation>
+			<documentation>Collection of View Single Point Surface Elevation preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewSinglePointSurfaceElevation" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewSinglePointSlopeVectors">
+		<annotation>
+			<documentation>Contains View Single Slope Vectors settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="DirectionText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="SlopeText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="VectorLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayMode" use="required">
+				<annotation>
+					<documentation>
+                        64 = Triangle Center
+                        128 = Grid Point
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="64"/>
+						<enumeration value="128"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="NorthingGridInterval" type="double" use="required"/>
+			<attribute name="EastingGridInterval" type="double" use="required"/>
+			<attribute name="DisplayDirection" type="boolean" use="required"/>
+			<attribute name="DisplaySlope" type="boolean" use="required"/>
+			<attribute name="DisplayVector" use="required">
+				<annotation>
+					<documentation>
+                        0 = off
+                        256 = on
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="256"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="VectorScale" type="double" use="required"/>
+			<attribute name="DirectionModeAndUnits" use="required">
+				<annotation>
+					<documentation>
+                        Angular Units:
+                        0 = ddd^mmm'ss.sss
+                        1 = ddd.ddd
+                        2 = Grads
+                        Angular Mode:
+                        0 = North Azimuth
+                        16 = South Azimuth
+                        32 = Bearing
+                        Value is one from Units + one from Mode
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+						<enumeration value="2"/>
+						<enumeration value="16"/>
+						<enumeration value="17"/>
+						<enumeration value="18"/>
+						<enumeration value="32"/>
+						<enumeration value="33"/>
+						<enumeration value="34"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="ViewSinglePointSlopeVectorsCollection">
+		<annotation>
+			<documentation>Collection of View Single Slope Vectors preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewSinglePointSlopeVectors" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewTwoPointSlope">
+		<annotation>
+			<documentation>Contains View Two Point Slope settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Distance" type="ini:CTAnnotationPlacement"/>
+				<element name="Slope" type="ini:CTAnnotationPlacement"/>
+				<element name="Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Text">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayDistanceResults" type="boolean" use="required"/>
+			<attribute name="DisplaySlopeResults" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="ViewTwoPointSlopeCollection">
+		<annotation>
+			<documentation>Collection of View Two Point Slope preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewTwoPointSlope" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewCrossingSegments">
+		<annotation>
+			<documentation>Contains View Crossing Segments settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="CrossingSegmentsText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="MismatchedElevationsText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="SegmentCrossingCharacter" type="ini:STString1" use="required"/>
+			<attribute name="MismatchedElevationsCharacter" type="ini:STString1" use="required"/>
+			<attribute name="DisplayCrossingSegments" type="boolean" use="required"/>
+			<attribute name="DisplayMismatchedElevations" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="ViewCrossingSegmentsCollection">
+		<annotation>
+			<documentation>Collection of View Crossing Segments preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewCrossingSegments" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewInferredBreaklines">
+		<annotation>
+			<documentation>Contains View Inferred Breaklines settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Line">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="Point">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayPoints" type="boolean" use="required"/>
+			<attribute name="DisplayLines" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="ViewInferredBreaklinesCollection">
+		<annotation>
+			<documentation>Collection of View Inferred Breaklines preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewInferredBreaklines" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewProfiledModel">
+		<annotation>
+			<documentation>Contains View Profiled Model settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PrimaryGridLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="SecondaryGridLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DatumLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="PrimaryGridInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="PrimaryGridDirection" type="ini:STDirection" use="required"/>
+			<attribute name="SecondaryGridInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SecondaryGridDirection" type="ini:STDirection" use="required"/>
+			<attribute name="DatumElevation" type="double" use="required"/>
+			<attribute name="LineFrequency" type="nonNegativeInteger" use="required"/>
+			<attribute name="DisplayPrimaryGridLines" type="boolean" use="required"/>
+			<attribute name="DisplaySecondaryGridLines" type="boolean" use="required"/>
+			<attribute name="DisplayDatumLines" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="ViewProfiledModelCollection">
+		<annotation>
+			<documentation>Collection of View Profiled Model preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewProfiledModel" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewGriddedModel">
+		<annotation>
+			<documentation>Contains View Gridded Model settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="GridLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="GridInterval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="ViewGriddedModelCollection">
+		<annotation>
+			<documentation>Collection of View Gridded Model preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewGriddedModel" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewColorCodedAspects">
+		<annotation>
+			<documentation>Contains View Color-Coded Aspects settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="DirectionTriangleLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="LegendFrameLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="LegendText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ColorCodedAspects" minOccurs="0" maxOccurs="256">
+					<complexType>
+						<attribute name="Color" type="ini:STColorValue" use="required"/>
+						<attribute name="Elevation" type="double" use="required"/>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayLegend" type="integer" use="required"/>
+			<attribute name="ColorMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Custom
+                        16 = Automatic
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="16"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="LegendAngularUnits" use="required">
+				<annotation>
+					<documentation>
+                        0 = ddd^mmm'ss.sss'
+                        1 = ddd.ddd
+                        2 = Grads
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+						<enumeration value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="LegendAngularMode" use="required">
+				<annotation>
+					<documentation>
+                         0 = North Azimuth
+                        16 = North Azimuth
+                        32 = Bearing
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="16"/>
+						<enumeration value="32"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="LegendRadius" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="LegendTextOffset" type="double" use="required"/>
+			<attribute name="UseTextScaleFactor" type="boolean" use="required"/>
+			<attribute name="GenColorsInitialColor" type="ini:STColorValue" use="required"/>
+			<attribute name="GenColorsColorStep" type="integer" use="required"/>
+			<attribute name="GenColorsOnNumberOfColors" type="integer" use="required"/>
+			<attribute name="GenColorsNumberOfColors" type="integer" use="required"/>
+			<attribute name="GenColorsOnFirstToAspects" type="integer" use="required"/>
+			<attribute name="GenColorsFirstToAspects" type="double" use="required"/>
+			<attribute name="GenColorsOnLastFromAspects" type="integer" use="required"/>
+			<attribute name="GenColorsLastFromAspects" type="double" use="required"/>
+			<attribute name="GenColorsOnAspectsStep" type="integer" use="required"/>
+			<attribute name="GenColorsAspectsStep" type="double" use="required"/>
+			<attribute name="GenerateReport" type="boolean" use="required"/>
+			<attribute name="ReportFileName" type="ini:STString255" use="required"/>
+			<attribute name="ReportUnits" use="required">
+				<annotation>
+					<documentation>
+                        4 = Square Feet
+                        8 = Square Yards
+                        16 = Square Miles
+                        32 = Acres
+                        64 = Square Meters
+                        128 = Square Kilometers
+                        256 = Hectares
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="4"/>
+						<enumeration value="8"/>
+						<enumeration value="16"/>
+						<enumeration value="32"/>
+						<enumeration value="64"/>
+						<enumeration value="128"/>
+						<enumeration value="256"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="ViewColorCodedAspectsCollection">
+		<annotation>
+			<documentation>Collection of View Color-Coded Aspects preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewColorCodedAspects" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewColorCodedElevations">
+		<annotation>
+			<documentation>Contains View Color-Coded Elevations settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ElevationTriangleLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="LegendFrameLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="LegendText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ColorCodedElevation" minOccurs="0" maxOccurs="256">
+					<complexType>
+						<attribute name="Color" type="ini:STColorValue" use="required"/>
+						<attribute name="Elevation" type="double" use="required"/>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayLegend" type="integer" use="required"/>
+			<attribute name="ColorMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Custom
+                        16 = Automatic
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="16"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="LegendBoxWidth" type="double" use="required"/>
+			<attribute name="LegendTextOffset" type="double" use="required"/>
+			<attribute name="UseTextScaleFactor" type="boolean" use="required"/>
+			<attribute name="GenColorsInitialColor" type="ini:STColorValue" use="required"/>
+			<attribute name="GenColorsColorStep" type="integer" use="required"/>
+			<attribute name="GenColorsOnNumberOfColors" type="integer" use="required"/>
+			<attribute name="GenColorsNumberOfColors" type="integer" use="required"/>
+			<attribute name="GenColorsOnFirstToElevation" type="integer" use="required"/>
+			<attribute name="GenColorsFirstToElevation" type="double" use="required"/>
+			<attribute name="GenColorsOnLastFromElevation" type="integer" use="required"/>
+			<attribute name="GenColorsLastFromElevation" type="double" use="required"/>
+			<attribute name="GenColorsOnElevationStep" type="integer" use="required"/>
+			<attribute name="GenColorsElevationStep" type="double" use="required"/>
+			<attribute name="GenerateReport" type="boolean" use="required"/>
+			<attribute name="ReportFileName" type="ini:STString255" use="required"/>
+			<attribute name="ReportUnits" use="required">
+				<annotation>
+					<documentation>
+                        4 = Square Feet
+                        8 = Square Yards
+                        16 = Square Miles
+                        32 = Acres
+                        64 = Square Meters
+                        128 = Square Kilometers
+                        256 = Hectares
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="4"/>
+						<enumeration value="8"/>
+						<enumeration value="16"/>
+						<enumeration value="32"/>
+						<enumeration value="64"/>
+						<enumeration value="128"/>
+						<enumeration value="256"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="ViewColorCodedElevationsCollection">
+		<annotation>
+			<documentation>Collection of View Color-Coded Elevations preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewColorCodedElevations" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ViewColorCodedSlopes">
+		<annotation>
+			<documentation>Contains View Color-Coded Slopes settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="SlopeTriangleLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="LegendFrameLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="LegendText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="ColorCodedSlope" minOccurs="0" maxOccurs="256">
+					<complexType>
+						<attribute name="Color" type="ini:STColorValue" use="required"/>
+						<attribute name="Elevation" type="double" use="required"/>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayLegend" type="integer" use="required"/>
+			<attribute name="ColorMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Custom
+                        16 = Automatic
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="16"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="LegendBoxWidth" type="double" use="required"/>
+			<attribute name="LegendTextOffset" type="double" use="required"/>
+			<attribute name="UseTextScaleFactor" type="boolean" use="required"/>
+			<attribute name="GenColorsInitialColor" type="ini:STColorValue" use="required"/>
+			<attribute name="GenColorsColorStep" type="integer" use="required"/>
+			<attribute name="GenColorsOnNumberOfColors" type="integer" use="required"/>
+			<attribute name="GenColorsNumberOfColors" type="integer" use="required"/>
+			<attribute name="GenColorsOnFirstToSlope" type="integer" use="required"/>
+			<attribute name="GenColorsFirstToSlope" type="double" use="required"/>
+			<attribute name="GenColorsOnLastFromSlope" type="integer" use="required"/>
+			<attribute name="GenColorsLastFromSlope" type="double" use="required"/>
+			<attribute name="GenColorsOnSlopeStep" type="integer" use="required"/>
+			<attribute name="GenColorsSlopeStep" type="double" use="required"/>
+			<attribute name="GenerateReport" type="boolean" use="required"/>
+			<attribute name="ReportFileName" type="ini:STString255" use="required"/>
+			<attribute name="ReportUnits" use="required">
+				<annotation>
+					<documentation>
+                        4 = Square Feet
+                        8 = Square Yards
+                        16 = Square Miles
+                        32 = Acres
+                        64 = Square Meters
+                        128 = Square Kilometers
+                        256 = Hectares
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="4"/>
+						<enumeration value="8"/>
+						<enumeration value="16"/>
+						<enumeration value="32"/>
+						<enumeration value="64"/>
+						<enumeration value="128"/>
+						<enumeration value="256"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="ViewColorCodedSlopesCollection">
+		<annotation>
+			<documentation>Collection of View Color-Coded Slopes preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ViewColorCodedSlopes" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="GenerateTransverseFeature">
+		<annotation>
+			<documentation>Contains Generate Transverse Feature settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Feature" type="ini:CTNewFeature"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ExteriorArc" type="ini:STAngle" use="required"/>
+			<attribute name="UseInterval" type="boolean" use="required"/>
+			<attribute name="Interval" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="UseStrokeTolerance" use="required">
+				<annotation>
+					<documentation>
+                        0 = off
+                        2 = on
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Tolerance" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="AddTickMarks" type="boolean" use="required"/>
+			<attribute name="GenerateGraphicsOnly" type="boolean" use="required"/>
+			<attribute name="TriangulateSurface" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="GenerateTransverseFeatureCollection">
+		<annotation>
+			<documentation>Collection of Generate Transverse Feature preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:GenerateTransverseFeature" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="GenerateLongitudinalFeature">
+		<annotation>
+			<documentation>Contains Generate Longitudinal Feature settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Feature" type="ini:CTNewFeature"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ExteriorArc" type="double" use="required"/>
+			<attribute name="UseInterval" type="boolean" use="required"/>
+			<attribute name="Interval" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="UseStrokeTolerance" use="required">
+				<annotation>
+					<documentation>
+                        0 = off
+                        2 = on
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Tolerance" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="UseThinTolerance" type="boolean" use="required"/>
+			<attribute name="Thin" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="Mode" use="required">
+				<annotation>
+					<documentation>
+                        0 = New
+                        1 = Modify
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="RemoveLoops" use="required">
+				<annotation>
+					<documentation>
+                        0 = off
+                        4 = on
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="4"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="GenerateGraphicsOnly" type="boolean" use="required"/>
+			<attribute name="TriangulateSurface" type="boolean" use="required"/>
+			<attribute name="Method" use="required">
+				<annotation>
+					<documentation>
+                        Horizontal Method and Vertical Method
+                        2049 = Offset from Primary Feature, Offset/Offset
+                        2050 = Offset from Primary Feature, Offset/Longitudinal Slope
+                        2052 = Offset from Primary Feature, Longitudinal Slope/Offset
+                        2056 = Offset from Primary Feature, Elevation/Elevation
+                        2064 = Offset from Primary Feature, Elevation/Longitudinal Slope
+                        2080 = Offset from Primary Feature, Longitudinal Slope/Elevation
+                        2112 = Offset from Primary Feature, Drape
+                        2176 = Offset from Primary Feature, Transverse Slope
+                        2304 = Offset from Primary Feature, Project Slope
+                        4097 = Along Selected Feature, Offset/Offset
+                        4098 = Along Selected Feature, Offset/Longitudinal Slope
+                        4100 = Along Selected Feature, Longitudinal Slope/Offset
+                        4104 = Along Selected Feature, Elevation/Elevation
+                        4112 = Along Selected Feature, Elevation/Longitudinal Slope
+                        4128 = Along Selected Feature, Longitudinal Slope/Elevation
+                        4160 = Along Selected Feature, Drape
+                        4224 = Along Selected Feature, Transverse Slope
+                        4352 = Along Selected Feature, Project Slope
+                        8704 = Project Two Slopes, Project Two Slopes
+                        17408 = Project Slope to Surface, Project Slope to Surface
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="2049"/>
+						<maxInclusive value="17408"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="Offset1" type="double" use="required"/>
+			<attribute name="Offset2" type="double" use="required"/>
+			<attribute name="OffsetOffset1" type="double" use="required"/>
+			<attribute name="OffsetOffset2" type="double" use="required"/>
+			<attribute name="OffsetSlope1" type="double" use="required"/>
+			<attribute name="OffsetSlope2" type="double" use="required"/>
+			<attribute name="SlopeOffset1" type="double" use="required"/>
+			<attribute name="SlopeOffset2" type="double" use="required"/>
+			<attribute name="ElevationElevation1" type="double" use="required"/>
+			<attribute name="ElevationElevation2" type="double" use="required"/>
+			<attribute name="ElevationSlope1" type="double" use="required"/>
+			<attribute name="ElevationSlope2" type="double" use="required"/>
+			<attribute name="SlopeElevation1" type="double" use="required"/>
+			<attribute name="SlopeElevation2" type="double" use="required"/>
+			<attribute name="LateralSlope1" type="double" use="required"/>
+			<attribute name="LateralSlope2" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="GenerateLongitudinalFeatureCollection">
+		<annotation>
+			<documentation>Collection of Generate Longitudinal Feature preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:GenerateLongitudinalFeature" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="DrapeSurface">
+		<annotation>
+			<documentation>Contains Drape Surface settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="InputMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Layer/Level
+                        1 = Fence
+                        2 = Single
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SourceLayer" type="ini:STString1023" use="required"/>
+			<attribute name="UseDestination" type="boolean" use="required"/>
+			<attribute name="DestinationLayer" type="ini:STString1023" use="required"/>
+			<attribute name="DeleteGraphics" type="boolean" use="required"/>
+			<attribute name="CopyToDestination" type="boolean" use="optional"/>
+			<attribute name="Scale" type="double" use="required"/>
+			<attribute name="ElevationAdjustment" type="double" use="required"/>
+			<attribute name="DrapeVerticesOnly" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="DrapeSurfaceCollection">
+		<annotation>
+			<documentation>Collection of Drape Surface preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:DrapeSurface" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="FilletFeature">
+		<annotation>
+			<documentation>Contains Generate Longitudinal Feature settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Feature" type="ini:CTNewFeature"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="Radius" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="Interval" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="Flags" use="required">
+				<annotation>
+					<documentation>
+                        0 = no flags
+                        1 = Stroke Tolerance
+                        2 = Elevations from Destination Surface
+                        4 = Extension Length
+                        8 = Generate Graphics Only
+                        16 = Triangulate Surface
+                        32 = Reference Feature 1 Offset
+                        64 = Reference Feature 2 Offset
+                        128 = Reference Feature 1 Transverse Slope
+                        256 = Reference Feature 2 Transverse Slope
+                        512 = Reference Feature 1 Elevation Adjustment
+                        1024 = Reference Feature 2 Elevation Adjustment
+                        2048 = Copy Reference Feature Points
+                        Flags are cumulative
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="4095"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="StrokeTolerance" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="ExtensionLength" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="Offset1" type="double" use="required"/>
+			<attribute name="TransverseSlope1" type="double" use="required"/>
+			<attribute name="ElevationAdjustment1" type="double" use="required"/>
+			<attribute name="Offset2" type="double" use="required"/>
+			<attribute name="TransverseSlope2" type="double" use="required"/>
+			<attribute name="ElevationAdjustment2" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="FilletFeatureCollection">
+		<annotation>
+			<documentation>Collection of Fillet Feature preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:FilletFeature" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="GenerateSlopedSurface">
+		<annotation>
+			<documentation>Contains Generate Sloped Surface settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="TransverseFeature" type="ini:CTNewFeature"/>
+				<element name="CatchpointFeature" type="ini:CTNewFeature"/>
+				<element name="SourceFeature" type="ini:CTNewFeature"/>
+			</sequence>
+			<attribute name="Intercept" type="boolean" use="optional"/>
+			<attribute name="InterceptElevation" type="double" use="optional"/>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="Interval" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="CutSlope" type="double" use="required"/>
+			<attribute name="FillSlope" type="double" use="required"/>
+			<attribute name="CutSlopeTo" type="double" use="optional"/>
+			<attribute name="FillSlopeTo" type="double" use="optional"/>
+			<attribute name="TransitionCutSlope" type="boolean" use="optional"/>
+			<attribute name="TransitionFillSlope" type="boolean" use="optional"/>
+			<attribute name="ApplyToBothSides" type="boolean" use="required"/>
+			<attribute name="TriangulateSurface" type="boolean" use="required"/>
+			<attribute name="DisplayTransverseFeature" type="boolean" use="required"/>
+			<attribute name="DisplayTickMarks" type="boolean" use="required"/>
+			<attribute name="DisplaySourceFeature" type="boolean" use="required"/>
+			<attribute name="DisplayCatchpointFeature" type="boolean" use="required"/>
+			<attribute name="ExcludeFromTriangulation" type="boolean" use="required"/>
+			<attribute name="GenerateGraphicsOnly" type="boolean" use="required"/>
+			<attribute name="ExteriorArc" type="ini:STAngle" use="required"/>
+			<attribute name="FilletInterior" type="boolean" use="required"/>
+			<attribute name="BermCutSlope" type="double" use="required"/>
+			<attribute name="BermFillSlope" type="double" use="required"/>
+			<attribute name="UseMaximumDistance" type="boolean" use="required"/>
+			<attribute name="MaximumDistance" type="ini:STNonnegativeDouble" use="required"/>
+		</complexType>
+	</element>
+	<element name="GenerateSlopedSurfaceCollection">
+		<annotation>
+			<documentation>Collection of Generate Sloped Surface preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:GenerateSlopedSurface" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ApplyTemplate">
+		<annotation>
+			<documentation>Contains Apply Template settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ExteriorArc" type="ini:STAngle" use="required"/>
+			<attribute name="Mirror" type="boolean" use="required"/>
+			<attribute name="Reflect" type="boolean" use="required"/>
+			<attribute name="UseInterval" type="boolean" use="required"/>
+			<attribute name="Interval" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.000001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="UseStrokeTolerance" type="boolean" use="required"/>
+			<attribute name="StrokeTolerance" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.000001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DuplicateNames" use="required">
+				<annotation>
+					<documentation>
+                        0 = Append
+                        1 = Replace
+                        2 = Rename
+                        3 = Modify
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="3"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="RemoveLoops" type="boolean" use="required"/>
+			<attribute name="DisplayComponents" type="boolean" use="optional"/>
+			<attribute name="GenerateGraphicsOnly" type="boolean" use="required"/>
+			<attribute name="TriangulateSurface" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="ApplyTemplateCollection">
+		<annotation>
+			<documentation>Collection of Apply Template preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ApplyTemplate" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SetElevation">
+		<annotation>
+			<documentation>Contains Set Elevation settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="InputMode" use="required">
+				<annotation>
+					<documentation>
+                        0 = Layer/Level
+                        1 = Fence
+                        2 = Single
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SourceLayer" type="ini:STString1023" use="required"/>
+			<attribute name="UseDestination" type="boolean" use="required"/>
+			<attribute name="DestinationLayer" type="ini:STString1023" use="required"/>
+			<attribute name="Elevation" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="SetElevationCollection">
+		<annotation>
+			<documentation>Collection of Set Elevation preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:SetElevation" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="GenerateIsopachSurface">
+		<annotation>
+			<documentation>Contains GenerateIsopachSurface settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PlanarizeOption" type="ini:CTPlanarizeOption"/>
+				<element name="CutText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+				<element name="FillText">
+					<complexType mixed="true">
+						<complexContent mixed="true">
+							<extension base="ini:CTAnnotationPlacement">
+								<choice>
+									<group ref="ini:GTextNamedSymbology"/>
+									<group ref="ini:GTextSymbology"/>
+								</choice>
+							</extension>
+						</complexContent>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="CreateIsopachSurface" type="boolean" use="required"/>
+			<attribute name="TriangulateSurface" type="boolean" use="required"/>
+			<attribute name="DisplayMode" use="required">
+				<annotation>
+					<documentation>
+                        64 = Triangle
+                        128 = Grid
+                        256 = All
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="64"/>
+						<enumeration value="128"/>
+						<enumeration value="256"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="NorthingInterval" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="EastingInterval" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="DisplayCutText" type="boolean" use="required"/>
+			<attribute name="DisplayFillText" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="GenerateIsopachSurfaceCollection">
+		<annotation>
+			<documentation>Collection of GenerateIsopachSurface preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:GenerateIsopachSurface" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="MergeSurfaces">
+		<annotation>
+			<documentation>Contains Merge Surfaces settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Feature" type="ini:CTNewFeature"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="RetainAllPoints" type="boolean" use="required"/>
+			<attribute name="RetainFeaturesExcluded" type="boolean" use="required"/>
+			<attribute name="AddEdgeAsBreakline" type="boolean" use="required"/>
+			<attribute name="MergeSelectedOriginalAreas" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="MergeSurfacesCollection">
+		<annotation>
+			<documentation>Collection of Merge Surfaces preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:MergeSurfaces" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="TransformSurface">
+		<annotation>
+			<documentation>Contains Transform Surface settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Feature" type="ini:CTNewFeature"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="Method" use="required">
+				<annotation>
+					<documentation>
+                        0 = Custom
+                        1 = US Feet to Meters
+                        2 = Intl Feet to Meters
+                        3 = Meters to US Feet
+                        4 = Meters to Intl Feet
+                        5 = Relative elevation
+                        6 = Absolute elevation
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+						<enumeration value="2"/>
+						<enumeration value="3"/>
+						<enumeration value="4"/>
+						<enumeration value="5"/>
+						<enumeration value="6"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="EmptyDestinationSurface" type="boolean" use="required"/>
+			<attribute name="AddFenceAsBreakline" type="boolean" use="required"/>
+			<attribute name="Angle" type="ini:STAngle" use="required"/>
+			<attribute name="ScaleHorizontal" use="required">
+				<annotation>
+					<documentation>In 8.4, this value is 0.0000000001 but in 9.0 it will be 0.000001</documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.0000000001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ScaleVertical" use="required">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.0000000001"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="OriginalPointNorthing" type="double" use="required"/>
+			<attribute name="OriginalPointEasting" type="double" use="required"/>
+			<attribute name="OriginalPointElevation" type="double" use="required"/>
+			<attribute name="DestinationPointNorthing" type="double" use="required"/>
+			<attribute name="DestinationPointEasting" type="double" use="required"/>
+			<attribute name="DestinationPointElevation" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="TransformSurfaceCollection">
+		<annotation>
+			<documentation>Collection of Transform Surface preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:TransformSurface" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="FeatureFilter">
+		<annotation>
+			<documentation>Contains Feature Filter rules</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Rule" type="ini:CTFeatureFilterRule" maxOccurs="unbounded"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+		</complexType>
+	</element>
+	<element name="FeatureFilterCollection">
+		<annotation>
+			<documentation>Collection of Feature Filters</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:FeatureFilter" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ThinSurface">
+		<annotation>
+			<documentation>Contains Thin Surface settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="HeightTolerance" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="MinimumDistance" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="MaximumDistance" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="CopyInferredBreaklines" use="required">
+				<annotation>
+					<documentation>
+                        0 = off
+                        32 = on
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="32"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="ThinSurfaceCollection">
+		<annotation>
+			<documentation>Collection of Thin Surface preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ThinSurface" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ThinRandomPoints">
+		<annotation>
+			<documentation>Contains Thin Random Points settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="TileLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayTile" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="ThinRandomPointsCollection">
+		<annotation>
+			<documentation>Collection of Thin Random Points preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ThinRandomPoints" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ResolveCrossingSegments">
+		<annotation>
+			<documentation>Contains Resolve Crossing Segments settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+      <attribute name="Mode" use="optional">
+        <simpleType>
+          <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="1"/>
+          </restriction>
+        </simpleType>
+      </attribute>
+      <attribute name="FenceMode" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+      <attribute name="ToleranceLessGreater" use="optional">
+        <simpleType>
+          <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="1"/>
+          </restriction>
+        </simpleType>
+      </attribute>      
+			<attribute name="DeltaTolerance" type="double" use="required"/>
+			<attribute name="UseDominantFeature" type="boolean" use="required"/>
+			<attribute name="FeatureFilter" type="ini:STString31" use="required"/>
+			<attribute name="MatchElevation" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="ResolveCrossingSegmentsCollection">
+		<annotation>
+			<documentation>Collection of Resolve Crossing Segments preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ResolveCrossingSegments" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="FormGriddedModel">
+		<annotation>
+			<documentation>Contains Form Gridded Model settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="FenceMode" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="2"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="NorthSouthGridSpacing" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="EastWestGridSpacing" type="ini:STNonnegativeDouble" use="required"/>
+		</complexType>
+	</element>
+	<element name="FormGriddedModelCollection">
+		<annotation>
+			<documentation>Collection of Form Gridded Model preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:FormGriddedModel" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="GenerateSurface">
+		<annotation>
+			<documentation>Contains Generate Surface settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="GenerateAs" use="required">
+				<annotation>
+					<documentation>
+                        0 = off (will go away once we combine with the DirectionMask)
+                        1 = Planar
+                        2 = Random
+                        4 = Normal
+                        8 = CosineExpExp
+                        16 = Pyramid
+                        32 = Conic
+                        64 = Eastward Sloping
+                        128 = Westward Sloping
+                        256 = Northward Sloping
+                        512 = Southward Sloping
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="1"/>
+						<enumeration value="2"/>
+						<enumeration value="4"/>
+						<enumeration value="8"/>
+						<enumeration value="16"/>
+						<enumeration value="32"/>
+						<enumeration value="64"/>
+						<enumeration value="128"/>
+						<enumeration value="256"/>
+						<enumeration value="512"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DirectionMask" use="required">
+				<annotation>
+					<documentation>
+                        0 = off (will go away once we combine with the GenerateAs)
+                        64 = Eastward Sloping
+                        128 = Westward Sloping
+                        256 = Northward Sloping
+                        512 = Southward Sloping
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<enumeration value="0"/>
+						<enumeration value="64"/>
+						<enumeration value="128"/>
+						<enumeration value="256"/>
+						<enumeration value="512"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="NumberOfPoints" use="required">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="TriangulateSurface" type="boolean" use="required"/>
+			<attribute name="OriginNorthing" type="double" use="required"/>
+			<attribute name="OriginEasting" type="double" use="required"/>
+			<attribute name="OriginElevation" type="double" use="required"/>
+			<attribute name="ExtentsDeltaNorthing" type="double" use="required"/>
+			<attribute name="ExtentsDeltaEasting" type="double" use="required"/>
+			<attribute name="ExtentsDeltaElevation" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="GenerateSurfaceCollection">
+		<annotation>
+			<documentation>Collection of Generate Surface preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:GenerateSurface" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="FindNearSurfacePoints">
+		<annotation>
+			<documentation>Contains Find Near Surface Points preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="MarkerSymbology">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayMarker" type="boolean" use="required"/>
+			<attribute name="MinimumHorizontalTolerance" type="double" use="required"/>
+			<attribute name="MaximumHorizontalTolerance" type="double" use="required"/>
+			<attribute name="MinimumVerticalTolerance" type="double" use="required"/>
+			<attribute name="MaximumVerticalTolerance" type="double" use="required"/>
+			<attribute name="MarkerScale" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="FindNearSurfacePointsCollection">
+		<annotation>
+			<documentation>Collection of Find Near Surface Points preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:FindNearSurfacePoints" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ImportRuleSet">
+		<annotation>
+			<documentation>Contains Import Rule Set settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Rule" type="ini:CTImportRule" maxOccurs="unbounded"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="Description" type="ini:STString255" use="required"/>
+		</complexType>
+	</element>
+	<element name="ImportRuleSetCollection">
+		<annotation>
+			<documentation>Collection of Import Surface rule sets</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ImportRuleSet" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SlopeBetweenFeatures">
+		<annotation>
+			<documentation>Contains Slope Between Features preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="DownSlopeCell">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GPointNamedSymbology"/>
+								<group ref="ini:GPointSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DownSlopeLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="FeaturePair" type="ini:CTFeaturePair" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="IntervalValue" type="double" use="required"/>
+			<attribute name="TickMarkOption" type="boolean" use="required"/>
+			<attribute name="Interactive" type="boolean" use="optional"/>
+      <attribute name="MinimumSlope" type="double" use="optional"/>
+      <attribute name="DisplaySymbol" type="boolean" use="optional"/>
+      <attribute name="DisplayLine" type="boolean" use="optional"/>
+    </complexType>
+	</element>
+	<element name="SlopeBetweenFeaturesCollection">
+		<annotation>
+			<documentation>Collection of Slope Between Features preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:SlopeBetweenFeatures" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

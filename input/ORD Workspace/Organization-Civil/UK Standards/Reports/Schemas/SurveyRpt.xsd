@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:inr="InRoads" xmlns:NameSpace1="http://www.w3.org/2001/XMLSchema" targetNamespace="InRoads" elementFormDefault="qualified">
+	<include schemaLocation="CommonRpt.xsd"/>
+	<element name="SurveyAttribute">
+		<complexType>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="value" type="string" use="required"/>
+		</complexType>
+	</element>
+	<element name="Notes">
+		<complexType>
+			<attribute name="note" type="string" use="required"/>
+		</complexType>
+	</element>
+	<complexType name="CTSurveyPoint" mixed="true">
+		<annotation>
+			<documentation>Base point definition</documentation>
+		</annotation>
+		<sequence>
+			<element ref="inr:SurveyAttribute" minOccurs="0" maxOccurs="unbounded"/>
+			<element ref="inr:Notes" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="code" type="string" use="optional"/>
+		<attribute name="northing" type="double" use="optional"/>
+		<attribute name="easting" type="double" use="optional"/>
+		<attribute name="elevation" type="double" use="optional"/>
+		<attribute name="error" type="string" use="optional"/>
+		<attribute name="description" type="string" use="optional"/>
+		<attribute name="display" type="boolean" use="optional"/>
+		<attribute name="linkCode" type="integer" use="optional"/>
+		<attribute name="zone" type="integer" use="optional"/>
+		<attribute name="terrainAttribute" type="string" use="optional"/>
+		<attribute name="attributesPair" type="string" use="optional"/>
+		<attribute name="controlCodes" type="string" use="optional"/>
+		<attribute name="dataFileName" type="string" use="optional"/>
+		<attribute name="vbaMacro" type="string" use="optional"/>
+		<attribute name="fieldBook" type="string" use="optional"/>
+		<attribute name="styleName" type="string" use="optional"/>
+		<attribute name="mediaFile" type="string" use="optional"/>
+		<attribute name="timeStamp" type="date" use="optional"/>
+		<attribute name="adjusted" use="optional">
+			<annotation>
+				<documentation>
+                    1 = TRUE
+                    (Omitted if false)
+                </documentation>
+			</annotation>
+			<simpleType>
+				<restriction base="integer">
+					<enumeration value="1"/>
+				</restriction>
+			</simpleType>
+		</attribute>
+		<attribute name="type" use="optional">
+			<annotation>
+				<documentation>
+                    0 = Fixed
+                    1 = Computed
+                    2 = From Geometry 
+                </documentation>
+			</annotation>
+			<simpleType>
+				<restriction base="integer">
+					<enumeration value="0"/>
+					<enumeration value="1"/>
+					<enumeration value="2"/>
+				</restriction>
+			</simpleType>
+		</attribute>
+	</complexType>
+	<element name="SurveyObservation">
+		<annotation>
+			<documentation>Observation data</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent mixed="true">
+				<extension base="inr:CTSurveyPoint">
+					<attribute name="horizontalObservation" type="inr:STAngle" use="optional"/>
+					<attribute name="verticalObservation" type="inr:STAngle" use="optional"/>
+					<attribute name="slopeDistance" type="double" use="optional"/>
+					<attribute name="targetHeight" type="double" use="optional"/>
+					<attribute name="isValidPoint" type="boolean" use="required"/>
+					<attribute name="computedNorthing" type="double" use="optional"/>
+					<attribute name="computedEasting" type="double" use="optional"/>
+					<attribute name="computedElevation" type="double" use="optional"/>
+					<attribute name="instrumentOrientation" type="string" use="optional"/>
+					<attribute name="setNumber" type="integer" use="optional"/>
+					<attribute name="setupName" type="string" use="optional"/>
+					<attribute name="dataFile" type="string" use="optional"/>
+					<attribute name="rodStadia" type="string" use="optional"/>
+					<attribute name="lowerStadia" type="string" use="optional"/>
+					<attribute name="upperStadia" type="string" use="optional"/>
+					<attribute name="edited" use="optional">
+						<annotation>
+							<documentation>
+                                1 = TRUE
+                                (Omitted if false)
+                            </documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="integer">
+								<enumeration value="1"/>
+							</restriction>
+						</simpleType>
+					</attribute>
+					<attribute name="inserted" use="optional">
+						<annotation>
+							<documentation>
+                                1 = TRUE
+                                (Omitted if false)
+                            </documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="integer">
+								<enumeration value="1"/>
+							</restriction>
+						</simpleType>
+					</attribute>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="SurveyStation">
+		<annotation>
+			<documentation>Survey Station Data</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent mixed="true">
+				<extension base="inr:CTSurveyPoint">
+					<sequence>
+						<element ref="inr:SurveyObservation" minOccurs="0" maxOccurs="unbounded"/>
+					</sequence>
+					<attribute name="backsightPoint" type="string" use="optional"/>
+					<attribute name="backsightDirection" type="inr:STDirection" use="optional"/>
+					<attribute name="horizontalAngle" type="inr:STAngle" use="optional"/>
+					<attribute name="instrumentHeight" type="double" use="optional"/>
+					<attribute name="rodHeight" type="double" use="optional"/>
+					<attribute name="occupiedPoint" type="string" use="optional"/>
+					<attribute name="backsighttype" type="string" use="optional"/>
+					<attribute name="circle" type="double" use="optional"/>
+					<attribute name="standardErrorDirection" type="double" use="optional"/>
+					<attribute name="isValidPoint" type="boolean" use="required"/>
+					<attribute name="edited" use="optional">
+						<annotation>
+							<documentation>
+                                1 = TRUE
+                                (Omitted if false)
+                            </documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="integer">
+								<enumeration value="1"/>
+							</restriction>
+						</simpleType>
+					</attribute>
+					<attribute name="inserted" use="optional">
+						<annotation>
+							<documentation>
+                                1 = TRUE
+                                (Omitted if false)
+                            </documentation>
+						</annotation>
+						<simpleType>
+							<restriction base="integer">
+								<enumeration value="1"/>
+							</restriction>
+						</simpleType>
+					</attribute>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="SurveyPoint">
+		<annotation>
+			<documentation>SurveyPoint Element</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<complexContent mixed="true">
+				<extension base="inr:CTSurveyPoint"/>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="SurveyPointList">
+		<annotation>
+			<documentation>List of survey points</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:SurveyPoint" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SurveyFieldbook">
+		<annotation>
+			<documentation>Survey fieldbook data</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="inr:SurveyStation" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="inr:SurveyPointList"/>
+			</sequence>
+			<attribute name="name" type="string" use="required"/>
+			<attribute name="surveyLinearUnits" use="required">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Metric"/>
+						<enumeration value="International Feet"/>
+						<enumeration value="US Feet"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="slopeDistanceScale" type="double" use="required"/>
+			<attribute name="showCoordinates" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<complexType name="CTSurveyControlPoint" mixed="true">
+		<annotation>
+			<documentation>Base Control Point definition</documentation>
+		</annotation>
+		<sequence>
+			<element ref="inr:SurveyAttribute" minOccurs="0" maxOccurs="unbounded"/>
+			<element ref="inr:Notes" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="code" type="string" use="optional"/>
+		<attribute name="easting" type="double" use="optional"/>
+		<attribute name="northing" type="double" use="optional"/>
+		<attribute name="elevation" type="double" use="optional"/>
+		<attribute name="standardErrorX" type="double" use="optional"/>
+		<attribute name="standardErrorY" type="double" use="optional"/>
+		<attribute name="standardErrorZ" type="double" use="optional"/>
+		<attribute name="dataFile" type="string" use="optional"/>
+		<attribute name="fieldBook" type="string" use="optional"/>
+		<attribute name="timeStamp" type="date" use="optional"/>
+	</complexType>
+	<complexType name="CTSurveyChain" mixed="true">
+		<annotation>
+			<documentation>Base chain definition</documentation>
+		</annotation>
+		<sequence>
+			<element ref="inr:SurveyAttribute" minOccurs="0" maxOccurs="unbounded"/>
+			<element ref="inr:Notes" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="description" type="string" use="optional"/>
+		<attribute name="code" type="string" use="optional"/>
+		<attribute name="display" type="boolean" use="optional"/>
+		<attribute name="zone" type="integer" use="optional"/>
+		<attribute name="attributesPair" type="string" use="optional"/>
+		<attribute name="vbaMacro" type="string" use="optional"/>
+		<attribute name="dataFileName" type="string" use="optional"/>
+		<attribute name="fieldBook" type="string" use="optional"/>
+		<attribute name="styleName" type="string" use="optional"/>
+		<attribute name="mediaFile" type="string" use="optional"/>
+		<attribute name="length" type="string" use="optional"/>
+		<attribute name="timeStamp" type="date" use="optional"/>
+	</complexType>
+	<complexType name="CTSurveyDataSet" mixed="true">
+		<annotation>
+			<documentation>Base data set definition</documentation>
+		</annotation>
+		<sequence>
+			<element ref="inr:SurveyAttribute" minOccurs="0" maxOccurs="unbounded"/>
+			<element ref="inr:Notes" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="numberOfControlPoints" type="string" use="optional"/>
+		<attribute name="numberOfDataFiles" type="string" use="optional"/>
+		<attribute name="numberOfChains" type="string" use="optional"/>
+		<attribute name="numberOfPoints" type="string" use="optional"/>
+		<attribute name="numberOfSetups" type="date" use="optional"/>
+		<attribute name="numberOfObservations" type="date" use="optional"/>
+	</complexType>
+</schema>

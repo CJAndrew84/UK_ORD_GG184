@@ -1,0 +1,76 @@
+<DrawingSettings>
+  <ColumnScheduleLayout>
+    <!-- Sizes are in UoRs -->
+    <Sizes>
+      <FloorElevationSize Value="50000" />
+      <GraphicalColumnsSize Value="50000" />
+      <TopFloorMargin Value="10000" />
+      <BottomFloorMargin Value="10000" />
+      <TableSpacing Value="12000" />
+    </Sizes>
+    <Seeds>
+      <Table Seed="Graphical Column Schedule" />
+    </Seeds>
+    <Styles>
+      <Title Style="ArialNarrow-2.5mm" />
+      <Body Style="ArialNarrow-2.5mm" />
+      <Dimension Style="ArialNarrow-2.5mm-Con-Arrow-(mm)" />
+    </Styles>
+    <ColumnsPerTable Value="20" />
+  </ColumnScheduleLayout>
+  <SteelColumnSchedule>
+    <TableOptions>
+      <ScheduleTitle Value="Steel Column Schedule" />
+      <MaxElevationRow Enabled="True" />
+      <ColumnMarks Enabled="True" Prefix="C" Recalculate="False" />
+      <LocationMarks Enabled="True" />
+      <Dimensions Enabled="True" />
+      <!-- FloorLabels Display={Left, Right, Both, None} -->
+      <FloorLabels Display="Left" />
+    </TableOptions>
+    <ColumnFilters>
+      <GroupColumns Enabled="True" />
+      <OffGridColumns Enabled="True" />
+      <LateralColumns Enabled="True" />
+      <SlopedColumns Enabled="True" Label="SLOPED COLUMN" />
+    </ColumnFilters>
+    <Symbols>
+      <Drawing Seed="Steel Column Schedule" />
+      <BasePlate Cell="Base Plate" />
+      <ColumnSplice Cell="Column Splice" />
+    </Symbols>
+  </SteelColumnSchedule>
+  <ConcreteColumnSchedule>
+    <TableOptions>
+      <ScheduleTitle Value="Concrete Column Schedule" />
+      <MaxElevationRow Enabled="True" />
+      <ColumnMarks Enabled="True" Prefix="C" Recalculate="False" />
+      <LocationMarks Enabled="True" />
+      <Dimensions Enabled="True" />
+      <FloorLabels Display="Left" />
+    </TableOptions>
+    <ColumnFilters>
+      <GroupColumns Enabled="True" />
+      <OffGridColumns Enabled="True" />
+      <LateralColumns Enabled="True" />
+      <SlopedColumns Enabled="True" Label="SLOPED COLUMN" />
+    </ColumnFilters>
+    <Symbols>
+      <Drawing Seed="Concrete Column Schedule" />
+      <LapSplice Cell="Lap Splice" />
+      <OffsetLapSplice Cell="Offset Lap Splice" />
+      <MechanicalSplice Cell="Mechanical Splice" />
+      <WeldedSplice Cell="Welded Splice" />
+      <Bar Cell="Bar" />
+      <Hook90Degree Cell="90 Degree Hook" />
+      <Hook135Degree Cell="135 Degree Hook" />
+      <Hook180Degree Cell="180 Degree Hook" />
+      <Anchor Cell="Anchor" />
+    </Symbols>
+    <SectionLegend>
+      <LegendTitle Value="Section Legend" />
+      <BarMark Prefix="T" />
+      <SectionsPerRow Value="4" />
+    </SectionLegend>
+  </ConcreteColumnSchedule>
+</DrawingSettings>

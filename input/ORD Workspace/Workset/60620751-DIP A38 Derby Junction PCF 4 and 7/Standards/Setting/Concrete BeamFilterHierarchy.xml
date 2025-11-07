@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<FilterHierarchy>
+	<Node name="Architecture">
+		<AllowsChildren>true</AllowsChildren>
+		<Test>
+			<Property>ObjectDiscipline/@Discipline</Property>
+			<Value>Architecture</Value>
+		</Test>
+	</Node>
+	<Node name="Structural">
+		<AllowsChildren>true</AllowsChildren>
+		<Test>
+			<Property>ObjectDiscipline/@Discipline</Property>
+			<Value>Structural</Value>
+		</Test>
+	</Node>
+	<Node name="Mechanical">
+		<AllowsChildren>true</AllowsChildren>
+		<Test>
+			<Property>ObjectDiscipline/@Discipline</Property>
+			<Value>Mechanical</Value>
+		</Test>
+	</Node>
+	<Node name="Electrical">
+		<AllowsChildren>true</AllowsChildren>
+		<Test>
+			<Property>ObjectDiscipline/@Discipline</Property>
+			<Value>Electrical</Value>
+		</Test>
+	</Node>
+</FilterHierarchy>

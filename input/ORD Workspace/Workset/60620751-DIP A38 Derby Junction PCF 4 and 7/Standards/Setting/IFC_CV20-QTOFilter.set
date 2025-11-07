@@ -1,0 +1,32 @@
+/*--------------------------------------------------------------------------------------+
+|
+|   IFC EXPORT Coordination View 2.0 filter
+|
+|---------------------------------------------------------------------------------------
+|   $RCSfile: IFC_CV20-QTOFilter.set,v $
+|   $Revision: 1.8 $
+|
+|   $Copyright: (c) 2018 Bentley Systems, Incorporated. All rights reserved. $
+|
++--------------------------------------------------------------------------------------*/
+
+VERSION 2.2
+
+
+FILE_DESCRIPTION "ViewDefinition [CoordinationView_V2.0, QuantityTakeOffAddOnView, SpaceBoundary1stLevelAddOnView]";
+
+EXCLUDE_DOMAIN
+    IfcSurfaceCurveSweptAreaSolid
+	
+EXCLUDE_PROPERTY_SET               
+        @ProfileQuantities
+        @RoofQuantities
+        @SlabQuantities
+        @StairQuantities
+        @StructuralQuantities
+        @WallQuantities
+
+SYSTEMS    
+	"Properties/@SystemId"
+	"BBES_Equipment_Schedule/@Circuit_ID"
+

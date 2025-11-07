@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<TurnoutsFile>
+    <Turnouts>
+        <Units linear="meters" angular="radians"/>
+        <Turnout name="B 150 1:7 Holz" description="EW B - 150 - 1:7 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="22.801344" length0To2="12.141172" length0To3="12.141172" ratioAt0="7.000000" ratioAt1="0.000000" distanceLLSlpr="3.181000">
+                    <Elements>
+                        <Element length="21.284558" entranceRadius="150.000000" exitRadius="150.000000"/>
+                        <Element length="1.481000" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="B 150 1:7 Stahl" description="EW B - 150 - 1:7 (St)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="22.801344" length0To2="12.141172" length0To3="12.141172" ratioAt0="7.000000" ratioAt1="0.000000" distanceLLSlpr="3.181000">
+                    <Elements>
+                        <Element length="21.284558" entranceRadius="150.000000" exitRadius="150.000000"/>
+                        <Element length="1.481000" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="A 150 1:7 Holz" description="EW A - 150 - 1:7 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="22.801344" length0To2="12.141172" length0To3="12.141172" ratioAt0="7.000000" ratioAt1="0.000000" distanceLLSlpr="3.181000">
+                    <Elements>
+                        <Element length="21.284558" entranceRadius="150.000000" exitRadius="150.000000"/>
+                        <Element length="1.481000" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="B 190 1:7 Holz" description="EW B - 190 - 1:7 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="27.005769" length0To2="13.502884" length0To3="13.502884" ratioAt0="7.000000" ratioAt1="0.000000" distanceLLSlpr="2.136000">
+                    <Elements>
+                        <Element length="26.960440" entranceRadius="190.000000" exitRadius="190.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="B 190 1:7 Stahl" description="EW B - 190 - 1:7 (St)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="27.005769" length0To2="13.502884" length0To3="13.502884" ratioAt0="7.000000" ratioAt1="0.000000" distanceLLSlpr="2.136000">
+                    <Elements>
+                        <Element length="26.960440" entranceRadius="190.000000" exitRadius="190.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="A 190 1:7 Stahl" description="EW A - 190 - 1:7 (St)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="27.005769" length0To2="13.502884" length0To3="13.502884" ratioAt0="7.000000" ratioAt1="0.000000" distanceLLSlpr="2.136000">
+                    <Elements>
+                        <Element length="26.960440" entranceRadius="190.000000" exitRadius="190.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="UIC 190 1:9 Beton" description="EW UIC - 190 - 1:9 (Be)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="190.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="27.138852" length0To2="16.615676" length0To3="16.615676" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="1.542000">
+                    <Elements>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.092500" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="C 190 1:9 Beton" description="EW C - 190 - 1:9 (Be)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="190.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="27.138852" length0To2="16.615676" length0To3="16.615676" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="1.542000">
+                    <Elements>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.092500" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="C 190 1:9 Holz" description="EW C - 190 - 1:9 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="190.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="27.138852" length0To2="16.615676" length0To3="16.615676" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="1.542000">
+                    <Elements>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.092500" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="B 190 1:9 Holz" description="EW B - 190 - 1:9 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="190.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="27.138852" length0To2="16.615676" length0To3="16.615676" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="4.052000">
+                    <Elements>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.092500" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="B 190 1:9 Stahl" description="EW B - 190 - 1:9 (St)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="190.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="27.138852" length0To2="16.615676" length0To3="16.615676" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="4.653000">
+                    <Elements>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.092500" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="A 190 1:9 Holz" description="EW A - 190 - 1:9 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="190.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="27.138852" length0To2="16.615676" length0To3="16.615676" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="3.545000">
+                    <Elements>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.092500" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="UIC 300 1:9 Beton" description="EW UIC - 300 - 1:9 (Be)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.231083" length0To2="16.615541" length0To3="16.615541" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="1.542000">
+                    <Elements>
+                        <Element length="33.197166" entranceRadius="300.000000" exitRadius="300.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="C 300 1:9 Beton" description="EW C - 300 - 1:9 (Be)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.231083" length0To2="16.615541" length0To3="16.615541" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="1.542000">
+                    <Elements>
+                        <Element length="33.197166" entranceRadius="300.000000" exitRadius="300.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="C 300 1:9 Holz" description="EW C - 300 - 1:9 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.231083" length0To2="16.615541" length0To3="16.615541" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="1.542000">
+                    <Elements>
+                        <Element length="33.197166" entranceRadius="300.000000" exitRadius="300.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="B 300 1:9 Holz" description="EW B - 300 - 1:9 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.231083" length0To2="16.615541" length0To3="16.615541" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="4.052000">
+                    <Elements>
+                        <Element length="33.197166" entranceRadius="300.000000" exitRadius="300.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="B 300 1:9 Stahl" description="EW B - 300 - 1:9 (St)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.231083" length0To2="16.615541" length0To3="16.615541" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="4.653000">
+                    <Elements>
+                        <Element length="33.197166" entranceRadius="300.000000" exitRadius="300.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="A 300 1:9 Stahl" description="EW A - 300 - 1:9 (St)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.231083" length0To2="16.615541" length0To3="16.615541" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="3.545000">
+                    <Elements>
+                        <Element length="33.197166" entranceRadius="300.000000" exitRadius="300.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="UIC 500 1:12 Beton" description="EW UIC - 500 - 1:12 (Be)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="41.594579" length0To2="20.797289" length0To3="20.797289" ratioAt0="12.000000" ratioAt1="0.000000" distanceLLSlpr="3.406000">
+                    <Elements>
+                        <Element length="41.570616" entranceRadius="500.000000" exitRadius="500.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="C 500 1:12 Beton" description="EW C - 500 - 1:12 (Be)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="41.594579" length0To2="20.797289" length0To3="20.797289" ratioAt0="12.000000" ratioAt1="0.000000" distanceLLSlpr="3.406000">
+                    <Elements>
+                        <Element length="41.570616" entranceRadius="500.000000" exitRadius="500.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="C 500 1:12 Holz" description="EW C - 500 - 1:12 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="41.594579" length0To2="20.797289" length0To3="20.797289" ratioAt0="12.000000" ratioAt1="0.000000" distanceLLSlpr="3.406000">
+                    <Elements>
+                        <Element length="41.570616" entranceRadius="500.000000" exitRadius="500.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="B 500 1:12 Holz" description="EW B - 500 - 1:12 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="41.594579" length0To2="20.797289" length0To3="20.797289" ratioAt0="12.000000" ratioAt1="0.000000" distanceLLSlpr="5.849000">
+                    <Elements>
+                        <Element length="41.570616" entranceRadius="500.000000" exitRadius="500.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="B 500 1:12 Stahl" description="EW B - 500 - 1:12 (St)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="41.594579" length0To2="20.797289" length0To3="20.797289" ratioAt0="12.000000" ratioAt1="0.000000" distanceLLSlpr="6.500000">
+                    <Elements>
+                        <Element length="41.570616" entranceRadius="500.000000" exitRadius="500.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="A 500 1:12 Holz" description="EW A - 500 - 1:12 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="41.594579" length0To2="20.797289" length0To3="20.797289" ratioAt0="12.000000" ratioAt1="0.000000" distanceLLSlpr="5.849000">
+                    <Elements>
+                        <Element length="41.570616" entranceRadius="500.000000" exitRadius="500.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="UIC 500 1:14 Beton" description="EW UIC - 500 - 1:14 (Be)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="42.371848" length0To2="24.537424" length0To3="24.537424" ratioAt0="14.000000" ratioAt1="0.000000" distanceLLSlpr="3.406000">
+                    <Elements>
+                        <Element length="35.653732" entranceRadius="500.000000" exitRadius="500.000000"/>
+                        <Element length="6.703000" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="C 500 1:14 Beton" description="EW C - 500 - 1:14 (Be)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="42.371848" length0To2="24.537424" length0To3="24.537424" ratioAt0="14.000000" ratioAt1="0.000000" distanceLLSlpr="3.406000">
+                    <Elements>
+                        <Element length="35.653732" entranceRadius="500.000000" exitRadius="500.000000"/>
+                        <Element length="6.703000" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="C 500 1:14 Holz" description="EW C - 500 - 1:14 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="42.371848" length0To2="24.537424" length0To3="24.537424" ratioAt0="14.000000" ratioAt1="0.000000" distanceLLSlpr="3.406000">
+                    <Elements>
+                        <Element length="35.653732" entranceRadius="500.000000" exitRadius="500.000000"/>
+                        <Element length="6.703000" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="B 500 1:14 Holz" description="" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="42.371848" length0To2="24.537424" length0To3="24.537424" ratioAt0="14.000000" ratioAt1="0.000000" distanceLLSlpr="3.406000">
+                    <Elements>
+                        <Element length="35.653732" entranceRadius="500.000000" exitRadius="500.000000"/>
+                        <Element length="6.703000" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="B 500 1:14 Stahl" description="EW B - 500 - 1:14 (St)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="214.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="42.371848" length0To2="24.537424" length0To3="24.537424" ratioAt0="14.000000" ratioAt1="0.000000" distanceLLSlpr="3.406000">
+                    <Elements>
+                        <Element length="35.653732" entranceRadius="500.000000" exitRadius="500.000000"/>
+                        <Element length="6.703000" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="UIC 1200 1:18,5 Beton" description="EW UIC - 1200 - 1:18,5 (Be)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="327.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="64.817553" length0To2="32.408776" length0To3="32.408776" ratioAt0="18.500000" ratioAt1="0.000000" distanceLLSlpr="5.240000" linearSlpr="5.240000" circularSlpr="5.240000">
+                    <Elements>
+                        <Element length="64.801800" entranceRadius="1200.000000" exitRadius="1200.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="C 1200 1:18,5 Beton" description="EW C - 1200 - 1:18,5 (Be)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="327.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="64.817553" length0To2="32.408776" length0To3="32.408776" ratioAt0="18.500000" ratioAt1="0.000000" distanceLLSlpr="5.240000">
+                    <Elements>
+                        <Element length="64.801800" entranceRadius="1200.000000" exitRadius="1200.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="C 1200 1:18,5 Holz" description="EW C - 1200 - 1:18,5 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="327.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="64.817553" length0To2="32.408776" length0To3="32.408776" ratioAt0="18.500000" ratioAt1="0.000000" distanceLLSlpr="5.240000">
+                    <Elements>
+                        <Element length="64.801800" entranceRadius="1200.000000" exitRadius="1200.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="B1200 1:18,5 Holz" description="EW B - 1200 - 1:18,5 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="327.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="64.817553" length0To2="32.408776" length0To3="32.408776" ratioAt0="18.500000" ratioAt1="0.000000" distanceLLSlpr="9.217000">
+                    <Elements>
+                        <Element length="64.801800" entranceRadius="1200.000000" exitRadius="1200.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="UIC 1200 1:24 Beton" description="EW UIC - 1200 - 1:24 (Be)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="327.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="67.026317" length0To2="42.037159" length0To3="42.037159" ratioAt0="24.000000" ratioAt1="0.000000" distanceLLSlpr="7.081000">
+                    <Elements>
+                        <Element length="49.971095" entranceRadius="1200.000000" exitRadius="1200.000000"/>
+                        <Element length="17.047999" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="C 1200 1:24 Beton" description="EW C - 1200 - 1:24 (Be)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="327.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="67.026317" length0To2="42.037159" length0To3="42.037159" ratioAt0="24.000000" ratioAt1="0.000000" distanceLLSlpr="7.081000">
+                    <Elements>
+                        <Element length="49.971095" entranceRadius="1200.000000" exitRadius="1200.000000"/>
+                        <Element length="17.047999" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="C 1200 1:24 Holz" description="EW C - 1200 - 1:24 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="327.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="67.026317" length0To2="42.037159" length0To3="42.037159" ratioAt0="24.000000" ratioAt1="0.000000" distanceLLSlpr="7.081000">
+                    <Elements>
+                        <Element length="49.971095" entranceRadius="1200.000000" exitRadius="1200.000000"/>
+                        <Element length="17.047999" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="B 1200 1:24 Holz" description="EW B - 1200 - 1:24 (H)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="327.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="67.026317" length0To2="42.037159" length0To3="42.037159" ratioAt0="24.000000" ratioAt1="0.000000" distanceLLSlpr="11.272000">
+                    <Elements>
+                        <Element length="49.971095" entranceRadius="1200.000000" exitRadius="1200.000000"/>
+                        <Element length="17.047999" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="UIC 60 - 1600/2600 1:24 Beton" description="UIC 60 - 1600/2600 1:24 (Be)" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="82.503145" length0To2="41.251573" length0To3="41.251573" ratioAt0="24.000000" ratioAt1="0.000000">
+                    <Elements>
+                        <Element length="41.245983" entranceRadius="2600.000000" exitRadius="1600.000000"/>
+                        <Element length="41.245983" entranceRadius="1600.000000" exitRadius="2600.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="EKW B 190 - 1:9 Holz" description="EKW B 190 - 1:9 (H)" bendingMethod="Swiss" type="single slip">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.230000" length0To2="16.615000" length0To3="16.615000" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="4.052000">
+                    <Elements>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.230000" length0To2="16.615000" length0To3="16.615000" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="4.052000">
+                    <Elements/>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="EKW B 190 - 1:9 Stahl" description="EKW B 190 - 1:9 (St)" bendingMethod="Swiss" type="single slip">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.230000" length0To2="16.615000" length0To3="16.615000" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="4.653000">
+                    <Elements>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.230000" length0To2="16.615000" length0To3="16.615000" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="4.653000">
+                    <Elements/>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="EKW A 190 - 1:9 Stahl" description="EKW A 190 - 1:9 (St)" bendingMethod="Swiss" type="single slip">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.230000" length0To2="16.615000" length0To3="16.615000" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="3.545000">
+                    <Elements>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.230000" length0To2="16.615000" length0To3="16.615000" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="3.545000">
+                    <Elements/>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="DKW B 190 1:9 Holz" description="DKW B - 190 - 1:9 (H)" bendingMethod="Swiss" type="double slip">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.230000" length0To2="16.615000" length0To3="16.615000" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="4.052000" linearSlpr="3.960000">
+                    <Elements>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.230000" length0To2="16.615000" length0To3="16.615000" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="4.052000" linearSlpr="3.960000">
+                    <Elements>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="DKW B 190 1:9 Stahl" description="DKW B - 190 - 1:9 (St)" bendingMethod="Swiss" type="double slip">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.230000" length0To2="16.615000" length0To3="16.615000" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="4.653000" linearSlpr="3.960000">
+                    <Elements>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.230000" length0To2="16.615000" length0To3="16.615000" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="4.653000" linearSlpr="3.960000">
+                    <Elements>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="DKW A 190 1:9 Stahl" description="DKW A - 190 - 1:9 (St)" bendingMethod="Swiss" type="double slip">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.230000" length0To2="16.615000" length0To3="16.615000" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="3.545000" linearSlpr="3.960000">
+                    <Elements>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="33.230000" length0To2="16.615000" length0To3="16.615000" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="3.545000" linearSlpr="3.960000">
+                    <Elements>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                        <Element length="6.091824" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="2600/1600" description="" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="82.501979" length0To2="41.250989" length0To3="41.250989" ratioAt0="24.000340" ratioAt1="0.000000">
+                    <Elements>
+                        <Element length="41.245400" entranceRadius="2600.000000" exitRadius="1600.000000"/>
+                        <Element length="41.245400" entranceRadius="1600.000000" exitRadius="2600.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="A200 1:9" description="EW -A-200 1:9" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="27.900000" length0To2="16.615000" length0To3="16.615000" ratioAt0="9.000000" ratioAt1="0.000000">
+                    <Elements>
+                        <Element length="22.546964" entranceRadius="203.755021" exitRadius="203.755021"/>
+                        <Element length="5.330000" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="EW 8a 190 1:9" description="" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="27.017000" length0To2="17.591000" length0To3="17.591000" ratioAt0="9.000000" ratioAt1="0.000000">
+                    <Elements>
+                        <Element length="18.832759" entranceRadius="170.190060" exitRadius="170.190060"/>
+                        <Element length="8.165000" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="EW 8a 190 1:7" description="" bendingMethod="Swiss" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="25.730000" length0To2="13.361000" length0To3="13.361000" ratioAt0="7.000000" ratioAt1="0.000000">
+                    <Elements>
+                        <Element length="24.696478" entranceRadius="174.045038" exitRadius="174.045038"/>
+                        <Element length="0.992000" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="KR B 1:3.224" description="KR 1:3.3224 (H)" bendingMethod="Swiss" type="diamond">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="15.840000" length0To2="7.920000" length0To3="7.920000" ratioAt0="3.224000" ratioAt1="0.000000">
+                    <Elements/>
+                </Branch>
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="0.000000" length0To2="0.000000" length0To3="0.000000" ratioAt0="0.000000" ratioAt1="0.000000">
+                    <Elements/>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="KR B xxxx" description="KR 1:3.3224 (H)" bendingMethod="Swiss" type="diamond">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="15.840000" length0To2="7.920000" length0To3="7.920000" ratioAt0="3.224000" ratioAt1="0.000000">
+                    <Elements/>
+                </Branch>
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="0.000000" length0To2="0.000000" length0To3="0.000000" ratioAt0="0.000000" ratioAt1="0.000000">
+                    <Elements/>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="kr 4711" description="kr 4711 h" bendingMethod="Swiss" type="diamond">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="15.840000" length0To2="7.920000" length0To3="7.920000" ratioAt0="3.224000" ratioAt1="0.000000">
+                    <Elements/>
+                </Branch>
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="15.840000" length0To2="7.920000" length0To3="7.920000" ratioAt0="3.224000" ratioAt1="0.000000">
+                    <Elements/>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="A 200 9.51" description="A-200-1:9.51" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline">
+                <Branch theoreticalToActual="1.674340" lengthAlongMainline="27.454000" length0To2="18.642000" length0To3="18.642000" ratioAt0="9.510000" ratioAt1="0.000000">
+                    <Elements>
+                        <Element length="20.953493" entranceRadius="200.000000" exitRadius="200.000000"/>
+                        <Element length="8.155660" entranceRadius="0.000000" exitRadius="0.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+        <Turnout name="190 1:9 single element" description="190 1:9 single element" bendingMethod="German" type="single">
+            <Miscellaneous/>
+            <Branches lengthAlong="centerline" mininumBendingRadius="190.000000">
+                <Branch theoreticalToActual="0.000000" lengthAlongMainline="21.046352" length0To2="10.523176" length0To3="10.523176" ratioAt0="9.000000" ratioAt1="0.000000" distanceLLSlpr="1.542000">
+                    <Elements>
+                        <Element length="21.024872" entranceRadius="190.000000" exitRadius="190.000000"/>
+                    </Elements>
+                </Branch>
+            </Branches>
+        </Turnout>
+    </Turnouts>
+</TurnoutsFile>

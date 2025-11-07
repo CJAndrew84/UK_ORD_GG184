@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Triforma>
+	<FilterHierarchy>
+		<Node name="Undefined">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+				<Value>Undefined</Value>
+			</Test>
+		</Node>
+		<Node name="Aluminium">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+				<Value>Aluminium</Value>
+			</Test>
+		</Node>
+		<Node name="Blockwork">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+				<Value>Blockwork</Value>
+			</Test>
+		</Node>
+		<Node name="Brickwork">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+				<Value>Brickwork</Value>
+			</Test>
+		</Node>
+		<Node name="Composite">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+				<Value>Composite</Value>
+			</Test>
+		</Node>
+		<Node name="Concrete">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+				<Value>Concrete</Value>
+			</Test>
+		</Node>
+		<Node name="Glass">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+				<Value>Glass</Value>
+			</Test>
+		</Node>
+		<Node name="Metal">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+				<Value>Metal</Value>
+			</Test>
+		</Node>
+		<Node name="Plasterboard">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+				<Value>Plasterboard</Value>
+			</Test>
+		</Node>
+		<Node name="Plaster">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+				<Value>Plaster</Value>
+			</Test>
+		</Node>
+		<Node name="Steel">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+				<Value>Steel</Value>
+			</Test>
+		</Node>
+		<Node name="Timber">
+			<AllowsChildren>true</AllowsChildren>
+			<Test>
+				<Property>ObjectStructuralUsage/@StructuralMaterial</Property>
+				<Value>Timber</Value>
+			</Test>
+		</Node>
+	</FilterHierarchy>
+</Triforma>

@@ -1,0 +1,12 @@
+SETTING Directory
+=================
+The SETTING directory is the dataset directory used for storing the OpenBuildings Designer 
+setting files.
+
+File extensions used in this directory:
+    *.xml	    - Frame builder settings file or a part mapping file for forward and reflective view hatching
+    *.lay	    - Report layout settings file
+    *.trs           - Truss builder settings file
+    IFC_*Mapping.set  - Mapping files used by IFC Export to map types, items, part and properties to IFC classes, types and properties
+    *.lib           - JSpace Class library used by the interference manager
+    SamplePartMapping.xml  - Sample part mapping file for forward and reflective view hatching

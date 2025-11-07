@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<SettingDatas>
+  <StandardUnitForSetting>MetricMillimeters</StandardUnitForSetting>
+  <NumberOfFloor>4</NumberOfFloor>
+  <FloorHeight>3657.6</FloorHeight>
+  <OtherFloorHeight>3048</OtherFloorHeight>
+  <NumberOfXBay>1</NumberOfXBay>
+  <XbaySpacing>7620</XbaySpacing>
+  <NumberOfYBay>3</NumberOfYBay>
+  <YbaySpacing>6096</YbaySpacing>
+  <XOrigin>0</XOrigin>
+  <YOrigin>0</YOrigin>
+  <ZOrigin>0</ZOrigin>
+  <ColumnCatalogType>Steel Column</ColumnCatalogType>
+  <ColumnCatalogInstance>S-Columns-Steel</ColumnCatalogInstance>
+  <PrimaryColumnSection>UC203X203X100</PrimaryColumnSection>
+  <ColumnRotation>0</ColumnRotation>
+  <BeamCatalogType>Steel Beam</BeamCatalogType>
+  <BeamCatalogInstance>S-Beams-Steel</BeamCatalogInstance>
+  <XBeamSection>UC203X203X100</XBeamSection>
+  <YBeamSection>UB127X76X13</YBeamSection>
+  <PlaceSecondBeam>true</PlaceSecondBeam>
+  <SecondBeamCatalogType>Steel Beam</SecondBeamCatalogType>
+  <SecondBeamCatalogInstance>S-Beams-Steel</SecondBeamCatalogInstance>
+  <SecondBeamSection>UB127X76X13</SecondBeamSection>
+  <NumberOfBeamPerBay>6</NumberOfBeamPerBay>
+  <ParallelDirection>X Axis</ParallelDirection>
+  <PlaceFloorSlab>true</PlaceFloorSlab>
+  <SlabCatalogType>Slab</SlabCatalogType>
+  <SlabCatalogInstance>S-Slab-ConcreteRC</SlabCatalogInstance>
+  <SlabOverhang>228.6</SlabOverhang>
+  <SlabThickness>152.4</SlabThickness>
+  <PlatesCatalogType>Base Plate</PlatesCatalogType>
+  <PlatesCatalogInstance>Baseplate</PlatesCatalogInstance>
+  <PlateX>304.8</PlateX>
+  <PlateY>304.8</PlateY>
+  <PlateThickness>25.4</PlateThickness>
+  <PlaceFooting>true</PlaceFooting>
+  <FootingCatalogType>Spread Footing</FootingCatalogType>
+  <FootingCatalogInstance>S-Foundations-Footing</FootingCatalogInstance>
+  <FootingWidth>1219.2</FootingWidth>
+  <FootingThickness>304.8</FootingThickness>
+  <PiersWidth>381</PiersWidth>
+  <PiersHeight>304.8</PiersHeight>
+  <PlaceBracing>true</PlaceBracing>
+  <BracingCatalogType>Steel Vertical Brace</BracingCatalogType>
+  <BracingCatalogInstance>S-BracingSteel</BracingCatalogInstance>
+  <BracingType>X Bracing</BracingType>
+  <BracingSection>L100X50X6</BracingSection>
+  <BracingRotation>0</BracingRotation>
+  <GroundOffset>0</GroundOffset>
+</SettingDatas>

@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:ini="CivilIni" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="CivilIni" elementFormDefault="qualified">
+	<include schemaLocation="CommonIni.xsd"/>
+	<element name="TemplateOptions">
+		<annotation>
+			<documentation>Contains Template Options settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="LeftAffixes" type="ini:CTAnnotationPlacement"/>
+				<element name="RightAffixes" type="ini:CTAnnotationPlacement"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ComponentSeedNameOption" use="required">
+				<annotation>
+					<documentation>
+                        0 = From Feature Style
+                        1 = Specify
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ComponentSeedName" type="ini:STString255" use="required"/>
+			<attribute name="PointSeedName" type="ini:STString255" use="required"/>
+			<attribute name="ApplyAffixes" type="boolean" use="required"/>
+			<attribute name="XStep" type="double" use="required"/>
+			<attribute name="YStep" type="double" use="required"/>
+			<attribute name="SlopeStep" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="TemplateOptionsCollection">
+		<annotation>
+			<documentation>Collection of Template Options preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:TemplateOptions" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="RoadwayDesignerOptions">
+		<annotation>
+			<documentation>Contains Roadway Designer Options settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="IncludeHorizontalCardinalPoints" type="boolean" use="required"/>
+			<attribute name="IncludeVerticalCardinalPoints" type="boolean" use="required"/>
+			<attribute name="IncludeHorizontalEventPoints" type="boolean" use="required"/>
+			<attribute name="IncludeVerticalEventPoints" type="boolean" use="required"/>
+			<attribute name="IncludeExternalControlPoints" type="boolean" use="required"/>
+			<attribute name="DisplayReferenceGraphics" type="boolean" use="required"/>
+			<attribute name="DisplayTransitionGraphics" type="boolean" use="required"/>
+			<attribute name="DisplayTopOfTemplatePoints" type="boolean" use="optional"/>
+			<attribute name="DisplayCutAndFillGraphics" type="boolean" use="required"/>
+			<attribute name="DisplayCutAndFillValues" type="boolean" use="required"/>
+			<attribute name="DisplayNetVolume" type="boolean" use="required"/>
+			<attribute name="DisplayNullPoints" type="boolean" use="required"/>
+			<attribute name="DisplayCurveSetID" type="boolean" use="required"/>
+			<attribute name="DisplayCardinalPoints" type="boolean" use="optional"/>
+			<attribute name="DisplayCrossSectionTracking" type="boolean" use="optional"/>
+			<attribute name="ProcessAliasesAutomatically" type="boolean" use="required"/>
+			<attribute name="ReportEndConditionInformation" type="boolean" use="optional"/>
+			<attribute name="ReportDisplayRuleInformation" type="boolean" use="optional"/>
+			<attribute name="ReportPointControlInformation" type="boolean" use="optional"/>
+			<attribute name="ReportComponentInformation" type="boolean" use="optional"/>
+			<attribute name="ReportPointInformation" type="boolean" use="optional"/>
+			<attribute name="DisplaySuperKeyStationLines" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="RoadwayDesignerOptionsCollection">
+		<annotation>
+			<documentation>Collection of Roadway Designer Options preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:RoadwayDesignerOptions" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="DisplayTemplate">
+		<annotation>
+			<documentation>Contains Display Template settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="DimensionWidth" type="ini:CTAnnotationPlacement"/>
+				<element name="DimensionSlope" type="ini:CTAnnotationPlacement"/>
+				<element name="DimensionAlternateSlope" type="ini:CTAnnotationPlacement"/>
+				<element name="TitleText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="ComponentDescriptionText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DimensionText">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="DimensionLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="LeaderLine">
+					<complexType>
+						<sequence>
+							<choice>
+								<element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+								<element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="PointName">
+					<complexType>
+						<sequence>
+							<choice>
+								<group ref="ini:GTextNamedSymbology"/>
+								<group ref="ini:GTextSymbology"/>
+							</choice>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="VerticalExaggeration" type="ini:STNonnegativeDouble" use="required"/>
+			<attribute name="UseAlternateSlope" type="boolean" use="required"/>
+			<attribute name="AlternateSlope" type="double" use="required"/>
+			<attribute name="DisplayTitle" type="boolean" use="required"/>
+			<attribute name="DisplayComponentDescription" type="boolean" use="required"/>
+			<attribute name="DisplayDimensionText" type="boolean" use="required"/>
+			<attribute name="DisplayDimensionLine" type="boolean" use="required"/>
+			<attribute name="DisplayLeaderLine" type="boolean" use="required"/>
+			<attribute name="DisplayPointName" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="DisplayTemplateCollection">
+		<annotation>
+			<documentation>Collection of Display Template preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:DisplayTemplate" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="SuperelevationWizard">
+		<annotation>
+			<documentation>Contains Superelevation Wizard settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="AASHTOMaximumDeltaG" type="ini:STNonnegativeDouble" use="optional"/>
+			<attribute name="AASHTOPercentIsOfTotalTransition" type="boolean" use="optional"/>
+			<attribute name="AASHTORunoffTangent" use="optional">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.0"/>
+						<maxInclusive value="1.0"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="AASHTOSpecifyNonLinearCurveLength" type="boolean" use="optional"/>
+			<attribute name="AASHTONonlinearCurveLength" type="ini:STNonnegativeDouble" use="optional"/>
+			<attribute name="AASHTOSpiralTangentIsNormalCrown" type="boolean" use="optional"/>
+			<attribute name="FixedSpiraledRunoutLength" type="ini:STNonnegativeDouble" use="optional"/>
+			<attribute name="FixedSpiraledBreakLength" type="ini:STNonnegativeDouble" use="optional"/>
+			<attribute name="FixedSpiraledReservedBreakLength" type="ini:STNonnegativeDouble" use="optional"/>
+			<attribute name="FixedSimpleTransitionLength" type="ini:STNonnegativeDouble" use="optional"/>
+			<attribute name="FixedSimpleBreakLength" type="ini:STNonnegativeDouble" use="optional"/>
+			<attribute name="FixedSimpleReservedBreakLength" type="ini:STNonnegativeDouble" use="optional"/>
+			<attribute name="TableSuperelevationTable" type="ini:STString255" use="optional"/>
+			<attribute name="TablePercentIsOfTotalTransition" type="boolean" use="optional"/>
+			<attribute name="TableRunoffTangent" use="optional">
+				<simpleType>
+					<restriction base="double">
+						<minInclusive value="0.0"/>
+						<maxInclusive value="1.0"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="TableSpecifyRunout" type="boolean" use="optional"/>
+			<attribute name="TableRunout" type="double" use="optional"/>
+			<attribute name="TableSpecifyNonLinearCurveLength" type="boolean" use="optional"/>
+			<attribute name="TableNonLinearCurveLength" type="ini:STNonnegativeDouble" use="optional"/>
+			<attribute name="TableInterpolateValues" type="boolean" use="optional"/>
+			<attribute name="TableLengthIsTotalTransition" type="boolean" use="optional"/>
+			<attribute name="UseRounding" type="boolean" use="required"/>
+			<attribute name="RoundToNearestValue" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="SuperelevationWizardCollection">
+		<annotation>
+			<documentation>Collection of Superelevation Wizard preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:SuperelevationWizard" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ModelerCreateSurface">
+		<annotation>
+			<documentation>Contains Create Surface settings</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="Feature" type="ini:CTNewFeature"/>
+				<element name="DefaultNamedSymbology" type="ini:CTNamedSymbologyName"/>
+			</sequence>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="NewSurfaceForEachCorridor" type="boolean" use="required"/>
+			<attribute name="EmptyDesignSurface" type="boolean" use="required"/>
+			<attribute name="IncludeNullPoints" type="boolean" use="required"/>
+			<attribute name="AddExteriorBoundary" type="boolean" use="required"/>
+			<attribute name="ExteriorFeatureStyle" type="ini:STString31" use="required"/>
+			<attribute name="DensifyHorizontalCurves" type="boolean" use="required"/>
+			<attribute name="DensifyVerticalCurves" type="boolean" use="required"/>
+			<attribute name="CreateSubgradeSurface" type="boolean" use="required"/>
+			<attribute name="AddTransverseFeature" type="boolean" use="required"/>
+			<attribute name="TransverseStyleName" type="ini:STString31" use="required"/>
+			<attribute name="Triangulate" type="boolean" use="required"/>
+			<attribute name="ProcessVisibleRange" type="boolean" use="required"/>
+			<attribute name="RemoveLoops" type="boolean" use="required"/>
+			<attribute name="DisplayFeaturesInPlan" type="boolean" use="required"/>
+			<attribute name="DisplayComponentsInPlan" type="boolean" use="optional"/>
+		</complexType>
+	</element>
+	<element name="ModelerCreateSurfaceCollection">
+		<annotation>
+			<documentation>Collection of Create Surface preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:ModelerCreateSurface" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="DriveRoadway">
+		<annotation>
+			<documentation>Contains Drive Roadway settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="HorizontalOffset" type="double" use="required"/>
+			<attribute name="VerticalOffset" type="double" use="required"/>
+			<attribute name="Speed" type="double" use="required"/>
+			<attribute name="FramesPerSecond" type="integer" use="required"/>
+			<attribute name="StartStation" type="double" use="optional"/>
+			<attribute name="StopStation" type="double" use="optional"/>
+			<attribute name="TargetDistance" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="DriveRoadwayCollection">
+		<annotation>
+			<documentation>Collection of Drive Roadway preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:DriveRoadway" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="VerticalGoreTool">
+		<annotation>
+			<documentation>Contains Vertical Gore Tool settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="MaximumDifference" type="double" use="required"/>
+			<attribute name="OutputSurface" type="ini:STString63" use="required"/>
+			<attribute name="MaximumStyle" type="ini:STString31" use="required"/>
+			<attribute name="MainIdealStyle" type="ini:STString31" use="required"/>
+			<attribute name="RampIdealStyle" type="ini:STString31" use="required"/>
+			<attribute name="MinimumStyle" type="ini:STString31" use="required"/>
+		</complexType>
+	</element>
+	<element name="VerticalGoreToolCollection">
+		<annotation>
+			<documentation>Collection of Vertical Gore Tool preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:VerticalGoreTool" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="RoadwayDesignerReport">
+		<annotation>
+			<documentation>Contains Roadway Designer Report settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ReportAt" use="required">
+				<annotation>
+					<documentation>
+                        0 = Processed Stations
+                        1 = Specified Interval
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="IncludeKeyPoints" type="boolean" use="required"/>
+			<attribute name="IncludeCardinalPoints" type="boolean" use="required"/>
+			<attribute name="IncludeExternalControlPoints" type="boolean" use="required"/>
+			<attribute name="IncludeEventPoints" type="boolean" use="required"/>
+			<attribute name="IncludeSuperApplicationStations" type="boolean" use="required"/>
+			<attribute name="SpecifiedInterval" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="RoadwayDesignerReportCollection">
+		<annotation>
+			<documentation>Collection of Roadway Designer Report preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:RoadwayDesignerReport" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="CrossSlopeOptimization">
+		<annotation>
+			<documentation>Contains Cross Slope Optimization settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="ExistingType" use="required">
+				<annotation>
+					<documentation>
+                        0 = Feature Name
+                        1 = Alignment
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DesignType" use="required">
+				<annotation>
+					<documentation>
+                        0 = Control Line
+                        1 = Constant
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="DesignFixedCrossSlope" type="double" use="required"/>
+			<attribute name="UseElevationTolerance" use="required">
+				<annotation>
+					<documentation>
+                        0 = Slope Tolerance
+                        1 = Elevation Tolerance
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="SlopeTolerance" type="double" use="required"/>
+			<attribute name="ElevationTolerance" type="double" use="required"/>
+			<attribute name="MaximumDeltaG" type="double" use="required"/>
+		</complexType>
+	</element>
+	<element name="CrossSlopeOptimizationCollection">
+		<annotation>
+			<documentation>Collection of Cross Slope Optimization preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:CrossSlopeOptimization" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="VerticalOverlayAdjustment">
+		<annotation>
+			<documentation>Contains Vertical Overlay Adjustment settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="MinimumOverlay" type="double" use="required"/>
+			<attribute name="MaximumMilling" type="double" use="required"/>
+			<attribute name="BackboneThickness" type="double" use="required"/>
+			<attribute name="MaximumVerticalDifference" type="double" use="required"/>
+			<attribute name="ThicknessLabel" type="ini:STString31" use="required"/>
+			<attribute name="OverlayLabel" type="ini:STString31" use="required"/>
+			<attribute name="MillingLabel" type="ini:STString31" use="required"/>
+			<attribute name="OverlayMillingOption" use="required">
+				<annotation>
+					<documentation>
+                        0 = Use Minimum Overlay
+                        1 = Use Minimum Milling
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="UseMaximumMilling" type="boolean" use="required"/>
+			<attribute name="ExistingGroundRangeType" use="required">
+				<annotation>
+					<documentation>
+                        0 = Match Template Range
+                        1 = Match Existing Features
+                        2 = Match Existing Alignments
+                        3 = Match Existing Styles
+                        4 = Fixed Offsets
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="4"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+			<attribute name="ExistingFixedLeftOffset" type="double" use="required"/>
+			<attribute name="ExistingFixedRightOffset" type="double" use="required"/>
+			<attribute name="ExistingLeftStyle" type="ini:STString63" use="required"/>
+			<attribute name="ExistingRightStyle" type="ini:STString63" use="required"/>
+			<attribute name="SolutionOption" use="required">
+				<annotation>
+					<documentation>
+                        0 = Examine all Cross Section Points
+                        1 = Examine Template Points Only
+                    </documentation>
+				</annotation>
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0"/>
+						<maxInclusive value="1"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="VerticalOverlayAdjustmentCollection">
+		<annotation>
+			<documentation>Collection of Vertical Overlay Adjustment preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:VerticalOverlayAdjustment" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="UpdateDesignSettings">
+		<annotation>
+			<documentation>Contains Update Design Settings settings</documentation>
+		</annotation>
+		<complexType>
+			<attribute name="ItemName" type="ini:STString31" use="required"/>
+			<attribute name="DisplayTriangles" type="boolean" use="required"/>
+			<attribute name="DisplayContours" type="boolean" use="required"/>
+			<attribute name="DisplayFeatures" type="boolean" use="required"/>
+			<attribute name="DisplayComponents" type="boolean" use="required"/>
+			<attribute name="DisplayCrossSections" type="boolean" use="required"/>
+			<attribute name="DisplayProfiles" type="boolean" use="required"/>
+		</complexType>
+	</element>
+	<element name="UpdateDesignSettingsCollection">
+		<annotation>
+			<documentation>Collection of Update Design Settings preferences</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="ini:UpdateDesignSettings" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

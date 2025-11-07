@@ -1,0 +1,31 @@
+/*--------------------------------------------------------------------------------------+
+|
+|   IFC EXPORT IFC4 Design Transfer View with NURBs (rational bplines) filter
+|
+|---------------------------------------------------------------------------------------
+|   
+|   
+|
+|   
+|
++--------------------------------------------------------------------------------------*/
+
+VERSION 2.2
+
+FILE_DESCRIPTION "ViewDefinition [DesignTransferView]";
+	
+EXCLUDE_DOMAIN
+    IfcCompositeProfileDef
+    IfcRelSpaceBoundary2ndLevel
+    IfcRelSpaceBoundary1stLevel
+    IfcRelSpaceBoundary
+
+    IfcEllipseProfileDef
+    IfcEllipse
+
+
+SYSTEMS    
+	"Properties/@SystemId"
+	"BBES_Equipment_Schedule/@Circuit_ID"
+
+

@@ -1,0 +1,570 @@
+Palette files,Palette file materials,DGNLIB palettes,DGNLIB materials
+Brick.pal,Block (Grey),$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,Block (Grey)
+Brick.pal,Block (Tan),$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,Block (Tan)
+Brick.pal,Brick (Blue),$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,Brick (Blue)
+Brick.pal,Brick (Multi-color),$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,Brick (Multi-color)
+Brick.pal,Brick Aged,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,Brick Aged
+Brick.pal,brick back alley,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick back alley
+Brick.pal,brick basic brown,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick basic brown
+Brick.pal,brick basic reddish clay,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick basic reddish clay
+Brick.pal,Brick Brown,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick brown
+Brick.pal,Brick Clay,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,Brick Clay
+Brick.pal,brick dark brown,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick dark brown
+Brick.pal,brick dark redbrown,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick dark redbrown
+Brick.pal,brick dkbrn red cream,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick dkbrn red cream
+Brick.pal,brick english golden,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick english golden
+Brick.pal,brick gold whitewashed,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick gold whitewashed
+Brick.pal,brick golden wheat,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick golden wheat
+Brick.pal,brick grayish brown,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick grayish brown
+Brick.pal,brick Hayden's brn & orange,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick Hayden's brn & orange
+Brick.pal,brick Hayden's dk spot,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick Hayden's dk spot
+Brick.pal,brick Hayden's orange blend,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick Hayden's orange blend
+Brick.pal,brick Hayden's orange cream,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick Hayden's orange cream
+Brick.pal,brick Hayden's red,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick Hayden's red
+Brick.pal,brick Hayden's red & cream,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick Hayden's red & cream
+Brick.pal,brick Hayden's tas cut,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick Hayden's tas cut
+Brick.pal,brick Hayden's tas honey,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick Hayden's tas honey
+Brick.pal,brick light brown & red,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick light brown & red
+Brick.pal,brick light red,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick light red
+Brick.pal,brick light rose,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick light rose
+Brick.pal,brick lt sandy rough cut,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick lt sandy rough cut
+Brick.pal,brick med brown,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick med brown
+Brick.pal,brick medium brown & red,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick medium brown & red
+Brick.pal,brick multi grays,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick multi grays
+Brick.pal,brick multi grays smooth,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick multi grays smooth
+Brick.pal,brick multi grays smooth trim,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick multi grays smooth trim
+Brick.pal,brick multi red cement,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick multi red cement
+Brick.pal,brick old copenhagen,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick old copenhagen
+Brick.pal,brick orange brown,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick orange brown
+Brick.pal,Brick Red,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick red
+Brick.pal,brick red & dk brown,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick red & dk brown
+Brick.pal,brick red brown & gray,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick red brown & gray
+Brick.pal,brick red brown & gray trim,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick red brown & gray trim
+Brick.pal,brick red rough cut,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick red rough cut
+Brick.pal,brick red-brown rough cut,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick red-brown rough cut
+Brick.pal,brick rose,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick rose
+Brick.pal,brick rough glazed mix,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick rough glazed mix
+Brick.pal,brick rustic brown whitewash,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick rustic brown whitewash
+Brick.pal,brick rustic tan,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick rustic tan
+Brick.pal,brick rustic wall,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick rustic wall
+Brick.pal,Brick Sand,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,Brick Sand
+Brick.pal,brick sand brushed,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick sand brushed
+Brick.pal,brick tas brown,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick tas brown
+Brick.pal,brick tas dark tan,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick tas dark tan
+Brick.pal,brick tas lt golden brown,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick tas lt golden brown
+Brick.pal,brick tas orange & brown,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick tas orange & brown
+Brick.pal,brick tas redbrn,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick tas redbrn
+Brick.pal,brick tas rough oranges,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick tas rough oranges
+Brick.pal,brick tas yellow brown,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick tas yellow brown
+Brick.pal,brick whitewash rough cut,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick whitewash rough cut
+Brick.pal,Stone Block (Brown),,
+Brick.pal,Stone Block (Marble),,
+Brick.pal,Stone Block (Tan),,
+Brick.pal,Stone Block Gloss (Marble),,
+Brick.pal,Stone Wall (Flat Offset),,
+Brick.pal,Stone Wall (Flat),,
+Brick.pal,Stone Wall (Large Round),,
+Brick.pal,Stone Wall (Round),,
+Concrete.pal,Asphalt (Black),$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,Asphalt (Black)
+Concrete.pal,Asphalt (Grey),$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,Asphalt (Grey)
+Concrete.pal,Asphalt Wet,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,Asphalt Wet
+Concrete.pal,Asphalt with Lane Marking,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,Asphalt with Lane Marking
+Concrete.pal,Concrete,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete_1
+Concrete.pal,Concrete pads,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete_2
+Concrete.pal,Concrete paving,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete_3
+Concrete.pal,Concrete[1],$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete_4
+Concrete.pal,Concrete[2],$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete_5
+Concrete.pal,Concrete[3],$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete_6
+Concrete.pal,concrete[4],$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete_7
+Concrete.pal,Pavement,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete_8
+Concrete.pal,paver 4.5 bricks squares,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver 4.5 bricks squares
+Concrete.pal,Paver Brick Herringbone,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver brick herringbone
+Concrete.pal,paver brick herringbone lt,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver brick herringbone lt
+Concrete.pal,paver brick parquet,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver brick parquet
+Concrete.pal,paver brick parquet lt,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver brick parquet lt
+Concrete.pal,paver brick red running bond,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver brick red running bond
+Concrete.pal,paver brown bricks linear,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver brown bricks linear
+Concrete.pal,Paver Cobble,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,Paver Cobble
+Concrete.pal,Paver Cobble (Elevation),$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,Paver Cobble (Elevation)
+Concrete.pal,paver cobble circles,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver cobble circles
+Concrete.pal,Paver Cobble[1],$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,Paver Cobble[1]
+Concrete.pal,paver gray blue squares,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver gray blue squares
+Concrete.pal,paver gray cobblestone,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver gray cobblestone
+Concrete.pal,paver gray cobblestone sq,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver gray cobblestone sq
+Concrete.pal,paver gray hex pattern,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver gray hex pattern
+Concrete.pal,paver herringbone cobble,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver herringbone cobble
+Concrete.pal,paver Miami peach,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver Miami peach
+Concrete.pal,paver Miami turquoise,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver Miami turquoise
+Concrete.pal,paver multi-color cobblestone,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver multi-color cobblestone
+Concrete.pal,paver multi-grays cement,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver multi-grays cement
+Concrete.pal,paver peach & cream sq,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver peach & cream sq
+Concrete.pal,Paver Slate,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,Paver Slate
+Concrete.pal,Paver Slate (Elevation),$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,Paver Slate (Elevation)
+Concrete.pal,paver slate squares,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver slate squares
+Concrete.pal,Stucco (Beige),$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,stucco beige
+Concrete.pal,Stucco (Grey),$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,stucco white
+Concrete.pal,Tar,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Tar
+Fabrics.pal,cloth,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,cloth
+Fabrics.pal,cloth[1],,
+Fabrics.pal,Fabric bagpipe,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric bagpipe
+Fabrics.pal,Fabric blue crisscross,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric blue crisscross
+Fabrics.pal,Fabric blue crisscross gold,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric blue crisscross gold
+Fabrics.pal,Fabric blue green loops,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric blue green loops
+Fabrics.pal,Fabric blue olive loops,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric blue olive loops
+Fabrics.pal,Fabric blue pink loops on brn,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric blue pink loops on brn
+Fabrics.pal,Fabric blues,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric blues
+Fabrics.pal,Fabric captain's choice,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric captain's choice
+Fabrics.pal,Fabric captain's piping,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric captain's piping
+Fabrics.pal,Fabric cyan loop,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric cyan loop
+Fabrics.pal,Fabric desert mountain,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric desert mountain
+Fabrics.pal,Fabric dry gulch,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric dry gulch
+Fabrics.pal,Fabric fancy gold fans,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric fancy gold fans
+Fabrics.pal,Fabric fancy gold on blue,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric fancy gold on blue
+Fabrics.pal,Fabric fancy mixed weave,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric fancy mixed weave
+Fabrics.pal,Fabric fancy stripes,$(_DGNLIB)|Bentley_Materials.dgnlib|Curtain&Lampshades,Fabric fancy stripes
+Fabrics.pal,Fabric geometric violets,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric geometric violets
+Fabrics.pal,Fabric gold loop on redbrn,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric gold loop on redbrn
+Fabrics.pal,Fabric golden striped beige,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric golden striped beige
+Fabrics.pal,Fabric golden striped blue,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric golden striped blue
+Fabrics.pal,Fabric grayblue scuffed,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric grayblue scuffed
+Fabrics.pal,Fabric grayblue weave,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric grayblue weave
+Fabrics.pal,Fabric grayblue zigzag,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric grayblue zigzag
+Fabrics.pal,Fabric greenish gray,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric greenish gray
+Fabrics.pal,Fabric India,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric India
+Fabrics.pal,Fabric last century,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric last century
+Fabrics.pal,Fabric mauve loop,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric mauve loop
+Fabrics.pal,Fabric mottled aqua weave,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric mottled aqua weave
+Fabrics.pal,Fabric multi loop,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric multi loop
+Fabrics.pal,Fabric multi loop on brown,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric multi loop on brown
+Fabrics.pal,Fabric multi loop on coffee,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric multi loop on coffee
+Fabrics.pal,Fabric multi loop reds,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric multi loop reds
+Fabrics.pal,Fabric olive loop,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric olive loop
+Fabrics.pal,Fabric pink loop on redbrn,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric pink loop on redbrn
+Fabrics.pal,Fabric reddish beige,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric reddish beige
+Fabrics.pal,Fabric sage weave,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric sage weave
+Fabrics.pal,Fabric Sante Fe,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric Sante Fe
+Fabrics.pal,Fabric scotch,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric scotch
+Fabrics.pal,Fabric sky patch,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric sky patch
+Fabrics.pal,Fabric southern blue,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric southern blue
+Fabrics.pal,Fabric spring valley,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric spring valley
+Fabrics.pal,Fabric straw,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric straw
+Fabrics.pal,Fabric strawberry ridge,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric strawberry ridge
+Fabrics.pal,Fabric strawberry weave,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric strawberry weave
+Fabrics.pal,Fabric striped wheat,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric striped wheat
+Fabrics.pal,Fabric sundeck stripes,$(_DGNLIB)|Bentley_Materials.dgnlib|Curtain&Lampshades,Fabric sundeck stripes
+Fabrics.pal,Fabric tan on beige,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric tan on beige
+Fabrics.pal,Fabric tan weave,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric tan weave
+Fabrics.pal,Fabric victorian age,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric victorian age
+Fabrics.pal,Fabric wheat,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Fabric wheat
+Fabrics.pal,FabricBlue,,
+Fabrics.pal,FabricGreen,,
+Fabrics.pal,FabricGreenDark,,
+Fabrics.pal,FabricRose,,
+Fabrics.pal,FabricRoseDark,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,FabricRoseDark
+Fabrics.pal,Leather,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Leather
+Fabrics.pal,Leather[1],,
+Fabrics.pal,LeatherBeige,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,LeatherBeige
+Fabrics.pal,Nylon - large,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Nylon - large
+Fabrics.pal,Nylon - medium,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Nylon - medium
+Fabrics.pal,Polyester,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Polyester
+Fabrics.pal,Virgin Wool,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Virgin Wool
+Fabrics.pal,Wool - large,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Wool - large
+Fabrics.pal,Wool - medium,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Wool - medium
+Fabrics.pal,Wool - small,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Wool - small
+Fabrics.pal,Wool/Nylon,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Wool/Nylon
+Fabrics.pal,Wool/Nylon/Rayon,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Wool/Nylon/Rayon
+Fabrics.pal,Wool/Rayon,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Wool/Rayon
+Fabrics.pal,Worsted Wool,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Worsted Wool
+finishes.pal,Bentley,,
+finishes.pal,Bentley B,,
+finishes.pal,Black,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,black matte plastic rough
+finishes.pal,Cast Metal,$(_DGNLIB)|Bentley_Materials.dgnlib|Metals.pal,Cast Metal
+finishes.pal,Clear Coat,$(_DGNLIB)|Bentley_Materials.dgnlib|Clearcoat_Paints.pal,Clear Coat
+finishes.pal,Flat,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pa,Flat
+finishes.pal,Flat - black,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,black matte plastic rough
+finishes.pal,Flat - olive,$(_DGNLIB)|Bentley_Materials.dgnlib|Clearcoat_Paints.pal,Dark Olive Green
+finishes.pal,Flat - purple,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Flat - purple
+finishes.pal,Flat - red,$(_DGNLIB)|Bentley_Materials.dgnlib|Clearcoat_Paints.pal,Red
+finishes.pal,Flat - warmgray,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Flat - warmgray
+finishes.pal,Flat - white,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Flat - white
+finishes.pal,Glossy,$(_DGNLIB)|Bentley_Materials.dgnlib|Luxology_Presets.pal,Plastic_Glossy
+finishes.pal,Grey25,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pa,Grey25
+finishes.pal,Grey50,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pa,Grey50
+finishes.pal,Grey50 Bump,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pa,Grey50 Bump
+finishes.pal,Grey75,$(_DGNLIB)|Bentley_Materials.dgnlib|Clearcoat_Paints.pal,Dark Slate Gray
+finishes.pal,Plastic,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic,Plastic
+finishes.pal,Plastic - green,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic,Plastic - green
+finishes.pal,Plastic - offwhite,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic,Plastic - offwhite
+finishes.pal,Plastic - red,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic,Plastic - red
+finishes.pal,Plastic - white,,
+finishes.pal,Polished,,
+finishes.pal,Polished - black,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,shiny black plastic
+finishes.pal,Polished - orange,,
+finishes.pal,Polished - red,,
+finishes.pal,Polished - warmgray,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,shiny gray plastic
+finishes.pal,Reflective,,
+finishes.pal,Rough,,
+finishes.pal,Semi Gloss,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Semi Gloss
+finishes.pal,Semi Transparent,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Semi Transparent
+finishes.pal,Shiny,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Shiny
+finishes.pal,Shiny - redgray,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Shiny - redgray
+finishes.pal,Shiny - white,$(_DGNLIB)|Bentley_Materials.dgnlib|Clearcoat_Paints.pal,Snow white
+finishes.pal,Simulated Translucency,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Simulated Translucency
+finishes.pal,Textured,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Textured
+finishes.pal,TexturedBrush,,
+finishes.pal,Translucent,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Translucent
+finishes.pal,Transparent,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,transparent plastic
+finishes.pal,White,$(_DGNLIB)|Bentley_Materials.dgnlib|Clearcoat_Paints.pal,White
+Floors.pal,Carpet,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Carpet
+Floors.pal,Carpet (Tan Tweed),$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Carpet (Tan Tweed)
+Floors.pal,Carpet beige,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Carpet beige
+Floors.pal,Carpet blue,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Carpet blue
+Floors.pal,Carpet green,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Carpet green
+Floors.pal,Carpet red,$(_DGNLIB)|Bentley_Materials.dgnlib|carpet&fabric.pal,Carpet red
+Floors.pal,LaminatBlue,$(_DGNLIB)|Bentley_Materials.dgnlib|laminate&tile.pal,LaminatBlue
+Floors.pal,LaminatWhite,$(_DGNLIB)|Bentley_Materials.dgnlib|laminate&tile.pal,LaminatWhite
+Floors.pal,Marble Tile (Earth),$(_DGNLIB)|Bentley_Materials.dgnlib|laminate&tile.pal,Marble Tile (Earth)
+Floors.pal,Marble Tile (Sand),$(_DGNLIB)|Bentley_Materials.dgnlib|laminate&tile.pal,Marble Tile (Sand)
+Floors.pal,Marble Tile (Verde),$(_DGNLIB)|Bentley_Materials.dgnlib|laminate&tile.pal,Marble Tile (Verde)
+Floors.pal,Parquet,$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,Parquet
+Floors.pal,ParquetBeige,$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,Parquet Beige
+Floors.pal,Tile Flat Paver,$(_DGNLIB)|Bentley_Materials.dgnlib|laminate&tile.pal,Tile Flat Paver
+Floors.pal,Tile Flat Speckle,$(_DGNLIB)|Bentley_Materials.dgnlib|laminate&tile.pal,Tile Flat Speckle
+Floors.pal,Tile Semi Gloss,$(_DGNLIB)|Bentley_Materials.dgnlib|laminate&tile.pal,Tile Semi Gloss
+Glass.pal,Blue,,
+Glass.pal,Blue_intense,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,deep blue glass refract
+Glass.pal,Clear,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,clear glass no refract
+Glass.pal,Clear Blue,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,deep blue glass no refract
+Glass.pal,Clear Green,$(_DGNLIB)|Bentley_Materials.dgnlib|Clearcoat_Paints.pal,Clear green
+Glass.pal,Etched,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Etched
+Glass.pal,Frosted,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Frosted
+Glass.pal,Frosted Glass,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Frosted Glass
+Glass.pal,Glassblock clear,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Glass Block - plain
+Glass.pal,Glassblock green,,
+Glass.pal,Glassblock textured,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Glassblock clear
+Glass.pal,Glazed,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,glazed
+Glass.pal,Glazed (Green),$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Glazed (Green)
+Glass.pal,Green,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Green
+Glass.pal,Green_intense,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,green glass refract
+Glass.pal,Mirror,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,mirror
+Glass.pal,Mirror-Pure,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Mirror-Pure
+Glass.pal,Ripple,,
+Glass.pal,Smoked Blue,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Smoked Blue
+Glass.pal,Smoked Bronze,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Smoked Bronze
+Glass.pal,Smoked Green,$(_DGNLIB)|Bentley_Materials.dgnlib|,
+Glass.pal,Tinted,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,brown glass no refract
+Glass.pal,Tinted Black,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Tinted Black
+Glass.pal,Tinted Red,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Tinted Red
+Glass.pal,Translucent,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,transparent plastic
+GlassGlazing.pal,Blue,$(_DGNLIB)|Bentley_Materials.dgnlib|Clearcoat_Paints.pal,Blue
+GlassGlazing.pal,Clear,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,clear glass no refract
+GlassGlazing.pal,Frosted,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Frosted
+GlassGlazing.pal,Glazed,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,glazed
+GlassGlazing.pal,Green,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Green
+GlassGlazing.pal,Mirror,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,mirror
+GlassGlazing.pal,Tinted,,
+glazing.pal,brake_fluid,$(_DGNLIB)|Bentley_Materials.dgnlib|misc.pal,brake_fluid
+glazing.pal,Glass - black,,
+glazing.pal,Glass - blue,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,deep blue glass no refract
+glazing.pal,Glass - clear,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,clear glass no refract
+glazing.pal,Glass - crystal,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,clear glass refract
+glazing.pal,Glass - element,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,clear glass no refract
+glazing.pal,Glass - full transparency,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,clear glass no refract
+glazing.pal,Glass - purple,,
+glazing.pal,Glass - smoked,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,smoke glass refract
+glazing.pal,Glass - tinted,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,brown glass no refract
+glazing.pal,Glass - white,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,clear glass no refract
+glazing.pal,Glass Block - plain,,
+glazing.pal,Glass Block - textured,,
+Interiors.pal,Ceiling Tiles,$(_DGNLIB)|Bentley_Materials.dgnlib|laminate&tile.pal,Ceiling Tiles
+Interiors.pal,Diffuser Vent,$(_DGNLIB)|Bentley_Materials.dgnlib|misc.pal,Diffuser Vent
+Interiors.pal,Paint Eggshell (Beige),$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Paint Eggshell (Beige)
+Interiors.pal,Paint Eggshell (White),$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Paint Eggshell (White)
+Interiors.pal,Paint Flat (Beige),$(_DGNLIB)|Bentley_Materials.dgnlib|Clearcoat_Paints.pal,Paint Flat (Beige)
+Interiors.pal,Paint High-Gloss (Beige),$(_DGNLIB)|Bentley_Materials.dgnlib|Clearcoat_Paints.pal,Paint Flat High-Gloss (Beige)
+Interiors.pal,Paint Satin (Beige),$(_DGNLIB)|Bentley_Materials.dgnlib|Clearcoat_Paints.pal,Paint Satin (Beige)
+Interiors.pal,Paint Semi-Gloss (Beige),$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Paint Semi Gloss (Beige)
+Interiors.pal,Paint Semi-Gloss (White),$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Paint Semi Gloss (White)
+Interiors.pal,Return Vent,$(_DGNLIB)|Bentley_Materials.dgnlib|misc.pal,Return Vent
+Interiors.pal,Sheathing,,
+Interiors.pal,Stucco (Beige),$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,stucco beige
+Interiors.pal,Stucco (White),$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,stucco white
+Interiors.pal,Stucco Rough (Beige),$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,stucco beige
+Interiors.pal,Stucco Rough (White),$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,stucco white
+Interiors.pal,Stucco Smooth (Beige),$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,stucco beige
+Interiors.pal,Stucco Smooth (White),$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,stucco white
+Interiors.pal,Wallpaper (Blue Speckle),,
+Interiors.pal,Wallpaper (Brown Speckle),,
+Interiors.pal,Wallpaper (Leafs),,
+Interiors.pal,Wallpaper (Stripes),,
+Landscapes.pal,Asphalt,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,Asphalt (Black)
+Landscapes.pal,Draped,,
+Landscapes.pal,Grass,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,Grass
+Landscapes.pal,Grass (Elevation),,
+Landscapes.pal,grass a little rough,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass a little rough
+Landscapes.pal,Grass area,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,Grass area
+Landscapes.pal,grass dead,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass dead
+Landscapes.pal,grass field,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass field
+Landscapes.pal,grass fringe,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass fringe
+Landscapes.pal,grass imperfect,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass imperfect
+Landscapes.pal,grass lawn,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass lawn
+Landscapes.pal,grass lawn light,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass lawn light
+Landscapes.pal,grass lawn mowed,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass lawn mowed
+Landscapes.pal,grass light green,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass light green
+Landscapes.pal,grass median,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass median
+Landscapes.pal,Grass Mowed,,
+Landscapes.pal,grass park,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass park
+Landscapes.pal,grass smooth lt green,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass smooth lt green
+Landscapes.pal,grass st augustine,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass st augustine
+Landscapes.pal,grass tees & greens,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass tees & greens
+Landscapes.pal,grass very rough,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,grass very rough displaced
+Landscapes.pal,Grass[1],,
+Landscapes.pal,Gravel,$(_DGNLIB)|Bentley_Materials.dgnlib|stone&gravel.pal,gravel_1
+Landscapes.pal,Lake,$(_DGNLIB)|Bentley_Materials.dgnlib|water.pal,water_1a
+Landscapes.pal,Lake (Elevation),$(_DGNLIB)|Bentley_Materials.dgnlib|water.pal,water_1a
+Landscapes.pal,Lake[1],$(_DGNLIB)|Bentley_Materials.dgnlib|water.pal,water_1a
+Landscapes.pal,Pond,$(_DGNLIB)|Bentley_Materials.dgnlib|water.pal,water pond
+Landscapes.pal,RPC Tree Material,,
+Landscapes.pal,Sand,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,Sand
+Landscapes.pal,Visible Environment,,
+Landscapes.pal,Water,$(_DGNLIB)|Bentley_Materials.dgnlib|water.pal,water_1a
+Landscapes.pal,WaterTextured,$(_DGNLIB)|Bentley_Materials.dgnlib|water.pal,WaterTextured
+Marble.pal,granite aguamarine,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,granite aguamarine
+Marble.pal,granite atlanta,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,granite atlanta
+Marble.pal,granite black white gray,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,granite black white gray
+Marble.pal,granite dos azul,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,granite dos azul
+Marble.pal,granite ginger,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,granite ginger
+Marble.pal,granite java pearls,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,granite java pearls
+Marble.pal,granite java pepper,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,granite java pepper
+Marble.pal,granite luna pearl,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,granite luna pearl
+Marble.pal,granite mauve world,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,granite mauve world
+Marble.pal,granite mostly gray,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,granite mostly gray
+Marble.pal,granite white noise,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,granite white noise
+Marble.pal,marble ancient blasted,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble ancient blasted
+Marble.pal,marble ancient concrete,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble ancient concrete
+Marble.pal,marble black ice,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble black ice
+Marble.pal,Marble Block,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,Marble Block
+Marble.pal,marble brown stained,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble brown stained
+Marble.pal,marble clearly io,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble clearly io
+Marble.pal,marble concrete stain,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble concrete stain
+Marble.pal,marble dark verde,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble dark verde
+Marble.pal,marble deep graybrown ice,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble deep graybrown ice
+Marble.pal,marble gray + pink veins,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble gray + pink veins
+Marble.pal,marble gray matter,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble gray matter
+Marble.pal,marble grayish pink,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble grayish pink
+Marble.pal,marble icy mud,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble icy mud
+Marble.pal,marble limestone,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble limestone
+Marble.pal,marble lion king,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble lion king
+Marble.pal,marble lt orange cream,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble lt orange cream
+Marble.pal,marble lt rose,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble lt rose
+Marble.pal,marble lt rose veined,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble lt rose veined
+Marble.pal,marble lt verde,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble lt verde
+Marble.pal,marble multi-brown,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble multi-brown
+Marble.pal,marble petrified crema,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble petrified crema
+Marble.pal,marble pink europa,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble pink europa
+Marble.pal,marble red gray glacier,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble red gray glacier
+Marble.pal,marble rosetta,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble rosetta
+Marble.pal,marble smooth limestone,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble smooth limestone
+Marble.pal,marble stained worn,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble stained worn
+Marble.pal,marble tan alabaster,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble tan alabaster
+Marble.pal,marble tan freckle face,$(_DGNLIB)|Bentley_Materials.dgnlib|marble&granite.pal,marble tan freckle face
+metals.pal,Aluminum,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Aluminum
+metals.pal,Aluminum Billet,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Aluminum Billet
+metals.pal,Aluminum Cast,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Aluminum Cast
+metals.pal,Aluminum Polished,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Aluminum Polished
+metals.pal,Brass - polished,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,brass
+metals.pal,Brass Cast,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Brass Cast
+metals.pal,Brass Polished,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Brass Polished
+metals.pal,Cast Iron,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Cast Iron
+metals.pal,Chrome,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Chrome
+metals.pal,Chrome-Reflective,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,chrome reflective
+metals.pal,Copper,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Copper
+metals.pal,Copper Polished,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Copper Polished
+metals.pal,Copper-Reflective,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,copper reflective
+metals.pal,Galvinized Steel,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Galvinized Steel
+metals.pal,Gold,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Gold
+metals.pal,Iron,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Iron
+metals.pal,Metal Painted,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,
+metals.pal,Metal Painted (Beige),$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Metal Painted (Beige)
+metals.pal,Metal Painted (Dark Grey),$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Metal Painted (Dark Grey)
+metals.pal,Metal Painted (Off White),$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Metal Painted (White)
+metals.pal,Metal Rusted[1],$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Metal Rusted
+metals.pal,Nickel,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Nickel
+metals.pal,Nickel Brushed,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Nickel Brushed
+metals.pal,Stainless Steel,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Stainless Steel
+metals.pal,Stainless Steel Brushed,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Stainless Steel Brushed
+metals.pal,Steel,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Stainless Steel
+metals.pal,Steel Carbon,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Steel Carbon
+metals.pal,Steel Cast,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Steel Cast
+metals.pal,Steel Painted Red,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,
+metals.pal,Steel Polished,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Steel Polished
+metals.pal,Steel Weathered,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Steel Weathered
+Non-Photo Realistic.pal,Beige Clay,$(_DGNLIB)|Bentley_Materials.dgnlib|stone&gravel.pal,Beige Clay
+Non-Photo Realistic.pal,Beige Clay (Phong),,
+Non-Photo Realistic.pal,Flat Element Color,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Flat Element Color
+Non-Photo Realistic.pal,Flat Rough Element Color,$(_DGNLIB)|Bentley_Materials.dgnlib|misc.pal,Flat Rough Element Color
+Non-Photo Realistic.pal,High Gloss Element Color,$(_DGNLIB)|Bentley_Materials.dgnlib|Clearcoat_Paints.pal,High Gloss Element Color
+Non-Photo Realistic.pal,Metalic Element Color,,
+Non-Photo Realistic.pal,Reflective Element Color,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Reflective Element Color
+Non-Photo Realistic.pal,Semi-Gloss Element Color,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Semi-Gloss Element Color
+Non-Photo Realistic.pal,Semi-Reflective Element Color,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Semi-Reflective Element Color
+Non-Photo Realistic.pal,Transparent Element Color,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Transparent Element Color
+Non-Photo Realistic.pal,White Clay,$(_DGNLIB)|Bentley_Materials.dgnlib|stone&gravel.pal,White Clay
+Non-Photo Realistic.pal,White Clay (Phong),,
+proctext.pal,black/white noise,,
+proctext.pal,boards,,
+proctext.pal,brick,,
+proctext.pal,brick (1/3 running),,
+proctext.pal,brick (Common bond),,
+proctext.pal,brick (Dutch bond),,
+proctext.pal,brick (English bond),,
+proctext.pal,brick (Flemish bond),,
+proctext.pal,brick (Running bond),,
+proctext.pal,brick (Stack bond),,
+proctext.pal,checker (2-D),,
+proctext.pal,checker (3-D),,
+proctext.pal,clouds - puffy,,
+proctext.pal,clouds - wispy (ray trace),,
+proctext.pal,color noise,,
+proctext.pal,fire (ray trace),,
+proctext.pal,fire - animated (ray trace),,
+proctext.pal,flame (ray trace),,
+proctext.pal,flame - animated (ray trace),,
+proctext.pal,fog (ray trace),,
+proctext.pal,fog - animated (ray trace),,
+proctext.pal,marble,,
+proctext.pal,marble (another one),,
+proctext.pal,rgb color cubes,,
+proctext.pal,sand,$(_DGNLIB)|Bentley_Materials.dgnlib|landscape.pal,Sand
+proctext.pal,stone,,
+proctext.pal,stone - earth tones,,
+proctext.pal,stone - multicolor,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,paver multi-color cobblestone
+proctext.pal,stone - red,,
+proctext.pal,stone - yellow,,
+proctext.pal,turbulence,,
+proctext.pal,turf,,
+proctext.pal,water (opaque & colored),,
+proctext.pal,water (ray trace),,
+proctext.pal,waves,,
+proctext.pal,wood,,
+proctext.pal,wood (another one),,
+project_materials.pal,Brass,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,brass
+project_materials.pal,Bridge,,
+project_materials.pal,Cast Metal,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Cast Metal
+project_materials.pal,Curtainwall 1,,
+project_materials.pal,Flat,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pa,Flat
+project_materials.pal,Flat - grey,,
+project_materials.pal,Flat - olive,$(_DGNLIB)|Bentley_Materials.dgnlib|Clearcoat_Paints.pal,Dark Olive Green
+project_materials.pal,Flat - purple,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Flat - purple
+project_materials.pal,Flat - red,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Flat - red
+project_materials.pal,Flat - warmgray,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Flat - warmgray
+project_materials.pal,Flat - wheat,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Flat - wheat
+project_materials.pal,Flat - white,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Flat - white
+project_materials.pal,Glass - 1,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Glass - 1
+project_materials.pal,Glass - 2,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Glass - 2
+project_materials.pal,Glass - 3,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Glass - 3
+project_materials.pal,Glass - 4,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Glass - 4
+project_materials.pal,Glass - black,,
+project_materials.pal,Glass - blue,,
+project_materials.pal,Glass - clear,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,clear glass no refract
+project_materials.pal,Glass - crystal,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,clear glass refract
+project_materials.pal,Glass - full transparency,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,clear glass no refract
+project_materials.pal,Glass - purple,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Glass - purple
+project_materials.pal,Glass - smoked,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,smoke glass refract
+project_materials.pal,Glass - tinted,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Tinted Black
+project_materials.pal,Glass - white,,
+project_materials.pal,Glass Block - plain,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Glass Block - plain
+project_materials.pal,Glass Block - textured,,
+project_materials.pal,Glossy,$(_DGNLIB)|Bentley_Materials.dgnlib|Luxology_Presets.pal,Plastic_Glossy
+project_materials.pal,Louver 1,,
+project_materials.pal,Maple - seamless,$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pa,Maple - seamless
+project_materials.pal,Masonry 1,,
+project_materials.pal,Masonry 2,,
+project_materials.pal,Metal 1,,
+project_materials.pal,Panel - 1,,
+project_materials.pal,Panel - 2,,
+project_materials.pal,Plastic,,
+project_materials.pal,Plastic - gray,,
+project_materials.pal,Plastic - green,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic,Plastic - green
+project_materials.pal,Plastic - grey,,
+project_materials.pal,Plastic - lt grey,,
+project_materials.pal,Plastic - offwhite,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic,Plastic - offwhite
+project_materials.pal,Plastic - red,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic,Plastic - red
+project_materials.pal,Plastic - white,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,
+project_materials.pal,Polished,,
+project_materials.pal,Polished - black,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,black reflective plastic
+project_materials.pal,Polished - orange,,
+project_materials.pal,Polished - red,,
+project_materials.pal,Polished - warmgray,,
+project_materials.pal,Reflective,,
+project_materials.pal,Roof,,
+project_materials.pal,Rough,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Rough
+project_materials.pal,Shiny,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Shiny
+project_materials.pal,Shiny - redgray,$(_DGNLIB)|Bentley_Materials.dgnlib|glass&plastic.pal,Shiny - redgray
+project_materials.pal,Shiny - white,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Paint High Gloss (White)
+project_materials.pal,Steel,$(_DGNLIB)|Bentley_Materials.dgnlib|metals.pal,Stainless Steel
+schematic.pal,_starting point,$(_DGNLIB)|Bentley_Materials.dgnlib|misc.pal,_starting point
+schematic.pal,glossy,$(_DGNLIB)|Bentley_Materials.dgnlib|Luxology_Presets.pal,Plastic_Glossy
+schematic.pal,hand_sketch,,
+schematic.pal,semitrans,,
+schematic.pal,semitrans - no reflectivity,,
+schematic.pal,textured,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Textured
+Streets.pal,concrete cracked,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete cracked
+Streets.pal,concrete gray,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete gray
+Streets.pal,concrete new,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete new
+Streets.pal,concrete pavers,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete pavers
+Streets.pal,concrete rough grooved,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete rough grooved
+Streets.pal,concrete sidewalk,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete sidewalk
+Streets.pal,concrete smooth new,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete smooth new
+Streets.pal,concrete stained,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete stained
+Streets.pal,concrete stained jointed,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,concrete stained jointed
+Streets.pal,Curbing rough,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,Curbing rough
+Streets.pal,Curbing with joints,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,Curbing with joints
+Streets.pal,gravel lt river rock,,
+Streets.pal,gravel lt river rock[1],$(_DGNLIB)|Bentley_Materials.dgnlib|stone&gravel.pal,gravel_1
+Streets.pal,Manhole cover round,$(_DGNLIB)|Bentley_Materials.dgnlib|stone&gravel.pal,gravel_3
+Streets.pal,Manhole cover round[1],,
+Streets.pal,Manhole cover round[2],,
+Streets.pal,Manhole cover square,,
+Streets.pal,pavement new,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,pavement new
+Streets.pal,pavement old,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,pavement old
+Streets.pal,pavement smooth dark,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,pavement smooth dark
+Streets.pal,pavement smooth light,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,pavement smooth light
+Streets.pal,Road,$(_DGNLIB)|Bentley_Materials.dgnlib|concrete&pavers.pal,Road
+Walls.pal,Stucco,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,stucco white
+Walls.pal,Ceiling Tile,$(_DGNLIB)|Bentley_Materials.dgnlib|laminate&tile.pal,Ceiling Tiles
+Walls.pal,Wall Paper,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Wall Paper
+Walls.pal,Wall Paper Border,$(_DGNLIB)|Bentley_Materials.dgnlib|interior_finishes.pal,Wall Paper Border
+Walls.pal,Brick Red,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,brick red
+Walls.pal,CMU Block,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,CMU Block
+Walls.pal,Marble Block,$(_DGNLIB)|Bentley_Materials.dgnlib|blocks&bricks.pal,Marble Block
+Walls.pal,Stone Wall,$(_DGNLIB)|Bentley_Materials.dgnlib|stone&gravel.pal,Stone Wall
+woods.pal,Ash - light,$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,Ash-light
+woods.pal,Flat (Oak),$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,Flat (Oak)
+woods.pal,Flat (Pine),$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,Flat (Pine)
+woods.pal,Flat (Pine)[1],,
+woods.pal,Flat (Plank),$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,floor1
+woods.pal,Floor Planks,$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,floor2
+woods.pal,Floor Planks[1],$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,floor3
+woods.pal,Floor Planks[2],$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,floor4
+woods.pal,Floor Planks[3],$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,floor13
+woods.pal,Floor Planks[4],$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood11
+woods.pal,High Gloss (Burl),$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood15
+woods.pal,High Gloss (Cherry),$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood19
+woods.pal,High Gloss (Chesnut),$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood21
+woods.pal,High Gloss (Maple Quilt),$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood23
+woods.pal,High Gloss (Oak Burl),$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood24
+woods.pal,Semi Gloss (Ash),$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood26
+woods.pal,Semi Gloss (Mahogany),$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood33
+woods.pal,Semi Gloss (Oak),$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood35
+woods.pal,Semi Gloss (Pine 2),$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood37
+woods.pal,Semi Gloss (Pine),$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood38
+woods.pal,Varnished (Plank),$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood40
+woods.pal,WoodBright,$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood42
+woods.pal,WoodBrightMaple,$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood45
+woods.pal,WoodBrown,$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood46
+woods.pal,WoodGrain,$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood48
+woods.pal,WoodStandard,$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood49
+woods.pal,WookOakTile,$(_DGNLIB)|Bentley_Materials.dgnlib|wood.pal,wood50
+total materials,567,,452
+,,,115

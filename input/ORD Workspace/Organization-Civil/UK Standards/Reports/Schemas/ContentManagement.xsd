@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:or="OpenRoads" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="OpenRoads" elementFormDefault="qualified">
+
+    <!-- Types -->
+
+    <simpleType name="decimalEightPrecision">
+        <restriction base="decimal">
+            <fractionDigits fixed="true" value ="8"/>
+        </restriction>
+    </simpleType>
+    
+    <simpleType name="pathName">
+        <restriction base="string">
+            <pattern value="^(?:(\w+([ \p{P}\p{S}]+\w*)*)(\\\w+([ \p{P}\p{S}]+\w*)*)*$|^)?$"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="itemTypeName">
+        <annotation>
+            <documentation>String concatination (LibraryName::::ItemTypeName)</documentation>
+        </annotation>
+        <restriction base="string">
+            <pattern value="^(\w+([ \p{P}\p{S}]+\w*)*)::::(\w+([ \p{P}\p{S}]+\w*)*)$"/>
+        </restriction>
+    </simpleType>
+
+    <!-- Elements -->
+
+    <element name="VolumeOption">
+        <annotation>
+            <documentation>Describes volume options</documentation>
+        </annotation>
+        <simpleType>
+            <restriction base="string">
+                <enumeration value="Design"/>
+                <enumeration value="Existing"/>
+                <enumeration value="None"/>
+                <enumeration value="Subgrade"/>
+                <enumeration value="Substrata"/>
+            </restriction>
+        </simpleType>
+    </element>
+
+    <!-- Application Feature Definition -->
+
+    <element name="AlignmentFeatureDefinition">
+        <annotation>
+            <documentation>Describes a alignment feature definition</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="CorridorTemplate" type="or:pathName" use="optional"/>
+            <attribute name="LinearFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="ProfileFeatureSymbology" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>
+
+    <element name="CorridorFeatureDefinition">
+        <annotation>
+            <documentation>Describes a corridor feature definition</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="TemplateDropIntervalMultiplier" type="or:decimalEightPrecision" use="required"/>
+            <attribute name="HorizontalCardinalPointsDisplay" type="boolean" use="required"/>
+            <attribute name="VerticalCardinalPointsDisplay" type="boolean" use="required"/>
+            <attribute name="ExternalControlPointsDisplay" type="boolean" use="required"/>
+            <attribute name="DensifyHorizontal" type="boolean" use="required"/>
+            <attribute name="DensifyVertical" type="boolean" use="required"/>
+            <attribute name="EnableClipping" type="boolean" use="required"/>
+            <attribute name="EnableTunnelBoolean" type="boolean" use="required"/>
+            <attribute name="TopMeshDisplay" type="boolean" use="required"/>
+            <attribute name="TopMeshFeatureDefinition" type="or:pathName" use="optional"/>
+            <attribute name="BottomMeshDisplay" type="boolean" use="required"/>
+            <attribute name="BottomMeshFeatureDefinition" type="or:pathName" use="optional"/>
+            <attribute name="ComponentsDisplay" type="boolean" use="required"/>
+            <attribute name="LinearFeaturesDisplay" type="boolean" use="required"/>
+            <attribute name="IncludeNullPointLinearFeaturesDisplay" type="boolean" use="required"/>
+            <attribute name="MajorContoursDisplay" type="boolean" use="required"/>
+            <attribute name="MajorContoursInterval" type="or:decimalEightPrecision" use="required"/>
+            <attribute name="MajorContoursFeatureDefinition" type="or:pathName" use="optional"/>
+            <attribute name="MinorContoursDisplay" type="boolean" use="required"/>
+            <attribute name="MinorContoursInterval" type="or:decimalEightPrecision" use="required"/>
+            <attribute name="MinorContoursFeatureDefinition" type="or:pathName" use="optional"/>
+            <attribute name="TransverseDisplay" type="boolean" use="required"/>
+            <attribute name="CorridorElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="CorridorHandleLengthFactor" type="or:decimalEightPrecision" use="required"/>
+            <attribute name="CorridorHandleSpacing" type="or:decimalEightPrecision" use="required"/>
+            <attribute name="TemplateDropElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="TemplateDropHandleLengthFactor" type="or:decimalEightPrecision" use="required"/>
+            <attribute name="SingleStationDropElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="SingleStationDropHandleLengthFactor" type="or:decimalEightPrecision" use="required"/>
+            <attribute name="TransitionElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="TransitionHandleLengthFactor" type="or:decimalEightPrecision" use="required"/>
+            <attribute name="PointControlElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="KeyStationElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="EndConditionExceptionElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="SecondaryAlignmentElementTemplate" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>
+
+    <element name="LinearFeatureDefinition">
+        <annotation>
+            <documentation>Describes a linear feature definition</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="CreateTemplateGeometry" type="boolean" use="required"/>
+            <attribute name="LinearFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="ProfileFeatureSymbology" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>
+
+    <element name="LinearTemplateFeatureDefinition">
+        <annotation>
+            <documentation>Describes a linear template feature definition</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="EnableClipping" type="boolean" use="required"/>
+            <attribute name="ExternalControlPointsDisplay" type="boolean" use="required"/>
+
+            <attribute name="TopMeshDisplay" type="boolean" use="required"/>
+            <attribute name="TopMeshFeatureDefinition" type="or:pathName" use="optional"/>
+            <attribute name="BottomMeshDisplay" type="boolean" use="required"/>
+            <attribute name="BottomMeshFeatureDefinition" type="or:pathName" use="optional"/>
+            <attribute name="ComponentsDisplay" type="boolean" use="required"/>
+            <attribute name="LinearFeaturesDisplay" type="boolean" use="required"/>
+            <attribute name="IncludeNullPointLinearFeaturesDisplay" type="boolean" use="required"/>
+            <attribute name="MajorContoursDisplay" type="boolean" use="required"/>
+            <attribute name="MajorContoursInterval" type="or:decimalEightPrecision" use="required"/>
+            <attribute name="MajorContoursFeatureDefinition" type="or:pathName" use="optional"/>
+            <attribute name="MinorContoursDisplay" type="boolean" use="required"/>
+            <attribute name="MinorContoursInterval" type="or:decimalEightPrecision" use="required"/>
+            <attribute name="MinorContoursFeatureDefinition" type="or:pathName" use="optional"/>
+            <attribute name="TransverseDisplay" type="boolean" use="required"/>
+            <attribute name="CorridorElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="CorridorHandleLengthFactor" type="or:decimalEightPrecision" use="required"/>
+            <attribute name="CorridorHandleSpacing" type="or:decimalEightPrecision" use="required"/>
+            <attribute name="TemplateDropElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="TemplateDropHandleLengthFactor" type="or:decimalEightPrecision" use="required"/>
+            <attribute name="PointControlElementTemplate" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>
+
+    <element name="MeshFeatureDefinition">
+        <annotation>
+            <documentation>Describes a mesh feature definition</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="or:VolumeOption"/>
+            </sequence>
+            <attribute name="SurfaceFeatureSymbology" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>
+
+    <element name="PointFeatureDefinition">
+        <annotation>
+            <documentation>Describes a point feature definition</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="PointFeatureSymbology" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>
+
+    <element name="SuperelevationFeatureDefinition">
+        <annotation>
+            <documentation>Describes a superelevation feature definition</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="LinearFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="DisplayFill" type="boolean" use="required"/>
+            <attribute name="LeftSideElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="RightSideElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="EnableDistanceGradation" type="boolean" use="required"/>
+        </complexType>
+    </element>
+
+    <element name="SurfaceTemplateFeatureDefinition">
+        <annotation>
+            <documentation>Describes a surface template feature definition</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="Display3dLinearFeatures" type="boolean" use="required"/>
+        </complexType>
+    </element>
+
+    <element name="TerrainFeatureDefinition">
+        <annotation>
+            <documentation>Describes a terrain feature definition</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="or:VolumeOption"/>
+            </sequence>
+            <attribute name="SurfaceFeatureSymbology" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>
+
+    <!-- Application Feature Definition Combinations -->
+
+    <!-- element name="LinearAndSurveyLinearFeatureDefinition">
+        <complexType>
+            <sequence>
+                <element ref="or:LinearFeatureDefinition"/>
+                <element ref="survey:SurveyLinearFeatureDefinition"/>
+            </sequence>
+        </complexType>
+    </group -->
+
+    <!-- Application Feature Definitions -->
+
+    <element name="ApplicationFeatureDefinitions">
+        <annotation>
+            <documentation>Attached application feature definitions</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <choice>
+                    <!-- Single selection -->
+                    <element ref="or:AlignmentFeatureDefinition"/>
+                    <element ref="or:CorridorFeatureDefinition"/>
+                    <element ref="or:LinearFeatureDefinition"/>
+                    <element ref="or:LinearTemplateFeatureDefinition"/>
+                    <element ref="or:MeshFeatureDefinition"/>
+                    <element ref="or:PointFeatureDefinition"/>
+                    <element ref="or:SuperelevationFeatureDefinition"/>
+                    <element ref="or:SurfaceTemplateFeatureDefinition"/>
+                    <element ref="or:TerrainFeatureDefinition"/>
+                    <element ref="or:ConduitFeatureDefinition"/>
+                    <element ref="or:NodeFeatureDefinition"/>
+                    <element ref="or:DrainageAreaFeatureDefinition"/>
+                    <element ref="or:SurveyFeatureDefinition"/>
+                    <element ref="or:SlopeTraceFeatureDefinition"/>
+                    <element ref="or:AquaplaningFeatureDefinition"/>
+
+                    <!-- Compound selection -->
+                    <!--element ref="or:LinearAndSurveyLinearFeatureDefinition"/-->
+                </choice>
+            </sequence>
+        </complexType>
+    </element>
+
+    <!-- Feature Symbology Types -->
+
+    <element name="LinearFeatureSymbology">
+        <annotation>
+            <documentation>Describes a linear feature symbology</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="AnnotationGroup" type="or:pathName" use="optional"/>
+            <attribute name="AnnotationGroup3d" type="or:pathName" use="optional"/>
+            <attribute name="PlanElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="PlanArcElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="PlanSpiralElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="ThreeDElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="CrossingPointElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="ProfileIntersectionElementTemplate" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>
+
+    <element name="PointFeatureSymbology">
+        <annotation>
+            <documentation>Describes a point feature symbology</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="AnnotationGroup" type="or:pathName" use="optional"/>
+            <attribute name="PlanElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="ThreeDElementTemplate" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>
+
+    <element name="ProfileFeatureSymbology">
+        <annotation>
+            <documentation>Describes a profile feature symbology</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="AnnotationGroup" type="or:pathName" use="optional"/>
+            <attribute name="ProfileElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="ProfileCurveElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="ProfileProjectionElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="ProfileIntersectionElementTemplate" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>
+
+    <element name="SolidFeatureSymbology">
+        <annotation>
+            <documentation>Describes a solid feature symbology</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="AnnotationGroup" type="or:pathName" use="optional"/>
+            <attribute name="ThreeDTopElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="ThreeDBottomElementTemplate" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>
+
+    <element name="SurfaceFeatureSymbology">
+        <annotation>
+            <documentation>Describes a surface feature symbology</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="AnnotationGroup" type="or:pathName" use="optional"/>
+            <attribute name="ProfileElementTemplate" type="or:pathName" use="optional"/>
+            <attribute name="ThreeDElementTemplate" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>
+
+    <!-- Feature Definition -->
+    
+    <element name="FeatureDefinition">
+        <annotation>
+            <documentation>Describes a feature definition</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <!--element ref="or:ItemType"/-->
+                <element ref="or:ApplicationFeatureDefinitions"/>
+            </sequence>            
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="path" type="or:pathName" use="optional"/>
+            <attribute name="description" type="string" use="optional"/>
+            <attribute name="nameSeed" type="string" use="optional"/>
+            <attribute name="ItemType" type="or:itemTypeName" use="optional"/>
+        </complexType>
+    </element>
+    
+    <!-- Feature Symbology -->
+    
+    <element name="FeatureSymbology">
+        <annotation>
+            <documentation>Describes a feature symbology</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <choice>
+                    <element ref="or:LinearFeatureSymbology"/>
+                    <element ref="or:PointFeatureSymbology"/>
+                    <element ref="or:ProfileFeatureSymbology"/>
+                    <element ref="or:SolidFeatureSymbology"/>
+                    <element ref="or:SurfaceFeatureSymbology"/>
+                </choice>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="path" type="or:pathName" use="optional"/>
+            <attribute name="DefaultElementTemplate" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>    
+
+    <!-- Feature Definitions -->
+    
+    <element name="FeatureDefinitions">
+        <annotation>
+            <documentation>Collection of feature definitions</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="or:FeatureDefinition" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <!-- Feature Symbologies -->
+
+    <element name="FeatureSymbologies">
+        <annotation>
+            <documentation>Collection of feature symbologies</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="or:FeatureSymbology" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>    
+
+    <!-- ContentManagement-->
+    
+    <element name="OpenRoadsContentManagement">
+        <annotation>
+            <documentation>Collection of feature definitions</documentation>
+        </annotation>
+        <complexType>
+            <choice>
+                <element ref="or:FeatureDefinitions"/>
+                <element ref="or:FeatureSymbologies"/>
+            </choice>
+            <attribute name="file" type="string" use="optional"/>
+        </complexType>
+    </element>
+
+    <element name="ConduitFeatureDefinition">
+        <annotation>
+            <documentation>Describes a conduit feature definition</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="or:ConduitDefaultsEntity" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="LinearFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="ProfileFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="SolidFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="TrenchTemplateName" type="or:pathName" use="optional"/>
+            <attribute name="ConduitShapeOption" type="int" use="required"/>
+            <attribute name="ConduitMaterial" type="string" use="required"/>
+            <attribute name="CommSegmentSubtypeOption" type="int" use="required"/>
+            <attribute name="CommNetworkTypeOption" type="int" use="required"/>
+            <attribute name="CommConduitTypeOption" type="int" use="required"/>
+            <attribute name="UtilityTypeOption" type="int" use="required"/>
+            <attribute name="ElectricNetworkTypeOption" type="int" use="required"/>
+            <attribute name="ElectricSegmentSubtypeOption" type="int" use="required"/>
+            <attribute name="ElectricConduitTypeOption" type="int" use="required"/>
+            <attribute name="POLNetworkTypeOption" type="int" use="required"/>
+            <attribute name="POLSegmentSubTypeOption" type="int" use="required"/>
+            <attribute name="POLConduitTypeOption" type="int" use="optional"/>
+            <attribute name="ThermalNetworkTypeOption" type="int" use="required"/>
+            <attribute name="ThermalSegmentSubTypeOption" type="int" use="required"/>
+            <attribute name="ThermalConduitTypeOption" type="int" use="required"/>
+            <attribute name="SanitaryNetworkTypeOption" type="int" use="required"/>
+            <attribute name="WasteWaterSegmentSubTypeOption" type="int" use="required"/>
+            <attribute name="WasteWaterConduitTypeOption" type="int" use="required"/>
+            <attribute name="WasteNetworkTypeOption" type="int" use="required"/>
+            <attribute name="WaterSegmentSubTypeOption" type="int" use="required"/>
+            <attribute name="WaterConduitTypeOption" type="int" use="required"/>
+            <attribute name="GasNetworkTypeOption" type="int" use="required"/>
+            <attribute name="GasSegmentSubTypeOption" type="int" use="required"/>
+            <attribute name="GasConduitTypeOption" type="int" use="required"/>
+            <attribute name="StormWaterSubTypeOption" type="int" use="required"/>
+            <attribute name="StormWaterNetworkTypeOption" type="int" use="optional"/>
+            <attribute name="StormWaterConduitTypeOption" type="int" use="required"/>
+            <attribute name="GenericConduitTypeOption" type="int" use="required"/>
+            <attribute name="GenericNetworkTypeOption" type="int" use="required"/>
+            <attribute name="ShapeOrientation" type="int" use="required"/>
+            <attribute name="Loading" type="int" use="required"/>
+            <attribute name="UserDefinedNetwork" type="string" use="required"/>
+            <attribute name="UserDefinedFunction" type="string" use="required"/>
+            <attribute name="UserDefinedConduit" type="string" use="required"/>
+            <attribute name="PrototypeHmid" type="int" use="required"/>
+            <attribute name="PrototypeLabel" type="string" use="required"/>
+            <attribute name="PrototypeApplicationName" type="string" use="required"/>
+            <attribute name="PrototypeUniqueId" type="string" use="required"/>
+            <attribute name="DrapeToGround" type="boolean" use="required"/>
+        </complexType>
+    </element>
+
+    <element name="ConduitDefaultsEntity">
+        <annotation>
+            <documentation>Describes a conduit defaults entity</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="Id" type="string" use="required"/>
+            <attribute name="NumberOfBarrels" type="int" use="required"/>
+            <attribute name="SideSlopeRight" type="double" use="required"/>
+            <attribute name="SideSlopeLeft" type="double" use="required"/>
+            <attribute name="BottomWidth" type="double" use="required"/>
+            <attribute name="TriangleHeight" type="double" use="required"/>
+            <attribute name="PowerExponent" type="double" use="required"/>
+            <attribute name="ForDesign" type="boolean" use="required"/>
+            <attribute name="Description" type="string" use="required"/>
+            <attribute name="BottomDistance" type="double" use="required"/>
+            <attribute name="FullArea" type="double" use="required"/>
+            <attribute name="TopRadius" type="double" use="required"/>
+            <attribute name="CornerRadius" type="double" use="required"/>
+            <attribute name="BottomRadius" type="double" use="required"/>
+            <attribute name="MinCover" type="double" use="required"/>
+            <attribute name="MinVelocity" type="double" use="required"/>
+            <attribute name="MaxVelocity" type="double" use="required"/>
+            <attribute name="MinSlope" type="double" use="required"/>
+            <attribute name="MaxSlope" type="double" use="required"/>
+            <attribute name="Span" type="double" use="required"/>
+            <attribute name="Rise" type="double" use="required"/>
+            <attribute name="UnitLength" type="double" use="required"/>
+            <attribute name="MinBendRadius" type="double" use="required"/>
+            <attribute name="JointDeflection" type="double" use="required"/>
+            <attribute name="Thickness" type="double" use="required"/>
+            <attribute name="InsideDiameter" type="double" use="required"/>
+        </complexType>
+    </element>
+
+    <element name="NodeFeatureDefinition">
+        <annotation>
+            <documentation>Describes a node feature definition</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="PointFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="ProfileFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="SolidFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="PROP_CommNodeType" type="int" use="required"/>
+            <attribute name="PROP_CommNetworkType" type="int" use="required"/>
+            <attribute name="PROP_UtilityStructureType" type="int" use="required"/>
+            <attribute name="DefaultHeight" type="int" use="required"/>
+            <attribute name="IndependentConduitElevations" type="boolean" use="required"/>
+            <attribute name="OrientTopToSurface" type="boolean" use="required"/>
+            <attribute name="PROP_WaterNetworkType" type="int" use="required"/>
+            <attribute name="PROP_WaterNodeType" type="int" use="required"/>
+            <attribute name="PROP_WasteWaterNetworkType" type="int" use="required"/>
+            <attribute name="PROP_WasteWaterNodeType" type="int" use="required"/>
+            <attribute name="PROP_ElectricNetworkType" type="int" use="required"/>
+            <attribute name="PROP_ElectricNodeType" type="int" use="required"/>
+            <attribute name="PROP_POLNetworkType" type="int" use="required"/>
+            <attribute name="PROP_POLNodeType" type="int" use="required"/>
+            <attribute name="PROP_ThermalNetworkType" type="int" use="required"/>
+            <attribute name="PROP_ThermalNodeType" type="int" use="required"/>
+            <attribute name="PROP_GasNetworkType" type="int" use="required"/>
+            <attribute name="PROP_GasNodeType" type="int" use="required"/>
+            <attribute name="PROP_UserDefinedStructureType" type="string" use="required"/>
+            <attribute name="PROP_UserDefinedNetworkType" type="string" use="required"/>
+            <attribute name="PROP_RelationshipToConduit" type="int" use="required"/>
+            <attribute name="PROP_InletLocation" type="int" use="required"/>
+            <attribute name="PROP_SlopeAcrossStructure" type="int" use="required"/>
+            <attribute name="PROP_InletGrateType" type="int" use="required"/>
+            <attribute name="PROP_GrateLength" type="int" use="required"/>
+            <attribute name="PROP_GrateWidth" type="int" use="required"/>
+            <attribute name="PROP_GrateArea" type="int" use="required"/>
+            <attribute name="PROP_CloggingReductionFactor" type="int" use="required"/>
+            <attribute name="PROP_GratePerimeter" type="int" use="required"/>
+            <attribute name="PROP_OpeningHeight" type="int" use="required"/>
+            <attribute name="PROP_OpeningLength" type="int" use="required"/>
+            <attribute name="PROP_DepressionWidth" type="int" use="required"/>
+            <attribute name="PROP_DepressionDepth" type="int" use="required"/>
+            <attribute name="PROP_DepressionCrossSlope" type="int" use="required"/>
+            <attribute name="PROP_CurbOpeningType" type="int" use="required"/>
+            <attribute name="PROP_Length" type="int" use="required"/>
+            <attribute name="PROP_SlotWidth" type="int" use="required"/>
+            <attribute name="PROP_StormWaterNetworkType" type="int" use="required"/>
+            <attribute name="PROP_StormWaterNodeType" type="int" use="required"/>
+            <attribute name="PROP_GenericNetworkType" type="int" use="required"/>
+            <attribute name="PROP_GenericNodeType" type="int" use="required"/>
+            <attribute name="PROP_ConflictNetworkType" type="int" use="required"/>
+            <attribute name="PROP_ConflictNodeType" type="int" use="required"/>
+            <attribute name="PrototypeApplicationName" type="string" use="required"/>
+            <attribute name="PrototypeHmid" type="int" use="required"/>
+            <attribute name="PrototypeLabel" type="string" use="required"/>
+            <attribute name="PrototypeUniqueId" type="string" use="required"/>
+        </complexType>
+    </element>
+
+    <element name="DrainageAreaFeatureDefinition">
+        <annotation>
+            <documentation>Describes a polygon feature definition</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="LinearFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="SurfaceFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="PROP_PolygonTypesOption" type="int" use="required"/>
+            <attribute name="PrototypeApplicationName" type="string" use="required"/>
+            <attribute name="PrototypeHmid" type="int" use="required"/>
+            <attribute name="PrototypeLabel" type="string" use="required"/>
+            <attribute name="PrototypeUniqueId" type="string" use="required"/>
+        </complexType>
+    </element>
+    
+    <element name="SurveyFeatureDefinition">
+        <annotation>
+            <documentation>Describes a Survey definition</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="LinearFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="PointFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="PROP_TMAttributeType" type="int" use="optional"/>
+            <attribute name="PROP_NumericCode" type="string" use="optional"/>
+            <attribute name="PROP_AlphaCode" type="string" use="optional"/>
+            <attribute name="PROP_Zone" type="int" use="optional"/>
+        </complexType>
+    </element>
+    
+    <element name="SlopeTraceFeatureDefinition">
+        <annotation>
+            <documentation>Describes a Trace Slope definition</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="TraceFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="PondFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="LowPointFeatureSymbology" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>
+    
+    <element name="AquaplaningFeatureDefinition">
+        <annotation>
+            <documentation>Describes an Aquaplaning definition</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="LinearFeatureSymbology" type="or:pathName" use="optional"/>
+            <attribute name="SurfaceFeatureSymbology" type="or:pathName" use="optional"/>
+        </complexType>
+    </element>
+</schema>

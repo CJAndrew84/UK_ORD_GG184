@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Denis J. Schaffer (Bentley Systems, Inc.) -->
+<schema targetNamespace="InRoads" xmlns:inr="InRoads" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <include schemaLocation="CommonRpt.xsd"/>
+    <element name="CrossSlopeOptimizationStations">
+        <annotation>
+            <documentation>Cross slope optimization stations.</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CrossSlopeOptimizationStation" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CrossSlopeOptimizationStation">
+        <annotation>
+            <documentation>IndividualStationData</documentation>
+        </annotation>
+        <complexType>
+            <complexContent>
+                <extension base="inr:CTStation">
+                    <attribute name="existingGroundSlope" type="double" use="required"/>
+                    <attribute name="existingGroundElevationDelta" type="double" use="required"/>
+                    <attribute name="designSlope" type="double" use="required"/>
+                    <attribute name="designElevationDelta" type="double" use="required"/>
+                    <attribute name="slopeDifference" type="double" use="required"/>
+                    <attribute name="elevationDifference" type="double" use="required"/>
+                    <attribute name="correctedSlope" type="double" use="required"/>
+                    <attribute name="correctedElevationDelta" type="double" use="required"/>
+                    <attribute name="deltaG" type="double" use="required"/>
+                </extension>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="CrossSlopeOptimizationExistingInput">
+        <annotation>
+            <documentation>Existing ground cross slope parameters</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="type" use="required">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="Alignment"/>
+                        <enumeration value="Feature Name"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="pivot" type="string" use="required"/>
+            <attribute name="superelevated" type="string" use="required"/>
+        </complexType>
+    </element>
+    <element name="CrossSlopeOptimizationDesignInput">
+        <annotation>
+            <documentation>Design cross slope parameters</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="type" use="required">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="Control Line"/>
+                        <enumeration value="Constant"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="controlLine" type="string" use="optional"/>
+            <attribute name="fixedValue" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="CrossSlopeOptimizationParameters">
+        <annotation>
+            <documentation>General paramenters</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="toleranceType" use="required">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="Slope"/>
+                        <enumeration value="Elevation"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="toleranceValue" type="double" use="required"/>
+            <attribute name="maximumDeltaG" type="double" use="required"/>
+        </complexType>
+    </element>
+</schema>

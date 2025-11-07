@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="CivilIni" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ini="CivilIni" elementFormDefault="qualified">
+    <include schemaLocation="CommonIni.xsd"/>
+    <!-- complex type declarations -->
+    <complexType name="CTSectionCoordinatePoint">
+        <annotation>
+            <documentation>A point on a girder section</documentation>
+        </annotation>
+        <attribute name="XCoordinate" type="double" use="required"/>
+        <attribute name="YCoordinate" type="double" use="required"/>
+    </complexType>
+    <!-- element declarations -->
+    <element name="ScreedAnnotation">
+        <annotation>
+            <documentation>Contains Screed Annotation settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="Text">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="Point">
+                    <complexType>
+                        <sequence>
+                            <choice>
+                                <group ref="ini:GPointNamedSymbology"/>
+                                <group ref="ini:GPointSymbology"/>
+                            </choice>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="DisplayText" type="boolean" use="required"/>
+            <attribute name="DisplayPoints" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="ScreedAnnotationCollection">
+        <annotation>
+            <documentation>Collection of Screed Annotation preferences</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:ScreedAnnotation" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

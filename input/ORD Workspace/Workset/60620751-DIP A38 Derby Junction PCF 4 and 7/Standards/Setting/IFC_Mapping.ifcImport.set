@@ -1,0 +1,18 @@
+# ================================================================================			
+#			
+# OpenBuildings Designer IFC import mapping
+#			
+#			
+# $RCSfile: IFC_Mapping.ifcImport.set,v $			
+# $Revision: 1.3 $			
+#			
+# $Copyright: (c) 2019 Bentley Systems, Incorporated. All rights reserved. $			
+# ================================================================================
+
+TYPE ifcwall EXPORT_AS Wall.WallAssembly
+TYPE ifcbeam EXPORT_AS Beam.Beam
+TYPE ifcwindow EXPORT_AS Window.Window
+TYPE ifccolumn EXPORT_AS Column.Coulumn
+TYPE ifcfurnishingelement EXPORT_AS Furniture.Furniture
+TYPE ifcfurniture EXPORT_AS Furniture.Furniture
+

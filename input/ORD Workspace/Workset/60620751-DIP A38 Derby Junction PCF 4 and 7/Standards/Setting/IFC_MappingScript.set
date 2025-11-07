@@ -1,0 +1,425 @@
+/*--------------------------------------------------------------------------------------+
+|
+|   IFC EXPORT MAPPING SCRIPT
+|
+|---------------------------------------------------------------------------------------
+|   $RCSfile: IFC_MappingScript.set,v $
+|   $Revision: 1.10 $
+|
+|   $Copyright: (c) 2015 Bentley Systems, Incorporated. All rights reserved. $
+|
++--------------------------------------------------------------------------------------*/
+
+
+//-----------------------------------------------------------------
+// class mapping script
+//
+ 
+PROCEDURE DefineIfcClass
+
+    //DebugDGDump ();
+    
+    //IF (HasDG ("BBES/BOQ/@Group"))
+    //	return BBEStoIFC ();
+    //END_IF
+	
+    //if returns nothing, old class mapping will work
+
+END_PROCEDURE
+
+
+
+//-----------------------------------------------------------------
+// BBES class mapping script
+//
+
+ 
+PROCEDURE BBEStoIFC 
+
+    //DebugDGDump ();
+
+    SWITCH (DG ("BBES/BOQ/@Group"))
+
+        //=================================================================================
+        //-------- ANSI Y32.9-1972
+        //=================================================================================
+
+        //-------- LIGHTING + POWER
+        "LIGHTING OUTLETS": return "IfcFlowTerminal.IfcOutletType.2:poweroutlet";
+        "RECEPTACLE OUTLETS": return "IfcFlowTerminal.IfcOutletType.2:poweroutlet";
+        "SWITCH OUTLETS": return "IfcFlowController.IfcSwitchingDeviceType.6: notdefined";
+        "REMOTE CONTROL STATIONS FOR MOTORS": return "IfcFlowController.IfcSwitchingDeviceType.6:notdefined";
+        "TUBES CLOSED": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "SURFACE MOUNTED LIGHTING": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "RECESSED MOUNTED LIGHTING": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "PENDANT MOUNTED LIIGHTING": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "WALL MOUNTED LIIGHTING": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "EMERGENCY LIIGHTING": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "TUBES OPEN": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "SPOTS AND DOWNLIGHTS": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "BUSWAY PLUGINS": return "IfcDistributionFlowElement.IfcDistributionFlowElementType";
+        "LIGHTNING ARRESTER": return "IfcDistributionControlElement.IfcSensorType.14:notdefined";
+        "OCCUPANCY SENSORS": return "IfcDistributionControlElement.IfcSensorType.8:movementsensor";
+
+        //-------- SAFETY FEATURES AND EQUIPMENT
+        "CONTROL PANELS": return "IfcDistributionControlElement.IfcControllerType.7:notdefined";
+        "RELATED TO MEANS OF EGRESS": return "IfcDistributionControlElement.IfcControllerType.7:notdefined";
+        "SIGNAL INITIATING DEVICES AND SW.": return "IfcDistributionFlowElement.IfcDistributionFlowElementType";
+        "INDICATING APPLIANCES": return "IfcDistributionFlowElement.IfcDistributionFlowElementType";
+        "RELATED EQUIPMENT": return "IfcFlowTerminal.IfcElectricApplianceType.25:notdefined";
+        "SMOKE/PRESSURIZATION CONTROL": return "IfcDistributionControlElement.IfcControllerType.7:notdefined";
+        "ACCESS - INTRUSION": return "IfcDistributionControlElement.IfcControllerType.7:notdefined";
+        "EST SYMBOLS": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+
+        //-------- COMMUNICATION
+        "NURSE CALL SYSTEM": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "PAGING SYSTEM": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "FIRE ALARM SYSTEM": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "STAFF REGISTER SYSTEM": return "IfcDistributionFlowElement.IfcOutletType.4:notdefined";
+        "ELECTRIC CLOCK SYSTEM": return "IfcFlowController.IfcElectricTimeControlType.0:timeclock";
+        "PUBLIC TELEPHONE SYSTEM": return "IfcDistributionFlowElement.IfcOutletType.1:communicationsoutlet";
+        "PRIVATE TELEPHONE SYSTEM": return "IfcDistributionFlowElement.IfcOutletType.1:communicationsoutlet";
+        "WATCHMAN SYSTEM": return "IfcDistributionFlowElement.IfcOutletType.4:notdefined";
+        "SOUND SYSTEM": return "IfcFlowTerminal.IfcOutletType.0:audiovisualoutlet";
+        "OTHER SIGNAL SYSTEM": return "IfcDistributionFlowElement.IfcOutletType.4:notdefined";
+        "RESIDENTIAL OCCUPANCIES": return "IfcDistributionFlowElement.IfcDistributionFlowElementType";
+        "INFORMATION TECHNOLOGY": return "IfcDistributionFlowElement.IfcDistributionFlowElementType";
+
+        //-------- DISTRIBUTION
+        "PANELBOARDS, SWITCHBOARDS AND RELATED": return "IfcFlowController.IfcSwitchingDeviceType.6:notdefined";
+        "ELECTRICAL DISTRIBUTION OR LIGHTING": return "IfcDistributionFlowElement.IfcDistributionFlowElementType";
+
+        //=================================================================================
+        //-------- BS EN60617 / BS 1635
+        //=================================================================================
+
+        //-------- Installation in Buildings
+        "Switches": return "IfcFlowController.IfcSwitchingDeviceType.6: notdefined";
+        "Socket Outlets (Power)": return "IfcFlowTerminal.IfcOutletType.2:poweroutlet";
+        "Electrical Components": return "IfcFlowTerminal.IfcElectricApplianceType.25:notdefined";
+        "Display Equipment": return "IfcFlowTerminal.IfcElectricApplianceType.25:notdefined";
+        "Miscellaneous": return "IfcFlowTerminal.IfcElectricApplianceType.25:notdefined";
+        "Tubes Closed": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "Spots and Downlights": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "Tubes Open": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "Emergency Lighting": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "Lighting Outlets and Fittings": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "Wiring": return "IfcDistributionElement.IfcDistributionElementType";
+        "Lightannunciators": return "IfcDistributionFlowElement.IfcDistributionFlowElementType";
+        "Protection ag. Lightning and Surge": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+
+        //-------- Access Control
+        "Initiating Equipment": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "Warning Equipment": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "Fire Alarm Miscellaneous": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "Fire Alarm Panel/Distr.": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+
+        //-------- Safety Features and Equipment
+        "Control and Indicating Equipment": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "Intruder Detection": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "Monitoring": return "IfcFlowTerminal.IfcElectricApplianceType.25:notdefined";
+        "Miscellaneous Safety Symbols": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "Access Control": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+
+        //-------- Communication
+        "Outlets (Telecommunication)": return "IfcFlowTerminal.IfcOutletType.0:audiovisualoutlet";
+        "Television Engineering": return "IfcFlowTerminal.IfcOutletType.0:audiovisualoutlet";
+        "Antenna System": return "IfcFlowTerminal.IfcOutletType.0:audiovisualoutlet";
+        "Information Technology": return "IfcDistributionFlowElement.IfcOutletType.1:communicationsoutlet";
+        "Public Address": return "IfcDistributionFlowElement.IfcOutletType.1:communicationsoutlet";
+        "Other Communication": return "IfcDistributionFlowElement.IfcOutletType.1:communicationsoutlet";
+
+        //-------- Distribution Devices
+        "Power Current": return "IfcDistributionElement.IfcDistributionElementType";
+        "Weak Current": return "IfcDistributionElement.IfcDistributionElementType";
+
+        //-------- Cable Support Systems
+        "Power Current": return "IfcFlowSegment.IfcCableCarrierSegmentType";
+        "Weak Current": return "IfcFlowSegment.IfcCableCarrierSegmentType";
+        "Eltrak": return "IfcFlowSegment.IfcCableCarrierSegmentType";
+
+        //-------- Busway plugins
+        "40-100A": return "IfcFlowTerminal.IfcOutletType.2:poweroutlet";
+        "1000-5400A": return "IfcFlowTerminal.IfcOutletType.2:poweroutlet";
+
+        //=================================================================================
+        //-------- DIN / VDS
+        //=================================================================================
+
+        //-------- Installationstechnik
+        "Schaltgeräte": return "IfcFlowController.IfcSwitchingDeviceType.6: notdefined";
+        "Steckgeräte": return "IfcFlowTerminal.IfcOutletType.2:poweroutlet";
+        "Verbraucher": return "IfcFlowTerminal.IfcElectricApplianceType.25:notdefined";
+        "Anzeigegeräte": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "Sonstige Geräte": return "IfcFlowTerminal.IfcElectricApplianceType.25:notdefined";
+        "Langfeldleuchten": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "Strahler, Downlights": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "Freistrahlende Leuchten": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "Sicherheitsbeleuchtung": return "IfcFlowTerminal.IfcLightFixtureType.0:pointsource";
+        "Sonstige Leuchten": return "IfcFlowTerminal.IfcLightFixtureType.3:notdefined";
+        "EIB-Aktoren": return "IfcDistributionControlElement.IfcActuatorType.6:notdefined";
+        "EIB-Sensoren": return "IfcDistributionControlElement.IfcSensorType.14:notdefined";
+        "Sonstige EIB-Geräte": return "IfcDistributionControlElement.IfcActuatorType.6:notdefined";
+        "Lichtsignalanlagen": return "IfcFlowTerminal.IfcLightFixtureType.3:notdefined";
+        "Blitzschutz und Potentialausgleich": return "IfcDistributionControlElement.IfcAlarmType.7: notdefined";
+        "Sonstige Symbole Installationstechnik": return "IfcFlowTerminal.IfcElectricApplianceType.25: notdefined";
+        "LON-Aktoren": return "IfcDistributionControlElement.IfcActuatorType.6:notdefined";
+        "LON-Sensoren": return "IfcDistributionControlElement.IfcSensorType.14:notdefined";
+        "Sonstige LON-Geräte": return "IfcDistributionControlElement.IfcActuatorType.6:notdefined";
+
+        //-------- Sicherheitstechnik
+        "BMA-Automatische Melder": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "BMA-Meldegeräte": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "BMA-Anzeigegeräte": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "BMA-Sonstige Geräte": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "BMA-Verteiler/Zentralen": return "IfcDistributionElement.IfcDistributionElementType";
+        "EMA-Geräte": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "Überwachungstechnik": return "IfcFlowTerminal.IfcElectricApplianceType.25:notdefined";
+        "Sonstige Symbole Sicherheitstechnik": return "IfcDistributionControlElement.IfcAlarmType.7:notdefined";
+        "Sonstige-Verteiler/Zentralen Sicher": return "IfcDistributionElement.IfcDistributionElementType";
+
+        //-------- Fernmelde-/Telekomunikationstechnik
+        "Telekomunikation": return "IfcFlowTerminal.IfcOutletType.0:audiovisualoutlet";
+        "Telekomunikation Verteiler/Zentrale": return "";
+        "Fernsehtechnik": return "IfcFlowTerminal.IfcOutletType.0:audiovisualoutlet";
+        "Antennentechnik": return "IfcFlowTerminal.IfcOutletType.0:audiovisualoutlet";
+        "Antennentechnik Verteiler/Zentralen": return "IfcDistributionFlowElement.IfcOutletType.1:communicationsoutlet";
+        "EDV-Technik": return "IfcDistributionFlowElement.IfcOutletType.1:communicationsoutlet";
+        "ELA": return "IfcDistributionFlowElement.IfcOutletType.1:communicationsoutlet";
+        "Sonstige Symbole FM-Technik": return "IfcDistributionFlowElement.IfcOutletType.1:communicationsoutlet";
+        "Patientenrufanlage": return "IfcDistributionFlowElement.IfcOutletType.1:communicationsoutlet";
+
+        //-------- Verteiler und Zentralen
+        "Starkstrom": return "IfcDistributionElement.IfcDistributionElementType";
+        "Schwachstrom": return "IfcDistributionElement.IfcDistributionElementType";
+
+        //-------- Unterflursysteme
+        "Starkstrom": return "IfcFlowSegment.IfcCableCarrierSegmentType";
+        "Schwachstrom": return "IfcFlowSegment.IfcCableCarrierSegmentType";
+
+        //-------- Stromschienensysteme
+        "40-100A": return "IfcFlowTerminal.IfcOutletType.2:poweroutlet";
+        "1000-5400A": return "IfcFlowTerminal.IfcOutletType.2:poweroutlet";
+        
+    END_SWITCH //DG ("BBES/BOQ/Group"))
+
+END_PROCEDURE //BBEStoIFC
+
+
+//-------------------------------------------------------------------------------------
+// This standard-named procedure works for each exported IFC entity
+// To the moment of call all datagroup properties are modified with old mapping
+//
+
+PROCEDURE ExportEntity
+
+    //
+    //specific actions for differnt entity classes
+    //
+
+    SWITCH ($ifcClass)
+            //IfcSite		  :   ExportSite ();
+            IfcBuilding		  :   ExportBuilding ();
+            IfcOwnerHistory       :   ExportOwnerHistory();
+            //IfcWall             :   ExportWall();
+            //IfcWallStandardCase :   ExportWall();
+            //IfcBeam             :   ExportBeam();
+            //IfcColumn           :   ExportColumn();
+            //IfcDoor             :   DebugDGDump();
+            //IfcSpace            :   ExportSpace();
+    END_SWITCH;
+
+
+END_PROCEDURE //ExportEntity
+ 
+//-----------------------------------------------------------------
+//
+
+PROCEDURE SetupAddress
+    
+    $address->AddressLines.0 = DG ("ObjectPostalAddress/@Address1");
+    $address->AddressLines.1 = DG ("ObjectPostalAddress/@Address2");
+    $address->AddressLines.2 = DG ("ObjectPostalAddress/@Address3");
+    $address->AddressLines.3 = DG ("ObjectPostalAddress/@Address4");
+    $address->PostalBox      = DG ("ObjectPostalAddress/@PostalBox");
+    $address->Town           = DG ("ObjectPostalAddress/@City");
+    $address->Region         = DG ("ObjectPostalAddress/@Region");
+    $address->PostalCode     = DG ("ObjectPostalAddress/@PostalCode");
+    $address->Country        = DG ("ObjectPostalAddress/@Country");
+
+END_PROCEDURE
+
+//-----------------------------------------------------------------
+//
+
+PROCEDURE ExportSite
+	
+	//DebugDGDump();
+
+	//
+	// setup site address
+	//
+
+    $address      = GetMember (SiteAddress, IfcPostalAddress);
+/*
+ENTITY IfcPostalAddress; 
+	Purpose  :  OPTIONAL IfcAddressTypeEnum; 
+	Description  :  OPTIONAL IfcText; 
+	UserDefinedPurpose  :  OPTIONAL IfcLabel; 
+	
+	InternalLocation :  OPTIONAL IfcLabel; 
+	AddressLines  :  OPTIONAL LIST [1:?] OF IfcLabel; 
+	PostalBox  :  OPTIONAL IfcLabel; 
+	Town  :  OPTIONAL IfcLabel; 
+	Region  :  OPTIONAL IfcLabel; 
+	PostalCode  :  OPTIONAL IfcLabel; 
+	Country  :  OPTIONAL IfcLabel; 
+END_ENTITY; 
+
+
+RefLatitude  :  OPTIONAL IfcCompoundPlaneAngleMeasure; 
+RefLongitude :  OPTIONAL IfcCompoundPlaneAngleMeasure; 
+RefElevation  :  OPTIONAL IfcLengthMeasure; 
+LandTitleNumber  :  OPTIONAL IfcLabel; 
+
+*/
+
+    $address->InternalLocation = DG("Site/@SiteName");        
+    
+    SetupAddress();
+    
+//DG argument may be:
+ //         &displayName (starting from &)
+ //         xpath = definName/@propName (contains /@)
+ //         definDisplayName/displayName (contains /)
+ //         displayName (either)    
+
+END_PROCEDURE //ExportSite
+
+//-----------------------------------------------------------------
+//
+
+PROCEDURE ExportBuilding
+
+	//DebugDGDump();	
+	
+	//
+	// setup building address
+	//
+	
+    $address = GetMember (BuildingAddress, IfcPostalAddress);
+    
+    SetupAddress();
+
+END_PROCEDURE 
+
+
+//-----------------------------------------------------------------
+//
+
+PROCEDURE ExportOwnerHistory
+
+	//DebugDGDump();
+
+    $owningUser   = GetMember (OwningUser, IfcPersonAndOrganization);
+    
+    $owningPerson = GetMember ($owningUser, ThePerson, IfcPerson);    
+    
+    $owningPerson->FamilyName = DG("LastName");
+    $owningPerson->GivenName  = DG("FirstName");
+    
+    $role = GetMember ($owningPerson, Roles, IfcActorRole);    
+    $role->Role = DG("Role");
+    
+    $address      = GetMember ($owningPerson, Addresses, "*", IfcTelecomAddress);
+
+    $address->ElectronicMailAddresses = DG("E-Mail");
+    $address->TelephoneNumbers = DG("Phone");
+	
+    $owningOrganization = GetMember ($owningUser, TheOrganization , IfcOrganization);
+	$owningOrganization->Name = DG("Organization");
+	
+    $addressOrganization = GetMember ($owningOrganization, Addresses, "*", IfcPostalAddress);
+	
+	$addressOrganization->AddressLines.0 = DG("AddressLine1");
+	$addressOrganization->AddressLines.1 = DG("AddressLine2");
+	$addressOrganization->PostalCode     = DG("PostalCode");
+	$addressOrganization->Town           = DG("City");
+	$addressOrganization->Region         = DG("State");
+	$addressOrganization->Country        = DG("Country");
+
+END_PROCEDURE //ExportOwnerHistory
+
+//-----------------------------------------------------------------
+//
+
+PROCEDURE ExportSpace
+/*
+    PROPERTY_SET qto_SpaceBaseQuantities
+
+        //FinishCeilingHeight : IfcQuantityLength = DG ("FinishCeilingHeight");
+        //GrossFloorArea      : IfcQuantityArea   = DG ("GrossFloorArea")
+        //NetFloorArea        : IfcQuantityArea   = DG ("NetFloorArea")
+
+        FinishCeilingHeight : IfcPositiveLengthMeasure = DG ("FinishCeilingHeight");
+        GrossFloorArea      : IfcAreaMeasure   = DG ("GrossFloorArea");
+        NetFloorArea        : IfcAreaMeasure   = DG ("NetFloorArea");
+
+
+    END_PROPERTY_SET //qto_SpaceBaseQuantities
+*/
+END_PROCEDURE //ExportSpace
+
+//-----------------------------------------------------------------
+// For IfcWall and IfcWallStandardCase
+//
+/*
+PROCEDURE ExportWall
+
+    //setup property set
+    PROPERTY_SET Pset_WallCommon
+    
+        Reference            : IfcIdentifier = $PartName;
+        //FireRating           : IfcLabel      = DG ("ObjectFireResistance/@Rating");
+  
+    END_PROPERTY_SET //Pset_WallCommon
+
+ 
+END_PROCEDURE //ExportWall
+  */  
+
+//-----------------------------------------------------------------
+// For IfcBeam
+//
+/*
+PROCEDURE ExportBeam
+
+    //setup property set
+    PROPERTY_SET Pset_BeamCommon
+    
+        Reference            : IfcIdentifier = $PartName;
+        FireRating           : IfcLabel      = DG ("ObjectFireResistance/@Rating");
+  
+    END_PROPERTY_SET //Pset_BeamCommon
+
+ 
+END_PROCEDURE //ExportBeam
+*/
+
+//-----------------------------------------------------------------
+// For IfcColumn
+//
+/*
+PROCEDURE ExportColumn
+
+    //setup property set
+    PROPERTY_SET Pset_ColumnCommon
+    
+        Reference            : IfcIdentifier = $PartName;
+        FireRating           : IfcLabel      = DG ("ObjectFireResistance/@Rating");
+  
+    END_PROPERTY_SET //Pset_ColumnCommon
+
+ 
+END_PROCEDURE //ExportColumn
+*/

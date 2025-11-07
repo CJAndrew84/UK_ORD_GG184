@@ -1,0 +1,90 @@
+# ================================================================================					
+# OpenBuildings Designer DataGroup Mapping of Electrical Types, Items and Properties
+# for IFC2x3 Export (dataset level)		
+#			
+# $RCSfile: IFC_ElectricalMapping.ifc2x3.set,v $			
+# $Revision: 1.2 $			
+#			
+# $Copyright: (c) 2019 Bentley Systems, Incorporated. All rights reserved. $			
+# ================================================================================
+
+TYPE BBESData EXPORT_AS IfcElectricalElement
+
+TYPE CableCarrierFitting EXPORT_AS IfcFlowFitting.IfcCableCarrierFittingType.5:NOTDEFINED
+
+TYPE_CLASS_MEMBERS
+	PredefinedType = EVALUATE ToUpperCase (DG ("BBES_Raceway/@FittingType"))
+END_CLASS_MEMBERS
+
+TYPE CableCarrierSegment EXPORT_AS IfcFlowFitting.IfcCableCarrierFittingType.5:NOTDEFINED
+  PROPERTY_SET Pset_CableCarrierSegmentTypeCableTraySegment
+    "NominalHeight" : "IfcPositiveLengthMeasure" = BBES_Raceway/@NominalHeight
+    "NominalLength" : "IfcPositiveLengthMeasure" = BBES_Raceway/@NominalLength
+    "NominalWidth" : "IfcPositiveLengthMeasure" = BBES_Raceway/@NominalWidth
+  END_PROPERTY_SET
+
+TYPE CableSegment EXPORT_AS IfcFlowSegment.IfcCableSegmentType.0:NOTDEFINED
+
+TYPE ElectricAppliance EXPORT_AS IfcFlowTerminal.IfcElectricApplianceType.25
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE ElectricDistributionPoint EXPORT_AS IfcDistributionFlowElement.IfcJunctionBoxType
+
+TYPE ElectricFlowStorageDevice EXPORT_AS IfcFlowStorageDevice.IfcElectricFlowStorageDeviceType.6
+
+TYPE ElectricGenerator EXPORT_AS IfcEnergyConversionDevice.IfcElectricGeneratorType.1
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE ElectricHeater EXPORT_AS IfcFlowTerminal.IfcSpaceHeaterType
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+
+TYPE ElectricMotor EXPORT_AS IfcEnergyConversionDevice.IfcElectricMotorType.6
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+    "PhaseAngle" : "IfcPositivePlaneAngleMeasure" = BBES_Panels/@Cos_Phi
+  END_PROPERTY_SET
+
+TYPE ElectricTimeControl EXPORT_AS IfcFlowController.IfcElectricTimeControlType.4
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE ElectricalCircuit EXPORT_AS IfcFlowSegment.IfcCableSegmentType.3
+
+TYPE JunctionBox EXPORT_AS IfcFlowFitting.IfcJunctionBoxType.1
+
+TYPE Lamp EXPORT_AS IfcFlowTerminal.IfcLampType.7
+
+TYPE LightFixture EXPORT_AS IfcFlowTerminal.IfcLightFixtureType.3
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE MotorConnection EXPORT_AS IfcFlowFitting.IfcPipeFittingType.1
+
+TYPE Outlet EXPORT_AS IfcFlowTerminal.IfcOutletType.4
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE ProtectiveDevice EXPORT_AS IfcFlowController.IfcProtectiveDeviceType.7
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE SwitchingDevice EXPORT_AS IfcFlowController.IfcSwitchingDeviceType.6
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET
+
+TYPE Transformer EXPORT_AS IfcEnergyConversionDevice.IfcTransformerType.4
+  PROPERTY_SET Pset_ElectricalDeviceCommon
+    "NominalVoltage" : "IfcElectricVoltageMeasure" = BBES_Equipment_Schedule/@Voltage
+  END_PROPERTY_SET

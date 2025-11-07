@@ -1,0 +1,21 @@
+# Dataset_common					
+# ================================================================================					
+#					
+# Dataset-specific OpenBuildings Designer DataGroup Property Mappings to IFC Pset properties					
+# for IFC Export					
+#					
+# $RCSfile: IFC_PropertyMapping_local.ifc4.set,v $					
+# $Revision: 1.2 $					
+#					
+# $Copyright: (c) 2019 Bentley Systems, Incorporated. All rights reserved. $					
+# ================================================================================					
+#					
+# Syntax:					
+# DGtype	DGitem	IFC pset	IFC property	IFC format	Mapped DG property
+#					
+# ================================================================================
+#					
+Door	*	Pset_DoorCommon	FireExit	IfcBoolean	Door/Door/@DoorEgress
+Door	*	Pset_DoorCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+#
+REPLACE_IN_MAPPING_STRING	STRUCTURAL_VALUE	Load-bearing

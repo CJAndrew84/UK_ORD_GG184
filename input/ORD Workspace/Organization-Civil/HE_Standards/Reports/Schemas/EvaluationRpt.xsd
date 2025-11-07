@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Denis J. Schaffer (Bentley Systems, Inc.) -->
+<schema targetNamespace="InRoads" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:inr="InRoads" elementFormDefault="qualified">
+    <include schemaLocation="CommonRpt.xsd"/>
+    <!-- element declarations -->
+    <element name="Material">
+        <annotation>
+            <documentation>Material data at a cross section station</documentation>
+        </annotation>
+        <complexType mixed="true">
+            <complexContent mixed="true">
+                <extension base="inr:CTCutFillMaterial">
+                    <sequence>
+                        <element name="NotReplaced" type="inr:CTCutFillMaterial" minOccurs="0"/>
+                        <element name="Replaced" type="inr:CTCutFillMaterial" minOccurs="0"/>
+                    </sequence>
+                    <attribute name="cumulativeArea" type="double" use="optional"/>
+                    <attribute name="unitCost" type="double" use="optional"/>
+                    <attribute name="linearArea" type="double" use="optional"/>
+                </extension>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="UnclassifiedMaterials">
+        <annotation>
+            <documentation>Collection of normal materials at a cross section station</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Material" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="RockMaterials">
+        <annotation>
+            <documentation>Collection of rock materials at a cross section station</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Material" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="UnsuitableMaterials">
+        <annotation>
+            <documentation>
+                Collection of materials unsuitable for fill at a cross section station
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Material" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DesignedMaterials">
+        <annotation>
+            <documentation>Collection of components at a cross section station</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Material" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Materials">
+        <annotation>
+            <documentation>Material collection at a cross section station</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:UnclassifiedMaterials" minOccurs="0"/>
+                <element ref="inr:UnsuitableMaterials" minOccurs="0"/>
+                <element ref="inr:RockMaterials" minOccurs="0"/>
+                <element ref="inr:DesignedMaterials" minOccurs="0"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="DerivedStationVolume">
+        <annotation>
+            <documentation>
+                Collection of area and volume data at a derived cross section station.  Used for Triangle 
+                Volume by Station and other locations where there is not an actual cross section.
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="CutMaterial" type="inr:CTCutFillMaterial"/>
+                <element name="FillMaterial" type="inr:CTCutFillMaterial"/>
+                <element name="AddedCutMaterial" type="inr:CTCutFillMaterial" minOccurs="0"/>
+                <element name="AddedFillMaterial" type="inr:CTCutFillMaterial" minOccurs="0"/>
+                <element ref="inr:Materials" minOccurs="0"/>
+            </sequence>
+            <attribute name="massOrdinate" type="double" use="required"/>
+            <attribute name="isMinMax" type="boolean" use="optional"/>
+        </complexType>
+    </element>
+    <element name="StationVolume">
+        <annotation>
+            <documentation>Collection of area and volume data at a cross section station</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="CutMaterial" type="inr:CTCutFillMaterial"/>
+                <element name="FillMaterial" type="inr:CTCutFillMaterial"/>
+                <element name="AddedCutMaterial" type="inr:CTCutFillMaterial" minOccurs="0"/>
+                <element name="AddedFillMaterial" type="inr:CTCutFillMaterial" minOccurs="0"/>
+                <element ref="inr:Materials" minOccurs="0"/>
+            </sequence>
+            <attribute name="netVolume" type="double" use="required"/>
+            <attribute name="netAdjustedVolume" type="double" use="required"/>
+            <attribute name="netAddedVolume" type="double" use="required"/>
+            <attribute name="netAdjustedAddedVolume" type="double" use="required"/>
+            <attribute name="cumulativeNetVolume" type="double" use="required"/>
+            <attribute name="cumulativeNetAdjustedVolume" type="double" use="required"/>
+            <attribute name="cumulativeNetAddedVolume" type="double" use="required"/>
+            <attribute name="cumulativeNetAdjustedAddedVolume" type="double" use="required"/>
+            <attribute name="massOrdinate" type="double" use="required"/>
+            <attribute name="isMinMax" type="boolean" use="optional"/>
+            <attribute name="balanceFactor" type="double" use="required"/>
+            <attribute name="forcedBalanceType" use="required">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="Cut"/>
+                        <enumeration value="Fill"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="CrossSectionComponent">
+        <annotation>
+            <documentation>Cross section component data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CrossSectionPoints" minOccurs="0"/>
+            </sequence>
+            <attribute name="style" type="string" use="optional"/>
+        </complexType>
+    </element>
+    <element name="CrossSectionComponents">
+        <annotation>
+            <documentation>Cross section component collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CrossSectionComponent" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CrossSectionSkewPoint">
+        <annotation>
+            <documentation>Cross section surface skewed point data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="northing" type="double" use="required"/>
+            <attribute name="easting" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="CrossSectionSkewPoints">
+        <annotation>
+            <documentation>Skewed cross section point collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CrossSectionSkewPoint" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CrossSectionSegment">
+        <annotation>
+            <documentation>Cross section surface segment data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="width" type="double" use="required"/>
+            <attribute name="height" type="double" use="required"/>
+            <attribute name="length" type="double" use="required"/>
+            <attribute name="slope" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="CrossSectionFeature">
+        <annotation>
+            <documentation>Feature data at a cross section point</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CrossSectionFeaturePoints" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="name" type="string" use="optional"/>
+            <attribute name="style" type="string" use="optional"/>
+            <attribute name="description" type="string" use="optional"/>
+            <attribute name="backLongitudinalSlope" type="double" use="optional"/>
+            <attribute name="aheadLongitudinalSlope" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="CrossSectionFeaturePoint">
+        <annotation>
+            <documentation>
+                Cross section feature point data for features not on the surface data line
+            </documentation>
+        </annotation>
+        <complexType>
+            <attribute name="northing" type="double" use="optional"/>
+            <attribute name="easting" type="double" use="optional"/>
+            <attribute name="elevation" type="double" use="required"/>
+            <attribute name="offset" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="CrossSectionFeaturePoints">
+        <annotation>
+            <documentation>Cross section feature point collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CrossSectionFeaturePoint" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CrossSectionFeatures">
+        <annotation>
+            <documentation>Contains a collection features at a cross section point</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CrossSectionFeature" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:CrossSectionFeaturePoints" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CrossSectionPoint">
+        <annotation>
+            <documentation>Cross section surface and feature point data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CrossSectionFeatures" minOccurs="0"/>
+                <element ref="inr:CrossSectionSegment" minOccurs="0"/>
+            </sequence>
+            <attribute name="type" type="inr:STPointType" use="required"/>
+            <attribute name="flag" use="optional">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="Begin"/>
+                        <enumeration value="End"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="northing" type="double" use="optional"/>
+            <attribute name="easting" type="double" use="optional"/>
+            <attribute name="elevation" type="double" use="required"/>
+            <attribute name="offset" type="double" use="required"/>
+            <attribute name="derived" type="boolean" use="optional"/>
+            <attribute name="cutFillHeight" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="CrossSectionPoints">
+        <annotation>
+            <documentation>Cross section point collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CrossSectionPoint" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CrossSectionBottomOfDesign">
+        <annotation>
+            <documentation>
+                Cross section surface data representing a line following the bottom-most portion of all 
+                design components
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CrossSectionPoints" minOccurs="0"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CrossSectionSurfaceEntry">
+        <annotation>
+            <documentation>Cross section surface data in end area volume parameters</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="type" type="inr:STSurfaceType" use="required"/>
+            <attribute name="use" type="boolean" use="required"/>
+            <attribute name="surfaceOID" type="string" use="required"/>
+            <attribute name="file" type="string" use="optional"/>
+            <attribute name="lastRevisedDate" type="string" use="optional"/>
+            <attribute name="lastRevisedBy" type="string" use="optional"/>
+        </complexType>
+    </element>
+    <element name="CrossSectionSurface">
+        <annotation>
+            <documentation>Cross section surface data at cross section station</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CrossSectionPoints" minOccurs="0"/>
+                <element ref="inr:CrossSectionComponents" minOccurs="0"/>
+                <element ref="inr:CrossSectionFeatures" minOccurs="0"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="type" type="inr:STSurfaceType" use="required"/>
+        </complexType>
+    </element>
+    <element name="CrossSectionSurfaces">
+        <annotation>
+            <documentation>Surface collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CrossSectionSurface" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:CrossSectionSurfaceEntry" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="General">
+        <annotation>
+            <documentation>Contains general parameters for a cross section set</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CrossSectionSurfaces"/>
+            </sequence>
+            <attribute name="correctForCurvature" type="boolean" use="required"/>
+            <attribute name="includeSkewedSections" type="boolean" use="optional"/>
+            <attribute name="ignoreAreasSmallerThan" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="Classifications">
+        <annotation>
+            <documentation>Classifications collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="ClassificationEntry" type="inr:CTClassificationEntry" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CompactionExpansion">
+        <annotation>
+            <documentation>Compaction/expansion parameters collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="CompactionExpansionEntry" type="inr:CTCompactionExpansionEntry" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="VolumeExceptions">
+        <annotation>
+            <documentation>Volume exception parameters collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="VolumeExceptionEntry" type="inr:CTVolumeExceptionEntry" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="AddedQuantities">
+        <annotation>
+            <documentation>Added quantities parameters collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="AddedQuantityEntry" type="inr:CTAddedQuantityEntry" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ForcedBalances">
+        <annotation>
+            <documentation>Forced balance parameters collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="ForcedBalanceEntry" type="inr:CTForcedBalanceEntry" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="UnsuitableByFeature">
+        <annotation>
+            <documentation>Unsuitable materials defined by feature parameters collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="UnsuitableByFeatureEntry" type="inr:CTMaterialFeatureEntry" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="UnsuitableByStation">
+        <annotation>
+            <documentation>Unsuitable materials defined by station range parameters collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="UnsuitableByStationEntry" type="inr:CTMaterialFeatureEntry" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="EndAreaVolumeParameters">
+        <annotation>
+            <documentation>
+                Contains a collection of project-specific end area volume parameters such as added 
+                quantities, forced balance, etc for a cross section set
+            </documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:General"/>
+                <element ref="inr:CompactionExpansion" minOccurs="0"/>
+                <element ref="inr:VolumeExceptions" minOccurs="0"/>
+                <element ref="inr:AddedQuantities" minOccurs="0"/>
+                <element ref="inr:ForcedBalances" minOccurs="0"/>
+                <element ref="inr:UnsuitableByFeature" minOccurs="0"/>
+                <element ref="inr:UnsuitableByStation" minOccurs="0"/>
+                <element ref="inr:Classifications" minOccurs="0"/>
+                <element ref="inr:AsBuilt" minOccurs="0"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="CrossSectionStation">
+        <annotation>
+            <documentation>Cross section station record</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="Station" type="inr:CTStation"/>
+                <element ref="inr:CrossSectionSurfaces" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:StationVolume" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:DerivedStationVolume" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:CrossSectionSkewPoints" minOccurs="0"/>
+                <element ref="inr:CrossSectionBottomOfDesign" minOccurs="0"/>
+            </sequence>
+            <attribute name="leftOffset" type="double" use="optional"/>
+            <attribute name="rightOffset" type="double" use="optional"/>
+            <attribute name="instantaneousRadius" type="double" use="optional"/>
+            <attribute name="northing" type="double" use="optional"/>
+            <attribute name="easting" type="double" use="optional"/>
+            <attribute name="elevation" type="double" use="optional"/>
+            <attribute name="tangentialDirection" type="inr:STDirection" use="optional"/>
+            <attribute name="radialDirection" type="inr:STDirection" use="optional"/>
+            <attribute name="longitudinalGrade" type="double" use="optional"/>
+            <attribute name="isInterpolated" type="boolean" use="optional"/>
+        </complexType>
+    </element>
+    <element name="CrossSectionStations">
+        <annotation>
+            <documentation>Cross section station records collection</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:CrossSectionStation" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="totalCost" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="CrossSectionSet">
+        <annotation>
+            <documentation>Cross section set data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:EndAreaVolumeParameters" minOccurs="0"/>
+                <element ref="inr:CrossSectionStations" minOccurs="0"/>
+            </sequence>
+            <attribute name="setID" type="integer" use="optional"/>
+            <attribute name="setName" type="string" use="optional"/>
+            <attribute name="alignmentOID" type="string" use="required"/>
+            <attribute name="alignmentName" type="string" use="optional"/>
+        </complexType>
+    </element>
+    <element name="TriangleVolumeSurfaceSet">
+        <annotation>
+            <documentation>
+                Contains information about a pair of surfaces between which triangle volumes are computed
+            </documentation>
+        </annotation>
+        <complexType>
+            <attribute name="existingSurface" type="string" use="required"/>
+            <attribute name="existingSurfaceDescription" type="string" use="optional"/>
+            <attribute name="existingSurfaceStyle" type="string" use="optional"/>
+            <attribute name="existingSurfaceType" type="inr:STSurfaceType"/>
+            <attribute name="designSurface" type="string" use="required"/>
+            <attribute name="designSurfaceDescription" type="string" use="optional"/>
+            <attribute name="designSurfaceStyle" type="string" use="optional"/>
+            <attribute name="designSurfaceType" type="inr:STSurfaceType"/>
+            <attribute name="cutFactor" type="double" use="required"/>
+            <attribute name="fillFactor" type="double" use="required"/>
+            <attribute name="cut" type="double" use="required"/>
+            <attribute name="fill" type="double" use="required"/>
+            <attribute name="netVolume" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="TriangleVolumeSurfaceSets">
+        <annotation>
+            <documentation>Container for triangle volume surface sets</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:TriangleVolumeSurfaceSet" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="method" use="required">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="Entire Surface"/>
+                        <enumeration value="Fence"/>
+                        <enumeration value="Region"/>
+                        <enumeration value="Selected Shapes"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+    <element name="AsBuilt">
+        <annotation>
+            <documentation>Container for as-built parameters</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="computeAsBuilt" type="boolean" use="required"/>
+            <attribute name="asBuiltSurfaceOID" type="string" use="required"/>
+            <attribute name="usePreviousSurface" type="boolean" use="required"/>
+            <attribute name="previousAsBuiltSurfaceOID" type="string" use="optional"/>
+        </complexType>
+    </element>
+</schema>

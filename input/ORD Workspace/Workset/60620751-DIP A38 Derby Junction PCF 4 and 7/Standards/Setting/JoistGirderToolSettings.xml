@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JoistGirderToolSettings>
+   <Defaults UnitSystem="Metric">
+    <Girder>
+      <Properties>
+        <Series>G</Series>
+        <GirderSpaces>4</GirderSpaces>
+        <Depth>1000</Depth>
+        <PanelPointLoad>50</PanelPointLoad>
+        <SeatDepth>100.0</SeatDepth>
+        <AddDetailedMembers>true</AddDetailedMembers>
+        <TopChordSection>L200X200X24</TopChordSection>
+        <WebMembersSection>CHS114.3X3.2</WebMembersSection>
+        <BottomChordSection>L200X200X24</BottomChordSection>
+        <EnvelopeFamilyPart>
+          <FamilyName>S-FrameElements</FamilyName>
+          <PartName>S_BSUK_SteelMiscellaneous</PartName>
+        </EnvelopeFamilyPart>
+        <TopChordFamilyPart>
+          <FamilyName>S-FrameElements</FamilyName>
+          <PartName>S_BSUK_SteelMiscellaneous</PartName>
+        </TopChordFamilyPart>
+        <WebMembersFamilyPart>
+          <FamilyName>S-FrameElements</FamilyName>
+          <PartName>S_BSUK_SteelMiscellaneous</PartName>
+        </WebMembersFamilyPart>
+        <BottomChordFamilyPart>
+          <FamilyName>S-FrameElements</FamilyName>
+          <PartName>S_BSUK_SteelMiscellaneous</PartName>
+        </BottomChordFamilyPart>
+      </Properties>
+      <EndDetails>
+        <End1SeatBearing>150.0</End1SeatBearing>
+        <End1TopChord>0.0</End1TopChord>
+        <End1BottomChord>0.0</End1BottomChord>
+        <End2SeatBearing>150.0</End2SeatBearing>
+        <End2TopChord>0.0</End2TopChord>
+        <End2BottomChord>0.0</End2BottomChord>
+      </EndDetails>
+    </Girder>
+  </Defaults>
+ </JoistGirderToolSettings>

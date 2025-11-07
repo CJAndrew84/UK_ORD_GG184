@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<TriForma>
+  <!-- 
+
+Override Types:
+
+    Text Only        - set Type attribute to 1 - Removes drawing symbol graphics leaving text elements to be added to 3d geometry
+    Append Symbol    - set Type attribute to 2 - Appends 2d drawing symbol graphics to 3d geometry
+    3d Only          - set Type attribute to 3 - Ignores 2d drawing symbol and uses 3d geometry    
+    2d Only          - set Type attribute to 4 - Ignores 3d geometry and uses 2d drawing symbol only
+    
+    Scale            - An optional attribute that scales text
+-->
+  <DrawingOverrides>
+    <Version Major="1" Minor="0" />
+    <DrawingOverride CatalogType="RoundVAVSingleInlet" CatalogItem="M-Roundvavsingleinlet-SingleInlet" Type="1" Scale="1.25" />
+    <DrawingOverride CatalogType="RoundVAVDualInlet" CatalogItem="M-Roundvavdualinlet-DualInlet" Type="1" />
+    <DrawingOverride CatalogType="RoundFPUSingleInlet" CatalogItem="M-Roundfpusingleinlet-SingleInlet" Type="1" />
+    <DrawingOverride CatalogType="RectVAVSingleInlet" CatalogItem="M-Rectvavsingleinlet-SingleInlet" Type="1" />
+    <DrawingOverride CatalogType="RectangularSilencer" CatalogItem="M-Rectangularsilencer-Default" Type="1" Scale="1.25" />
+    <DrawingOverride CatalogType="RectangularDamper" CatalogItem="M-Rectangulardamper-VolumeControl" Type="2" Scale="1.25" />
+    <DrawingOverride CatalogType="RoundSilencer" CatalogItem="M-Roundsilencer-Default" Type="1" />
+    <DrawingOverride CatalogType="RectangularCrosstalkSilencer" CatalogItem="M-Rectangularcrosstalksilencer-CrosstalkSilencer" Type="1" Scale="4" />
+    <DrawingOverride CatalogType="RectangularDamper" CatalogItem="M-Rectangulardamper-BackDraft" Type="2" Scale="1.5" />
+  </DrawingOverrides>
+</TriForma>

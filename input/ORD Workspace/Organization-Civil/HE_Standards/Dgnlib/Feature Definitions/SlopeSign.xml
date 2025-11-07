@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AnnotationDefinitions>
+  <AnnotationDefinition name="Side Slope Annotation">
+    <LinearEntity3dSideSlopeAnnoation xmlns="GeometryModel.00.00">
+      <Interval>10</Interval>
+      <LeftOffset>-100</LeftOffset>
+      <RightOffset>100</RightOffset>
+      <MinorsPerMajor>0</MinorsPerMajor>
+      <MinorSizeScale>0.5</MinorSizeScale>
+      <SkipIntervals>0</SkipIntervals>
+      <DrawIntervals>1</DrawIntervals>
+      <With>0</With>
+      <RotationOption>3</RotationOption>
+      <Rotation>0</Rotation>
+      <Length>0.11</Length>
+      <XScale>1</XScale>
+      <YScale>1</YScale>
+      <ZScale>1</ZScale>
+      <ApplyActiveCellScale>True</ApplyActiveCellScale>
+      <Features>TL_End Cond Dit Out,TL_End Cond Dit In,TL_End Cond Cut Tie</Features>
+      <Template>Linear\Miscellaneous\Slope_Signature</Template>
+      <Name />
+      <ViewIndependent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+    </LinearEntity3dSideSlopeAnnoation>
+  </AnnotationDefinition>
+</AnnotationDefinitions>

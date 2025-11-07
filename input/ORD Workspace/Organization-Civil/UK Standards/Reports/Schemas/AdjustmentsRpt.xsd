@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="InRoads" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:inr="InRoads" elementFormDefault="qualified">
+    <include schemaLocation="CommonRpt.xsd"/>
+    <!--simpleType declarations-->
+    <simpleType name="STAdjustmentType">
+        <annotation>
+            <documentation>Enumerated list of valid adjustment types</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Compass"/>
+            <enumeration value="Crandall"/>
+            <enumeration value="Transit"/>
+            <enumeration value="Level"/>
+            <enumeration value="Least Squares"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STClosureType">
+        <annotation>
+            <documentation>Enumerated list of valid closure types</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Closed"/>
+            <enumeration value="Connecting"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STRouteType">
+        <annotation>
+            <documentation>Enumerated list of valid Route types</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Fixed"/>
+            <enumeration value="Free"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STAdjustmentPointType">
+        <annotation>
+            <documentation>Enumerated list of valid adjustment point types</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Fixed"/>
+            <enumeration value="Weighted"/>
+            <enumeration value="Free"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STObservationType">
+        <annotation>
+            <documentation>Enumerated list of valid observation types</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Angle"/>
+            <enumeration value="Zenith Angle"/>
+            <enumeration value="Height Difference"/>
+            <enumeration value="Horizontal Distance"/>
+            <enumeration value="Horizontal Angle"/>
+            <enumeration value="Slope Distance"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STLinearUnits">
+        <annotation>
+            <documentation>Enumerated list of Linear Units</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Meters"/>
+            <enumeration value="International Feet"/>
+            <enumeration value="US Feet"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STAngularUnits">
+        <annotation>
+            <documentation>Enumerated list of Linear Units</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="Gradians"/>
+            <enumeration value="Degrees"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STMode">
+        <annotation>
+            <documentation>Enumerated list of Linear Units</documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="3D"/>
+            <enumeration value="2D"/>
+            <enumeration value="1D"/>
+            <enumeration value="Traverse"/>
+        </restriction>
+    </simpleType>
+    <!-- element declarations -->
+    <element name="RoutePoint">
+        <annotation>
+            <documentation>Route data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="type" type="inr:STRouteType" use="required"/>
+            <attribute name="occupiedPointName" type="string" use="required"/>
+            <attribute name="unadjustedNorthing" type="double" use="required"/>
+            <attribute name="unadjustedEasting" type="double" use="required"/>
+            <attribute name="unadjustedElevation" type="double" use="required"/>
+            <attribute name="reciprocalCorrectionNorthing" type="double" use="optional"/>
+            <attribute name="reciprocalCorrectionEasting" type="double" use="optional"/>
+            <attribute name="reciprocalCorrectionElevation" type="double" use="optional"/>
+            <attribute name="reciprocalCorrectedAzimuth" type="double" use="optional"/>
+            <attribute name="reciprocalCorrectedDeparture" type="double" use="optional"/>
+            <attribute name="reciprocalCorrectedLength" type="double" use="optional"/>
+            <attribute name="reciprocalCorrectedLatitude" type="double" use="optional"/>
+            <attribute name="reciprocalDifferenceNorthing" type="double" use="optional"/>
+            <attribute name="reciprocalDifferenceEasting" type="double" use="optional"/>
+            <attribute name="reciprocalDifferenceElevation" type="double" use="optional"/>
+            <attribute name="reciprocalDifferenceLength" type="double" use="optional"/>
+            <attribute name="reciprocalDifferenceLatitude" type="double" use="optional"/>
+            <attribute name="reciprocalDifferenceDeparture" type="double" use="optional"/>
+            <attribute name="reciprocalComputedNorthing" type="double" use="optional"/>
+            <attribute name="reciprocalComputedEasting" type="double" use="optional"/>
+            <attribute name="reciprocalComputedElevation" type="double" use="optional"/>
+            <attribute name="reciprocalComputedNorthingDifference" type="double" use="optional"/>
+            <attribute name="reciprocalComputedEastingDifference" type="double" use="optional"/>
+            <attribute name="reciprocalComputedElevationDifference" type="double" use="optional"/>
+            <attribute name="reciprocalTotalTraverseLengthDifference" type="double" use="optional"/>
+            <attribute name="reciprocalTotalLatitudeLengthDifference" type="double" use="optional"/>
+            <attribute name="reciprocalTotalDepartureLengthDifference" type="double" use="optional"/>
+            <attribute name="computedNorthing" type="double" use="required"/>
+            <attribute name="computedEasting" type="double" use="required"/>
+            <attribute name="computedElevation" type="double" use="required"/>
+            <attribute name="computedNorthingDifference" type="double" use="required"/>
+            <attribute name="computedEastingDifference" type="double" use="required"/>
+            <attribute name="computedElevationDifference" type="double" use="required"/>
+            <attribute name="computedError" type="double" use="optional"/>
+            <attribute name="differenceComputedElevation" type="double" use="optional"/>
+            <attribute name="horizontalCorrectionNorthing" type="double" use="optional"/>
+            <attribute name="horizontalCorrectionEasting" type="double" use="optional"/>
+            <attribute name="horizontalCorrectionElevation" type="double" use="optional"/>
+            <attribute name="horizontalCorrectedAzimuth" type="double" use="optional"/>
+            <attribute name="horizontalCorrectedDeparture" type="double" use="optional"/>
+            <attribute name="horizontalCorrectedLength" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="horizontalCorrectedLatitude" type="double" use="optional"/>
+            <attribute name="horizontalDifferenceNorthing" type="double" use="optional"/>
+            <attribute name="horizontalDifferenceEasting" type="double" use="optional"/>
+            <attribute name="horizontalDifferenceElevation" type="double" use="optional"/>
+            <attribute name="horizontalDifferenceAzimuth" type="double" use="optional"/>
+            <attribute name="horizontalDifferenceLatitude" type="double" use="optional"/>
+            <attribute name="horizontalDifferenceDeparture" type="double" use="optional"/>
+            <attribute name="horizontalTotalLatitudeLengthDifference" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="horizontalTotalDepartureLengthDifference" type="double" use="optional"/>
+            <attribute name="horizontalComputedNorthing" type="double" use="optional"/>
+            <attribute name="horizontalComputedEasting" type="double" use="optional"/>
+            <attribute name="horizontalComputedElevation" type="double" use="optional"/>
+            <attribute name="horizontalComputedNorthingDifference" type="double" use="optional"/>
+            <attribute name="horizontalComputedEastingDifference" type="double" use="optional"/>
+            <attribute name="horizontalComputedElevationDifference" type="double" use="optional"/>
+            <attribute name="horizontalComputedError" type="double" use="optional"/>
+            <attribute name="horizontalDifferenceComputedElevation" type="double" use="optional"/>
+            <attribute name="traverseCorrectionNorthing" type="double" use="optional"/>
+            <attribute name="traverseCorrectionEasting" type="double" use="optional"/>
+            <attribute name="traverseCorrectionElevation" type="double" use="optional"/>
+            <attribute name="traverseCorrectedAzimuth" type="double" use="optional"/>
+            <attribute name="traverseCorrectedLength" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="traverseCorrectedLatitude" type="double" use="optional"/>
+            <attribute name="traverseCorrectedDeparture" type="double" use="optional"/>
+            <attribute name="traverseDifferenceNorthing" type="double" use="optional"/>
+            <attribute name="traverseDifferenceEasting" type="double" use="optional"/>
+            <attribute name="traverseDifferenceElevation" type="double" use="optional"/>
+            <attribute name="traverseDifferenceLength" use="optional"/>
+            <attribute name="traverseDifferenceLatitude" type="double" use="optional"/>
+            <attribute name="traverseDifferenceDeparture" type="double" use="optional"/>
+            <attribute name="traverseTotalTraverseLengthDifference" type="double" use="optional"/>
+            <attribute name="traverseTotalLatitudeLengthDifference" type="double" use="optional"/>
+            <attribute name="traverseTotalDepartureLengthDifference" type="double" use="optional"/>
+            <attribute name="traverseComputedNorthing" type="double" use="optional"/>
+            <attribute name="traverseComputedEasting" type="double" use="optional"/>
+            <attribute name="traverseComputedElevation" type="double" use="optional"/>
+            <attribute name="traverseComputedError" type="double" use="optional"/>
+            <attribute name="traverseDifferenceComputedElevation" type="double" use="optional"/>
+            <attribute name="elevationCorrectionNorthing" type="double" use="optional"/>
+            <attribute name="elevationCorrectionEasting" type="double" use="optional"/>
+            <attribute name="elevationCorrectionElevation" type="double" use="optional"/>
+            <attribute name="elevationCorrectedAzimuth" type="double" use="optional"/>
+            <attribute name="elevationCorrectedLength" type="double" use="optional"/>
+            <attribute name="elevationCorrectedLatitude" type="double" use="optional"/>
+            <attribute name="elevationCorrectedDeparture" type="double" use="optional"/>
+            <attribute name="elevationDifferenceNorthing" type="double" use="optional"/>
+            <attribute name="elevationDifferenceEasting" type="double" use="optional"/>
+            <attribute name="elevationDifferenceElevation" type="double" use="optional"/>
+            <attribute name="elevationDifferenceLength" type="double" use="optional"/>
+            <attribute name="elevationDifferenceLatitude" type="double" use="optional"/>
+            <attribute name="elevationDifferenceDeparture" type="double" use="optional"/>
+            <attribute name="elevationTotalTraverseLengthDifference" type="double" use="optional"/>
+            <attribute name="elevationTotalLatitudeLengthDifference" type="double" use="optional"/>
+            <attribute name="elevationTotalDepartureLengthDifference" type="double" use="optional"/>
+            <attribute name="elevationComputedNorthing" type="double" use="optional"/>
+            <attribute name="elevationComputedEasting" type="double" use="optional"/>
+            <attribute name="elevationComputedElevation" type="double" use="optional"/>
+            <attribute name="elevationComputedError" type="double" use="optional"/>
+            <attribute name="elevationDifferenceComputedElevation" type="double" use="optional"/>
+            <attribute name="backsightPointName" type="string" use="optional"/>
+            <attribute name="backsightType" type="inr:STRouteType" use="optional"/>
+            <attribute name="backsightNorthing" type="double" use="optional"/>
+            <attribute name="backsightEasting" type="double" use="optional"/>
+            <attribute name="backsightElevation" type="double" use="optional"/>
+            <attribute name="backsightDeparture" type="string" use="optional"/>
+            <attribute name="backsightLength" type="string" use="optional"/>
+            <attribute name="backsightLatitude" type="string" use="optional"/>
+            <attribute name="foresightPointName" type="string" use="optional"/>
+            <attribute name="foresightType" type="inr:STRouteType" use="optional"/>
+            <attribute name="foresightNorthing" type="double" use="optional"/>
+            <attribute name="foresightEasting" type="double" use="optional"/>
+            <attribute name="foresightElevation" type="double" use="optional"/>
+            <attribute name="correctedNorthing" type="double" use="required"/>
+            <attribute name="correctedEasting" type="double" use="required"/>
+            <attribute name="correctedElevation" type="double" use="required"/>
+            <attribute name="horizontalCorrectedNorthing" type="double" use="required"/>
+            <attribute name="horizontalCorrectedEasting" type="double" use="required"/>
+            <attribute name="horizontalCorrectedElevation" type="double" use="required"/>
+            <attribute name="traverseCorrectedNorthing" type="double" use="required"/>
+            <attribute name="traverseCorrectedEasting" type="double" use="required"/>
+            <attribute name="traverseCorrectedElevation" type="double" use="required"/>
+            <attribute name="mode" type="string" use="required"/>
+            <attribute name="unadjustedDeparture" type="double" use="required"/>
+            <attribute name="unadjustedLength" use="required">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="unadjustedLatitude" type="double" use="required"/>
+            <attribute name="unadjustedAzimuth" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="Route">
+        <annotation>
+            <documentation>A collection of Route Points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:RoutePoint" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ReciprocalZenith">
+        <annotation>
+            <documentation>Reciprocal Zenith data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="reciprocalOccupiedPointName" type="string" use="required"/>
+            <attribute name="reciprocalForesightPointName" type="string" use="required"/>
+            <attribute name="isForward" type="boolean" use="required"/>
+            <attribute name="isReverse" type="boolean" use="required"/>
+            <attribute name="forwardSlopeDistance" type="double" use="optional"/>
+            <attribute name="forwardZenithAngle" type="double" use="optional"/>
+            <attribute name="forwardDeltaZ" type="double" use="optional"/>
+            <attribute name="reciprocalSlopeDistance" type="double" use="optional"/>
+            <attribute name="reciprocalZenithAngle" type="double" use="optional"/>
+            <attribute name="reciprocalDeltaZ" type="double" use="optional"/>
+            <attribute name="reverseSlopeDistance" type="double" use="optional"/>
+            <attribute name="reverseZenithAngle" type="double" use="optional"/>
+            <attribute name="reverseDeltaZ" type="double" use="optional"/>
+            <attribute name="originalForesightElevation" type="double" use="required"/>
+            <attribute name="adjustedForesightElevation" type="double" use="required"/>
+            <attribute name="differenceForesightElevation" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="ReciprocalZeniths">
+        <annotation>
+            <documentation>A collection of Reciprocal Zeniths</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:ReciprocalZenith" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="LevelPoint">
+        <annotation>
+            <documentation>Level Point data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="levelUnadjustedElevation" type="double" use="required"/>
+            <attribute name="levelAdjustedElevation" type="double" use="required"/>
+            <attribute name="levelElevationDifference" type="double" use="required"/>
+            <attribute name="levelForesightUnadjustedElevation" type="double" use="optional"/>
+            <attribute name="levelForesightAdjustedElevation" type="double" use="optional"/>
+            <attribute name="levelForesightElevationDifference" type="double" use="optional"/>
+            <attribute name="levelHorizontalDistanceOccupiedName" type="string" use="optional"/>
+            <attribute name="levelHorizontalDistanceForesightName" type="string" use="optional"/>
+            <attribute name="levelHorizontalDistance" type="double" use="required"/>
+            <attribute name="levelHorizontalDistancePointType" type="string" use="optional"/>
+            <attribute name="levelPointName" type="string" use="required"/>
+            <attribute name="levelForesightName" type="string" use="required"/>
+            <attribute name="levelHeightDifferenceForesightName" type="string" use="required"/>
+            <attribute name="levelHeightDifference" type="double" use="required"/>
+            <attribute name="levelOccupiedType" type="string" use="required"/>
+            <attribute name="levelForesightType" type="string" use="required"/>
+            <attribute name="levelOriginalForesightElevation" type="double" use="required"/>
+            <attribute name="levelAdjustedForesightElevation" type="double" use="required"/>
+            <attribute name="levelDifferenceForesightElevation" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="LevelPoints">
+        <annotation>
+            <documentation>A collection of Level Points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:LevelPoint" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="levelTotalFixed" type="double" use="required"/>
+            <attribute name="levelTotalComputed" type="double" use="required"/>
+            <attribute name="levelTotalError" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="RelativeEllipsePair">
+        <annotation>
+            <documentation>Relative ellipse pair data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="relativeErrorEllipseNorthing" type="double" use="required"/>
+            <attribute name="relativeErrorEllipseEasting" type="double" use="required"/>
+            <attribute name="relativeErrorEllipseElevation" type="double" use="required"/>
+            <attribute name="relativeErrorEllipsePair" type="string" use="required"/>
+            <attribute name="relativeErrorEllipseSx" type="double" use="required"/>
+            <attribute name="relativeErrorEllipseSy" type="double" use="required"/>
+            <attribute name="relativeErrorEllipseSu" type="double" use="required"/>
+            <attribute name="relativeErrorEllipseSv" type="double" use="required"/>
+            <attribute name="relativeErrorEllipset" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="RelativeEllipsePairs">
+        <annotation>
+            <documentation>Collection of relative ellipse pairs</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:RelativeEllipsePair" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ObservationData">
+        <annotation>
+            <documentation>Observation data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="backsightHeight" type="double" use="required"/>
+            <attribute name="foresightHeight" type="double" use="required"/>
+            <attribute name="instrumentHeight" type="double" use="required"/>
+            <attribute name="observedValue" type="double" use="required"/>
+            <attribute name="adjustedValue" type="double" use="required"/>
+            <attribute name="residualValue" type="double" use="required"/>
+            <attribute name="residual" type="double" use="required"/>
+            <attribute name="standardResidual" type="double" use="required"/>
+            <attribute name="redundancyNumber" type="double" use="required"/>
+            <attribute name="blunder" type="boolean" use="required"/>
+            <attribute name="ignore" type="boolean" use="optional"/>
+        </complexType>
+    </element>
+    <element name="Observation">
+        <annotation>
+            <documentation>Collection of Observations and Observation data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:ObservationData" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="type" type="inr:STObservationType" use="required"/>
+            <attribute name="occupiedPointName" type="string" use="required"/>
+            <attribute name="foresightPointName" type="string" use="required"/>
+            <attribute name="backsightPointName" type="string" use="required"/>
+            <attribute name="averageObservedValue" type="double" use="required"/>
+            <attribute name="averageReciprocalZenith" type="double" use="required"/>
+            <attribute name="averageHorizontalZenith" type="double" use="required"/>
+            <attribute name="averageAdjustedValue" type="double" use="required"/>
+            <attribute name="averageElevationValue" type="double" use="required"/>
+            <attribute name="differenceAverageReciprocalZenith" type="double" use="required"/>
+            <attribute name="differenceAverageHorizontalValue" type="double" use="required"/>
+            <attribute name="differenceAverageAdjustedValue" type="double" use="required"/>
+            <attribute name="differenceAverageElevationValue" type="double" use="required"/>
+            <attribute name="greatestStandardResidual" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="Observations">
+        <annotation>
+            <documentation>A collection of observations</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Observation" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="LatitudeAndDeparture">
+        <annotation>
+            <documentation>Latitude and Departure data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="occupiedPointName" type="string" use="required"/>
+            <attribute name="foresightPointName" type="string" use="required"/>
+            <attribute name="unadjustedAzimuth" type="double" use="required"/>
+            <attribute name="aCorrectedAzimuth" type="double" use="required"/>
+            <attribute name="hCorrectedAzimuth" type="double" use="required"/>
+            <attribute name="rCorrectedAzimuth" type="double" use="required"/>
+            <attribute name="unadjustedDistance" type="double" use="required"/>
+            <attribute name="aCorrectedDistance" type="double" use="required"/>
+            <attribute name="hCorrectedDistance" type="double" use="required"/>
+            <attribute name="rCorrectedDistance" type="double" use="required"/>
+            <attribute name="unadjustedLatitude" type="double" use="required"/>
+            <attribute name="aCorrectedLatitude" type="double" use="required"/>
+            <attribute name="hCorrectedLatitude" type="double" use="required"/>
+            <attribute name="rCorrectedLatitude" type="double" use="required"/>
+            <attribute name="unadjustedDeparture" type="double" use="required"/>
+            <attribute name="aCorrectedDeparture" type="double" use="required"/>
+            <attribute name="hCorrectedDeparture" type="double" use="required"/>
+            <attribute name="rCorrectedDeparture" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="LatitudeAndDepartures">
+        <annotation>
+            <documentation>A collection of Latitudes and Departures</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:LatitudeAndDeparture" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="Sideshot">
+        <annotation>
+            <documentation>Sideshot data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="sideShotName" type="string" use="required"/>
+            <attribute name="sideShotNorthing" type="double" use="required"/>
+            <attribute name="sideShotEasting" type="double" use="required"/>
+            <attribute name="sideShotElevation" type="double" use="required"/>
+            <attribute name="sideShotAdjustedNorthing" type="double" use="required"/>
+            <attribute name="sideShotAdjustedEasting" type="double" use="required"/>
+            <attribute name="sideShotAdjustedElevation" type="double" use="required"/>
+            <attribute name="sideShotNorthingDifference" type="double" use="required"/>
+            <attribute name="sideShotEastingDifference" type="double" use="required"/>
+            <attribute name="sideShotElevationDifference" type="double" use="required"/>
+        </complexType>
+    </element>
+    <element name="Sideshots">
+        <annotation>
+            <documentation>Collection of sideshots</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:Sideshot" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="sideShotsExist" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="AdjustmentPoint">
+        <annotation>
+            <documentation>Adjustment point data</documentation>
+        </annotation>
+        <complexType>
+            <attribute name="type" type="inr:STAdjustmentPointType" use="required"/>
+            <attribute name="occupiedPointName" type="string" use="required"/>
+            <attribute name="unadjustedNorthing" type="double" use="required"/>
+            <attribute name="unadjustedEasting" type="double" use="required"/>
+            <attribute name="unadjustedElevation" type="double" use="required"/>
+            <attribute name="correctionNorthing" type="double" use="required"/>
+            <attribute name="correctionEasting" type="double" use="required"/>
+            <attribute name="correctionElevation" type="double" use="required"/>
+            <attribute name="adjustedNorthing" type="double" use="required"/>
+            <attribute name="adjustedEasting" type="double" use="required"/>
+            <attribute name="adjustedElevation" type="double" use="required"/>
+            <attribute name="adjustedNorthingDifference" type="double" use="optional"/>
+            <attribute name="adjustedEastingDifference" type="double" use="optional"/>
+            <attribute name="adjustedElevationDifference" type="double" use="optional"/>
+            <attribute name="errorEllipseStation" type="string" use="optional"/>
+            <attribute name="errorEllipseSx" type="double" use="optional"/>
+            <attribute name="errorEllipseSy" type="double" use="optional"/>
+            <attribute name="errorEllipseSu" type="double" use="optional"/>
+            <attribute name="errorEllipseSv" type="double" use="optional"/>
+            <attribute name="errorEllipset" type="double" use="optional"/>
+        </complexType>
+    </element>
+    <element name="AdjustmentPoints">
+        <annotation>
+            <documentation>A collection of adjustment points</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:AdjustmentPoint" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="AdjustmentNet">
+        <annotation>
+            <documentation>Adjustment set data</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="inr:AdjustmentPoints" minOccurs="0"/>
+                <element ref="inr:Sideshots" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="inr:LatitudeAndDepartures" minOccurs="0"/>
+                <element ref="inr:Observations" minOccurs="0"/>
+                <element ref="inr:RelativeEllipsePairs" minOccurs="0"/>
+                <element ref="inr:LevelPoints" minOccurs="0"/>
+                <element ref="inr:ReciprocalZeniths" minOccurs="0"/>
+                <element ref="inr:Route" minOccurs="0"/>
+            </sequence>
+            <attribute name="name" type="string" use="required"/>
+            <attribute name="file" type="string" use="required"/>
+            <attribute name="adjustmentMode" type="inr:STMode" use="required"/>
+            <attribute name="levelAdjustment" type="boolean" use="optional"/>
+            <attribute name="isRoute" type="boolean" use="optional"/>
+            <attribute name="convergenceTolerance" type="double" use="optional"/>
+            <attribute name="chiSquareTest" use="optional">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="lower"/>
+                        <enumeration value="upper"/>
+                        <enumeration value="pass"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="chiSquareUpperBounds" type="double" use="optional"/>
+            <attribute name="chiSquareLowerBounds" type="double" use="optional"/>
+            <attribute name="confidenceLevel" type="integer" use="optional"/>
+            <attribute name="adjustmentConverges" type="string" use="optional"/>
+            <attribute name="iterations" use="optional">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="maximumIterationsAllowed" use="optional">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="standardDeviation" type="double" use="optional"/>
+            <attribute name="rejectionLevel" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="leastSquares" type="boolean" use="optional"/>
+            <attribute name="blundersExist" type="boolean" use="optional"/>
+            <attribute name="adjustmentType" type="inr:STAdjustmentType" use="optional"/>
+            <attribute name="reciprocalZenith" type="boolean" use="optional"/>
+            <attribute name="horizontalZenith" type="boolean" use="optional"/>
+            <attribute name="elevationAdjustment" type="boolean" use="optional"/>
+            <attribute name="traverseAdjustment" type="boolean" use="optional"/>
+            <attribute name="fixedEndAzimuth" type="double" use="optional"/>
+            <attribute name="beginningAzimuth" type="double" use="optional"/>
+            <attribute name="computedOriginalEndAzimuth" type="double" use="optional"/>
+            <attribute name="computedReciprocalEndAzimuth" type="double" use="optional"/>
+            <attribute name="differenceAzimuth" type="double" use="optional"/>
+            <attribute name="reciprocalDifferenceAzimuth" type="double" use="optional"/>
+            <attribute name="computedErrorPerAngle" type="double" use="optional"/>
+            <attribute name="reciprocalErrorPerAngle" type="double" use="optional"/>
+            <attribute name="horizontalAngleControl" type="boolean" use="optional"/>
+            <attribute name="horizontalPositionControl" type="boolean" use="optional"/>
+            <attribute name="verticalAngleControl" type="boolean" use="optional"/>
+            <attribute name="horizontalAccuracy" type="string" use="optional"/>
+            <attribute name="areaDefined" type="boolean" use="optional"/>
+            <attribute name="area" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="adjustedAreaDefined" type="boolean" use="optional"/>
+            <attribute name="adjustedArea" type="double" use="optional"/>
+            <attribute name="closureType" type="inr:STClosureType" use="optional"/>
+            <attribute name="totalVerticalError" type="double" use="optional"/>
+            <attribute name="verticalAccuracy" type="string" use="optional"/>
+            <attribute name="totalTraverseLength" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="totalLatitudeLength" use="optional"/>
+            <attribute name="totalDepartureLength" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="reciprocalTotalTraverseLength" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="reciprocalTotalLatitudeLength" use="optional"/>
+            <attribute name="reciprocalTotalDepartureLength" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="horizontalTotalTraverseLength" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="horizontalTotalLatitudeLength" use="optional"/>
+            <attribute name="horizontalTotalDepartureLength" use="optional"/>
+            <attribute name="traverseAdjustmentTotalTraverseLength" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="traverseAdjustmentTotalLatitudeLength" use="optional"/>
+            <attribute name="traverseAdjustmentTotalDepartureLength" use="optional"/>
+            <attribute name="elevationAdjustmentTotalTraverseLength" use="optional">
+                <simpleType>
+                    <restriction base="double">
+                        <minInclusive value="0.0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="elevationAdjustmentTotalLatitudeLength" use="optional"/>
+            <attribute name="elevationAdjustmentTotalDepartureLength" use="optional"/>
+            <attribute name="endPointNorthing" type="double" use="optional"/>
+            <attribute name="endPointEasting" type="double" use="optional"/>
+            <attribute name="endPointElevation" type="double" use="optional"/>
+            <attribute name="computedHorizontalError" type="double" use="optional"/>
+            <attribute name="reciprocalHorizontalError" type="double" use="optional"/>
+            <attribute name="horizontalHorizontalError" type="double" use="optional"/>
+            <attribute name="traverseHorizontalError" type="double" use="optional"/>
+            <attribute name="elevationHorizontalError" type="double" use="optional"/>
+            <attribute name="computedVerticalError" type="double" use="optional"/>
+            <attribute name="reciprocalVerticalError" type="double" use="optional"/>
+            <attribute name="horizontalVerticalError" type="double" use="optional"/>
+            <attribute name="traverseVerticalError" type="double" use="optional"/>
+            <attribute name="elevationVerticalError" type="double" use="optional"/>
+            <attribute name="computedHorizontalAccuracy" type="integer" use="optional"/>
+            <attribute name="reciprocalHorizontalAccuracy" type="integer" use="optional"/>
+            <attribute name="horizontalHorizontalAccuracy" type="integer" use="optional"/>
+            <attribute name="traverseHorizontalAccuracy" type="integer" use="optional"/>
+            <attribute name="elevationHorizontalAccuracy" type="integer" use="optional"/>
+            <attribute name="computedVerticalAccuracy" type="integer" use="optional"/>
+            <attribute name="reciprocalVerticalAccuracy" type="integer" use="optional"/>
+            <attribute name="horizontalVerticalAccuracy" type="integer" use="optional"/>
+            <attribute name="traverseVerticalAccuracy" type="integer" use="optional"/>
+            <attribute name="elevationVerticalAccuracy" type="integer" use="optional"/>
+            <attribute name="endPointComputedNorthing" type="double" use="optional"/>
+            <attribute name="endPointComputedEasting" type="double" use="optional"/>
+            <attribute name="endPointComputedElevation" type="double" use="optional"/>
+            <attribute name="reciprocalEndPointComputedNorthing" type="double" use="optional"/>
+            <attribute name="reciprocalEndPointComputedEasting" type="double" use="optional"/>
+            <attribute name="reciprocalEndPointComputedElevation" type="double" use="optional"/>
+            <attribute name="horizontalEndPointComputedNorthing" type="double" use="optional"/>
+            <attribute name="horizontalEndPointComputedEasting" type="double" use="optional"/>
+            <attribute name="horizontalEndPointComputedElevation" type="double" use="optional"/>
+            <attribute name="traverseEndPointComputedNorthing" type="double" use="optional"/>
+            <attribute name="traverseEndPointComputedEasting" type="double" use="optional"/>
+            <attribute name="traverseEndPointComputedElevation" type="double" use="optional"/>
+            <attribute name="elevationEndPointComputedNorthing" type="double" use="optional"/>
+            <attribute name="elevationEndPointComputedEasting" type="double" use="optional"/>
+            <attribute name="elevationEndPointComputedElevation" type="double" use="optional"/>
+            <attribute name="endPointComputedNorthingDifference" type="double" use="optional"/>
+            <attribute name="endPointComputedEastingDifference" type="double" use="optional"/>
+            <attribute name="endPointComputedElevationDifference" type="double" use="optional"/>
+            <attribute name="reciprocalEndPointComputedNorthingDifference" type="double" use="optional"/>
+            <attribute name="reciprocalEndPointComputedEastingDifference" type="double" use="optional"/>
+            <attribute name="reciprocalEndPointComputedElevationDifference" type="double" use="optional"/>
+            <attribute name="horizontalEndPointComputedNorthingDifference" type="double" use="optional"/>
+            <attribute name="horizontalEndPointComputedEastingDifference" type="double" use="optional"/>
+            <attribute name="horizontalEndPointComputedElevationDifference" type="double" use="optional"/>
+            <attribute name="traverseEndPointComputedNorthingDifference" type="double" use="optional"/>
+            <attribute name="traverseEndPointComputedEastingDifference" type="double" use="optional"/>
+            <attribute name="traverseEndPointComputedElevationDifference" type="double" use="optional"/>
+            <attribute name="elevationEndPointComputedNorthingDifference" type="double" use="optional"/>
+            <attribute name="elevationEndPointComputedEastingDifference" type="double" use="optional"/>
+            <attribute name="elevationEndPointComputedElevationDifference" type="double" use="optional"/>
+            <attribute name="endPointNorthingEastingError" type="double" use="optional"/>
+            <attribute name="endPointElevationError" type="double" use="optional"/>
+            <attribute name="numberFixedPoints" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberWeightedPoints" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberFreePoints" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberAzimuthObservations" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberHorizontalAngleObservations" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberVerticalAngleObservations" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberZenithAngleObservations" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberDirectionObservations" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberHorizontalDistanceObservations" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberSlopeDistanceObservations" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberHeightDifferenceObservations" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberCoordinateDifferenceObservations" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="totalNumberObservations" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberAzimuthObservationsIgnored" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberHorizontalAngleObservationsIgnored" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberVerticalAngleObservationsIgnored" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberZenithAngleObservationsIgnored" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberDirectionObservationsIgnored" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberHorizontalDistanceObservationsIgnored" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberSlopeDistanceObservationsIgnored" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberHeightDifferenceObservationsIgnored" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="numberCoordinateDifferenceObservationsIgnored" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="totalNumberObservationsIgnored" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="redundancies" use="required">
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+    </element>
+</schema>

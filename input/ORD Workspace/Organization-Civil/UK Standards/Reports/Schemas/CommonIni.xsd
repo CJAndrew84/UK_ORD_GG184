@@ -1,0 +1,1619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ini="CivilIni" targetNamespace="CivilIni" elementFormDefault="qualified">
+    <!-- simple type declarations -->
+    <simpleType name="STString1">
+        <restriction base="string">
+            <maxLength value="1"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STString23">
+        <restriction base="string">
+            <maxLength value="23"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STString29">
+        <restriction base="string">
+            <maxLength value="29"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STString31">
+        <restriction base="string">
+            <maxLength value="31"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STString39">
+        <restriction base="string">
+            <maxLength value="39"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STString63">
+        <restriction base="string">
+            <maxLength value="63"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STString79">
+        <restriction base="string">
+            <maxLength value="79"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STString127">
+        <restriction base="string">
+            <maxLength value="127"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STString255">
+        <restriction base="string">
+            <maxLength value="255"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STString511">
+        <restriction base="string">
+            <maxLength value="511"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STString1023">
+        <restriction base="string">
+            <maxLength value="1023"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STNonnegativeDouble">
+        <restriction base="double">
+            <minInclusive value="0"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STColorValue">
+        <annotation>
+            <documentation>Sets valid range for color values</documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="255"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STExtendedColorValue">
+        <annotation>
+            <documentation>Sets valid range for color values, -1 indicates "By Level"</documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="-1"/>
+            <maxInclusive value="255"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STWeight">
+        <annotation>
+            <documentation>Sets valid range for line and text weights</documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="-1"/>
+            <maxInclusive value="255"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STJustification">
+        <annotation>
+            <documentation>
+                External values are AutoCAD; converted to MicroStation values in code
+                0 = Top Left
+                1 = Top Center
+                2 = Top Right
+                3 = Center/Middle Left
+                4 = Center/Middle Center
+                5 = Center/Middle Right
+                6 = Bottom Left
+                7 = Bottom Center
+                8 = Bottom Right
+                9 - 14 Needs help
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="14"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STPointDisplayType">
+        <annotation>
+            <documentation>
+                4 = Symbol
+                8 = Triangle
+                16 = Inverted Triangle
+                32 = Circle
+                64 = Square
+                128 = Plus Sign
+                256 = Cross
+                512 = Dumbbell
+                1024 = Target
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <enumeration value="4"/>
+            <enumeration value="8"/>
+            <enumeration value="16"/>
+            <enumeration value="32"/>
+            <enumeration value="64"/>
+            <enumeration value="128"/>
+            <enumeration value="256"/>
+            <enumeration value="512"/>
+            <enumeration value="1024"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STAngle">
+        <annotation>
+            <documentation>Sets valid range for angles</documentation>
+        </annotation>
+        <restriction base="double">
+            <minInclusive value="-400.0"/>
+            <maxExclusive value="400.0"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STDirection">
+        <annotation>
+            <documentation>Sets valid range for direction from 0.0 to 2*PI in radians (North Azimuth)</documentation>
+        </annotation>
+        <restriction base="double">
+            <minInclusive value="-400.0"/>
+            <maxExclusive value="400.0"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STRotation">
+        <annotation>
+            <documentation>
+                -1 = uninitialized
+                0 = Angle Relative to Object
+                1 = Absolulte Angle
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="-1"/>
+            <maxInclusive value="1"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STSlant">
+        <annotation>
+            <documentation>Sets valid range for character slant (AutoCAD-specific)</documentation>
+        </annotation>
+        <restriction base="double">
+            <minInclusive value="-90.0"/>
+            <maxInclusive value="90.0"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STOffsets">
+        <annotation>
+            <documentation>
+                0 = Offset After Rotation
+                1 = Offset Before Rotation
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="1"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STPrecision">
+        <annotation>
+            <documentation>Value specifies number of decimals (0 to 7)</documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="7"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STLimitedPrecision">
+        <annotation>
+            <documentation>Value specifies number of decimals (0 to 5)</documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="5"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STExpandedPrecision">
+        <annotation>
+            <documentation>Value specifies number of decimals (0 to 12)</documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="12"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STSystemPreferencesStationFormat">
+        <annotation>
+            <documentation>
+                0 = ssss.ss
+                2 = ss+ss.ss
+                3 = s+sss.ss
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <enumeration value="0"/>
+            <enumeration value="2"/>
+            <enumeration value="3"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STStationFormat">
+        <annotation>
+            <documentation>
+                0 = None
+                1 = ssss.ss
+                2 = ss+ss.ss
+                3 = s+sss.ss
+                4 = [sss]+ss.ss
+                5 = sss+[ss.ss]
+                6 = sss[+ss.ss]
+                7 = ss[s]+ss.ss
+                8 = [ss]+sss.ss
+                9 = ss+[sss.ss]
+                10 = ss[+sss.ss]
+                11 = s[s]+sss.ss
+                12 = [ss,s]+ss.ss
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="12"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STDirectionFormat">
+        <annotation>
+            <documentation>
+                0 = ddd^mm'ss.ss"
+                1 = ddd.ddd
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="1"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STSlopeFormat">
+        <annotation>
+            <documentation>
+                0 = 0.50
+                1 = 50%
+                2 = 0.5:1
+                3 = 0.5':1'
+                4 = 6":1'
+                5 = 12/2":1'
+                6 = 24/4":1'
+                7 = 48/8":1'
+                8 = 96/16":1'
+                9 = 1:2.0
+                10 = 500%o
+                11 = 2.0:1
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="11"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STSlopeLimitedBaseFormat">
+        <annotation>
+            <documentation>
+                0 = 0.50
+                1 = 50%
+                2 = 0.5:1
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="2"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STRadiusFormat">
+        <annotation>
+            <documentation>
+                0 = Radius
+                1 = DOC
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="1"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STSurfaceFeatureType">
+        <annotation>
+            <documentation>
+                1 = Random
+                2 = Breakline
+                4 = Interior
+                8 = Exterior
+                16 = Contour
+                32 = Inferred
+            </documentation>
+        </annotation>
+        <restriction base="unsignedLong">
+            <enumeration value="1"/>
+            <enumeration value="2"/>
+            <enumeration value="4"/>
+            <enumeration value="8"/>
+            <enumeration value="16"/>
+            <enumeration value="32"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STSurfaceFeatureTypeList">
+        <annotation>
+            <documentation>
+                0 = Random
+                1 = Breakline
+                2 = Contour
+                3 = Interior
+                4 = Exterior
+            </documentation>
+        </annotation>
+        <restriction base="unsignedLong">
+            <enumeration value="0"/>
+            <enumeration value="1"/>
+            <enumeration value="2"/>
+            <enumeration value="3"/>
+            <enumeration value="4"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STSurfaceFeatureBaseTypeList">
+        <annotation>
+            <documentation>
+                0 = Random
+                1 = Breakline
+                2 = Contour
+                3 = Interior
+                4 = Exterior
+            </documentation>
+        </annotation>
+        <restriction base="unsignedLong">
+            <enumeration value="0"/>
+            <enumeration value="1"/>
+            <enumeration value="2"/>
+            <enumeration value="3"/>
+            <enumeration value="4"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STSurfaceLimitedFeatureType">
+        <annotation>
+            <documentation>
+                0 = Random
+                1 = Breakline
+            </documentation>
+        </annotation>
+        <restriction base="unsignedLong">
+            <enumeration value="0"/>
+            <enumeration value="1"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STPenOrder">
+        <annotation>
+            <documentation>
+                0 = One then Zeros
+                1 = Zero then Ones
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="1"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STOrientation1">
+        <annotation>
+            <documentation>
+                0 = Automatic
+                512 = North
+                1024 = East
+                2048 = West
+                4096 = South
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <enumeration value="0"/>
+            <enumeration value="512"/>
+            <enumeration value="1024"/>
+            <enumeration value="2048"/>
+            <enumeration value="4096"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STOrientation2">
+        <annotation>
+            <documentation>
+                0 = North
+                1 = South
+                2 = East
+                3 = West
+                4 = Automatic
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <enumeration value="0"/>
+            <enumeration value="1"/>
+            <enumeration value="2"/>
+            <enumeration value="3"/>
+            <enumeration value="4"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STOrientation4">
+        <annotation>
+            <documentation>
+                0 = Up Station
+                1 = Down Station
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <enumeration value="0"/>
+            <enumeration value="1"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STLocationAlong">
+        <annotation>
+            <documentation>
+                0 = Midpoint
+                1 = Start
+                2 = End
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="2"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STLocationNear">
+        <annotation>
+            <documentation>
+                0 = Left
+                1 = Center
+                2 = Right
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="2"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STVolumeLocation">
+        <annotation>
+            <documentation>
+                0 = Top Left
+                1 = Top Center
+                2 = Top Right
+                3 = Middle Left
+                4 = Middle Center
+                5 = Middle Right
+                6 = Bottom Left
+                7 = Bottom Center
+                8 = Bottom Right
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <enumeration value="0"/>
+            <enumeration value="1"/>
+            <enumeration value="2"/>
+            <enumeration value="3"/>
+            <enumeration value="6"/>
+            <enumeration value="7"/>
+            <enumeration value="8"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STProfileLocation">
+        <annotation>
+            <documentation>
+                Text Top Position
+                16 = Up
+                32 = Down
+                64 = Left
+                128 = Right
+                Text location with regards to Tick
+                256 = Normal
+                512 = Above
+                1024 = Above Left
+                2048 = Above Right
+                Horizontal Angle Mode
+                4096 = inner
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0"/>
+            <maxInclusive value="6272"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STPointLeaderPosition">
+        <annotation>
+            <documentation>
+                0 = uninitialized
+                4 = Concave
+                8 = Convex
+                16 = Above
+                32 = Below
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <enumeration value="0"/>
+            <enumeration value="4"/>
+            <enumeration value="8"/>
+            <enumeration value="16"/>
+            <enumeration value="32"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STCurveLeaderPosition">
+        <annotation>
+            <documentation>
+                0 = uninitialized
+                16777216 = Inside
+                33554432 = Outside
+                67108864 = Above
+                134217728 = Below
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <enumeration value="0"/>
+            <enumeration value="16777216"/>
+            <enumeration value="33554432"/>
+            <enumeration value="67108864"/>
+            <enumeration value="134217728"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="STTangentLeaderPosition">
+        <annotation>
+            <documentation>
+                0 = uninitialized
+                16 = Midpoint
+                32 = Start
+                64 = End
+                128 = Start and End
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <enumeration value="0"/>
+            <enumeration value="16"/>
+            <enumeration value="32"/>
+            <enumeration value="64"/>
+            <enumeration value="128"/>
+        </restriction>
+    </simpleType>
+    <!-- complex type declarations -->
+    <complexType name="CTBaseLineSymbology" mixed="true">
+        <annotation>
+            <documentation>Contains base line symbology settings</documentation>
+        </annotation>
+        <attribute name="LayerName" type="ini:STString1023" use="required"/>
+        <attribute name="ColorValue" type="ini:STExtendedColorValue" use="required"/>
+        <attribute name="Weight" type="ini:STWeight" use="required"/>
+        <attribute name="LineTypeName" type="ini:STString63" use="required"/>
+        <attribute name="ColorByLayer" type="boolean" use="required"/>
+        <attribute name="LineTypeByLayer" type="boolean" use="required"/>
+        <attribute name="StyleScale" type="double" use="required"/>
+        <attribute name="UseScale" type="boolean" use="required"/>
+        <attribute name="Filled" type="boolean" use="required"/>
+    </complexType>
+    <complexType name="CTBaseTextSymbology" mixed="true">
+        <annotation>
+            <documentation>Contains base text symbology settings</documentation>
+        </annotation>
+        <attribute name="TextStyleName" type="ini:STString127" use="optional"/>
+        <attribute name="LayerName" type="ini:STString1023" use="required"/>
+        <attribute name="ColorValue" type="ini:STExtendedColorValue" use="required"/>
+        <attribute name="Weight" type="ini:STWeight" use="required"/>
+        <attribute name="TextHeight" type="double" use="required"/>
+        <attribute name="TextWidth" type="double" use="required"/>
+        <attribute name="LineSpacing" type="double" use="required"/>
+        <attribute name="FontStyleName" type="ini:STString1023" use="required"/>
+        <attribute name="ColorByLayer" type="boolean" use="required"/>
+        <attribute name="Justification" type="ini:STJustification" use="required"/>
+    </complexType>
+    <complexType name="CTExtendedTextSymbology" mixed="true">
+        <annotation>
+            <documentation>Contains extended text symbology settings</documentation>
+        </annotation>
+        <attribute name="Angle" type="ini:STAngle" use="required"/>
+        <attribute name="HorizontalOffset" type="double" use="required"/>
+        <attribute name="VerticalOffset" type="double" use="required"/>
+        <attribute name="ViewIndependent" type="boolean" use="required"/>
+        <attribute name="Rotation" type="ini:STRotation" use="required"/>
+        <attribute name="Offsets" type="ini:STOffsets" use="required"/>
+        <attribute name="LineLength" type="integer" use="required"/>
+        <attribute name="PaperUnits" type="integer" use="required"/>
+        <attribute name="Slant" type="ini:STSlant" use="required"/>
+        <attribute name="CharacterSpacing" type="double" use="required"/>
+        <attribute name="MultiLineJustification" type="ini:STJustification" use="required"/>
+    </complexType>
+    <complexType name="CTSurveyTextSymbology" mixed="true">
+        <annotation>
+            <documentation>Contains Survey-specific text symbology settings</documentation>
+        </annotation>
+        <attribute name="JustifyAtDecimal" type="boolean" use="required"/>
+        <attribute name="Precision" type="integer" use="required"/>
+        <attribute name="ViewTextHeight" type="double" use="required"/>
+        <attribute name="ViewTextWidth" type="double" use="required"/>
+        <attribute name="ViewHorizontalOffset" type="double" use="required"/>
+        <attribute name="ViewVerticalOffset" type="double" use="required"/>
+        <attribute name="ViewLineSpacing" type="double" use="required"/>
+    </complexType>
+    <complexType name="CTBasePointSymbology" mixed="true">
+        <annotation>
+            <documentation>Contains base point symbology settings</documentation>
+        </annotation>
+        <attribute name="SymbolLayerName" type="ini:STString1023" use="required"/>
+        <attribute name="CellLayerName" type="ini:STString1023" use="required"/>
+        <attribute name="Name" type="ini:STString511" use="required"/>
+        <attribute name="XScale" type="double" use="required"/>
+        <attribute name="YScale" type="double" use="required"/>
+        <attribute name="ZScale" type="double" use="required"/>
+        <attribute name="ColorValue" type="ini:STExtendedColorValue" use="required"/>
+        <attribute name="Weight" type="ini:STWeight" use="required"/>
+        <attribute name="FontStyleName" type="ini:STString1023" use="required"/>
+        <attribute name="TextHeight" type="double" use="required"/>
+        <attribute name="TextWidth" type="double" use="required"/>
+        <attribute name="LineTypeName" type="ini:STString63" use="required"/>
+        <attribute name="ColorByLayer" type="boolean" use="required"/>
+        <attribute name="Character" type="ini:STString1" use="required"/>
+        <attribute name="DisplayAs" type="ini:STPointDisplayType" use="required"/>
+        <attribute name="Justification" type="ini:STJustification" use="required"/>
+        <attribute name="PaperUnits" type="integer" use="required"/>
+        <attribute name="Slant" type="ini:STSlant" use="required"/>
+        <attribute name="Offsets" type="ini:STOffsets" use="required"/>
+        <attribute name="DisplaySymbol" type="boolean" use="required"/>
+        <attribute name="DisplayCellBlock" type="boolean" use="required"/>
+    </complexType>
+    <complexType name="CTExtendedPointSymbology" mixed="true">
+        <annotation>
+            <documentation>Contains extended point symbology settings</documentation>
+        </annotation>
+        <attribute name="SymbolRotation" type="ini:STRotation" use="required"/>
+        <attribute name="SymbolAngle" type="ini:STAngle" use="required"/>
+        <attribute name="CellRotation" type="ini:STRotation" use="required"/>
+        <attribute name="CellAngle" type="ini:STAngle" use="required"/>
+    </complexType>
+    <complexType name="CTAnnotationPlacement" mixed="true">
+        <annotation>
+            <documentation>Contains text placement settings</documentation>
+        </annotation>
+        <attribute name="Display" type="boolean" use="optional"/>
+        <attribute name="Prefix" type="ini:STString31" use="optional"/>
+        <attribute name="Suffix" type="ini:STString31" use="optional"/>
+        <attribute name="DualDimensionPrecision" type="ini:STPrecision" use="optional"/>
+        <attribute name="AttributeName" type="ini:STString31" use="optional"/>
+        <attributeGroup ref="ini:AGColumn"/>
+        <attribute name="Row" use="optional">
+            <simpleType>
+                <restriction base="integer">
+                    <minInclusive value="-100"/>
+                    <maxInclusive value="100"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attributeGroup ref="ini:AGPrecision"/>
+        <attributeGroup ref="ini:AGFormat"/>
+        <attributeGroup ref="ini:AGOrientation"/>
+        <attributeGroup ref="ini:AGLocation"/>
+    </complexType>
+    <complexType name="CTGeometryPointAnnotation" mixed="true">
+        <annotation>
+            <documentation>Contains geometry point annotation settings</documentation>
+        </annotation>
+        <attribute name="Abbreviation" type="ini:STString31" use="required"/>
+        <attribute name="SymbolName" type="ini:STString31" use="optional"/>
+        <attribute name="CellName" type="ini:STString31" use="optional"/>
+    </complexType>
+    <complexType name="CTPlanarizeOption" mixed="true">
+        <annotation>
+            <documentation>Contains setting for planarize option</documentation>
+        </annotation>
+        <attribute name="Planarize" type="boolean" use="required"/>
+        <attribute name="PlanarElevation" type="double" use="required"/>
+        <attribute name="Scale" type="double" use="optional"/>
+    </complexType>
+    <complexType name="CTScalingOption" mixed="true">
+        <annotation>
+            <documentation>Contains setting for surface scaling option</documentation>
+        </annotation>
+        <attribute name="Planarize" type="boolean" use="required"/>
+        <attribute name="PlanarElevation" type="double" use="required"/>
+        <attribute name="ScaleRelative" type="boolean" use="required"/>
+        <attribute name="FixedElevation" type="double" use="required"/>
+        <attribute name="Scale" type="double" use="required"/>
+    </complexType>
+    <complexType name="CTNewFeature" mixed="true">
+        <annotation>
+            <documentation>Contains settings for creating or modifying features</documentation>
+        </annotation>
+        <attribute name="FeatureName" type="ini:STString31" use="optional"/>
+        <attribute name="FeatureStyle" type="ini:STString31" use="optional"/>
+        <attributeGroup ref="ini:AGSurfaceFeatureType"/>
+        <attribute name="DensityInterval" use="optional">
+            <simpleType>
+                <restriction base="double">
+                    <minInclusive value="0.0"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="DuplicateNames" use="optional">
+            <annotation>
+                <documentation>
+                    0 = Append
+                    1 = Replace
+                    2 = Rename
+                    3 = Modify
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <minInclusive value="0"/>
+                    <maxInclusive value="3"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="ExcludeFromTriangulation" type="boolean" use="optional"/>
+    </complexType>
+    <complexType name="CTSurveyFeatureFilterRule" mixed="true">
+        <annotation>
+            <documentation>Contains rules for survey feature filters</documentation>
+        </annotation>
+        <attribute name="Name" type="ini:STString31" use="required"/>
+    </complexType>
+    <complexType name="CTFeatureFilterRule" mixed="true">
+        <annotation>
+            <documentation>Contains rules for feature filters</documentation>
+        </annotation>
+        <attribute name="Mode" type="integer" use="required"/>
+        <attribute name="Attribute" type="integer" use="required"/>
+        <attribute name="Value" type="integer" use="required"/>
+        <attribute name="String" type="ini:STString63" use="optional"/>
+    </complexType>
+    <complexType name="CTLeaderLine" mixed="true">
+        <annotation>
+            <documentation>Contains settings for leader lines</documentation>
+        </annotation>
+        <attribute name="DisplayPartOne" type="boolean" use="optional"/>
+        <attribute name="PartOneLength" type="double" use="optional"/>
+        <attribute name="PartOneAngle" type="ini:STAngle" use="optional"/>
+        <attribute name="DisplayPartTwo" type="boolean" use="optional"/>
+        <attribute name="PartTwoLength" type="double" use="optional"/>
+        <attribute name="PartTwoAngle" type="ini:STAngle" use="optional"/>
+        <attributeGroup ref="ini:AGLeaderPosition"/>
+        <attribute name="Offset" type="double" use="optional"/>
+        <attribute name="StartLeaderOffset" type="double" use="optional"/>
+        <attribute name="StopLeaderOffset" type="double" use="optional"/>
+        <attribute name="StartBendOffset" type="double" use="optional"/>
+        <attribute name="StopBendOffset" type="double" use="optional"/>
+    </complexType>
+    <complexType name="CTDisplayTicks" mixed="true">
+        <annotation>
+            <documentation>Contains settings for tick display</documentation>
+        </annotation>
+        <attribute name="Spacing" type="double" use="optional"/>
+        <attribute name="MinorTicksPerMajor" type="integer" use="optional"/>
+        <attribute name="Length" type="double" use="optional"/>
+        <attribute name="LeftOrInsideOffset" type="double" use="optional"/>
+        <attribute name="RightOrOutsideOffset" type="double" use="optional"/>
+    </complexType>
+    <complexType name="CTAxis" mixed="true">
+        <annotation>
+            <documentation>Contains settings for axis</documentation>
+        </annotation>
+        <sequence>
+            <element name="Line">
+                <complexType>
+                    <sequence>
+                        <choice>
+                            <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                            <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                        </choice>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="MajorTickLine">
+                <complexType mixed="true">
+                    <complexContent mixed="true">
+                        <extension base="ini:CTDisplayTicks">
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </extension>
+                    </complexContent>
+                </complexType>
+            </element>
+            <element name="MinorTickLine">
+                <complexType mixed="true">
+                    <complexContent mixed="true">
+                        <extension base="ini:CTDisplayTicks">
+                            <choice>
+                                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                                <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                            </choice>
+                        </extension>
+                    </complexContent>
+                </complexType>
+            </element>
+            <element name="TitleText">
+                <complexType>
+                    <sequence>
+                        <choice>
+                            <group ref="ini:GTextNamedSymbology"/>
+                            <group ref="ini:GTextSymbology"/>
+                        </choice>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="TitleBoxLine">
+                <complexType>
+                    <sequence>
+                        <choice>
+                            <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                            <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+                        </choice>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="MajorLabelText">
+                <complexType mixed="true">
+                    <complexContent mixed="true">
+                        <extension base="ini:CTAnnotationPlacement">
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology"/>
+                                <group ref="ini:GTextSymbology"/>
+                            </choice>
+                        </extension>
+                    </complexContent>
+                </complexType>
+            </element>
+            <element name="MinorLabelText">
+                <complexType mixed="true">
+                    <complexContent mixed="true">
+                        <extension base="ini:CTAnnotationPlacement">
+                            <choice>
+                                <group ref="ini:GTextNamedSymbology" minOccurs="0"/>
+                                <group ref="ini:GTextSymbology" minOccurs="0"/>
+                            </choice>
+                        </extension>
+                    </complexContent>
+                </complexType>
+            </element>
+        </sequence>
+        <attribute name="DropLabelStationEquationName" type="boolean" use="required"/>
+        <attribute name="CenterZeroTitle" type="int" use="optional"/>
+        <attribute name="Display" type="boolean" use="optional"/>
+        <attribute name="DisplayMajorTicksOnInside" use="required">
+            <annotation>
+                <documentation>
+                    0 = Off
+                    32 = On
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <enumeration value="0"/>
+                    <enumeration value="32"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="DisplayMajorTicksOnOutside" use="required">
+            <annotation>
+                <documentation>
+                    0 = Off
+                    64 = On
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <enumeration value="0"/>
+                    <enumeration value="64"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="DisplayMinorTicksOnInside" use="required">
+            <annotation>
+                <documentation>
+                    0 = Off
+                    256 = On
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <enumeration value="0"/>
+                    <enumeration value="256"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="DisplayMinorTicksOnOutside" use="required">
+            <annotation>
+                <documentation>
+                    0 = Off
+                    512 = On
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <enumeration value="0"/>
+                    <enumeration value="512"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="DisplayMajorTicks" use="required">
+            <annotation>
+                <documentation>
+                    0 = Off
+                    16 = On
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <enumeration value="0"/>
+                    <enumeration value="16"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="DisplayMinorTicks" use="required">
+            <annotation>
+                <documentation>
+                    0 = Off
+                    128 = On
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <enumeration value="0"/>
+                    <enumeration value="128"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="Title" type="ini:STString31" use="optional"/>
+        <attribute name="DisplayTitleText" use="required">
+            <annotation>
+                <documentation>
+                    0 = Off
+                    2 = On
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <enumeration value="0"/>
+                    <enumeration value="2"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="DisplayTitleBox" use="required">
+            <annotation>
+                <documentation>
+                    0 = Off
+                    4 = On
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <enumeration value="0"/>
+                    <enumeration value="4"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="DisplayLabel" use="required">
+            <annotation>
+                <documentation>
+                    0 = Off
+                    8 = On
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <enumeration value="0"/>
+                    <enumeration value="8"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="DisplayMinorLabel" use="optional">
+            <annotation>
+                <documentation>
+                    0 = Off
+                    8 = On
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <enumeration value="0"/>
+                    <enumeration value="8"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="LocateTitleAutomatically" use="optional">
+            <annotation>
+                <documentation>
+                    0 = Off
+                    1024 = On
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <enumeration value="0"/>
+                    <enumeration value="1024"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+    <complexType name="CTNamedSymbologyName">
+        <annotation>
+            <documentation>
+                Contains the name of a Named Symbology for use in text, line and point symbologies
+            </documentation>
+        </annotation>
+        <attribute name="Name" type="ini:STString31" use="required"/>
+    </complexType>
+    <complexType name="CTFeatureStyleName">
+        <annotation>
+            <documentation>
+                Contains the name of a Feature Style for use in categorization
+            </documentation>
+        </annotation>
+        <attribute name="Name" type="ini:STString31" use="required"/>
+    </complexType>
+    <complexType name="CTFormulaVariablePair">
+        <annotation>
+            <documentation>
+                Contains a formula variable pair used with quantity formulas and the pay item section of feature
+                styles
+            </documentation>
+        </annotation>
+        <attribute name="Name" type="ini:STString31" use="required"/>
+        <attribute name="Value" type="ini:STString31" use="required"/>
+    </complexType>
+    <complexType name="CTSurfaceFeature">
+        <annotation>
+            <documentation>Contains surface feature settings</documentation>
+        </annotation>
+        <sequence>
+            <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+        </sequence>
+        <attribute name="PayItemName" type="ini:STString31" use="optional"/>
+        <attribute name="Display3DPlanLine" type="boolean" use="required"/>
+        <attribute name="Display3DPlanPoint" type="boolean" use="required"/>
+        <attribute name="Display3DPlanAnnotation" type="boolean" use="required"/>
+        <attribute name="DisplayCrossSectionProjectedLine" type="boolean" use="required"/>
+        <attribute name="DisplayCrossSectionProjectedPoint" type="boolean" use="required"/>
+        <attribute name="DisplayCrossSectionPoint" type="boolean" use="required"/>
+        <attribute name="DisplayCrossSectionAnnotation" type="boolean" use="required"/>
+        <attribute name="DisplayCrossSectionComponent" type="boolean" use="required"/>
+        <attribute name="DisplayProfileProjectedLine" type="boolean" use="required"/>
+        <attribute name="DisplayProfileProjectedPoint" type="boolean" use="required"/>
+        <attribute name="DisplayProfileCrossingPoint" type="boolean" use="required"/>
+        <attribute name="DisplayProfileAnnotation" type="boolean" use="required"/>
+    </complexType>
+    <complexType name="CTGeometryPointFeature">
+        <annotation>
+            <documentation>Contains geometry point feature settings</documentation>
+        </annotation>
+        <sequence>
+            <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+            <element name="PointNumberText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="DescriptionText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="PreferenceText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="NorthingText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="EastingText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="ElevationText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+        </sequence>
+        <attribute name="DisplayPointNumber" type="boolean" use="required"/>
+        <attribute name="DisplayDescription" type="boolean" use="required"/>
+        <attribute name="DisplayPreference" type="boolean" use="required"/>
+        <attribute name="DisplayNorthing" type="boolean" use="required"/>
+        <attribute name="DisplayEasting" type="boolean" use="required"/>
+        <attribute name="DisplayElevation" type="boolean" use="required"/>
+        <attribute name="RotateOnAlignmentSymbols" type="boolean" use="optional"/>
+        <attribute name="AlternateStyle" type="ini:STString31" use="required"/>
+        <attribute name="AllowTabling" type="boolean" use="required"/>
+        <attribute name="ICSNumber" use="required">
+            <simpleType>
+                <restriction base="integer">
+                    <minInclusive value="0"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+    <complexType name="CTGeometryLineFeature">
+        <annotation>
+            <documentation>Contains geometry line feature settings</documentation>
+        </annotation>
+        <sequence>
+            <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+            <element name="DirectionText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="DistanceText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+        </sequence>
+        <attribute name="DisplayDirection" type="boolean" use="required"/>
+        <attribute name="DisplayDistance" type="boolean" use="required"/>
+        <attribute name="Orientation" use="required">
+            <annotation>
+                <documentation>
+                    0 = Along
+                    1 = Stacked
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <minInclusive value="0"/>
+                    <maxInclusive value="1"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="AlternateStyle" type="ini:STString31" use="required"/>
+        <attribute name="AllowTabling" type="boolean" use="required"/>
+        <attribute name="ICSNumber" use="required">
+            <simpleType>
+                <restriction base="integer">
+                    <minInclusive value="0"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+    <complexType name="CTGeometryArcFeature">
+        <annotation>
+            <documentation>Contains geometry arc feature settings</documentation>
+        </annotation>
+        <sequence>
+            <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+            <element name="RadiusText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="LengthText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="TangentLengthText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="DeltaAngleText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="DOCText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="ChordLengthText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="ChordDirectionText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="MiddleOrdinateText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="ExternalDistanceText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+        </sequence>
+        <attribute name="DisplayRadius" type="boolean" use="required"/>
+        <attribute name="DisplayLength" type="boolean" use="required"/>
+        <attribute name="DisplayTangentLength" type="boolean" use="required"/>
+        <attribute name="DisplayDeltaAngle" type="boolean" use="required"/>
+        <attribute name="DisplayDOC" type="boolean" use="required"/>
+        <attribute name="DisplayChordLength" type="boolean" use="required"/>
+        <attribute name="DisplayChordDirection" type="boolean" use="required"/>
+        <attribute name="DisplayMiddleOrdinate" type="boolean" use="required"/>
+        <attribute name="DisplayExternalDistance" type="boolean" use="required"/>
+        <attribute name="Orientation" use="required">
+            <annotation>
+                <documentation>
+                    0 = Along
+                    1 = Stacked
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <minInclusive value="0"/>
+                    <maxInclusive value="1"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="AlternateStyle" type="ini:STString31" use="required"/>
+        <attribute name="AllowTabling" type="boolean" use="required"/>
+        <attribute name="AnnotateCurve" use="required">
+            <annotation>
+                <documentation>
+                    0 = As Defined
+                    1 = Inside of Curve Only
+                    2 = Outside of Curve Only
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <minInclusive value="0"/>
+                    <maxInclusive value="2"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="ICSNumber" use="required">
+            <simpleType>
+                <restriction base="integer">
+                    <minInclusive value="0"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+    <complexType name="CTGeometrySpiralFeature">
+        <annotation>
+            <documentation>Contains geometry spiral feature settings</documentation>
+        </annotation>
+        <sequence>
+            <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+            <element name="StartRadiusText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="StopRadiusText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="LengthText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="AngleText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="ConstantText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="PText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="KText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="XsText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="YsText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="LongTangentText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="ShortTangentText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="LongChordText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+            <element name="ChordDirectionText" type="ini:CTAnnotationPlacement" minOccurs="0"/>
+        </sequence>
+        <attribute name="DisplayStartRadius" type="boolean" use="required"/>
+        <attribute name="DisplayStopRadius" type="boolean" use="required"/>
+        <attribute name="DisplayLength" type="boolean" use="required"/>
+        <attribute name="DisplayAngle" type="boolean" use="required"/>
+        <attribute name="DisplayConstant" type="boolean" use="required"/>
+        <attribute name="DisplayP" type="boolean" use="required"/>
+        <attribute name="DisplayK" type="boolean" use="required"/>
+        <attribute name="DisplayXs" type="boolean" use="required"/>
+        <attribute name="DisplayYs" type="boolean" use="required"/>
+        <attribute name="DisplayLongTangent" type="boolean" use="required"/>
+        <attribute name="DisplayShortTangent" type="boolean" use="required"/>
+        <attribute name="DisplayLongChord" type="boolean" use="required"/>
+        <attribute name="DisplayChordDirection" type="boolean" use="required"/>
+        <attribute name="Orientation" use="required">
+            <annotation>
+                <documentation>
+                    0 = Along
+                    1 = Stacked
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <minInclusive value="0"/>
+                    <maxInclusive value="1"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="AlternateStyle" type="ini:STString31" use="required"/>
+        <attribute name="AllowTabling" type="boolean" use="required"/>
+        <attribute name="AnnotateCurve" use="required">
+            <annotation>
+                <documentation>
+                    0 = As Defined
+                    1 = Inside of Curve Only
+                    2 = Outside of Curve Only
+                </documentation>
+            </annotation>
+            <simpleType>
+                <restriction base="integer">
+                    <minInclusive value="0"/>
+                    <maxInclusive value="2"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="ICSNumber" use="required">
+            <simpleType>
+                <restriction base="integer">
+                    <minInclusive value="0"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+    <complexType name="CTSurveyAttribute">
+        <annotation>
+            <documentation>Contains Survey Feature Attribute settings</documentation>
+        </annotation>
+        <attribute name="Name" type="ini:STString31" use="required"/>
+        <attribute name="Type" type="ini:STString31" use="required"/>
+        <attribute name="Description" type="ini:STString31" use="required"/>
+    </complexType>
+    <complexType name="CTCustomOperations">
+        <annotation>
+            <documentation>Used in Survey Feature</documentation>
+        </annotation>
+        <attribute name="Value" type="ini:STString255" use="required"/>
+    </complexType>
+    <complexType name="CTSurveyFeature">
+        <annotation>
+            <documentation>Contains Survey Feature style settings</documentation>
+        </annotation>
+        <sequence>
+            <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+            <element name="AlphaCode" type="ini:CTAlphaCode" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="Attribute" type="ini:CTSurveyAttribute" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="CustomOperations" type="ini:CTCustomOperations" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="NumericCode" type="integer" use="required"/>
+        <attribute name="FeatureType" type="ini:STSurfaceFeatureBaseTypeList" use="required"/>
+        <attribute name="ExcludeFromTriangulation" type="boolean" use="required"/>
+        <attribute name="RandomPointFeatures" type="boolean" use="required"/>
+        <attribute name="LineToPrevious" type="boolean" use="required"/>
+        <attribute name="ConnectLine" type="boolean" use="required"/>
+        <attribute name="ScaleCellToGround" type="boolean" use="required"/>
+    </complexType>
+    <complexType name="CTAlphaCode">
+        <annotation>
+            <documentation>Alpha code for Survey</documentation>
+        </annotation>
+        <attribute name="Code" type="ini:STString31" use="required"/>
+    </complexType>
+    <complexType name="CTUInt" mixed="true">
+        <annotation>
+            <documentation>Contains rules for feature filters</documentation>
+        </annotation>
+        <attribute name="Integer" type="integer" use="required"/>
+    </complexType>
+    <complexType name="CTString" mixed="true">
+        <annotation>
+            <documentation>Contains rules for feature filters</documentation>
+        </annotation>
+        <attribute name="String" type="ini:STString511" use="required"/>
+    </complexType>
+    <complexType name="CTImportRule" mixed="true">
+        <annotation>
+            <documentation>Contains rules for feature filters</documentation>
+        </annotation>
+        <sequence>
+            <element name="Level" type="ini:CTString" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="Type" type="ini:CTUInt" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="Color" type="ini:CTUInt" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="LineStyle" type="ini:CTString" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="Weight" type="ini:CTUInt" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="CellName" type="ini:CTString" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="Name" type="ini:STString31" use="required"/>
+        <attribute name="Description" type="ini:STString255" use="required"/>
+        <attribute name="FeatureSeedName" type="ini:STString63" use="required"/>
+        <attribute name="FeatureDescription" type="ini:STString63" use="required"/>
+        <attribute name="FeatureParent" type="ini:STString63" use="required"/>
+        <attribute name="FeatureStyle" type="ini:STString31" use="required"/>
+        <attribute name="FeatureType" type="ini:STSurfaceFeatureTypeList" use="optional"/>
+        <attribute name="FeaturePointDensityOn" type="boolean" use="required"/>
+        <attribute name="FeaturePointDensity" type="double" use="optional"/>
+        <attribute name="FeatureExcludeFromTriangulation" type="boolean" use="required"/>
+        <attribute name="TargetSurfaceActive" type="integer" use="required"/>
+        <attribute name="TargetSurface" type="ini:STString63" use="required"/>
+        <attribute name="RandomPointsPerFeature" type="integer" use="required"/>
+        <attribute name="MatchEndPoints" type="integer" use="required"/>
+        <attribute name="FilterByLevel" type="boolean" use="required"/>
+        <attribute name="FilterByType" type="boolean" use="required"/>
+        <attribute name="FilterByColor" type="boolean" use="required"/>
+        <attribute name="FilterByLineStyle" type="boolean" use="required"/>
+        <attribute name="FilterByWeight" type="boolean" use="required"/>
+        <attribute name="FilterByCellName" type="boolean" use="required"/>
+        <attribute name="ElevationsFrom" type="integer" use="required"/>
+        <attribute name="VerticalOffsetOn" type="boolean" use="required"/>
+        <attribute name="VerticalOffset" type="double" use="required"/>
+        <attribute name="DrapeVerticesOnlyOn" type="boolean" use="optional"/>
+        <attribute name="SetElevation" type="double" use="required"/>
+        <attribute name="ThinSurfaceOn" type="boolean" use="required"/>
+        <attribute name="ThinTolerance" type="double" use="required"/>
+        <attribute name="MaximumSegmentLengthOn" type="boolean" use="required"/>
+        <attribute name="MaximumSegmentLength" type="double" use="required"/>
+    </complexType>
+    <complexType name="CTFeaturePair" mixed="true">
+        <annotation>
+            <documentation>Contains two feature or style names</documentation>
+        </annotation>
+        <attribute name="Feature1" type="ini:STString31" use="required"/>
+        <attribute name="Feature2" type="ini:STString31" use="required"/>
+    </complexType>
+    <!-- group declarations -->
+    <attributeGroup name="AGColumn">
+        <attribute name="Column" use="optional">
+            <simpleType>
+                <restriction base="integer">
+                    <minInclusive value="-1"/>
+                    <maxInclusive value="100"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="StormColumn" use="optional">
+            <simpleType>
+                <restriction base="integer">
+                    <minInclusive value="0"/>
+                    <maxInclusive value="5"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </attributeGroup>
+    <attributeGroup name="AGPrecision">
+        <attribute name="Precision" type="ini:STPrecision" use="optional"/>
+        <attribute name="LimitedPrecision" type="ini:STLimitedPrecision" use="optional"/>
+        <attribute name="ExpandedPrecision" type="ini:STExpandedPrecision" use="optional"/>
+    </attributeGroup>
+    <attributeGroup name="AGFormat">
+        <attribute name="SystemPreferencesStationFormat" type="ini:STSystemPreferencesStationFormat" use="optional"/>
+        <attribute name="StationFormat" type="ini:STStationFormat" use="optional"/>
+        <attribute name="DirectionFormat" type="ini:STDirectionFormat" use="optional"/>
+        <attribute name="SlopeFormat" type="ini:STSlopeFormat" use="optional"/>
+        <attribute name="SlopeLimitedBaseFormat" type="ini:STSlopeLimitedBaseFormat" use="optional"/>
+    </attributeGroup>
+    <attributeGroup name="AGOrientation">
+        <attribute name="Orientation1" type="ini:STOrientation1" use="optional"/>
+        <attribute name="Orientation2" type="ini:STOrientation2" use="optional"/>
+        <attribute name="Orientation4" type="ini:STOrientation4" use="optional"/>
+    </attributeGroup>
+    <attributeGroup name="AGLocation">
+        <attribute name="LocationAlong" type="ini:STLocationAlong" use="optional"/>
+        <attribute name="LocationNear" type="ini:STLocationNear" use="optional"/>
+        <attribute name="VolumeLocation" type="ini:STVolumeLocation" use="optional"/>
+        <attribute name="ProfileLocation" type="ini:STProfileLocation" use="optional"/>
+    </attributeGroup>
+    <attributeGroup name="AGSurfaceFeatureType">
+        <attribute name="SurfaceFeatureType" type="ini:STSurfaceFeatureType" use="optional"/>
+        <attribute name="SurfaceFeatureTypeList" type="ini:STSurfaceFeatureTypeList" use="optional"/>
+        <attribute name="SurfaceFeatureBaseTypeList" type="ini:STSurfaceFeatureBaseTypeList" use="optional"/>
+        <attribute name="SurfaceLimitedFeatureType" type="ini:STSurfaceLimitedFeatureType" use="optional"/>
+    </attributeGroup>
+    <attributeGroup name="AGLeaderPosition">
+        <attribute name="PointLeaderPosition" type="ini:STPointLeaderPosition" use="optional"/>
+        <attribute name="CurveLeaderPosition" type="ini:STCurveLeaderPosition" use="optional"/>
+        <attribute name="TangentLeaderPosition" type="ini:STTangentLeaderPosition" use="optional"/>
+    </attributeGroup>
+    <group name="GTextSymbology">
+        <annotation>
+            <documentation>Contains base and extended text symbologies</documentation>
+        </annotation>
+        <sequence>
+            <element name="BaseTextSymbology" type="ini:CTBaseTextSymbology"/>
+            <element name="ExtendedTextSymbology" type="ini:CTExtendedTextSymbology"/>
+            <element name="SurveyTextSymbology" type="ini:CTSurveyTextSymbology" minOccurs="0"/>
+        </sequence>
+    </group>
+    <group name="GLineSymbology">
+        <annotation>
+            <documentation>Contains LineSymbology for NamedSymbology use</documentation>
+        </annotation>
+        <sequence>
+            <element name="LineSymbology" type="ini:CTBaseLineSymbology"/>
+        </sequence>
+    </group>
+    <group name="GTextNamedSymbology">
+        <annotation>
+            <documentation>Contains named and extended text symbologies</documentation>
+        </annotation>
+        <sequence>
+            <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+            <element name="ExtendedTextSymbology" type="ini:CTExtendedTextSymbology"/>
+            <element name="SurveyTextSymbology" type="ini:CTSurveyTextSymbology" minOccurs="0"/>
+        </sequence>
+    </group>
+    <group name="GPointSymbology">
+        <annotation>
+            <documentation>Contains base and extended point symbologies</documentation>
+        </annotation>
+        <sequence>
+            <element name="BasePointSymbology" type="ini:CTBasePointSymbology"/>
+            <element name="ExtendedPointSymbology" type="ini:CTExtendedPointSymbology"/>
+        </sequence>
+    </group>
+    <group name="GPointNamedSymbology">
+        <annotation>
+            <documentation>Contains named and extended point symbologies</documentation>
+        </annotation>
+        <sequence>
+            <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+            <element name="ExtendedPointSymbology" type="ini:CTExtendedPointSymbology"/>
+        </sequence>
+    </group>
+    <!-- element declarations -->
+    <element name="NamedSymbology">
+        <annotation>
+            <documentation>Contains Named Symbology settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="DefaultLineSymbology" minOccurs="0">
+                    <complexType>
+                        <group ref="ini:GLineSymbology"/>
+                    </complexType>
+                </element>
+                <element name="DefaultTextSymbology" minOccurs="0">
+                    <complexType>
+                        <group ref="ini:GTextSymbology"/>
+                    </complexType>
+                </element>
+                <element name="DefaultPointSymbology" minOccurs="0">
+                    <complexType>
+                        <group ref="ini:GPointSymbology"/>
+                    </complexType>
+                </element>
+                <element name="PlanLineSymbology" minOccurs="0">
+                    <complexType>
+                        <group ref="ini:GLineSymbology"/>
+                    </complexType>
+                </element>
+                <element name="PlanTextSymbology" minOccurs="0">
+                    <complexType>
+                        <group ref="ini:GTextSymbology"/>
+                    </complexType>
+                </element>
+                <element name="PlanPointSymbology" minOccurs="0">
+                    <complexType>
+                        <group ref="ini:GPointSymbology"/>
+                    </complexType>
+                </element>
+                <element name="ProfileLineSymbology" minOccurs="0">
+                    <complexType>
+                        <group ref="ini:GLineSymbology"/>
+                    </complexType>
+                </element>
+                <element name="ProfileTextSymbology" minOccurs="0">
+                    <complexType>
+                        <group ref="ini:GTextSymbology"/>
+                    </complexType>
+                </element>
+                <element name="ProfilePointSymbology" minOccurs="0">
+                    <complexType>
+                        <group ref="ini:GPointSymbology"/>
+                    </complexType>
+                </element>
+                <element name="CrossSectionLineSymbology" minOccurs="0">
+                    <complexType>
+                        <group ref="ini:GLineSymbology"/>
+                    </complexType>
+                </element>
+                <element name="CrossSectionTextSymbology" minOccurs="0">
+                    <complexType>
+                        <group ref="ini:GTextSymbology"/>
+                    </complexType>
+                </element>
+                <element name="CrossSectionPointSymbology" minOccurs="0">
+                    <complexType>
+                        <group ref="ini:GPointSymbology"/>
+                    </complexType>
+                </element>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="Description" type="ini:STString127" use="optional"/>
+        </complexType>
+    </element>
+    <element name="NamedSymbologyCollection">
+        <annotation>
+            <documentation>Collection of named symbologies</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:NamedSymbology" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="FeatureCategory">
+        <annotation>
+            <documentation>Contains feature style category information</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="FeatureStyle" type="ini:CTFeatureStyleName" minOccurs="0" maxOccurs="unbounded"/>
+                <element ref="ini:FeatureCategory" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+        </complexType>
+    </element>
+    <element name="FeatureCategoryCollection">
+        <annotation>
+            <documentation>Collection of feature categories</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:FeatureCategory" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="FeatureStyle">
+        <annotation>
+            <documentation>Contains feature style settings</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="NamedSymbologyName" type="ini:CTNamedSymbologyName"/>
+                <element name="SurfaceFeature" type="ini:CTSurfaceFeature" minOccurs="0"/>
+                <element name="GeometryPointFeature" type="ini:CTGeometryPointFeature" minOccurs="0"/>
+                <element name="GeometryLineFeature" type="ini:CTGeometryLineFeature" minOccurs="0"/>
+                <element name="GeometryArcFeature" type="ini:CTGeometryArcFeature" minOccurs="0"/>
+                <element name="GeometrySpiralFeature" type="ini:CTGeometrySpiralFeature" minOccurs="0"/>
+                <element name="SurveyFeature" type="ini:CTSurveyFeature" minOccurs="0"/>
+            </sequence>
+            <attribute name="ItemName" type="ini:STString31" use="required"/>
+            <attribute name="SynchronizeSymbology" use="required">
+                <annotation>
+                    <documentation>
+                        0 = Independent Named Symbologies
+                        1 = Use One Named Symbology for All
+                    </documentation>
+                </annotation>
+                <simpleType>
+                    <restriction base="integer">
+                        <minInclusive value="0"/>
+                        <maxInclusive value="1"/>
+                    </restriction>
+                </simpleType>
+            </attribute>
+            <attribute name="Description" type="ini:STString127" use="optional"/>
+            <attribute name="AttachTag" type="boolean" use="required"/>
+        </complexType>
+    </element>
+    <element name="FeatureStyleCollection">
+        <annotation>
+            <documentation>Collection of feature styles</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element ref="ini:FeatureStyle" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

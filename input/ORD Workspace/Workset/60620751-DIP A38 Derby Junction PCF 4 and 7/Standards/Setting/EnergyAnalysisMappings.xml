@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Catergories>
+	<Category Name="SpaceTypes">
+ 		<Type Name="Space"/>
+	</Category>
+	<Category Name="WallTypes">
+ 		<Type Name="Wall"/>
+ 		<Type Name="WallLeaf"/>
+		<Type Name="Concrete Column"/>
+	</Category>
+	<Category Name="RoofTypes">
+ 		<Type Name="Roof"/>
+	</Category>
+	<Category Name="FloorTypes">
+ 		<Type Name="Slab"/>
+		<Type Name="Floor"/>
+		<Type Name="Coverings"/>
+	</Category>
+	<Category Name="WindowTypes">
+ 		<Type Name="Window"/>
+		<Type Name="Louver"/>
+	</Category>
+	<Category Name="OpeningPenetrationTypes">
+ 		<Type Name="Penetrations"/>
+	</Category>
+	<Category Name="OpeningPeopleTypes">
+ 		<Type Name="Door"/>
+		<Type Name="ElevatorDoor"/>
+	</Category>
+	<Category Name="OpeningAirTypes">
+ 		<Type Name="CurtainWallSystem"/>
+ 		<Type Name="CurtainWall"/>
+		<Type Name="Window"/>
+		<Type Name="Louver"/>
+	</Category>
+	<Category Name="BoundingTypes">
+ 		<Type Name="Wall"/>
+ 		<Type Name="WallLeaf"/>
+		<Type Name="Concrete Column"/>
+		<Type Name="Roof"/>
+		<Type Name="Slab"/>
+		<Type Name="Floor"/>
+		<Type Name="Coverings"/>
+	</Category>
+	<Category Name="ContainedTypes">
+ 		<Type Name="Wall"/>
+ 		<Type Name="WallLeaf"/>
+		<Type Name="Concrete Column"/>
+	</Category>	
+</Catergories>

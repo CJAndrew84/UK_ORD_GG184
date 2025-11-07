@@ -1,0 +1,32 @@
+# ================================================================================			
+#			
+# OpenBuildings Designer DataGroup Item Mappings to IfcEntityClass and IfcPredefinedType	
+# for IFC4 Export			
+#			
+#			
+# $RCSfile: IFC_ItemMapping.ifc4.set,v $"			
+# $Revision: 1.2 $			
+#			
+# $Copyright: (c) 2019 Bentley Systems, Incorporated. All rights reserved. $"			
+# ================================================================================			
+#
+# Syntax:			
+# TYPE <DataGroup Type>
+#	ITEM <Datagroup Item> EXPORT_AS  <IfcEntityClass>.<IfcPredefinedType>
+#	
+# ================================================================
+#
+TYPE Wall
+	ITEM Curtainwall*	EXPORT_AS	IfcCurtainWall.NOTDEFINED
+	ITEM Storefront*	EXPORT_AS	IfcCurtainWall.NOTDEFINED
+	ITEM Foundation*	EXPORT_AS	IfcFooting.STRIP_FOOTING
+
+Type PlumbingFixtures
+	ITEM Sink*	EXPORT_AS  IfcSanitaryTerminal.SINK
+	ITEM Washbasin*	EXPORT_AS  IfcSanitaryTerminal.SANITARYFOUNTAIN
+	ITEM Toilet*	EXPORT_AS  IfcSanitaryTerminal.TOILETPAN
+	ITEM Shower*	EXPORT_AS  IfcSanitaryTerminal.SHOWER
+	ITEM Tub*	EXPORT_AS  IfcSanitaryTerminal.BATH
+	ITEM Urinal*	EXPORT_AS  IfcSanitaryTerminal.URINAL
+	ITEM Radiator*	EXPORT_AS  IfcSpaceHeater.RADIATOR
+	ITEM Watercooler* EXPORT_AS IfcElectricAppliance.FREESTANDINGWATERCOOLER

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:or="OpenRoads" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="OpenRoads" elementFormDefault="qualified">
+
+  <element name="SpeedTable">
+    <complexType>
+      <sequence>
+        <element ref="or:EyePosition" minOccurs="1" maxOccurs="1"/>
+        <element ref="or:ObjectPosition" minOccurs="1" maxOccurs="1"/>
+        <element ref="or:SpeedTableEntry" minOccurs="1" maxOccurs="unbounded"/>
+      </sequence>
+      <attribute name="name" type="string" use="required"/>
+    </complexType>
+  </element>
+
+  <element name="EyePosition">
+    <complexType>
+      <attribute name="interval" type="double" use="required"/>
+      <attribute name="offset" type="double" use="required"/>
+      <attribute name="height" type="double" use="required"/>
+    </complexType>
+  </element>
+
+  <element name="ObjectPosition">
+    <complexType>
+      <attribute name="moveTargetToAchieveVisibility" type="boolean" use="required"/>
+      <attribute name="interval" type="double" use="required"/>
+      <attribute name="offset" type="double" use="required"/>
+      <attribute name="height" type="double" use="required"/>
+    </complexType>
+  </element>
+
+  <element name="SpeedTableEntry">
+    <complexType>
+      <attribute name="speed" type="double" use="required"/>
+      <attribute name="sightDistance" type="double" use="required"/>
+      <attribute name="relaxedDistance" type="double" use="optional"/>
+    </complexType>
+  </element>
+  
+  <element name="OpenRoadsSightVisibility">
+    <annotation>
+      <documentation>Bentley OpenRoads sight visibility schema</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name="SpeedTables" minOccurs="1" maxOccurs="1">
+          <complexType>
+            <sequence>
+              <element ref="or:SpeedTable" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

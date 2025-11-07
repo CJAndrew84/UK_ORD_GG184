@@ -1,0 +1,969 @@
+# Common to all datasets					
+# ================================================================================					
+#					
+# OpenBuildings Designer DataGroup Property Mappings to IFC4 Pset properties					
+# for IFC4 Export					
+#					
+# $RCSfile: IFC_PropertyMapping.ifc4.set,v $					
+# $Revision: 1.26 $					
+#					
+# $Copyright: (c) 2019 Bentley Systems, Incorporated. All rights reserved. $				
+# ================================================================================					
+#					
+# Syntax:					
+# DGtype	DGitem	IFC pset	IFC property	IFC format	Mapped DG property
+#					
+# ===============================================================================					
+# Common object naming					
+# ===============================================================================
+*	*	*	Name	*	EVALUATE DG ("?ObjectIdentity/@InstanceMark", "?ObjectIdentity/@NameAlt", "?ObjectIdentity/@Mark")
+*	*	*	Description	*	EVALUATE DG ("?ObjectIdentity/@Description")
+*	*	*	?LongName	*	?ObjectIdentity/@NameAlt
+# ================================================================================					
+# Spatial Containment Types					
+# ================================================================================					
+Project	*	*	Name	*	Project/@ProjectName
+Site	*	Pset_SiteCommon	BuildableArea	IfcAreaMeasure	Site/@BuildableArea
+Site	*	Pset_SiteCommon	BuildingHeightLimit	IfcPositiveLengthMeasure	Site/@BuildingHeightLimit
+Site	 *	*	Name	*	Site/@SiteName
+Building	*	*	Name	*	ArchBuilding/@BuildingName
+Building	*	Pset_BuildingCommon	YearOfConstruction	IfcLabel	ArchBuilding/@YearConstructed
+Building	*	Pset_BuildingCommon	FireProtectionClass	IfcLabel	?Pset_BuildingCommon/@MainFireUse
+
+# ==================================================================================
+
+Floor	*	*	Description	*	ArchFloor/@Description
+Floor	*	*	LongName	*	Floor/@Remarks
+Floor	*	*	Name	*	ArchFloor/@FloorName
+Floor	*	*	Elevation	*	ArchFloor/@FinishedFloorElevation
+Floor	*	Pset_BuildingStoreyCommon	GrossPlannedArea	IfcAreaMeasure	Floor/@GrossArea
+Floor	*	Pset_BuildingStoreyCommon	NetPlannedArea	IfcAreaMeasure	Floor/@NetArea
+Floor	*	Pset_BuildingStoreyCommon	GrossAreaPlanned	IfcAreaMeasure	Floor/@GrossArea
+Floor	*	Pset_BuildingStoreyCommon	NetAreaPlanned	IfcAreaMeasure	Floor/@NetArea
+Space	*	*	Description	*	ArchSpace/@label
+Space	*	*	LongName	*	EVALUATE DG("ArchSpace/@label2", "ArchSpace/@number", "ArchSpace/@label")
+Space	*	*	Name	*	EVALUATE DG("ArchSpace/@number", "ArchSpace/@label")
+
+# ================================================================================					
+# Architecture/Structural Types					
+# ================================================================================					
+Aluminum Beam	*	Pset_BeamCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Aluminum Beam	*	Pset_BeamCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Aluminum Beam	*	Pset_BeamCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Aluminum Column	*	Pset_ColumnCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Aluminum Column	*	Pset_ColumnCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Aluminum Column	*	Pset_ColumnCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Casework	*	Pset_FurnitureTypeCommon	Description	IfcText	ObjectIdentity/@Description
+Casework	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+Casework	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+Casework	*	Pset_FurnitureTypeCommon	NominalDepth	IfcPositiveLengthMeasure	Casework/Dimensions/@depth
+Casework	*	Pset_FurnitureTypeCommon	NominalHeight	IfcPositiveLengthMeasure	Casework/Dimensions/@height
+Casework	*	Pset_FurnitureTypeCommon	NominalLength	IfcPositiveLengthMeasure	Casework/Dimensions/@width
+Concrete Beam	*	Pset_BeamCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Concrete Beam	*	Pset_BeamCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Concrete Beam	*	Pset_BeamCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Concrete Column	*	Pset_ColumnCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Concrete Column	*	Pset_ColumnCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Concrete Column	*	Pset_ColumnCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Concrete Pier	*	Pset_MemberCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Concrete Pier	*	Pset_MemberCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Concrete Pier	*	Pset_MemberCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Concrete Pile	*	Pset_MemberCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Concrete Pile	*	Pset_MemberCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Concrete Pile	*	Pset_MemberCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+CurtainWall	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+CurtainWall	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+Door	*	^Lining:IfcDoorLiningProperties	LiningDepth	*	ArchDoor/Frame/@depth
+Door	*	^Lining:IfcDoorLiningProperties	LiningThickness	*	ArchDoor/Frame/@thickness
+Door	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+Door	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+
+# == Minor renaming in IFC4 Addendum 2. Mapping 2x3 name to IFC4 Add2 name below ===
+Door	*	Pset_DoorWindowGlazingType	VisibleLightTransmittance	IfcPositiveRatioMeasure	?Pset_DoorWindowGlazingType/@Translucency
+Door	*	Pset_DoorWindowGlazingType	VisibleLightReflectance	IfcPositiveRatioMeasure	?Pset_DoorWindowGlazingType/@Reflectivity
+Door	*	Pset_DoorWindowGlazingType	SolarTransmittance	IfcPositiveRatioMeasure	?Pset_DoorWindowGlazingType/@BeamRadiationTransmittance
+Window	*	Pset_DoorWindowGlazingType	VisibleLightTransmittance	IfcPositiveRatioMeasure	?Pset_DoorWindowGlazingType/@Translucency
+Window	*	Pset_DoorWindowGlazingType	VisibleLightReflectance	IfcPositiveRatioMeasure	?Pset_DoorWindowGlazingType/@Reflectivity
+Window	*	Pset_DoorWindowGlazingType	SolarTransmittance	IfcPositiveRatioMeasure	?Pset_DoorWindowGlazingType/@BeamRadiationTransmittance
+# ==================================================================================
+
+ElevatorDoor	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+ElevatorDoor	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+ElevatorDoor	*	^Lining:IfcDoorLiningProperties	LiningDepth	*	ElevatorDoor/Parametrics/@FrameDepth
+ElevatorDoor	*	^Lining:IfcDoorLiningProperties	LiningThickness	*	ElevatorDoor/Parametrics/@FrameThickness
+Escalators	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+Escalators	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+Furniture	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+Furniture	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+Ladders	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+Ladders	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+Louver	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+Louver	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+PlumbingFixtures	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+PlumbingFixtures	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+Ramps	*	Pset_RampCommon	HandicapAccessible	IfcBoolean	ObjectAccessibility/@HandicapAccessible
+Ramps	*	Pset_RampCommon	HasNonSkidSurface	IfcBoolean	ObjectAccessibility/@NonSkidSurface
+Roof	*	Pset_RoofCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Roof	*	Pset_RoofCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Shelving	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+Shelving	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+SiteEquipment	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+SiteEquipment	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+Slab	*	Pset_SlabCommon	AcousticRating	IfcLabel	ObjectAcoustics/@Rating
+Slab	*	Pset_SlabCommon	Combustible	IfcBoolean	ObjectFireResistance/@IsCombustible
+Slab	*	Pset_SlabCommon	Compartmentation	IfcBoolean	ObjectFireResistance/@Compartmentation
+Slab	*	Pset_SlabCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Slab	*	Pset_SlabCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Slab	*	Pset_SlabCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Slab	*	Pset_SlabCommon	SurfaceSpreadOfFlame	IfcLabel	ObjectFireResistance/@SurfaceSpreadofFlame
+Specialty_Interior	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+Specialty_Interior	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+Specialty_Roof	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+Specialty_Roof	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+Specialty_Safety	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+Specialty_Safety	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+Stair	*	Pset_StairCommon	FireExit	IfcBoolean	Stair_Common/Properties/Fire/@FireExit
+Stair	*	Pset_StairCommon	HandicapAccessible	IfcBoolean	ObjectAccessibility/@HandicapAccessible
+Stair	*	Pset_StairCommon	HasNonSkidSurface	IfcBoolean	ObjectAccessibility/@NonSkidSurface
+Stair	*	Pset_StairCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Stair	*	Pset_StairCommon	NumberOfRiser	IfcCountMeasure	Stair_Common/Riser/@RiserActualNo
+Stair	*	Pset_StairCommon	RiserHeight	IfcPositiveLengthMeasure	Stair_Application/@RiserHeight
+Stair	*	Pset_StairCommon	TreadLength	IfcPositiveLengthMeasure	Stair_Common/Tread/@TreadDepth
+IfcStair_Landing	*	*	PredefinedType	*	EVALUATE LANDING
+IfcStair_Flight	*	*	PredefinedType	*	EVALUATE STRAIGHT
+Steel Beam	*	Pset_BeamCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Steel Beam	*	Pset_BeamCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Steel Beam	*	Pset_BeamCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Steel Cladding	*	Pset_CoveringCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Steel Column	*	Pset_ColumnCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Steel Column	*	Pset_ColumnCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Steel Column	*	Pset_ColumnCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Steel Deck	*	Pset_SlabCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Steel Deck	*	Pset_SlabCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Steel Deck	*	Pset_SlabCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Steel Horizontal Brace	*	Pset_MemberCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Steel Horizontal Brace	*	Pset_MemberCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Steel Horizontal Brace	*	Pset_MemberCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Steel Pile	*	Pset_MemberCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Steel Pile	*	Pset_MemberCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Steel Pile	*	Pset_MemberCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Steel Purlin	*	Pset_MemberCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Steel Purlin	*	Pset_MemberCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Steel Purlin	*	Pset_MemberCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Steel Vertical Brace	*	Pset_MemberCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Steel Vertical Brace	*	Pset_MemberCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Steel Vertical Brace	*	Pset_MemberCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Timber Joist	*	Pset_BeamCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Timber Joist	*	Pset_BeamCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Timber Joist	*	Pset_BeamCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Timber Plate	*	Pset_MemberCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Timber Plate	*	Pset_MemberCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Timber Plate	*	Pset_MemberCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Timber Post	*	Pset_ColumnCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Timber Post	*	Pset_ColumnCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Timber Post	*	Pset_ColumnCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Timber Stud	*	Pset_MemberCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Timber Stud	*	Pset_MemberCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Timber Stud	*	Pset_MemberCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Toilet Accessories	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+Toilet Accessories	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+ToiletCompartment	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+ToiletCompartment	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+Wall	*	Pset_WallCommon	AcousticRating	IfcLabel	ObjectAcoustics/@Rating
+Wall	*	Pset_WallCommon	Combustible	IfcBoolean	ObjectFireResistance/@IsCombustible
+Wall	*	Pset_WallCommon	Compartmentation	IfcBoolean	ObjectFireResistance/@Compartmentation
+Wall	*	Pset_WallCommon	FireRating	IfcLabel	ObjectFireResistance/@Rating
+Wall	*	Pset_WallCommon	IsExternal	IfcBoolean	ObjectThermalTransmittance/@IsExternal
+Wall	*	Pset_WallCommon	LoadBearing	IfcBoolean	EVALUATE DG("ObjectStructuralUsage/@StructuralFunction") EQ "STRUCTURAL_VALUE";
+Wall	*	Pset_WallCommon	SurfaceSpreadOfFlame	IfcLabel	ObjectFireResistance/@SurfaceSpreadofFlame
+Window	*	^Lining:IfcWindowLiningProperties	LiningDepth	*	ArchWindow/Frame/@depth
+Window	*	^Lining:IfcWindowLiningProperties	LiningThickness	*	ArchWindow/Frame/@thickness
+Window	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	ObjectManufacturer/@Manufacturer
+Window	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	ObjectManufacturer/@Model
+# ================================================================================					
+# Mechanical Types					
+# ================================================================================					
+BMV_ChilledBeams	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+# == Minor renaming in IFC4 Addendum 2. Mapping 2x3 name to IFC4 Add2 name below ===
+BMV_ChilledBeams	*	Pset_CooledBeamTypeCommon	PipeConnection	*	?Pset_CooledBeamTypeCommon/@PipeConnectionEnum
+# ==================================================================================
+BMV_OvalAccessDoor	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMV_Radiator	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMV_RadiatorLST	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMV_RadiatorPanel	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMV_RectangularFlatAccessDoor	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMV_RectangularStdAccessDoor	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMV_RectOvalAccessDoor	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMV_RoundAccessDoor	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMV_RoundOvalAccessDoor	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMV_RoundRectangularAccessDoor	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+ConicalTee	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+CrossOver	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+CrossOverCloseRough	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+FlatOvalDuct	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+FlexDuct	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+GrilleRoundEnd4Way	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+GrilleRoundEndBars	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+GrilleRoundEndBarSlots	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+GrilleRoundEndMesh	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+GrilleRoundEndRectSlots	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+GrilleRoundEndRndSlots	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+GrilleRoundEndStar	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+GrilleRoundSide4Way	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+GrilleRoundSideBars	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+GrilleRoundSideBarSlots	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+GrilleRoundSideMesh	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+GrilleRoundSideRectSlots	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+GrilleRoundSideRndSlots	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+GrilleRoundSideStar	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalAdapter	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalAirCooler	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalAirHeater	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalAirHumidifier	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalAirMoistureEliminator	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalCap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalCoupling	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalCross	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalElbow	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalFans1	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalFans2	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalFlatFilter	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalFlexConnection	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalInlineDampersFlat	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalMeshEndGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalOvalTap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalRectTap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalReducerCross	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalRoundTap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalSilencer	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalTee	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalTransition	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalTrouser	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalWye	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvalZigZagFilter	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvlRectTakeoff	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvlRndTakeoff	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvlRndTransition	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+OvlTakeoff	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+Rect4WayEndGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+Rect4WayGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectAdapter	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectAirMoistureEliminator	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularAHUComp1	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularAHUComp2	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularAHUs1	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularAHUs2	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularAHUs3	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularAHUs4	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularAHUs5	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularAirCooler	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularAirHeater	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularAirHumidifier	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularCap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularDamper	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularDuct	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularElbow	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularFans1	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularFans2	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularFireDamper1	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularFireDamper2	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularFlatFilter	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularSilencer	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularTakeoff	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularTakeoffRadius	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularTee	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularTransition	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularWye	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularZigZagFilter	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectBarsEndGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectBarsGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectBarSlotsEndGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectBarSlotsGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectBreech	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectCoupling	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectDamperConnOvl	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectDamperConnRnd	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectDiffuserJet	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectDrumLouverEndGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectFlexConnection	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectGooseneck	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectInlineDampersFlat	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectMeshEndGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectMeshGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectOgee	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectOvalTap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectOvalTransition	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectOvlTakeoff	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRectSlotsEndGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRectSlotsGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRectTap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRndSlotsEndGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRndSlotsGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRndTakeoff	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRndTransition	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundTap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectStarEndGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectStarGrille	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectVAVSingleInlet	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RndAirMoistureEliminator	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RndCeilingDiffuserRnd	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RndFloorDiffuserRnd	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RndOvlTakeoff	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RndRectTakeoff	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RndTakeoff	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RndWallDiffuserRnd	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoofCurb	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundAdapter	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundAHUComp1	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundAHUComp2	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundAHUs1	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundAHUs2	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularCustomAHU1	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularCustomAHU2	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularCustomAHU3	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularCustomAHU4	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularCustomAHU5	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularCustomAHU6	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularCustomAHU7	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectangularCustomAHU8	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundCustomAHU1	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundCustomAHU2	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundCustomAHU3	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundCustomAHU4	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundCustomAHU5	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundCustomAHU6	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundCustomAHU7	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundCustomAHU8	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU11	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU12	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU21	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU22	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU31	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU13	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU14	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU23	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU32	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU41	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU15	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU24	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU33	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU42	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU51	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU16	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU25	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU34	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU43	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU52	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU61	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU17	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU26	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU35	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU44	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU53	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU62	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RectRoundCustomAHU71	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundAirCooler	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundAirHeater	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundAirHumidifier	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundBreech	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundCap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundCoupling	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundCross	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RadiusThroatCross	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SquareThroatCross	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundDamper	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundDuct	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundElbow	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundElbowMitre	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundFans1	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundFans2	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+CentrifugalInlineFan	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+InlineAxialFan	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+MarkTenRoofFan	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SingleSpeedFans	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+TerminatorRoofFan	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RadialCentrifugalSmokeExtractFan	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+ExhaustFan1	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+ExhaustFan2	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+JetFan	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BifurcatedFan	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoofUpblastFan	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+CentrifugalUtilityFan	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+CentrifugalUpblastExhaustVentilator	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+ConvectorFan	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundFireDamper1	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundFireDamper2	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundFlatFilter	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundFlexConnection	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundFPUSingleInlet	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundInlineDampersFlat	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundOvalTap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundRectTap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundReducerCross	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundRoundTap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundSilencer	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundTee	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundThreeWay	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundTransition	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundTrouser	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundVAVDualInlet	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundVAVSingleInlet	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundWye	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+RoundZigZagFilter	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SaddleCross	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SaddleTap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SaddleTee	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SegmentedBend	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SegmentedBend2	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SideBranch	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SqCeilingDiffuser	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SqCeilingDiffuserOval	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SqCeilingDiffuserRect	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SqFloorDiffuser	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SqFloorDiffuserOval	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SqFloorDiffuserRect	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SqWallDiffuser	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SqWallDiffuserOval	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+SqWallDiffuserRect	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+ThreeWayTee	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+Trouser	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMV_ChilledBeams	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMV_OvalAccessDoor	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMV_Radiator	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMV_RadiatorLST	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMV_RadiatorPanel	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMV_RectangularFlatAccessDoor	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMV_RectangularStdAccessDoor	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMV_RectOvalAccessDoor	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMV_RoundAccessDoor	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMV_RoundOvalAccessDoor	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMV_RoundRectangularAccessDoor	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+ConicalTee	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+CrossOver	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+CrossOverCloseRough	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+FlatOvalDuct	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+FlexDuct	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+GrilleRoundEnd4Way	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+GrilleRoundEndBars	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+GrilleRoundEndBarSlots	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+GrilleRoundEndMesh	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+GrilleRoundEndRectSlots	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+GrilleRoundEndRndSlots	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+GrilleRoundEndStar	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+GrilleRoundSide4Way	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+GrilleRoundSideBars	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+GrilleRoundSideBarSlots	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+GrilleRoundSideMesh	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+GrilleRoundSideRectSlots	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+GrilleRoundSideRndSlots	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+GrilleRoundSideStar	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalAdapter	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalAirCooler	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalAirHeater	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalAirHumidifier	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalAirMoistureEliminator	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalCap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalCoupling	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalCross	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalElbow	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalFans1	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalFans2	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalFlatFilter	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalFlexConnection	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalInlineDampersFlat	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalMeshEndGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalOvalTap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalRectTap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalReducerCross	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalRoundTap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalSilencer	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalTee	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalTransition	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalTrouser	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalWye	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvalZigZagFilter	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvlRectTakeoff	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvlRndTakeoff	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvlRndTransition	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+OvlTakeoff	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+Rect4WayEndGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+Rect4WayGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectAdapter	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectAirMoistureEliminator	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularAHUComp1	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularAHUComp2	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularAHUs1	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularAHUs2	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularAHUs3	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularAHUs4	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularAHUs5	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularAirCooler	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularAirHeater	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularAirHumidifier	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularCap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularDamper	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularDuct	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularElbow	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularFans1	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularFans2	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularFireDamper1	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularFireDamper2	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularFlatFilter	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularSilencer	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularTakeoff	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularTakeoffRadius	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularTee	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularTransition	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularWye	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularZigZagFilter	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectBarsEndGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectBarsGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectBarSlotsEndGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectBarSlotsGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectBreech	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectCoupling	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectDamperConnOvl	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectDamperConnRnd	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectDiffuserJet	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectDrumLouverEndGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectFlexConnection	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectGooseneck	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectInlineDampersFlat	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectMeshEndGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectMeshGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectOgee	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectOvalTap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectOvalTransition	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectOvlTakeoff	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRectSlotsEndGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRectSlotsGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRectTap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRndSlotsEndGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRndSlotsGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRndTakeoff	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRndTransition	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundTap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectStarEndGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectStarGrille	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectVAVSingleInlet	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RndAirMoistureEliminator	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RndCeilingDiffuserRnd	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RndFloorDiffuserRnd	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RndOvlTakeoff	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RndRectTakeoff	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RndTakeoff	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RndWallDiffuserRnd	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoofCurb	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundAdapter	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundAHUComp1	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundAHUComp2	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundAHUs1	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundAHUs2	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularCustomAHU1	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularCustomAHU2	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularCustomAHU3	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularCustomAHU4	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularCustomAHU5	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularCustomAHU6	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularCustomAHU7	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectangularCustomAHU8	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundCustomAHU1	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundCustomAHU2	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundCustomAHU3	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundCustomAHU4	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundCustomAHU5	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundCustomAHU6	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundCustomAHU7	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundCustomAHU8	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU11	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU12	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU21	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU22	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU31	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU13	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU14	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU23	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU32	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU41	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU15	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU24	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU33	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU42	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU51	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU16	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU25	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU34	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU43	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU52	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU61	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU17	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU26	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU35	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU44	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU53	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU62	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RectRoundCustomAHU71	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundAirCooler	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundAirHeater	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundAirHumidifier	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundBreech	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundCap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundCoupling	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundCross	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RadiusThroatCross	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SquareThroatCross	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundDamper	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundDuct	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundElbow	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundElbowMitre	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundFans1	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundFans2	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+CentrifugalInlineFan	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+InlineAxialFan	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+MarkTenRoofFan	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SingleSpeedFans	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+TerminatorRoofFan	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RadialCentrifugalSmokeExtractFan	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+ExhaustFan1	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+ExhaustFan2	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+JetFan	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BifurcatedFan	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoofUpblastFan	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+CentrifugalUtilityFan	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+CentrifugalUpblastExhaustVentilator	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+ConvectorFan	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundFireDamper1	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundFireDamper2	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundFlatFilter	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundFlexConnection	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundFPUSingleInlet	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundInlineDampersFlat	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundOvalTap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundRectTap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundReducerCross	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundRoundTap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundSilencer	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundTee	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundThreeWay	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundTransition	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundTrouser	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundVAVDualInlet	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundVAVSingleInlet	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundWye	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+RoundZigZagFilter	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SaddleCross	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SaddleTap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SaddleTee	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SegmentedBend	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SegmentedBend2	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SideBranch	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SqCeilingDiffuser	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SqCeilingDiffuserOval	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SqCeilingDiffuserRect	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SqFloorDiffuser	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SqFloorDiffuserOval	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SqFloorDiffuserRect	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SqWallDiffuser	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SqWallDiffuserOval	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+SqWallDiffuserRect	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+ThreeWayTee	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+Trouser	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+# ================================================================================					
+# Plumbing Types					
+# ================================================================================					
+BMP_Adapter	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_AirCooledChiller	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_AirSeparator	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_AirSeparatorMB	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_AirSeparatorStrainer	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_AlarmCheckValve	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_BathTub	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_BendWithHeel	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Breech	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_BreechingInlet	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_BreechingInletCabinet	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Cap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Coupling	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Cross	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_CrossOver	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_CrossOverCloseRough	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_DirectFiredGasWaterHeater	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_DoubleRegulatingValve	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_DrainCock	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Elbow	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ElbowUnion	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_EvaporativeChiller	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ExpansionVessel	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_FireExtinguisher	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_FireHoseCabinet	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_FireHoseReelCabinet	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_FireHydrant	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_FlangeBlind	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_FlangeSlipOn	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_FlangeWeldNeck	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_FlatCap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_FlexBellows	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_FlexPipe	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_FloorDrain4Way	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_FloorDrain5Way	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_FloorDrain6Way	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_FloorTrough	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Gasket	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_GreaseTrap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_GRPTankPanel	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_H-BranchWye	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_HoseBibTap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_HoseBibTap2	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_HoseUnionDrainCock	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_HoseUnionDrainCockWithPlug	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_LandingValve	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_LandingValveCabinet	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_LateralWye	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_MaleFemaleUnion	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ParapetDrain	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ParkingDrain	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_PlanterDrain	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_PressureGauge	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Ptrap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Ptrap1	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_PtrapGully	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_PumpBaseMounted	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_PumpDiaphragm	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_PumpDiesel	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_PumpDieselHorizontal	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_PumpHorizontalSplitCase	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_PumpJockey	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_PumpMotorMounted	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_PumpSump	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_PumpVerticalDualArm	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_PumpVerticalSplitCoupled	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_RainWaterOutlet	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ReelAndExtinguisherCabinet	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ReturnBend	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_RndTakeoff	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_RoundCleanout	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_RoundCoupling	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_SanitaryCross	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_SanitaryTee	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ShellAndTubeHeatExchanger	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Shower	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Sink	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_SprinklerHead	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_SprinklerHeadSideWall	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_SprinklerHeadUpright	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_SPtrap	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_StorageTank	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_StraightPipe	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Strainer	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Stub	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Tee	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Thermometer	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ThreeWay	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ThreeWayTee	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Toilet	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Transition	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_TwinElbow	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_TwinSink	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_UnionSA	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Urinal	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveAirVent	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveAngled	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveAngledRelief	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveBall	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveButterfly	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveDiffPressureRegulating	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveDiffPressureTransmitter	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveFourWay	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveGate	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveMotorised_2Way	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveMotorised_3Way	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveMotorised_3Way_withBypass	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveMotorizedButterfly	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveMotorizedControl	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveNonReturn	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveNRV	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValvePilotRelief	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValvePressureDifferential	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValvePressureRegulating	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveStraight	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveStraightRelief	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveSwingCheck	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ValveThreeWay	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Vessel	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_VibrationPad	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_WaterCooledChiller	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_WaterHeater	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Wye	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_YardHydrantCabinet	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_ZoneControlValve	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMPCoolingTower	*	Pset_ManufacturerTypeInformation	ModelLabel	IfcLabel	Properties/@ProductCode
+BMP_Adapter	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_AirCooledChiller	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_AirSeparator	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_AirSeparatorMB	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_AirSeparatorStrainer	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_AlarmCheckValve	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_BathTub	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_BendWithHeel	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Breech	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_BreechingInlet	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_BreechingInletCabinet	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Cap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Coupling	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Cross	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_CrossOver	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_CrossOverCloseRough	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_DirectFiredGasWaterHeater	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_DoubleRegulatingValve	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_DrainCock	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Elbow	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ElbowUnion	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_EvaporativeChiller	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ExpansionVessel	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_FireExtinguisher	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_FireHoseCabinet	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_FireHoseReelCabinet	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_FireHydrant	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_FlangeBlind	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_FlangeSlipOn	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_FlangeWeldNeck	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_FlatCap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_FlexBellows	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_FlexPipe	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_FloorDrain4Way	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_FloorDrain5Way	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_FloorDrain6Way	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_FloorTrough	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Gasket	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_GreaseTrap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_GRPTankPanel	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_H-BranchWye	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_HoseBibTap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_HoseBibTap2	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_HoseUnionDrainCock	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_HoseUnionDrainCockWithPlug	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_LandingValve	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_LandingValveCabinet	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_LateralWye	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_MaleFemaleUnion	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ParapetDrain	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ParkingDrain	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_PlanterDrain	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_PressureGauge	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Ptrap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Ptrap1	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_PtrapGully	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_PumpBaseMounted	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_PumpDiaphragm	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_PumpDiesel	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_PumpDieselHorizontal	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_PumpHorizontalSplitCase	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_PumpJockey	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_PumpMotorMounted	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_PumpSump	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_PumpVerticalDualArm	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_PumpVerticalSplitCoupled	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_RainWaterOutlet	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ReelAndExtinguisherCabinet	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ReturnBend	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_RndTakeoff	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_RoundCleanout	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_RoundCoupling	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_SanitaryCross	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_SanitaryTee	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ShellAndTubeHeatExchanger	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Shower	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Sink	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+
+# == Minor renaming in IFC4 Addendum 2. Mapping 2x3 name to IFC4 Add2 name below ===
+# == "?" prefix suppresses warning message if EVALAUTE DG argument is not found
+*	*	Pset_SanitaryTerminalTypeSink	Mounting	IfcLabel	?Pset_SanitaryTerminalTypeSink/@SinkMounting
+*	*	Pset_SanitaryTerminalTypeBidet	Mounting	IfcLabel	?Pset_SanitaryTerminalTypeBidet/@BidetMounting
+*	*	Pset_SanitaryTerminalTypeWashHandBasin	Mounting	IfcLabel	?Pset_SanitaryTerminalTypeWashHandBasin/@WashHandBasinMounting
+
+# subject to remove lines below Pset_SanitaryTerminalTypeBath etc was not distributed by Bentley, only case to use if any customer added this itself
+# # == IFC4 Addendum 2 moves some sanitary properies to common ser ===
+# *	*	Pset_SanitaryTerminalTypeCommon	NominalLength	IfcPositiveLengthMeasure	EVALUATE DG ("?Pset_SanitaryTerminalTypeBath/@NominalLength", "?Pset_SanitaryTerminalTypeBidet/@NominalLength", "?Pset_SanitaryTerminalTypeSanitaryFountain/@NominalLength",   "?Pset_SanitaryTerminalTypeShower/@NominalLength", "?Pset_SanitaryTerminalTypeSink/@NominalLength", "?Pset_SanitaryTerminalTypeToiletPan/@NominalLength", "?Pset_SanitaryTerminalTypeUrinal/@NominalLength", "?Pset_SanitaryTerminalTypeWashHandBasin/@NominalLength")
+# *	*	Pset_SanitaryTerminalTypeCommon	NominalWidth	IfcPositiveLengthMeasure	EVALUATE DG ("?Pset_SanitaryTerminalTypeBath/@NominalWidth", "?Pset_SanitaryTerminalTypeBidet/@NominalWidth", "?Pset_SanitaryTerminalTypeSanitaryFountain/@NominalWidth",      "?Pset_SanitaryTerminalTypeShower/@NominalWidth",  "?Pset_SanitaryTerminalTypeSink/@NominalWidth",  "?Pset_SanitaryTerminalTypeToiletPan/@NominalWidth",  "?Pset_SanitaryTerminalTypeUrinal/@NominalWidth",  "?Pset_SanitaryTerminalTypeWashHandBasin/@NominalWidth" )
+# *	*	Pset_SanitaryTerminalTypeCommon	NominalDepth	IfcPositiveLengthMeasure	EVALUATE DG ("?Pset_SanitaryTerminalTypeBath/@NominalDepth", "?Pset_SanitaryTerminalTypeBidet/@NominalDepth", "?Pset_SanitaryTerminalTypeSanitaryFountain/@NominalDepth",      "?Pset_SanitaryTerminalTypeShower/@NominalDepth",  "?Pset_SanitaryTerminalTypeSink/@NominalDepth",  "?Pset_SanitaryTerminalTypeToiletPan/@NominalDepth",  "?Pset_SanitaryTerminalTypeUrinal/@NominalDepth",  "?Pset_SanitaryTerminalTypeWashHandBasin/@NominalDepth" )
+# *	*	Pset_SanitaryTerminalTypeCommon	Color	IfcLabel	EVALUATE DG ("?Pset_SanitaryTerminalTypeCistern/@CisternColor", "?Pset_SanitaryTerminalTypeBath/@Color", "?Pset_SanitaryTerminalTypeBidet/@Color", "?Pset_SanitaryTerminalTypeSanitaryFountain/@Color", "?Pset_SanitaryTerminalTypeShower/@Color",         "?Pset_SanitaryTerminalTypeSink/@Color",         "?Pset_SanitaryTerminalTypeToiletPan/@PanColor",     "?Pset_SanitaryTerminalTypeUrinal/@UrinalColor",   "?Pset_SanitaryTerminalTypeWashHandBasin/@Color"        )
+
+#== Duplicated IFC4 properties AssemblyPlace
+*	*	Pset_ManufacturerOccurrence	AssemblyPlace	IfcLabel	?Pset_ManufacturerTypeInformation/@AssemblyPlace
+
+BMP_BreechingInletCabinet	*	^	AssemblyPlace	*	EVALUATE FurnitureTypeAssemblyPlace ()
+BMP_FireHoseCabinet	*	^	AssemblyPlace	*	EVALUATE FurnitureTypeAssemblyPlace ()
+BMP_FireHoseReelCabinet	*	^	AssemblyPlace	*	EVALUATE FurnitureTypeAssemblyPlace ()
+BMP_LandingValveCabinet	*	^	AssemblyPlace	*	EVALUATE FurnitureTypeAssemblyPlace ()
+BMP_ReelAndExtinguisherCabinet	*	^	AssemblyPlace	*	EVALUATE FurnitureTypeAssemblyPlace ()
+BMP_YardHydrantCabinet	*	^	AssemblyPlace	*	EVALUATE FurnitureTypeAssemblyPlace ()
+Casework	*	^	AssemblyPlace	*	EVALUATE FurnitureTypeAssemblyPlace ()
+Furniture	*	^	AssemblyPlace	*	EVALUATE FurnitureTypeAssemblyPlace ()
+Shelving	*	^	AssemblyPlace	*	EVALUATE FurnitureTypeAssemblyPlace ()
+SiteEquipment	*	^	AssemblyPlace	*	EVALUATE FurnitureTypeAssemblyPlace ()
+Specialty_Interior	*	^	AssemblyPlace	*	EVALUATE FurnitureTypeAssemblyPlace ()
+Specialty_Safety	*	^	AssemblyPlace	*	EVALUATE FurnitureTypeAssemblyPlace ()
+Toilet Accessories	*	^	AssemblyPlace	*	EVALUATE FurnitureTypeAssemblyPlace ()
+
+# ==================================================================================
+
+BMP_SprinklerHead	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_SprinklerHeadSideWall	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_SprinklerHeadUpright	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_SPtrap	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_StorageTank	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_StraightPipe	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Strainer	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Stub	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Tee	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Thermometer	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ThreeWay	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ThreeWayTee	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Toilet	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Transition	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_TwinElbow	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_TwinSink	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_UnionSA	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Urinal	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveAirVent	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveAngled	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveAngledRelief	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveBall	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveButterfly	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveDiffPressureRegulating	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveDiffPressureTransmitter	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveFourWay	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveGate	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveMotorised_2Way	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveMotorised_3Way	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveMotorised_3Way_withBypass	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveMotorizedButterfly	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveMotorizedControl	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveNonReturn	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveNRV	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValvePilotRelief	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValvePressureDifferential	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValvePressureRegulating	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveStraight	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveStraightRelief	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveSwingCheck	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ValveThreeWay	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Vessel	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_VibrationPad	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+
+# == Minor renaming in IFC4 Addendum 2. Mapping 2x3 name to IFC4 Add2 name below ===
+BMP_VibrationPad	*	Pset_VibrationIsolatorTypeCommon	NominalHeight	IfcPositiveLengthMeasure	?Pset_VibrationIsolatorTypeCommon/@Height
+# ==================================================================================
+
+BMP_WaterCooledChiller	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_WaterHeater	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_Wye	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_YardHydrantCabinet	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMP_ZoneControlValve	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+BMPCoolingTower	*	Pset_ManufacturerTypeInformation	Manufacturer	IfcLabel	Properties/@Manufacturer
+
+# ==================================================================================
+IfcBuildingSystem	*	*	PredefinedType	*	IfcBuildingSystem/@PredefinedType
+IfcElementAssembly	*	*	PredefinedType	*	IfcElementAssembly/@PredefinedType
+IfcGeographicElement	*	*	PredefinedType	*	IfcGeographicElement/@PredefinedType
+
